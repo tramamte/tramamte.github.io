@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Awesome Patrick</title>
+    <link>/</link>
+    <description>Recent content on Awesome Patrick</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy2018 Patrick Yu&lt;br&gt;All rights reserved.</copyright>
+    <lastBuildDate>Sat, 26 May 2018 14:24:11 +0900</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Sat, 26 May 2018 14:24:11 +0900</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Patrick Yu 유용희 한글도 입력할 수 있습니다. Hugo is a static site engine written in Go. It makes use of a variety of open source projects including: Cobra Viper J Walter Weatherman Cast Learn more and contribute on GitHub. Setup Some fun facts about Hugo: Built in Go Loosely inspired by Jekyll Primarily developed by spf13 on the train while</description>
+    </item>
+    
+  </channel>
+</rss>
