@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu&lt;br&gt;All rights reserved.</copyright>
-    <lastBuildDate>Mon, 28 May 2018 16:06:37 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 28 May 2018 23:09:58 +0900</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Comments</title>
+      <link>/2018/05/comments/</link>
+      <pubDate>Mon, 28 May 2018 23:09:58 +0900</pubDate>
+      
+      <guid>/2018/05/comments/</guid>
+      <description>Go 언어에 대한 문법, 예제, 분석, 다른 언어와의 실행 비교 등을 정리합니다. // single line comment /* multi line comment */</description>
+    </item>
     
     <item>
       <title>Hugo Local Server 접속 방법</title>
