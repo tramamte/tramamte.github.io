@@ -16,7 +16,7 @@ html, body {
 }
 
 .header {
-  font-family: 'Raleway', 'Nanum Myeongjo', serif;
+  font-family: 'Raleway', 'Nanum Gothic', sans-serif;
 }
 
 .header h2 {
@@ -75,12 +75,12 @@ a:visited {
 }
 
 .post-meta {
-  font-family: 'Raleway', 'Nanum Myeongjo', serif;
+  font-family: 'Raleway', 'Nanum Gothic', sans-serif;
   font-size: 90%;
 }
 
 .content {
-  font-family: 'Nanum Myeongjo', serif;
+  font-family: 'Raleway', 'Nanum Gothic', sans-serif;
 }
 
 .content blockquote {
@@ -90,13 +90,15 @@ a:visited {
   -webkit-margin-end: 0;
   padding-left: 15px;
   border-left: 5px solid #cccccc;
-  color: #888;
+  color: #999;
+  /*
   font-style: italic;
+  */
   font-weight: bold;
 }
 
 article > header {
-  font-family: 'Raleway', 'Nanum Myeongjo', serif;
+  font-family: 'Raleway', 'Nanum Gothic', sans-serif;
 }
 
 article > footer {
