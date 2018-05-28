@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Awesome Patrick</title>
-    <link>/</link>
-    <description>Recent content on Awesome Patrick</description>
+    <title>Posts on Awesome Patrick</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on Awesome Patrick</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu&lt;br&gt;All rights reserved.</copyright>
     <lastBuildDate>Mon, 28 May 2018 16:06:37 +0900</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       
       <guid>/2018/05/hugo-local-server-%EC%A0%91%EC%86%8D-%EB%B0%A9%EB%B2%95/</guid>
       <description>테마를 수정하거나 컨텐츠 작성 중 변경 사항을 확인하기 위해서 hugo server를 실행하면 배포하지 않고도 local 에서 확인이 가능합니다. $ hugo server 그런데 기본 주소가 localhost (</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>/about/</link>
-      <pubDate>Sat, 26 May 2018 14:24:11 +0900</pubDate>
-      
-      <guid>/about/</guid>
-      <description>Patrick Yu A question not asked is a door not opened. 이것저것 관심만 많은 잡식성 개발자입니다. 빵을 굽습니다. 빵보다는 빵 만들기를 즐깁니다. 귀촌을 꿈꿉니다. An omnivorous developer, who has only interests in variety fields. Bake</description>
     </item>
     
   </channel>

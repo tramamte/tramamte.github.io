@@ -97,6 +97,11 @@ a:visited {
   font-weight: bold;
 }
 
+code {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 85%;
+}
+
 article > header {
   font-family: 'Raleway', 'Nanum Gothic', sans-serif;
 }

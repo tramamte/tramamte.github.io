@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="description" content="작성중인 내용을 다른 장치에서 확인하기">
   <meta name="generator" content="Hugo 0.41" />
 
-  <title>Tags &middot; Awesome Patrick</title>
+  <title>Hugo Local Server 접속 방법 &middot; Awesome Patrick</title>
 
   
   
@@ -46,8 +46,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
  
-  
-  <link rel="alternate" type="application/rss+xml" title="Awesome Patrick" href="/tags/index.xml" />
   
 
   
@@ -195,7 +193,7 @@
 
     
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="/tags/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      <a class="pure-menu-link" href="/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
     </li>
     
 
@@ -221,18 +219,117 @@
 
 
 <div class="header">
-  <h1>Tags</h1>
+  <h1>Hugo Local Server 접속 방법</h1>
+  <h2>작성중인 내용을 다른 장치에서 확인하기</h2>
 </div>
 <div class="content">
-  <ul>
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>28 May 2018, 16:06</time>
+  </div>
+
+  
+
   
   
-    <li>
-      <a href="hugo">hugo</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-  </ul>
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="/topics/hugo">hugo</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="/tags/hugo">hugo</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>테마를 수정하거나 컨텐츠 작성 중 변경 사항을 확인하기 위해서 hugo server를 실행하면 배포하지 않고도 <em>local</em> 에서 확인이 가능합니다.</p>
+
+<pre><code class="language-bash">$ hugo server
+</code></pre>
+
+<p>그런데 기본 주소가 localhost (127.0.0.1)이기 때문에 말 그대로 <em>local</em> 에서만 확인 가능하고 서버를 실행한 장치가 아니면 접속이 불가능합니다. PC, 모바일 단말 등 다양한 장치에서 확인하기 위해서는 옵션을 추가할 필요가 있습니다.</p>
+
+<p><a href="https://gohugo.io/commands/hugo_server/">hugo server</a>에 다양한 사용법이 있는데 다음 두 가지가 중요합니다.</p>
+
+<pre><code class="language-bash"> -b, --baseURL string  hostname (and path) to the root
+     --bind string     interface to which the server will bind
+</code></pre>
+
+<p>실행 전 장치의 IP 주소를 확인합니다.</p>
+
+<pre><code class="language-bash"># Windows
+&gt; ipconfig
+
+# macOS or Linux
+$ ifconfig
+</code></pre>
+
+<p>확인한 IP 주소를 이용해 hugo server를 다음과 같이 실행합니다.</p>
+
+<pre><code class="language-bash">$ hugo server --baseURL &quot;http://{ip addr}&quot; --bind &quot;0.0.0.0.&quot;
+</code></pre>
+
+<p>이제 같은 공유기에 접속해 있는 다른 장치들에서도 임시버전을 확인할 수 있습니다.</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'awesome-patrick';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
 </div>
 
 </div>
@@ -246,3 +343,4 @@
 
 </body>
 </html>
+
