@@ -1,5 +1,14 @@
-body {
+html, body {
   color: #555;
+  position: fixed;
+  top: 0; 
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: auto;
 }
 
 .header {
@@ -112,6 +121,7 @@ article > footer {
 
 #menu {
   background: #001520;
+  overflow: hidden;
 }
 
 #menu a {
@@ -136,8 +146,8 @@ article > footer {
 }
 
 #menu-section {
-  min-height: 100%;
   position: relative;
+  min-height: 100%;
   padding-bottom: 80px;
   box-sizing: border-box
 }
@@ -148,7 +158,7 @@ article > footer {
 
 #menu-section footer {
   position: absolute;
-  bottom: 0px
+  bottom: 0
 }
 
 .menu-link {
