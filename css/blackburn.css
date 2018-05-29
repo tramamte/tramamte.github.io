@@ -107,8 +107,8 @@ code,
 .highlight > pre {
   padding-left: 0.75em;
   padding-right: 0.75em;
-  padding-top: 0.25em;
-  padding-bottom: 0.25em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 article > header {
