@@ -47,7 +47,8 @@ a:visited {
   position: relative;
 }
 
-#main article a:before {
+#main article a:before,
+#main .post-meta a:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -58,11 +59,14 @@ a:visited {
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
+  -webkit-transform-origin: left center;
+  transform-origin: left center;
   -webkit-transition: all 0.15s ease-in-out 0s;
   transition: all 0.15s ease-in-out 0s;
 }
 
-#main article a:hover:before {
+#main article a:hover:before,
+#main .post-meta a:hover:before {
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
