@@ -9,7 +9,7 @@
   
   <url>
     <loc>/2018/05/hugo-local-server-%EC%A0%91%EC%86%8D-%EB%B0%A9%EB%B2%95/</loc>
-    <lastmod>2018-05-28T16:06:37+09:00</lastmod>
+    <lastmod>2018-05-28T19:06:37+09:00</lastmod>
   </url>
   
   <url>
@@ -24,32 +24,20 @@
   </url>
   
   <url>
-    <loc>/tags/comment/</loc>
-    <lastmod>2018-05-28T23:09:58+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/topics/go/</loc>
     <lastmod>2018-05-28T23:09:58+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/go/</loc>
-    <lastmod>2018-05-28T23:09:58+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/topics/hugo/</loc>
-    <lastmod>2018-05-28T16:06:37+09:00</lastmod>
+    <lastmod>2018-05-28T19:06:37+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/hugo/</loc>
-    <lastmod>2018-05-28T16:06:37+09:00</lastmod>
+    <loc>/tags/local/</loc>
+    <lastmod>2018-05-28T19:06:37+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -60,8 +48,20 @@
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>/tags/server/</loc>
+    <lastmod>2018-05-28T19:06:37+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/syntax/</loc>
     <lastmod>2018-05-28T23:09:58+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2018-05-28T19:06:37+09:00</lastmod>
     <priority>0</priority>
   </url>
   

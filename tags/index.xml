@@ -7,35 +7,35 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu&lt;br&gt;All rights reserved.</copyright>
-    <lastBuildDate>Mon, 28 May 2018 23:09:58 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 28 May 2018 19:06:37 +0900</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Comment</title>
-      <link>/tags/comment/</link>
-      <pubDate>Mon, 28 May 2018 23:09:58 +0900</pubDate>
+      <title>Local</title>
+      <link>/tags/local/</link>
+      <pubDate>Mon, 28 May 2018 19:06:37 +0900</pubDate>
       
-      <guid>/tags/comment/</guid>
+      <guid>/tags/local/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Go</title>
-      <link>/tags/go/</link>
-      <pubDate>Mon, 28 May 2018 23:09:58 +0900</pubDate>
+      <title>Server</title>
+      <link>/tags/server/</link>
+      <pubDate>Mon, 28 May 2018 19:06:37 +0900</pubDate>
       
-      <guid>/tags/go/</guid>
+      <guid>/tags/server/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Hugo</title>
-      <link>/tags/hugo/</link>
-      <pubDate>Mon, 28 May 2018 16:06:37 +0900</pubDate>
+      <title>Syntax</title>
+      <link>/tags/syntax/</link>
+      <pubDate>Mon, 28 May 2018 23:09:58 +0900</pubDate>
       
-      <guid>/tags/hugo/</guid>
+      <guid>/tags/syntax/</guid>
       <description></description>
     </item>
     
