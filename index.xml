@@ -14,28 +14,28 @@
     
     <item>
       <title>Semicolons</title>
-      <link>/2018/05/semicolons/</link>
+      <link>/2018/05/29/semicolons/</link>
       <pubDate>Tue, 29 May 2018 12:08:20 +0900</pubDate>
       
-      <guid>/2018/05/semicolons/</guid>
+      <guid>/2018/05/29/semicolons/</guid>
       <description>The Go Programming Language Specifination - Semicolons와 Effective Go - Semicolons 부분을 정리하고 몇 가지 내용을 추가했습니다. C/C++, Java 등의 언어를 주로 사용하는 개발자가 혼돈하기 쉬운 내용입니다.</description>
     </item>
     
     <item>
       <title>Comments</title>
-      <link>/2018/05/comments/</link>
+      <link>/2018/05/28/comments/</link>
       <pubDate>Mon, 28 May 2018 23:09:58 +0900</pubDate>
       
-      <guid>/2018/05/comments/</guid>
+      <guid>/2018/05/28/comments/</guid>
       <description>Go 언어에 대한 문법, 예제, 분석, 다른 언어와의 실행 비교 등을 정리합니다. // single line comment /* multi line comment */</description>
     </item>
     
     <item>
       <title>Hugo Local Server 접속 방법</title>
-      <link>/2018/05/hugo-local-server-%EC%A0%91%EC%86%8D-%EB%B0%A9%EB%B2%95/</link>
+      <link>/2018/05/28/hugo-local-server/</link>
       <pubDate>Mon, 28 May 2018 19:06:37 +0900</pubDate>
       
-      <guid>/2018/05/hugo-local-server-%EC%A0%91%EC%86%8D-%EB%B0%A9%EB%B2%95/</guid>
+      <guid>/2018/05/28/hugo-local-server/</guid>
       <description>테마를 수정하거나 컨텐츠 작성 중 변경 사항을 확인하기 위해서 hugo server를 실행하면 배포하지 않고도 임시버전을 local 에서 확인 가능하다. $ hugo server 그런데 기본 주소</description>
     </item>
     
