@@ -89,6 +89,8 @@ a:visited {
   -webkit-margin-after: 1em;
   -webkit-margin-start: 0;
   -webkit-margin-end: 0;
+  margin-left: 0;
+  margin-right: 0;
   padding-left: 1em;
   border-left: 0.2em solid #cccccc;
   color: #999;
