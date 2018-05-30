@@ -10,14 +10,16 @@ body {
 /*
 Add transition to containers so they can push in and out.
 */
+/* prevent contents animation
 #layout,
+*/
 #menu,
 .menu-link {
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    -ms-transition: all 0.2s ease-out;
-    -o-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -ms-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
 }
 
 /*
@@ -169,7 +171,7 @@ small screens.
     z-index: 10;
     width: 2em;
     height: auto;
-    padding: 2.1em 1.6em;
+    padding: 1.8em 1.0em;
 }
 
     .menu-link:hover,
@@ -215,10 +217,12 @@ Hides the menu at `48em`, but modify this based on your app's needs.
         padding-right: 2em;
     }
 
+    
     #layout {
         padding-left: 150px; /* left col width "#menu" */
         left: 0;
     }
+    
     #menu {
         left: 150px;
     }
@@ -243,6 +247,8 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     */
     #layout.active {
         position: relative;
+        /* overwrap contents not push
         left: 150px;
+        */
     }
 }

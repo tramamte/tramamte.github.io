@@ -1,7 +1,5 @@
 html, body {
-  color: #555;
-  position: fixed;
-  top: 0; 
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
@@ -10,10 +8,13 @@ html, body {
   height: 100%;
   width: 100%;
   max-width: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
+
+  color: #555;
   font-size: 100%;
+  
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .header {
@@ -61,8 +62,8 @@ a:visited {
   transform: scaleX(0);
   -webkit-transform-origin: left center;
   transform-origin: left center;
-  -webkit-transition: all 0.15s ease-in-out 0s;
-  transition: all 0.15s ease-in-out 0s;
+  -webkit-transition: all 0.1s ease-in-out 0s;
+  transition: all 0.1s ease-in-out 0s;
 }
 
 #main article a:hover:before,
@@ -148,7 +149,12 @@ article > footer {
 
 #menu {
   background: #001520;
+  /* if set, memu bar can't be scrolled
   overflow: hidden;
+  */
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: auto;
 }
 
 #menu a {
@@ -190,7 +196,7 @@ article > footer {
 
 .menu-link {
   background: #001520;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .menu-link:hover,
