@@ -11,14 +11,11 @@ body {
 
   color: #555;
   font-size: 100%;
+  font-family: 'Raleway', 'Nanum Gothic', sans-serif;
   
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-}
-
-.header {
-  font-family: 'Raleway', 'Nanum Gothic', sans-serif;
 }
 
 .header h2 {
@@ -26,23 +23,9 @@ body {
 }
 
 a {
-  /*color: #3b8bba;*/
   color: #3b72ba;
   text-decoration: none;
 }
-
-/*
-a:hover,
-a:focus {
-  text-decoration: underline;
-}
-*/
-
-/*
-a:visited {
-  color: #265778;
-}
-*/
 
 #mask {  
   position: fixed;  
@@ -55,53 +38,47 @@ a:visited {
   display: none;  
 }
 
-#mask.active {
-  display: block;
-}
+  #mask.active {
+    display: block;
+  }
 
 #main a {
   position: relative;
 }
 
-#main article a:before,
-#main .post-meta a:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: #666;
-  visibility: hidden;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transform-origin: left center;
-  transform-origin: left center;
-  -webkit-transition: all 0.1s ease-in-out 0s;
-  transition: all 0.1s ease-in-out 0s;
-}
+  #main article a:before,
+  #main .post-meta a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #666;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
+    -webkit-transition: all 0.1s ease-in-out 0s;
+    transition: all 0.1s ease-in-out 0s;
+  }
 
-#main article a:hover:before,
-#main .post-meta a:hover:before {
-  visibility: visible;
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
-}
+  #main article a:hover:before,
+  #main .post-meta a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
 
 .small-print {
-  font-family: 'Raleway';
   font-size: 0.75em;
   margin: 0.6em;
   color: #808080;
 }
 
 .post-meta {
-  font-family: 'Raleway', 'Nanum Gothic', sans-serif;
   font-size: 0.9em;
-}
-
-.content {
-  font-family: 'Raleway', 'Nanum Gothic', sans-serif;
 }
 
 .content blockquote {
@@ -114,16 +91,12 @@ a:visited {
   padding-left: 1em;
   border-left: 0.2em solid #cccccc;
   color: #999;
-  /*
-  font-style: italic;
-  font-weight: bold;
-  */
 }
 
 code,
 .highlight > pre {
   font-family: 'Roboto Mono', monospace;
-  font-size: 0.95em;
+  font-size: 0.9em;
 }
 
 .highlight > pre {
@@ -133,12 +106,7 @@ code,
   padding-bottom: 0.5em;
 }
 
-article > header {
-  font-family: 'Raleway', 'Nanum Gothic', sans-serif;
-}
-
 article > footer {
-  font-family: 'Raleway', sans-serif;
   text-align: right;
 }
 
@@ -164,12 +132,6 @@ article > footer {
 
 #menu {
   background: #001520;
-  /* if set, memu bar can't be scrolled
-  overflow: hidden;
-  */
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: auto;
 }
 
 #menu a {
@@ -177,7 +139,6 @@ article > footer {
 }
 
 #menu .brand {
-  font-family: 'Raleway', sans-serif;
   font-weight: bold;
   font-size: 1.2em;
   letter-spacing: 0.1em;
@@ -185,12 +146,6 @@ article > footer {
   background: transparent;
   text-decoration: none;
   text-align: center;
-  /*margin: 0.5em;*/
-}
-
-#menu .pure-menu {
-  font-family: 'Raleway', sans-serif;
-  font-size: 1.0em;
 }
 
 #menu-section {
@@ -210,13 +165,12 @@ article > footer {
 }
 
 .menu-link {
-  background: #001520;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 21, 32, 0.3);
 }
 
 .menu-link:hover,
 .menu-link:focus {
-    background: #001520;
+  background: rgba(0, 21, 32, 1);
 }
 
 i {

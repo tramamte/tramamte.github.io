@@ -14,11 +14,11 @@ Add transition to containers so they can push in and out.
 #layout,
 #menu,
 .menu-link {
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    -ms-transition: all 0.2s ease-out;
-    -o-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -ms-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
 }
 
 /*
@@ -187,10 +187,10 @@ small screens.
     background: rgba(0,0,0,0.7);
     font-size: 10px;
     /* change this value to increase/decrease button size */
-    z-index: 10;
+    z-index: 999;
     width: 2em;
     height: auto;
-    padding: 2.1em 1.6em;
+    padding: 1.8em 1.0em;
 }
 
 .menu-link:hover,
