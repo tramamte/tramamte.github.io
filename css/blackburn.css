@@ -165,12 +165,18 @@ article > footer {
 }
 
 .menu-link,
-.menu-link:focus {
+.menu-link:focus,
+.menu-link:hover {
   background: rgba(0, 21, 32, 0.3);
 }
 
-.menu-link.active,
-.menu-link:hover {
+@media (hover: hover) {
+  .menu-link:hover {
+    background: rgba(0, 21, 32, 1);
+  }
+}
+
+.menu-link.active {
   background: rgba(0, 21, 32, 1);
 }
 
