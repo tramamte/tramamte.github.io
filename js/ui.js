@@ -3,7 +3,8 @@
     var layout   = document.getElementById('layout'),
         menu     = document.getElementById('menu'),
         menuLink = document.getElementById('menuLink'),
-        content  = document.getElementById('main');
+        //content  = document.getElementById('content'),
+        mask     = document.getElementById('mask');
 
     function toggleClass(element, className) {
         var classes = element.className.split(/\s+/),
@@ -29,6 +30,7 @@
 
         e.preventDefault();
         toggleClass(layout, active);
+        toggleClass(mask, active);
         toggleClass(menu, active);
         toggleClass(menuLink, active);
     }
@@ -37,7 +39,15 @@
         toggleAll(e);
     };
 
+    /*
     content.onclick = function(e) {
+        if (menu.className.indexOf('active') !== -1) {
+            toggleAll(e);
+        }
+    };
+    */
+
+    mask.onclick = function(e) {
         if (menu.className.indexOf('active') !== -1) {
             toggleAll(e);
         }
