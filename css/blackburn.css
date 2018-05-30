@@ -164,12 +164,13 @@ article > footer {
   bottom: 0
 }
 
-.menu-link {
+.menu-link,
+.menu-link:focus {
   background: rgba(0, 21, 32, 0.3);
 }
 
-.menu-link:hover,
-.menu-link:focus {
+.menu-link.active,
+.menu-link:hover {
   background: rgba(0, 21, 32, 1);
 }
 

@@ -15,10 +15,8 @@
             list.toggle(name, false);
         }
 
-        var off = true;
         if (length === list.length) {
             list.add(name);
-            off = false;
         } 
 
         if (list.length === 0) {
@@ -27,11 +25,6 @@
             element.classList = list;
         }
 
-        // clear focus at menuLink
-        if (off === true && element === menuLink) {
-            element.blur();
-        }
-        
         /*
         var classes = element.className.split(/\s+/),
             length = classes.length,
