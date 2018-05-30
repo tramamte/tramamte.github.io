@@ -6,23 +6,54 @@
         //content  = document.getElementById('content'),
         mask     = document.getElementById('mask');
 
-    function toggleClass(element, className) {
+    function toggleClass(element, name) {
+        var list = element.classList,
+            length = list.length,
+            i = 0
+        
+        if (length !== 0 && list.contains(name)) {
+            list.toggle(name, false);
+        }
+
+        var off = true;
+        if (length === list.length) {
+            list.add(name);
+            off = false;
+        } 
+
+        if (list.length === 0) {
+            element.removeAttribute('class');
+        } else {
+            element.classList = list;
+        }
+
+        // clear focus at menuLink
+        if (off === true && element === menuLink) {
+            element.blur();
+        }
+        
+        /*
         var classes = element.className.split(/\s+/),
             length = classes.length,
             i = 0;
 
         for(; i < length; i++) {
-          if (classes[i] === className) {
+          if (classes[i] === name) {
             classes.splice(i, 1);
             break;
           }
         }
         // The className is not found
         if (length === classes.length) {
-            classes.push(className);
+            classes.push(name);
         }
-
-        element.className = classes.join(' ');
+   
+        if (classes.length === 0) {
+            element.className = '';
+        } else {
+            element.className = classes.join(' ');
+        }
+        */
     }
 
     function toggleAll(e) {
