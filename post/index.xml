@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu&lt;br&gt;All rights reserved.</copyright>
-    <lastBuildDate>Thu, 31 May 2018 12:49:28 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 31 May 2018 12:55:14 +0900</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker container에서 image 생성</title>
+      <link>/2018/05/31/make-image-from-container/</link>
+      <pubDate>Thu, 31 May 2018 12:55:14 +0900</pubDate>
+      
+      <guid>/2018/05/31/make-image-from-container/</guid>
+      <description>개인적으로 Docker는 이것 저것 다양한 언어나 도구들을 시험하는 용도로도 많이 사용한다. 새로운 것을 보면 한 번 설치해 사용해 본 후 삭제하는 경우도 많은데, 흔</description>
+    </item>
     
     <item>
       <title>Docker Root Directory 변경</title>
