@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="간단하거나, 복잡하거나. 세미콜론.">
-  <meta name="generator" content="Hugo 0.40.3" />
+  <meta name="generator" content="Hugo 0.41" />
 
   <title>Fun - Semicolons &middot; Awesome Patrick</title>
 
@@ -275,7 +275,7 @@
 
 <hr />
 
-<p><a href="https://tramamte.github.io/2018/05/29/semicolons/">Semicolons</a> 글과 관련된 fun fun한 글입니다.</p>
+<p><a href="/2018/05/29/semicolons/">Semicolons</a> 과 관련된 잡스러운 글입니다.</p>
 
 <hr />
 
@@ -287,7 +287,7 @@
 
 <p>필요가 없다는 것이지, 쓰면 안되는 것은 아니다. 말 그대로 <em>do not need</em> 이지 <em>must not</em> 이 아니다.</p>
 
-<p>자동으로 세미콜론이 추가되는 곳에 명시적으로 세미콜론을 써주면 lexer는 자동으로 추가하는 작업을 수행하지 않으며, 이 경우 소스코드가 세미콜론 언어와 굉장히 유사한 모양을 하게 된다. - <em>&lsquo;굳이 이 짓을 왜 하는거냐?&rsquo;</em></p>
+<p>자동으로(암시적으로; implicitly) 세미콜론이 추가되는 곳에 명시적(explicitly)으로 세미콜론을 써주면 lexer는 자동으로 추가하는 작업을 수행하지 않으며, 이 경우 소스코드가 세미콜론 언어와 굉장히 유사한 모양을 하게 된다. - <em>&lsquo;굳이 이 짓을 왜 하는거냐?&rsquo;</em></p>
 
 <p>다시 한 번 lexer에 의해 세미콜론이 자동으로 삽입되는 규칙을 보면,</p>
 
@@ -389,7 +389,17 @@
 
 <h2 id="어떤-코드가-아름다운가">어떤 코드가 아름다운가?</h2>
 
-<p>어떤 코드가 더 아름다운가에 대한 케케묵은 논쟁을 겨우 세미콜론만으로 꺼내자는 것은 아니지만, 개인적으로는 <em>&ldquo;모든 가능성은 열려 있어. 너의 꿈을 펼쳐봐&rdquo;</em> 를 주장하는 Perl보다는 <em>&ldquo;이 길이 꽃길이야. 이 길로만 가면 아름다운 세상이 펼쳐질거야&rdquo;</em> 를 주장하는 Python의 철학을 좀 더 지지하는 편이다. - <em>Python이 이상한 언어처럼 보이고, 나는 꼰대로 보이는 것은 왜 때문이지?</em></p>
+<p>어떤 코드가 더 아름다운가에 대한 케케묵은 논쟁을 겨우 세미콜론만으로 꺼내자는 것은 아니지만, 개인적으로는 <em>&ldquo;모든 가능성은 열려 있어. 너의 꿈을 펼쳐봐&rdquo;</em> 를 주장하는 Perl보다는 <em>&ldquo;이 길이 꽃길이야. 이 길로만 가면 아름다운 세상이 펼쳐질거야&rdquo;</em> 를 주장하는 Python의 철학을 좀 더 지지하는 편이다. - <em>과격하긴 하다. 부디 Python에 대한 부정적 생각을 갖지 않길.</em></p>
+
+<hr />
+
+<p><strong>Perl의 철학</strong></p>
+
+<p><em>TIMTOWTDI (There Is More Than One Way To Do It.)</em></p>
+
+<hr />
+
+<p><strong>Python의 철학</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#f92672">import</span> this
 The Zen of Python, by Tim Peters
 
@@ -412,9 +422,11 @@ Although never <span style="color:#f92672">is</span> often better than <span sty
 If the implementation <span style="color:#f92672">is</span> hard to explain, it<span style="color:#e6db74">&#39;s a bad idea.</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#e6db74">If the implementation is easy to explain, it may be a good idea.</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#e6db74">Namespaces are one honking great idea -- let&#39;</span>s do more of those<span style="color:#960050;background-color:#1e0010">!</span></code></pre></div>
+<hr />
+
 <p>Go는 디렉토리 구조 등 어떤 면에서는 개발자의 자유도를 구속하는 측면이 있다. 하지만 또 다른 면에서는 <em>&lsquo;그건 구속하면서 이건 왜 이렇게 헐렁해?&rsquo;</em> 라는 의문을 갖게 하기도 한다. (사실 code convention만의 얘기라면 강력한 fomatter가 있긴 하다.)</p>
 
-<p>&lsquo;어떤 코드가 아름다운가?&lsquo;는 각자의 답이 다른겠지만 &lsquo;어떤 코드가 보기 좋은가(편한가)?&lsquo;에 대한 답은 대부분의 개발자가 비슷하지 않을까?</p>
+<p>&lsquo;어떤 코드가 아름다운가?&lsquo;는 각자의 답이 다른겠지만 &lsquo;어떤 코드가 보기 좋은가?&lsquo;에 대한 답은 대부분의 개발자가 비슷하지 않을까? <strong>아름답다</strong>의 기준에는 분명 <strong>보기 좋다</strong>도 하나의 요소로 포함된다.</p>
 
 
   
