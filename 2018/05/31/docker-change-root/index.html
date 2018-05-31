@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ubuntu에서 Docker Root Directory 변경하기">
+  <meta name="generator" content="Hugo 0.41" />
+
+  <title>Docker Root Directory 변경 &middot; Awesome Patrick</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="/css/blackburn.css">
+
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/zoom.css">
+  <script src="/js/zoom.js"></script>
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700|Raleway:400,700|Roboto+Mono" rel="stylesheet">
+  
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+
+<div id="menu">
+  <section id="menu-section">
+    <header>
+      
+  <a class="pure-menu-heading brand" href="/">Awesome<br>Patrick</a>
+
+
+    </header>
+    <section>
+      <div class="pure-menu">
+        <ul class="pure-menu-list">
+          
+          
+            <li class="pure-menu-item">
+              <a class="pure-menu-link" href="/"><i class='fa fa-home fa-fw'></i>Home</a>
+          
+            </li>
+          
+          
+            <li class="pure-menu-item">
+              <a class="pure-menu-link" href="/topics/"><i class='fa fa-folder fa-fw'></i>Topics</a>
+          
+            </li>
+          
+          
+            <li class="pure-menu-item">
+              <a class="pure-menu-link" href="/tags/"><i class='fa fa-tag fa-fw'></i>Tags</a>
+          
+            </li>
+          
+          
+            <li class="pure-menu-item">
+              <a class="pure-menu-link" href="/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+          
+            </li>
+          
+          
+            <li class="pure-menu-item">
+              <a class="pure-menu-link" href="/about/"><i class='fa fa-user fa-fw'></i>About</a>
+          
+            </li>
+          
+        </ul>
+      </div>
+      <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+    </li>
+    
+
+  </ul>
+</div>
+
+    </section>
+    <footer>
+    <div class="small-print">
+  <small>&copy2018 Patrick Yu<br>All rights reserved.</small>
+</div>
+<div class="small-print">
+  <small>Powered by<a href="https://gohugo.io/" target="_blank">Hugo</a>with</small>
+  <small>modified<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a>theme.</small>
+</div>
+
+    </footer>
+  </section>
+</div>
+
+  
+  <div id="mask"></div>
+  <div id="main">
+
+
+<div class="header">
+  <h1>Docker Root Directory 변경</h1>
+  <h2>Ubuntu에서 Docker Root Directory 변경하기</h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>31 May 2018, 12:49</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="/topics/docker">docker</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="/tags/root-directory">root directory</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="/tags/systemd">systemd</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  
+
+<p><a href="https://blog.docker.com/2015/07/new-apt-and-yum-repos/">Docker blog</a>에 있는 내용에 따라 Ubuntu에 apt repository를 추가하고 Docker를 설치한 경우 image나 container 등이 저장되는 기본 경로는 <code>/var/lib/docker</code>이다.</p>
+
+<h2 id="1단계-검색">1단계 검색</h2>
+
+<p>가장 많이 나오는 내용은 Docker 기본 설정파일(<code>/etc/default/docker</code>)에 <code>graph</code> option을 추가해 경로를 변경하라는 것이다. 거의가 3~4년 전 글들이라 찜찜하긴 하지만 일단 따라가 본다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ls /etc/default/docker
+/etc/default/docker</code></pre></div>
+<p>설정파일이 있다! 열어보면,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~~~
+<span style="color:#75715e"># THIS FILE DOES NOT APPLY TO SYSTEMD
+</span><span style="color:#75715e"></span>~~~</code></pre></div>
+<p>Ubuntu가 15.10 버전부터 systemd를 기본으로 채택했으니 지금 사용하는 버전 (16.04)에서는 안 될 것 같지만&hellip;</p>
+
+<p><strong>역시 안 된다.</strong></p>
+
+<h2 id="2단계-또-검색">2단계 또 검색</h2>
+
+<p><a href="https://success.docker.com/article/how-do-i-set-the-docker-daemon-options">Docker Success Center</a>에 글이 있다. systemd service 파일을 수정하는 방식이다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ systemctl edit docker.service</code></pre></div>
+<p>두둥~ 아무 내용이 없다. 원본이 어떻게 생긴지 알아야 수정을 해도 할 것 아닌가.</p>
+
+<hr />
+
+<p>systemctl edit 명령은 원본 service 파일을 유지하며 unit 파일을 만들어 일부를 변경하는 기능이다. 자세한 사항은 <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/sect-managing_services_with_systemd-unit_files">여기</a> 참조.</p>
+
+<hr />
+
+<p><strong>또 실패</strong></p>
+
+<h2 id="3단계-service-파일-수정-성공">3단계 Service 파일 수정 (성공!)</h2>
+
+<p>결국 docker.service 파일을 찾아 직접 수정해서 성공했다. - <em>그렇다. 이 글은 단순히 Docker의 root directory를 변경하는 내용이다.</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ systemctl status docker
+docker.service - Docker Application Container Engine
+Loaded: loaded <span style="color:#f92672">(</span>/lib/systemd/system/docker.service; enabled; vendor preset: enabled<span style="color:#f92672">)</span>
+...</code></pre></div>
+<p>docker.service 파일은 <code>/lib/systemd/system/docker.service</code> 여기 있다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 아래 부분을 찾아
+</span><span style="color:#75715e"></span>ExecStart<span style="color:#f92672">=</span>/usr/bin/dockerd -H fd://
+<span style="color:#75715e"># 이렇게 고친다.
+</span><span style="color:#75715e"></span>ExecStart<span style="color:#f92672">=</span>/usr/bin/dockerd -H fd:// -g <span style="color:#f92672">{</span>root directory<span style="color:#f92672">}</span></code></pre></div>
+<p>그런데 dockerd의 option을 보면 <code>-g</code> flag가 없다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dockerd -g --help
+WARN<span style="color:#f92672">[</span><span style="color:#ae81ff">0000</span><span style="color:#f92672">]</span> the <span style="color:#e6db74">&#34;-g / --graph&#34;</span> flag is deprecated. Please use <span style="color:#e6db74">&#34;--data-root&#34;</span> instead</code></pre></div>
+<p><code>-g</code> / <code>--graph</code> flag는 deprecate 됐으니 <code>--data-root</code>를 사용하란다.</p>
+
+<p><a href="https://docs.docker.com/release-notes/docker-ce/#17050-ce-2017-05-04">Docker release note</a>를 보면 17.05.0-ce 버전에 해당 flag가 deprecate 되었다.</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="/2018/05/30/fun-semicolons/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="/2018/05/30/fun-semicolons/">Fun - Semicolons</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'awesome-patrick';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="/js/ui.js"></script>
+
+
+
+
+
+
+</body>
+</html>
+

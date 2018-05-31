@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu&lt;br&gt;All rights reserved.</copyright>
-    <lastBuildDate>Wed, 30 May 2018 23:08:20 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 31 May 2018 12:49:28 +0900</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker Root Directory 변경</title>
+      <link>/2018/05/31/docker-change-root/</link>
+      <pubDate>Thu, 31 May 2018 12:49:28 +0900</pubDate>
+      
+      <guid>/2018/05/31/docker-change-root/</guid>
+      <description>Docker blog에 있는 내용에 따라 Ubuntu에 apt repository를 추가하고 Docker를 설치한 경우 image나 container 등이 저장되는 기본 경로는 /var</description>
+    </item>
     
     <item>
       <title>Fun - Semicolons</title>

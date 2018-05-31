@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Root Directory on Awesome Patrick</title>
+    <link>/tags/root-directory/</link>
+    <description>Recent content in Root Directory on Awesome Patrick</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy2018 Patrick Yu&lt;br&gt;All rights reserved.</copyright>
+    <lastBuildDate>Thu, 31 May 2018 12:49:28 +0900</lastBuildDate>
+    
+	<atom:link href="/tags/root-directory/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker Root Directory 변경</title>
+      <link>/2018/05/31/docker-change-root/</link>
+      <pubDate>Thu, 31 May 2018 12:49:28 +0900</pubDate>
+      
+      <guid>/2018/05/31/docker-change-root/</guid>
+      <description>Docker blog에 있는 내용에 따라 Ubuntu에 apt repository를 추가하고 Docker를 설치한 경우 image나 container 등이 저장되는 기본 경로는 /var</description>
+    </item>
+    
+  </channel>
+</rss>
