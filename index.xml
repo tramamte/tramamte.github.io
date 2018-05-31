@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu&lt;br&gt;All rights reserved.</copyright>
-    <lastBuildDate>Thu, 31 May 2018 12:55:14 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 31 May 2018 13:05:57 +0900</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Packages</title>
+      <link>/2018/05/31/packages/</link>
+      <pubDate>Thu, 31 May 2018 13:05:57 +0900</pubDate>
+      
+      <guid>/2018/05/31/packages/</guid>
+      <description>모든 Go 프로그램은 package들로 구성된다. 프로그램은 main package에서 시작한다. 관례상 package 이름은 import 경로의 마지막 element로 한다. Package 작성</description>
+    </item>
     
     <item>
       <title>Docker container에서 image 생성</title>

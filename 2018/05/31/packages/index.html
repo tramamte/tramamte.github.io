@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="description" content="패키지">
   <meta name="generator" content="Hugo 0.41" />
 
-  <title>Awesome Patrick</title>
+  <title>Packages &middot; Awesome Patrick</title>
 
   
   
@@ -46,8 +46,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
  
-  
-  <link rel="alternate" type="application/rss+xml" title="Awesome Patrick" href="/index.xml" />
   
 
   
@@ -233,17 +231,12 @@
 
 
 <div class="header">
-  <h1>Awesome Patrick</h1>
-  <h2>Patrick&#39;s ramblings</h2>
+  <h1>Packages</h1>
+  <h2>패키지</h2>
 </div>
-
 <div class="content">
-  
-    <article>
-  <header>
-    <h2><a href="/2018/05/31/packages/">Packages</a></h2>
 
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
@@ -278,197 +271,69 @@
 
 </div>
 
-  </header>
+  <blockquote>
+<p>모든 Go 프로그램은 package들로 구성된다.</p>
 
-  <p>
-  모든 Go 프로그램은 package들로 구성된다. 프로그램은 main package에서 시작한다. 관례상 package 이름은 import 경로의 마지막 element로 한다. Package 작성 ...    
-  </p>
+<p>프로그램은 <code>main</code> package에서 시작한다.</p>
 
-  
-  <footer>
-    <a href="/2018/05/31/packages/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
+<p>관례상 package 이름은 import 경로의 마지막 element로 한다.</p>
+</blockquote>
 
-  
-    <article>
-  <header>
-    <h2><a href="/2018/05/31/make-image-from-container/">Docker container에서 image 생성</a></h2>
+<p>Package 작성 규정 (clause)은 다음과 같다. <a href="https://golang.org/ref/spec">Go spec.</a>의 문법은 EBNF (Extended Backus-Naur Form)을 따르니 익숙치 않은 경우 <a href="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form">여기</a>를 참조한다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">PackageClause = &#34;package&#34; PackageName
+PackageName   = identifier
+identifier    = letter { letter | unicode_digit }
+letter        = unicode_letter | &#34;_&#34;</pre></div>
+<p>문자나 숫자를 쓸 수 있고, 시작은 문자로 해야하며 문자는 _ (undersocre)를 포함한다. 단, 위 규정에 어긋나는 것은 아니나 <em>blank identifier - underscore만 단독으로 쓴 경우 -</em> 는 package 이름으로 사용할 수 없다.</p>
 
-    <div class="post-meta">
+<p>같은 package 이름을 갖는 파일들이 하나의 package를 구성하고, 이 파일들은 같은 경로에 두는 것이 좋다.</p>
 
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>31 May 2018, 12:55</time>
-  </div>
 
   
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
     
-      <a class="post-taxonomy-topic" href="/topics/docker">docker</a>
+    <a href="/2018/05/31/make-image-from-container/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
+  <div class="pure-u-10-24">
     
-      <a class="post-taxonomy-tag" href="/tags/image">image</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="/tags/container">container</a>
+    <nav class="prev">
+      <a href="/2018/05/31/make-image-from-container/">Docker container에서 image 생성</a>
+    </nav>
     
   </div>
-  
-  
-
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
 </div>
 
-  </header>
 
-  <p>
-  개인적으로 Docker는 이것 저것 다양한 언어나 도구들을 시험하는 용도로도 많이 사용한다. 새로운 것을 보면 한 번 설치해 사용해 본 후 삭제하는 경우도 많은데, 흔 ...    
-  </p>
 
   
-  <footer>
-    <a href="/2018/05/31/make-image-from-container/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
 
-  
-    <article>
-  <header>
-    <h2><a href="/2018/05/31/docker-change-root/">Docker Root Directory 변경</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>31 May 2018, 12:49</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
+(function() {
     
-      <a class="post-taxonomy-topic" href="/topics/docker">docker</a>
     
-  </div>
-  
-  
+    if (window.location.hostname == "localhost")
+        return;
 
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="/tags/root-directory">root directory</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="/tags/systemd">systemd</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Docker blog에 있는 내용에 따라 Ubuntu에 apt repository를 추가하고 Docker를 설치한 경우 image나 container 등이 저장되는 기본 경로는 /var ...    
-  </p>
-
-  
-  <footer>
-    <a href="/2018/05/31/docker-change-root/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="/2018/05/30/fun-semicolons/">Fun - Semicolons</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>30 May 2018, 23:08</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="/topics/go">go</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="/tags/fun-go">fun-go</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Semicolons 과 관련된 잡스러운 글입니다. Go는 lexer가 세미콜론을 자동으로 삽입하기 때문에 쓸 필요가 없다. Go 언어의 장점 중 하나로 얘기되지만, Go를 처음 접하는 ...    
-  </p>
-
-  
-  <footer>
-    <a href="/2018/05/30/fun-semicolons/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-
-  
-
-
-<nav class="pagination" role="pagination">
-  
-  <i class="fa fa-chevron-left"></i>
-  
-  <span>&nbsp;1 / 2&nbsp;</span>
-  
-  <a href="/page/2/"><i class="fa fa-chevron-right"></i></a>
-  
-</nav>
-
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'awesome-patrick';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
 </div>
