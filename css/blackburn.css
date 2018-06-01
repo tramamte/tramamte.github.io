@@ -114,8 +114,27 @@ article > footer {
   text-align: right;
 }
 
+
 figure {
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
   margin: 0;
+}
+
+figcaption > h4,
+figcaption > p {
+  line-height: 1.3em;
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  margin: 0;
+}
+
+figcaption > p {
+  color: silver;
 }
 
 .prev-next-post {
