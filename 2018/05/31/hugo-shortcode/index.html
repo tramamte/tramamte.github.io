@@ -426,8 +426,6 @@ or
 <h3 id="2-pure-table-테이블-삽입">2. <code>pure_table</code>: 테이블 삽입</h3>
 
 <p>markdown table은 다른 <code>&lt;table&gt;</code> tag와의 충돌 문제로 외곽선이 없음</p>
-
-<p><strong>반응형으로 동작하지 않으니 폭 넓어지는 것에 주의</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; pure_table
   &#34;columnName1|columnName2|...|columnName99&#34;
   &#34;dataValue1|dataValue2|...|dataValue99&#34;
@@ -437,61 +435,72 @@ or
 
 
 
+<div style="
+  border-spacing: 0;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  overflow: auto;
+  display: block;
+  ">
 <table class="pure-table pure-table-striped">
   <thead><tr>
-    
-      <th>columnName1</th>
-    
-      <th>columnName2</th>
-    
-      <th>...</th>
-    
-      <th>columnName99</th>
-    
+	
+	  <th>columnName1</th>
+	
+	  <th>columnName2</th>
+	
+	  <th>...</th>
+	
+	  <th>columnName99</th>
+	
   </thead></tr>
   <tbody>
   
-    <tr>
-      
-      
-        <td>dataValue1</td>
-      
-        <td>dataValue2</td>
-      
-        <td>...</td>
-      
-        <td>dataValue99</td>
-      
-    </tr>
+	<tr>
+	  
+	  
+		<td>dataValue1</td>
+	  
+		<td>dataValue2</td>
+	  
+		<td>...</td>
+	  
+		<td>dataValue99</td>
+	  
+	</tr>
   
-    <tr>
-      
-      
-        <td>dataValue1</td>
-      
-        <td>dataValue2</td>
-      
-        <td>...</td>
-      
-        <td>dataValue99</td>
-      
-    </tr>
+	<tr>
+	  
+	  
+		<td>dataValue1</td>
+	  
+		<td>dataValue2</td>
+	  
+		<td>...</td>
+	  
+		<td>dataValue99</td>
+	  
+	</tr>
   
-    <tr>
-      
-      
-        <td>dataValue1</td>
-      
-        <td>dataValue2</td>
-      
-        <td>...</td>
-      
-        <td>dataValue99</td>
-      
-    </tr>
+	<tr>
+	  
+	  
+		<td>dataValue1</td>
+	  
+		<td>dataValue2</td>
+	  
+		<td>...</td>
+	  
+		<td>dataValue99</td>
+	  
+	</tr>
   
   </tbody>
 </table>
+</div>
+
+
 
 <h3 id="3-fluid-imgs-이미지-삽입">3. <code>fluid_imgs</code>: 이미지 삽입</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; fluid_imgs
