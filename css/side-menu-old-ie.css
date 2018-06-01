@@ -92,7 +92,7 @@ appears on the left side of the page.
     top: 0;
     left: 0;
     bottom: 0;
-    z-index: 1000;
+    z-index: 100;
     /* so the menu or its navicon stays above all content */
     background: #191818;
     overflow-y: auto;
@@ -187,7 +187,7 @@ small screens.
     background: rgba(0,0,0,0.7);
     font-size: 10px;
     /* change this value to increase/decrease button size */
-    z-index: 999;
+    z-index: 99;
     width: 2em;
     height: auto;
     padding: 1.8em 1.0em;

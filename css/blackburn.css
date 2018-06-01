@@ -33,7 +33,7 @@ a {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 100; /* menu and button are 1000 */ 
+  z-index: 98; /* menu and button are 1000 */ 
   background-color: rgba(0, 0, 0, 0.5); 
   display: none;  
 }
@@ -93,6 +93,10 @@ a {
   color: #999;
 }
 
+.content img {
+  max-width: 100%;
+}
+
 code,
 .highlight > pre {
   font-family: 'Roboto Mono', monospace;
@@ -108,6 +112,10 @@ code,
 
 article > footer {
   text-align: right;
+}
+
+figure {
+  margin: 0;
 }
 
 .prev-next-post {

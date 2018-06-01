@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hugo 기본 및 추가 shortcode 사용법">
+  <meta name="generator" content="Hugo 0.41" />
+
+  <title>Blog 작성 참고자료 &middot; Awesome Patrick</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="/css/blackburn.css">
+
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/zoom.css">
+  <script src="/js/zoom.js"></script>
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700|Raleway:400,700|Roboto+Mono" rel="stylesheet">
+  
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+
+<div id="menu">
+  <section id="menu-section">
+    <header>
+      
+  <a class="pure-menu-heading brand" href="/">Awesome<br>Patrick</a>
+
+
+    </header>
+    <section>
+      <div class="pure-menu">
+        <ul class="pure-menu-list">
+          
+          
+            <li class="pure-menu-item">
+              <a class="pure-menu-link" href="/"><i class='fa fa-home fa-fw'></i>Home</a>
+          
+            </li>
+          
+          
+            <li class="pure-menu-item">
+              <a class="pure-menu-link" href="/topics/"><i class='fa fa-folder fa-fw'></i>Topics</a>
+          
+            </li>
+          
+          
+            <li class="pure-menu-item">
+              <a class="pure-menu-link" href="/tags/"><i class='fa fa-tag fa-fw'></i>Tags</a>
+          
+            </li>
+          
+          
+            <li class="pure-menu-item">
+              <a class="pure-menu-link" href="/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+          
+            </li>
+          
+          
+            <li class="pure-menu-item">
+              <a class="pure-menu-link" href="/about/"><i class='fa fa-user fa-fw'></i>About</a>
+          
+            </li>
+          
+        </ul>
+      </div>
+      <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+    </li>
+    
+
+  </ul>
+</div>
+
+    </section>
+    <footer>
+    <div class="small-print">
+  <small>&copy2018 Patrick Yu<br>All rights reserved.</small>
+</div>
+<div class="small-print">
+  <small>Powered by<a href="https://gohugo.io/" target="_blank">Hugo</a>with</small>
+  <small>modified<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a>theme.</small>
+</div>
+
+    </footer>
+  </section>
+</div>
+
+  
+  <div id="mask"></div>
+  <div id="main">
+
+
+<div class="header">
+  <h1>Blog 작성 참고자료</h1>
+  <h2>Hugo 기본 및 추가 shortcode 사용법</h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>31 May 2018, 22:20</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="/topics/hugo">hugo</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="/tags/shortcode">shortcode</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  
+
+<hr />
+
+<p>Awesome Patrick 글 작성을 위해 개인적으로 참고할 내용을 정리한 글입니다.</p>
+
+<hr />
+
+<h2 id="shortcode-사용법">Shortcode 사용법</h2>
+
+<p><strong>Markdown 문법과 같이 사용할 수 있는 shortcode</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {% shortcode_name %}} **Contents** { {% /shortcode_name %}}</pre></div>
+<p><strong>Markdown 사용하지 않는 shortcode</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; shortcode_name &gt;}} &lt;b&gt;Contents&lt;/b&gt; { {&lt; /shortcode_name &gt;}}</pre></div>
+<p><br></p>
+
+<h2 id="hugo-built-in-shortcodes">Hugo built-in shortcodes</h2>
+
+<h3 id="1-figure-이미지-삽입">1. <code>figure</code>: 이미지 삽입</h3>
+
+<ul>
+<li><code>src</code> : image URL</li>
+<li><code>height</code>, <code>width</code></li>
+<li><code>link</code>: hyperlink destination URL</li>
+<li><code>target</code>: <code>target</code> attribute if <code>link</code> parameter is set.</li>
+<li><code>alt</code>, <code>title</code>, <code>caption</code></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; figure src=&#34;/post/hugo/sky.jpg&#34; width=&#34;300&#34; caption=&#34;Caption: Original resolution is 1880 x 1253&#34; title=&#34;Title: Sky&#34;&gt;}}</pre></div>
+
+<figure>
+    
+        <img src="/post/hugo/sky.jpg" alt="Caption: Original resolution is 1880 x 1253" width="300" />
+    
+    
+    <figcaption>
+        <h4>Title: Sky</h4>
+        <p>
+        Caption: Original resolution is 1880 x 1253
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<p>아래는 markdown을 이용한 이미지 삽입 (두 경우 모두 max-width: 100%)</p>
+
+<p><img src="/post/hugo/sky.jpg" alt="img" /></p>
+
+<h3 id="2-highlight-syntax-highlighting">2. <code>highlight</code>: syntax highlighting</h3>
+
+<ul>
+<li><code>linenos</code>: <code>table</code> or <code>inline</code></li>
+<li><code>linenostart</code>: default 1</li>
+<li><code>hl_lines</code>: highlight lines (ex: 3-8 10-20)</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; <span style="color:#a6e22e">highlight</span> <span style="color:#66d9ef">go</span> <span style="color:#e6db74">&#34;linenos=table, linenostart=10, hl_lines=3 6&#34;</span> &gt;}}
+<span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Hello, Go&#34;</span>)
+}
+{ {&lt; <span style="color:#f92672">/</span><span style="color:#a6e22e">highlight</span> &gt;}}</pre></div>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span>
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+<span style="display:block;width:100%;background-color:#3c3d38">	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Hello, Go&#34;</span>)
+</span>}</code></pre></td></tr></table>
+</div>
+</div>
+
+<h3 id="3-ref-relref-링크-url-생성">3. <code>ref</code>, <code>relref</code>: 링크 URL 생성</h3>
+
+<ul>
+<li>markdown 파일을 이용해 절대, 상대 경로 자동 성성</li>
+<li>markdown 파일 위치는 content/ directory 기준</li>
+<li>전체에 같은 파일 이름이 하나밖에 없다면 파일 이름만 입력도 가능</li>
+</ul>
+
+<h4 id="making-anchor">3.1 Anchor 만들기 (#making-anchor)</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">## Alpha 101 {#alpha}
+## Version 1.0 {#version-1-dot-0}</pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">[Go to making-anchor]({ {&lt; relref &#34;#making-anchor&#34; &gt;}})</pre></div>
+<p><a href="#making-anchor">Go to making-anchor</a></p>
+
+<h3 id="4-youtube-youtube-동영상-삽입">4. <code>youtube</code>: Youtube 동영상 삽입</h3>
+
+<ul>
+<li><code>id</code>, <code>autoplay</code></li>
+</ul>
+
+<p><code>https://www.youtube.com/watch?v=w7Ft2ymGmfc</code> 영상의 경우,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; youtube w7Ft2ymGmfc &gt;}}
+
+or
+
+{ {&lt; youtube id=&#34;w7Ft2ymGmfc&#34; autoplay=&#34;true&#34; &gt;}}</pre></div>
+<p><br></p>
+
+<h2 id="추가-shortcodes">추가 shortcodes</h2>
+
+<h3 id="1-zimg-확대-가능한-이미지-삽입">1. <code>zimg</code>: 확대 가능한 이미지 삽입</h3>
+
+<p>기본 사용법은 <code>figure</code>와 동일하나 <code>link</code>, <code>target</code>은 지원하지 않고, <code>mouse-title</code> parameter 추가</p>
+
+<ul>
+<li><code>mouse-title</code>: 이미지 위에 마우스를 올렸을 때 나타나는 문구 (default: click to zoom)</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; zimg src=&#34;/post/hugo/sky.jpg&#34; width=&#34;300&#34; caption=&#34;Caption: Original resolution is 1880 x 1253&#34; title=&#34;Title: Sky&#34; mouse-title=&#34;ZOOM&#34; &gt;}}</pre></div>
+
+<figure>
+  <img
+	src="/post/hugo/sky.jpg"
+	
+	
+	width="300"
+	
+	
+	
+	title="ZOOM"
+	
+	data-action="zoom"
+	>
+	
+	<figurecaption>
+	
+	<h4>Title: Sky</h4>
+	
+	
+	<p>Caption: Original resolution is 1880 x 1253</p>
+	
+	</figurecaption>
+	
+</figure>
+
+
+<h3 id="2-pure-table-테이블-삽입">2. <code>pure_table</code>: 테이블 삽입</h3>
+
+<p>markdown table은 다른 <code>&lt;table&gt;</code> tag와의 충돌 문제로 외곽선이 없음</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; pure_table
+  &#34;columnName1|columnName2|...|columnName99&#34;
+  &#34;dataValue1|dataValue2|...|dataValue99&#34;
+  &#34;dataValue1|dataValue2|...|dataValue99&#34;
+  &#34;dataValue1|dataValue2|...|dataValue99&#34;
+}}</pre></div>
+
+
+
+<table class="pure-table pure-table-striped">
+  <thead><tr>
+    
+      <th>columnName1</th>
+    
+      <th>columnName2</th>
+    
+      <th>...</th>
+    
+      <th>columnName99</th>
+    
+  </thead></tr>
+  <tbody>
+  
+    <tr>
+      
+      
+        <td>dataValue1</td>
+      
+        <td>dataValue2</td>
+      
+        <td>...</td>
+      
+        <td>dataValue99</td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td>dataValue1</td>
+      
+        <td>dataValue2</td>
+      
+        <td>...</td>
+      
+        <td>dataValue99</td>
+      
+    </tr>
+  
+    <tr>
+      
+      
+        <td>dataValue1</td>
+      
+        <td>dataValue2</td>
+      
+        <td>...</td>
+      
+        <td>dataValue99</td>
+      
+    </tr>
+  
+  </tbody>
+</table>
+
+<h3 id="3-fluid-imgs-이미지-삽입">3. <code>fluid_imgs</code>: 이미지 삽입</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; fluid_imgs
+  &#34;class|src|alt&#34;
+  &#34;class|src|alt&#34;
+&gt;}}</pre></div>
+<p><a href="http://yoshiharuyamashita.com/post/hugo-shortcode-to-show-multiple-images/">여기</a> 참조</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="/2018/05/31/packages/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="/2018/05/31/packages/">Packages</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script>
+	
+
+	
+
+
+	(function() { 
+		var d = document, s = d.createElement('script');
+		s.src = 'https://' + 'awesome-patrick' + '.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+	})();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+</div>
+</div>
+<script src="/js/ui.js"></script>
+
+
+
+
+
+
+</body>
+</html>
+
