@@ -131,10 +131,11 @@ figcaption > p {
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
   margin: 0;
+  font-size: 0.85em;
 }
 
 figcaption > p {
-  color: silver;
+  color: #aaa;
 }
 
 .prev-next-post {
