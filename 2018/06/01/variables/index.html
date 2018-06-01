@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="description" content="변수">
   <meta name="generator" content="Hugo 0.41" />
 
-  <title>Go &middot; Awesome Patrick</title>
+  <title>Variables &middot; Awesome Patrick</title>
 
   
   
@@ -46,8 +46,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
  
-  
-  <link rel="alternate" type="application/rss+xml" title="Awesome Patrick" href="/topics/go/index.xml" />
   
 
   
@@ -206,7 +204,7 @@
 
     
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="/topics/go/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      <a class="pure-menu-link" href="/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
     </li>
     
 
@@ -233,17 +231,12 @@
 
 
 <div class="header">
-  <h1>Go</h1>
-  <h2>Topics on Awesome Patrick</h2>
+  <h1>Variables</h1>
+  <h2>변수</h2>
 </div>
-
 <div class="content">
-  
-    <article>
-  <header>
-    <h2><a href="/2018/06/01/variables/">Variables</a></h2>
 
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
@@ -278,228 +271,94 @@
 
 </div>
 
-  </header>
+  
 
-  <p>
-  Go에서 변수 선언 규칙은 다음과 같다. VarDecl = &#34;var&#34; ( VarSpec | &#34;(&#34; { VarSpec &#34;;&#34; } &#34;)&#34; ) VarSpec = IdentifierList ( Type [ &#34;=&#34; ExpressionList ] | &#34;=&#34; ExpressionList ) IdentifierList = identifier { &#34;,&#34; identifier } ExpressionList = Expression { &#34;,&#34; Expression } 복잡해 보이지만 하나하나 살펴 ...    
-  </p>
+<p>Go에서 변수 선언 규칙은 다음과 같다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">VarDecl  = &#34;var&#34; ( VarSpec | &#34;(&#34; { VarSpec &#34;;&#34; } &#34;)&#34; )
+VarSpec  = IdentifierList ( Type [ &#34;=&#34; ExpressionList ] | &#34;=&#34; ExpressionList )
+IdentifierList = identifier { &#34;,&#34; identifier }
+ExpressionList = Expression { &#34;,&#34; Expression }</pre></div>
+<p>복잡해 보이지만 하나하나 살펴보면 다음과 같다.</p>
+
+<ol>
+<li><code>var</code>로 시작한다.</li>
+<li>뒤에는 <code>VarSpec</code> 이나 괄호 (parenthesis, <code>()</code>)로 감싼 <code>VarSpec ;</code>이 0개 이상 올 수 있다.</li>
+<li><code>VarSpec</code>은 identifier 하나나 각 identifier가 컴마 (comma, <code>,</code>)로 구분된 복수개의 IdentifierList이다.</li>
+<li>뒤에는 Type만 오거나 Type 뒤에 <code>=</code>을 쓰고 ExpressionList가 올 수 있다.</li>
+<li>4와 달리 Type이 없이 바로 <code>=</code>을 쓰고 ExpressionList가 올 수도 있다.</li>
+</ol>
+
+<p>말로 풀어 쓰니 더 복잡해 보인다. 아래와 같은 방식들이 가능하다.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#66d9ef">int</span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#66d9ef">int</span>  = <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> = <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name1</span>, <span style="color:#a6e22e">name2</span> <span style="color:#66d9ef">int</span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name1</span>, <span style="color:#a6e22e">name2</span> = <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">var</span> ( <span style="color:#a6e22e">name1</span> <span style="color:#66d9ef">int</span>; <span style="color:#a6e22e">name2</span> <span style="color:#66d9ef">string</span> )
+<span style="color:#66d9ef">var</span> ( <span style="color:#a6e22e">name1</span> = <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">name2</span> = <span style="color:#e6db74">&#34;hello&#34;</span> )
+<span style="color:#66d9ef">var</span> (
+	<span style="color:#a6e22e">name1</span>, <span style="color:#a6e22e">name2</span> = <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>
+	<span style="color:#a6e22e">name3</span> <span style="color:#66d9ef">string</span> = <span style="color:#e6db74">&#34;hello&#34;</span>
+)</code></pre></div>
+
+<p>마지막 예는 세미콜론이 없어 언뜻 불가능해 보이나 <a href="/2018/05/29/semicolons/">세미콜론 자동 삽입 규칙</a>에 의해 Go lexer가 세미콜론을 삽입하므로 가능하다.</p>
+
+<h2 id="short-variable-declarations">Short variable declarations</h2>
+
+<p>변수 선언 뒤 바로 초기값을 입력하는 경우에는 귀찮은 <code>var</code>도 삭제할 수 있다. 이 방식을 *short variable declaration*이라 하고 다음과 같이 쓴다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">ShortVarDecl = IdentifierList &#34;:=&#34; ExpressionList</pre></div>
+<p>이름 넣고,  <code>:=</code> (equal mark 앞에 colon이 있다) , 값을 넣으면 된다.</p>
+
+<p>IndentifierList, ExpressionList이기 때문에 당연히 <code>,</code>로 구분해 복수개를 쓸 수 있다.</p>
+
 
   
-  <footer>
-    <a href="/2018/06/01/variables/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="/2018/05/31/packages/">Packages</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>31 May 2018, 13:05</time>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="/2018/05/31/hugo-shortcode/"><i class="fa fa-chevron-left"></i></a>
+    
   </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
+  <div class="pure-u-10-24">
     
-      <a class="post-taxonomy-topic" href="/topics/go">go</a>
+    <nav class="prev">
+      <a href="/2018/05/31/hugo-shortcode/">Blog 작성 참고자료</a>
+    </nav>
     
   </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="/tags/syntax">syntax</a>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
     
   </div>
-  
-  
-
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
 </div>
 
-  </header>
 
-  <p>
-  모든 Go 프로그램은 package들로 구성된다. 프로그램은 main package에서 시작한다. 관례상 package 이름은 import 경로의 마지막 element로 한다. Package 작성 ...    
-  </p>
 
   
-  <footer>
-    <a href="/2018/05/31/packages/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
+<div id="disqus_thread"></div>
+<script>
+	
 
-  
-    <article>
-  <header>
-    <h2><a href="/2018/05/30/fun-semicolons/">Fun - Semicolons</a></h2>
+	
 
-    <div class="post-meta">
 
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>30 May 2018, 23:08</time>
-  </div>
+	(function() { 
+		var d = document, s = d.createElement('script');
+		s.src = 'https://' + 'awesome-patrick' + '.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+	})();
+</script>
 
-  
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="/topics/go">go</a>
-    
-  </div>
-  
-  
 
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="/tags/fun-go">fun-go</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Semicolons 과 관련된 잡스러운 글입니다. Go는 lexer가 세미콜론을 자동으로 삽입하기 때문에 쓸 필요가 없다. Go 언어의 장점 중 하나로 얘기되지만, Go를 처음 접하는 ...    
-  </p>
-
-  
-  <footer>
-    <a href="/2018/05/30/fun-semicolons/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="/2018/05/29/semicolons/">Semicolons</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>29 May 2018, 12:08</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="/topics/go">go</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="/tags/syntax">syntax</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  The Go Programming Language Specification - Semicolons와 Effective Go - Semicolons 부분을 정리했습니다. Go는 C/C++이나 Java처럼 세미콜론(;)을 사용하는 언어이다. 하지만 실제 소 ...    
-  </p>
-
-  
-  <footer>
-    <a href="/2018/05/29/semicolons/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="/2018/05/28/comments/">Comments</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>28 May 2018, 23:09</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="/topics/go">go</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="/tags/syntax">syntax</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Go 언어에 대한 문법, 예제, 분석, 다른 언어와의 실행 비교 등을 정리합니다. // single line comment /* multi line comment */    
-  </p>
-
-  
-</article>
-
-  
 </div>
 
 </div>
@@ -513,3 +372,4 @@
 
 </body>
 </html>
+
