@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/2018/06/04/eclipse-install/</loc>
+    <lastmod>2018-06-04T13:56:33+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2018/06/01/variables/</loc>
     <lastmod>2018-06-01T12:35:10+09:00</lastmod>
   </url>
@@ -54,7 +59,25 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-06-01T12:35:10+09:00</lastmod>
+    <lastmod>2018-06-04T13:56:33+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/bpm/</loc>
+    <lastmod>2018-06-04T13:56:33+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/topics/bpm/brm/</loc>
+    <lastmod>2018-06-04T13:56:33+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/brm/</loc>
+    <lastmod>2018-06-04T13:56:33+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -67,6 +90,12 @@
   <url>
     <loc>/topics/docker/</loc>
     <lastmod>2018-05-31T12:55:14+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/drools/</loc>
+    <lastmod>2018-06-04T13:56:33+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -95,6 +124,12 @@
   </url>
   
   <url>
+    <loc>/tags/jbpm/</loc>
+    <lastmod>2018-06-04T13:56:33+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/local/</loc>
     <lastmod>2018-05-28T19:06:37+09:00</lastmod>
     <priority>0</priority>
@@ -102,7 +137,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2018-06-01T12:35:10+09:00</lastmod>
+    <lastmod>2018-06-04T13:56:33+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -138,13 +173,13 @@
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2018-05-31T12:55:14+09:00</lastmod>
+    <lastmod>2018-06-04T13:56:33+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/topics/</loc>
-    <lastmod>2018-05-31T12:55:14+09:00</lastmod>
+    <lastmod>2018-06-04T13:56:33+09:00</lastmod>
     <priority>0</priority>
   </url>
   
