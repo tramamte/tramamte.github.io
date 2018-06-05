@@ -98,8 +98,9 @@ a {
 }
 
 code,
+.highlight,
 .highlight > pre {
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto Mono', 'Nanum Gothic Coding', monospace;
   font-size: 0.9em;
 }
 

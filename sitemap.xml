@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/2018/06/05/types/</loc>
+    <lastmod>2018-06-05T11:04:49+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2018/06/01/variables/</loc>
     <lastmod>2018-06-01T12:35:10+09:00</lastmod>
   </url>
@@ -54,7 +59,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-06-01T12:35:10+09:00</lastmod>
+    <lastmod>2018-06-05T11:04:49+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -78,7 +83,7 @@
   
   <url>
     <loc>/topics/go/</loc>
-    <lastmod>2018-06-01T12:35:10+09:00</lastmod>
+    <lastmod>2018-06-05T11:04:49+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -102,7 +107,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2018-06-01T12:35:10+09:00</lastmod>
+    <lastmod>2018-06-05T11:04:49+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -126,7 +131,7 @@
   
   <url>
     <loc>/tags/syntax/</loc>
-    <lastmod>2018-06-01T12:35:10+09:00</lastmod>
+    <lastmod>2018-06-05T11:04:49+09:00</lastmod>
     <priority>0</priority>
   </url>
   
