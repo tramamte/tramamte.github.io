@@ -101,7 +101,7 @@ code,
 .highlight,
 .highlight > pre {
   font-family: 'Roboto Mono', 'Nanum Gothic Coding', monospace;
-  font-size: 0.9em;
+  font-size: 1.0em;
 }
 
 .highlight > pre {
