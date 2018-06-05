@@ -18,7 +18,7 @@
       <pubDate>Tue, 05 Jun 2018 11:04:49 +0900</pubDate>
       
       <guid>/2018/06/05/types/</guid>
-      <description>Go의 type 작성법은 다음과 같다. Type = TypeName | TypeLit | &amp;#34;(&amp;#34; Type &amp;#34;)&amp;#34; TypeName = identifier | QualifiedIdent TypeLit = ArrayType | StructType | PointerType | FunctionType | InterfaceType | SliceType | MapType | ChannelType 나머지는 차차 보도록 하고, 여기서는 predefined identifier 중 types (참조)에</description>
+      <description>Go의 타입 작성법은 다음과 같다. Type = TypeName | TypeLit | &amp;#34;(&amp;#34; Type &amp;#34;)&amp;#34; TypeName = identifier | QualifiedIdent TypeLit = ArrayType | StructType | PointerType | FunctionType | InterfaceType | SliceType | MapType | ChannelType 나머지는 차차 보도록 하고, 여기서는 predefined identifier 중 types (참조)</description>
     </item>
     
     <item>
