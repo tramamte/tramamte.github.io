@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="명시적이지 않은 듯 명시적인 Go">
+  <meta name="generator" content="Hugo 0.41" />
+
+  <title>Fun - Variables &amp; Types &middot; Awesome Patrick</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://tramamte.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://tramamte.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://tramamte.github.io/css/blackburn.css">
+
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://tramamte.github.io/css/zoom.css">
+  <script src="https://tramamte.github.io/js/zoom.js"></script>
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700|Nanum+Gothic+Coding:400,700|Raleway:400,700|Roboto+Mono" rel="stylesheet">
+  
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+
+  <link rel="apple-touch-icon" sizes="57x57" href="https://tramamte.github.io/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://tramamte.github.io/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://tramamte.github.io/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://tramamte.github.io/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://tramamte.github.io/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://tramamte.github.io/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://tramamte.github.io/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://tramamte.github.io/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://tramamte.github.io/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://tramamte.github.io/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tramamte.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://tramamte.github.io/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://tramamte.github.io/favicon-16x16.png">
+<link rel="manifest" href="https://tramamte.github.io/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="https://tramamte.github.io/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+
+<div id="menu">
+  <section id="menu-section">
+    <header>
+      
+  <a class="pure-menu-heading brand" href="https://tramamte.github.io/">Awesome<br>Patrick</a>
+
+
+    </header>
+    <section>
+      <div class="pure-menu">
+        <ul class="pure-menu-list">
+          
+          
+            <li class="pure-menu-item">
+              <a class="pure-menu-link" href="https://tramamte.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+          
+            </li>
+          
+          
+            <li class="pure-menu-item">
+              <a class="pure-menu-link" href="https://tramamte.github.io/topics/"><i class='fa fa-folder fa-fw'></i>Topics</a>
+          
+            </li>
+          
+          
+            <li class="pure-menu-item">
+              <a class="pure-menu-link" href="https://tramamte.github.io/tags/"><i class='fa fa-tag fa-fw'></i>Tags</a>
+          
+            </li>
+          
+          
+            <li class="pure-menu-item">
+              <a class="pure-menu-link" href="https://tramamte.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+          
+            </li>
+          
+          
+            <li class="pure-menu-item">
+              <a class="pure-menu-link" href="https://tramamte.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+          
+            </li>
+          
+        </ul>
+      </div>
+      <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://tramamte.github.io/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+    </li>
+    
+
+  </ul>
+</div>
+
+    </section>
+    <footer>
+    <div class="small-print">
+  <small>&copy2018 Patrick Yu<br>All rights reserved.</small>
+</div>
+<div class="small-print">
+  <small>Powered by<a href="https://gohugo.io/" target="_blank">Hugo</a>with</small>
+  <small>modified<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a>theme.</small>
+</div>
+
+    </footer>
+  </section>
+</div>
+
+  
+  <div id="mask"></div>
+  <div id="main">
+
+
+<div class="header">
+  <h1>Fun - Variables &amp; Types</h1>
+  <h2>명시적이지 않은 듯 명시적인 Go</h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>05 Jun 2018, 17:05</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/go">go</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/fun-go">fun-go</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <hr />
+
+<p><a href="https://tramamte.github.io/2018/06/01/variables/">Variables</a>, <a href="https://tramamte.github.io/2018/06/05/types/">Types</a>와 관련된 글입니다.</p>
+
+<hr />
+
+<p><a href="https://tramamte.github.io/2018/06/01/variables/">Variables</a> 포스트에서 살펴 본 것처럼 Go는 변수를 선언할 때 초기값을 같이 입력하면 굳이 타입을 명시하지 않아도 된다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> = <span style="color:#ae81ff">1</span>
+<span style="color:#a6e22e">f</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">3.14</span>
+<span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1.0</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1.0i</span></code></pre></div>
+<p>그렇다면 이 경우 <code>i</code>, <code>f</code>, <code>c</code>의 타입은 각각 어떻게 될까?</p>
+
+<p>Go에서 변수의 타입을 확인하기 위해서는 <code>reflect</code> 패키지를 활용할 수 있다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;reflect&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> = <span style="color:#ae81ff">1</span>
+    <span style="color:#a6e22e">f</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">3.14</span>
+    <span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1.0</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1.0i</span>
+    
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">reflect</span>.<span style="color:#a6e22e">TypeOf</span>(<span style="color:#a6e22e">i</span>))
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">f</span>, <span style="color:#a6e22e">reflect</span>.<span style="color:#a6e22e">TypeOf</span>(<span style="color:#a6e22e">f</span>))
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">reflect</span>.<span style="color:#a6e22e">TypeOf</span>(<span style="color:#a6e22e">c</span>))
+}</code></pre></div>
+<p>위 코드의 실행 결과는 다음과 같다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ae81ff">1</span> int
+<span style="color:#ae81ff">3</span>.14 float64
+<span style="color:#f92672">(</span><span style="color:#ae81ff">1</span>+1i<span style="color:#f92672">)</span> complex128</code></pre></div>
+<p>결과에서 확인할 수 있는 것처럼 Go는 타입을 명시하지 않을 경우 실수에 대해서는 <code>float64</code>를, 복소수에 대해서는 <code>complex128</code>을 기본 타입으로 한다. 즉, 해당 값을 표시할 수 있는 가장 큰 - 가장 공간이 넓은 - 타입을 선택하는데 정수에 대해서만은 <code>int64</code>가 아닌 <code>int</code>를 기본 타입으로 한다.</p>
+
+<p><br></p>
+
+<p>그렇다면 위와 같이 타입을 명시하지 않고 선언한 변수에 다른 타입을 재할당하면 어떻게 될까?</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;reflect&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> = <span style="color:#ae81ff">1</span>
+    <span style="color:#a6e22e">f</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">3.14</span>
+    <span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1.0</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1.0i</span>
+    
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">reflect</span>.<span style="color:#a6e22e">TypeOf</span>(<span style="color:#a6e22e">i</span>))
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">f</span>, <span style="color:#a6e22e">reflect</span>.<span style="color:#a6e22e">TypeOf</span>(<span style="color:#a6e22e">f</span>))
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">reflect</span>.<span style="color:#a6e22e">TypeOf</span>(<span style="color:#a6e22e">c</span>))
+    
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">f1</span> <span style="color:#66d9ef">float32</span> = <span style="color:#ae81ff">3.14</span>
+<span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#a6e22e">f</span> = <span style="color:#a6e22e">f1</span>
+</span>}</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>위 코드는 다음과 같은 오류가 발생한다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">./main.go:16:5: cannot use f1 (type float32) as type float64 in assignment</pre></div>
+<p>코드 상으로는 타입을 명시하지 않았지만 초기값을 넣으면서 이미 해당 변수는 하나의 타입(<code>float64</code>)으로 고정된 것이다.</p>
+
+<p>C/C++ 등 암시적 변환 (implicit conversion)을 지원하는 다른 언어 개발자들의 불만이 들린다.</p>
+
+<blockquote>
+<p>&lsquo;<code>float32</code>를 <code>float64</code>에 넣겠다는데, 이정도는 자동으로 해줘야 하는거 아니야?&rsquo;</p>
+</blockquote>
+
+<p>하지만 Go는 모든 형변환 (type conversion)에 대해 명시적인 명령을 강제한다.</p>
+
+<p>Go의 형변환 방법은 다음과 같다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">T</span>(<span style="color:#a6e22e">v</span>)</code></pre></div>
+<p>C, Java 개발자들 눈 크게 뜨고 보시라. 괄호가 저기가 아니고 여기다. 마치 함수처럼 사용한다.</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://tramamte.github.io/2018/06/05/types/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://tramamte.github.io/2018/06/05/types/">Types</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script>
+	
+
+	
+
+
+	(function() { 
+		var d = document, s = d.createElement('script');
+		s.src = 'https://' + 'awesome-patrick' + '.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+	})();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+</div>
+</div>
+<script src="https://tramamte.github.io/js/ui.js"></script>
+
+
+
+
+
+
+</body>
+</html>
+
