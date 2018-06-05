@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu&lt;br&gt;All rights reserved.</copyright>
-    <lastBuildDate>Tue, 05 Jun 2018 17:05:40 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 05 Jun 2018 12:55:40 +0900</lastBuildDate>
     
 	<atom:link href="https://tramamte.github.io/topics/go/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Fun - Variables &amp; Types</title>
       <link>https://tramamte.github.io/2018/06/05/fun-variables-and-types/</link>
-      <pubDate>Tue, 05 Jun 2018 17:05:40 +0900</pubDate>
+      <pubDate>Tue, 05 Jun 2018 12:55:40 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/06/05/fun-variables-and-types/</guid>
       <description>Variables, Types와 관련된 글입니다. Variables 포스트에서 살펴 본 것처럼 Go는 변수를 선언할 때 초기값을 같이 입력하면 굳이 타입을 명시하지 않아도 된다. var i = 1 f := 3.14 c</description>
@@ -24,7 +24,7 @@
     <item>
       <title>Types</title>
       <link>https://tramamte.github.io/2018/06/05/types/</link>
-      <pubDate>Tue, 05 Jun 2018 11:04:49 +0900</pubDate>
+      <pubDate>Tue, 05 Jun 2018 12:14:49 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/06/05/types/</guid>
       <description>Go의 타입 작성법은 다음과 같다. Type = TypeName | TypeLit | &amp;#34;(&amp;#34; Type &amp;#34;)&amp;#34; TypeName = identifier | QualifiedIdent TypeLit = ArrayType | StructType | PointerType | FunctionType | InterfaceType | SliceType | MapType | ChannelType 나머지는 차차 보도록 하고, 여기서는 predefined identifier 중 types (참조)</description>
