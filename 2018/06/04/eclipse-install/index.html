@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="타입">
+  <meta name="description" content="JBoss jBPM and Drools Eclipse 개발환경 구성하기">
   <meta name="generator" content="Hugo 0.41" />
 
-  <title>Types &middot; Awesome Patrick</title>
+  <title>jBPM / Drools 개발환경 구성 &middot; Awesome Patrick</title>
 
   
   
@@ -231,8 +231,8 @@
 
 
 <div class="header">
-  <h1>Types</h1>
-  <h2>타입</h2>
+  <h1>jBPM / Drools 개발환경 구성</h1>
+  <h2>JBoss jBPM and Drools Eclipse 개발환경 구성하기</h2>
 </div>
 <div class="content">
 
@@ -240,7 +240,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>05 Jun 2018, 11:04</time>
+    <time>04 Jun 2018, 13:56</time>
   </div>
 
   
@@ -251,7 +251,7 @@
   <div>
     <i class="fa fa-folder fa-fw"></i>
     
-      <a class="post-taxonomy-topic" href="/topics/go">go</a>
+      <a class="post-taxonomy-topic" href="/topics/bpm/brm">bpm/brm</a>
     
   </div>
   
@@ -263,7 +263,13 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="/tags/syntax">syntax</a>
+      <a class="post-taxonomy-tag" href="/tags/drools">drools</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="/tags/jbpm">jbpm</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="/tags/bpm">bpm</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="/tags/brm">brm</a>
     
   </div>
   
@@ -273,64 +279,91 @@
 
   
 
-<p>Go의 type 작성법은 다음과 같다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Type     = TypeName | TypeLit | &#34;(&#34; Type &#34;)&#34;
-TypeName = identifier | QualifiedIdent
-TypeLit  = ArrayType | StructType | PointerType | FunctionType |
-           InterfaceType | SliceType | MapType | ChannelType</pre></div>
-<p>나머지는 차차 보도록 하고,  여기서는 predefined identifier 중 types (<a href="/2018/05/30/fun-semicolons/">참조</a>)에 해당하는 기본 타입들에 대해서만 먼저 알아보도록 하겠다.</p>
+<h2 id="1-oracle-jdk-설치">1. Oracle JDK 설치</h2>
 
-<h3 id="boolean-types">Boolean types</h3>
+<blockquote>
+<p><em>Java SE 8 버전 추천</em></p>
+</blockquote>
 
-<p>참 또는 거짓을 나타내는 type이다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">bool		true 또는 false</pre></div>
-<h3 id="numeric-types">Numeric types</h3>
+<h2 id="2-eclipse-설치">2. Eclipse 설치</h2>
 
-<p>Numeric type들은 주로 <strong>형식 + 크기 (비트 수)</strong>의 형태로 구성되며, 몇 가지 별칭이 예외로 추가된다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">uint8		부호 없는 8비트 정수 (0 ~ 255)
-uint16		부호 없는 16비트 정수 (0 ~ 65535)
-uint32		부호 없는 32비트 정수 (0 ~ 4294967295)
-uint64		부호 없는 64비트 정수 (0 ~ 18446744073709551615)
+<p>Eclipse IDE for Java EE Developers 받아서 압축 해제</p>
 
-int8		부호 있는 8비트 정수 (-128 ~ 127)
-int16		부호 있는 16비트 정수 (-32768 ~ 32767)
-int32		부호 있는 32비트 정수 (-2147483648 ~ 2147483647)
-int64		부호 있는 64비트 정수 (-9223372036854775808 ~ 9223372036854775807)
+<h2 id="3-runtime-설치">3. Runtime 설치</h2>
 
-float32		IEEE-754 32비트 floating point 실수
-float64		IEEE-754 64비트 floating point 실수	
+<ul>
+<li><a href="https://www.drools.org">Drools</a>에서 Final 버전 내려받아 적당한 위치에 압축 해제</li>
+<li><a href="https://www.jbpm.org/download/download.html">jBPM</a>에서 Final-bin 버전 (.Final-bin.zip) 내려받아 적당한 위치에 압축 해제
 
-complex64	실수부, 허수부가 각각 32비트 floating point인 복소수
-complex128	실수부, 허수부가 각각 64비트 floating point인 복소수
+<ul>
+<li>필요한 경우 예제 파일 (.Final-examples.zip)도 내려받아 적당한 위치에 압축 해제</li>
+</ul></li>
+</ul>
 
-byte		uin8의 별칭
-rune		int32의 별칭</pre></div>
-<p>위 type들은 모두 실행 환경에 관계없이 동일한 크기를 갖고, 아래 세 가지는 크기가 변경된다. C의 <code>long</code> 타입과 유사하다고 볼 수 있다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">uint		32비트 또는 64비트
-int			32비트 또는 64비트
-uintptr		포인터를 저장하기에 적당한 크기</pre></div>
-<h3 id="string-types">String types</h3>
+<h2 id="4-jboss-tools-설치">4. JBoss Tools 설치</h2>
 
-<p>문자열을 저장하기 위한 type으로 변경 불가능(immutable)하기 때문에 메모리 관리 측면에서 주의가 필요하다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">string		&#34;문자열&#34;</pre></div>
-<p><br></p>
+<blockquote>
+<p><em>설치하지 않으면 Plugin 설치 시 dependency error 발생</em></p>
+</blockquote>
 
-<p><a href="/2018/06/01/variables/">Variables</a>에서 확인한 것처럼 Go의 변수는 일반적으로 <code>var i int</code> 형태로 선언한다. Type 작성법의 <code>Type</code>에 대한 마지막 표현 (<code>Type = &quot;(&quot; Type &quot;)&quot;</code>)이 좀 특이한데, 결론적으로 type을 괄호로 묶어도 - 2개 이상의 괄호로 묶어도 - 괜찮다는 의미이다. 즉,</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Go" data-lang="Go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> (((<span style="color:#66d9ef">int</span>)))</code></pre></div>
-<p>이런 형태도 가능하다.</p>
+<ol>
+<li>Eclipse 실행</li>
+<li>Help - Eclipse Marketplace&hellip; 실행</li>
+<li>&lsquo;jboss&rsquo; 검색</li>
+<li>JBoss Tools x.x.x.Final 설치</li>
+</ol>
+
+<h2 id="5-plugin-설치">5. Plugin 설치</h2>
+
+<ol>
+<li><a href="http://download.jboss.org/drools/release/">여기</a>에서 버전을 선택하거나 latestFinal 선택해 org.drools.updatesite 주소복사</li>
+<li>Eclipse 실행</li>
+<li>Help - Install New Software&hellip; 실행</li>
+<li>Add&hellip; 버튼 클릭</li>
+<li>Name은 &lsquo;Drools &amp; jBPM Plugin&rsquo; 등 적당한 값으로 넣고, Location에 복사한 주소 입력</li>
+<li>전체 선택해 설치</li>
+</ol>
+
+<h2 id="6-runtime-설정">6.Runtime 설정</h2>
+
+<ol>
+<li>Eclipse 실행</li>
+<li>Preferences 실행 (Windows/Linux: Windows - Preferences, macOS: Eclipse - Preferences)</li>
+<li>좌측 메뉴에서 jBPM &gt; Installed jBPM Runtime 선택</li>
+<li>Add&hellip; 버튼 클릭</li>
+<li>Browse&hellip; 버튼 클릭 후 3단계에서 압축 풀어 둔 jBPM의 bin 디렉토리 선택</li>
+<li>Name, Version 등 자동 입력된 것 확인 후 OK</li>
+<li>좌측 메뉴 Drools &gt; Installed Drools Runtime도 동일한 방식으로 설정 (Drools는 압축 풀어 둔 디렉토리에서 binaries 선택)</li>
+</ol>
+
+<hr />
+
+<h3 id="추가-bpmn2-modeler-설치">(추가) BPMN2 Modeler 설치</h3>
+
+<blockquote>
+<p><em>기본 modeler는 .bpmn2 file open 시 exception 발생</em></p>
+</blockquote>
+
+<ol>
+<li>Eclipse 실행</li>
+<li>Help - Eclipse Marketplace&hellip; 실행</li>
+<li>&lsquo;bpmn2&rsquo; 검색</li>
+<li>Eclipse BPMN2 Modeler x.x.x 설치</li>
+<li>설치 옵션에서 jBPM Runtime Extension Feature 추가</li>
+</ol>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="/2018/06/04/eclipse-install/"><i class="fa fa-chevron-left"></i></a>
+    <a href="/2018/06/01/variables/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="/2018/06/04/eclipse-install/">jBPM / Drools 개발환경 구성</a>
+      <a href="/2018/06/01/variables/">Variables</a>
     </nav>
     
   </div>
@@ -339,8 +372,14 @@ uintptr		포인터를 저장하기에 적당한 크기</pre></div>
   </div>
   <div class="pure-u-10-24">
     
+    <nav class="next">
+      <a href="/2018/06/05/types/">Types</a>
+    </nav>
+    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="/2018/06/05/types/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>

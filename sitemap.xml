@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>/2018/06/04/eclipse-install/</loc>
+    <lastmod>2018-06-04T13:56:33+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2018/06/01/variables/</loc>
     <lastmod>2018-06-01T12:35:10+09:00</lastmod>
   </url>
@@ -64,6 +69,24 @@
   </url>
   
   <url>
+    <loc>/tags/bpm/</loc>
+    <lastmod>2018-06-04T13:56:33+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/topics/bpm/brm/</loc>
+    <lastmod>2018-06-04T13:56:33+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/brm/</loc>
+    <lastmod>2018-06-04T13:56:33+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/container/</loc>
     <lastmod>2018-05-31T12:55:14+09:00</lastmod>
     <priority>0</priority>
@@ -72,6 +95,12 @@
   <url>
     <loc>/topics/docker/</loc>
     <lastmod>2018-05-31T12:55:14+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/drools/</loc>
+    <lastmod>2018-06-04T13:56:33+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -96,6 +125,12 @@
   <url>
     <loc>/tags/image/</loc>
     <lastmod>2018-05-31T12:55:14+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/jbpm/</loc>
+    <lastmod>2018-06-04T13:56:33+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -143,13 +178,13 @@
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2018-05-31T12:55:14+09:00</lastmod>
+    <lastmod>2018-06-04T13:56:33+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/topics/</loc>
-    <lastmod>2018-05-31T12:55:14+09:00</lastmod>
+    <lastmod>2018-06-04T13:56:33+09:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="타입">
+  <meta name="description" content="">
   <meta name="generator" content="Hugo 0.41" />
 
-  <title>Types &middot; Awesome Patrick</title>
+  <title>Awesome Patrick</title>
 
   
   
@@ -46,6 +46,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
  
+  
+  <link rel="alternate" type="application/rss+xml" title="Awesome Patrick" href="/index.xml" />
   
 
   
@@ -231,16 +233,21 @@
 
 
 <div class="header">
-  <h1>Types</h1>
-  <h2>타입</h2>
+  <h1>Awesome Patrick</h1>
+  <h2>Patrick&#39;s ramblings</h2>
 </div>
-<div class="content">
 
-  <div class="post-meta">
+<div class="content">
+  
+    <article>
+  <header>
+    <h2><a href="/2018/05/28/hugo-local-server/">Hugo Local Server 접속 방법</a></h2>
+
+    <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>05 Jun 2018, 11:04</time>
+    <time>28 May 2018, 19:06</time>
   </div>
 
   
@@ -251,7 +258,7 @@
   <div>
     <i class="fa fa-folder fa-fw"></i>
     
-      <a class="post-taxonomy-topic" href="/topics/go">go</a>
+      <a class="post-taxonomy-topic" href="/topics/hugo">hugo</a>
     
   </div>
   
@@ -263,7 +270,9 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="/tags/syntax">syntax</a>
+      <a class="post-taxonomy-tag" href="/tags/local">local</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="/tags/server">server</a>
     
   </div>
   
@@ -271,99 +280,34 @@
 
 </div>
 
-  
+  </header>
 
-<p>Go의 type 작성법은 다음과 같다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Type     = TypeName | TypeLit | &#34;(&#34; Type &#34;)&#34;
-TypeName = identifier | QualifiedIdent
-TypeLit  = ArrayType | StructType | PointerType | FunctionType |
-           InterfaceType | SliceType | MapType | ChannelType</pre></div>
-<p>나머지는 차차 보도록 하고,  여기서는 predefined identifier 중 types (<a href="/2018/05/30/fun-semicolons/">참조</a>)에 해당하는 기본 타입들에 대해서만 먼저 알아보도록 하겠다.</p>
-
-<h3 id="boolean-types">Boolean types</h3>
-
-<p>참 또는 거짓을 나타내는 type이다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">bool		true 또는 false</pre></div>
-<h3 id="numeric-types">Numeric types</h3>
-
-<p>Numeric type들은 주로 <strong>형식 + 크기 (비트 수)</strong>의 형태로 구성되며, 몇 가지 별칭이 예외로 추가된다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">uint8		부호 없는 8비트 정수 (0 ~ 255)
-uint16		부호 없는 16비트 정수 (0 ~ 65535)
-uint32		부호 없는 32비트 정수 (0 ~ 4294967295)
-uint64		부호 없는 64비트 정수 (0 ~ 18446744073709551615)
-
-int8		부호 있는 8비트 정수 (-128 ~ 127)
-int16		부호 있는 16비트 정수 (-32768 ~ 32767)
-int32		부호 있는 32비트 정수 (-2147483648 ~ 2147483647)
-int64		부호 있는 64비트 정수 (-9223372036854775808 ~ 9223372036854775807)
-
-float32		IEEE-754 32비트 floating point 실수
-float64		IEEE-754 64비트 floating point 실수	
-
-complex64	실수부, 허수부가 각각 32비트 floating point인 복소수
-complex128	실수부, 허수부가 각각 64비트 floating point인 복소수
-
-byte		uin8의 별칭
-rune		int32의 별칭</pre></div>
-<p>위 type들은 모두 실행 환경에 관계없이 동일한 크기를 갖고, 아래 세 가지는 크기가 변경된다. C의 <code>long</code> 타입과 유사하다고 볼 수 있다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">uint		32비트 또는 64비트
-int			32비트 또는 64비트
-uintptr		포인터를 저장하기에 적당한 크기</pre></div>
-<h3 id="string-types">String types</h3>
-
-<p>문자열을 저장하기 위한 type으로 변경 불가능(immutable)하기 때문에 메모리 관리 측면에서 주의가 필요하다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">string		&#34;문자열&#34;</pre></div>
-<p><br></p>
-
-<p><a href="/2018/06/01/variables/">Variables</a>에서 확인한 것처럼 Go의 변수는 일반적으로 <code>var i int</code> 형태로 선언한다. Type 작성법의 <code>Type</code>에 대한 마지막 표현 (<code>Type = &quot;(&quot; Type &quot;)&quot;</code>)이 좀 특이한데, 결론적으로 type을 괄호로 묶어도 - 2개 이상의 괄호로 묶어도 - 괜찮다는 의미이다. 즉,</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Go" data-lang="Go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> (((<span style="color:#66d9ef">int</span>)))</code></pre></div>
-<p>이런 형태도 가능하다.</p>
-
+  <p>
+  테마를 수정하거나 컨텐츠 작성 중 변경 사항을 확인하기 위해서 hugo server를 실행하면 배포하지 않고도 임시버전을 local 에서 확인 가능하다. $ hugo server 그런데 기본 주소 ...    
+  </p>
 
   
-<div class="prev-next-post pure-g">
-  <div class="pure-u-1-24" style="text-align: left;">
-    
-    <a href="/2018/06/04/eclipse-install/"><i class="fa fa-chevron-left"></i></a>
-    
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="prev">
-      <a href="/2018/06/04/eclipse-install/">jBPM / Drools 개발환경 구성</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-2-24">
-    &nbsp;
-  </div>
-  <div class="pure-u-10-24">
-    
-  </div>
-  <div class="pure-u-1-24" style="text-align: right;">
-    
-  </div>
-</div>
-
-
+  <footer>
+    <a href="/2018/05/28/hugo-local-server/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
 
   
-<div id="disqus_thread"></div>
-<script>
-	
 
-	
+  
 
 
-	(function() { 
-		var d = document, s = d.createElement('script');
-		s.src = 'https://' + 'awesome-patrick' + '.disqus.com/embed.js';
-		s.setAttribute('data-timestamp', +new Date());
-		(d.head || d.body).appendChild(s);
-	})();
-</script>
+<nav class="pagination" role="pagination">
+  
+  <a href="/page/2/"><i class="fa fa-chevron-left"></i></a>
+  
+  <span>&nbsp;3 / 3&nbsp;</span>
+  
+  <i class="fa fa-chevron-right"></i>
+  
+</nav>
 
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
 </div>

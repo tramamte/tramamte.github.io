@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu&lt;br&gt;All rights reserved.</copyright>
-    <lastBuildDate>Thu, 31 May 2018 12:55:14 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 04 Jun 2018 13:56:33 +0900</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bpm</title>
+      <link>/tags/bpm/</link>
+      <pubDate>Mon, 04 Jun 2018 13:56:33 +0900</pubDate>
+      
+      <guid>/tags/bpm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Brm</title>
+      <link>/tags/brm/</link>
+      <pubDate>Mon, 04 Jun 2018 13:56:33 +0900</pubDate>
+      
+      <guid>/tags/brm/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Container</title>
@@ -18,6 +36,15 @@
       <pubDate>Thu, 31 May 2018 12:55:14 +0900</pubDate>
       
       <guid>/tags/container/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Drools</title>
+      <link>/tags/drools/</link>
+      <pubDate>Mon, 04 Jun 2018 13:56:33 +0900</pubDate>
+      
+      <guid>/tags/drools/</guid>
       <description></description>
     </item>
     
@@ -36,6 +63,15 @@
       <pubDate>Thu, 31 May 2018 12:55:14 +0900</pubDate>
       
       <guid>/tags/image/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jbpm</title>
+      <link>/tags/jbpm/</link>
+      <pubDate>Mon, 04 Jun 2018 13:56:33 +0900</pubDate>
+      
+      <guid>/tags/jbpm/</guid>
       <description></description>
     </item>
     
