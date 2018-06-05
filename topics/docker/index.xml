@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on Awesome Patrick</title>
-    <link>/topics/docker/</link>
+    <link>https://tramamte.github.io/topics/docker/</link>
     <description>Recent content in Docker on Awesome Patrick</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu&lt;br&gt;All rights reserved.</copyright>
     <lastBuildDate>Thu, 31 May 2018 12:55:14 +0900</lastBuildDate>
     
-	<atom:link href="/topics/docker/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tramamte.github.io/topics/docker/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Docker container에서 image 생성</title>
-      <link>/2018/05/31/make-image-from-container/</link>
+      <link>https://tramamte.github.io/2018/05/31/make-image-from-container/</link>
       <pubDate>Thu, 31 May 2018 12:55:14 +0900</pubDate>
       
-      <guid>/2018/05/31/make-image-from-container/</guid>
+      <guid>https://tramamte.github.io/2018/05/31/make-image-from-container/</guid>
       <description>개인적으로 Docker는 이것 저것 다양한 언어나 도구들을 시험하는 용도로도 많이 사용한다. 새로운 것을 보면 한 번 설치해 사용해 본 후 삭제하는 경우도 많은데, 흔</description>
     </item>
     
     <item>
       <title>Docker Root Directory 변경</title>
-      <link>/2018/05/31/docker-change-root/</link>
+      <link>https://tramamte.github.io/2018/05/31/docker-change-root/</link>
       <pubDate>Thu, 31 May 2018 12:49:28 +0900</pubDate>
       
-      <guid>/2018/05/31/docker-change-root/</guid>
+      <guid>https://tramamte.github.io/2018/05/31/docker-change-root/</guid>
       <description>Docker blog에 있는 내용에 따라 Ubuntu에 apt repository를 추가하고 Docker를 설치한 경우 image나 container 등이 저장되는 기본 경로는 /var</description>
     </item>
     

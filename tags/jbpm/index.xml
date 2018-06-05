@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jbpm on Awesome Patrick</title>
-    <link>/tags/jbpm/</link>
+    <link>https://tramamte.github.io/tags/jbpm/</link>
     <description>Recent content in Jbpm on Awesome Patrick</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu&lt;br&gt;All rights reserved.</copyright>
     <lastBuildDate>Mon, 04 Jun 2018 13:56:33 +0900</lastBuildDate>
     
-	<atom:link href="/tags/jbpm/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tramamte.github.io/tags/jbpm/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>jBPM / Drools 개발환경 구성</title>
-      <link>/2018/06/04/eclipse-install/</link>
+      <link>https://tramamte.github.io/2018/06/04/eclipse-install/</link>
       <pubDate>Mon, 04 Jun 2018 13:56:33 +0900</pubDate>
       
-      <guid>/2018/06/04/eclipse-install/</guid>
+      <guid>https://tramamte.github.io/2018/06/04/eclipse-install/</guid>
       <description>1. Oracle JDK 설치 Java SE 8 버전 추천 2. Eclipse 설치 Eclipse IDE for Java EE Developers 받아서 압축 해제 3. Runtime 설치 Drools에서 Final 버전 내려받아 적당한 위치에 압축 해제 jBPM에서 Final-bin 버전 (.Final-bin.zip) 내려</description>
     </item>
     

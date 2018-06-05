@@ -2,49 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Topics on Awesome Patrick</title>
-    <link>/topics/</link>
+    <link>https://tramamte.github.io/topics/</link>
     <description>Recent content in Topics on Awesome Patrick</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu&lt;br&gt;All rights reserved.</copyright>
     <lastBuildDate>Mon, 04 Jun 2018 13:56:33 +0900</lastBuildDate>
     
-	<atom:link href="/topics/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tramamte.github.io/topics/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Bpm/Brm</title>
-      <link>/topics/bpm/brm/</link>
+      <link>https://tramamte.github.io/topics/bpm/brm/</link>
       <pubDate>Mon, 04 Jun 2018 13:56:33 +0900</pubDate>
       
-      <guid>/topics/bpm/brm/</guid>
+      <guid>https://tramamte.github.io/topics/bpm/brm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Docker</title>
-      <link>/topics/docker/</link>
+      <link>https://tramamte.github.io/topics/docker/</link>
       <pubDate>Thu, 31 May 2018 12:55:14 +0900</pubDate>
       
-      <guid>/topics/docker/</guid>
+      <guid>https://tramamte.github.io/topics/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Go</title>
-      <link>/topics/go/</link>
+      <link>https://tramamte.github.io/topics/go/</link>
       <pubDate>Tue, 05 Jun 2018 11:04:49 +0900</pubDate>
       
-      <guid>/topics/go/</guid>
+      <guid>https://tramamte.github.io/topics/go/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hugo</title>
-      <link>/topics/hugo/</link>
+      <link>https://tramamte.github.io/topics/hugo/</link>
       <pubDate>Thu, 31 May 2018 22:20:26 +0900</pubDate>
       
-      <guid>/topics/hugo/</guid>
+      <guid>https://tramamte.github.io/topics/hugo/</guid>
       <description></description>
     </item>
     

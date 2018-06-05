@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on Awesome Patrick</title>
-    <link>/topics/hugo/</link>
+    <link>https://tramamte.github.io/topics/hugo/</link>
     <description>Recent content in Hugo on Awesome Patrick</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu&lt;br&gt;All rights reserved.</copyright>
     <lastBuildDate>Thu, 31 May 2018 22:20:26 +0900</lastBuildDate>
     
-	<atom:link href="/topics/hugo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tramamte.github.io/topics/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Blog 작성 참고자료</title>
-      <link>/2018/05/31/hugo-shortcode/</link>
+      <link>https://tramamte.github.io/2018/05/31/hugo-shortcode/</link>
       <pubDate>Thu, 31 May 2018 22:20:26 +0900</pubDate>
       
-      <guid>/2018/05/31/hugo-shortcode/</guid>
+      <guid>https://tramamte.github.io/2018/05/31/hugo-shortcode/</guid>
       <description>Awesome Patrick 글 작성을 위해 개인적으로 참고할 내용을 정리한 글입니다. Shortcode 사용법 Markdown 문법과 같이 사용할 수 있는 shortcode { {% shortcode_name %}} **Contents** { {% /shortcode_name %}} Markdown 사용하지 않는 shortcode { {&amp;lt; shortcode_name &amp;gt;}} &amp;lt;b&amp;gt;Contents&amp;lt;/b&amp;gt; { {&amp;lt; /shortcode_name &amp;gt;}}</description>
     </item>
     
     <item>
       <title>Hugo Local Server 접속 방법</title>
-      <link>/2018/05/28/hugo-local-server/</link>
+      <link>https://tramamte.github.io/2018/05/28/hugo-local-server/</link>
       <pubDate>Mon, 28 May 2018 19:06:37 +0900</pubDate>
       
-      <guid>/2018/05/28/hugo-local-server/</guid>
+      <guid>https://tramamte.github.io/2018/05/28/hugo-local-server/</guid>
       <description>테마를 수정하거나 컨텐츠 작성 중 변경 사항을 확인하기 위해서 hugo server를 실행하면 배포하지 않고도 임시버전을 local 에서 확인 가능하다. $ hugo server 그런데 기본 주소</description>
     </item>
     

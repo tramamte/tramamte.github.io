@@ -2,67 +2,67 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Go on Awesome Patrick</title>
-    <link>/topics/go/</link>
+    <link>https://tramamte.github.io/topics/go/</link>
     <description>Recent content in Go on Awesome Patrick</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu&lt;br&gt;All rights reserved.</copyright>
     <lastBuildDate>Tue, 05 Jun 2018 11:04:49 +0900</lastBuildDate>
     
-	<atom:link href="/topics/go/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tramamte.github.io/topics/go/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Types</title>
-      <link>/2018/06/05/types/</link>
+      <link>https://tramamte.github.io/2018/06/05/types/</link>
       <pubDate>Tue, 05 Jun 2018 11:04:49 +0900</pubDate>
       
-      <guid>/2018/06/05/types/</guid>
+      <guid>https://tramamte.github.io/2018/06/05/types/</guid>
       <description>Go의 타입 작성법은 다음과 같다. Type = TypeName | TypeLit | &amp;#34;(&amp;#34; Type &amp;#34;)&amp;#34; TypeName = identifier | QualifiedIdent TypeLit = ArrayType | StructType | PointerType | FunctionType | InterfaceType | SliceType | MapType | ChannelType 나머지는 차차 보도록 하고, 여기서는 predefined identifier 중 types (참조)</description>
     </item>
     
     <item>
       <title>Variables</title>
-      <link>/2018/06/01/variables/</link>
+      <link>https://tramamte.github.io/2018/06/01/variables/</link>
       <pubDate>Fri, 01 Jun 2018 12:35:10 +0900</pubDate>
       
-      <guid>/2018/06/01/variables/</guid>
+      <guid>https://tramamte.github.io/2018/06/01/variables/</guid>
       <description>Go에서 변수 선언 규칙은 다음과 같다. VarDecl = &amp;#34;var&amp;#34; ( VarSpec | &amp;#34;(&amp;#34; { VarSpec &amp;#34;;&amp;#34; } &amp;#34;)&amp;#34; ) VarSpec = IdentifierList ( Type [ &amp;#34;=&amp;#34; ExpressionList ] | &amp;#34;=&amp;#34; ExpressionList ) IdentifierList = identifier { &amp;#34;,&amp;#34; identifier } ExpressionList = Expression { &amp;#34;,&amp;#34; Expression } 복잡해 보이지만 하나하나 살펴</description>
     </item>
     
     <item>
       <title>Packages</title>
-      <link>/2018/05/31/packages/</link>
+      <link>https://tramamte.github.io/2018/05/31/packages/</link>
       <pubDate>Thu, 31 May 2018 13:05:57 +0900</pubDate>
       
-      <guid>/2018/05/31/packages/</guid>
+      <guid>https://tramamte.github.io/2018/05/31/packages/</guid>
       <description>모든 Go 프로그램은 package들로 구성된다. 프로그램은 main package에서 시작한다. 관례상 package 이름은 import 경로의 마지막 element로 한다. Package 작성</description>
     </item>
     
     <item>
       <title>Fun - Semicolons</title>
-      <link>/2018/05/30/fun-semicolons/</link>
+      <link>https://tramamte.github.io/2018/05/30/fun-semicolons/</link>
       <pubDate>Wed, 30 May 2018 23:08:20 +0900</pubDate>
       
-      <guid>/2018/05/30/fun-semicolons/</guid>
+      <guid>https://tramamte.github.io/2018/05/30/fun-semicolons/</guid>
       <description>Semicolons 과 관련된 잡스러운 글입니다. Go는 lexer가 세미콜론을 자동으로 삽입하기 때문에 쓸 필요가 없다. Go 언어의 장점 중 하나로 얘기되지만, Go를 처음 접하는</description>
     </item>
     
     <item>
       <title>Semicolons</title>
-      <link>/2018/05/29/semicolons/</link>
+      <link>https://tramamte.github.io/2018/05/29/semicolons/</link>
       <pubDate>Tue, 29 May 2018 12:08:20 +0900</pubDate>
       
-      <guid>/2018/05/29/semicolons/</guid>
+      <guid>https://tramamte.github.io/2018/05/29/semicolons/</guid>
       <description>The Go Programming Language Specification - Semicolons와 Effective Go - Semicolons 부분을 정리했습니다. Go는 C/C++이나 Java처럼 세미콜론(;)을 사용하는 언어이다. 하지만 실제 소</description>
     </item>
     
     <item>
       <title>Comments</title>
-      <link>/2018/05/28/comments/</link>
+      <link>https://tramamte.github.io/2018/05/28/comments/</link>
       <pubDate>Mon, 28 May 2018 23:09:58 +0900</pubDate>
       
-      <guid>/2018/05/28/comments/</guid>
+      <guid>https://tramamte.github.io/2018/05/28/comments/</guid>
       <description>Go 언어에 대한 문법, 예제, 분석, 다른 언어와의 실행 비교 등을 정리합니다. // single line comment /* multi line comment */</description>
     </item>
     

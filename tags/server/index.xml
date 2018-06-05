@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Server on Awesome Patrick</title>
-    <link>/tags/server/</link>
+    <link>https://tramamte.github.io/tags/server/</link>
     <description>Recent content in Server on Awesome Patrick</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu&lt;br&gt;All rights reserved.</copyright>
     <lastBuildDate>Mon, 28 May 2018 19:06:37 +0900</lastBuildDate>
     
-	<atom:link href="/tags/server/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tramamte.github.io/tags/server/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugo Local Server 접속 방법</title>
-      <link>/2018/05/28/hugo-local-server/</link>
+      <link>https://tramamte.github.io/2018/05/28/hugo-local-server/</link>
       <pubDate>Mon, 28 May 2018 19:06:37 +0900</pubDate>
       
-      <guid>/2018/05/28/hugo-local-server/</guid>
+      <guid>https://tramamte.github.io/2018/05/28/hugo-local-server/</guid>
       <description>테마를 수정하거나 컨텐츠 작성 중 변경 사항을 확인하기 위해서 hugo server를 실행하면 배포하지 않고도 임시버전을 local 에서 확인 가능하다. $ hugo server 그런데 기본 주소</description>
     </item>
     

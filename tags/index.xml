@@ -2,130 +2,130 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Awesome Patrick</title>
-    <link>/tags/</link>
+    <link>https://tramamte.github.io/tags/</link>
     <description>Recent content in Tags on Awesome Patrick</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu&lt;br&gt;All rights reserved.</copyright>
     <lastBuildDate>Mon, 04 Jun 2018 13:56:33 +0900</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tramamte.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Bpm</title>
-      <link>/tags/bpm/</link>
+      <link>https://tramamte.github.io/tags/bpm/</link>
       <pubDate>Mon, 04 Jun 2018 13:56:33 +0900</pubDate>
       
-      <guid>/tags/bpm/</guid>
+      <guid>https://tramamte.github.io/tags/bpm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Brm</title>
-      <link>/tags/brm/</link>
+      <link>https://tramamte.github.io/tags/brm/</link>
       <pubDate>Mon, 04 Jun 2018 13:56:33 +0900</pubDate>
       
-      <guid>/tags/brm/</guid>
+      <guid>https://tramamte.github.io/tags/brm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Container</title>
-      <link>/tags/container/</link>
+      <link>https://tramamte.github.io/tags/container/</link>
       <pubDate>Thu, 31 May 2018 12:55:14 +0900</pubDate>
       
-      <guid>/tags/container/</guid>
+      <guid>https://tramamte.github.io/tags/container/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Drools</title>
-      <link>/tags/drools/</link>
+      <link>https://tramamte.github.io/tags/drools/</link>
       <pubDate>Mon, 04 Jun 2018 13:56:33 +0900</pubDate>
       
-      <guid>/tags/drools/</guid>
+      <guid>https://tramamte.github.io/tags/drools/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fun Go</title>
-      <link>/tags/fun-go/</link>
+      <link>https://tramamte.github.io/tags/fun-go/</link>
       <pubDate>Wed, 30 May 2018 23:08:20 +0900</pubDate>
       
-      <guid>/tags/fun-go/</guid>
+      <guid>https://tramamte.github.io/tags/fun-go/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Image</title>
-      <link>/tags/image/</link>
+      <link>https://tramamte.github.io/tags/image/</link>
       <pubDate>Thu, 31 May 2018 12:55:14 +0900</pubDate>
       
-      <guid>/tags/image/</guid>
+      <guid>https://tramamte.github.io/tags/image/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Jbpm</title>
-      <link>/tags/jbpm/</link>
+      <link>https://tramamte.github.io/tags/jbpm/</link>
       <pubDate>Mon, 04 Jun 2018 13:56:33 +0900</pubDate>
       
-      <guid>/tags/jbpm/</guid>
+      <guid>https://tramamte.github.io/tags/jbpm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Local</title>
-      <link>/tags/local/</link>
+      <link>https://tramamte.github.io/tags/local/</link>
       <pubDate>Mon, 28 May 2018 19:06:37 +0900</pubDate>
       
-      <guid>/tags/local/</guid>
+      <guid>https://tramamte.github.io/tags/local/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Root Directory</title>
-      <link>/tags/root-directory/</link>
+      <link>https://tramamte.github.io/tags/root-directory/</link>
       <pubDate>Thu, 31 May 2018 12:49:28 +0900</pubDate>
       
-      <guid>/tags/root-directory/</guid>
+      <guid>https://tramamte.github.io/tags/root-directory/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Server</title>
-      <link>/tags/server/</link>
+      <link>https://tramamte.github.io/tags/server/</link>
       <pubDate>Mon, 28 May 2018 19:06:37 +0900</pubDate>
       
-      <guid>/tags/server/</guid>
+      <guid>https://tramamte.github.io/tags/server/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Shortcode</title>
-      <link>/tags/shortcode/</link>
+      <link>https://tramamte.github.io/tags/shortcode/</link>
       <pubDate>Thu, 31 May 2018 22:20:26 +0900</pubDate>
       
-      <guid>/tags/shortcode/</guid>
+      <guid>https://tramamte.github.io/tags/shortcode/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Syntax</title>
-      <link>/tags/syntax/</link>
+      <link>https://tramamte.github.io/tags/syntax/</link>
       <pubDate>Tue, 05 Jun 2018 11:04:49 +0900</pubDate>
       
-      <guid>/tags/syntax/</guid>
+      <guid>https://tramamte.github.io/tags/syntax/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Systemd</title>
-      <link>/tags/systemd/</link>
+      <link>https://tramamte.github.io/tags/systemd/</link>
       <pubDate>Thu, 31 May 2018 12:49:28 +0900</pubDate>
       
-      <guid>/tags/systemd/</guid>
+      <guid>https://tramamte.github.io/tags/systemd/</guid>
       <description></description>
     </item>
     
