@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://tramamte.github.io/2018/06/07/draft-future/</loc>
+    <lastmod>2018-06-07T12:21:15+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tramamte.github.io/2018/06/05/ms-eats-github/</loc>
     <lastmod>2018-06-05T18:05:19+09:00</lastmod>
   </url>
@@ -74,7 +79,7 @@
   
   <url>
     <loc>https://tramamte.github.io/</loc>
-    <lastmod>2018-06-05T18:05:19+09:00</lastmod>
+    <lastmod>2018-06-07T12:21:15+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -109,6 +114,12 @@
   </url>
   
   <url>
+    <loc>https://tramamte.github.io/tags/draft/</loc>
+    <lastmod>2018-06-07T12:21:15+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://tramamte.github.io/tags/drools/</loc>
     <lastmod>2018-06-04T13:56:33+09:00</lastmod>
     <priority>0</priority>
@@ -117,6 +128,12 @@
   <url>
     <loc>https://tramamte.github.io/tags/fun-go/</loc>
     <lastmod>2018-06-05T12:55:40+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tramamte.github.io/tags/future/</loc>
+    <lastmod>2018-06-07T12:21:15+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -134,7 +151,7 @@
   
   <url>
     <loc>https://tramamte.github.io/topics/hugo/</loc>
-    <lastmod>2018-05-31T22:20:26+09:00</lastmod>
+    <lastmod>2018-06-07T12:21:15+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -164,7 +181,7 @@
   
   <url>
     <loc>https://tramamte.github.io/post/</loc>
-    <lastmod>2018-06-05T18:05:19+09:00</lastmod>
+    <lastmod>2018-06-07T12:21:15+09:00</lastmod>
     <priority>0</priority>
   </url>
   
