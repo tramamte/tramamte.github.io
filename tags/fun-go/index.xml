@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu&lt;br&gt;All rights reserved.</copyright>
-    <lastBuildDate>Tue, 05 Jun 2018 12:55:40 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 07 Jun 2018 18:32:17 +0900</lastBuildDate>
     
 	<atom:link href="https://tramamte.github.io/tags/fun-go/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Fun - Constants</title>
+      <link>https://tramamte.github.io/2018/06/07/fun-constants/</link>
+      <pubDate>Thu, 07 Jun 2018 18:32:17 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2018/06/07/fun-constants/</guid>
+      <description>Constants와 관련된 글입니다. 상수의 타입과 한계 이 글에서 한 것처럼 reflect 패키지를 이용해 타입을 명시하지 않은 상수의 타입에 대해 알아보자. package main import &amp;#34;fmt&amp;#34; import &amp;#34;reflect&amp;#34;</description>
+    </item>
     
     <item>
       <title>Fun - Variables &amp; Types</title>
