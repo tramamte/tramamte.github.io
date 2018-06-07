@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="description" content=" jBPM maven sample project 오류 해결 방법">
   <meta name="generator" content="Hugo 0.40.3" />
 
-  <title>Topics &middot; Awesome Patrick</title>
+  <title>jBPM Maven Sample 오류 해결 &middot; Awesome Patrick</title>
 
   
   
@@ -46,8 +46,6 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
  
-  
-  <link rel="alternate" type="application/rss+xml" title="Awesome Patrick" href="https://tramamte.github.io/topics/index.xml" />
   
 
   
@@ -206,7 +204,7 @@
 
     
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://tramamte.github.io/topics/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      <a class="pure-menu-link" href="https://tramamte.github.io/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
     </li>
     
 
@@ -233,38 +231,172 @@
 
 
 <div class="header">
-  <h1>Topics</h1>
+  <h1>jBPM Maven Sample 오류 해결</h1>
+  <h2> jBPM maven sample project 오류 해결 방법</h2>
 </div>
 <div class="content">
-  <ul>
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>07 Jun 2018, 23:11</time>
+  </div>
+
+  
+
   
   
-    <li>
-      <a href="go">go</a>
-      <span>&#40;9&#41;</span>
-    </li>
   
-    <li>
-      <a href="hugo">hugo</a>
-      <span>&#40;3&#41;</span>
-    </li>
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/bpm/brm">bpm/brm</a>
+    
+  </div>
   
-    <li>
-      <a href="bpm/brm">bpm/brm</a>
-      <span>&#40;2&#41;</span>
-    </li>
   
-    <li>
-      <a href="docker">docker</a>
-      <span>&#40;2&#41;</span>
-    </li>
+
   
-    <li>
-      <a href="ramblings">ramblings</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-  </ul>
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/eclipse">eclipse</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/jbpm">jbpm</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/maven">maven</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  
+
+<p><a href="https://tramamte.github.io/2018/06/04/eclipse-install/">jBPM / Drools 개발환경 구성</a> 방법에 따라 Eclipse에 jBPM/Drools 환경 구성 후 새로운 jBPM project를 maven 기반으로 생성하고 실행해면 오류가 발생한다.</p>
+
+<h3 id="jbpm-project-생성-절차">jBPM project 생성 절차</h3>
+
+<ol>
+<li><p>File - New - jBPM project 선택</p></li>
+
+<li><p>Example을 포함한 project 생성 선택 (두 번째 버튼)
+<img src="https://tramamte.github.io/post/bprm/jbpm_error_01.png" alt="error_01" /></p></li>
+
+<li><p>Build the Project using 항목에서 <strong>Maven</strong> 선택
+<img src="https://tramamte.github.io/post/bprm/jbpm_error_02.png" alt="error_02" /></p></li>
+
+<li><p>Add a simple hello world process 선택한 상태로 project 생성</p></li>
+</ol>
+
+<h3 id="오류">오류</h3>
+
+<p>위와 같이 생성한 project를 실행하면 다음과 같은 오류가 발생한다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Exception in thread &#34;main&#34; java.lang.NoSuchMethodError: org.jbpm.test.JBPMHelper.setupDataSource()Lbitronix/tm/resource/jdbc/PoolingDataSource;
+	at com.sample.ProcessMain.createRuntimeManager(ProcessMain.java:34)
+	at com.sample.ProcessMain.main(ProcessMain.java:23)</pre></div>
+<h3 id="원인">원인</h3>
+
+<p>오류 내용으로는 짐작하기 어렵게도, 원인은 버전이 다른 library들이 포함돼 있는 것이다.</p>
+
+<p>개발 환경을 구성할 때 jBPM runtime도 설치/설정했기 때문에 새로운 jBPM project를 만들면 Eclipse는 자동으로 jBPM Library를 포함시킨다. 그런데 sample project의 pom.xml에도 같은 library들 (버전이 낮은)이 포함돼 있다.</p>
+
+
+<figure>
+    
+        <img src="https://tramamte.github.io/post/bprm/jbpm_error_03.png" alt="Maven Dependencies와 jBPM Library에는 버전이 다른 library들이 포함돼 있다." />
+    
+    
+    <figcaption>
+        <h4>Project Explorer</h4>
+        <p>
+        Maven Dependencies와 jBPM Library에는 버전이 다른 library들이 포함돼 있다.
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<h3 id="해결법">해결법</h3>
+
+<p>아래 두 가지 방법 중 하나로 해결할 수 있다.</p>
+
+<h4 id="pom-xml에-포함된-낮은-버전의-library들-삭제">pom.xml에 포함된 낮은 버전의 library들 삭제</h4>
+
+<ol>
+<li>pom.xml</li>
+<li>Dependencies 탭으로 이동</li>
+<li>kie-api, jbpm-text 두 항목 모두 삭제</li>
+</ol>
+
+<h4 id="jbpm-library를-build-path에서-제거">jBPM Library를 Build Path에서 제거</h4>
+
+<ol>
+<li>Project Explorer에서 jBPM Library 오른 클릭</li>
+<li>Build Path - Remove from Build Path 선택</li>
+</ol>
+
+<p>이 경우에는 구버전(7.0.0)의 library를 사용하는데 다음과 같은 방법으로 변경할 수 있다.</p>
+
+<ol>
+<li>pom.xml</li>
+<li>Overview 탭에서 Properties에 포함된 runtime.version 값을 최신으로 변경</li>
+</ol>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://tramamte.github.io/2018/06/07/fun-constants/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://tramamte.github.io/2018/06/07/fun-constants/">Fun - Constants</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script>
+	
+
+	
+
+
+	(function() { 
+		var d = document, s = d.createElement('script');
+		s.src = 'https://' + 'awesome-patrick' + '.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+	})();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
 </div>
 
 </div>
@@ -278,3 +410,4 @@
 
 </body>
 </html>
+
