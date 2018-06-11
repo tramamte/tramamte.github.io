@@ -274,8 +274,8 @@
   
 
 <p>상수를 선언하는 방법은 &ldquo;<code>var</code>&rdquo; 대신 &ldquo;<code>const</code>&ldquo;를 사용한다는 점을 제외하면 <a href="https://tramamte.github.io/2018/06/01/variables/">변수</a>를 선언하는 방법과 유사하다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">ConstDecl  = &#34;const&#34; ( ConstSpec | &#34;(&#34; { ConstSpec &#34;;&#34; } &#34;)&#34; )
-ConstSpec  = IdentifierList [ [ Type ] &#34;=&#34; ExpressionList ]</pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">ConstDecl  = &#34;const&#34; ( ConstSpec | &#34;(&#34; { ConstSpec &#34;;&#34; } &#34;)&#34; ) .
+ConstSpec  = IdentifierList [ [ Type ] &#34;=&#34; ExpressionList ] .</pre></div>
 <p>단, 여느 다른 언어에서와 마찬가지로 선언 후 나중에 값을 할당하는 것은 불가능하다. 즉, 선언과 함께 값을 할당해야 한다. 또, 상수라는 것을 명확히 해야하기 때문에 <code>:=</code>를 사용하는 것도 당연히 불가능하다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Pi32</span> <span style="color:#66d9ef">float32</span> = <span style="color:#ae81ff">3.14</span>
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Pi</span> = <span style="color:#ae81ff">3.14</span>

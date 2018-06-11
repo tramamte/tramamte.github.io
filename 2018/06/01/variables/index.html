@@ -274,10 +274,10 @@
   
 
 <p>Go에서 변수 선언 규칙은 다음과 같다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">VarDecl  = &#34;var&#34; ( VarSpec | &#34;(&#34; { VarSpec &#34;;&#34; } &#34;)&#34; )
-VarSpec  = IdentifierList ( Type [ &#34;=&#34; ExpressionList ] | &#34;=&#34; ExpressionList )
-IdentifierList = identifier { &#34;,&#34; identifier }
-ExpressionList = Expression { &#34;,&#34; Expression }</pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">VarDecl  = &#34;var&#34; ( VarSpec | &#34;(&#34; { VarSpec &#34;;&#34; } &#34;)&#34; ) .
+VarSpec  = IdentifierList ( Type [ &#34;=&#34; ExpressionList ] | &#34;=&#34; ExpressionList ) .
+IdentifierList = identifier { &#34;,&#34; identifier } .
+ExpressionList = Expression { &#34;,&#34; Expression } .</pre></div>
 <p>복잡해 보이지만 하나하나 살펴보면 다음과 같다.</p>
 
 <ol>
@@ -307,7 +307,7 @@ ExpressionList = Expression { &#34;,&#34; Expression }</pre></div>
 <h2 id="short-variable-declarations">Short variable declarations</h2>
 
 <p>변수 선언 뒤 바로 초기값을 입력하는 경우에는 귀찮은 <code>var</code>도 삭제할 수 있다. 이 방식을 <em>short variable declaration</em> 이라 하고 다음과 같이 쓴다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">ShortVarDecl = IdentifierList &#34;:=&#34; ExpressionList</pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">ShortVarDecl = IdentifierList &#34;:=&#34; ExpressionList .</pre></div>
 <p>이름 넣고,  <code>:=</code> (equal mark 앞에 colon이 있다) , 값을 넣으면 된다.</p>
 
 <p>IndentifierList, ExpressionList이기 때문에 당연히 <code>,</code>로 구분해 복수개를 쓸 수 있다.</p>

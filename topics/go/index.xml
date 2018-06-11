@@ -45,7 +45,7 @@
       <pubDate>Tue, 05 Jun 2018 12:14:49 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/06/05/types/</guid>
-      <description>Go의 타입 작성법은 다음과 같다. Type = TypeName | TypeLit | &amp;#34;(&amp;#34; Type &amp;#34;)&amp;#34; TypeName = identifier | QualifiedIdent TypeLit = ArrayType | StructType | PointerType | FunctionType | InterfaceType | SliceType | MapType | ChannelType 나머지는 차차 보도록 하고, 여기서는 predefined identifier 중 types (참조)</description>
+      <description>Go의 타입 작성법은 다음과 같다. Type = TypeName | TypeLit | &amp;#34;(&amp;#34; Type &amp;#34;)&amp;#34; . TypeName = identifier | QualifiedIdent . TypeLit = ArrayType | StructType | PointerType | FunctionType | InterfaceType | SliceType | MapType | ChannelType . 나머지는 차차 보도록 하고, 여기서는 predefined identifier 중 types (</description>
     </item>
     
     <item>
@@ -54,7 +54,7 @@
       <pubDate>Fri, 01 Jun 2018 12:35:10 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/06/01/variables/</guid>
-      <description>Go에서 변수 선언 규칙은 다음과 같다. VarDecl = &amp;#34;var&amp;#34; ( VarSpec | &amp;#34;(&amp;#34; { VarSpec &amp;#34;;&amp;#34; } &amp;#34;)&amp;#34; ) VarSpec = IdentifierList ( Type [ &amp;#34;=&amp;#34; ExpressionList ] | &amp;#34;=&amp;#34; ExpressionList ) IdentifierList = identifier { &amp;#34;,&amp;#34; identifier } ExpressionList = Expression { &amp;#34;,&amp;#34; Expression } 복잡해 보이지만 하나하나 살펴</description>
+      <description>Go에서 변수 선언 규칙은 다음과 같다. VarDecl = &amp;#34;var&amp;#34; ( VarSpec | &amp;#34;(&amp;#34; { VarSpec &amp;#34;;&amp;#34; } &amp;#34;)&amp;#34; ) . VarSpec = IdentifierList ( Type [ &amp;#34;=&amp;#34; ExpressionList ] | &amp;#34;=&amp;#34; ExpressionList ) . IdentifierList = identifier { &amp;#34;,&amp;#34; identifier } . ExpressionList = Expression { &amp;#34;,&amp;#34; Expression } . 복잡해 보이지만 하나</description>
     </item>
     
     <item>
