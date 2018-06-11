@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu&lt;br&gt;All rights reserved.</copyright>
-    <lastBuildDate>Thu, 07 Jun 2018 18:20:18 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 08 Jun 2018 18:58:47 +0900</lastBuildDate>
     
 	<atom:link href="https://tramamte.github.io/tags/syntax/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Import</title>
+      <link>https://tramamte.github.io/2018/06/08/import/</link>
+      <pubDate>Fri, 08 Jun 2018 18:58:47 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2018/06/08/import/</guid>
+      <description>외부 패키지에서 제공하는 기능을 사용하기 위해 Go에서는 import 명령을 사용한다. 작성 규칙은 다음과 같다. ImportDecl = &amp;#34;import&amp;#34; ( ImportSpec | &amp;#34;(&amp;#34; { ImportSpec &amp;#34;;&amp;#34; } &amp;#34;)&amp;#34; ) . ImportSpec = [ &amp;#34;.&amp;#34; | PackageName ] ImportPath . ImportPath =</description>
+    </item>
     
     <item>
       <title>Constants</title>

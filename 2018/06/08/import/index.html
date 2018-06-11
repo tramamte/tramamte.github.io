@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="description" content="Import - 외부 패키지 사용">
   <meta name="generator" content="Hugo 0.40.3" />
 
-  <title>Awesome Patrick</title>
+  <title>Import &middot; Awesome Patrick</title>
 
   
   
@@ -46,8 +46,6 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
  
-  
-  <link rel="alternate" type="application/rss+xml" title="Awesome Patrick" href="https://tramamte.github.io/index.xml" />
   
 
   
@@ -233,17 +231,12 @@
 
 
 <div class="header">
-  <h1>Awesome Patrick</h1>
-  <h2>Patrick&#39;s ramblings</h2>
+  <h1>Import</h1>
+  <h2>Import - 외부 패키지 사용</h2>
 </div>
-
 <div class="content">
-  
-    <article>
-  <header>
-    <h2><a href="https://tramamte.github.io/2018/06/08/import/">Import</a></h2>
 
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
@@ -278,248 +271,95 @@
 
 </div>
 
-  </header>
+  <p>외부 패키지에서 제공하는 기능을 사용하기 위해 Go에서는 <code>import</code> 명령을 사용한다. 작성 규칙은 다음과 같다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">ImportDecl   = &#34;import&#34; ( ImportSpec | &#34;(&#34; { ImportSpec &#34;;&#34; } &#34;)&#34; ) .
+ImportSpec   = [ &#34;.&#34; | PackageName ] ImportPath .
+ImportPath   = string_lit .</pre></div>
+<p><code>string_lit</code> 에 대해서는 따로 붙이지 않았는데, 대략 큰따옴표로 묶은 것으로 생각하면 된다. (path를 이상한 조합으로 만들지 않는 한&hellip;)</p>
 
-  <p>
-  외부 패키지에서 제공하는 기능을 사용하기 위해 Go에서는 import 명령을 사용한다. 작성 규칙은 다음과 같다. ImportDecl = &#34;import&#34; ( ImportSpec | &#34;(&#34; { ImportSpec &#34;;&#34; } &#34;)&#34; ) . ImportSpec = [ &#34;.&#34; | PackageName ] ImportPath . ImportPath = ...    
-  </p>
+<p>주로 접할 수 있는 Go 샘플에서는 <code>import</code> 뒤에 사용할 패키지의 path를 큰따옴표 안에 적는 방식으로 사용하는데, 좀 더 자세히 보면 path 앞에 점(&ldquo;.&rdquo;)이나 <code>PackageName</code> 을 쓸 수도 있다.</p>
+
+<p>가장 처음 접하게 되는 패키지인 <code>fmt</code> 패키지를 예로 들면, 보통 샘플은 다음과 같다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Hello, Go!&#34;</span>)
+}</code></pre></div>
+<p><a href="https://tramamte.github.io/2018/05/31/packages/">Packages</a> 에서 언급한 것처럼 관례상 path의 마지막 element를 패키지 이름으로 맞췄기 때문에 <code>import</code> 뒤에 쓴 <code>&quot;fmt&quot;</code> 와 <code>Println</code> 앞에 쓴 <code>fmt</code>가 같아 보이는 것이지, 정확하게는 <code>&quot;fmt&quot;</code> 는 패키지의 path, <code>fmt</code> 는 패키지의 이름이다.</p>
+
+<p><code>PackageName</code> 을 <code>ImportPath</code> 앞에 별도로 적는 경우는 일종의 별칭을 만드는 것이다.</p>
+
+<p>출력을 위해 매번 <code>fmt</code> 를 쓰는 것이 귀찮다면 별칭을 만들어 사용할 수 있다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#a6e22e">f</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Hello, Go!&#34;</span>)
+}</code></pre></div>
+<p>별칭을 쓰는 것조차 귀찮다면 점(&ldquo;.&rdquo;)을 찍으면 된다. <code>ImportPath</code> 앞에 점을 찍으면 해당 패키지의 기능들을 마치 동일 패키지인 듯 접근할 수 있다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> . <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Hello, Go!&#34;</span>)
+}</code></pre></div>
+<p>패키지의 이름을 정할 때는 <em>blank identifier - underscore만 단독으로 쓴 경우 -</em> 를 사용할 수 없지만, 외부 패키지를 import 할 때 <code>PackageName</code> 자리에는 blank identifer를 사용할 수 있다. 이 경우에는 해당 패키지의 기능을 호출하지 않겠다는 의미이다.</p>
+
+<blockquote>
+<p>&ldquo;아니, 사용하지도 않을거면서 왜 import 하고 난리야?&rdquo;</p>
+</blockquote>
+
+<p>이 부분은 나중에, <code>main</code> 이 아닌 패키지를 만들 때 다시 다루는게 좋겠다. To be continued.</p>
+
 
   
-  <footer>
-    <a href="https://tramamte.github.io/2018/06/08/import/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://tramamte.github.io/2018/06/07/resolve-sample-error/">jBPM Maven Sample 오류 해결</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>07 Jun 2018, 23:11</time>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://tramamte.github.io/2018/06/07/resolve-sample-error/"><i class="fa fa-chevron-left"></i></a>
+    
   </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
+  <div class="pure-u-10-24">
     
-      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/bpm/brm">bpm/brm</a>
+    <nav class="prev">
+      <a href="https://tramamte.github.io/2018/06/07/resolve-sample-error/">jBPM Maven Sample 오류 해결</a>
+    </nav>
     
   </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/eclipse">eclipse</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/jbpm">jbpm</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/maven">maven</a>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
     
   </div>
-  
-  
-
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
 </div>
 
-  </header>
-
-  <p>
-  jBPM / Drools 개발환경 구성 방법에 따라 Eclipse에 jBPM/Drools 환경 구성 후 새로운 jBPM project를 maven 기반으로 생성하고 실행하면 오류가 발생한다. jBPM project 생성 절차 File - New ...    
-  </p>
-
-  
-  <footer>
-    <a href="https://tramamte.github.io/2018/06/07/resolve-sample-error/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://tramamte.github.io/2018/06/07/fun-constants/">Fun - Constants</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>07 Jun 2018, 18:32</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/go">go</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/fun-go">fun-go</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Constants와 관련된 글입니다. 상수의 타입과 한계 이 글에서 한 것처럼 reflect 패키지를 이용해 타입을 명시하지 않은 상수의 타입에 대해 알아보자. package main import &#34;fmt&#34; import &#34;reflect&#34; ...    
-  </p>
-
-  
-  <footer>
-    <a href="https://tramamte.github.io/2018/06/07/fun-constants/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://tramamte.github.io/2018/06/07/constants/">Constants</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>07 Jun 2018, 18:20</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/go">go</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/syntax">syntax</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  상수를 선언하는 방법은 &ldquo;var&rdquo; 대신 &ldquo;const&ldquo;를 사용한다는 점을 제외하면 변수를 선언하는 방법과 유사하다. ConstDecl = &#34;const&#34; ( ConstSpec | &#34;(&#34; { ConstSpec &#34;;&#34; } ...    
-  </p>
-
-  
-  <footer>
-    <a href="https://tramamte.github.io/2018/06/07/constants/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://tramamte.github.io/2018/06/07/draft-future/">Draft, Future 포스트 확인 방법</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>07 Jun 2018, 12:21</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/hugo">hugo</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/draft">draft</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/future">future</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Draft 확인 $ hugo server -D Future 포스트 확인 $ hugo server -F    
-  </p>
-
-  
-</article>
-
-  
-
-  
 
 
-<nav class="pagination" role="pagination">
   
-  <i class="fa fa-chevron-left"></i>
-  
-  <span>&nbsp;1 / 4&nbsp;</span>
-  
-  <a href="https://tramamte.github.io/page/2/"><i class="fa fa-chevron-right"></i></a>
-  
-</nav>
+<div id="disqus_thread"></div>
+<script>
+	
 
+	
+
+
+	(function() { 
+		var d = document, s = d.createElement('script');
+		s.src = 'https://' + 'awesome-patrick' + '.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+	})();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
 </div>
