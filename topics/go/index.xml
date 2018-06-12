@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu&lt;br&gt;All rights reserved.</copyright>
-    <lastBuildDate>Fri, 08 Jun 2018 18:58:47 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 12 Jun 2018 12:05:37 +0900</lastBuildDate>
     
 	<atom:link href="https://tramamte.github.io/topics/go/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Pointers</title>
+      <link>https://tramamte.github.io/2018/06/12/pointers/</link>
+      <pubDate>Tue, 12 Jun 2018 12:05:37 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2018/06/12/pointers/</guid>
+      <description>Go의 포인터는 생김과 사용법이 C의 그것과 매우 유사하다. 먼저 포인터에 대한 규정을 살펴보면 다음과 같다. PointerType = &amp;#34;*&amp;#34; BaseType . BaseType = Type . C에서와 같이 타입 앞에 * (as</description>
+    </item>
     
     <item>
       <title>Import</title>

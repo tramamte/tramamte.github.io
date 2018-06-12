@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="description" content="포인터">
   <meta name="generator" content="Hugo 0.40.3" />
 
-  <title>Tags &middot; Awesome Patrick</title>
+  <title>Pointers &middot; Awesome Patrick</title>
 
   
   
@@ -46,8 +46,6 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
  
-  
-  <link rel="alternate" type="application/rss+xml" title="Awesome Patrick" href="https://tramamte.github.io/tags/index.xml" />
   
 
   
@@ -206,7 +204,7 @@
 
     
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://tramamte.github.io/tags/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      <a class="pure-menu-link" href="https://tramamte.github.io/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
     </li>
     
 
@@ -233,108 +231,109 @@
 
 
 <div class="header">
-  <h1>Tags</h1>
+  <h1>Pointers</h1>
+  <h2>포인터</h2>
 </div>
 <div class="content">
-  <ul>
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>12 Jun 2018, 12:05</time>
+  </div>
+
+  
+
   
   
-    <li>
-      <a href="syntax">syntax</a>
-      <span>&#40;8&#41;</span>
-    </li>
   
-    <li>
-      <a href="fun-go">fun-go</a>
-      <span>&#40;3&#41;</span>
-    </li>
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/go">go</a>
+    
+  </div>
   
-    <li>
-      <a href="jbpm">jbpm</a>
-      <span>&#40;2&#41;</span>
-    </li>
   
-    <li>
-      <a href="bpm">bpm</a>
-      <span>&#40;1&#41;</span>
-    </li>
+
   
-    <li>
-      <a href="brm">brm</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-    <li>
-      <a href="container">container</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-    <li>
-      <a href="draft">draft</a>
-      <span>&#40;1&#41;</span>
-    </li>
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/syntax">syntax</a>
+    
+  </div>
   
-    <li>
-      <a href="drools">drools</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-    <li>
-      <a href="eclipse">eclipse</a>
-      <span>&#40;1&#41;</span>
-    </li>
+
+</div>
+
+  <p>Go의 포인터는 생김과 사용법이 C의 그것과 매우 유사하다.</p>
+
+<p>먼저  포인터에 대한 규정을 살펴보면 다음과 같다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">PointerType = &#34;*&#34; BaseType .
+BaseType    = Type .</pre></div>
+<p>C에서와 같이 타입 앞에 * (asterisk)를 붙이면 포인터 타입이 된다.</p>
+
+<p><strong>포인터 = 주소</strong> 이므로 포인터 변수에 값을 할당 (주소를 할당)할 때는 기본 타입 앞에 &amp; (ampersand)를 붙인다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">hello</span> <span style="color:#66d9ef">string</span>
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">int</span> = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">i</span>
+<span style="color:#a6e22e">hello_p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">hello</span></code></pre></div>
+<p>C/C++에서와 같이 기본 타입을 선언하지 않은 상태에서 포인터에 주소를 할당할 수 있으며 - dynamic allocation - 이를 위해 built-in 함수인 <code>new</code> 를 사용한다. - Go의 <code>new</code> 는 operator가 아닌 function이다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">int</span>
+<span style="color:#a6e22e">p</span> = new(<span style="color:#66d9ef">int</span>)</code></pre></div>
+
   
-    <li>
-      <a href="future">future</a>
-      <span>&#40;1&#41;</span>
-    </li>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://tramamte.github.io/2018/06/08/import/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://tramamte.github.io/2018/06/08/import/">Import</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
   
-    <li>
-      <a href="github">github</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="image">image</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="local">local</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="maven">maven</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="ms">ms</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="root-directory">root-directory</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="server">server</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="shortcode">shortcode</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-    <li>
-      <a href="systemd">systemd</a>
-      <span>&#40;1&#41;</span>
-    </li>
-  
-  </ul>
+<div id="disqus_thread"></div>
+<script>
+	
+
+	
+
+
+	(function() { 
+		var d = document, s = d.createElement('script');
+		s.src = 'https://' + 'awesome-patrick' + '.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+	})();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
 </div>
 
 </div>
@@ -348,3 +347,4 @@
 
 </body>
 </html>
+
