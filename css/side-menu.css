@@ -84,10 +84,10 @@ appears on the left side of the page.
 #menu {
     margin-left: -150px; /* "#menu" width */
     width: 150px;
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    bottom: 0;
     z-index: 100; /* so the menu or its navicon stays above all content */
     background: #191818;
     overflow-y: auto;

@@ -10,8 +10,9 @@ body {
 /*
 Add transition to containers so they can push in and out.
 */
-
+/* prevent contents animation
 #layout,
+*/
 #menu,
 .menu-link {
     -webkit-transition: all 0.1s ease-out;
@@ -88,10 +89,10 @@ appears on the left side of the page.
     margin-left: -150px;
     /* "#menu" width */
     width: 150px;
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    bottom: 0;
     z-index: 100;
     /* so the menu or its navicon stays above all content */
     background: #191818;
