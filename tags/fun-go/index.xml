@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu&lt;br&gt;All rights reserved.</copyright>
-    <lastBuildDate>Thu, 07 Jun 2018 18:32:17 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 14 Jun 2018 18:24:57 +0900</lastBuildDate>
     
 	<atom:link href="https://tramamte.github.io/tags/fun-go/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Fun - Packages &amp; Import</title>
+      <link>https://tramamte.github.io/2018/06/14/fun-packages-and-import/</link>
+      <pubDate>Thu, 14 Jun 2018 18:24:57 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2018/06/14/fun-packages-and-import/</guid>
+      <description>Packages, Import와 관련된 글입니다. 이제 겨우 타입 정도를 다룬 마당에 굉장히 이른 감은 있습니다. Go도 당연히 다른 언어처럼 작성한 코드의 재사용이 가능하다. 쉬</description>
+    </item>
     
     <item>
       <title>Fun - Constants</title>
