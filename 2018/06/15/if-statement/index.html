@@ -272,7 +272,9 @@
 
 </div>
 
-  <p>Go의 <code>if</code> 조건문은 조건에 괄호(())를 쓰지 않아도 된다는 점을 제외하면 C, Java 등 다른 언어의 그것과 유사하다. 물론 조건에 괄호를 쓰는 것도 가능하며, 복잡한 조건인 경우에는 괄호가 반드시 필요한 경우도 많다. 다만 세미콜론 자동 삽입 규칙(<a href="https://tramamte.github.io/2018/05/30/fun-semicolons/">참고</a>)에 따라 엔터를 마음껏 쓸 수 없다는 점에서는 차이가 있다.</p>
+  
+
+<p>Go의 <code>if</code> 조건문은 조건에 괄호(())를 쓰지 않아도 된다는 점을 제외하면 C, Java 등 다른 언어의 그것과 유사하다. 물론 조건에 괄호를 쓰는 것도 가능하며, 복잡한 조건인 경우에는 괄호가 반드시 필요한 경우도 많다. 다만 세미콜론 자동 삽입 규칙(<a href="https://tramamte.github.io/2018/05/30/fun-semicolons/">참고</a>)에 따라 엔터를 마음껏 쓸 수 없다는 점에서는 차이가 있다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> = <span style="color:#ae81ff">1</span>
 <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;One&#34;</span>)
@@ -316,6 +318,35 @@
     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;One&#34;</span>)
 }</code></pre></div>
 <p>위 Go code처럼 세미콜론(;)을 사용해 값 할당과 조건을 분리한다는 점에서 차이가 있다. - &lsquo;세미콜론을 썼으니 대신 엔터를?&rsquo; 이라고 생각했다면 박수 받아 마땅하다.</p>
+
+<h3 id="간단한-실행문">간단한 실행문</h3>
+
+<p>조건문 내부에 간단한 실행문을 작성할 경우에 C/C++, Java에서는 중괄호({})를 생략할 수 있다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// c/c++
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (i <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+    printf(<span style="color:#e6db74">&#34;Zero&#34;</span>);
+
+<span style="color:#66d9ef">if</span> (j <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) printf(<span style="color:#e6db74">&#34;Zero, too&#34;</span>);</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// Java
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">==</span> 0<span style="color:#f92672">)</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Zero&#34;</span><span style="color:#f92672">);</span>
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>j <span style="color:#f92672">==</span> 0<span style="color:#f92672">)</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Zero, too&#34;</span><span style="color:#f92672">);</span></code></pre></div>
+<p>하지만 Go의 <code>if</code>조건문 작성 규칙은 다음과 같다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">IfStmt = &#34;if&#34; [ SimpleStmt &#34;;&#34; ] Expression Block [ &#34;else&#34; ( IfStmt | Block ) ] .</pre></div>
+<p>중요한 것은 <code>Block</code>인데,</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Block = &#34;{&#34; StatementList &#34;}&#34; .</pre></div>
+<p>이러한 규칙이기 때문에 반드시 중괄호가 필요하다. 따라서 위 예는 Go에서는 다음과 같이 작성해야 한다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Go
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Zero&#34;</span>)
+}
+
+<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Zero, too&#34;</span>)}</code></pre></div>
+<h3 id="삼항-조건-연산자-ternary-operator">삼항 조건 연산자 (Ternary operator)</h3>
+
+<p>Go는 삼항 조건 연산자가 없다. 즉, 다음과 같은 코드는 작성할 수 없다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> (j <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>);</code></pre></div>
+<p><code>if</code>, <code>else</code>를 사용하자.</p>
 
 
   
