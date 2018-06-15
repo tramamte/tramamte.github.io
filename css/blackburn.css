@@ -183,6 +183,12 @@ figcaption > p {
   margin-left: 0;
 }
 
+@media (min-width: 48em) {
+  #menuBg {
+      left: 150px;
+  }
+}
+
 #menu {
   background: #001520;
 }
