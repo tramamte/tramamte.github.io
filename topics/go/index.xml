@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu&lt;br&gt;All rights reserved.</copyright>
-    <lastBuildDate>Thu, 14 Jun 2018 18:24:57 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 15 Jun 2018 12:18:07 +0900</lastBuildDate>
     
 	<atom:link href="https://tramamte.github.io/topics/go/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>if Statement</title>
+      <link>https://tramamte.github.io/2018/06/15/if-statement/</link>
+      <pubDate>Fri, 15 Jun 2018 12:18:07 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2018/06/15/if-statement/</guid>
+      <description>Go의 if 조건문은 조건에 괄호(())를 쓰지 않아도 된다는 것을 제외하면 C, Java 등 다른 언어의 그것과 유사하다. 물론 조건에 괄호를 쓰는 것도 가능하며, 복잡한 조건</description>
+    </item>
     
     <item>
       <title>Fun - Packages &amp; Import</title>
