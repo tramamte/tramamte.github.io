@@ -4,6 +4,7 @@
         menu     = document.getElementById('menu'),
         menuLink = document.getElementById('menuLink'),
         //content  = document.getElementById('content'),
+        menuBg   = document.getElementById('menuBg'),
         mask     = document.getElementById('mask');
 
     function toggleClass(element, name) {
@@ -54,9 +55,10 @@
 
         e.preventDefault();
         toggleClass(layout, active);
-        toggleClass(mask, active);
         toggleClass(menu, active);
         toggleClass(menuLink, active);
+        toggleClass(menuBg, active);
+        toggleClass(mask, active);
     }
 
     menuLink.onclick = function (e) {

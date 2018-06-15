@@ -32,10 +32,10 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  height: 150%; /* auto-hide address bar */
-  z-index: 98; /* menu and button are 1000 */ 
+  height: 100vh; /* auto-hide address bar */
+  z-index: 97; /* menu and button are 1000 */ 
   background-color: rgba(0, 0, 0, 0.5);
-  display: none;  
+  display: none;
 }
 
 #mask.active {
@@ -158,6 +158,31 @@ figcaption > p {
   overflow: hidden;
 }
 
+
+#menuBg {
+  /* prevent empty background while scrolling*/
+  margin-left: -150px; /* "#menu" width */
+  width: 150px;    
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 98; /* so the menu or its navicon stays above all content */
+  background: #001520;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: block;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -ms-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+#menuBg.active {
+  margin-left: 0;
+}
+
 #menu {
   background: #001520;
 }
@@ -180,7 +205,7 @@ figcaption > p {
   position: relative;
   min-height: 100%;
   padding-bottom: 80px;
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 #menu-section header {
@@ -189,7 +214,8 @@ figcaption > p {
 
 #menu-section footer {
   position: absolute;
-  bottom: 0
+  bottom: 0;
+  padding-top: 0.5em;
 }
 
 .menu-link,

@@ -80,10 +80,9 @@ The content `<div>` is where all your content goes.
 The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
 appears on the left side of the page.
 */
-
 #menu {
     margin-left: -150px; /* "#menu" width */
-    width: 150px;
+    width: 150px;    
     height: 100%;
     position: fixed;
     top: 0;
@@ -93,6 +92,7 @@ appears on the left side of the page.
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
+
     /*
     All anchors inside the menu should be styled like this.
     */
