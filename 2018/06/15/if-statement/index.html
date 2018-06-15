@@ -335,7 +335,7 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">IfStmt = &#34;if&#34; [ SimpleStmt &#34;;&#34; ] Expression Block [ &#34;else&#34; ( IfStmt | Block ) ] .</pre></div>
 <p>중요한 것은 <code>Block</code>인데,</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Block = &#34;{&#34; StatementList &#34;}&#34; .</pre></div>
-<p>이러한 규칙이기 때문에 반드시 중괄호가 필요하다. 따라서 위 예는 Go에서는 다음과 같이 작성해야 한다.</p>
+<p>한 마디로 반드시 중괄호가 필요하다. 따라서 위 예는 Go에서는 다음과 같이 작성해야 한다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Go
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Zero&#34;</span>)
