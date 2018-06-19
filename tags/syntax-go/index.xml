@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Syntax on Awesome Patrick</title>
-    <link>https://tramamte.github.io/tags/syntax/</link>
-    <description>Recent content in Syntax on Awesome Patrick</description>
+    <title>Syntax Go on Awesome Patrick</title>
+    <link>https://tramamte.github.io/tags/syntax-go/</link>
+    <description>Recent content in Syntax Go on Awesome Patrick</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu&lt;br&gt;All rights reserved.</copyright>
     <lastBuildDate>Mon, 18 Jun 2018 12:40:39 +0900</lastBuildDate>
     
-	<atom:link href="https://tramamte.github.io/tags/syntax/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tramamte.github.io/tags/syntax-go/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>switch Statement</title>
+      <title>switch 조건문</title>
       <link>https://tramamte.github.io/2018/06/18/switch-statement/</link>
       <pubDate>Mon, 18 Jun 2018 12:40:39 +0900</pubDate>
       
@@ -22,25 +22,25 @@
     </item>
     
     <item>
-      <title>if Statement</title>
+      <title>if 조건문</title>
       <link>https://tramamte.github.io/2018/06/15/if-statement/</link>
       <pubDate>Fri, 15 Jun 2018 12:18:07 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/06/15/if-statement/</guid>
-      <description>Go의 if 조건문은 조건에 괄호(())를 쓰지 않아도 된다는 점을 제외하면 C/C++, Java 등 다른 언어의 그것과 유사하다. 물론 조건에 괄호를 쓰는 것도 가능하며, 복잡한 조건</description>
+      <description>Go의 if 조건문은 조건에 괄호(())를 쓰지 않아도 된다는 점을 제외하면 C/C++, Java 등 언어의 그것과 유사하다. 물론 조건에 괄호를 쓰는 것도 가능하며, 복잡한 조건인 경</description>
     </item>
     
     <item>
-      <title>Pointers</title>
+      <title>포인터</title>
       <link>https://tramamte.github.io/2018/06/12/pointers/</link>
       <pubDate>Tue, 12 Jun 2018 12:05:37 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/06/12/pointers/</guid>
-      <description>Go의 포인터는 생김과 사용법이 C의 그것과 매우 유사하다. 먼저 포인터에 대한 규정을 살펴보면 다음과 같다. PointerType = &amp;#34;*&amp;#34; BaseType . BaseType = Type . C에서와 같이 타입 앞에 * (as</description>
+      <description>Go의 포인터는 생김과 사용법이 C의 그것과 매우 유사하다. 먼저 포인터에 대한 규정을 살펴보면 다음과 같다. PointerType = &amp;#34;*&amp;#34; BaseType . BaseType = Type . C에서와 같이 타입 앞에 asterisk (*)</description>
     </item>
     
     <item>
-      <title>Import</title>
+      <title>임포트 - 패키지 사용</title>
       <link>https://tramamte.github.io/2018/06/08/import/</link>
       <pubDate>Fri, 08 Jun 2018 18:58:47 +0900</pubDate>
       
@@ -49,7 +49,7 @@
     </item>
     
     <item>
-      <title>Constants</title>
+      <title>상수</title>
       <link>https://tramamte.github.io/2018/06/07/constants/</link>
       <pubDate>Thu, 07 Jun 2018 18:20:18 +0900</pubDate>
       
@@ -58,7 +58,7 @@
     </item>
     
     <item>
-      <title>Types</title>
+      <title>타입</title>
       <link>https://tramamte.github.io/2018/06/05/types/</link>
       <pubDate>Tue, 05 Jun 2018 12:14:49 +0900</pubDate>
       
@@ -67,7 +67,7 @@
     </item>
     
     <item>
-      <title>Variables</title>
+      <title>변수</title>
       <link>https://tramamte.github.io/2018/06/01/variables/</link>
       <pubDate>Fri, 01 Jun 2018 12:35:10 +0900</pubDate>
       
@@ -76,30 +76,39 @@
     </item>
     
     <item>
-      <title>Packages</title>
+      <title>패키지</title>
       <link>https://tramamte.github.io/2018/05/31/packages/</link>
       <pubDate>Thu, 31 May 2018 13:05:57 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/05/31/packages/</guid>
-      <description>모든 Go 프로그램은 package들로 구성된다. 프로그램은 main package에서 시작한다. 관례상 package 이름은 import 경로의 마지막 element로 한다. Package 작성</description>
+      <description>모든 Go 프로그램은 패키지들로 구성된다. 프로그램은 main 패키지에서 시작한다. 관례상 패키지 이름은 임포트 경로의 마지막 엘리먼트로 한다. 패키지 작성 규정 (cl</description>
     </item>
     
     <item>
-      <title>Semicolons</title>
+      <title>세미콜론</title>
       <link>https://tramamte.github.io/2018/05/29/semicolons/</link>
       <pubDate>Tue, 29 May 2018 12:08:20 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/05/29/semicolons/</guid>
-      <description>The Go Programming Language Specification - Semicolons와 Effective Go - Semicolons 부분을 정리했습니다. Go는 C/C++이나 Java처럼 세미콜론(;)을 사용하는 언어이다. 하지만 실제 소</description>
+      <description>Go는 C/C++이나 Java처럼 세미콜론(;)을 사용하는 언어이다. 하지만 소스코드에서 세미콜론을 볼 일은 거의 없다. Go lexer가 몇 가지 간단한 규칙</description>
     </item>
     
     <item>
-      <title>Comments</title>
+      <title>주석</title>
       <link>https://tramamte.github.io/2018/05/28/comments/</link>
       <pubDate>Mon, 28 May 2018 23:09:58 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/05/28/comments/</guid>
-      <description>Go 언어에 대한 문법, 예제, 분석, 다른 언어와의 실행 비교 등을 정리합니다. // single line comment /* multi line comment */</description>
+      <description>// single line comment  /* multi line comment */</description>
+    </item>
+    
+    <item>
+      <title>시작 Go</title>
+      <link>https://tramamte.github.io/2018/05/28/start-go/</link>
+      <pubDate>Mon, 28 May 2018 23:00:10 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2018/05/28/start-go/</guid>
+      <description>Go 토픽은 제가 Go 언어를 공부하면서 정리한 내용들입니다. 그간 주로 C/C++을 사용해 왔던지라 &amp;lsquo;그에 비해 Go는 이렇더라&amp;rsquo;라는 내</description>
     </item>
     
   </channel>

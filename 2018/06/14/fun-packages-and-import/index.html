@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Packages, Import에 대한 심화 학습">
+  <meta name="description" content="Fun packages and import">
   <meta name="generator" content="Hugo 0.42.1" />
 
-  <title>Fun - Packages &amp; Import &middot; Awesome Patrick</title>
+  <title>패키지, 임포트에 대한 심화 학습 &middot; Awesome Patrick</title>
 
   
   
@@ -232,8 +232,8 @@
 
 
 <div class="header">
-  <h1>Fun - Packages &amp; Import</h1>
-  <h2>Packages, Import에 대한 심화 학습</h2>
+  <h1>패키지, 임포트에 대한 심화 학습</h1>
+  <h2>Fun packages and import</h2>
 </div>
 <div class="content">
 
@@ -274,29 +274,25 @@
 
   
 
-<hr />
+<p>이제 겨우 타입 정도를 다룬 마당에 굉장히 이른 감은 있지만, <a href="https://tramamte.github.io/2018/05/31/packages/">패키지</a>와 <a href="https://tramamte.github.io/2018/06/08/import/">임포트</a>가 나왔으니 짚고 넘어가자.</p>
 
-<p><a href="https://tramamte.github.io/2018/05/31/packages/">Packages</a>, <a href="https://tramamte.github.io/2018/06/08/import/">Import</a>와 관련된 글입니다. 이제 겨우 타입 정도를 다룬 마당에 굉장히 이른 감은 있습니다.</p>
+<p>Go도 당연히 다른 언어처럼 작성한 코드의 재사용이 가능하다. 쉬이 예상 가능하듯, 패키지를 만들고 이를 임포트해 재사용할 수 있다.</p>
 
-<hr />
-
-<p>Go도 당연히 다른 언어처럼 작성한 코드의 재사용이 가능하다. 쉬이 예상 가능하듯, package를 만들고 이를 import해 재사용할 수 있다.</p>
-
-<p>그런데 Go는 C++이나 Java와는 달리 접근제한자 (Access Modifier)가 없다. 접근제한자 대신 매우 단순한 한 가지 규칙에 따라 외부 접근 가능 여부를 규정한다.</p>
+<p>그런데 Go는 C++이나 Java와는 달리 접근제한자 (access modifier)가 없다. 접근제한자 대신 매우 단순한 한 가지 규칙에 따라 외부 접근 가능 여부를 판단한다.</p>
 
 <blockquote>
 <p>외부 패키지에서 접근이 가능하게 하려면 (export 하려면) 첫 번째 문자를 대문자로 하라.</p>
 </blockquote>
 
-<p>이 규칙은 함수나 변수, 상수뿐만 아니라 filed, method (구조체 관련)에도 그대로 적용된다.</p>
+<p>이 규칙은 함수나 변수, 상수뿐만 아니라 필드, 메서드 (구조체 관련)에도 그대로 적용된다.</p>
 
-<p><strong>대문자</strong>에 대해서 좀 더 자세히 언급하면, <a href="https://www.fileformat.info/info/unicode/category/Lu/list.htm">Unicode &ldquo;Lu&rdquo; class</a>에 포함되는 문자를 의미한다. 즉, <code>𝓐bc</code> 이런 이름도 export되지만, 안타깝게도 한글은 이 class에 포함되지 않는다. - 한글로 이름을 만드는 것은 가능하지만 export 되지는 않는다.</p>
+<p><strong>대문자</strong>에 대해서 좀 더 자세히 언급하면, <a href="https://www.fileformat.info/info/unicode/category/Lu/list.htm">Unicode &ldquo;Lu&rdquo; class</a>에 포함되는 문자를 의미한다. 즉, <code>𝓐bc</code> 이런 이름도 외부에서 접근할 수 있지만 (export 되지만), 안타깝게도 한글은  포함되지 않는다.</p>
 
-<p>Python도 접근제한자 없이 _ (underscore)나 __ (double underscore) 등을 사용하지만 <em>&lsquo;우린 모두 19금을 볼 수 있지만 굳이 볼 필요가 없는 것은 안 볼 수도 있는 성숙한 어른이잖아요&rsquo;</em> 라며 자율에 맡기는 반면, Go는 아직 충분히 크지 않은 경우 (대문자가 아닌 경우) 에는 접근제한자를 사용한 것처럼 접근을 강제로 불허한다.</p>
+<p>Python도 접근제한자 없이 underscore (_)나 double underscore (__) 등을 사용해 접근 범위를 지정하지만 <em>&lsquo;우린 모두 19금을 볼 수 있지만 굳이 볼 필요가 없는 것은 안 볼 수도 있는 성숙한 어른이잖아요&rsquo;</em> 라며 접근 시도를 자율에 맡기는 반면, Go는 아직 충분히 크지 않은 경우 (대문자가 아닌 경우) 에는 접근을 강제로 불허한다.</p>
 
 <h2 id="패키지-만들기">패키지 만들기</h2>
 
-<p>서두에 언급한 것처럼 패키지를 만든다는 것이 아직 많이 이른 감은 있지만 <a href="https://tramamte.github.io/2018/05/31/packages/">Packages</a>, <a href="https://tramamte.github.io/2018/06/08/import/">Import</a>에서 다룬 내용을 확실히 한다는 차원에서 간단히 알아보자.</p>
+<p>서두에 언급한 것처럼 패키지를 만든다는 것이 아직 많이 이른 감은 있지만 <a href="https://tramamte.github.io/2018/05/31/packages/">패키지</a>, <a href="https://tramamte.github.io/2018/06/08/import/">임포트</a>에서 다룬 내용을 확실히 한다는 차원에서 간단히 알아보자.</p>
 
 <p>디렉토리 구조는 다음과 같다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">$GOPATH -+- myapp  --- main.go
@@ -306,9 +302,9 @@
                     |          +- packb.go
                     |
                     +- packa2 --- packa2.go</pre></div>
-<h3 id="import-path와-package-name">Import path와 package name</h3>
+<h3 id="패키지-경로와-이름">패키지 경로와 이름</h3>
 
-<p><a href="https://tramamte.github.io/2018/06/08/import/">Import</a> 에서 강조한 것처럼 <em>관례상 (by convention)</em> import path와 package name을 같게 할 뿐, 둘은 엄연히 다르다.</p>
+<p><a href="https://tramamte.github.io/2018/06/08/import/">임포트</a> 에서 강조한 것처럼 <em>관례상 (by convention)</em> 패키지의 경로와 이름을 같게 할 뿐, 둘은 엄연히 다르다.</p>
 
 <p>위 디렉토리 구조에서 <code>packa2</code>, <code>packa2.go</code>, <code>packb.go</code> 는 없고, <code>packa1.go</code> 를 다음과 같이 작성한 상황을 가정해 보자.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// packa1.go
@@ -328,9 +324,9 @@
 <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
     <span style="color:#a6e22e">packa</span>.<span style="color:#a6e22e">PackA1</span>()		<span style="color:#75715e">// NAME
 </span><span style="color:#75715e"></span>}</code></pre></div>
-<h3 id="한-path에-두-가지-이상의-package를-두면">한 path에 두 가지 이상의 package를 두면&hellip;</h3>
+<h3 id="한-경로에-두-가지-이상의-패키지를-두면">한 경로에 두 가지 이상의 패키지를 두면&hellip;</h3>
 
-<p>그럼 한 디렉토리에 있는 소스 파일들이 서로 다른 package name을 갖는다면 어떻게 될까?</p>
+<p>그럼 한 디렉토리에 있는 소스 파일들이 서로 다른 패키지 이름을 갖는다면 어떻게 될까?</p>
 
 <p>위 예에서 <code>packb.go</code> 파일을 만들고 다음과 같이 작성한 것을 가정한 것이다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// packb.go
@@ -341,13 +337,13 @@
 <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">PackB</span>() {
     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;This is PackB()&#34;</span>)
 }</code></pre></div>
-<p>이 경우 build 시 다음과 같은 오류가 발생한다.</p>
+<p>이 경우 빌드 시 다음과 같은 오류가 발생한다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">found packages packa (packa1.go) and packb (packb.go) in ~~~/mypack/packa1</pre></div>
-<p>한 디렉토리에 다른 이름을 갖는 package들이 있다고 Go가 싫어한다.</p>
+<p>한 디렉토리에 다른 이름을 갖는 패키지들이 있다고 Go가 싫어한다.</p>
 
-<h3 id="한-package를-둘-이상의-path에-두면">한 package를 둘 이상의 path에 두면&hellip;</h3>
+<h3 id="한-패키지를-둘-이상의-경로에-두면">한 패키지를 둘 이상의 경로에 두면&hellip;</h3>
 
-<p>반대로 같은 package name을 갖는 소스 파일들을 여러 path에 분산해 두면 어떻게 될까?</p>
+<p>반대로 같은 패키지 이름을 갖는 소스 파일들을 여러 경로에 분산해 두면 어떻게 될까?</p>
 
 <p><code>packb.go</code> 는 삭제하고, <code>packa2</code> 디렉토리를 만들어 그 아래에 <code>packa2.go</code> 를 다음과 같이 작성한 것을 가정한 것이다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// packa2.go
@@ -369,13 +365,13 @@
     <span style="color:#a6e22e">packa</span>.<span style="color:#a6e22e">PackA1</span>()
     <span style="color:#a6e22e">packa</span>.<span style="color:#a6e22e">PackA2</span>()
 }</code></pre></div>
-<p>이 경우에는 build 시 다음과 같은 오류가 발생한다.</p>
+<p>이 경우에는 빌드 시 다음과 같은 오류가 발생한다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">.<span style="color:#f92672">/</span><span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">5</span>:<span style="color:#ae81ff">8</span>: <span style="color:#a6e22e">packa</span> <span style="color:#a6e22e">redeclared</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">imported</span> <span style="color:#f92672">package</span> <span style="color:#a6e22e">name</span>
 	<span style="color:#a6e22e">previous</span> <span style="color:#a6e22e">declaration</span> <span style="color:#a6e22e">at</span> .<span style="color:#f92672">/</span><span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">4</span>:<span style="color:#ae81ff">8</span>
 .<span style="color:#f92672">/</span><span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">8</span>:<span style="color:#ae81ff">2</span>: <span style="color:#a6e22e">undefined</span>: <span style="color:#e6db74">&#34;mypack/packa2&#34;</span>.<span style="color:#a6e22e">PackA1</span></pre></div>
-<p>Path <code>packa2</code>를 import하면서 path <code>packa1</code>에 있던 package <code>packa</code>가 재정의 되었다는 오류와 이로 인해 - path <code>packa2</code>가 package <code>packa</code>를 덮어 씀으로 인해 - package <code>packa</code>에서는 function <code>PackA1</code>을 찾을 수 없다는 오류이다.</p>
+<p><code>mypack/packa2</code> 경로에 있는 패키지를 임포트하면서 <code>mypack/packa1</code>에서 이미 임포트한 <code>packa</code>가 재정의 되었다는 오류와 이로 인해 (<code>mypack/packa2</code>에서 임포트한 패키지가 <code>mypack/packa1</code>에서 임포트한 패키지를 덮어 씀으로 인해) 패키지 <code>packa</code>에서는 <code>PackA1</code> 함수를 찾을 수 없다는 오류이다.</p>
 
-<p>이 문제는 import하는 package의 이름을 변경해 (별칭을 달아) 해결 가능하다.</p>
+<p>이 문제는 임포트하는 패키지의 이름을 변경해 (별칭을 달아) 해결 가능하다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// main.go
 </span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
@@ -388,7 +384,7 @@
 }</code></pre></div>
 <h3 id="결론">결론</h3>
 
-<p><strong>관례</strong>라는 용어가 특수활동비 문제로 인해 <strong>답습</strong>과 비슷한 뜻으로 이해되기는 하지만 최소환 Go의 package, import에 관련해서는 다 이유가 있어 생긴 것이다. 어떻게 되는지 봤으니 괜히 이상한 시도 하지 말자. 복잡해진다.</p>
+<p><strong>관례</strong>라는 용어가 특수활동비 문제로 인해 <strong>답습</strong>과 비슷한 뜻으로 이해되기는 하지만 최소환 Go의 패키지 경로와 이름에 관련해서는 다 이유가 있어 생긴 것이다. 어떻게 되는지 봤으니 괜히 이상한 시도 하지 말자. 복잡해진다.</p>
 
 
   
@@ -411,7 +407,7 @@
   <div class="pure-u-10-24">
     
     <nav class="next">
-      <a href="https://tramamte.github.io/2018/06/15/if-statement/">if Statement</a>
+      <a href="https://tramamte.github.io/2018/06/15/if-statement/">if 조건문</a>
     </nav>
     
   </div>

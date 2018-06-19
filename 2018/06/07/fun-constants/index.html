@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="별 것 없을 것 같은 상수의 별 것">
+  <meta name="description" content="Fun constants">
   <meta name="generator" content="Hugo 0.42.1" />
 
-  <title>Fun - Constants &middot; Awesome Patrick</title>
+  <title>별 것 없을 것 같은 상수의 별 것 &middot; Awesome Patrick</title>
 
   
   
@@ -232,8 +232,8 @@
 
 
 <div class="header">
-  <h1>Fun - Constants</h1>
-  <h2>별 것 없을 것 같은 상수의 별 것</h2>
+  <h1>별 것 없을 것 같은 상수의 별 것</h1>
+  <h2>Fun constants</h2>
 </div>
 <div class="content">
 
@@ -274,15 +274,9 @@
 
   
 
-<hr />
-
-<p><a href="https://tramamte.github.io/2018/06/07/constants/">Constants</a>와 관련된 글입니다.</p>
-
-<hr />
-
 <h2 id="상수의-타입과-한계">상수의 타입과 한계</h2>
 
-<p><a href="https://tramamte.github.io/2018/06/05/fun-variables-and-types/">이 글</a>에서 한 것처럼 <code>reflect</code> 패키지를 이용해 타입을 명시하지 않은 상수의 타입에 대해 알아보자.</p>
+<p><a href="https://tramamte.github.io/2018/06/05/fun-variables-and-types/">명시적이지 않은 듯 명시적인 Go</a>에서 한 것처럼 <code>reflect</code> 패키지를 이용해 타입을 명시하지 않은 상수의 타입에 대해 알아보자.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
@@ -377,7 +371,7 @@ int</pre></div>
 
 <h3 id="iota-초기값"><code>iota</code> 초기값</h3>
 
-<p><a href="https://tramamte.github.io/2018/06/07/constants/">Constants</a>에서 <code>iota</code>에 대해 다음과 같이 적었다.</p>
+<p><a href="https://tramamte.github.io/2018/06/07/constants/">상수</a>에서 <code>iota</code>에 대해 다음과 같이 적었다.</p>
 
 <blockquote>
 <p><code>iota</code>는 0부터 시작해 호출할 때마다 1씩 증가한다.</p>
@@ -443,7 +437,7 @@ int</pre></div>
 3</pre></div>
 <h3 id="한-줄에-두-번-쓴-iota">한 줄에 두 번 쓴 <code>iota</code></h3>
 
-<p>상수도 변수처럼 ,(comma)를 이용해 한 줄에 복수개를 선언할 수 있다. 이 경우 <code>iota</code>의 값은 어떻게 될까?</p>
+<p>상수도 변수처럼 comma (,)를 이용해 한 줄에 복수개를 선언할 수 있다. 이 경우 <code>iota</code>의 값은 어떻게 될까?</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
 <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
@@ -470,7 +464,7 @@ int</pre></div>
 <p>Multiple uses of <code>iota</code> in the same <code>ConstSpec</code> all have the same value.</p>
 </blockquote>
 
-<p>,(comma)로 구분해 붙여 쓴 복수개의 상수는 모두 하나의 <code>ConstSpec</code>에 속하는지라 같은 <code>iota</code>값을 갖게 된다. 단, 똑같이 한 줄에 썼더라도 세미콜론을 이용해 <code>ConstSpec</code>을 나눈 경우에는 <code>iota</code>값이 증가한다.</p>
+<p>comma (,)로 구분해 붙여 쓴 복수개의 상수는 모두 하나의 <code>ConstSpec</code>에 속하기 때문에 같은 <code>iota</code>값을 갖게 된다. 단, 똑같이 한 줄에 썼더라도 세미콜론을 이용해 <code>ConstSpec</code>을 나눈 경우에는 <code>iota</code>값이 증가한다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">const</span> (
     <span style="color:#a6e22e">zero</span>, <span style="color:#a6e22e">one</span> = <span style="color:#66d9ef">iota</span>, <span style="color:#66d9ef">iota</span>; <span style="color:#a6e22e">two</span>, <span style="color:#a6e22e">three</span>
 )</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">0
@@ -549,7 +543,7 @@ int</pre></div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://tramamte.github.io/2018/06/07/constants/">Constants</a>
+      <a href="https://tramamte.github.io/2018/06/07/constants/">상수</a>
     </nav>
     
   </div>
