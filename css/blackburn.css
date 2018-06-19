@@ -81,6 +81,39 @@ a {
   font-size: 0.9em;
 }
 
+.content > h1 {
+  font-size: 1.8em;
+  margin: 2.3em 0 1.15em 0;
+}
+
+.content > h2 {
+  font-size: 1.6em;
+  margin: 2.3em 0 1.15em 0;
+}
+
+.content > h3 {
+  font-size: 1.4em;
+  margin: 2.3em 0 1.15em 0;
+}
+
+.content > h4 {
+  font-size: 1.2em;
+  margin: 2.3em 0 1.15em 0;
+}
+
+.content > h5 {
+  font-size: 1.0em;
+  margin: 2.3em 0 1.15em 0;
+}
+
+.post-meta + h1,
+.post-meta + h2,
+.post-meta + h3,
+.post-meta + h4,
+.post-meta + h5 {
+  margin: 0.67em 0 1em 0;
+}
+
 .content blockquote {
   -webkit-margin-before: 1em;
   -webkit-margin-after: 1em;
@@ -111,7 +144,8 @@ code,
   padding-bottom: 0.5em;
 }
 
-p > code {
+p code,
+li > code {
   display: inline-block;
   white-space: no-wrap;
   line-height: 1.5em;

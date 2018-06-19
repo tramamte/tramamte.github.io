@@ -274,7 +274,7 @@
 
   
 
-<h2 id="상수의-타입과-한계">상수의 타입과 한계</h2>
+<h1 id="상수의-타입과-한계">상수의 타입과 한계</h1>
 
 <p><a href="https://tramamte.github.io/2018/06/05/fun-variables-and-types/">명시적이지 않은 듯 명시적인 Go</a>에서 한 것처럼 <code>reflect</code> 패키지를 이용해 타입을 명시하지 않은 상수의 타입에 대해 알아보자.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
@@ -307,9 +307,11 @@ int</pre></div>
 
 <p><br></p>
 
-<p>그런데 정말 상수가 그 타입인 것일까, 상수를 읽을 때 그 타입이 되는 것일까?</p>
+<hr />
 
-<p>무슨 소린고 하니,</p>
+<p><br></p>
+
+<p>그런데 정말 상수가 그 타입인 것일까, 상수를 읽을 때 그 타입이 되는 것일까? 무슨 소린고 하니,</p>
 
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -367,9 +369,9 @@ int</pre></div>
 }</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">3.2451855365842673e+32</pre></div>
 <p>위 결과에서처럼 <code>i</code>에는 의도한 \(256 \times 2^{100}\) 값이 정확히 담겨있다. 내부적으로 <code>const</code> 처리를 어떻게 하는지에 대해서는 숙제로 남겨두고, 결과만 봤을 때는 <code>const</code>를 읽을 때 타입이 결정되는 것 같다.</p>
 
-<h2 id="iota-에-대해-좀-더-자세히"><code>iota</code>에 대해 좀 더 자세히</h2>
+<h1 id="iota에-대해-좀-더-자세히">iota에 대해 좀 더 자세히</h1>
 
-<h3 id="iota-초기값"><code>iota</code> 초기값</h3>
+<h2 id="iota-초기값">iota 초기값</h2>
 
 <p><a href="https://tramamte.github.io/2018/06/07/constants/">상수</a>에서 <code>iota</code>에 대해 다음과 같이 적었다.</p>
 
@@ -435,7 +437,7 @@ int</pre></div>
     <span style="color:#a6e22e">one</span>
 )</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">2
 3</pre></div>
-<h3 id="한-줄에-두-번-쓴-iota">한 줄에 두 번 쓴 <code>iota</code></h3>
+<h2 id="한-줄에-두-번-쓴-iota">한 줄에 두 번 쓴 iota</h2>
 
 <p>상수도 변수처럼 comma (,)를 이용해 한 줄에 복수개를 선언할 수 있다. 이 경우 <code>iota</code>의 값은 어떻게 될까?</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
@@ -471,7 +473,7 @@ int</pre></div>
 0
 1
 1</pre></div>
-<h3 id="중간값-지정">중간값 지정</h3>
+<h2 id="중간값-지정">중간값 지정</h2>
 
 <p>C에서 <code>enum</code>을 쓸 때는 중간값을 지정하는 것도 가능하다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">enum</span> {
@@ -503,13 +505,13 @@ int</pre></div>
 5</pre></div>
 <p>상수 그룹에서 literal로 값을 지정하고 이후 상수들에는 값을 지정하지 않을 경우 이전 상수의 값을 그대로 따른다. 따라서 <code>six</code>와 <code>seven</code>은 모두 5가 된다. 그렇다고 <code>six</code>에 <code>iota</code>로 값을 지정해 주면&hellip;4가 된다. 이러한 경우에는 상수 그룹을 나누는 것이 현명하다.</p>
 
-<h3 id="iota-유지-범위"><code>iota</code> 유지 범위</h3>
+<h2 id="iota-유지-범위">iota 유지 범위</h2>
 
 <p>위에서 <strong>상수 그룹</strong>이라는 용어를 사용했는데, <code>const</code> 뒤 괄호로 묶여 있는 단위를 의미한다. <code>iota</code>의 값은 이 단위 안에서만 유지된다. 따라서 아래 상수들의 값은 모두 0이다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">zero</span> = <span style="color:#66d9ef">iota</span>
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">one</span> = <span style="color:#66d9ef">iota</span>
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">two</span> = <span style="color:#66d9ef">iota</span></code></pre></div>
-<h3 id="복잡한-상수-그룹">복잡한 상수 그룹</h3>
+<h2 id="복잡한-상수-그룹">복잡한 상수 그룹</h2>
 
 <p>지금까지 확인한 Go의 상수 그룹과 <code>iota</code>는 <code>enum</code>에 비해 뭔가 불편해 보인다. 하지만 실망하지 마시라. 이런 것도 가능하다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>

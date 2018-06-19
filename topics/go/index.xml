@@ -72,7 +72,7 @@
       <pubDate>Thu, 07 Jun 2018 18:20:18 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/06/07/constants/</guid>
-      <description>상수를 선언하는 방법은 &amp;ldquo;var&amp;rdquo; 대신 &amp;ldquo;const&amp;ldquo;를 사용한다는 점을 제외하면 변수를 선언하는 방법과 유사하다. ConstDecl = &amp;#34;const&amp;#34; ( ConstSpec | &amp;#34;(&amp;#34; { ConstSpec &amp;#34;;&amp;#34; }</description>
+      <description>상수를 선언하는 방법은 var 대신 const를 사용한다는 점을 제외하면 변수를 선언하는 방법과 유사하다. ConstDecl = &amp;#34;const&amp;#34; ( ConstSpec | &amp;#34;(&amp;#34; { ConstSpec &amp;#34;;&amp;#34; } &amp;#34;)&amp;#34; ) . ConstSpec = IdentifierList [ [ Type ] &amp;#34;=&amp;#34; ExpressionList ] .</description>
     </item>
     
     <item>
