@@ -280,7 +280,7 @@
 
 <hr />
 
-<h2 id="shortcode-사용법">Shortcode 사용법</h2>
+<h1 id="shortcode-사용법">Shortcode 사용법</h1>
 
 <p><strong>Markdown 문법과 같이 사용할 수 있는 shortcode</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {% shortcode_name %}} **Contents** { {% /shortcode_name %}}</pre></div>
@@ -288,9 +288,9 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; shortcode_name &gt;}} &lt;b&gt;Contents&lt;/b&gt; { {&lt; /shortcode_name &gt;}}</pre></div>
 <p><br></p>
 
-<h2 id="hugo-built-in-shortcodes">Hugo built-in shortcodes</h2>
+<h1 id="hugo-built-in-shortcodes">Hugo built-in shortcodes</h1>
 
-<h3 id="1-figure-이미지-삽입">1. <code>figure</code>: 이미지 삽입</h3>
+<h2 id="1-figure-이미지-삽입">1. <code>figure</code>: 이미지 삽입</h2>
 
 <ul>
 <li><code>src</code> : image URL</li>
@@ -323,7 +323,7 @@
 
 <p><img src="https://tramamte.github.io/post/hugo/sky.jpg" alt="img" /></p>
 
-<h3 id="2-highlight-syntax-highlighting">2. <code>highlight</code>: syntax highlighting</h3>
+<h2 id="2-highlight-syntax-highlighting">2. <code>highlight</code>: syntax highlighting</h2>
 
 <ul>
 <li><code>linenos</code>: <code>table</code> or <code>inline</code></li>
@@ -360,7 +360,7 @@
 </div>
 </div>
 
-<h3 id="3-ref-relref-링크-url-생성">3. <code>ref</code>, <code>relref</code>: 링크 URL 생성</h3>
+<h2 id="3-ref-relref-링크-url-생성">3. <code>ref</code>, <code>relref</code>: 링크 URL 생성</h2>
 
 <ul>
 <li>markdown 파일을 이용해 절대, 상대 경로 자동 성성</li>
@@ -368,12 +368,12 @@
 <li>전체에 같은 파일 이름이 하나밖에 없다면 파일 이름만 입력도 가능</li>
 </ul>
 
-<h4 id="making-anchor">3.1 Anchor 만들기 (#making-anchor)</h4>
+<h3 id="making-anchor">3.1 Anchor 만들기 (#making-anchor)</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">## Alpha 101 {#alpha}
 ## Version 1.0 {#version-1-dot-0}</pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">[Go to making-anchor]({ {&lt; relref &#34;#making-anchor&#34; &gt;}})</pre></div>
 <p><a href="#making-anchor">Go to making-anchor</a></p>
 
-<h3 id="4-youtube-youtube-동영상-삽입">4. <code>youtube</code>: Youtube 동영상 삽입</h3>
+<h2 id="4-youtube-youtube-동영상-삽입">4. <code>youtube</code>: Youtube 동영상 삽입</h2>
 
 <ul>
 <li><code>id</code>, <code>autoplay</code></li>
@@ -387,9 +387,9 @@ or
 { {&lt; youtube id=&#34;w7Ft2ymGmfc&#34; autoplay=&#34;true&#34; &gt;}}</pre></div>
 <p><br></p>
 
-<h2 id="추가-shortcodes">추가 shortcodes</h2>
+<h1 id="추가-shortcodes">추가 shortcodes</h1>
 
-<h3 id="1-zimg-확대-가능한-이미지-삽입">1. <code>zimg</code>: 확대 가능한 이미지 삽입</h3>
+<h2 id="1-zimg-확대-가능한-이미지-삽입">1. <code>zimg</code>: 확대 가능한 이미지 삽입</h2>
 
 <p>기본 사용법은 <code>figure</code>와 동일하나 <code>link</code>, <code>target</code>은 지원하지 않고, <code>mouse-title</code> parameter 추가</p>
 
@@ -423,7 +423,7 @@ or
 </figure>
 
 
-<h3 id="2-pure-table-테이블-삽입">2. <code>pure_table</code>: 테이블 삽입</h3>
+<h2 id="2-pure-table-테이블-삽입">2. <code>pure_table</code>: 테이블 삽입</h2>
 
 <p>markdown table은 다른 <code>&lt;table&gt;</code> tag와의 충돌 문제로 외곽선이 없음</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; pure_table
@@ -502,7 +502,7 @@ or
 
 
 
-<h3 id="3-fluid-imgs-이미지-삽입">3. <code>fluid_imgs</code>: 이미지 삽입</h3>
+<h2 id="3-fluid-imgs-이미지-삽입">3. <code>fluid_imgs</code>: 이미지 삽입</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; fluid_imgs
   &#34;class|src|alt&#34;
   &#34;class|src|alt&#34;

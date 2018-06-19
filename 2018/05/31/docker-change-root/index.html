@@ -278,7 +278,7 @@
 
 <p><a href="https://blog.docker.com/2015/07/new-apt-and-yum-repos/">Docker blog</a>에 있는 내용에 따라 Ubuntu에 apt repository를 추가하고 Docker를 설치한 경우 image나 container 등이 저장되는 기본 경로는 <code>/var/lib/docker</code>이다.</p>
 
-<h2 id="1단계-검색">1단계 검색</h2>
+<h1 id="1단계-검색">1단계 검색</h1>
 
 <p>가장 많이 나오는 내용은 Docker 기본 설정파일(<code>/etc/default/docker</code>)에 <code>graph</code> option을 추가해 경로를 변경하라는 것이다. 거의가 3~4년 전 글들이라 찜찜하긴 하지만 일단 따라가 본다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ls /etc/default/docker
@@ -291,7 +291,7 @@
 
 <p><strong>역시 안 된다.</strong></p>
 
-<h2 id="2단계-또-검색">2단계 또 검색</h2>
+<h1 id="2단계-또-검색">2단계 또 검색</h1>
 
 <p><a href="https://success.docker.com/article/how-do-i-set-the-docker-daemon-options">Docker Success Center</a>에 글이 있다. systemd service 파일을 수정하는 방식이다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ systemctl edit docker.service</code></pre></div>
@@ -305,7 +305,7 @@
 
 <p><strong>또 실패</strong></p>
 
-<h2 id="3단계-service-파일-수정-성공">3단계 Service 파일 수정 (성공!)</h2>
+<h1 id="3단계-service-파일-수정-성공">3단계 Service 파일 수정 (성공!)</h1>
 
 <p>결국 docker.service 파일을 찾아 직접 수정해서 성공했다. - <em>그렇다. 이 글은 단순히 Docker의 root directory를 변경하는 내용이다.</em></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ systemctl status docker

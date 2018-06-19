@@ -280,7 +280,7 @@
 
 <p><a href="https://tramamte.github.io/2018/06/04/eclipse-install/">jBPM / Drools 개발환경 구성</a> 방법에 따라 Eclipse에 jBPM/Drools 환경 구성 후 새로운 jBPM project를 maven 기반으로 생성하고 실행하면 오류가 발생한다.</p>
 
-<h3 id="jbpm-project-생성-절차">jBPM project 생성 절차</h3>
+<h1 id="jbpm-project-생성-절차">jBPM project 생성 절차</h1>
 
 <ol>
 <li><p>File - New - jBPM project 선택</p></li>
@@ -294,13 +294,13 @@
 <li><p>Add a simple hello world process 선택한 상태로 project 생성</p></li>
 </ol>
 
-<h3 id="오류">오류</h3>
+<h1 id="오류">오류</h1>
 
 <p>위와 같이 생성한 project를 실행하면 다음과 같은 오류가 발생한다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Exception in thread &#34;main&#34; java.lang.NoSuchMethodError: org.jbpm.test.JBPMHelper.setupDataSource()Lbitronix/tm/resource/jdbc/PoolingDataSource;
 	at com.sample.ProcessMain.createRuntimeManager(ProcessMain.java:34)
 	at com.sample.ProcessMain.main(ProcessMain.java:23)</pre></div>
-<h3 id="원인">원인</h3>
+<h1 id="원인">원인</h1>
 
 <p>오류 내용으로는 짐작하기 어렵게도, 원인은 버전이 다른 library들이 포함돼 있는 것이다.</p>
 
@@ -325,11 +325,11 @@
 </figure>
 
 
-<h3 id="해결법">해결법</h3>
+<h1 id="해결법">해결법</h1>
 
 <p>아래 두 가지 방법 중 하나로 해결할 수 있다.</p>
 
-<h4 id="pom-xml에-포함된-낮은-버전의-library들-삭제">pom.xml에 포함된 낮은 버전의 library들 삭제</h4>
+<h2 id="pom-xml에-포함된-낮은-버전의-library들-삭제">pom.xml에 포함된 낮은 버전의 library들 삭제</h2>
 
 <ol>
 <li>pom.xml</li>
@@ -337,7 +337,7 @@
 <li>kie-api, jbpm-text 두 항목 모두 삭제</li>
 </ol>
 
-<h4 id="jbpm-library를-build-path에서-제거">jBPM Library를 Build Path에서 제거</h4>
+<h2 id="jbpm-library를-build-path에서-제거">jBPM Library를 Build Path에서 제거</h2>
 
 <ol>
 <li>Project Explorer에서 jBPM Library 오른 클릭</li>
