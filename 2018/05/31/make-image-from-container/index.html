@@ -284,16 +284,14 @@
 
 <p>이 때 사용하는 방법이 바로 <code>docker commit</code>을 이용해 container를 바로 image로 만드는 것이다.</p>
 
-<p><code>docker commit</code> 명령의 사용법은 다음과 같다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker commit <span style="color:#f92672">[</span>OPTIONS<span style="color:#f92672">]</span> CONTAINER <span style="color:#f92672">[</span>REPOSITORY<span style="color:#f92672">[</span>:TAG<span style="color:#f92672">]]</span></code></pre></div>
 <ol>
 <li>일단 container 하나를 잘 설정한다.</li>
 <li><code>docker commit</code> 명령을 이용해 1의 container를 image로 만든다.</li>
 <li>두고 두고 우려먹는다.</li>
 </ol>
 
-<p><br></p>
-
+<p><code>docker commit</code> 명령의 사용법은 다음과 같다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker commit <span style="color:#f92672">[</span>OPTIONS<span style="color:#f92672">]</span> CONTAINER <span style="color:#f92672">[</span>REPOSITORY<span style="color:#f92672">[</span>:TAG<span style="color:#f92672">]]</span></code></pre></div>
 <ul>
 <li>개인적으로 사용하려면 <code>OPTIONS</code>는 굳이 설정할 필요가 없다.</li>
 <li><code>CONTAINER</code>는 이름이나 ID로 설정할 수 있다.</li>
