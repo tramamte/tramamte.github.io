@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 18 Jun 2018 12:40:39 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 20 Jun 2018 22:40:39 +0900</lastBuildDate>
     
 	<atom:link href="https://tramamte.github.io/topics/go/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>봉인해제 switch</title>
+      <link>https://tramamte.github.io/2018/06/20/fun-switch/</link>
+      <pubDate>Wed, 20 Jun 2018 22:40:39 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2018/06/20/fun-switch/</guid>
+      <description>다시 switch 작성 규칙 (참고)을 자세히 보면 switch 뒤에도, case 뒤에도 단순히 Expression이 올 수 있다. C/C++, Java에 익숙한 개발자라면 단서를 기대할 것이다. C</description>
+    </item>
     
     <item>
       <title>switch 조건문</title>
