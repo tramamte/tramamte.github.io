@@ -267,7 +267,7 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">ExprSwitchStmt = &#34;switch&#34; [ SimpleStmt &#34;;&#34; ] [ Expression ] &#34;{&#34; { ExprCaseClause } &#34;}&#34; .
 ExprCaseClause = ExprSwitchCase &#34;:&#34; StatementList .
 ExprSwitchCase = &#34;case&#34; ExpressionList | &#34;default&#34; .</pre></div>
-<p><code>switch</code>로 시작하고 검사할 값을 <code>case</code>로 분기하는 것은 다른 언어와 유사하다.</p>
+<p><code>switch</code>로 시작해 검사할 값을 <code>case</code>로 분기하는 것은 다른 언어와 유사하다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> = <span style="color:#ae81ff">1</span>
 <span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">i</span> {
 <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">0</span>:
@@ -277,7 +277,7 @@ ExprSwitchCase = &#34;case&#34; ExpressionList | &#34;default&#34; .</pre></div>
 <span style="color:#66d9ef">default</span>:
     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Unknown&#34;</span>)
 }</code></pre></div>
-<p>여기서 한 가지 큰 특징은, Go의 <code>case</code>에서는 <code>break</code>를 사용하지 않아도 된다는 점이다. 즉, 다음 <code>case</code> 전 <code>break</code>가 기본이다. - <em>Go는 이렇게 해도 되고, 안 해도 되는 문법이 많은 것 같다.</em> - 그렇다면 다음과 같은 코드를 작성하려면?</p>
+<p>여기서 한 가지 큰 특징은, Go의 <code>case</code>에서는 <code>break</code>를 사용하지 않아도 된다는 점이다. 즉, 다음 <code>case</code> 전 <code>break</code>가 기본이다. 그렇다면 다음과 같은 코드를 작성하려면?</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// c code
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
 
@@ -306,7 +306,7 @@ ExprSwitchCase = &#34;case&#34; ExpressionList | &#34;default&#34; .</pre></div>
 <span style="color:#66d9ef">default</span>:
     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;&gt; 2&#34;</span>)
 }</code></pre></div>
-<p>그런데 이것도 c code에 비해 좀 깔끔한 맛이 덜하다. <code>fallthrough</code> 할 <code>case</code>가 많아질수록 점점 더 이런 경향은 짙어질 것이 뻔하다. 그래서 또 준비한 것이 - <em>이것이 바로 후발 언어의 장점?</em> - <code>case</code> 뒤에 <code>ExpressionList</code>를 둔 것이다. 앞으로 돌아가 <code>ExprSwitchStmt</code> 작성 규칙을 다시 보면 <code>case</code> 뒤에 <code>ExpressionList</code>가 온다. 모든 경우를 다 보기에는 너무 많으니 위 코드만 예를 들면, <code>case</code> 뒤 <code>0</code>, <code>1</code>, <code>2</code>가 각각 <code>Expression</code>이고 이 <code>Expression</code>들을 comma (,)로 붙여둔 것이 <code>ExpressionList</code>이다. 따라서 위 코드는 다음과 같이 작성할 수도 있다.</p>
+<p>그런데 이것도 c code에 비해 좀 깔끔한 맛이 덜하다. <code>fallthrough</code> 할 <code>case</code>가 많아질수록 점점 더 이런 경향은 짙어질 것이 뻔하다. 그래서 또 준비한 것이  <code>case</code> 뒤에 <code>ExpressionList</code>를 둔 것이다.  <code>Expression</code>들을 comma (,)로 붙여둔 것이 <code>ExpressionList</code>이다. 따라서 위 코드는 다음과 같이 작성할 수도 있다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Go code
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">uint</span> = <span style="color:#ae81ff">1</span>
 
