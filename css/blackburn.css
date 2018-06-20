@@ -1,14 +1,4 @@
 body {
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  max-width: 100%;
-
   color: #555;
   font-size: 100%;
   font-family: 'Raleway', 'Nanum Gothic', sans-serif;
@@ -73,7 +63,6 @@ a {
 
 .small-print {
   font-size: 0.75em;
-  margin: 0.6em;
   color: #808080;
 }
 
@@ -206,8 +195,26 @@ figcaption > p {
   overflow: hidden;
 }
 
+#menu {
+  background: #001520;
+}
 
-#menuBg {
+#menu a {
+  padding: 0.6em 0.6em 0.6em 0.6em;
+}
+
+#menu .brand {
+  font-weight: bold;
+  font-size: 1.2em;
+  letter-spacing: 0.1em;
+  text-transform: none;
+  background: transparent;
+  text-decoration: none;
+  text-align: center;
+  padding: 1em 0.6em 1em 0.6em;
+}
+
+#menuBackground {
   /* prevent empty background while scrolling*/
   margin-left: -150px; /* "#menu" width */
   width: 150px;    
@@ -227,49 +234,14 @@ figcaption > p {
   transition: all 0.1s ease-out;
 }
 
-#menuBg.active {
+#menuBackground.active {
   margin-left: 0;
 }
 
 @media (min-width: 48em) {
-  #menuBg {
+  #menuBackground {
       left: 150px;
   }
-}
-
-#menu {
-  background: #001520;
-}
-
-#menu a {
-  padding: 0.6em 0.6em 0.6em 0.6em;
-}
-
-#menu .brand {
-  font-weight: bold;
-  font-size: 1.2em;
-  letter-spacing: 0.1em;
-  text-transform: none;
-  background: transparent;
-  text-decoration: none;
-  text-align: center;
-}
-
-#menu-section {
-  position: relative;
-  min-height: 100%;
-  padding-bottom: 80px;
-  box-sizing: border-box;
-}
-
-#menu-section header {
-  padding: 0.5em;
-}
-
-#menu-section footer {
-  position: absolute;
-  bottom: 0;
-  padding-top: 0.5em;
 }
 
 .menu-link,
@@ -301,4 +273,12 @@ i {
 
 .pagination a {
   color: #265778;
+}
+
+.footer {
+  border-top: 1px solid #eee;
+  text-align: right;
+  margin: 0 auto;
+  padding: 1em 2em 0;
+  margin-bottom: 1em;
 }

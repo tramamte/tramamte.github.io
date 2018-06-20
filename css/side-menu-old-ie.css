@@ -89,7 +89,7 @@ appears on the left side of the page.
     margin-left: -150px;
     /* "#menu" width */
     width: 150px;
-    height: 100%;
+    height: 100vh;
     position: fixed;
     top: 0;
     left: 0;

@@ -4,7 +4,7 @@
         menu     = document.getElementById('menu'),
         menuLink = document.getElementById('menuLink'),
         //content  = document.getElementById('content'),
-        menuBg   = document.getElementById('menuBg'),
+        menuBg   = document.getElementById('menuBackground'),
         mask     = document.getElementById('mask');
 
     function toggleClass(element, name) {
