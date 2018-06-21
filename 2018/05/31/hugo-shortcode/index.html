@@ -257,11 +257,14 @@
 
   
 
-<hr />
+
+
+<div class="box">
 
 <p>Awesome Patrick 글 작성을 위해 개인적으로 참고할 내용을 정리한 글입니다.</p>
 
-<hr />
+</div>
+
 
 <h1 id="shortcode-사용법">Shortcode 사용법</h1>
 
@@ -269,8 +272,6 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {% shortcode_name %}} **Contents** { {% /shortcode_name %}}</pre></div>
 <p><strong>Markdown 사용하지 않는 shortcode</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; shortcode_name &gt;}} &lt;b&gt;Contents&lt;/b&gt; { {&lt; /shortcode_name &gt;}}</pre></div>
-<p><br></p>
-
 <h1 id="hugo-built-in-shortcodes">Hugo built-in shortcodes</h1>
 
 <h2 id="1-figure-이미지-삽입">1. <code>figure</code>: 이미지 삽입</h2>
@@ -368,8 +369,6 @@
 or
 
 { {&lt; youtube id=&#34;w7Ft2ymGmfc&#34; autoplay=&#34;true&#34; &gt;}}</pre></div>
-<p><br></p>
-
 <h1 id="추가-shortcodes">추가 shortcodes</h1>
 
 <h2 id="1-zimg-확대-가능한-이미지-삽입">1. <code>zimg</code>: 확대 가능한 이미지 삽입</h2>
@@ -406,7 +405,13 @@ or
 </figure>
 
 
-<h2 id="2-pure-table-테이블-삽입">2. <code>pure_table</code>: 테이블 삽입</h2>
+<h2 id="2-box-글상자">2. <code>box</code>: 글상자</h2>
+
+<p>Parameter 추가하면 글상자의 배경 색상으로 지정</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {% box &#34;background-color&#34; %}}
+blah blah
+{ {% /box %}}</pre></div>
+<h2 id="3-pure-table-테이블-삽입">3. <code>pure_table</code>: 테이블 삽입</h2>
 
 <p>markdown table은 다른 <code>&lt;table&gt;</code> tag와의 충돌 문제로 외곽선이 없음</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; pure_table
@@ -485,7 +490,7 @@ or
 
 
 
-<h2 id="3-fluid-imgs-이미지-삽입">3. <code>fluid_imgs</code>: 이미지 삽입</h2>
+<h2 id="4-fluid-imgs-이미지-삽입">4. <code>fluid_imgs</code>: 이미지 삽입</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; fluid_imgs
   &#34;class|src|alt&#34;
   &#34;class|src|alt&#34;
