@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 20 Jun 2018 22:40:39 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 20 Jun 2018 23:15:37 +0900</lastBuildDate>
     
 	<atom:link href="https://tramamte.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker host - container 간 복사</title>
+      <link>https://tramamte.github.io/2018/06/20/docker-copy/</link>
+      <pubDate>Wed, 20 Jun 2018 23:15:37 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2018/06/20/docker-copy/</guid>
+      <description>docker cp 명령을 이용해 호스트와 컨테이너 간 파일이나 디렉토리를 복사할 수 있다. $ docker cp --help Usage: docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|- docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH Copy files/folders between a container and the local filesystem Options: -L, --follow-link Always follow symbol link in SRC_PATH --help Print usage 현</description>
+    </item>
     
     <item>
       <title>봉인해제 switch</title>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Container on Awesome Patrick</title>
-    <link>https://tramamte.github.io/tags/container/</link>
-    <description>Recent content in Container on Awesome Patrick</description>
+    <title>Host on Awesome Patrick</title>
+    <link>https://tramamte.github.io/tags/host/</link>
+    <description>Recent content in Host on Awesome Patrick</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu. All rights reserved.</copyright>
     <lastBuildDate>Wed, 20 Jun 2018 23:15:37 +0900</lastBuildDate>
     
-	<atom:link href="https://tramamte.github.io/tags/container/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tramamte.github.io/tags/host/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       
       <guid>https://tramamte.github.io/2018/06/20/docker-copy/</guid>
       <description>docker cp 명령을 이용해 호스트와 컨테이너 간 파일이나 디렉토리를 복사할 수 있다. $ docker cp --help Usage: docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|- docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH Copy files/folders between a container and the local filesystem Options: -L, --follow-link Always follow symbol link in SRC_PATH --help Print usage 현</description>
-    </item>
-    
-    <item>
-      <title>Docker container에서 image 생성</title>
-      <link>https://tramamte.github.io/2018/05/31/make-image-from-container/</link>
-      <pubDate>Thu, 31 May 2018 12:55:14 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/2018/05/31/make-image-from-container/</guid>
-      <description>개인적으로 Docker는 이것 저것 다양한 언어나 도구들을 시험하는 용도로도 많이 사용한다. 새로운 것을 보면 한 번 설치해 사용해 본 후 삭제하는 경우도 많은데, 흔</description>
     </item>
     
   </channel>
