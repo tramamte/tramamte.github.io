@@ -40,12 +40,23 @@
 
   
   <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700|Nanum+Gothic+Coding:400,700|Raleway:400,700|Roboto+Mono" rel="stylesheet">
-  
-  
+
   
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
- 
+  
+  <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js" onload="mermaidReady()" defer></script>
+  <script>
+    var mermaidReady = function() {
+      var config = {
+        startOnLoad: true,
+        theme: "neutral"
+      }
+      mermaid.initialize(config);
+    };
+  </script>
+
+  
   
   <link rel="alternate" type="application/rss+xml" title="Awesome Patrick" href="https://tramamte.github.io/tags/draft/index.xml" />
   

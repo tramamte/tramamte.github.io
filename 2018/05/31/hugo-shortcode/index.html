@@ -40,12 +40,23 @@
 
   
   <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700|Nanum+Gothic+Coding:400,700|Raleway:400,700|Roboto+Mono" rel="stylesheet">
-  
-  
+
   
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
- 
+  
+  <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js" onload="mermaidReady()" defer></script>
+  <script>
+    var mermaidReady = function() {
+      var config = {
+        startOnLoad: true,
+        theme: "neutral"
+      }
+      mermaid.initialize(config);
+    };
+  </script>
+
+  
   
 
   
@@ -497,6 +508,10 @@ blah blah
 &gt;}}</pre></div>
 <p><a href="http://yoshiharuyamashita.com/post/hugo-shortcode-to-show-multiple-images/">여기</a> 참조</p>
 
+<h2 id="5-mermaid-flowchart-sequence-diagram-gantt-chart">5. <code>mermaid</code>: Flowchart, Sequence diagram, Gantt chart</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; mermaid align=&#34;center&#34; &gt;}}
+[graph | sequenceDiagram | gantt]
+{ {&lt; /mermaid }}</pre></div>
 
   
 <div class="prev-next-post pure-g">
