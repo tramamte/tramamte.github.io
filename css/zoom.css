@@ -1,5 +1,4 @@
 img[data-action="zoom"] {
-  display: block;
   cursor: pointer;
   cursor: -webkit-zoom-in;
   cursor: -moz-zoom-in;
