@@ -392,17 +392,27 @@ or
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; zimg src=&#34;/post/hugo/sky.jpg&#34; width=&#34;300&#34; caption=&#34;캡션: 원본의 해상도는 1880x1253입니다.&#34; title=&#34;제목: 하늘&#34; mouse-title=&#34;ZOOM&#34; &gt;}}</pre></div>
 
 <figure>
-  <img
-	src="/post/hugo/sky.jpg"
-	
-	
-	width="300"
-	
-	
-	
-	title="ZOOM"
-	
-	data-action="zoom">
+	<div style="position: relative;">
+	<img
+		src="/post/hugo/sky.jpg"
+		
+		
+		width="300"
+		
+		
+		
+		title="ZOOM"
+		
+		data-action="zoom">
+		<div style="
+			position: absolute; 
+			bottom: 0; 
+			background: rgb(0, 0, 0);
+			background: rgba(0, 0, 0, 0.5);
+			opacity:1;
+			color: white;
+			padding: 8px 5px;"><i class="fa fa-search-plus fa-lg fa-fw"></i></div>
+		</div>
 	
 	<figcaption>
 	

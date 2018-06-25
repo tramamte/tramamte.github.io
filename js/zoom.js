@@ -128,7 +128,7 @@
     this._$body = $(document.body)
   }
 
-  Zoom.OFFSET = 80
+  Zoom.OFFSET = 0
   Zoom._MAX_WIDTH = 2560
   Zoom._MAX_HEIGHT = 4096
 
