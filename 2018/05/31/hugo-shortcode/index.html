@@ -270,6 +270,7 @@
 
 
 
+
 <div class="box">
 
 <p>Awesome Patrick 글 작성을 위해 개인적으로 참고할 내용을 정리한 글입니다.</p>
@@ -429,7 +430,7 @@ or
 <h2 id="2-box-글상자">2. <code>box</code>: 글상자</h2>
 
 <p>Parameter 추가하면 글상자의 배경 색상으로 지정</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {% box &#34;background-color&#34; %}}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {% box [&#34;background-color&#34;] %}}
 blah blah
 { {% /box %}}</pre></div>
 <h2 id="3-pure-table-테이블-삽입">3. <code>pure_table</code>: 테이블 삽입</h2>
@@ -522,6 +523,10 @@ blah blah
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; mermaid align=&#34;center&#34; &gt;}}
 [graph | sequenceDiagram | gantt]
 { {&lt; /mermaid }}</pre></div>
+<h2 id="6-quote-인용">6. <code>quote</code>: 인용</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {% quote [warn | note | quote] }}
+blah blah
+{ {% /quote }}</pre></div>
 
   
 <div class="prev-next-post pure-g">

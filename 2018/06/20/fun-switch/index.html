@@ -279,12 +279,20 @@
     <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
         <span style="color:#75715e">//statement
 </span><span style="color:#75715e"></span>}</code></pre></div>
-<blockquote>
+
+
+
+
+<blockquote class="quote">
+
+
 <ul>
 <li>The <strong>expression</strong> used in a switch statement must have an integral or enumerated type, or be of a class type in which the class has a single conversion function to an integral or enumerated type.</li>
 <li>The <strong>constant-expression</strong> for a case must be the same data type as the variable in the switch, and it must be a constant or a literal.</li>
 </ul>
+
 </blockquote>
+
 
 <p>Java는 다음과 같다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">switch</span> <span style="color:#f92672">(</span>expression<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
@@ -294,12 +302,20 @@
     default:
         <span style="color:#75715e">//statement
 </span><span style="color:#75715e"></span><span style="color:#f92672">}</span></code></pre></div>
-<blockquote>
+
+
+
+
+<blockquote class="quote">
+
+
 <ul>
 <li>The <strong>expression</strong> used in a switch statement can only be integers, convertable integers (byte, short, char), strings and enums.</li>
 <li>The <strong>value</strong> for a case must be the same data type as the variable in the switch and it must be a constant or a literal.</li>
 </ul>
+
 </blockquote>
+
 
 <p>옛날 (JDK7 이전의) 얘기는 하지 말고, Java는 문자열도 <code>switch</code>에 쓸 수 있다는 점을 제외하면 그놈이 그놈이다. C <code>switch</code>가 버전 1.0이라면 Java <code>switch</code>는 버전 1.1 정도라고나 할까.</p>
 

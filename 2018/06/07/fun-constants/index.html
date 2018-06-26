@@ -365,9 +365,17 @@ int</pre></div>
 
 <p><a href="https://tramamte.github.io/2018/06/07/constants/">상수</a>에서 <code>iota</code>에 대해 다음과 같이 적었다.</p>
 
-<blockquote>
+
+
+
+
+<blockquote class="note">
+
+
 <p><code>iota</code>는 0부터 시작해 호출할 때마다 1씩 증가한다.</p>
+
 </blockquote>
+
 
 <p>아래 코드의 결과를 보면 이 문구는 명확해 보인다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
@@ -452,9 +460,17 @@ int</pre></div>
 
 <p>이에 대해 <a href="https://golang.org/ref/spec#ConstSpec">Go spec.</a>에서는 다음과 같이 명확히 하고 있다.</p>
 
-<blockquote>
+
+
+
+
+<blockquote class="quote">
+
+
 <p>Multiple uses of <code>iota</code> in the same <code>ConstSpec</code> all have the same value.</p>
+
 </blockquote>
+
 
 <p>comma (,)로 구분해 붙여 쓴 복수개의 상수는 모두 하나의 <code>ConstSpec</code>에 속하기 때문에 같은 <code>iota</code>값을 갖게 된다. 단, 똑같이 한 줄에 썼더라도 세미콜론을 이용해 <code>ConstSpec</code>을 나눈 경우에는 <code>iota</code>값이 증가한다.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">const</span> (
