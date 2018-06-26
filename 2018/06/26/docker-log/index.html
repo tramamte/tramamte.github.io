@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="description" content="컨테이너 프로세스가 출력하는 로그 보기">
   <meta name="generator" content="Hugo 0.42.1" />
 
-  <title>Awesome Patrick</title>
+  <title>Docker container 로그 보기 &middot; Awesome Patrick</title>
 
   
   
@@ -57,8 +57,6 @@
   </script>
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="Awesome Patrick" href="https://tramamte.github.io/index.xml" />
   
 
   
@@ -228,21 +226,16 @@
 
 
 <div class="header">
-  <h1>Awesome Patrick</h1>
-  <h2>Patrick&#39;s ramblings</h2>
+  <h1>Docker container 로그 보기</h1>
+  <h2>컨테이너 프로세스가 출력하는 로그 보기</h2>
 </div>
-
 <div class="content">
-  
-    <article>
-  <header>
-    <h2><a href="https://tramamte.github.io/2018/05/31/make-image-from-container/">Docker container에서 image 생성</a></h2>
 
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>31 May 2018, 12:55</time>
+    <time>26 Jun 2018, 12:49</time>
   </div>
 
   
@@ -265,64 +258,9 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/image">image</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/container">container</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/container">container</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  개인적으로 Docker는 이것 저것 다양한 언어나 도구들을 시험하는 용도로도 많이 사용한다. 새로운 것을 보면 한 번 설치해 사용해 본 후 삭제하는 경우도 많은데, 흔 ...    
-  </p>
-
-  
-  <footer>
-    <a href="https://tramamte.github.io/2018/05/31/make-image-from-container/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://tramamte.github.io/2018/05/31/docker-change-root/">Docker Root Directory 변경</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>31 May 2018, 12:49</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/docker">docker</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/root-directory">root directory</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/systemd">systemd</a>
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/log">log</a>
     
   </div>
   
@@ -330,199 +268,63 @@
 
 </div>
 
-  </header>
+  <p><code>docker logs</code> 명령으로 컨테이너 내 프로세스가 <code>STDOUT</code>, <code>STDERR</code>로 출력하는 로그를 확인할 수 있다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker logs --help
 
-  <p>
-  Docker blog에 있는 내용에 따라 Ubuntu에 apt repository를 추가하고 Docker를 설치한 경우 image나 container 등이 저장되는 기본 경로는 /var ...    
-  </p>
+Usage:  docker logs <span style="color:#f92672">[</span>OPTIONS<span style="color:#f92672">]</span> CONTAINER
 
-  
-  <footer>
-    <a href="https://tramamte.github.io/2018/05/31/docker-change-root/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
+Fetch the logs of a container
 
-  
-    <article>
-  <header>
-    <h2><a href="https://tramamte.github.io/2018/05/30/fun-semicolons/">간단하거나, 복잡하거나. 세미콜론</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>30 May 2018, 23:08</time>
-  </div>
+Options:
+      --details        Show extra details provided to logs
+  -f, --follow         Follow log output
+      --help           Print usage
+      --since string   Show logs since timestamp <span style="color:#f92672">(</span>e.g. <span style="color:#ae81ff">2013</span>-01-02T13:23:37<span style="color:#f92672">)</span> or relative <span style="color:#f92672">(</span>e.g. 42m <span style="color:#66d9ef">for</span> <span style="color:#ae81ff">42</span> minutes<span style="color:#f92672">)</span>
+      --tail string    Number of lines to show from the end of the logs <span style="color:#f92672">(</span>default <span style="color:#e6db74">&#34;all&#34;</span><span style="color:#f92672">)</span>
+  -t, --timestamps     Show timestamps</code></pre></div>
 
   
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24">
     
-      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/go">go</a>
+    <a href="https://tramamte.github.io/2018/06/20/docker-copy/"><i class="fa fa-angle-left"></i></a>
     
   </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
+  <div class="pure-u-10-24">
     
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/fun-go">fun-go</a>
+    <nav class="prev">
+      <a href="https://tramamte.github.io/2018/06/20/docker-copy/">Docker host - container 간 복사</a>
+    </nav>
     
   </div>
-  
-  
-
+  <div class="pure-u-2-24">&nbsp;</div>
+  <div class="pure-u-10-24" style="text-align: right;">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
 </div>
 
-  </header>
-
-  <p>
-  세미콜론에서 다룬 것처럼 Go는 lexer가 세미콜론을 자동으로 삽입하기 때문에 소스코드에 쓸 일이 거의 없다. Go 언어의 장점 중 하나로 얘기되지만, Go를 처음 ...    
-  </p>
-
-  
-  <footer>
-    <a href="https://tramamte.github.io/2018/05/30/fun-semicolons/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://tramamte.github.io/2018/05/29/semicolons/">세미콜론</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>29 May 2018, 12:08</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/go">go</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/syntax-go">syntax-go</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  Go는 C/C++이나 Java처럼 세미콜론(;)을 사용하는 언어이다. 하지만 소스코드에서 세미콜론을 볼 일은 거의 없다. Go lexer가 몇 가지 간단한 규칙 ...    
-  </p>
-
-  
-  <footer>
-    <a href="https://tramamte.github.io/2018/05/29/semicolons/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://tramamte.github.io/2018/05/28/comments/">주석</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>28 May 2018, 23:09</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/go">go</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/syntax-go">syntax-go</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  // single line comment  /* multi line comment */    
-  </p>
-
-  
-</article>
-
-  
-
-  
 
 
+  
+<div id="disqus_thread"></div>
+<script>
+	
+
+	
 
 
+	(function() { 
+		var d = document, s = d.createElement('script');
+		s.src = 'https://' + 'awesome-patrick' + '.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+	})();
+</script>
 
-
-<nav class="pagination" role="pagination">
-  
-  <a href="https://tramamte.github.io/"><i class="fa fa-angle-double-left fa-fw"></i></a>
-  
-  
-  <a href="https://tramamte.github.io/page/4/"><i class="fa fa-angle-left fa-fw"></i></a>
-  
-  <span>&nbsp;5 / 6&nbsp;</span>
-  
-  <a href="https://tramamte.github.io/page/6/"><i class="fa fa-angle-right fa-fw"></i></a>
-  
-  
-  <a href="https://tramamte.github.io/page/6/"><i class="fa fa-angle-double-right fa-fw"></i></a>
-  
-</nav>
-
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
 </div>
