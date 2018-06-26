@@ -18,7 +18,7 @@
       <pubDate>Wed, 20 Jun 2018 23:15:37 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/06/20/docker-copy/</guid>
-      <description>docker cp 명령을 이용해 호스트와 컨테이너 간 파일이나 디렉토리를 복사할 수 있다. $ docker cp --help Usage: docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|- docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH Copy files/folders between a container and the local filesystem Options: -L, --follow-link Always follow symbol link in SRC_PATH --help Print usage 현</description>
+      <description>$ docker cp --help Usage: docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|- docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH Copy files/folders between a container and the local filesystem Options: -L, --follow-link Always follow symbol link in SRC_PATH --help Print usage 현재 사용하고 있는 docker 버전은 17.05.0-ce인데 docker docs (18.03 기준)에는 새로</description>
     </item>
     
   </channel>
