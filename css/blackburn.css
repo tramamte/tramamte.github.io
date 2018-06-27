@@ -74,25 +74,45 @@ a {
   font-size: 1.8em;
   margin: 2.5em 0 1.25em 0;
 }
+.content > h1:before {
+  content: "# ";
+  color: #ddd;
+}
 
 .content > h2 {
   font-size: 1.5em;
   margin: 2.5em 0 1.25em 0;
+}
+.content > h2:before {
+  content: "## ";
+  color: #ddd;
 }
 
 .content > h3 {
   font-size: 1.2em;
   margin: 2.5em 0 1.25em 0;
 }
+.content > h3:before {
+  content: "### ";
+  color: #ddd;
+}
 
 .content > h4 {
   font-size: 1.1em;
   margin: 2.5em 0 1.25em 0;
 }
+.content > h4:before {
+  content: "#### ";
+  color: #ddd;
+}
 
 .content > h5 {
   font-size: 1.0em;
   margin: 2.5em 0 1.25em 0;
+}
+.content > h5:before {
+  content: "##### ";
+  color: #ddd;
 }
 
 .post-meta + h1,
