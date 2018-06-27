@@ -152,6 +152,7 @@ a {
 .footnotes hr {
   margin: 5em 0 0;
   border-top: 2px dotted #8c8b8b;
+  background-image: none;
   height: 0;
 }
 
