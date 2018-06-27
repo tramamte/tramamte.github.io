@@ -74,7 +74,7 @@ a {
   font-size: 1.8em;
   margin: 2.5em 0 1.25em 0;
 }
-.content > h1:before {
+.content > h1:not(.no-before):before {
   content: "# ";
   color: #ddd;
 }
@@ -83,7 +83,7 @@ a {
   font-size: 1.5em;
   margin: 2.5em 0 1.25em 0;
 }
-.content > h2:before {
+.content > h2:not(.no-before):before {
   content: "## ";
   color: #ddd;
 }
@@ -92,7 +92,7 @@ a {
   font-size: 1.2em;
   margin: 2.5em 0 1.25em 0;
 }
-.content > h3:before {
+.content > h3:not(.no-before):before {
   content: "### ";
   color: #ddd;
 }
@@ -101,7 +101,7 @@ a {
   font-size: 1.1em;
   margin: 2.5em 0 1.25em 0;
 }
-.content > h4:before {
+.content > h4:not(.no-before):before {
   content: "#### ";
   color: #ddd;
 }
@@ -110,7 +110,7 @@ a {
   font-size: 1.0em;
   margin: 2.5em 0 1.25em 0;
 }
-.content > h5:before {
+.content > h5:not(.no-before):before {
   content: "##### ";
   color: #ddd;
 }
