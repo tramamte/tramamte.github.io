@@ -278,12 +278,88 @@
 </div>
 
 
+<h1 id="markdown-사용법">Markdown 사용법</h1>
+
+<h2 id="1-task-list">1. Task list</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#66d9ef">- [ ]</span> action one<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>- [x] action two</code></pre></div>
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> action one</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> action two</label></li>
+</ul>
+
+<h2 id="2-fraction">2. Fraction</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">5/12</code></pre></div>
+<p><sup>5</sup>&frasl;<sub>12</sub></p>
+
+<h2 id="3-latex-dash">3. Latex dash</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">April <span style="color:#66d9ef">-</span> 5<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>April -- 5<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>April --- 5</code></pre></div>
+<p>April - 5</p>
+
+<p>April &ndash; 5</p>
+
+<p>April &mdash; 5</p>
+
+<h2 id="4-strike-through">4. Strike-through</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">~~strike through~~</code></pre></div>
+<p><del>strike through</del></p>
+
+<h2 id="5-footnote">5. Footnote</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">This is a footnote.[^1]<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>[^1]: the footnote text.</code></pre></div>
+<p>This is a footnote.<sup class="footnote-ref" id="fnref:http-url-com"><a href="#fn:http-url-com">1</a></sup></p>
+
+<h2 id="6-definition">6. Definition</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">Boy<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>: A boy is a child who will grow up to be a man.</code></pre></div>
+<dl>
+<dt>Boy</dt>
+<dd>A boy is a child who will grow up to be a man.</dd>
+</dl>
+
+<h2 id="7-emoji">7. Emoji</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">I : heart : you.</code></pre></div>
+<p>I ❤️ you.</p>
+
+
+
+
+
+<blockquote class="note">
+
+
+<p>colon 앞뒤 빈 칸 없이 입력</p>
+
+</blockquote>
+
+
+<h2 id="8-equation">8. Equation</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">\\( a = b \\)#inline equation<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>$$ a = b $$ #standalone equation</code></pre></div>
+<p>\( a = b \) #inline equation</p>
+
+<p>$$ a = b $$ #standalone equation</p>
+
+<h2 id="9-super-and-subscription">9. Super- and subscription</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">a&lt;sup&gt;x&lt;/sup&gt;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>a&lt;sub&gt;x&lt;/sub&gt;</code></pre></div>
+<p>a<sup>x</sup></p>
+
+<p>a<sub>x</sub></p>
+
+<h2 id="10-reference-link">10. Reference link</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">This is reference [link][1]<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>[1]: http://url.com &#34;option text&#34;</code></pre></div>
+<p>This is reference <a href="http://url.com" title="option text">link</a></p>
+
 <h1 id="shortcode-사용법">Shortcode 사용법</h1>
 
 <p><strong>Markdown 문법과 같이 사용할 수 있는 shortcode</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {% shortcode_name %}} **Contents** { {% /shortcode_name %}}</pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">{ {% shortcode_name %}} <span style="font-style:italic">*Contents*</span> { {% /shortcode_name %}}</code></pre></div>
 <p><strong>Markdown 사용하지 않는 shortcode</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; shortcode_name &gt;}} &lt;b&gt;Contents&lt;/b&gt; { {&lt; /shortcode_name &gt;}}</pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">{ {&lt; shortcode_name &gt;}} &lt;i&gt;Contents&lt;/i&gt; { {&lt; /shortcode_name &gt;}}</code></pre></div>
 <h1 id="hugo-built-in-shortcodes">Hugo built-in shortcodes</h1>
 
 <h2 id="1-figure-이미지-삽입">1. <code>figure</code>: 이미지 삽입</h2>
@@ -295,7 +371,7 @@
 <li><code>target</code>: <code>target</code> attribute if <code>link</code> parameter is set.</li>
 <li><code>alt</code>, <code>title</code>, <code>caption</code></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; figure src=&#34;/post/hugo/sky.jpg&#34; caption=&#34;Caption: Original resolution is 1880x1253&#34; title=&#34;Title: Sky&#34;&gt;}}</pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">{ {&lt; figure src=&#34;/post/hugo/sky.jpg&#34; caption=&#34;Caption: Original resolution is 1880x1253&#34; title=&#34;Title: Sky&#34;&gt;}}</code></pre></div>
 
 <figure>
     
@@ -366,7 +442,7 @@
 
 <h3 id="making-anchor">3.1 Anchor 만들기 (#making-anchor)</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">## Alpha 101 {#alpha}
-## Version 1.0 {#version-1-dot-0}</pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">[Go to making-anchor]({ {&lt; relref &#34;#making-anchor&#34; &gt;}})</pre></div>
+## Version 1.0 {#version-1-dot-0}</pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">[Go to making-anchor](#making-anchor)</pre></div>
 <p><a href="#making-anchor">Go to making-anchor</a></p>
 
 <h2 id="4-youtube-youtube-동영상-삽입">4. <code>youtube</code>: Youtube 동영상 삽입</h2>
@@ -528,7 +604,15 @@ blah blah
 <h2 id="6-quote-인용">6. <code>quote</code>: 인용</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {% quote [warn | note | quote] }}
 blah blah
-{ {% /quote }}</pre></div>
+{ {% /quote }}</pre></div><div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:http-url-com">option text <a class="footnote-return" href="#fnref:http-url-com"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
 
   
 <div class="prev-next-post pure-g">

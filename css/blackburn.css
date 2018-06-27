@@ -130,6 +130,10 @@ a {
   color: #0099ff;
 }
 
+.content dt {
+  font-weight: bold;
+}
+
 .content img {
   max-width: 100%;
 }
@@ -143,6 +147,12 @@ a {
 
 .post-meta + hr {
   margin: 0.67em 0 2.5em 0;
+}
+
+.footnotes hr {
+  margin: 4em 0 0;
+  border-top: 2px dotted #8c8b8b;
+  height: 0;
 }
 
 code,
