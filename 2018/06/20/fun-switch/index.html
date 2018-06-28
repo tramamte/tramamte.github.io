@@ -271,14 +271,14 @@
 <p>다시 <code>switch</code> 작성 규칙 (<a href="https://tramamte.github.io/2018/06/18/switch-statement/">참고</a>)을 자세히 보면 <code>switch</code> 뒤에도, <code>case</code> 뒤에도 단순히 <code>Expression</code>이 올 수 있다. C/C++, Java에 익숙한 개발자라면 <strong>단서</strong>를 기대할 것이다.</p>
 
 <p>C의 <code>switch</code>를 보자.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">switch</span> (expression)
-{
-	<span style="color:#66d9ef">case</span> constant_expression:
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#00a8c8">switch</span> <span style="color:#111">(</span><span style="color:#111">expression</span><span style="color:#111">)</span>
+<span style="color:#111">{</span>
+	<span style="color:#00a8c8">case</span> <span style="color:#111">constant_expression</span><span style="color:#111">:</span>
         <span style="color:#75715e">//statement
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">break</span>;
-    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+</span><span style="color:#75715e"></span>        <span style="color:#00a8c8">break</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">default</span><span style="color:#f92672">:</span>
         <span style="color:#75715e">//statement
-</span><span style="color:#75715e"></span>}</code></pre></div>
+</span><span style="color:#75715e"></span><span style="color:#111">}</span></code></pre></div>
 
 
 
@@ -295,11 +295,11 @@
 
 
 <p>Java는 다음과 같다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">switch</span> <span style="color:#f92672">(</span>expression<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">case</span> value:
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00a8c8">switch</span> <span style="color:#f92672">(</span><span style="color:#111">expression</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#00a8c8">case</span> <span style="color:#111">value:</span>
         <span style="color:#75715e">//statement
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
-    default:
+</span><span style="color:#75715e"></span>        <span style="color:#00a8c8">break</span><span style="color:#f92672">;</span><span style="color:#111">
+</span><span style="color:#111">    default:</span>
         <span style="color:#75715e">//statement
 </span><span style="color:#75715e"></span><span style="color:#f92672">}</span></code></pre></div>
 
@@ -328,52 +328,52 @@
 <h1 id="상수-조건-해제">상수 조건 해제</h1>
 
 <p>가장 눈에 띄는 것은 <code>case</code> 뒤에 오는 <code>Expression</code>이 상수일 필요가 없다는 점일 것이다. 즉, 다음과 같은 코드도 가능하다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">c</span> = <span style="color:#ae81ff">3</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">var</span> <span style="color:#75af00">c</span> <span style="color:#111">=</span> <span style="color:#ae81ff">3</span>
 
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">c1</span>, <span style="color:#a6e22e">c2</span> = <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>
+<span style="color:#00a8c8">var</span> <span style="color:#75af00">c1</span><span style="color:#111">,</span> <span style="color:#75af00">c2</span> <span style="color:#111">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span>
 
-<span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">c</span> {
-<span style="color:#66d9ef">case</span> <span style="color:#a6e22e">c1</span>:
-    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;c1&#34;</span>)
-<span style="color:#66d9ef">case</span> <span style="color:#a6e22e">c2</span>:
-    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;c2&#34;</span>)
-<span style="color:#66d9ef">case</span> <span style="color:#a6e22e">c1</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">c2</span>:
-    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;c1 + c2&#34;</span>)
-}</code></pre></div>
+<span style="color:#00a8c8">switch</span> <span style="color:#75af00">c</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">case</span> <span style="color:#75af00">c1</span><span style="color:#111">:</span>
+    <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;c1&#34;</span><span style="color:#111">)</span>
+<span style="color:#00a8c8">case</span> <span style="color:#75af00">c2</span><span style="color:#111">:</span>
+    <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;c2&#34;</span><span style="color:#111">)</span>
+<span style="color:#00a8c8">case</span> <span style="color:#75af00">c1</span> <span style="color:#f92672">+</span> <span style="color:#75af00">c2</span><span style="color:#111">:</span>
+    <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;c1 + c2&#34;</span><span style="color:#111">)</span>
+<span style="color:#111">}</span></code></pre></div>
 <hr />
 
 <p><code>case</code> 뒤 <code>Expression</code>이 상수일 필요가 없다는 사실은 예상보다 많은 코드 다양성을 보장한다. 예를 들어, C나 Java로 <code>testFunc()</code>의 반환값이 1일 때와 그렇지 않을 때 다른 문자열을 출력하는 코드를 <code>switch</code>로 작성한다고 가정해 보자. - 물론 이런 코드를 <code>switch</code>로 작성하지는 않는다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// c code
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">switch</span> (testFunc())
-{
-    <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>
-        printf(<span style="color:#e6db74">&#34;1</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
-        printf(<span style="color:#e6db74">&#34;default</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
-}</code></pre></div>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// c code
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">switch</span> <span style="color:#111">(</span><span style="color:#111">testFunc</span><span style="color:#111">())</span>
+<span style="color:#111">{</span>
+    <span style="color:#00a8c8">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>
+        <span style="color:#111">printf</span><span style="color:#111">(</span><span style="color:#d88200">&#34;1</span><span style="color:#8045ff">\n</span><span style="color:#d88200">&#34;</span><span style="color:#111">);</span>
+    <span style="color:#00a8c8">default</span><span style="color:#f92672">:</span>
+        <span style="color:#111">printf</span><span style="color:#111">(</span><span style="color:#d88200">&#34;default</span><span style="color:#8045ff">\n</span><span style="color:#d88200">&#34;</span><span style="color:#111">)</span>
+<span style="color:#111">}</span></code></pre></div>
 <p>그런데 Go는 하늘과 땅을 뒤집을 수도 있다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Go code
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">switch</span> <span style="color:#ae81ff">1</span> {
-<span style="color:#66d9ef">case</span> <span style="color:#a6e22e">testFunc</span>():
-    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;1&#34;</span>)
-<span style="color:#66d9ef">default</span>:
-    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;default&#34;</span>)
-}</code></pre></div>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Go code
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">switch</span> <span style="color:#ae81ff">1</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">case</span> <span style="color:#75af00">testFunc</span><span style="color:#111">():</span>
+    <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;1&#34;</span><span style="color:#111">)</span>
+<span style="color:#00a8c8">default</span><span style="color:#111">:</span>
+    <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;default&#34;</span><span style="color:#111">)</span>
+<span style="color:#111">}</span></code></pre></div>
 <hr />
 
 <p>Go는 <code>switch</code> 뒤 <code>Expression</code>을 생략할 수도 있다. 생략한 경우 <code>true</code>가 있는 것으로 가정한다. 즉, 다음 두 <code>switch</code> 코드는 같은 의미이다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">switch</span> { <span style="color:#75715e">/* */</span> }
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">switch</span> <span style="color:#111">{</span> <span style="color:#75715e">/* */</span> <span style="color:#111">}</span>
 
-<span style="color:#66d9ef">switch</span> <span style="color:#66d9ef">true</span> { <span style="color:#75715e">/* */</span> }</code></pre></div>
+<span style="color:#00a8c8">switch</span> <span style="color:#00a8c8">true</span> <span style="color:#111">{</span> <span style="color:#75715e">/* */</span> <span style="color:#111">}</span></code></pre></div>
 <p><code>switch</code> 뒤 <code>Expression</code>이 <code>true</code>이니 <code>case</code> 뒤 <code>Expression</code>은 참/거짓을 판단하는 코드가 오면 된다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">switch</span> {
-<span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span> &gt; <span style="color:#ae81ff">2</span>:
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">switch</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">case</span> <span style="color:#ae81ff">1</span> <span style="color:#111">&gt;</span> <span style="color:#ae81ff">2</span><span style="color:#111">:</span>
 	<span style="color:#75715e">// statement    
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span> = <span style="color:#ae81ff">2</span>:
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">case</span> <span style="color:#ae81ff">1</span> <span style="color:#111">=</span> <span style="color:#ae81ff">2</span><span style="color:#111">:</span>
     <span style="color:#75715e">// statement
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span> &lt; <span style="color:#ae81ff">2</span>:
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">case</span> <span style="color:#ae81ff">1</span> <span style="color:#111">&lt;</span> <span style="color:#ae81ff">2</span><span style="color:#111">:</span>
     <span style="color:#75715e">// statement
-</span><span style="color:#75715e"></span>}</code></pre></div>
+</span><span style="color:#75715e"></span><span style="color:#111">}</span></code></pre></div>
 
   
 

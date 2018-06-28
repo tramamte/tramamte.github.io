@@ -270,33 +270,33 @@
 
 </div>
 
-  <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker cp --help
+  <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker cp --help
 
-Usage:  docker cp <span style="color:#f92672">[</span>OPTIONS<span style="color:#f92672">]</span> CONTAINER:SRC_PATH DEST_PATH|-
-        docker cp <span style="color:#f92672">[</span>OPTIONS<span style="color:#f92672">]</span> SRC_PATH|- CONTAINER:DEST_PATH
+Usage:  docker cp <span style="color:#f92672">[</span>OPTIONS<span style="color:#f92672">]</span> CONTAINER:SRC_PATH DEST_PATH<span style="color:#111">|</span>-
+        docker cp <span style="color:#f92672">[</span>OPTIONS<span style="color:#f92672">]</span> SRC_PATH<span style="color:#111">|</span>- CONTAINER:DEST_PATH
 
-Copy files/folders between a container and the local filesystem
+Copy files/folders between a container and the <span style="color:#111">local</span> filesystem
 
 Options:
   -L, --follow-link   Always follow symbol link in SRC_PATH
       --help          Print usage</code></pre></div>
 <p>현재 사용하고 있는 docker 버전은 17.05.0-ce인데 <a href="https://docs.docker.com/engine/reference/commandline/cp/">docker docs</a> (18.03 기준)에는 새로운 OPTION에 대한 내용도 있다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">--archive , -a		Archive mode (copy all uid/gid information)</pre></div>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">--archive , -a		Archive mode (copy all uid/gid information)</pre></div>
 <p>그런데 release note를 찾아봐도 <code>-a</code> 옵션이 언제 추가됐는지 나오지 않는다. ㅡ,.ㅡ</p>
 
 <hr />
 
 <p><code>-L</code> 옵션 사용하면 symbolic link를 복사할 때 원본으로 치환된다. 예를 들어,</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user@host:~/test$ ls -l
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user@host:~/test$ ls -l
 total <span style="color:#ae81ff">4</span>
 lrwxrwxrwx <span style="color:#ae81ff">1</span> user user  <span style="color:#ae81ff">13</span> Jun <span style="color:#ae81ff">01</span> <span style="color:#ae81ff">10</span>:29 link_file.txt -&gt; real_file.txt
 -rw-rw-r-- <span style="color:#ae81ff">1</span> user user <span style="color:#ae81ff">113</span> Jun <span style="color:#ae81ff">01</span> <span style="color:#ae81ff">10</span>:28 real_file.txt</code></pre></div>
 <p>호스트에 위와 같은 파일들이 있을 때 symbolic link인 <code>link_file.txt</code>를 container에 <code>-L</code> 옵션이 없는 상태로 복사하면 다음과 같이 된다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@container:~/test$ ls -l
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@container:~/test$ ls -l
 total <span style="color:#ae81ff">3</span>
 lrwxrwxrwx <span style="color:#ae81ff">1</span> root root  <span style="color:#ae81ff">13</span> Jun <span style="color:#ae81ff">01</span> <span style="color:#ae81ff">10</span>:29 link_file.txt -&gt; real_file.txt</code></pre></div>
 <p>하지만 <code>-L</code> 옵션을 붙여 복사하면 링크의 이름을 갖는 원본이 복사된다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@container:~/test$ ls -l
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@container:~/test$ ls -l
 total <span style="color:#ae81ff">3</span>
 -rw-rw-r-- <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">113</span> Jun <span style="color:#ae81ff">01</span> <span style="color:#ae81ff">10</span>:28 link_file.txt</code></pre></div>
 <hr />

@@ -297,7 +297,7 @@
 <p>서두에 언급한 것처럼 패키지를 만든다는 것이 아직 많이 이른 감은 있지만 <a href="https://tramamte.github.io/2018/05/31/packages/">패키지</a>, <a href="https://tramamte.github.io/2018/06/08/import/">임포트</a>에서 다룬 내용을 확실히 한다는 차원에서 간단히 알아보자.</p>
 
 <p>디렉토리 구조는 다음과 같다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">$GOPATH -+- myapp  --- main.go
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">$GOPATH -+- myapp  --- main.go
          |
          +- mypack -+- packa1 -+- packa1.go
                     |          |
@@ -309,38 +309,38 @@
 <p><a href="https://tramamte.github.io/2018/06/08/import/">임포트</a> 에서 강조한 것처럼 <em>관례상 (by convention)</em> 패키지의 경로와 이름을 같게 할 뿐, 둘은 엄연히 다르다.</p>
 
 <p>위 디렉토리 구조에서 <code>packa2</code>, <code>packa2.go</code>, <code>packb.go</code> 는 없고, <code>packa1.go</code> 를 다음과 같이 작성한 상황을 가정해 보자.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// packa1.go
-</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">packa</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// packa1.go
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#75af00">packa</span>
 
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
 
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">PackA1</span>() {
-    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;This is PackA1()&#34;</span>)
-}</code></pre></div>
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">PackA1</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is PackA1()&#34;</span><span style="color:#111">)</span>
+<span style="color:#111">}</span></code></pre></div>
 <p>이 패키지를 사용하기 위한 <code>main.go</code> 는 다음과 같다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// main.go
-</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// main.go
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
 
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;mypack/packa1&#34;</span> 	<span style="color:#75715e">// PATH
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;mypack/packa1&#34;</span> 	<span style="color:#75715e">// PATH
 </span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-    <span style="color:#a6e22e">packa</span>.<span style="color:#a6e22e">PackA1</span>()		<span style="color:#75715e">// NAME
-</span><span style="color:#75715e"></span>}</code></pre></div>
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">packa</span><span style="color:#111">.</span><span style="color:#75af00">PackA1</span><span style="color:#111">()</span>		<span style="color:#75715e">// NAME
+</span><span style="color:#75715e"></span><span style="color:#111">}</span></code></pre></div>
 <h2 id="한-경로에-두-가지-이상의-패키지를-두면">한 경로에 두 가지 이상의 패키지를 두면&hellip;</h2>
 
 <p>그럼 한 디렉토리에 있는 소스 파일들이 서로 다른 패키지 이름을 갖는다면 어떻게 될까?</p>
 
 <p>위 예에서 <code>packb.go</code> 파일을 만들고 다음과 같이 작성한 것을 가정한 것이다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// packb.go
-</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">packb</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// packb.go
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#75af00">packb</span>
 
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
 
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">PackB</span>() {
-    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;This is PackB()&#34;</span>)
-}</code></pre></div>
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">PackB</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is PackB()&#34;</span><span style="color:#111">)</span>
+<span style="color:#111">}</span></code></pre></div>
 <p>이 경우 빌드 시 다음과 같은 오류가 발생한다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">found packages packa (packa1.go) and packb (packb.go) in ~~~/mypack/packa1</pre></div>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">found packages packa (packa1.go) and packb (packb.go) in ~~~/mypack/packa1</pre></div>
 <p>한 디렉토리에 다른 이름을 갖는 패키지들이 있다고 Go가 싫어한다.</p>
 
 <h2 id="한-패키지를-둘-이상의-경로에-두면">한 패키지를 둘 이상의 경로에 두면&hellip;</h2>
@@ -348,42 +348,42 @@
 <p>반대로 같은 패키지 이름을 갖는 소스 파일들을 여러 경로에 분산해 두면 어떻게 될까?</p>
 
 <p><code>packb.go</code> 는 삭제하고, <code>packa2</code> 디렉토리를 만들어 그 아래에 <code>packa2.go</code> 를 다음과 같이 작성한 것을 가정한 것이다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// packa2.go
-</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">packa</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// packa2.go
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#75af00">packa</span>
 
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
 
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">PackA2</span>() {
-    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;This is PackA2()&#34;</span>)
-}</code></pre></div>
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">PackA2</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is PackA2()&#34;</span><span style="color:#111">)</span>
+<span style="color:#111">}</span></code></pre></div>
 <p><code>PackA2()</code> 를 호출하기 위해 <code>main.go</code> 도 다음과 같이 수정한다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// main.go
-</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// main.go
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
 
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;mypack/packa1&#34;</span>
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;mypack/packa2&#34;</span>
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;mypack/packa1&#34;</span>
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;mypack/packa2&#34;</span>
 
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-    <span style="color:#a6e22e">packa</span>.<span style="color:#a6e22e">PackA1</span>()
-    <span style="color:#a6e22e">packa</span>.<span style="color:#a6e22e">PackA2</span>()
-}</code></pre></div>
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">packa</span><span style="color:#111">.</span><span style="color:#75af00">PackA1</span><span style="color:#111">()</span>
+    <span style="color:#75af00">packa</span><span style="color:#111">.</span><span style="color:#75af00">PackA2</span><span style="color:#111">()</span>
+<span style="color:#111">}</span></code></pre></div>
 <p>이 경우에는 빌드 시 다음과 같은 오류가 발생한다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">.<span style="color:#f92672">/</span><span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">5</span>:<span style="color:#ae81ff">8</span>: <span style="color:#a6e22e">packa</span> <span style="color:#a6e22e">redeclared</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">imported</span> <span style="color:#f92672">package</span> <span style="color:#a6e22e">name</span>
-	<span style="color:#a6e22e">previous</span> <span style="color:#a6e22e">declaration</span> <span style="color:#a6e22e">at</span> .<span style="color:#f92672">/</span><span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">4</span>:<span style="color:#ae81ff">8</span>
-.<span style="color:#f92672">/</span><span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">8</span>:<span style="color:#ae81ff">2</span>: <span style="color:#a6e22e">undefined</span>: <span style="color:#e6db74">&#34;mypack/packa2&#34;</span>.<span style="color:#a6e22e">PackA1</span></pre></div>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="color:#111">.</span><span style="color:#f92672">/</span><span style="color:#75af00">main</span><span style="color:#111">.</span><span style="color:#00a8c8">go</span><span style="color:#111">:</span><span style="color:#ae81ff">5</span><span style="color:#111">:</span><span style="color:#ae81ff">8</span><span style="color:#111">:</span> <span style="color:#75af00">packa</span> <span style="color:#75af00">redeclared</span> <span style="color:#75af00">as</span> <span style="color:#75af00">imported</span> <span style="color:#f92672">package</span> <span style="color:#75af00">name</span>
+	<span style="color:#75af00">previous</span> <span style="color:#75af00">declaration</span> <span style="color:#75af00">at</span> <span style="color:#111">.</span><span style="color:#f92672">/</span><span style="color:#75af00">main</span><span style="color:#111">.</span><span style="color:#00a8c8">go</span><span style="color:#111">:</span><span style="color:#ae81ff">4</span><span style="color:#111">:</span><span style="color:#ae81ff">8</span>
+<span style="color:#111">.</span><span style="color:#f92672">/</span><span style="color:#75af00">main</span><span style="color:#111">.</span><span style="color:#00a8c8">go</span><span style="color:#111">:</span><span style="color:#ae81ff">8</span><span style="color:#111">:</span><span style="color:#ae81ff">2</span><span style="color:#111">:</span> <span style="color:#75af00">undefined</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;mypack/packa2&#34;</span><span style="color:#111">.</span><span style="color:#75af00">PackA1</span></pre></div>
 <p><code>mypack/packa2</code> 경로에 있는 패키지를 임포트하면서 <code>mypack/packa1</code>에서 이미 임포트한 <code>packa</code>가 재정의 되었다는 오류와 이로 인해 (<code>mypack/packa2</code>에서 임포트한 패키지가 <code>mypack/packa1</code>에서 임포트한 패키지를 덮어 씀으로 인해) 패키지 <code>packa</code>에서는 <code>PackA1</code> 함수를 찾을 수 없다는 오류이다.</p>
 
 <p>이 문제는 임포트하는 패키지의 이름을 변경해 (별칭을 달아) 해결 가능하다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// main.go
-</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// main.go
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
 
-<span style="color:#f92672">import</span> <span style="color:#a6e22e">a1</span> <span style="color:#e6db74">&#34;mypack/packa1&#34;</span>
-<span style="color:#f92672">import</span> <span style="color:#a6e22e">a2</span> <span style="color:#e6db74">&#34;mypack/packa2&#34;</span>
+<span style="color:#f92672">import</span> <span style="color:#75af00">a1</span> <span style="color:#d88200">&#34;mypack/packa1&#34;</span>
+<span style="color:#f92672">import</span> <span style="color:#75af00">a2</span> <span style="color:#d88200">&#34;mypack/packa2&#34;</span>
 
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-    <span style="color:#a6e22e">a1</span>.<span style="color:#a6e22e">PackA1</span>()
-    <span style="color:#a6e22e">a2</span>.<span style="color:#a6e22e">PackA2</span>()
-}</code></pre></div>
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">a1</span><span style="color:#111">.</span><span style="color:#75af00">PackA1</span><span style="color:#111">()</span>
+    <span style="color:#75af00">a2</span><span style="color:#111">.</span><span style="color:#75af00">PackA2</span><span style="color:#111">()</span>
+<span style="color:#111">}</span></code></pre></div>
 <h2 id="결론">결론</h2>
 
 <p><strong>관례</strong>라는 용어가 특수활동비 문제로 인해 <strong>답습</strong>과 비슷한 뜻으로 이해되기는 하지만 최소환 Go의 패키지 경로와 이름에 관련해서는 다 이유가 있어 생긴 것이다. 어떻게 되는지 봤으니 괜히 이상한 시도 하지 말자. 복잡해진다.</p>
