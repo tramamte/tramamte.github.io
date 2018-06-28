@@ -27,7 +27,7 @@
       <pubDate>Mon, 18 Jun 2018 12:40:39 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/06/18/switch-statement/</guid>
-      <description>Go의 switch 조건문은 C/C++이나 Java에 비해 사용법이 굉장히 다양하다.여기서는 기본 사용법에 대해서만 우선 알아보자. Go의 switch 작성 규칙은 다음과 같다.</description>
+      <description>Go의 switch 조건문은 C/C++이나 Java에 비해 사용법이 굉장히 다양하다. 여기서는 기본 사용법에 대해서만 우선 알아보자. Go의 switch 작성 규칙은 다음과 같다.</description>
     </item>
     
     <item>
