@@ -308,6 +308,8 @@ uintptr		포인터를 저장하기에 적당한 크기</pre></div>
 
 <p>문자열을 저장하기 위한 타입으로 변경 불가능(immutable)하기 때문에 메모리 관리 측면에서 주의가 필요하다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">string		&#34;문자열&#34;</pre></div>
+<p>Java에서 문자열을 합치기 위해 +를 남발했다가 고생한 기억이 있다면 <a href="https://stackoverflow.com/questions/1760757/how-to-efficiently-concatenate-strings-in-go">이 글</a>을 유심히 보기 바란다.</p>
+
 <hr />
 
 <p><a href="https://tramamte.github.io/2018/06/01/variables/">변수</a>에서 확인한 것처럼 Go의 변수는 일반적으로 <code>var i int</code> 형태로 선언한다. 타입 작성법의 <code>Type</code>에 대한 마지막 표현 (<code>Type = &quot;(&quot; Type &quot;)&quot;</code>)이 좀 특이한데, 결론적으로 <code>Type</code>을 괄호로 묶어도 (2개 이상의 괄호로 묶어도) 괜찮다는 의미이다. 즉,</p>
