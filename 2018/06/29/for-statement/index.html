@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="for statement">
+  <meta name="generator" content="Hugo 0.42.1" />
+
+  <title>for 반복문 &middot; Awesome Patrick</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://tramamte.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://tramamte.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://tramamte.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700|Nanum+Gothic+Coding:400,700|Raleway:400,700|Roboto+Mono" rel="stylesheet">
+
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://tramamte.github.io/css/zoom.css">
+  <script src="https://tramamte.github.io/js/zoom.js"></script>
+
+  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+  
+  <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js" onload="mermaidReady()" defer></script>
+  <script>
+    var mermaidReady = function() {
+      var config = {
+        startOnLoad: true,
+        theme: "neutral"
+      }
+      mermaid.initialize(config);
+    };
+  </script>
+
+  
+  
+
+  
+
+  <link rel="apple-touch-icon" sizes="57x57" href="https://tramamte.github.io/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://tramamte.github.io/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://tramamte.github.io/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://tramamte.github.io/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://tramamte.github.io/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://tramamte.github.io/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://tramamte.github.io/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://tramamte.github.io/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://tramamte.github.io/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://tramamte.github.io/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tramamte.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://tramamte.github.io/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://tramamte.github.io/favicon-16x16.png">
+<link rel="manifest" href="https://tramamte.github.io/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="https://tramamte.github.io/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+
+<div id="menu">
+  
+  <a class="pure-menu-heading brand" href="https://tramamte.github.io/">Awesome<br>Patrick</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/topics/"><i class='fa fa-folder fa-fw'></i>Topics</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/tags/"><i class='fa fa-tag fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/posts/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://tramamte.github.io/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+    </li>
+    
+
+  </ul>
+</div>
+
+</div>
+<div id="menuBackground"></div>
+  
+  <div id="mask"></div>
+  <div id="main">
+
+
+<div class="header">
+  <h1>for 반복문</h1>
+  <h2>for statement</h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>Jun 29, 2018 22:55</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/go">go</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/syntax-go">syntax-go</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  
+
+<p>시작하기에 앞서 한 가지 중요한 사실을 미리 밝히고 넘어가자.</p>
+
+
+
+
+
+<blockquote class="note">
+
+
+<p>Go에는 <code>while</code>이 없다! 반복문은 <code>for</code> 하나로 모두 작성한다.</p>
+
+</blockquote>
+
+
+<p><br></p>
+
+<p><code>for</code> 반복문의 작성 규칙을 살펴보자.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">ForStmt = &#34;for&#34; [ Condition | ForClause | RangeClause ] Block .</pre></div>
+<p><code>while</code>이 없는 대신 <code>for</code> 자체가 이렇게도, 저렇게도 사용할 수 있도록 돼 있다. <code>RangeClause</code>는 아직 다루지 않은 배열, 슬라이스, 맵이나 채널 등과 같이 사용하니 일단은 미뤄두도록 하자. &mdash; 점점 빚이 늘어나는 것 같은 심적 부담이&hellip;</p>
+
+<h1 id="while-처럼-사용하기">while 처럼 사용하기</h1>
+
+<p><code>for</code> 뒤에 참/거짓을 판별할 수 있는 <code>Condition</code>을 써 <code>while</code>처럼 사용할 수 있다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">for</span> <span style="color:#75af00">a</span> <span style="color:#111">&lt;</span> <span style="color:#75af00">b</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">a</span> <span style="color:#f92672">*=</span> <span style="color:#ae81ff">2</span>
+<span style="color:#111">}</span></code></pre></div>
+<h1 id="for-처럼-사용하기">for 처럼 사용하기</h1>
+
+<p>&lsquo;<code>for</code>를 for 처럼 사용한다는게 무슨 소린가?&rsquo; 하겠지만, 다른 언어, 특히 C/C++의 <code>for</code>처럼 사용한다는 의미이다. 작성 규칙 중에서는 <code>ForClause</code>에 해당한다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">ForClause = [ InitStmt ] &#34;;&#34; [ Condition ] &#34;;&#34; [ PostStmt ] .</pre></div>
+<p>대충 봐도 익히 알고 있는 그 <code>for</code> 반복문이다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">for</span> <span style="color:#75af00">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#75af00">i</span> <span style="color:#111">&lt;</span> <span style="color:#ae81ff">10</span><span style="color:#111">;</span> <span style="color:#75af00">i</span><span style="color:#f92672">++</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">f</span><span style="color:#111">(</span><span style="color:#75af00">i</span><span style="color:#111">)</span>
+<span style="color:#111">}</span></code></pre></div>
+<p><code>InitStmt</code>, <code>Condition</code>, <code>PostStmt</code>는 모두 필수 요소가 아니기 때문에 삭제할 수 있다. 하지만 구분을 위해 들어가는 세미콜론은 반드시 써야 하는데, <code>Condition</code>만 쓴 경우는 위 <a href="#while-처럼-사용하기">while 처럼 사용하기</a>와 같은 사용법이기 때문에 세미콜론을 삭제할 수 있다. 즉, 다음 코드들은 같은 의미이다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// case 1
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">for</span> <span style="color:#111">;</span> <span style="color:#75af00">i</span> <span style="color:#111">&lt;</span> <span style="color:#ae81ff">10</span><span style="color:#111">;</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">f</span><span style="color:#111">(</span><span style="color:#75af00">i</span><span style="color:#111">)</span>
+<span style="color:#111">}</span>
+
+<span style="color:#75715e">// case 2
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">for</span> <span style="color:#75af00">i</span> <span style="color:#111">&lt;</span> <span style="color:#ae81ff">10</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">f</span><span style="color:#111">(</span><span style="color:#75af00">i</span><span style="color:#111">)</span>
+<span style="color:#111">}</span></code></pre></div>
+<h1 id="무한루프">무한루프</h1>
+
+<p><code>for</code>문 작성 규칙을 다시 보면 <code>Condition</code>, <code>ForClause</code>, <code>RangeClause</code>가 모두 선택사항이다. 즉, <code>for</code> 뒤에 아무것도 쓰지 않을 수도 있다.</p>
+
+<p>또, <a href="#for-처럼-사용하기">for 처럼 사용하기</a>에서 <code>ForClause</code>를 봐도 <code>InitStmt</code>, <code>Condition</code>, <code>PostStmt</code>를 모두 쓰지 않고 세미콜론만 두 개 쓸 수도 있다.</p>
+
+<p>이 두 경우는 같은 의미로 <code>Condition</code> 자리에 <code>true</code>가 있는 것으로 처리된다.</p>
+
+<p>어디서 비슷한 것을 본 것 같지 않은가? 바로 <code>switch</code> 조건문에서 <code>switch</code> 뒤 <code>Expression</code>을 생략했을 때와 같은 처리 방식이다. (<a href="https://tramamte.github.io/2018/06/20/fun-switch/">참조</a>)</p>
+
+<p>따라서 아래 코드들은 모두 무한루프를 만드는 방법이다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">for</span> <span style="color:#00a8c8">true</span> <span style="color:#111">{</span>
+    <span style="color:#f92672">...</span>
+<span style="color:#111">}</span>
+
+<span style="color:#00a8c8">for</span> <span style="color:#111">;</span> <span style="color:#00a8c8">true</span><span style="color:#111">;</span> <span style="color:#111">{</span>
+    <span style="color:#f92672">...</span>
+<span style="color:#111">}</span>
+
+<span style="color:#00a8c8">for</span> <span style="color:#111">;</span> <span style="color:#111">;</span> <span style="color:#111">{</span>
+    <span style="color:#f92672">...</span>
+<span style="color:#111">}</span>
+
+<span style="color:#00a8c8">for</span> <span style="color:#111">{</span>
+    <span style="color:#f92672">...</span>
+<span style="color:#111">}</span></code></pre></div>
+
+  
+
+<div class="see-also">
+<p><i class="fa fa-archive fa-fw"></i><b>See Also</b></p>
+<ul>
+	
+	<li><a href="https://tramamte.github.io/2018/06/18/switch-statement/">switch 조건문</a></li>
+	
+	<li><a href="https://tramamte.github.io/2018/06/15/if-statement/">if 조건문</a></li>
+	
+	<li><a href="https://tramamte.github.io/2018/06/12/pointers/">포인터</a></li>
+	
+	<li><a href="https://tramamte.github.io/2018/06/08/import/">임포트</a></li>
+	
+	<li><a href="https://tramamte.github.io/2018/06/07/constants/">상수</a></li>
+	
+</ul>
+</div>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24">
+    
+    <a href="https://tramamte.github.io/2018/06/26/hanks-oven-02/"><i class="fa fa-angle-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://tramamte.github.io/2018/06/26/hanks-oven-02/">피자 화덕 만들기 2</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">&nbsp;</div>
+  <div class="pure-u-10-24" style="text-align: right;">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script>
+	
+
+	
+
+
+	(function() { 
+		var d = document, s = d.createElement('script');
+		s.src = 'https://' + 'awesome-patrick' + '.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+	})();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+<div class="footer">
+  <div class="small-print">
+  <small>&copy2018 Patrick Yu. All rights reserved.</small>
+</div>
+<div class="small-print">
+  <small>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with modified <a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a> theme.</small>
+</div>
+
+</div>
+
+</div>
+</div>
+<script src="https://tramamte.github.io/js/ui.js"></script>
+
+
+
+
+
+
+</body>
+</html>
+
