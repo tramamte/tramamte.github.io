@@ -154,6 +154,7 @@ i {
 /* table of contents */
 #toc {
   margin-top: 0.5em;
+  padding-right: 1em;
   border: 1px dashed gray;
 }
 
@@ -326,9 +327,16 @@ figcaption > p {
 
 /* code block */
 code,
-.highlight,
 .highlight > pre {
   font-family: 'Roboto Mono', 'Nanum Gothic Coding', monospace;
+}
+
+code {
+  font-size: 0.9em;
+}
+
+.highlight > pre,
+.highlight > pre > code {
   font-size: 0.9rem;
 }
 
@@ -336,18 +344,18 @@ code,
   padding: 0.5em 0.75em;
 }
 
-p code,
+p > code,
 li > code {
   display: inline-block;
   white-space: no-wrap;
-  line-height: 1.4rem;
+  line-height: 1.4em;
   border: 1px solid #ddd;
   -webkit-border-radius: 0.2rem;
   -moz-border-radius: 0.2rem;
   -ms-border-radius: 0.2rem;
   -o-border-radius: 0.2rem;
   border-radius: 0.2rem;
-  padding: 0 .3rem;
+  padding: 0 .3em;
   margin: 0;
 }
 
