@@ -304,7 +304,7 @@
 
 <p>필요가 없다는 것이지, 쓰면 안되는 것은 아니다. 말 그대로 <em>do not need</em> 이지 <em>must not</em> 이 아니다.</p>
 
-<p>자동으로(암시적으로; implicitly) 세미콜론이 추가되는 곳에 명시적으로(explicitly) 세미콜론을 써주면 lexer는 자동으로 추가하는 작업을 수행하지 않으며, 이 경우 소스코드가 세미콜론 언어와 굉장히 유사한 모양을 하게 된다. - <em>&lsquo;굳이 이 짓을 왜 하는거냐?&rsquo;</em></p>
+<p>자동으로(암시적으로; implicitly) 세미콜론이 추가되는 곳에 명시적으로(explicitly) 세미콜론을 써주면 lexer는 자동으로 추가하는 작업을 수행하지 않으며, 이 경우 소스코드가 세미콜론 언어와 굉장히 유사한 모양을 하게 된다. &mdash; <em>굳이 이 짓을 왜 하는거냐?</em></p>
 
 <p>다시 한 번 lexer에 의해 세미콜론이 자동으로 삽입되는 규칙을 보면,</p>
 
@@ -322,9 +322,9 @@
 
 <h1 id="identifiers">Identifiers</h1>
 
-<p>Go 언어에는 4 종류의 토큰이 있다: <em>identifiers</em>, <em>keywords</em>, <em>operators and punctuation</em>, <em>literal</em>. (자세한 사항은 <a href="https://golang.org/ref/spec">The Go Programming Language Specification</a> 참조)</p>
+<p>Go 언어에는 4 종류의 토큰이 있다: identifiers, keywords, operators and punctuation, literal. (자세한 사항은 <a href="https://golang.org/ref/spec">The Go Programming Language Specification</a> 참고)</p>
 
-<p>다른 것들은 C/C++, Java와 유사한데, 흔히 얘기하는 <strong>기본 타입</strong> (<code>int</code>, <code>float</code> 같은 것들)이 Go의 경우에는 keyword가 아닌 identifier에 포함된다. Go의 <strong>Predeclared identifier</strong>는 다음과 같다.</p>
+<p>다른 것들은 C/C++, Java와 유사한데, 흔히 얘기하는 <strong>기본 타입</strong> (int, float 같은 것들)이 Go의 경우에는 keyword가 아닌 identifier에 포함된다. Go의 <strong>Predeclared identifier</strong>는 다음과 같다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Types:
 </span><span style="color:#75715e"></span>	<span style="color:#00a8c8">bool</span> <span style="color:#00a8c8">byte</span> <span style="color:#00a8c8">complex64</span> <span style="color:#00a8c8">complex128</span> <span style="color:#00a8c8">error</span> <span style="color:#00a8c8">float32</span> <span style="color:#00a8c8">float64</span>
 	<span style="color:#00a8c8">int</span> <span style="color:#00a8c8">int8</span> <span style="color:#00a8c8">int16</span> <span style="color:#00a8c8">int32</span> <span style="color:#00a8c8">int64</span> <span style="color:#00a8c8">rune</span> <span style="color:#00a8c8">string</span>
@@ -339,9 +339,21 @@
 <span style="color:#75715e">// Functions:
 </span><span style="color:#75715e"></span>	<span style="color:#75af00">append</span> <span style="color:#75af00">cap</span> <span style="color:#75af00">close</span> <span style="color:#75af00">complex</span> <span style="color:#75af00">copy</span> <span style="color:#75af00">delete</span> <span style="color:#75af00">imag</span> <span style="color:#75af00">len</span>
 	<span style="color:#75af00">make</span> <span style="color:#75af00">new</span> <span style="color:#75af00">panic</span> <span style="color:#75af00">print</span> <span style="color:#75af00">println</span> <span style="color:#75af00">real</span> <span style="color:#75af00">recover</span></code></pre></div>
-<p><code>true</code>, <code>false</code>도 identifier이다.</p>
+<p>Go의 타입이 뒤에 오는 비상식적 (idiomatic 이라 주장하는) 선언법과 초기화 문법 등을 모두 포함해 단 하나의 문장,</p>
 
-<p>Go의 타입이 뒤에 오는 비상식적 (<em>idiomatic 이라 주장하는</em>) 선언법과 초기화 문법을 모두 포함해 단 하나의 문장 <em>&lsquo;Go는 개행 전 마지막 토큰이 identifier이거나 literal이면 세미콜론을 자동으로 삽입해 줍니다.&rsquo;</em> 으로 표현해 버리는 용기, 그를 뒷받침하기 위해 identifier로 몰아버림으로써 익숙한 것들을 깨버리는 대범함. 멋지지 않은가?</p>
+
+
+
+
+<blockquote class="quote">
+
+
+<p>Go는 개행 전 마지막 토큰이 identifier이거나 literal이면 세미콜론을 자동으로 삽입해 줍니다.</p>
+
+</blockquote>
+
+
+<p>으로 표현해 버리는 용기, 그를 뒷받침하기 위해 identifier로 몰아버림으로써 익숙한 것들을 깨버리는 대범함. 멋지지 않은가?</p>
 
 <h1 id="세미콜론-가지고-놀기">세미콜론 가지고 놀기</h1>
 
@@ -404,13 +416,13 @@
 
 <h1 id="어떤-코드가-아름다운가">어떤 코드가 아름다운가?</h1>
 
-<p>어떤 코드가 더 아름다운가에 대한 케케묵은 논쟁을 겨우 세미콜론만으로 꺼내자는 것은 아니지만, 개인적으로는 <em>&ldquo;모든 가능성은 열려 있어. 너의 꿈을 펼쳐봐&rdquo;</em> 를 주장하는 Perl보다는 <em>&ldquo;이 길이 꽃길이야. 이 길로만 가면 아름다운 세상이 펼쳐질거야&rdquo;</em> 를 주장하는 Python의 철학을 좀 더 지지하는 편이다. - <em>과격하긴 하다. 부디 Python에 대한 부정적 생각을 갖지 않길.</em></p>
+<p>어떤 코드가 더 아름다운가에 대한 케케묵은 논쟁을 겨우 세미콜론만으로 꺼내자는 것은 아니지만, 개인적으로는 &ldquo;모든 가능성은 열려 있어. 너의 꿈을 펼쳐봐&rdquo;를 주장하는 Perl보다는 &ldquo;이 길이 꽃길이야. 이 길로만 가면 아름다운 세상이 펼쳐질거야&rdquo;를 주장하는 Python의 철학을 좀 더 지지하는 편이다. &mdash; <em>과격하긴 하다. 부디 Python에 대한 부정적 생각을 갖지 않길.</em></p>
 
 <hr />
 
 <p><strong>Perl의 철학</strong></p>
 
-<p><em>TIMTOWTDI (There Is More Than One Way To Do It.)</em></p>
+<p>TIMTOWTDI (There Is More Than One Way To Do It.)</p>
 
 <hr />
 
@@ -439,7 +451,7 @@
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#d88200">Namespaces are one honking great idea -- let&#39;</span><span style="color:#111">s</span> <span style="color:#111">do</span> <span style="color:#111">more</span> <span style="color:#111">of</span> <span style="color:#111">those</span><span style="color:#960050;background-color:#1e0010">!</span></code></pre></div>
 <hr />
 
-<p>Go는 디렉토리 구조 등 어떤 면에서는 개발자의 자유도를 구속하는 측면이 있다. 하지만 또 다른 면에서는 <em>&lsquo;그건 구속하면서 이건 왜 이렇게 헐렁해?&rsquo;</em> 라는 의문을 갖게 하기도 한다. (사실 code convention만의 얘기라면 강력한 fomatter가 있긴 하다.)</p>
+<p>Go는 디렉토리 구조 등 어떤 면에서는 개발자의 자유도를 구속하는 측면이 있다. 하지만 또 다른 면에서는 &lsquo;그건 구속하면서 이건 왜 이렇게 헐렁해?&rsquo; 라는 의문을 갖게 하기도 한다.</p>
 
 <p>&lsquo;어떤 코드가 아름다운가?&lsquo;라는 물음에는 각자의 답이 다르겠지만 &lsquo;어떤 코드가 보기 좋은가?&lsquo;에 대한 답은 대부분의 개발자가 비슷하지 않을까? <strong>아름답다</strong>의 기준에는 분명 <strong>보기 좋다</strong>도 하나의 요소로 포함된다.</p>
 

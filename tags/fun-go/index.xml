@@ -45,7 +45,7 @@
       <pubDate>Tue, 05 Jun 2018 12:55:40 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/06/05/fun-variables-and-types/</guid>
-      <description>변수 에서 살펴 본 것처럼 Go는 변수를 선언할 때 초기값을 같이 입력하면 굳이 타입을 명시하지 않아도 된다. var i = 1 f := 3.14 c := 1.0 + 1.0i 그렇다면 이 경우 i, f, c의 타입</description>
+      <description>변수에서 살펴 본 것처럼 Go는 변수를 선언할 때 초기값을 같이 입력하면 굳이 타입을 명시하지 않아도 된다. var i = 1 f := 3.14 c := 1.0 + 1.0i 그렇다면 이 경우 i, f, c의 타입</description>
     </item>
     
     <item>

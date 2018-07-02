@@ -303,10 +303,10 @@ ExpressionList = Expression { &#34;,&#34; Expression } .</pre></div>
 
 <ol>
 <li><code>var</code>로 시작한다.</li>
-<li>뒤에는 <code>VarSpec</code> 이나 괄호 (parenthesis, ())로 감싼 <code>VarSpec ;</code>이 0개 이상 올 수 있다.</li>
-<li><code>VarSpec</code>은 <code>identifier</code> 하나나 각 <code>identifier</code>가 comma (,)로 구분된 복수개의 <code>IdentifierList</code>이다.</li>
-<li>뒤에는 <code>Type</code>만 오거나 <code>Type</code> 뒤에 <code>=</code>을 쓰고 <code>ExpressionList</code>가 올 수 있다.</li>
-<li>4와 달리 <code>Type</code>이 없이 바로 <code>=</code>을 쓰고 <code>ExpressionList</code>가 올 수도 있다.</li>
+<li>뒤에는 VarSpec 이나 괄호 (parenthesis, ())로 감싼 VarSpec; 이 0개 이상 올 수 있다.</li>
+<li>VarSpec은 identifier 하나나 복수의 identifier가 comma (,)로 구분된 IdentifierList이다.</li>
+<li>뒤에는 Type만 오거나 Type 뒤에 =을 쓰고 ExpressionList가 올 수 있다.</li>
+<li>4와 달리 Type이 없이 바로 =을 쓰고 ExpressionList가 올 수도 있다.</li>
 </ol>
 
 <p>말로 풀어 쓰니 더 복잡해 보인다. 아래와 같은 방식들이 가능하다.</p>
@@ -327,11 +327,11 @@ ExpressionList = Expression { &#34;,&#34; Expression } .</pre></div>
 
 <h1 id="short-variable-declarations">Short variable declarations</h1>
 
-<p>변수 선언 뒤 바로 초기값을 입력하는 경우에는 귀찮은 <code>var</code>도 삭제할 수 있다. 이 방식을 <em>short variable declaration</em> 이라 하고 다음과 같이 쓴다.</p>
+<p>변수 선언 뒤 바로 초기값을 입력하는 경우에는 귀찮은 <code>var</code>도 삭제할 수 있다. 이 방식을 <strong>short variable declaration</strong> 이라 하고 다음과 같이 쓴다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">ShortVarDecl = IdentifierList &#34;:=&#34; ExpressionList .</pre></div>
 <p>이름 넣고,  <code>:=</code> (equal mark 앞에 colon이 있다) , 값을 넣으면 된다.</p>
 
-<p><code>IndentifierList</code>, <code>ExpressionList</code>이기 때문에 당연히 comma (,)로 구분해 복수개를 쓸 수 있다.</p>
+<p>IndentifierList, ExpressionList이기 때문에 당연히 comma (,)로 구분해 복수개를 쓸 수 있다.</p>
 
 
   

@@ -301,23 +301,23 @@
 <li><a href="#shortcode-사용법">Shortcode 사용법</a></li>
 <li><a href="#hugo-built-in-shortcodes">Hugo built-in shortcodes</a>
 <ul>
-<li><a href="#1-figure-이미지-삽입">1. <code>figure</code>: 이미지 삽입</a></li>
-<li><a href="#2-highlight-syntax-highlighting">2. <code>highlight</code>: syntax highlighting</a></li>
-<li><a href="#3-ref-relref-링크-url-생성">3. <code>ref</code>, <code>relref</code>: 링크 URL 생성</a>
+<li><a href="#1-figure-이미지-삽입">1. figure: 이미지 삽입</a></li>
+<li><a href="#2-highlight-syntax-highlighting">2. highlight: syntax highlighting</a></li>
+<li><a href="#3-ref-relref-링크-url-생성">3. ref, relref: 링크 URL 생성</a>
 <ul>
 <li><a href="#making-anchor">3.1 Anchor 만들기 (#making-anchor)</a></li>
 </ul></li>
-<li><a href="#4-youtube-youtube-동영상-삽입">4. <code>youtube</code>: Youtube 동영상 삽입</a></li>
-<li><a href="#5-gist-gist-추가">5. <code>gist</code>: Gist 추가</a></li>
+<li><a href="#4-youtube-youtube-동영상-삽입">4. youtube: Youtube 동영상 삽입</a></li>
+<li><a href="#5-gist-gist-추가">5. gist: Gist 추가</a></li>
 </ul></li>
 <li><a href="#추가-shortcodes">추가 shortcodes</a>
 <ul>
-<li><a href="#1-zimg-확대-가능한-이미지-삽입">1. <code>zimg</code>: 확대 가능한 이미지 삽입</a></li>
-<li><a href="#2-box-글상자">2. <code>box</code>: 글상자</a></li>
-<li><a href="#3-pure-table-테이블-삽입">3. <code>pure_table</code>: 테이블 삽입</a></li>
-<li><a href="#4-fluid-imgs-이미지-삽입">4. <code>fluid_imgs</code>: 이미지 삽입</a></li>
-<li><a href="#5-mermaid-flowchart-sequence-diagram-gantt-chart">5. <code>mermaid</code>: Flowchart, Sequence diagram, Gantt chart</a></li>
-<li><a href="#6-quote-인용">6. <code>quote</code>: 인용</a></li>
+<li><a href="#1-zimg-확대-가능한-이미지-삽입">1. zimg: 확대 가능한 이미지 삽입</a></li>
+<li><a href="#2-box-글상자">2. box: 글상자</a></li>
+<li><a href="#3-pure-table-테이블-삽입">3. pure_table: 테이블 삽입</a></li>
+<li><a href="#4-fluid-imgs-이미지-삽입">4. fluid_imgs: 이미지 삽입</a></li>
+<li><a href="#5-mermaid-flowchart-sequence-diagram-gantt-chart">5. mermaid: Flowchart, Sequence diagram, Gantt chart</a></li>
+<li><a href="#6-quote-인용">6. quote: 인용</a></li>
 </ul></li>
 </ul>
 </nav></div>
@@ -421,14 +421,14 @@
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">{ {&lt; shortcode_name &gt;}} &lt;i&gt;Contents&lt;/i&gt; { {&lt; /shortcode_name &gt;}}</code></pre></div>
 <h1 id="hugo-built-in-shortcodes">Hugo built-in shortcodes</h1>
 
-<h2 id="1-figure-이미지-삽입">1. <code>figure</code>: 이미지 삽입</h2>
+<h2 id="1-figure-이미지-삽입">1. figure: 이미지 삽입</h2>
 
 <ul>
-<li><code>src</code> : image URL</li>
-<li><code>height</code>, <code>width</code></li>
-<li><code>link</code>: hyperlink destination URL</li>
-<li><code>target</code>: <code>target</code> attribute if <code>link</code> parameter is set.</li>
-<li><code>alt</code>, <code>title</code>, <code>caption</code></li>
+<li>src : image URL</li>
+<li>height, width</li>
+<li>link: hyperlink destination URL</li>
+<li>target: target attribute if link parameter is set.</li>
+<li>alt, title, caption</li>
 </ul>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">{ {&lt; figure src=&#34;/posts/hugo/sky.jpg&#34; caption=&#34;Caption: Original resolution is 1880x1253&#34; title=&#34;Title: Sky&#34;&gt;}}</code></pre></div>
 
@@ -454,12 +454,12 @@
 
 <p><img src="https://tramamte.github.io/posts/hugo/sky.jpg" alt="img" /></p>
 
-<h2 id="2-highlight-syntax-highlighting">2. <code>highlight</code>: syntax highlighting</h2>
+<h2 id="2-highlight-syntax-highlighting">2. highlight: syntax highlighting</h2>
 
 <ul>
-<li><code>linenos</code>: <code>table</code> or <code>inline</code></li>
-<li><code>linenostart</code>: default 1</li>
-<li><code>hl_lines</code>: highlight lines (ex: 3-8 10-20)</li>
+<li>linenos: table or inline</li>
+<li>linenostart: default 1</li>
+<li>hl_lines: highlight lines (ex: 3-8 10-20)</li>
 </ul>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="color:#111">{</span> <span style="color:#111">{&lt;</span> <span style="color:#75af00">highlight</span> <span style="color:#00a8c8">go</span> <span style="color:#d88200">&#34;linenos=table, linenostart=10, hl_lines=3 6&#34;</span> <span style="color:#111">&gt;}}</span>
 <span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
@@ -491,7 +491,7 @@
 </div>
 </div>
 
-<h2 id="3-ref-relref-링크-url-생성">3. <code>ref</code>, <code>relref</code>: 링크 URL 생성</h2>
+<h2 id="3-ref-relref-링크-url-생성">3. ref, relref: 링크 URL 생성</h2>
 
 <ul>
 <li>markdown 파일을 이용해 절대, 상대 경로 자동 성성</li>
@@ -504,10 +504,10 @@
 ## Version 1.0 {#version-1-dot-0}</pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">[Go to making-anchor](#making-anchor)</pre></div>
 <p><a href="#making-anchor">Go to making-anchor</a></p>
 
-<h2 id="4-youtube-youtube-동영상-삽입">4. <code>youtube</code>: Youtube 동영상 삽입</h2>
+<h2 id="4-youtube-youtube-동영상-삽입">4. youtube: Youtube 동영상 삽입</h2>
 
 <ul>
-<li><code>id</code>, <code>autoplay</code></li>
+<li>id, autoplay</li>
 </ul>
 
 <p><code>https://www.youtube.com/watch?v=w7Ft2ymGmfc</code> 영상의 경우,</p>
@@ -516,16 +516,16 @@
 or
 
 { {&lt; youtube id=&#34;w7Ft2ymGmfc&#34; autoplay=&#34;true&#34; &gt;}}</pre></div>
-<h2 id="5-gist-gist-추가">5. <code>gist</code>: Gist 추가</h2>
+<h2 id="5-gist-gist-추가">5. gist: Gist 추가</h2>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">{ {&lt; gist {user id} {gist id} [&#34;file name&#34;] &gt;}}</code></pre></div>
 <h1 id="추가-shortcodes">추가 shortcodes</h1>
 
-<h2 id="1-zimg-확대-가능한-이미지-삽입">1. <code>zimg</code>: 확대 가능한 이미지 삽입</h2>
+<h2 id="1-zimg-확대-가능한-이미지-삽입">1. zimg: 확대 가능한 이미지 삽입</h2>
 
-<p>기본 사용법은 <code>figure</code>와 동일하나 <code>link</code>, <code>target</code>은 지원하지 않고, <code>mouse-title</code> parameter 추가</p>
+<p>기본 사용법은 figure와 동일하나 link, target은 지원하지 않고, mouse-title parameter 추가</p>
 
 <ul>
-<li><code>mouse-title</code>: 이미지 위에 마우스를 올렸을 때 나타나는 문구 (default: click to zoom)</li>
+<li>mouse-title: 이미지 위에 마우스를 올렸을 때 나타나는 문구 (default: click to zoom)</li>
 </ul>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; zimg src=&#34;/posts/hugo/sky.jpg&#34; width=&#34;300&#34; caption=&#34;캡션: 원본의 해상도는 1880x1253입니다.&#34; title=&#34;제목: 하늘&#34; mouse-title=&#34;ZOOM&#34; &gt;}}</pre></div>
 
@@ -567,15 +567,17 @@ or
 </figure>
 
 
-<h2 id="2-box-글상자">2. <code>box</code>: 글상자</h2>
+<h2 id="2-box-글상자">2. box: 글상자</h2>
 
-<p>Parameter 추가하면 글상자의 배경 색상으로 지정</p>
+<ul>
+<li>글상자의 배경 색상</li>
+</ul>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {% box [&#34;background-color&#34;] %}}
 blah blah
 { {% /box %}}</pre></div>
-<h2 id="3-pure-table-테이블-삽입">3. <code>pure_table</code>: 테이블 삽입</h2>
+<h2 id="3-pure-table-테이블-삽입">3. pure_table: 테이블 삽입</h2>
 
-<p>markdown table은 다른 <code>&lt;table&gt;</code> tag와의 충돌 문제로 외곽선이 없음</p>
+<p>markdown table은 다른 &lt;table&gt; tag와의 충돌 문제로 외곽선이 없음</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; pure_table
   &#34;columnName1|columnName2|...|columnName99&#34;
   &#34;dataValue1|dataValue2|...|dataValue99&#34;
@@ -652,20 +654,27 @@ blah blah
 
 
 
-<h2 id="4-fluid-imgs-이미지-삽입">4. <code>fluid_imgs</code>: 이미지 삽입</h2>
+<h2 id="4-fluid-imgs-이미지-삽입">4. fluid_imgs: 이미지 삽입</h2>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; fluid_imgs
   &#34;class|src|alt&#34;
   &#34;class|src|alt&#34;
 &gt;}}</pre></div>
-<p><a href="http://yoshiharuyamashita.com/post/hugo-shortcode-to-show-multiple-images/">여기</a> 참조</p>
+<p><a href="http://yoshiharuyamashita.com/post/hugo-shortcode-to-show-multiple-images/">여기</a> 참고</p>
 
-<h2 id="5-mermaid-flowchart-sequence-diagram-gantt-chart">5. <code>mermaid</code>: Flowchart, Sequence diagram, Gantt chart</h2>
+<h2 id="5-mermaid-flowchart-sequence-diagram-gantt-chart">5. mermaid: Flowchart, Sequence diagram, Gantt chart</h2>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; mermaid align=&#34;center&#34; &gt;}}
 [graph | sequenceDiagram | gantt]
 { {&lt; /mermaid }}</pre></div>
-<p><a href="https://mermaidjs.github.io/">여기</a> 참조</p>
+<p><a href="https://mermaidjs.github.io/">여기</a> 참고</p>
 
-<h2 id="6-quote-인용">6. <code>quote</code>: 인용</h2>
+<h2 id="6-quote-인용">6. quote: 인용</h2>
+
+<ul>
+<li>warn: 주황</li>
+<li>note: 녹색</li>
+<li>quote: 하늘</li>
+<li>defalut: 회색</li>
+</ul>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {% quote [warn | note | quote] }}
 blah blah
 { {% /quote }}</pre></div><div class="footnotes">

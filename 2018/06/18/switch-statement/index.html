@@ -275,9 +275,9 @@
 
 <p>Go의 <code>switch</code> 작성 규칙은 다음과 같다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">SwitchStmt = ExprSwitchStmt | TypeSwitchStmt .</pre></div>
-<p>이 중 <code>ExprSwitchStmt</code>이 기본 용법으로 볼 수 있다. - <code>TypeSwitchStmt</code>에 대한 것은 추후 관련 항목을 다룰 때 다시 살펴보자.</p>
+<p>이 중 ExprSwitchStmt이 기본 용법으로 볼 수 있다. &mdash; TypeSwitchStmt에 대한 것은 추후 관련 항목을 다룰 때 다시 살펴보자.</p>
 
-<p><code>ExprSwitchStmt</code> 규칙은 다음과 같다.</p>
+<p>ExprSwitchStmt 규칙은 다음과 같다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">ExprSwitchStmt = &#34;switch&#34; [ SimpleStmt &#34;;&#34; ] [ Expression ] &#34;{&#34; { ExprCaseClause } &#34;}&#34; .
 ExprCaseClause = ExprSwitchCase &#34;:&#34; StatementList .
 ExprSwitchCase = &#34;case&#34; ExpressionList | &#34;default&#34; .</pre></div>
@@ -320,7 +320,7 @@ ExprSwitchCase = &#34;case&#34; ExpressionList | &#34;default&#34; .</pre></div>
 <span style="color:#00a8c8">default</span><span style="color:#111">:</span>
     <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;&gt; 2&#34;</span><span style="color:#111">)</span>
 <span style="color:#111">}</span></code></pre></div>
-<p>그런데 이것도 c code에 비해 좀 깔끔한 맛이 덜하다. <code>fallthrough</code> 할 <code>case</code>가 많아질수록 점점 더 이런 경향은 짙어질 것이 뻔하다. 그래서 또 준비한 것이  <code>case</code> 뒤에 <code>ExpressionList</code>를 둔 것이다.  <code>Expression</code>들을 comma (,)로 붙여둔 것이 <code>ExpressionList</code>이다. 따라서 위 코드는 다음과 같이 작성할 수도 있다.</p>
+<p>그런데 이것도 c code에 비해 좀 깔끔한 맛이 덜하다. <code>fallthrough</code> 할 <code>case</code>가 많아질수록 점점 더 이런 경향은 짙어질 것이 뻔하다. 그래서 또 준비한 것이  <code>case</code> 뒤에 ExpressionList를 둔 것이다.  Expression들을 comma (,)로 붙여둔 것이 ExpressionList이다. 따라서 위 코드는 다음과 같이 작성할 수도 있다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Go code
 </span><span style="color:#75715e"></span><span style="color:#00a8c8">var</span> <span style="color:#75af00">i</span> <span style="color:#00a8c8">uint</span> <span style="color:#111">=</span> <span style="color:#ae81ff">1</span>
 

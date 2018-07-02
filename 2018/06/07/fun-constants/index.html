@@ -368,7 +368,7 @@ int</pre></div>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">./main.go:7:16: constant 324518553658426726783156020576256 overflows int</pre></div>
 <p>오류 발생 시점이 달라졌다. 7라인, <code>Println()</code>을 호출할 때 오류가 발생한다.</p>
 
-<p>그렇다면 할당할 때 (<code>const i = 256 &lt;&lt; 100</code>)는 오류가 발생하지 않는다는 의미일까?</p>
+<p>그렇다면 할당할 때 &ndash; <code>const i = 256 &lt;&lt; 100</code> &ndash; 는 오류가 발생하지 않는다는 의미일까?</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
 
 <span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
@@ -492,7 +492,7 @@ int</pre></div>
 1</pre></div>
 <p><code>iota</code>는 호출할 때마다 값이 증가한다고 했는데 예상과 결과가 다르지 않은가.</p>
 
-<p>이에 대해 <a href="https://golang.org/ref/spec#ConstSpec">Go spec.</a>에서는 다음과 같이 명확히 하고 있다.</p>
+<p>이에 대해 <a href="https://golang.org/ref/spec#ConstSpec">Go spec.</a>에는 다음과 같이 기술돼 있다.</p>
 
 
 
@@ -543,7 +543,7 @@ int</pre></div>
     <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">seven</span><span style="color:#111">)</span>
 <span style="color:#111">}</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">5
 5</pre></div>
-<p>상수 그룹에서 literal로 값을 지정하고 이후 상수들에는 값을 지정하지 않을 경우 이전 상수의 값을 그대로 따른다. 따라서 <code>six</code>와 <code>seven</code>은 모두 5가 된다. 그렇다고 <code>six</code>에 <code>iota</code>로 값을 지정해 주면&hellip;4가 된다. 이러한 경우에는 상수 그룹을 나누는 것이 현명하다.</p>
+<p>상수 그룹에서 literal로 값을 지정하고 이후 상수들에는 값을 지정하지 않을 경우 이전 상수의 값을 그대로 따른다. 따라서 <code>six</code>와 <code>seven</code>은 모두 5가 된다. 그렇다고 <code>six</code>에 <code>iota</code>로 값을 지정해 주면&hellip; 4가 된다. 이러한 경우에는 상수 그룹을 나누는 것이 현명하다.</p>
 
 <h2 id="iota-유지-범위">iota 유지 범위</h2>
 
