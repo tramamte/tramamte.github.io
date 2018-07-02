@@ -267,6 +267,40 @@
 </div>
 
   
+<script>
+  function toggleToc() {
+    var x = document.getElementById("toc");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+  }
+</script>
+
+<div class="post-meta">
+<div>
+  <i class="fa fa-file fa-fw"></i>
+  <a href="javascript:toggleToc();">Table of Contents</a>
+</div>
+<div id="toc" style="display: none;"><nav id="TableOfContents">
+<ul>
+<li><a href="#상수의-타입과-한계">상수의 타입과 한계</a></li>
+<li><a href="#iota에-대해-좀-더-자세히">iota에 대해 좀 더 자세히</a>
+<ul>
+<li><a href="#iota-초기값">iota 초기값</a></li>
+<li><a href="#한-줄에-두-번-쓴-iota">한 줄에 두 번 쓴 iota</a></li>
+<li><a href="#중간값-지정">중간값 지정</a></li>
+<li><a href="#iota-유지-범위">iota 유지 범위</a></li>
+<li><a href="#복잡한-상수-그룹">복잡한 상수 그룹</a></li>
+</ul></li>
+</ul>
+</nav></div>
+</div>
+
+
+
+  
 
 <h1 id="상수의-타입과-한계">상수의 타입과 한계</h1>
 
@@ -544,8 +578,9 @@ int</pre></div>
   
 
 <div class="see-also">
-<p><i class="fa fa-archive fa-fw"></i><b>See Also</b></p>
-<ul>
+  <i class="fa fa-archive fa-fw"></i>
+  <strong>See Also</strong>
+  <ul>
 	
 	<li><a href="https://tramamte.github.io/2018/06/05/fun-variables-and-types/">명시적이지 않은 듯 명시적인 Go</a></li>
 	
@@ -557,7 +592,7 @@ int</pre></div>
 	
 	<li><a href="https://tramamte.github.io/2018/06/05/types/">타입</a></li>
 	
-</ul>
+  </ul>
 </div>
 
 

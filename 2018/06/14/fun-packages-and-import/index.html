@@ -267,6 +267,38 @@
 </div>
 
   
+<script>
+  function toggleToc() {
+    var x = document.getElementById("toc");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+  }
+</script>
+
+<div class="post-meta">
+<div>
+  <i class="fa fa-file fa-fw"></i>
+  <a href="javascript:toggleToc();">Table of Contents</a>
+</div>
+<div id="toc" style="display: none;"><nav id="TableOfContents">
+<ul>
+<li><a href="#패키지-만들기">패키지 만들기</a>
+<ul>
+<li><a href="#패키지-경로와-이름">패키지 경로와 이름</a></li>
+<li><a href="#한-경로에-두-가지-이상의-패키지를-두면">한 경로에 두 가지 이상의 패키지를 두면&hellip;</a></li>
+<li><a href="#한-패키지를-둘-이상의-경로에-두면">한 패키지를 둘 이상의 경로에 두면&hellip;</a></li>
+<li><a href="#결론">결론</a></li>
+</ul></li>
+</ul>
+</nav></div>
+</div>
+
+
+
+  
 
 <p>이제 겨우 타입 정도를 다룬 마당에 굉장히 이른 감은 있지만, <a href="https://tramamte.github.io/2018/05/31/packages/">패키지</a>와 <a href="https://tramamte.github.io/2018/06/08/import/">임포트</a>가 나왔으니 짚고 넘어가자.</p>
 
@@ -392,8 +424,9 @@
   
 
 <div class="see-also">
-<p><i class="fa fa-archive fa-fw"></i><b>See Also</b></p>
-<ul>
+  <i class="fa fa-archive fa-fw"></i>
+  <strong>See Also</strong>
+  <ul>
 	
 	<li><a href="https://tramamte.github.io/2018/06/07/fun-constants/">별 것 없을 것 같은 상수의 별 것</a></li>
 	
@@ -405,7 +438,7 @@
 	
 	<li><a href="https://tramamte.github.io/2018/06/12/pointers/">포인터</a></li>
 	
-</ul>
+  </ul>
 </div>
 
 

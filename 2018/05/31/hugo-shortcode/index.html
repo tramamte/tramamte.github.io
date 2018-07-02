@@ -267,6 +267,65 @@
 </div>
 
   
+<script>
+  function toggleToc() {
+    var x = document.getElementById("toc");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+  }
+</script>
+
+<div class="post-meta">
+<div>
+  <i class="fa fa-file fa-fw"></i>
+  <a href="javascript:toggleToc();">Table of Contents</a>
+</div>
+<div id="toc" style="display: none;"><nav id="TableOfContents">
+<ul>
+<li><a href="#markdown-사용법">Markdown 사용법</a>
+<ul>
+<li><a href="#1-task-list">1. Task list</a></li>
+<li><a href="#2-fraction">2. Fraction</a></li>
+<li><a href="#3-latex-dash">3. Latex dash</a></li>
+<li><a href="#4-strike-through">4. Strike-through</a></li>
+<li><a href="#5-footnote">5. Footnote</a></li>
+<li><a href="#6-definition">6. Definition</a></li>
+<li><a href="#7-emoji">7. Emoji</a></li>
+<li><a href="#8-equation">8. Equation</a></li>
+<li><a href="#9-super-and-subscription">9. Super- and subscription</a></li>
+<li><a href="#10-reference-link">10. Reference link</a></li>
+</ul></li>
+<li><a href="#shortcode-사용법">Shortcode 사용법</a></li>
+<li><a href="#hugo-built-in-shortcodes">Hugo built-in shortcodes</a>
+<ul>
+<li><a href="#1-figure-이미지-삽입">1. <code>figure</code>: 이미지 삽입</a></li>
+<li><a href="#2-highlight-syntax-highlighting">2. <code>highlight</code>: syntax highlighting</a></li>
+<li><a href="#3-ref-relref-링크-url-생성">3. <code>ref</code>, <code>relref</code>: 링크 URL 생성</a>
+<ul>
+<li><a href="#making-anchor">3.1 Anchor 만들기 (#making-anchor)</a></li>
+</ul></li>
+<li><a href="#4-youtube-youtube-동영상-삽입">4. <code>youtube</code>: Youtube 동영상 삽입</a></li>
+<li><a href="#5-gist-gist-추가">5. <code>gist</code>: Gist 추가</a></li>
+</ul></li>
+<li><a href="#추가-shortcodes">추가 shortcodes</a>
+<ul>
+<li><a href="#1-zimg-확대-가능한-이미지-삽입">1. <code>zimg</code>: 확대 가능한 이미지 삽입</a></li>
+<li><a href="#2-box-글상자">2. <code>box</code>: 글상자</a></li>
+<li><a href="#3-pure-table-테이블-삽입">3. <code>pure_table</code>: 테이블 삽입</a></li>
+<li><a href="#4-fluid-imgs-이미지-삽입">4. <code>fluid_imgs</code>: 이미지 삽입</a></li>
+<li><a href="#5-mermaid-flowchart-sequence-diagram-gantt-chart">5. <code>mermaid</code>: Flowchart, Sequence diagram, Gantt chart</a></li>
+<li><a href="#6-quote-인용">6. <code>quote</code>: 인용</a></li>
+</ul></li>
+</ul>
+</nav></div>
+</div>
+
+
+
+  
 
 
 
@@ -619,12 +678,13 @@ blah blah
   
 
 <div class="see-also">
-<p><i class="fa fa-archive fa-fw"></i><b>See Also</b></p>
-<ul>
+  <i class="fa fa-archive fa-fw"></i>
+  <strong>See Also</strong>
+  <ul>
 	
 	<li><a href="https://tramamte.github.io/2018/05/28/hugo-local-server/">Hugo Local Server 접속 방법</a></li>
 	
-</ul>
+  </ul>
 </div>
 
 

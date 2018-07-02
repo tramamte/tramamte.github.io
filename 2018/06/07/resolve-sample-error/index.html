@@ -271,6 +271,39 @@
 </div>
 
   
+<script>
+  function toggleToc() {
+    var x = document.getElementById("toc");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+  }
+</script>
+
+<div class="post-meta">
+<div>
+  <i class="fa fa-file fa-fw"></i>
+  <a href="javascript:toggleToc();">Table of Contents</a>
+</div>
+<div id="toc" style="display: none;"><nav id="TableOfContents">
+<ul>
+<li><a href="#jbpm-project-생성-절차">jBPM project 생성 절차</a></li>
+<li><a href="#오류">오류</a></li>
+<li><a href="#원인">원인</a></li>
+<li><a href="#해결법">해결법</a>
+<ul>
+<li><a href="#pom-xml에-포함된-낮은-버전의-library들-삭제">pom.xml에 포함된 낮은 버전의 library들 삭제</a></li>
+<li><a href="#jbpm-library를-build-path에서-제거">jBPM Library를 Build Path에서 제거</a></li>
+</ul></li>
+</ul>
+</nav></div>
+</div>
+
+
+
+  
 
 <p><a href="https://tramamte.github.io/2018/06/04/eclipse-install/">jBPM / Drools 개발환경 구성</a> 방법에 따라 Eclipse에 jBPM/Drools 환경 구성 후 새로운 jBPM project를 maven 기반으로 생성하고 실행하면 오류가 발생한다.</p>
 
@@ -349,12 +382,13 @@
   
 
 <div class="see-also">
-<p><i class="fa fa-archive fa-fw"></i><b>See Also</b></p>
-<ul>
+  <i class="fa fa-archive fa-fw"></i>
+  <strong>See Also</strong>
+  <ul>
 	
 	<li><a href="https://tramamte.github.io/2018/06/04/eclipse-install/">jBPM / Drools 개발환경 구성</a></li>
 	
-</ul>
+  </ul>
 </div>
 
 

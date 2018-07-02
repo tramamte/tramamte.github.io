@@ -267,6 +267,35 @@
 </div>
 
   
+<script>
+  function toggleToc() {
+    var x = document.getElementById("toc");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+  }
+</script>
+
+<div class="post-meta">
+<div>
+  <i class="fa fa-file fa-fw"></i>
+  <a href="javascript:toggleToc();">Table of Contents</a>
+</div>
+<div id="toc" style="display: none;"><nav id="TableOfContents">
+<ul>
+<li><a href="#boolean">Boolean</a></li>
+<li><a href="#numeric">Numeric</a></li>
+<li><a href="#string">String</a></li>
+<li><a href="#zero-value">Zero value</a></li>
+</ul>
+</nav></div>
+</div>
+
+
+
+  
 
 <p>Go의 타입 작성법은 다음과 같다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Type     = TypeName | TypeLit | &#34;(&#34; Type &#34;)&#34; .
@@ -331,8 +360,9 @@ uintptr		포인터를 저장하기에 적당한 크기</pre></div>
   
 
 <div class="see-also">
-<p><i class="fa fa-archive fa-fw"></i><b>See Also</b></p>
-<ul>
+  <i class="fa fa-archive fa-fw"></i>
+  <strong>See Also</strong>
+  <ul>
 	
 	<li><a href="https://tramamte.github.io/2018/06/01/variables/">변수</a></li>
 	
@@ -344,7 +374,7 @@ uintptr		포인터를 저장하기에 적당한 크기</pre></div>
 	
 	<li><a href="https://tramamte.github.io/2018/05/28/start-go/">시작 Go</a></li>
 	
-</ul>
+  </ul>
 </div>
 
 

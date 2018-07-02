@@ -267,6 +267,32 @@
 </div>
 
   
+<script>
+  function toggleToc() {
+    var x = document.getElementById("toc");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+  }
+</script>
+
+<div class="post-meta">
+<div>
+  <i class="fa fa-file fa-fw"></i>
+  <a href="javascript:toggleToc();">Table of Contents</a>
+</div>
+<div id="toc" style="display: none;"><nav id="TableOfContents">
+<ul>
+<li><a href="#세미콜론-자동-삽입-규칙">세미콜론 자동 삽입 규칙</a></li>
+</ul>
+</nav></div>
+</div>
+
+
+
+  
 
 <p>Go는 C/C++이나 Java처럼 세미콜론(;)을 사용하는 언어이다. 하지만 소스코드에서 세미콜론을 볼 일은 거의 없다. Go <a href="https://ko.wikipedia.org/wiki/%EB%82%B1%EB%A7%90_%EB%B6%84%EC%84%9D">lexer</a>가 몇 가지 간단한 규칙에 의해 세미콜론을 자동으로 삽입하기 때문이다.</p>
 
@@ -290,14 +316,15 @@
   
 
 <div class="see-also">
-<p><i class="fa fa-archive fa-fw"></i><b>See Also</b></p>
-<ul>
+  <i class="fa fa-archive fa-fw"></i>
+  <strong>See Also</strong>
+  <ul>
 	
 	<li><a href="https://tramamte.github.io/2018/05/28/comments/">주석</a></li>
 	
 	<li><a href="https://tramamte.github.io/2018/05/28/start-go/">시작 Go</a></li>
 	
-</ul>
+  </ul>
 </div>
 
 
