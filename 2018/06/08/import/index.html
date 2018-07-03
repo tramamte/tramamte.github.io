@@ -273,9 +273,9 @@
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">ImportDecl   = &#34;import&#34; ( ImportSpec | &#34;(&#34; { ImportSpec &#34;;&#34; } &#34;)&#34; ) .
 ImportSpec   = [ &#34;.&#34; | PackageName ] ImportPath .
 ImportPath   = string_lit .</pre></div>
-<p>string_lit에 대해서는 따로 붙이지 않았는데, 대략 큰따옴표로 묶은 것으로 생각하면 된다. (경로를 이상한 조합으로 만들지 않는 한&hellip;)</p>
+<p>string_lit에 대해서는 따로 붙이지 않았는데, 대략 큰따옴표로 묶은 것으로 생각하면 된다.<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup></p>
 
-<p>주로 접할 수 있는 Go 샘플에서는 <code>import</code> 뒤에 사용할 패키지의 경로를 큰따옴표 안에 적는 방식으로 사용하는데, 좀 더 자세히 보면 경로 앞에 점 (.)이나 PackageName을 쓸 수도 있다.</p>
+<p>주로 접할 수 있는 Go 샘플에서는 <code>import</code> 뒤에 사용할 패키지의 경로를 큰따옴표 안에 적는 방식으로 사용하는데, 좀 더 자세히 보면 경로 앞에 점(.)이나 PackageName을 쓸 수도 있다.</p>
 
 <p>가장 처음 접하게 되는 패키지인 <code>fmt</code> 패키지를 예로 들면, 보통 예제는 다음과 같다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
@@ -287,7 +287,7 @@ ImportPath   = string_lit .</pre></div>
 <span style="color:#111">}</span></code></pre></div>
 <p><a href="https://tramamte.github.io/2018/05/31/packages/">패키지</a>에서 언급한 것처럼 관례상 경로의 마지막 엘리먼트를 패키지 이름으로 맞췄기 때문에 <code>import</code> 뒤에 쓴 <code>&quot;fmt&quot;</code> 와 <code>Println</code> 앞에 쓴 <code>fmt</code>가 같아 보이는 것이지, 정확하게는 <code>&quot;fmt&quot;</code> 는 패키지의 경로, <code>fmt</code> 는 패키지의 이름이다.</p>
 
-<p>PackageName을 ImportPath 앞에 별도로 적는 경우는 일종의 별칭 (alias)을 만드는 것이다.</p>
+<p>PackageName을 ImportPath 앞에 별도로 적는 경우는 일종의 별칭(alias)을 만드는 것이다.</p>
 
 <p>출력을 위해 매번 <code>fmt</code> 를 쓰는 것이 귀찮다면 별칭을 만들어 사용할 수 있다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
@@ -312,6 +312,15 @@ ImportPath   = string_lit .</pre></div>
 </blockquote>
 
 <p>이 부분은 나중에, <code>main</code> 이 아닌 패키지를 만들 때 다시 다루는게 좋겠다.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">경로를 이상한 조합으로 만들지 않는 한&hellip;
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+</ol>
+</div>
 
 
   

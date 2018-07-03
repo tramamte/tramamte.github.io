@@ -45,7 +45,7 @@
       <pubDate>Tue, 12 Jun 2018 12:05:37 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/06/12/pointers/</guid>
-      <description>Go의 포인터는 생김과 사용법이 C의 그것과 매우 유사하다. 먼저 포인터에 대한 규정을 살펴보면 다음과 같다. PointerType = &amp;#34;*&amp;#34; BaseType . BaseType = Type . C에서와 같이 타입 앞에 asterisk (*)</description>
+      <description>Go의 포인터는 생김과 사용법이 C의 그것과 매우 유사하다. 먼저 포인터에 대한 규정을 살펴보면 다음과 같다. PointerType = &amp;#34;*&amp;#34; BaseType . BaseType = Type . C에서와 같이 타입 앞에 aste</description>
     </item>
     
     <item>
@@ -72,7 +72,7 @@
       <pubDate>Tue, 05 Jun 2018 12:14:49 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/06/05/types/</guid>
-      <description>Go의 타입 작성법은 다음과 같다. Type = TypeName | TypeLit | &amp;#34;(&amp;#34; Type &amp;#34;)&amp;#34; . TypeName = identifier | QualifiedIdent . TypeLit = ArrayType | StructType | PointerType | FunctionType | InterfaceType | SliceType | MapType | ChannelType . 나머지는 차차 보도록 하고, 여기서는 predefined identifier 중 types (</description>
+      <description>Go의 타입 작성법은 다음과 같다. Type = TypeName | TypeLit | &amp;#34;(&amp;#34; Type &amp;#34;)&amp;#34; . TypeName = identifier | QualifiedIdent . TypeLit = ArrayType | StructType | PointerType | FunctionType | InterfaceType | SliceType | MapType | ChannelType . 나머지는 차차 보도록 하고, 여기서는 predefined identifier 중 ty</description>
     </item>
     
     <item>
@@ -90,7 +90,7 @@
       <pubDate>Thu, 31 May 2018 13:05:57 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/05/31/packages/</guid>
-      <description>모든 Go 프로그램은 패키지들로 구성된다. 프로그램은 main 패키지에서 시작한다. 관례상 패키지 이름은 임포트 경로의 마지막 엘리먼트로 한다. 패키지 작성 규정 (cl</description>
+      <description>모든 Go 프로그램은 패키지들로 구성된다. 프로그램은 main 패키지에서 시작한다. 관례상 패키지 이름은 임포트 경로의 마지막 엘리먼트로 한다. 패키지 작성 규정(cl</description>
     </item>
     
     <item>

@@ -304,7 +304,7 @@
 
 <p>Go도 당연히 다른 언어처럼 작성한 코드의 재사용이 가능하다. 쉬이 예상 가능하듯, 패키지를 만들고 이를 임포트해 재사용할 수 있다.</p>
 
-<p>그런데 Go는 C++이나 Java와는 달리 접근제한자 (access modifier)가 없다. 접근제한자 대신 매우 단순한 한 가지 규칙에 따라 외부 접근 가능 여부를 판단한다.</p>
+<p>그런데 Go는 C++이나 Java와는 달리 접근제한자(access modifier)가 없다. 접근제한자 대신 매우 단순한 한 가지 규칙에 따라 외부 접근 가능 여부를 판단한다.</p>
 
 
 
@@ -313,16 +313,16 @@
 <blockquote class="note">
 
 
-<p>외부 패키지에서 접근이 가능하게 하려면 (export 하려면) 첫 번째 문자를 대문자로 하라.</p>
+<p>외부 패키지에서 접근이 가능하게 하려면&mdash;export 하려면&mdash; 첫 번째 문자를 대문자로 하라.</p>
 
 </blockquote>
 
 
-<p>이 규칙은 함수나 변수, 상수뿐만 아니라 필드, 메서드 (구조체 관련)에도 그대로 적용된다.</p>
+<p>이 규칙은 함수나 변수, 상수뿐만 아니라 필드, 메서드&mdash;구조체 관련&mdash;에도 그대로 적용된다.</p>
 
-<p><strong>대문자</strong>에 대해서 좀 더 자세히 언급하면, <a href="https://www.fileformat.info/info/unicode/category/Lu/list.htm">Unicode &ldquo;Lu&rdquo; class</a>에 포함되는 문자를 의미한다. 즉, <code>𝓐bc</code> 이런 이름도 외부에서 접근할 수 있지만 (export 되지만), 안타깝게도 한글은  포함되지 않는다.</p>
+<p><strong>대문자</strong>에 대해서 좀 더 자세히 언급하면, <a href="https://www.fileformat.info/info/unicode/category/Lu/list.htm">Unicode &ldquo;Lu&rdquo; class</a>에 포함되는 문자를 의미한다. 즉, <code>𝓐bc</code> 이런 이름도 외부에서 접근할 수 있지만&mdash;export 되지만, 안타깝게도 한글은  포함되지 않는다.</p>
 
-<p>Python도 접근제한자 없이 underscore (_)나 double underscore (__) 등을 사용해 접근 범위를 지정하지만 <em>&lsquo;우린 모두 19금을 볼 수 있지만 굳이 볼 필요가 없는 것은 안 볼 수도 있는 성숙한 어른이잖아요&rsquo;</em> 라며 접근 시도를 자율에 맡기는 반면, Go는 아직 충분히 크지 않은 경우 (대문자가 아닌 경우) 에는 접근을 강제로 불허한다.</p>
+<p>Python도 접근제한자 없이 underscore(_)나 double underscore(__) 등을 사용해 접근 범위를 지정하지만 <em>&lsquo;우린 모두 19금을 볼 수 있지만 굳이 볼 필요가 없는 것은 안 볼 수도 있는 성숙한 어른이잖아요&rsquo;</em> 라며 접근 시도를 자율에 맡기는 반면, Go는 아직 충분히 크지 않은 경우&mdash;대문자가 아닌 경우&mdash; 에는 접근을 강제로 불허한다.</p>
 
 <h1 id="패키지-만들기">패키지 만들기</h1>
 
@@ -338,7 +338,7 @@
                     +- packa2 --- packa2.go</pre></div>
 <h2 id="패키지-경로와-이름">패키지 경로와 이름</h2>
 
-<p><a href="https://tramamte.github.io/2018/06/08/import/">임포트</a> 에서 강조한 것처럼 <em>관례상 (by convention)</em> 패키지의 경로와 이름을 같게 할 뿐, 둘은 엄연히 다르다.</p>
+<p><a href="https://tramamte.github.io/2018/06/08/import/">임포트</a> 에서 강조한 것처럼 <strong>관례상(by convention)</strong> 패키지의 경로와 이름을 같게 할 뿐, 둘은 엄연히 다르다.</p>
 
 <p>위 디렉토리 구조에서 packa2, packa2.go, packb.go는 없고, packa1.go를 다음과 같이 작성한 상황을 가정해 보자.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// packa1.go
@@ -403,9 +403,9 @@
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="color:#111">.</span><span style="color:#f92672">/</span><span style="color:#75af00">main</span><span style="color:#111">.</span><span style="color:#00a8c8">go</span><span style="color:#111">:</span><span style="color:#ae81ff">5</span><span style="color:#111">:</span><span style="color:#ae81ff">8</span><span style="color:#111">:</span> <span style="color:#75af00">packa</span> <span style="color:#75af00">redeclared</span> <span style="color:#75af00">as</span> <span style="color:#75af00">imported</span> <span style="color:#f92672">package</span> <span style="color:#75af00">name</span>
 	<span style="color:#75af00">previous</span> <span style="color:#75af00">declaration</span> <span style="color:#75af00">at</span> <span style="color:#111">.</span><span style="color:#f92672">/</span><span style="color:#75af00">main</span><span style="color:#111">.</span><span style="color:#00a8c8">go</span><span style="color:#111">:</span><span style="color:#ae81ff">4</span><span style="color:#111">:</span><span style="color:#ae81ff">8</span>
 <span style="color:#111">.</span><span style="color:#f92672">/</span><span style="color:#75af00">main</span><span style="color:#111">.</span><span style="color:#00a8c8">go</span><span style="color:#111">:</span><span style="color:#ae81ff">8</span><span style="color:#111">:</span><span style="color:#ae81ff">2</span><span style="color:#111">:</span> <span style="color:#75af00">undefined</span><span style="color:#111">:</span> <span style="color:#d88200">&#34;mypack/packa2&#34;</span><span style="color:#111">.</span><span style="color:#75af00">PackA1</span></pre></div>
-<p>mypack/packa2 경로에 있는 패키지를 임포트하면서 mypack/packa1에서 이미 임포트한 packa가 재정의 되었다는 오류와 이로 인해 (mypack/packa2에서 임포트한 패키지가 mypack/packa1에서 임포트한 패키지를 덮어 씀으로 인해) 패키지 packa에서는 <code>PackA1</code> 함수를 찾을 수 없다는 오류이다.</p>
+<p>mypack/packa2 경로에 있는 패키지를 임포트하면서 mypack/packa1에서 이미 임포트한 packa가 재정의 되었다는 오류와 이로 인해&mdash;mypack/packa2에서 임포트한 패키지가 mypack/packa1에서 임포트한 패키지를 덮어 씀으로 인해&mdash; 패키지 packa에서는 <code>PackA1</code> 함수를 찾을 수 없다는 오류이다.</p>
 
-<p>이 문제는 임포트하는 패키지의 이름을 변경해 (별칭을 달아) 해결 가능하다.</p>
+<p>이 문제는 임포트하는 패키지의 이름을 변경해&mdash;별칭을 달아&mdash; 해결 가능하다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// main.go
 </span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
 

@@ -314,7 +314,7 @@
 
 <p><code>for</code> 반복문의 작성 규칙은 아래와 같다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">ForStmt = &#34;for&#34; [ Condition | ForClause | RangeClause ] Block .</pre></div>
-<p><code>while</code>이 없는 대신 <code>for</code> 자체가 이렇게도, 저렇게도 사용할 수 있도록 돼 있다. RangeClause는 아직 다루지 않은 배열, 슬라이스, 맵이나 채널 등과 같이 사용하니 일단은 미뤄두도록 하자. &mdash; 점점 빚이 늘어나는 것 같은 심적 부담이&hellip;</p>
+<p><code>while</code>이 없는 대신 <code>for</code> 자체가 이렇게도, 저렇게도 사용할 수 있도록 돼 있다. RangeClause는 아직 다루지 않은 배열, 슬라이스, 맵이나 채널 등과 같이 사용하니 일단은 미뤄두도록 하자.<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup></p>
 
 <h1 id="while-처럼-사용하기">while 처럼 사용하기</h1>
 
@@ -348,7 +348,7 @@
 
 <p>이 두 경우는 같은 의미로 Condition 자리에 <code>true</code>가 있는 것으로 처리된다.</p>
 
-<p>어디서 비슷한 것을 본 것 같지 않은가? 바로 <code>switch</code> 조건문에서 <code>switch</code> 뒤 Expression을 생략했을 때와 같은 처리 방식이다. (<a href="https://tramamte.github.io/2018/06/20/fun-switch/">참조</a>)</p>
+<p>어디서 비슷한 것을 본 것 같지 않은가? 바로 <code>switch</code> 조건문에서 <code>switch</code> 뒤 Expression을 생략했을 때와 같은 처리 방식이다.&mdash;<a href="https://tramamte.github.io/2018/06/20/fun-switch/">참조</a></p>
 
 <p>따라서 아래 코드들은 모두 무한루프를 만드는 방법이다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">for</span> <span style="color:#00a8c8">true</span> <span style="color:#111">{</span>
@@ -365,7 +365,16 @@
 
 <span style="color:#00a8c8">for</span> <span style="color:#111">{</span>
     <span style="color:#f92672">...</span>
-<span style="color:#111">}</span></code></pre></div>
+<span style="color:#111">}</span></code></pre></div><div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">점점 빚이 늘어나는 것 같은 심적 부담이&hellip;
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
 
   
 
@@ -405,8 +414,14 @@
   <div class="pure-u-2-24">&nbsp;</div>
   <div class="pure-u-10-24" style="text-align: right;">
     
+    <nav class="next">
+      <a href="https://tramamte.github.io/2018/07/03/deep-inside-constants/">정수형 상수의 내부 처리</a>
+    </nav>
+    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://tramamte.github.io/2018/07/03/deep-inside-constants/"><i class="fa fa-angle-right"></i></a>
     
   </div>
 </div>

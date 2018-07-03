@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 29 Jun 2018 22:55:08 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 03 Jul 2018 22:35:19 +0900</lastBuildDate>
     
 	<atom:link href="https://tramamte.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>정수형 상수의 내부 처리</title>
+      <link>https://tramamte.github.io/2018/07/03/deep-inside-constants/</link>
+      <pubDate>Tue, 03 Jul 2018 22:35:19 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2018/07/03/deep-inside-constants/</guid>
+      <description>이 글은 마지막 Commit ID가 4ba55273713bebfbfe0bed9ce196e845c0c69567인 Go 소스 코드를 기준으로 합니다. 함수명, 변</description>
+    </item>
     
     <item>
       <title>for 반복문</title>
@@ -45,7 +54,7 @@
       <pubDate>Wed, 20 Jun 2018 23:15:37 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/06/20/docker-copy/</guid>
-      <description>$ docker cp --help Usage: docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|- docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH Copy files/folders between a container and the local filesystem Options: -L, --follow-link Always follow symbol link in SRC_PATH --help Print usage 현재 사용하고 있는 docker 버전은 17.05.0-ce인데 docker docs (18.03 기준)에는 새로</description>
+      <description>$ docker cp --help Usage: docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|- docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH Copy files/folders between a container and the local filesystem Options: -L, --follow-link Always follow symbol link in SRC_PATH --help Print usage 현재 사용하고 있는 docker 버전은 17.05.0-ce인데 docker docs&amp;mdash;18.03 기준&amp;mdash</description>
     </item>
     
     <item>
@@ -54,7 +63,7 @@
       <pubDate>Wed, 20 Jun 2018 22:40:39 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/06/20/fun-switch/</guid>
-      <description>다시 switch 작성 규칙 (참고)을 자세히 보면 switch 뒤에도, case 뒤에도 단순히 Expression이 올 수 있다. C/C++, Java에 익숙한 개발자라면 단서를 기대할 것이다. C</description>
+      <description>다시 switch 작성 규칙을 자세히 보면 switch 뒤에도, case 뒤에도 단순히 Expression이 올 수 있다. C/C++, Java에 익숙한 개발자라면 단서를 기대할 것이다. C의 swi</description>
     </item>
     
     <item>
@@ -99,7 +108,7 @@
       <pubDate>Tue, 12 Jun 2018 12:05:37 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/06/12/pointers/</guid>
-      <description>Go의 포인터는 생김과 사용법이 C의 그것과 매우 유사하다. 먼저 포인터에 대한 규정을 살펴보면 다음과 같다. PointerType = &amp;#34;*&amp;#34; BaseType . BaseType = Type . C에서와 같이 타입 앞에 asterisk (*)</description>
+      <description>Go의 포인터는 생김과 사용법이 C의 그것과 매우 유사하다. 먼저 포인터에 대한 규정을 살펴보면 다음과 같다. PointerType = &amp;#34;*&amp;#34; BaseType . BaseType = Type . C에서와 같이 타입 앞에 aste</description>
     </item>
     
     <item>
@@ -171,7 +180,7 @@
       <pubDate>Tue, 05 Jun 2018 12:14:49 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/06/05/types/</guid>
-      <description>Go의 타입 작성법은 다음과 같다. Type = TypeName | TypeLit | &amp;#34;(&amp;#34; Type &amp;#34;)&amp;#34; . TypeName = identifier | QualifiedIdent . TypeLit = ArrayType | StructType | PointerType | FunctionType | InterfaceType | SliceType | MapType | ChannelType . 나머지는 차차 보도록 하고, 여기서는 predefined identifier 중 types (</description>
+      <description>Go의 타입 작성법은 다음과 같다. Type = TypeName | TypeLit | &amp;#34;(&amp;#34; Type &amp;#34;)&amp;#34; . TypeName = identifier | QualifiedIdent . TypeLit = ArrayType | StructType | PointerType | FunctionType | InterfaceType | SliceType | MapType | ChannelType . 나머지는 차차 보도록 하고, 여기서는 predefined identifier 중 ty</description>
     </item>
     
     <item>
@@ -180,7 +189,7 @@
       <pubDate>Mon, 04 Jun 2018 13:56:33 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/06/04/eclipse-install/</guid>
-      <description>1. Oracle JDK 설치 Java SE 8 버전 추천 2. Eclipse 설치 Eclipse IDE for Java EE Developers 받아서 압축 해제 3. Runtime 설치 Drools에서 Final 버전 내려받아 적당한 위치에 압축 해제 jBPM에서 Final-bin 버전 (.Final-bin.zip) 내려</description>
+      <description>1. Oracle JDK 설치 Java SE 8 버전 추천 2. Eclipse 설치 Eclipse IDE for Java EE Developers 받아서 압축 해제 3. Runtime 설치 Drools에서 Final 버전 내려받아 적당한 위치에 압축 해제 jBPM에서 Final-bin 버전&amp;md</description>
     </item>
     
     <item>
@@ -198,7 +207,7 @@
       <pubDate>Thu, 31 May 2018 22:20:26 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/05/31/hugo-shortcode/</guid>
-      <description>Awesome Patrick 글 작성을 위해 개인적으로 참고할 내용을 정리한 글입니다. Markdown 사용법 1. Task list - [ ] action one- [x] action two action one action two 2. Fraction 5/12 5&amp;frasl;12 3. Latex dash April - 5April -- 5April --- 5 April - 5 April &amp;ndash; 5 April &amp;mdash; 5 4.</description>
+      <description>Awesome Patrick 글 작성을 위해 개인적으로 참고할 내용을 정리한 글입니다. Markdown 사용법 1. Task list - [ ] action one- [x] action two action one action two 2. Fraction 5/12 5&amp;frasl;12 3. Latex dash Hyphen: tie-in, toll-free, two-thirdEn Dash: May--September, page 147--149Em Dash: Additional thought---as I&amp;#39;ve done here. Hyphen: tie-in, toll-free,</description>
     </item>
     
     <item>
@@ -207,7 +216,7 @@
       <pubDate>Thu, 31 May 2018 13:05:57 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/05/31/packages/</guid>
-      <description>모든 Go 프로그램은 패키지들로 구성된다. 프로그램은 main 패키지에서 시작한다. 관례상 패키지 이름은 임포트 경로의 마지막 엘리먼트로 한다. 패키지 작성 규정 (cl</description>
+      <description>모든 Go 프로그램은 패키지들로 구성된다. 프로그램은 main 패키지에서 시작한다. 관례상 패키지 이름은 임포트 경로의 마지막 엘리먼트로 한다. 패키지 작성 규정(cl</description>
     </item>
     
     <item>
