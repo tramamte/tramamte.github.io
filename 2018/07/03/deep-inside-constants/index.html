@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="정수형 상수를 Go 언어 내부에서 처리하는 방법">
-  <meta name="generator" content="Hugo 0.42.1" />
+  <meta name="generator" content="Hugo 0.42.2" />
 
   <title>정수형 상수의 내부 처리 &middot; Awesome Patrick</title>
 
@@ -328,9 +328,9 @@
 <pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75af00">pacakge</span> <span style="color:#75af00">main</span>
 
 <span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-  <span style="color:#00a8c8">const</span> <span style="color:#75af00">i1</span> <span style="color:#111">=</span> <span style="color:#ae81ff">14345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</span>
-  <span style="color:#00a8c8">const</span> <span style="color:#75af00">i2</span> <span style="color:#111">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">512</span>
-  <span style="color:#00a8c8">const</span> <span style="color:#75af00">i3</span> <span style="color:#111">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">511</span>
+	<span style="color:#00a8c8">const</span> <span style="color:#75af00">i1</span> <span style="color:#111">=</span> <span style="color:#ae81ff">14345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</span>
+	<span style="color:#00a8c8">const</span> <span style="color:#75af00">i2</span> <span style="color:#111">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">512</span>
+	<span style="color:#00a8c8">const</span> <span style="color:#75af00">i3</span> <span style="color:#111">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">511</span>
 <span style="color:#111">}</span></code></pre></td></tr></table>
 </div>
 </div>
@@ -371,21 +371,21 @@
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// noder.go
 </span><span style="color:#75715e"></span>
 <span style="color:#00a8c8">func</span> <span style="color:#111">(</span><span style="color:#75af00">p</span> <span style="color:#f92672">*</span><span style="color:#75af00">noder</span><span style="color:#111">)</span> <span style="color:#75af00">expr</span><span style="color:#111">(</span><span style="color:#75af00">expr</span> <span style="color:#75af00">syntax</span><span style="color:#111">.</span><span style="color:#75af00">Expr</span><span style="color:#111">)</span> <span style="color:#f92672">*</span><span style="color:#75af00">Node</span> <span style="color:#111">{</span>
-  <span style="color:#f92672">...</span>
-  <span style="color:#00a8c8">case</span> <span style="color:#f92672">*</span><span style="color:#75af00">syntax</span><span style="color:#111">.</span><span style="color:#75af00">BasicLit</span><span style="color:#111">:</span>
-    <span style="color:#00a8c8">return</span> <span style="color:#75af00">p</span><span style="color:#111">.</span><span style="color:#75af00">setlineno</span><span style="color:#111">(</span><span style="color:#75af00">expr</span><span style="color:#111">,</span> <span style="color:#75af00">nodlit</span><span style="color:#111">(</span><span style="color:#75af00">p</span><span style="color:#111">.</span><span style="color:#75af00">basicLit</span><span style="color:#111">(</span><span style="color:#75af00">expr</span><span style="color:#111">)))</span>
-  <span style="color:#f92672">...</span>
+	<span style="color:#f92672">...</span>
+	<span style="color:#00a8c8">case</span> <span style="color:#f92672">*</span><span style="color:#75af00">syntax</span><span style="color:#111">.</span><span style="color:#75af00">BasicLit</span><span style="color:#111">:</span>
+		<span style="color:#00a8c8">return</span> <span style="color:#75af00">p</span><span style="color:#111">.</span><span style="color:#75af00">setlineno</span><span style="color:#111">(</span><span style="color:#75af00">expr</span><span style="color:#111">,</span> <span style="color:#75af00">nodlit</span><span style="color:#111">(</span><span style="color:#75af00">p</span><span style="color:#111">.</span><span style="color:#75af00">basicLit</span><span style="color:#111">(</span><span style="color:#75af00">expr</span><span style="color:#111">)))</span>
+	<span style="color:#f92672">...</span>
 <span style="color:#111">}</span></code></pre></div>
 <p>여기서 호출하고 있는 <code>basicLit()</code>은 다음과 같다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// noder.go
 </span><span style="color:#75715e"></span>
 <span style="color:#00a8c8">func</span> <span style="color:#111">(</span><span style="color:#75af00">p</span> <span style="color:#f92672">*</span><span style="color:#75af00">noder</span><span style="color:#111">)</span> <span style="color:#75af00">basicLit</span><span style="color:#111">(</span><span style="color:#75af00">lit</span> <span style="color:#f92672">*</span><span style="color:#75af00">syntax</span><span style="color:#111">.</span><span style="color:#75af00">BasicLit</span><span style="color:#111">)</span> <span style="color:#75af00">Val</span> <span style="color:#111">{</span>
-  <span style="color:#f92672">...</span>
-  <span style="color:#00a8c8">case</span> <span style="color:#75af00">syntax</span><span style="color:#111">.</span><span style="color:#75af00">IntLit</span><span style="color:#111">:</span>
-    <span style="color:#75af00">x</span> <span style="color:#f92672">:=</span> <span style="color:#111">new</span><span style="color:#111">(</span><span style="color:#75af00">Mpint</span><span style="color:#111">)</span>
-    <span style="color:#75af00">x</span><span style="color:#111">.</span><span style="color:#75af00">SetString</span><span style="color:#111">(</span><span style="color:#75af00">s</span><span style="color:#111">)</span>
-    <span style="color:#00a8c8">return</span> <span style="color:#75af00">Val</span><span style="color:#111">{</span><span style="color:#75af00">U</span><span style="color:#111">:</span> <span style="color:#75af00">x</span><span style="color:#111">}</span>
-  <span style="color:#f92672">...</span>
+	<span style="color:#f92672">...</span>
+	<span style="color:#00a8c8">case</span> <span style="color:#75af00">syntax</span><span style="color:#111">.</span><span style="color:#75af00">IntLit</span><span style="color:#111">:</span>
+		<span style="color:#75af00">x</span> <span style="color:#f92672">:=</span> <span style="color:#111">new</span><span style="color:#111">(</span><span style="color:#75af00">Mpint</span><span style="color:#111">)</span>
+		<span style="color:#75af00">x</span><span style="color:#111">.</span><span style="color:#75af00">SetString</span><span style="color:#111">(</span><span style="color:#75af00">s</span><span style="color:#111">)</span>
+		<span style="color:#00a8c8">return</span> <span style="color:#75af00">Val</span><span style="color:#111">{</span><span style="color:#75af00">U</span><span style="color:#111">:</span> <span style="color:#75af00">x</span><span style="color:#111">}</span>
+	<span style="color:#f92672">...</span>
 <span style="color:#111">}</span></code></pre></div>
 <p><code>Mpint</code>는 mpint.go에 다음과 같이 정의돼 있다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// mpint.go
@@ -448,13 +448,13 @@
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// noder.go
 </span><span style="color:#75715e"></span>
 <span style="color:#00a8c8">func</span> <span style="color:#111">(</span><span style="color:#75af00">p</span> <span style="color:#f92672">*</span><span style="color:#75af00">noder</span><span style="color:#111">)</span> <span style="color:#75af00">expr</span><span style="color:#111">(</span><span style="color:#75af00">expr</span> <span style="color:#75af00">syntax</span><span style="color:#111">.</span><span style="color:#75af00">Expr</span><span style="color:#111">)</span> <span style="color:#f92672">*</span><span style="color:#75af00">Node</span> <span style="color:#111">{</span>
-  <span style="color:#f92672">...</span>
-  <span style="color:#00a8c8">case</span> <span style="color:#f92672">*</span><span style="color:#75af00">syntax</span><span style="color:#111">.</span><span style="color:#75af00">Operation</span><span style="color:#111">:</span>
-    <span style="color:#f92672">...</span>
-    <span style="color:#75af00">x</span> <span style="color:#f92672">:=</span> <span style="color:#75af00">p</span><span style="color:#111">.</span><span style="color:#75af00">expr</span><span style="color:#111">(</span><span style="color:#75af00">expr</span><span style="color:#111">.</span><span style="color:#75af00">X</span><span style="color:#111">)</span>
-    <span style="color:#f92672">...</span>
-    <span style="color:#00a8c8">return</span> <span style="color:#75af00">p</span><span style="color:#111">.</span><span style="color:#75af00">nod</span><span style="color:#111">(</span><span style="color:#75af00">expr</span><span style="color:#111">,</span> <span style="color:#75af00">p</span><span style="color:#111">.</span><span style="color:#75af00">binOp</span><span style="color:#111">(</span><span style="color:#75af00">expr</span><span style="color:#111">.</span><span style="color:#75af00">Op</span><span style="color:#111">),</span> <span style="color:#75af00">x</span><span style="color:#111">,</span> <span style="color:#75af00">p</span><span style="color:#111">.</span><span style="color:#75af00">expr</span><span style="color:#111">(</span><span style="color:#75af00">expr</span><span style="color:#111">.</span><span style="color:#75af00">Y</span><span style="color:#111">))</span>
-  <span style="color:#f92672">...</span>
+	<span style="color:#f92672">...</span>
+	<span style="color:#00a8c8">case</span> <span style="color:#f92672">*</span><span style="color:#75af00">syntax</span><span style="color:#111">.</span><span style="color:#75af00">Operation</span><span style="color:#111">:</span>
+		<span style="color:#f92672">...</span>
+		<span style="color:#75af00">x</span> <span style="color:#f92672">:=</span> <span style="color:#75af00">p</span><span style="color:#111">.</span><span style="color:#75af00">expr</span><span style="color:#111">(</span><span style="color:#75af00">expr</span><span style="color:#111">.</span><span style="color:#75af00">X</span><span style="color:#111">)</span>
+		<span style="color:#f92672">...</span>
+		<span style="color:#00a8c8">return</span> <span style="color:#75af00">p</span><span style="color:#111">.</span><span style="color:#75af00">nod</span><span style="color:#111">(</span><span style="color:#75af00">expr</span><span style="color:#111">,</span> <span style="color:#75af00">p</span><span style="color:#111">.</span><span style="color:#75af00">binOp</span><span style="color:#111">(</span><span style="color:#75af00">expr</span><span style="color:#111">.</span><span style="color:#75af00">Op</span><span style="color:#111">),</span> <span style="color:#75af00">x</span><span style="color:#111">,</span> <span style="color:#75af00">p</span><span style="color:#111">.</span><span style="color:#75af00">expr</span><span style="color:#111">(</span><span style="color:#75af00">expr</span><span style="color:#111">.</span><span style="color:#75af00">Y</span><span style="color:#111">))</span>
+	<span style="color:#f92672">...</span>
 <span style="color:#111">}</span></code></pre></div>
 <p>대강의 동작은 다음과 같다.</p>
 
@@ -493,7 +493,7 @@
 <pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// mpint.go
 </span><span style="color:#75715e"></span>
 <span style="color:#00a8c8">func</span> <span style="color:#111">(</span><span style="color:#75af00">a</span> <span style="color:#f92672">*</span><span style="color:#75af00">Mpint</span><span style="color:#111">)</span> <span style="color:#75af00">Lsh</span><span style="color:#111">(</span><span style="color:#75af00">b</span> <span style="color:#f92672">*</span><span style="color:#75af00">Mpint</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-  <span style="color:#f92672">...</span>
+	<span style="color:#f92672">...</span>
 	<span style="color:#75af00">s</span> <span style="color:#f92672">:=</span> <span style="color:#75af00">b</span><span style="color:#111">.</span><span style="color:#75af00">Int64</span><span style="color:#111">()</span>
 <span style="display:block;width:100%;background-color:#e1e1e1">	<span style="color:#00a8c8">if</span> <span style="color:#75af00">s</span> <span style="color:#111">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#75af00">s</span> <span style="color:#f92672">&gt;=</span> <span style="color:#75af00">Mpprec</span> <span style="color:#111">{</span>
 </span>		<span style="color:#75af00">msg</span> <span style="color:#f92672">:=</span> <span style="color:#d88200">&#34;shift count too large&#34;</span>

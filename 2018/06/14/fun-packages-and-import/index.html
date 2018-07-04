@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="규칙을 따르지 않으면 손발이 고생한다.">
-  <meta name="generator" content="Hugo 0.42.1" />
+  <meta name="generator" content="Hugo 0.42.2" />
 
   <title>패키지, 임포트에 대한 심화 학습 &middot; Awesome Patrick</title>
 
@@ -347,16 +347,16 @@
 <span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
 
 <span style="color:#00a8c8">func</span> <span style="color:#75af00">PackA1</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-    <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is PackA1()&#34;</span><span style="color:#111">)</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is PackA1()&#34;</span><span style="color:#111">)</span>
 <span style="color:#111">}</span></code></pre></div>
 <p>이 패키지를 사용하기 위한 main.go는 다음과 같다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// main.go
 </span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
 
-<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;mypack/packa1&#34;</span> 	<span style="color:#75715e">// PATH
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;mypack/packa1&#34;</span>	<span style="color:#75715e">// PATH
 </span><span style="color:#75715e"></span>
 <span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-    <span style="color:#75af00">packa</span><span style="color:#111">.</span><span style="color:#75af00">PackA1</span><span style="color:#111">()</span>		<span style="color:#75715e">// NAME
+	<span style="color:#75af00">packa</span><span style="color:#111">.</span><span style="color:#75af00">PackA1</span><span style="color:#111">()</span>		<span style="color:#75715e">// NAME
 </span><span style="color:#75715e"></span><span style="color:#111">}</span></code></pre></div>
 <h2 id="한-경로에-두-가지-이상의-패키지를-두면">한 경로에 두 가지 이상의 패키지를 두면&hellip;</h2>
 
@@ -369,7 +369,7 @@
 <span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
 
 <span style="color:#00a8c8">func</span> <span style="color:#75af00">PackB</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-    <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is PackB()&#34;</span><span style="color:#111">)</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is PackB()&#34;</span><span style="color:#111">)</span>
 <span style="color:#111">}</span></code></pre></div>
 <p>이 경우 빌드 시 다음과 같은 오류가 발생한다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">found packages packa (packa1.go) and packb (packb.go) in ~~~/mypack/packa1</pre></div>
@@ -386,7 +386,7 @@
 <span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
 
 <span style="color:#00a8c8">func</span> <span style="color:#75af00">PackA2</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-    <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is PackA2()&#34;</span><span style="color:#111">)</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is PackA2()&#34;</span><span style="color:#111">)</span>
 <span style="color:#111">}</span></code></pre></div>
 <p><code>PackA2()</code> 를 호출하기 위해 main.go도 다음과 같이 수정한다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// main.go
@@ -396,8 +396,8 @@
 <span style="color:#f92672">import</span> <span style="color:#d88200">&#34;mypack/packa2&#34;</span>
 
 <span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-    <span style="color:#75af00">packa</span><span style="color:#111">.</span><span style="color:#75af00">PackA1</span><span style="color:#111">()</span>
-    <span style="color:#75af00">packa</span><span style="color:#111">.</span><span style="color:#75af00">PackA2</span><span style="color:#111">()</span>
+	<span style="color:#75af00">packa</span><span style="color:#111">.</span><span style="color:#75af00">PackA1</span><span style="color:#111">()</span>
+	<span style="color:#75af00">packa</span><span style="color:#111">.</span><span style="color:#75af00">PackA2</span><span style="color:#111">()</span>
 <span style="color:#111">}</span></code></pre></div>
 <p>이 경우에는 빌드 시 다음과 같은 오류가 발생한다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="color:#111">.</span><span style="color:#f92672">/</span><span style="color:#75af00">main</span><span style="color:#111">.</span><span style="color:#00a8c8">go</span><span style="color:#111">:</span><span style="color:#ae81ff">5</span><span style="color:#111">:</span><span style="color:#ae81ff">8</span><span style="color:#111">:</span> <span style="color:#75af00">packa</span> <span style="color:#75af00">redeclared</span> <span style="color:#75af00">as</span> <span style="color:#75af00">imported</span> <span style="color:#f92672">package</span> <span style="color:#75af00">name</span>
@@ -413,8 +413,8 @@
 <span style="color:#f92672">import</span> <span style="color:#75af00">a2</span> <span style="color:#d88200">&#34;mypack/packa2&#34;</span>
 
 <span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-    <span style="color:#75af00">a1</span><span style="color:#111">.</span><span style="color:#75af00">PackA1</span><span style="color:#111">()</span>
-    <span style="color:#75af00">a2</span><span style="color:#111">.</span><span style="color:#75af00">PackA2</span><span style="color:#111">()</span>
+	<span style="color:#75af00">a1</span><span style="color:#111">.</span><span style="color:#75af00">PackA1</span><span style="color:#111">()</span>
+	<span style="color:#75af00">a2</span><span style="color:#111">.</span><span style="color:#75af00">PackA2</span><span style="color:#111">()</span>
 <span style="color:#111">}</span></code></pre></div>
 <h2 id="결론">결론</h2>
 

@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="for statement">
-  <meta name="generator" content="Hugo 0.42.1" />
+  <meta name="generator" content="Hugo 0.42.2" />
 
   <title>for 반복문 &middot; Awesome Patrick</title>
 
@@ -320,7 +320,7 @@
 
 <p><code>for</code> 뒤에 참/거짓을 판별할 수 있는 Condition을 써 <code>while</code>처럼 사용할 수 있다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">for</span> <span style="color:#75af00">a</span> <span style="color:#111">&lt;</span> <span style="color:#75af00">b</span> <span style="color:#111">{</span>
-    <span style="color:#75af00">a</span> <span style="color:#f92672">*=</span> <span style="color:#ae81ff">2</span>
+	<span style="color:#75af00">a</span> <span style="color:#f92672">*=</span> <span style="color:#ae81ff">2</span>
 <span style="color:#111">}</span></code></pre></div>
 <h1 id="for-처럼-사용하기">for 처럼 사용하기</h1>
 
@@ -333,12 +333,12 @@
 <p>InitStmt, Condition, PostStmt는 모두 필수 요소가 아니기 때문에 삭제할 수 있다. 하지만 구분을 위해 들어가는 세미콜론은 반드시 써야 하는데, Condition만 쓴 경우는 위 <a href="#while-처럼-사용하기">while 처럼 사용하기</a>와 같은 사용법이기 때문에 세미콜론을 삭제할 수 있다. 즉, 다음 코드들은 같은 의미이다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// case 1
 </span><span style="color:#75715e"></span><span style="color:#00a8c8">for</span> <span style="color:#111">;</span> <span style="color:#75af00">i</span> <span style="color:#111">&lt;</span> <span style="color:#ae81ff">10</span><span style="color:#111">;</span> <span style="color:#111">{</span>
-    <span style="color:#75af00">f</span><span style="color:#111">(</span><span style="color:#75af00">i</span><span style="color:#111">)</span>
+	<span style="color:#75af00">f</span><span style="color:#111">(</span><span style="color:#75af00">i</span><span style="color:#111">)</span>
 <span style="color:#111">}</span>
 
 <span style="color:#75715e">// case 2
 </span><span style="color:#75715e"></span><span style="color:#00a8c8">for</span> <span style="color:#75af00">i</span> <span style="color:#111">&lt;</span> <span style="color:#ae81ff">10</span> <span style="color:#111">{</span>
-    <span style="color:#75af00">f</span><span style="color:#111">(</span><span style="color:#75af00">i</span><span style="color:#111">)</span>
+	<span style="color:#75af00">f</span><span style="color:#111">(</span><span style="color:#75af00">i</span><span style="color:#111">)</span>
 <span style="color:#111">}</span></code></pre></div>
 <h1 id="무한루프">무한루프</h1>
 
@@ -348,19 +348,19 @@
 
 <p>아래 코드들은 모두 무한루프를 만드는 방법이다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">for</span> <span style="color:#00a8c8">true</span> <span style="color:#111">{</span>
-    <span style="color:#f92672">...</span>
+	<span style="color:#f92672">...</span>
 <span style="color:#111">}</span>
 
 <span style="color:#00a8c8">for</span> <span style="color:#111">;</span> <span style="color:#00a8c8">true</span><span style="color:#111">;</span> <span style="color:#111">{</span>
-    <span style="color:#f92672">...</span>
+	<span style="color:#f92672">...</span>
 <span style="color:#111">}</span>
 
 <span style="color:#00a8c8">for</span> <span style="color:#111">;</span> <span style="color:#111">;</span> <span style="color:#111">{</span>
-    <span style="color:#f92672">...</span>
+	<span style="color:#f92672">...</span>
 <span style="color:#111">}</span>
 
 <span style="color:#00a8c8">for</span> <span style="color:#111">{</span>
-    <span style="color:#f92672">...</span>
+	<span style="color:#f92672">...</span>
 <span style="color:#111">}</span></code></pre></div><div class="footnotes">
 
 <hr />

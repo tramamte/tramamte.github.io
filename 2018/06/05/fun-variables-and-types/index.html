@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="그것의 타입을 Go는 알고 있다.">
-  <meta name="generator" content="Hugo 0.42.1" />
+  <meta name="generator" content="Hugo 0.42.2" />
 
   <title>명시적이지 않은 듯 명시적인 Go &middot; Awesome Patrick</title>
 
@@ -282,13 +282,13 @@
 <span style="color:#f92672">import</span> <span style="color:#d88200">&#34;reflect&#34;</span>
 
 <span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-    <span style="color:#00a8c8">var</span> <span style="color:#75af00">i</span> <span style="color:#111">=</span> <span style="color:#ae81ff">1</span>
-    <span style="color:#75af00">f</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">3.14</span>
-    <span style="color:#75af00">c</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1.0</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1.0i</span>
-    
-    <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">i</span><span style="color:#111">,</span> <span style="color:#75af00">reflect</span><span style="color:#111">.</span><span style="color:#75af00">TypeOf</span><span style="color:#111">(</span><span style="color:#75af00">i</span><span style="color:#111">))</span>
-    <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">f</span><span style="color:#111">,</span> <span style="color:#75af00">reflect</span><span style="color:#111">.</span><span style="color:#75af00">TypeOf</span><span style="color:#111">(</span><span style="color:#75af00">f</span><span style="color:#111">))</span>
-    <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">c</span><span style="color:#111">,</span> <span style="color:#75af00">reflect</span><span style="color:#111">.</span><span style="color:#75af00">TypeOf</span><span style="color:#111">(</span><span style="color:#75af00">c</span><span style="color:#111">))</span>
+	<span style="color:#00a8c8">var</span> <span style="color:#75af00">i</span> <span style="color:#111">=</span> <span style="color:#ae81ff">1</span>
+	<span style="color:#75af00">f</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">3.14</span>
+	<span style="color:#75af00">c</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1.0</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1.0i</span>
+	
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">i</span><span style="color:#111">,</span> <span style="color:#75af00">reflect</span><span style="color:#111">.</span><span style="color:#75af00">TypeOf</span><span style="color:#111">(</span><span style="color:#75af00">i</span><span style="color:#111">))</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">f</span><span style="color:#111">,</span> <span style="color:#75af00">reflect</span><span style="color:#111">.</span><span style="color:#75af00">TypeOf</span><span style="color:#111">(</span><span style="color:#75af00">f</span><span style="color:#111">))</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">c</span><span style="color:#111">,</span> <span style="color:#75af00">reflect</span><span style="color:#111">.</span><span style="color:#75af00">TypeOf</span><span style="color:#111">(</span><span style="color:#75af00">c</span><span style="color:#111">))</span>
 <span style="color:#111">}</span></code></pre></div>
 <p>위 코드의 실행 결과는 다음과 같다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">1 int
@@ -325,16 +325,16 @@
 <span style="color:#f92672">import</span> <span style="color:#d88200">&#34;reflect&#34;</span>
 
 <span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-    <span style="color:#00a8c8">var</span> <span style="color:#75af00">i</span> <span style="color:#111">=</span> <span style="color:#ae81ff">1</span>
-    <span style="color:#75af00">f</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">3.14</span>
-    <span style="color:#75af00">c</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1.0</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1.0i</span>
-    
-    <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">i</span><span style="color:#111">,</span> <span style="color:#75af00">reflect</span><span style="color:#111">.</span><span style="color:#75af00">TypeOf</span><span style="color:#111">(</span><span style="color:#75af00">i</span><span style="color:#111">))</span>
-    <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">f</span><span style="color:#111">,</span> <span style="color:#75af00">reflect</span><span style="color:#111">.</span><span style="color:#75af00">TypeOf</span><span style="color:#111">(</span><span style="color:#75af00">f</span><span style="color:#111">))</span>
-    <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">c</span><span style="color:#111">,</span> <span style="color:#75af00">reflect</span><span style="color:#111">.</span><span style="color:#75af00">TypeOf</span><span style="color:#111">(</span><span style="color:#75af00">c</span><span style="color:#111">))</span>
-    
-    <span style="color:#00a8c8">var</span> <span style="color:#75af00">f1</span> <span style="color:#00a8c8">float32</span> <span style="color:#111">=</span> <span style="color:#ae81ff">3.14</span>
-<span style="display:block;width:100%;background-color:#e1e1e1">    <span style="color:#75af00">f</span> <span style="color:#111">=</span> <span style="color:#75af00">f1</span>
+	<span style="color:#00a8c8">var</span> <span style="color:#75af00">i</span> <span style="color:#111">=</span> <span style="color:#ae81ff">1</span>
+	<span style="color:#75af00">f</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">3.14</span>
+	<span style="color:#75af00">c</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1.0</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1.0i</span>
+	
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">i</span><span style="color:#111">,</span> <span style="color:#75af00">reflect</span><span style="color:#111">.</span><span style="color:#75af00">TypeOf</span><span style="color:#111">(</span><span style="color:#75af00">i</span><span style="color:#111">))</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">f</span><span style="color:#111">,</span> <span style="color:#75af00">reflect</span><span style="color:#111">.</span><span style="color:#75af00">TypeOf</span><span style="color:#111">(</span><span style="color:#75af00">f</span><span style="color:#111">))</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">c</span><span style="color:#111">,</span> <span style="color:#75af00">reflect</span><span style="color:#111">.</span><span style="color:#75af00">TypeOf</span><span style="color:#111">(</span><span style="color:#75af00">c</span><span style="color:#111">))</span>
+	
+	<span style="color:#00a8c8">var</span> <span style="color:#75af00">f1</span> <span style="color:#00a8c8">float32</span> <span style="color:#111">=</span> <span style="color:#ae81ff">3.14</span>
+<span style="display:block;width:100%;background-color:#e1e1e1">	<span style="color:#75af00">f</span> <span style="color:#111">=</span> <span style="color:#75af00">f1</span>
 </span><span style="color:#111">}</span></code></pre></td></tr></table>
 </div>
 </div>

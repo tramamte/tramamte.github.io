@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Import">
-  <meta name="generator" content="Hugo 0.42.1" />
+  <meta name="generator" content="Hugo 0.42.2" />
 
   <title>임포트 &middot; Awesome Patrick</title>
 
@@ -283,7 +283,7 @@ ImportPath   = string_lit .</pre></div>
 <span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
 
 <span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-    <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;Hello, Go!&#34;</span><span style="color:#111">)</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;Hello, Go!&#34;</span><span style="color:#111">)</span>
 <span style="color:#111">}</span></code></pre></div>
 <p><a href="https://tramamte.github.io/2018/05/31/packages/">패키지</a>에서 언급한 것처럼 관례상 경로의 마지막 엘리먼트를 패키지 이름으로 맞췄기 때문에 <code>import</code> 뒤에 쓴 <code>&quot;fmt&quot;</code> 와 <code>Println</code> 앞에 쓴 <code>fmt</code>가 같아 보이는 것이지, 정확하게는 <code>&quot;fmt&quot;</code> 는 패키지의 경로, <code>fmt</code> 는 패키지의 이름이다.</p>
 
@@ -295,7 +295,7 @@ ImportPath   = string_lit .</pre></div>
 <span style="color:#f92672">import</span> <span style="color:#75af00">f</span> <span style="color:#d88200">&#34;fmt&#34;</span>
 
 <span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-    <span style="color:#75af00">f</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;Hello, Go!&#34;</span><span style="color:#111">)</span>
+	<span style="color:#75af00">f</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;Hello, Go!&#34;</span><span style="color:#111">)</span>
 <span style="color:#111">}</span></code></pre></div>
 <p>별칭을 쓰는 것조차 귀찮다면 점을 찍으면 된다. ImportPath 앞에 점을 찍으면 해당 패키지의 기능들을 마치 동일 패키지인 듯 접근할 수 있다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
@@ -303,7 +303,7 @@ ImportPath   = string_lit .</pre></div>
 <span style="color:#f92672">import</span> <span style="color:#111">.</span> <span style="color:#d88200">&#34;fmt&#34;</span>
 
 <span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-    <span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;Hello, Go!&#34;</span><span style="color:#111">)</span>
+	<span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;Hello, Go!&#34;</span><span style="color:#111">)</span>
 <span style="color:#111">}</span></code></pre></div>
 <p>패키지의 이름을 정할 때는 blank identifier를 사용할 수 없지만, 외부 패키지를 임포트할 때 PackageName 자리에는 blank identifier를 사용할 수 있다. 이 경우에는 해당 패키지의 기능을 호출하지 않겠다는 의미이다.</p>
 
