@@ -35,26 +35,28 @@
   
   <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700|Nanum+Gothic+Coding:400,700|Raleway:400,700|Roboto+Mono" rel="stylesheet">
 
+
+  
+
+  
+    
+      
+  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+      
+    
+      
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://tramamte.github.io/css/zoom.css">
   <script src="https://tramamte.github.io/js/zoom.js"></script>
+      
+    
+  
 
   
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
-  
-  <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js" onload="mermaidReady()" defer></script>
-  <script>
-    var mermaidReady = function() {
-      var config = {
-        startOnLoad: true,
-        theme: "neutral"
-      }
-      mermaid.initialize(config);
-    };
-  </script>
 
   
   
@@ -316,8 +318,10 @@
 <li><a href="#2-box-글상자">2. box: 글상자</a></li>
 <li><a href="#3-pure-table-테이블-삽입">3. pure_table: 테이블 삽입</a></li>
 <li><a href="#4-fluid-imgs-이미지-삽입">4. fluid_imgs: 이미지 삽입</a></li>
-<li><a href="#5-mermaid-flowchart-sequence-diagram-gantt-chart">5. mermaid: Flowchart, Sequence diagram, Gantt chart</a></li>
-<li><a href="#6-quote-인용">6. quote: 인용</a></li>
+<li><a href="#5-flowchart-flowchart">5. flowchart: Flowchart</a></li>
+<li><a href="#6-sequence-sequence-diagram">6. sequence: Sequence diagram</a></li>
+<li><a href="#7-mermaid-flowchart-sequence-diagram-gantt-chart">7. mermaid: Flowchart, Sequence diagram, Gantt chart</a></li>
+<li><a href="#8-quote-인용">8. quote: 인용</a></li>
 </ul></li>
 </ul>
 </nav></div>
@@ -661,13 +665,41 @@ blah blah
 &gt;}}</pre></div>
 <p><a href="http://yoshiharuyamashita.com/post/hugo-shortcode-to-show-multiple-images/">여기</a> 참고</p>
 
-<h2 id="5-mermaid-flowchart-sequence-diagram-gantt-chart">5. mermaid: Flowchart, Sequence diagram, Gantt chart</h2>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; mermaid align=&#34;center&#34; &gt;}}
+<h2 id="5-flowchart-flowchart">5. flowchart: Flowchart</h2>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; flowchart [align=&#34;center&#34;] &gt;}}
+st=&gt;start: Start:&gt;http://www.google.com[blank]
+e=&gt;end:&gt;http://www.google.com
+op1=&gt;operation: My Operation
+sub1=&gt;subroutine: My Subroutine
+cond=&gt;condition: Yes
+or No?:&gt;http://www.google.com
+io=&gt;inputoutput: catch something...
+para=&gt;parallel: parallel tasks
+
+st-&gt;op1-&gt;cond
+cond(yes)-&gt;io-&gt;e
+cond(no)-&gt;para
+para(path1, bottom)-&gt;sub1(right)-&gt;op1
+para(path2, top)-&gt;op1
+{ {&lt; /flowchart }}</pre></div>
+<p><a href="https://flowchart.js.org/">여기</a> 참고</p>
+
+<h2 id="6-sequence-sequence-diagram">6. sequence: Sequence diagram</h2>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; sequence [align=&#34;center&#34;] [theme=&#34;hand&#34;] &gt;}}
+Andrew-&gt;China: Says Hello
+Note right of China: China thinks\nabout it
+China--&gt;Andrew: How are you?
+Andrew-&gt;&gt;China: I am good thanks!
+{ {&lt; /sequence }}</pre></div>
+<p><a href="https://bramp.github.io/js-sequence-diagrams/">여기</a> 참고</p>
+
+<h2 id="7-mermaid-flowchart-sequence-diagram-gantt-chart">7. mermaid: Flowchart, Sequence diagram, Gantt chart</h2>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; mermaid [align=&#34;center&#34;] &gt;}}
 [graph | sequenceDiagram | gantt]
 { {&lt; /mermaid }}</pre></div>
 <p><a href="https://mermaidjs.github.io/">여기</a> 참고</p>
 
-<h2 id="6-quote-인용">6. quote: 인용</h2>
+<h2 id="8-quote-인용">8. quote: 인용</h2>
 
 <ul>
 <li>warn: 주황</li>
