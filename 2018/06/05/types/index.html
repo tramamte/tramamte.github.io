@@ -341,7 +341,7 @@ uintptr		포인터를 저장하기에 적당한 크기</pre></div>
 
 <hr />
 
-<p><a href="https://tramamte.github.io/2018/06/01/variables/">변수</a>에서 확인한 것처럼 Go의 변수는 일반적으로 <code>var i int</code> 형태로 선언한다. 타입 작성법의 Type에 대한 마지막 표현 <code>Type = &quot;(&quot; Type &quot;)&quot;</code>이 좀 특이한데, 결론적으로 Type을 괄호로 묶어도&mdash;2개 이상의 괄호로 묶어도&mdash; 괜찮다는 의미이다. 즉,</p>
+<p><a href="https://tramamte.github.io/2018/06/01/variables/">변수</a>에서 확인한 것처럼 Go의 변수는 일반적으로 <code>var i int</code> 형태로 선언한다. 타입 작성법의 Type에 대한 마지막 표현 <code>Type = &quot;(&quot; Type &quot;)&quot;</code>이 좀 특이한데, 결론적으로 Type을 1개 이상의 괄호로 묶어도 괜찮다는 의미이다. 즉,</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">var</span> <span style="color:#75af00">i</span> <span style="color:#111">(((</span><span style="color:#00a8c8">int</span><span style="color:#111">)))</span></code></pre></div>
 <p>이런 형태도 가능하다.</p>
 

@@ -342,15 +342,11 @@
 <span style="color:#111">}</span></code></pre></div>
 <h1 id="무한루프">무한루프</h1>
 
-<p><code>for</code> 문 작성 규칙을 다시 보면 Condition, ForClause, RangeClause가 모두 선택사항이다. 즉, <code>for</code> 뒤에 아무것도 쓰지 않을 수도 있다.</p>
+<p><code>for</code> 문 작성 규칙을 다시 보면 Condition, ForClause, RangeClause가 모두 선택사항이다. 즉, <code>for</code> 뒤에 아무것도 쓰지 않을 수도 있다. 또, <a href="#for-처럼-사용하기">for 처럼 사용하기</a>에서 ForClause를 봐도 InitStmt, Condition, PostStmt를 모두 쓰지 않고 세미콜론만 두 개 쓸 수도 있다.  이 두 경우는 같은 의미로 Condition 자리에 <code>true</code>가 있는 것으로 처리된다.</p>
 
-<p>또, <a href="#for-처럼-사용하기">for 처럼 사용하기</a>에서 ForClause를 봐도 InitStmt, Condition, PostStmt를 모두 쓰지 않고 세미콜론만 두 개 쓸 수도 있다.</p>
+<p>어디서 비슷한 것을 본 것 같지 않은가? 바로 <code>switch</code> 조건문에서 <code>switch</code> 뒤 Expression을 생략했을 때와 같은 처리 방식이다. 관련 내용은 <a href="https://tramamte.github.io/2018/06/20/fun-switch/">이 글</a>을 참조하라.</p>
 
-<p>이 두 경우는 같은 의미로 Condition 자리에 <code>true</code>가 있는 것으로 처리된다.</p>
-
-<p>어디서 비슷한 것을 본 것 같지 않은가? 바로 <code>switch</code> 조건문에서 <code>switch</code> 뒤 Expression을 생략했을 때와 같은 처리 방식이다.&mdash;<a href="https://tramamte.github.io/2018/06/20/fun-switch/">참조</a></p>
-
-<p>따라서 아래 코드들은 모두 무한루프를 만드는 방법이다.</p>
+<p>아래 코드들은 모두 무한루프를 만드는 방법이다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">for</span> <span style="color:#00a8c8">true</span> <span style="color:#111">{</span>
     <span style="color:#f92672">...</span>
 <span style="color:#111">}</span>

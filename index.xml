@@ -18,7 +18,7 @@
       <pubDate>Tue, 03 Jul 2018 22:35:19 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/07/03/deep-inside-constants/</guid>
-      <description>이 글은 마지막 Commit ID가 4ba55273713bebfbfe0bed9ce196e845c0c69567인 Go 소스 코드를 기준으로 합니다. 함수명, 변</description>
+      <description>이 글은 마지막 commit id가 4ba5527&amp;hellip;인 Go 소스 코드를 기준으로 합니다. 함수명, 변수/상수명, 변수/상수값 등은 버전에 따라 다를 수 있습니</description>
     </item>
     
     <item>
@@ -54,7 +54,7 @@
       <pubDate>Wed, 20 Jun 2018 23:15:37 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/06/20/docker-copy/</guid>
-      <description>$ docker cp --help Usage: docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|- docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH Copy files/folders between a container and the local filesystem Options: -L, --follow-link Always follow symbol link in SRC_PATH --help Print usage 현재 사용하고 있는 docker 버전은 17.05.0-ce인데 docker docs&amp;mdash;18.03 기준&amp;mdash</description>
+      <description>$ docker cp --help Usage: docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|- docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH Copy files/folders between a container and the local filesystem Options: -L, --follow-link Always follow symbol link in SRC_PATH --help Print usage 현재 사용하고 있는 docker 버전은 17.05.0-ce인데 18.03 버전 기준의 docker doc</description>
     </item>
     
     <item>
@@ -126,7 +126,7 @@
       <pubDate>Thu, 07 Jun 2018 23:11:28 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/06/07/resolve-sample-error/</guid>
-      <description>jBPM / Drools 개발환경 구성 방법에 따라 Eclipse에 jBPM/Drools 환경 구성 후 새로운 jBPM project를 maven 기반으로 생성하고 실행하면 오류가 발생한다. jBPM project 생성 절차 File - New</description>
+      <description>jBPM / Drools 개발환경 구성 방법에 따라 Eclipse에 jBPM/Drools 환경 구성 후 새로운 jBPM 프로젝트를 maven 기반으로 생성하고 실행하면 오류가 발생한다. jBPM 프로젝트 생성 절차 File - New</description>
     </item>
     
     <item>
@@ -189,7 +189,7 @@
       <pubDate>Mon, 04 Jun 2018 13:56:33 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/06/04/eclipse-install/</guid>
-      <description>1. Oracle JDK 설치 Java SE 8 버전 추천 2. Eclipse 설치 Eclipse IDE for Java EE Developers 받아서 압축 해제 3. Runtime 설치 Drools에서 Final 버전 내려받아 적당한 위치에 압축 해제 jBPM에서 Final-bin 버전&amp;md</description>
+      <description>1. Oracle JDK 설치 Java SE 8 버전 추천 2. Eclipse 설치 Eclipse IDE for Java EE Developers 받아서 압축 해제 3. Runtime 설치 Drools에서 Final 버전 내려받아 적당한 위치에 압축 해제 jBPM에서 *.Final-bin.zip 형태의 final binary</description>
     </item>
     
     <item>

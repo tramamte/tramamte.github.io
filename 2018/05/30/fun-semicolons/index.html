@@ -322,9 +322,9 @@
 
 <h1 id="identifiers">Identifiers</h1>
 
-<p>Go 언어에는 4 종류의 토큰이 있다: identifiers, keywords, operators and punctuation, literal.&mdash;자세한 사항은 <a href="https://golang.org/ref/spec">The Go Programming Language Specification</a> 참고</p>
+<p>Go 언어에는 4 종류의 토큰이 있다: identifiers, keywords, operators and punctuation, literal. 자세한 사항은 <a href="https://golang.org/ref/spec">The Go Programming Language Specification</a>을 참고한다.</p>
 
-<p>다른 것들은 C/C++, Java와 유사한데, 흔히 얘기하는 <strong>기본 타입</strong>&mdash;int, float 같은 것들&mdash;이 Go의 경우에는 keyword가 아닌 identifier에 포함된다. Go의 <strong>Predeclared identifier</strong>는 다음과 같다.</p>
+<p>다른 것들은 C/C++, Java와 유사한데, <code>int</code>, <code>float</code> 같은 흔히 얘기하는 기본 타입들이 Go의 경우에는 keyword가 아닌 identifier에 포함된다. Go의 <strong>Predeclared identifier</strong>는 다음과 같다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Types:
 </span><span style="color:#75715e"></span>	<span style="color:#00a8c8">bool</span> <span style="color:#00a8c8">byte</span> <span style="color:#00a8c8">complex64</span> <span style="color:#00a8c8">complex128</span> <span style="color:#00a8c8">error</span> <span style="color:#00a8c8">float32</span> <span style="color:#00a8c8">float64</span>
 	<span style="color:#00a8c8">int</span> <span style="color:#00a8c8">int8</span> <span style="color:#00a8c8">int16</span> <span style="color:#00a8c8">int32</span> <span style="color:#00a8c8">int64</span> <span style="color:#00a8c8">rune</span> <span style="color:#00a8c8">string</span>
@@ -339,7 +339,7 @@
 <span style="color:#75715e">// Functions:
 </span><span style="color:#75715e"></span>	<span style="color:#75af00">append</span> <span style="color:#75af00">cap</span> <span style="color:#75af00">close</span> <span style="color:#75af00">complex</span> <span style="color:#75af00">copy</span> <span style="color:#75af00">delete</span> <span style="color:#75af00">imag</span> <span style="color:#75af00">len</span>
 	<span style="color:#75af00">make</span> <span style="color:#75af00">new</span> <span style="color:#75af00">panic</span> <span style="color:#75af00">print</span> <span style="color:#75af00">println</span> <span style="color:#75af00">real</span> <span style="color:#75af00">recover</span></code></pre></div>
-<p>Go의 타입이 뒤에 오는 비상식적&mdash;idiomatic 이라 주장하는&mdash; 선언법과 초기화 문법 등을 모두 포함해 단 하나의 문장,</p>
+<p>Go가 자연스럽다(idiomatic) 주장하는 타입이 뒤에 오는 비상식적 선언법과 초기화 문법 등을 모두 포함해 단 하나의 문장,</p>
 
 
 
@@ -353,7 +353,7 @@
 </blockquote>
 
 
-<p>으로 표현해 버리는 용기, 그를 뒷받침하기 위해 identifier로 몰아버림으로써 익숙한 것들을 깨버리는 대범함. 멋지지 않은가?</p>
+<p>으로 표현해 버리는 용기, 그를 뒷받침하기 위해 익숙한 많은 것을 identifier로 몰아버림으로써 상식을 깨버리는 대범함. 멋지지 않은가?</p>
 
 <h1 id="세미콜론-가지고-놀기">세미콜론 가지고 놀기</h1>
 
@@ -453,7 +453,7 @@
 
 <p>Go는 디렉토리 구조 등 어떤 면에서는 개발자의 자유도를 구속하는 측면이 있다. 하지만 또 다른 면에서는 &lsquo;그건 구속하면서 이건 왜 이렇게 헐렁해?&rsquo; 라는 의문을 갖게 하기도 한다.</p>
 
-<p>&lsquo;어떤 코드가 아름다운가?&lsquo;라는 물음에는 각자의 답이 다르겠지만 &lsquo;어떤 코드가 보기 좋은가?&lsquo;에 대한 답은 대부분의 개발자가 비슷하지 않을까? <strong>아름답다</strong>의 기준에는 분명 <strong>보기 좋다</strong>도 하나의 요소로 포함된다.</p>
+<p>&ldquo;어떤 코드가 아름다운가?&ldquo;라는 물음에는 각자의 답이 다르겠지만 &ldquo;어떤 코드가 보기 좋은가?&ldquo;에 대한 답은 대부분의 개발자가 비슷하지 않을까? <strong>아름답다</strong>의 기준에는 분명 <strong>보기 좋다</strong>도 하나의 요소로 포함된다.</p>
 <div class="footnotes">
 
 <hr />

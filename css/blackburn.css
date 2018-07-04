@@ -9,6 +9,8 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  word-wrap: break-word;
+  word-break: normal;
 }
 
 /* link color */
@@ -206,6 +208,7 @@ article > footer {
 .content > h4,
 .content > h5 {
   margin: 2.5em 0 1.25em 0;
+  line-height: 1.2em;
 }
 
 .content > h1:not(.no-before):before {
@@ -270,7 +273,7 @@ figcaption > p {
 
 figcaption > h4,
 figcaption > p {
-  line-height: 1.3rem;
+  line-height: 1.2rem;
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
   -webkit-margin-start: 0;
@@ -347,7 +350,7 @@ code {
 p > code,
 li > code {
   display: inline-block;
-  white-space: no-wrap;
+  white-space: nowrap;
   line-height: 1.4em;
   border: 1px solid #ddd;
   -webkit-border-radius: 0.2rem;

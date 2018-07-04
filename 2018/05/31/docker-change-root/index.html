@@ -298,18 +298,18 @@
 
   
 
-<p><a href="https://blog.docker.com/2015/07/new-apt-and-yum-repos/">Docker blog</a>에 있는 내용에 따라 Ubuntu에 apt repository를 추가하고 Docker를 설치한 경우 image나 container 등이 저장되는 기본 경로는 <code>/var/lib/docker</code>이다.</p>
+<p><a href="https://blog.docker.com/2015/07/new-apt-and-yum-repos/">Docker blog</a>에 있는 내용에 따라 Ubuntu에 apt repository를 추가하고 Docker를 설치한 경우 image나 container 등이 저장되는 기본 경로는 /var/lib/docker/이다.</p>
 
 <h1 id="1단계-검색">1단계 검색</h1>
 
-<p>가장 많이 나오는 내용은 Docker 기본 설정파일  <code>/etc/default/docker</code>에 graph option을 추가해 경로를 변경하라는 것이다. 거의가 3~4년 전 글들이라 찜찜하긴 하지만 일단 따라가 본다.</p>
+<p>가장 많이 나오는 내용은 Docker 기본 설정파일  /etc/default/docker에 graph option을 추가해 경로를 변경하라는 것이다. 거의가 3~4년 전 글들이라 찜찜하긴 하지만 일단 따라가 본다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ls /etc/default/docker
 /etc/default/docker</code></pre></div>
 <p>설정파일이 있다! 열어보면,</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">...
 <span style="color:#75715e"># THIS FILE DOES NOT APPLY TO SYSTEMD
 </span><span style="color:#75715e"></span>...</code></pre></div>
-<p>Ubuntu가 15.10 버전부터 systemd를 기본으로 채택했으니 지금 사용하는 버전&mdash;16.04&mdash;에서는 안 될 것 같지만&hellip;</p>
+<p>Ubuntu가 15.10 버전부터 systemd를 기본으로 채택했으니 지금 사용하는 버전인 16.04에서는 안 될 것 같지만&hellip;</p>
 
 <p><strong>역시 안 된다.</strong></p>
 
@@ -317,7 +317,7 @@
 
 <p><a href="https://success.docker.com/article/how-do-i-set-the-docker-daemon-options">Docker Success Center</a>에 글이 있다. systemd service 파일을 수정하는 방식이다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ systemctl edit docker.service</code></pre></div>
-<p>두둥~ 아무 내용이 없다. 원본이 어떻게 생긴지 알아야 수정을 해도 할 것 아닌가.</p>
+<p>아무 내용이 없다. 원본이 어떻게 생긴지 알아야 수정을 해도 할 것 아닌가.</p>
 
 
 
@@ -338,7 +338,7 @@
 docker.service - Docker Application Container Engine
 Loaded: loaded <span style="color:#f92672">(</span>/lib/systemd/system/docker.service<span style="color:#111">;</span> enabled<span style="color:#111">;</span> vendor preset: enabled<span style="color:#f92672">)</span>
 ...</code></pre></div>
-<p>docker.service 파일은 <code>/lib/systemd/system/docker.service</code>에 있다.</p>
+<p>docker.service 파일은 /lib/systemd/system/docker.service에 있다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 아래 부분을 찾아
 </span><span style="color:#75715e"></span><span style="color:#111">ExecStart</span><span style="color:#f92672">=</span>/usr/bin/dockerd -H fd://
 <span style="color:#75715e"># 이렇게 고친다.

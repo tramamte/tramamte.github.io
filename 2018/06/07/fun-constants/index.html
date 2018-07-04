@@ -368,7 +368,7 @@ int</pre></div>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">./main.go:7:16: constant 324518553658426726783156020576256 overflows int</pre></div>
 <p>오류 발생 시점이 달라졌다. 7라인, <code>Println()</code>을 호출할 때 오류가 발생한다.</p>
 
-<p>그렇다면 할당할 때&mdash;<code>const i = 256 &lt;&lt; 100</code>&mdash;는 오류가 발생하지 않는다는 의미일까?</p>
+<p>그렇다면 <code>const i = 256 &lt;&lt; 100</code> 코드로 값을 할당할 때는 오류가 발생하지 않는다는 의미일까?</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
 
 <span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>

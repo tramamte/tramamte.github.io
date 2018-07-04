@@ -301,7 +301,7 @@
 
 <div class="box">
 
-<p>이 글은 마지막 Commit ID가 4ba55273713bebfbfe0bed9ce196e845c0c69567인 Go 소스 코드를 기준으로 합니다. 함수명, 변수/상수명, 변수/상수값 등은 Commit ID에 따라 다를 수 있습니다.</p>
+<p>이 글은 마지막 commit id가 4ba5527&hellip;인 Go 소스 코드를 기준으로 합니다. 함수명, 변수/상수명, 변수/상수값 등은 버전에 따라 다를 수 있습니다.</p>
 
 <p>최신 Go 소스 코드는 <a href="https://go.googlesource.com/go">Go Google Git Site</a>에서 확인할 수 있습니다.</p>
 
@@ -312,7 +312,7 @@
 
 <p>아직 함수, 구조체 등 다루지 않은 것 투성이지만 대략의 처리 방법을 이해하는데는 무리가 없을 것이라 예상한다. 이것저것 다 귀찮다면 <a href="#결론">결론</a>이라도 꼭 보길 바란다.</p>
 
-<p>확인을 위해 작성한 코드는 다음과 같다.</p>
+<p>확인을 위해 작성한 코드는 아래와 같다.</p>
 
 <div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -349,9 +349,25 @@
 
 <p>로 각각 할당했다. 값의 기준은 차치하고, 모두 오류가 발생하는 것으로 보아 타입을 지정하지 않은 정수형 상수도 저장할 수 있는 한계가 있다는 것을 알 수 있다.</p>
 
+<hr />
+
+
+
+
+
+<blockquote class="note">
+
+
+<p>아래에서 언급하는 Go 컴파일러 소스 파일들은 별도 언급이 없는 한 모두 아래 경로에 위치한다.</p>
+
+<p>go/src/cmd/compile/internal/gc/</p>
+
+</blockquote>
+
+
 <h1 id="순수-literal-상수의-한계-처리">순수 literal 상수의 한계 처리</h1>
 
-<p>이제 Go 컴파일러의 소스 코드로 들어가 보자. 앞에서의 복잡한 처리는 무시하고,  go/src/cmd/compile/internal/gc/noder.go 부터 보면 될 것 같다. 이 파일에는 <code>expr()</code>이라는 함수가 있는데, <code>i1</code>을 처리하는 부분의 코드는 다음과 같다.</p>
+<p>이제 Go 컴파일러의 소스 코드로 들어가 보자. 앞에서의 복잡한 처리는 무시하고,  noder.go 부터 보면 될 것 같다. 이 파일에는 <code>expr()</code>이라는 함수가 있는데, <code>i1</code>을 처리하는 부분의 코드는 다음과 같다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// noder.go
 </span><span style="color:#75715e"></span>
 <span style="color:#00a8c8">func</span> <span style="color:#111">(</span><span style="color:#75af00">p</span> <span style="color:#f92672">*</span><span style="color:#75af00">noder</span><span style="color:#111">)</span> <span style="color:#75af00">expr</span><span style="color:#111">(</span><span style="color:#75af00">expr</span> <span style="color:#75af00">syntax</span><span style="color:#111">.</span><span style="color:#75af00">Expr</span><span style="color:#111">)</span> <span style="color:#f92672">*</span><span style="color:#75af00">Node</span> <span style="color:#111">{</span>
@@ -371,7 +387,7 @@
     <span style="color:#00a8c8">return</span> <span style="color:#75af00">Val</span><span style="color:#111">{</span><span style="color:#75af00">U</span><span style="color:#111">:</span> <span style="color:#75af00">x</span><span style="color:#111">}</span>
   <span style="color:#f92672">...</span>
 <span style="color:#111">}</span></code></pre></div>
-<p><code>Mpint</code>는 go/src/cmd/compile/internal/gc/mpint.go에 다음과 같이 정의돼 있다.</p>
+<p><code>Mpint</code>는 mpint.go에 다음과 같이 정의돼 있다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// mpint.go
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">// Mpint represents an integer constant.
@@ -447,9 +463,9 @@
 <li><code>expr()</code> 함수 재귀호출을 통해 <code>expr.X</code>, <code>expr.Y</code>를 처리하는데 모두 <a href="#순수-literal-상수의-한계-처리">순수 literal 상수의 한계 처리</a>에서와 동일한 절차를 거쳐 <code>Mpint</code>로 변환된다. 즉, 2, 511, 512 모두 크기와 관계없이 <code>Mpint</code>가 된다.</li>
 </ol>
 
-<p>호출하는 부분은 건너뛰고, 연산자&mdash;&lt;&lt;; left shift&mdash;와 두 개의 피연산자&mdash;<code>Mpint</code> 형태의 2, 511 또는 512&mdash;가 준비됐으니 계산하는 코드를 살펴보자.</p>
+<p>호출하는 부분은 건너뛰고, 연산자와 두 개의 <code>Mpint</code> 형태의 피연산자가 준비됐으니 계산하는 코드를 살펴보자.</p>
 
-<p><div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 2
@@ -496,11 +512,11 @@
 	<span style="color:#75af00">a</span><span style="color:#111">.</span><span style="color:#75af00">Val</span><span style="color:#111">.</span><span style="color:#75af00">Lsh</span><span style="color:#111">(</span><span style="color:#f92672">&amp;</span><span style="color:#75af00">a</span><span style="color:#111">.</span><span style="color:#75af00">Val</span><span style="color:#111">,</span> <span style="color:#111">uint</span><span style="color:#111">(</span><span style="color:#75af00">s</span><span style="color:#111">))</span>
 <span style="color:#111">}</span></code></pre></td></tr></table>
 </div>
-</div></p>
+</div>
 
-<p><code>i2</code>를 보자. <code>a</code>는 2, <code>b</code>는 512이다. 5라인에서 <code>s</code>에 512를 넣고 6라인의 조건&mdash;<code>s &gt;= Mpprec</code>&mdash;에 의해 &ldquo;shift count too large&rdquo;가 출력된다.</p>
+<p><code>i2</code>를 보자. <code>a</code>는 2, <code>b</code>는 512이다. 5라인에서 <code>s</code>에 512를 넣고 6라인의 조건에 의해 &ldquo;shift count too large&rdquo;가 출력된다.</p>
 
-<p>반면 <code>i3</code>는 <code>b</code>가 511이므로 6라인은 넘어가지만 16라인에서 <code>checkOverflow()</code> 함수의 인자로 511이 넘어가고 <code>a</code>의 비트수가 2이므로&mdash;<code>a</code>는 2이므로 2진수로 표현하면 0b10 이다.&mdash; overflow 처리돼 &ldquo;constant shift overflow&rdquo; 오류가 출력된다.</p>
+<p>반면 <code>i3</code>는 <code>b</code>가 511이므로 6라인은 넘어가지만 16라인에서 <code>checkOverflow()</code> 함수의 인자로 511이 넘어가고 <code>a</code>의 비트수가 2이므로&mdash;<code>a</code>는 2이므로 2진수로는 두 비트가 필요하다.&mdash; overflow 처리돼 &ldquo;constant shift overflow&rdquo; 오류가 출력된다.</p>
 
 <h1 id="결론">결론</h1>
 

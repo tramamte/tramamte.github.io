@@ -275,7 +275,7 @@
 
 <p>Go의 <code>switch</code> 작성 규칙은 다음과 같다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">SwitchStmt = ExprSwitchStmt | TypeSwitchStmt .</pre></div>
-<p>이 중 ExprSwitchStmt이 기본 용법으로 볼 수 있다.&mdash;TypeSwitchStmt에 대한 것은 추후 관련 항목을 다룰 때 다시 살펴보자.</p>
+<p>이 중 ExprSwitchStmt이 기본 용법으로 볼 수 있다. TypeSwitchStmt에 대한 것은 추후 관련 항목을 다룰 때 다시 살펴보자.</p>
 
 <p>ExprSwitchStmt 규칙은 다음과 같다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">ExprSwitchStmt = &#34;switch&#34; [ SimpleStmt &#34;;&#34; ] [ Expression ] &#34;{&#34; { ExprCaseClause } &#34;}&#34; .
@@ -307,7 +307,7 @@ ExprSwitchCase = &#34;case&#34; ExpressionList | &#34;default&#34; .</pre></div>
         <span style="color:#00a8c8">break</span><span style="color:#111">;</span>
 <span style="color:#111">}</span></code></pre></div>
 <p>Go는 <code>break</code>를 기본으로 한 대신 다음 <code>case</code>로 이어 실행하는 별도의 키워드를 마련해 두었다. 바로 <code>fallthrough</code>이다. C/C++이나 Java로 작성했던 <code>switch</code> 문이 있다면 한 번 열어서 확인해 보자. 각 <code>case</code> 별로 <code>break</code>를 쓴 경우가 많은지, fallthrough로 작성한 것이 많은지. 더 자주 사용하는 방식을 기본으로 정하는 것은 꽤나 합리적으로 보인다. 위 c code는 <code>fallthrough</code>를 사용해 다음과 같이 쓸 수 있다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Go code
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// go code
 </span><span style="color:#75715e"></span><span style="color:#00a8c8">var</span> <span style="color:#75af00">i</span> <span style="color:#00a8c8">uint</span> <span style="color:#111">=</span> <span style="color:#ae81ff">1</span>
 
 <span style="color:#00a8c8">switch</span> <span style="color:#75af00">i</span> <span style="color:#111">{</span>
@@ -321,7 +321,7 @@ ExprSwitchCase = &#34;case&#34; ExpressionList | &#34;default&#34; .</pre></div>
     <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;&gt; 2&#34;</span><span style="color:#111">)</span>
 <span style="color:#111">}</span></code></pre></div>
 <p>그런데 이것도 c code에 비해 좀 깔끔한 맛이 덜하다. <code>fallthrough</code> 할 <code>case</code>가 많아질수록 점점 더 이런 경향은 짙어질 것이 뻔하다. 그래서 또 준비한 것이  <code>case</code> 뒤에 ExpressionList를 둔 것이다.  Expression들을 comma(,)로 붙여둔 것이 ExpressionList이다. 따라서 위 코드는 다음과 같이 작성할 수도 있다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Go code
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// go code
 </span><span style="color:#75715e"></span><span style="color:#00a8c8">var</span> <span style="color:#75af00">i</span> <span style="color:#00a8c8">uint</span> <span style="color:#111">=</span> <span style="color:#ae81ff">1</span>
 
 <span style="color:#00a8c8">switch</span> <span style="color:#75af00">i</span> <span style="color:#111">{</span>

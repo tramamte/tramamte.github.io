@@ -289,12 +289,12 @@
 </div>
 <div id="toc" style="display: none;"><nav id="TableOfContents">
 <ul>
-<li><a href="#jbpm-project-생성-절차">jBPM project 생성 절차</a></li>
+<li><a href="#jbpm-프로젝트-생성-절차">jBPM 프로젝트 생성 절차</a></li>
 <li><a href="#오류">오류</a></li>
 <li><a href="#원인">원인</a></li>
 <li><a href="#해결법">해결법</a>
 <ul>
-<li><a href="#pom-xml에-포함된-낮은-버전의-library들-삭제">pom.xml에 포함된 낮은 버전의 library들 삭제</a></li>
+<li><a href="#pom-xml에-포함된-낮은-버전의-라이브러리들-삭제">pom.xml에 포함된 낮은 버전의 라이브러리들 삭제</a></li>
 <li><a href="#jbpm-library를-build-path에서-제거">jBPM Library를 Build Path에서 제거</a></li>
 </ul></li>
 </ul>
@@ -305,44 +305,44 @@
 
   
 
-<p><a href="https://tramamte.github.io/2018/06/04/eclipse-install/">jBPM / Drools 개발환경 구성</a> 방법에 따라 Eclipse에 jBPM/Drools 환경 구성 후 새로운 jBPM project를 maven 기반으로 생성하고 실행하면 오류가 발생한다.</p>
+<p><a href="https://tramamte.github.io/2018/06/04/eclipse-install/">jBPM / Drools 개발환경 구성</a> 방법에 따라 Eclipse에 jBPM/Drools 환경 구성 후 새로운 jBPM 프로젝트를 maven 기반으로 생성하고 실행하면 오류가 발생한다.</p>
 
-<h1 id="jbpm-project-생성-절차">jBPM project 생성 절차</h1>
+<h1 id="jbpm-프로젝트-생성-절차">jBPM 프로젝트 생성 절차</h1>
 
 <ol>
 <li><p>File - New - jBPM project 선택</p></li>
 
-<li><p>Example을 포함한 project 생성 선택&mdash;두 번째 버튼
+<li><p>Example을 포함한 프로젝트 생성 선택; 두 번째 버튼
 <img src="https://tramamte.github.io/posts/bprm/jbpm_error_01.png" alt="error_01" /></p></li>
 
 <li><p>Build the Project using 항목에서 <strong>Maven</strong> 선택
 <img src="https://tramamte.github.io/posts/bprm/jbpm_error_02.png" alt="error_02" /></p></li>
 
-<li><p>Add a simple hello world process 선택한 상태로 project 생성</p></li>
+<li><p>Add a simple hello world process 선택한 상태로 프로젝트 생성</p></li>
 </ol>
 
 <h1 id="오류">오류</h1>
 
-<p>위와 같이 생성한 project를 실행하면 다음과 같은 오류가 발생한다.</p>
+<p>위와 같이 생성한 프로젝트를 실행하면 다음과 같은 오류가 발생한다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Exception in thread &#34;main&#34; java.lang.NoSuchMethodError: org.jbpm.test.JBPMHelper.setupDataSource()Lbitronix/tm/resource/jdbc/PoolingDataSource;
 	at com.sample.ProcessMain.createRuntimeManager(ProcessMain.java:34)
 	at com.sample.ProcessMain.main(ProcessMain.java:23)</pre></div>
 <h1 id="원인">원인</h1>
 
-<p>오류 내용으로는 짐작하기 어렵게도, 원인은 버전이 다른 library들이 포함돼 있는 것이다.</p>
+<p>오류 내용으로는 짐작하기 어렵게도, 원인은 버전이 다른 라이브러리들이 포함돼 있는 것이다.</p>
 
-<p>개발 환경을 구성할 때 jBPM runtime도 설치/설정했기 때문에 새로운 jBPM project를 만들면 Eclipse는 자동으로 jBPM Library를 포함시킨다. 그런데 sample project의 pom.xml에도 같은 library들&mdash;버전이 낮은&mdash;이 포함돼 있다.</p>
+<p>개발 환경을 구성할 때 jBPM 런타임도 설치/설정했기 때문에 새로운 jBPM 프로젝트를 만들면 Eclipse는 자동으로 jBPM Library를 포함시킨다. 그런데 샘플 프로젝트의 pom.xml에도 버전이 낮은 같은 라이브러리들이 포함돼 있다.</p>
 
 
 <figure>
     
-        <img src="https://tramamte.github.io/posts/bprm/jbpm_error_03.png" alt="Maven Dependencies와 jBPM Library에는 버전이 다른 library들이 포함돼 있다." />
+        <img src="https://tramamte.github.io/posts/bprm/jbpm_error_03.png" alt="Maven Dependencies와 jBPM Library에는 버전이 다른 라이브러리들이 포함돼 있다." />
     
     
     <figcaption>
         <h4>Project Explorer</h4>
         <p>
-        Maven Dependencies와 jBPM Library에는 버전이 다른 library들이 포함돼 있다.
+        Maven Dependencies와 jBPM Library에는 버전이 다른 라이브러리들이 포함돼 있다.
         
             
         
@@ -356,7 +356,7 @@
 
 <p>아래 두 가지 방법 중 하나로 해결할 수 있다.</p>
 
-<h2 id="pom-xml에-포함된-낮은-버전의-library들-삭제">pom.xml에 포함된 낮은 버전의 library들 삭제</h2>
+<h2 id="pom-xml에-포함된-낮은-버전의-라이브러리들-삭제">pom.xml에 포함된 낮은 버전의 라이브러리들 삭제</h2>
 
 <ol>
 <li>pom.xml</li>
@@ -371,7 +371,7 @@
 <li>Build Path - Remove from Build Path 선택</li>
 </ol>
 
-<p>이 경우에는 구버전&mdash;7.0.0&mdash;의 library를 사용하는데 다음과 같은 방법으로 변경할 수 있다.</p>
+<p>이 경우에는 구버전인 7.0.0의 라이브러리를 사용하는데 다음과 같은 방법으로 변경할 수 있다.</p>
 
 <ol>
 <li>pom.xml</li>
