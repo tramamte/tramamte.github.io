@@ -1,7 +1,8 @@
 (function (window, document) {
+	var line = document.getElementById("scrollLine");
+
     function scrollPosIndicator() {
-		var line = document.getElementById("scrollLine"),
-			pos = window.pageYOffset,
+		var pos = window.pageYOffset,
 			height = document.body.clientHeight - window.innerHeight,
 			scrolled = (pos / height) * 100;
 
