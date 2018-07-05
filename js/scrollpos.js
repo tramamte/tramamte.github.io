@@ -2,7 +2,7 @@
     function scrollPosIndicator() {
 		var line = document.getElementById("scrollLine"),
 			pos = window.pageYOffset,
-			height = document.documentElement.scrollHeight - document.documentElement.clientHeight,
+			height = document.body.clientHeight - window.innerHeight,
 			scrolled = (pos / height) * 100;
 
 		line.style.width = (scrolled + '%')
