@@ -45,19 +45,11 @@ i {
   padding: 1em 0.6em;
 }
 
-/* side menu show/hide button */
-.menu-link,
-.menu-link:focus,
-.menu-link:hover {
-  background: rgba(0, 21, 32, 0.3);
-}
-@media (hover: hover) {
-  .menu-link:hover {
-    background: rgba(0, 21, 32, 1);
-  }
+.menu-link {
+  color: rgba(0, 0, 0, 0.3);  
 }
 .menu-link.active {
-  background: rgba(0, 21, 32, 1);
+  color: white;
 }
 
 /* side menu background */
