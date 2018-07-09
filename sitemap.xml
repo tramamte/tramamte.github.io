@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://tramamte.github.io/2018/07/09/function/</loc>
+    <lastmod>2018-07-09T12:50:21+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tramamte.github.io/2018/07/08/hanks-oven-03/</loc>
     <lastmod>2018-07-08T23:15:00+09:00</lastmod>
   </url>
@@ -164,7 +169,7 @@
   
   <url>
     <loc>https://tramamte.github.io/</loc>
-    <lastmod>2018-07-08T23:15:00+09:00</lastmod>
+    <lastmod>2018-07-09T12:50:21+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -248,7 +253,7 @@
   
   <url>
     <loc>https://tramamte.github.io/topics/go/</loc>
-    <lastmod>2018-07-03T22:35:19+09:00</lastmod>
+    <lastmod>2018-07-09T12:50:21+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -308,7 +313,7 @@
   
   <url>
     <loc>https://tramamte.github.io/posts/</loc>
-    <lastmod>2018-07-08T23:15:00+09:00</lastmod>
+    <lastmod>2018-07-09T12:50:21+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -338,7 +343,7 @@
   
   <url>
     <loc>https://tramamte.github.io/tags/syntax-go/</loc>
-    <lastmod>2018-06-29T22:55:08+09:00</lastmod>
+    <lastmod>2018-07-09T12:50:21+09:00</lastmod>
     <priority>0</priority>
   </url>
   
