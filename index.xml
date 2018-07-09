@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 03 Jul 2018 22:35:19 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 08 Jul 2018 23:15:00 +0900</lastBuildDate>
     
 	<atom:link href="https://tramamte.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>피자 화덕 만들기 3</title>
+      <link>https://tramamte.github.io/2018/07/08/hanks-oven-03/</link>
+      <pubDate>Sun, 08 Jul 2018 23:15:00 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2018/07/08/hanks-oven-03/</guid>
+      <description>기술이 없으니 몸으로 부딪히는 피자 화덕 제작기 상부 돔을 먼저 만들면서 절실히 깨달은 점 하나. 집은 바닥부터 지어야 한다. 돔을 따로 만들어 놓고 뚜껑처럼 덜렁 들어서</description>
+    </item>
     
     <item>
       <title>정수형 상수의 내부 처리</title>
