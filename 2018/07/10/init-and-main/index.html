@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="특수 목적의 함수들, main과 init">
+  <meta name="generator" content="Hugo 0.42.2" />
+
+  <title>특이한 함수들 &middot; Awesome Patrick</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://tramamte.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://tramamte.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://tramamte.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700|Nanum+Gothic+Coding:400,700|Raleway:400,700|Roboto+Mono" rel="stylesheet">
+  
+
+  
+
+  
+    
+      
+  
+  <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js" onload="mermaidReady()" defer></script>
+  <script>
+    var mermaidReady = function() {
+      var config = {
+        startOnLoad: true,
+        theme: "neutral"
+      }
+      mermaid.initialize(config);
+    };
+  </script>
+      
+    
+  
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="apple-touch-icon" sizes="57x57" href="https://tramamte.github.io/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://tramamte.github.io/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://tramamte.github.io/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://tramamte.github.io/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://tramamte.github.io/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://tramamte.github.io/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://tramamte.github.io/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://tramamte.github.io/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://tramamte.github.io/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://tramamte.github.io/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tramamte.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://tramamte.github.io/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://tramamte.github.io/favicon-16x16.png">
+<link rel="manifest" href="https://tramamte.github.io/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="https://tramamte.github.io/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  <i class="far fa-arrow-alt-circle-right fa-2x fa-fw" style="margin: 0; padding: 0;"></i>
+</a>
+
+<div id="menu">
+  
+  <a class="pure-menu-heading brand" href="https://tramamte.github.io/">Awesome<br>Patrick</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/"><i class='fas fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/topics/"><i class='fas fa-folder fa-fw'></i>Topics</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/tags/"><i class='fas fa-tag fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/posts/"><i class='fas fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/about/"><i class='fas fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://tramamte.github.io/index.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+    </li>
+    
+
+  </ul>
+</div>
+
+</div>
+<div id="menuBackground"></div>
+  
+  <div id="mask"></div>
+  <div id="main">
+
+
+<div class="header">
+  <h1>특이한 함수들</h1>
+  <h2>특수 목적의 함수들, main과 init</h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fas fa-calendar-alt fa-fw"></i>
+    <time>Jul 10, 2018 19:40</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fas fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/go">go</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fas fa-tag fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/fun-go">fun-go</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  
+<script>
+  function toggleToc() {
+    var x = document.getElementById("toc");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+  }
+</script>
+
+<div class="post-meta">
+<div>
+  <i class="fas fa-file-alt fa-fw"></i>
+  <a href="javascript:toggleToc();">Table of Contents</a>
+</div>
+<div id="toc" style="display: none;"><nav id="TableOfContents">
+<ul>
+<li><a href="#init-함수-정의">init() 함수 정의</a></li>
+<li><a href="#main-과-init-의-호출-순서">main()과 init()의 호출 순서</a></li>
+<li><a href="#명시적으로-정의한-init-함수">명시적으로 정의한 init() 함수</a>
+<ul>
+<li><a href="#복수의-init-함수들">복수의 init() 함수들</a></li>
+<li><a href="#여기저기-흩어진-init-함수들">여기저기 흩어진 init() 함수들</a></li>
+<li><a href="#init-함수들의-호출-순서">init() 함수들의 호출 순서</a></li>
+</ul></li>
+<li><a href="#임포트한-패키지의-init-함수">임포트한 패키지의 init() 함수</a>
+<ul>
+<li><a href="#임포트한-패키지에서-임포트한-패키지">임포트한 패키지에서 임포트한 패키지</a></li>
+<li><a href="#중복-임포트한-패키지">중복 임포트한 패키지</a></li>
+</ul></li>
+<li><a href="#숙제의-답은">숙제의 답은?</a></li>
+</ul>
+</nav></div>
+</div>
+
+
+
+  
+
+
+
+
+<div class="box">
+
+<p>본문 중 심볼(symbol)에 대한 내용은 편의상 리눅스 환경에서 빌드한 바이너리를 readelf 명령으로 확인한 결과입니다.</p>
+
+</div>
+
+
+<p>C/C++, Java에서 가장 특이한 함수는 누가 뭐래도 프로세스의 시작점(entry point)이 되는 <code>main()</code> 함수일 것이다. 이 함수는 프로세스 시작 시점에 자동으로 호출되며, 소스 코드 내에서 별도로 호출하지 않는다. Go 역시 <code>main()</code> 함수가 시작점이다. 그런데 왜 글 제목이 <strong>함수들</strong>인가? 확인해 보자.</p>
+
+<blockquote>
+<p>기억할지 모르겠지만 <a href="https://tramamte.github.io/2018/06/08/import/">임포트</a>에서 말미에 숙제로 남겨둔 것이 하나 있다. 바로 blank identifier를 별칭으로 사용해 패키지를 임포트하는 것이다. 드디어 숙제를 할 때가 됐다.</p>
+</blockquote>
+
+<hr />
+
+<p>우선 간단한 Go 프로그램을 하나 작성해 보자.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#00a8c8">var</span> <span style="color:#75af00">i</span> <span style="color:#00a8c8">int</span> <span style="color:#111">=</span> <span style="color:#ae81ff">0</span>
+	<span style="color:#75af00">i</span> <span style="color:#111">=</span> <span style="color:#75af00">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+<span style="color:#111">}</span></code></pre></div>
+<p>가장 간단한 형태를 만들기 위해서 fmt 패키지도 임포트하지 않았다. 이제 이 소스 코드를 빌드해 실행 바이너리 파일&mdash;여기서는 test&mdash;을 만들어 심볼을 확인해 보자.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ readelf -s <span style="color:#111">test</span>
+...
+  <span style="color:#ae81ff">1269</span>: 000000000044c150     <span style="color:#ae81ff">1</span> FUNC    GLOBAL DEFAULT    <span style="color:#ae81ff">1</span> main.main
+  <span style="color:#ae81ff">1270</span>: 000000000044c160    <span style="color:#ae81ff">79</span> FUNC    GLOBAL DEFAULT    <span style="color:#ae81ff">1</span> main.init</code></pre></div>
+<p>main 패키지에 포함된 main 함수 심볼이 보이고, init 이라는 함수 심볼도 보인다. 바로 이 <strong>init 함수</strong>가 이 글의 주제이며 main 함수와 함께 <strong>특이한 함수들</strong>이라 복수형 표현이 가능하게 하는 주인공이다.</p>
+
+<h1 id="init-함수-정의">init() 함수 정의</h1>
+
+<p>프로세스 당 하나만 유효한 <code>main()</code> 함수와는 달리 <code>init()</code> 함수는 패키지마다 정의할 수 있으며, 초기화를 위한 수단으로 사용한다. <code>main()</code> 함수와 동일하게 인수와 반환값이 없는 형태(signature)를 가져야 한다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">func</span> <span style="color:#75af00">init</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#f92672">...</span>
+<span style="color:#111">}</span></code></pre></div>
+<p>위 간단한 예에서는 별도로 <code>init()</code> 함수를 정의하지 않았지만 심볼이 있는 것으로 보아 Go가 자동으로 함수를 추가한 것을 알 수 있다.</p>
+
+<h1 id="main-과-init-의-호출-순서">main()과 init()의 호출 순서</h1>
+
+<p>호출 순서를 알아보기 위해 소스 코드를 다음과 같이 수정해 실행해 보자.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">init</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is init()&#34;</span><span style="color:#111">)</span>
+<span style="color:#111">}</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is main()&#34;</span><span style="color:#111">)</span>
+<span style="color:#111">}</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">This is init()
+This is main()</pre></div>
+<p><code>init()</code>이 <code>main()</code>보다 먼저 호출된다. <code>init()</code>이 패키지를 초기화하기 위한 함수이고, main도 패키지이니 당연한 결과이다.</p>
+
+<h1 id="명시적으로-정의한-init-함수">명시적으로 정의한 init() 함수</h1>
+
+<p>위에서 호출 순서를 확인하기 위해 <code>init()</code> 함수를 정의했으니 이 경우의 심볼도 한 번 확인해 보자.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ readelf -s <span style="color:#111">test</span>
+...
+  <span style="color:#ae81ff">3072</span>: <span style="color:#ae81ff">0000000000482070</span>   <span style="color:#ae81ff">110</span> FUNC    GLOBAL DEFAULT    <span style="color:#ae81ff">1</span> main.init.0
+  <span style="color:#ae81ff">3073</span>: 00000000004820e0   <span style="color:#ae81ff">110</span> FUNC    GLOBAL DEFAULT    <span style="color:#ae81ff">1</span> main.main
+  <span style="color:#ae81ff">3074</span>: <span style="color:#ae81ff">0000000000482150</span>    <span style="color:#ae81ff">96</span> FUNC    GLOBAL DEFAULT    <span style="color:#ae81ff">1</span> main.init</code></pre></div>
+<p><code>init()</code> 함수를 정의하지 않은 경우에 Go가 자동으로 삽입한 main.init을 덮어쓰지 않고, main.init.0이라는 심볼이 새로 생겼다. 그렇다면 혹시 1, 2, 3&hellip;?</p>
+
+<h2 id="복수의-init-함수들">복수의 init() 함수들</h2>
+
+<p>궁금하면 직접 해보는게 약이다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">init</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is init() no. 1&#34;</span><span style="color:#111">)</span>
+<span style="color:#111">}</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">init</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is init() no. 2&#34;</span><span style="color:#111">)</span>
+<span style="color:#111">}</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">init</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is init() no. 3&#34;</span><span style="color:#111">)</span>
+<span style="color:#111">}</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is main()&#34;</span><span style="color:#111">)</span>
+<span style="color:#111">}</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">This is init() no. 1
+This is init() no. 2
+This is init() no. 3
+This is main()</pre></div>
+<p><strong>된다!</strong></p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ readelf -s <span style="color:#111">test</span>
+...
+  <span style="color:#ae81ff">3074</span>: <span style="color:#ae81ff">0000000000482070</span>   <span style="color:#ae81ff">110</span> FUNC    GLOBAL DEFAULT    <span style="color:#ae81ff">1</span> main.init.0
+  <span style="color:#ae81ff">3075</span>: 00000000004820e0   <span style="color:#ae81ff">110</span> FUNC    GLOBAL DEFAULT    <span style="color:#ae81ff">1</span> main.init.1
+  <span style="color:#ae81ff">3076</span>: <span style="color:#ae81ff">0000000000482150</span>   <span style="color:#ae81ff">110</span> FUNC    GLOBAL DEFAULT    <span style="color:#ae81ff">1</span> main.init.2
+  <span style="color:#ae81ff">3077</span>: 00000000004821c0   <span style="color:#ae81ff">110</span> FUNC    GLOBAL DEFAULT    <span style="color:#ae81ff">1</span> main.main
+  <span style="color:#ae81ff">3078</span>: <span style="color:#ae81ff">0000000000482230</span>   <span style="color:#ae81ff">106</span> FUNC    GLOBAL DEFAULT    <span style="color:#ae81ff">1</span> main.init</code></pre></div>
+<p>예상한 것처럼 main.init. 뒤에 붙는 숫자가 각 <code>init()</code> 함수를 구분하기 위한 인덱스이다.</p>
+
+<h2 id="여기저기-흩어진-init-함수들">여기저기 흩어진 init() 함수들</h2>
+
+<p>하나의 패키지를 여러 파일들에 분산해 만들 수 있으니, 이 경우의 <code>init()</code> 함수들 호출에 대해서도 확인해 보자.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// test.go
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">init</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is init() in test.go&#34;</span><span style="color:#111">)</span>
+<span style="color:#111">}</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is main()&#34;</span><span style="color:#111">)</span>
+<span style="color:#111">}</span>
+
+<span style="color:#75715e">// test1.go
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">init</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is init() in test1.go&#34;</span><span style="color:#111">)</span>
+<span style="color:#111">}</span>
+
+<span style="color:#75715e">// test2.go
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">init</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is init() in test2.go&#34;</span><span style="color:#111">)</span>
+<span style="color:#111">}</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">This is init() in test.go
+This is init() in test1.go
+This is init() in test2.go
+This is main()</pre></div>
+<p>당연하게도 잘 실행된다.</p>
+
+<h2 id="init-함수들의-호출-순서">init() 함수들의 호출 순서</h2>
+
+<p>여기까지 왔으면 반드시 가져야 하는 의문점 하나.</p>
+
+<blockquote>
+<p><code>init()</code> 함수들을 모두 호출해 주는 것은 좋은데, 호출 순서를 정하는 규칙이 뭐지?</p>
+</blockquote>
+
+<p>위 <a href="#여기저기-흩어진-init()-함수들">여기저기 흩어진 init() 함수들</a> 예에서 test1.go 파일의 이름만 test3.go로 변경해 보자. 출력하는 내용은 그대로 &ldquo;This is init() in test1.go&rdquo;로 두고 단순히 파일 이름만 변경하는 것이다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">This is init() in test.go
+This is init() in test2.go
+This is init() in test1.go
+This is main()</pre></div>
+<p>호출 순서가 변경됐다. 복수의 <code>init()</code> 함수를 쓸 때 잘못하면 엄청난 일이 벌어지겠다는 느낌이 드는가?</p>
+
+<p>이쯤에서 <a href="https://golang.org/ref/spec#Package_initialization">Go spec.</a>의 관련 내용을 확인해 보자.</p>
+
+
+
+
+
+<blockquote class="quote">
+
+
+<p>A package with no imports is initialized by assigning initial values to all its package-level variables followed by calling all <code>init</code> functions in the order they appear in the source, possibly in multiple files, as presented to the compiler.</p>
+
+<p>&hellip;</p>
+
+<p>To ensure reproducible initialization behavior, build systems are encouraged to present multiple files belonging to the same package in lexical file name order to a compiler.</p>
+
+</blockquote>
+
+
+<p>요약하자면, <code>init()</code> 함수는 한 소스 파일 안에서는 정의한 순서대로, 여러 파일에 나뉘어 있는 경우에는 파일명 정렬 순서대로 호출된다.</p>
+
+<h1 id="임포트한-패키지의-init-함수">임포트한 패키지의 init() 함수</h1>
+
+<p>이제 <code>init()</code> 함수를 갖는 패키지를 만들어 main 패키지에서 임포트해보자. 다음과 같이 작성했다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// packa/packa.go
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#75af00">packa</span>
+
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">init</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is packa.init()&#34;</span><span style="color:#111">)</span>
+<span style="color:#111">}</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">TestFunc</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is packa.TestFunc()&#34;</span><span style="color:#111">)</span>
+<span style="color:#111">}</span>
+
+
+<span style="color:#75715e">// packb/packb.go
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#75af00">packb</span>
+
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">init</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is packb.init()&#34;</span><span style="color:#111">)</span>
+<span style="color:#111">}</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">TestFunc</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is packb.TestFunc()&#34;</span><span style="color:#111">)</span>
+<span style="color:#111">}</span>
+
+
+<span style="color:#75715e">// main.go
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#111">(</span>
+	<span style="color:#d88200">&#34;fmt&#34;</span>
+	<span style="color:#d88200">&#34;packa&#34;</span>
+	<span style="color:#d88200">&#34;packb&#34;</span>
+<span style="color:#111">)</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">init</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is main.init()&#34;</span><span style="color:#111">)</span>
+<span style="color:#111">}</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is main.main()&#34;</span><span style="color:#111">)</span>
+	<span style="color:#75af00">packa</span><span style="color:#111">.</span><span style="color:#75af00">TestFunc</span><span style="color:#111">()</span>
+	<span style="color:#75af00">packb</span><span style="color:#111">.</span><span style="color:#75af00">TestFunc</span><span style="color:#111">()</span>
+<span style="color:#111">}</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">This is packa.init()
+This is packb.init()
+This is main.init()
+This is main.main()
+This is packa.TestFunc()
+This is packb.TestFunc()</pre></div>
+<p>main 패키지의 <code>init()</code> 함수 호출 전, 임포트한 순서대로 각 패키지의 <code>init()</code> 함수가 호출되는 것을 알 수 있다.</p>
+
+<h2 id="임포트한-패키지에서-임포트한-패키지">임포트한 패키지에서 임포트한 패키지</h2>
+
+<p>위 예에서 packb 패키지를 main 패키지가 아닌 packa 패키지에서 임포트하면 어떻게 될까?</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// packa/packa.go
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#75af00">packa</span>
+
+<span style="color:#f92672">import</span> <span style="color:#111">(</span>
+	<span style="color:#d88200">&#34;fmt&#34;</span>
+	<span style="color:#d88200">&#34;packb&#34;</span>
+<span style="color:#111">)</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">init</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is packa.init()&#34;</span><span style="color:#111">)</span>
+<span style="color:#111">}</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">TestFunc</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is packa.TestFunc()&#34;</span><span style="color:#111">)</span>
+	<span style="color:#75af00">packb</span><span style="color:#111">.</span><span style="color:#75af00">TestFunc</span><span style="color:#111">()</span>
+<span style="color:#111">}</span>
+
+
+<span style="color:#75715e">// main.go
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#111">(</span>
+	<span style="color:#d88200">&#34;fmt&#34;</span>
+	<span style="color:#d88200">&#34;packa&#34;</span>
+<span style="color:#111">)</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">init</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is main.init()&#34;</span><span style="color:#111">)</span>
+<span style="color:#111">}</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is main.main()&#34;</span><span style="color:#111">)</span>
+	<span style="color:#75af00">packa</span><span style="color:#111">.</span><span style="color:#75af00">TestFunc</span><span style="color:#111">()</span>
+<span style="color:#111">}</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">This is packb.init()
+This is packa.init()
+This is main.init()
+This is main.main()
+This is packa.TestFunc()
+This is packb.TestFunc()</pre></div>
+<p>쉽게 예상할 수 있는 것처럼, 일단 임포트 스택의 바닥까지 내려가 하나하나 올라오며 순차적으로 호출되는 것을 확인할 수 있다.</p>
+
+<h2 id="중복-임포트한-패키지">중복 임포트한 패키지</h2>
+
+<p>하나의 소스 파일에서 동일 패키지를 중복 임포트하는 경우야 거의 없겠지만, 위 예를 가정하면, packb 패키지를 packa 패키지에서 임포트하고, main 패키지에서도 임포트하는 경우는 얼마든지 발생할 수 있다. 이미 fmt 패키지를 그렇게 사용하고 있지 않은가.</p>
+
+
+<div class="mermaid" align="left">
+  
+graph LR
+	packb -- import --> packa
+	packa -- import --> main
+	packb -- import --> main
+
+</div>
+
+
+<p>확인을 위해 위 소스 코드의 main.go만 다음과 같이 수정했다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// main.go
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#111">(</span>
+	<span style="color:#d88200">&#34;fmt&#34;</span>
+	<span style="color:#d88200">&#34;packa&#34;</span>
+	<span style="color:#d88200">&#34;packb&#34;</span>
+<span style="color:#111">)</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">init</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is main.init()&#34;</span><span style="color:#111">)</span>
+<span style="color:#111">}</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is main.main()&#34;</span><span style="color:#111">)</span>
+	<span style="color:#75af00">packa</span><span style="color:#111">.</span><span style="color:#75af00">TestFunc</span><span style="color:#111">()</span>
+	<span style="color:#75af00">packb</span><span style="color:#111">.</span><span style="color:#75af00">TestFunc</span><span style="color:#111">()</span>
+<span style="color:#111">}</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">This is packb.init()
+This is packa.init()
+This is main.init()
+This is main.main()
+This is packa.TestFunc()
+This is packb.TestFunc()
+This is packb.TestFunc()</pre></div>
+<p>다행히 packb 패키지의 <code>init()</code> 함수는 main 패키지에서 먼저 처리되는 packa 패키지 임포트 시 한 번 호출되고, main 패키지에서 다시 packb 패키지를 임포트해도 재호출되지 않는다.</p>
+
+<h1 id="숙제의-답은">숙제의 답은?</h1>
+
+<p><a href="https://golang.org/ref/spec#Package_initialization">Go spec.</a>에는 <code>init()</code> 함수에 대해 다음과 같은 설명이 있다.</p>
+
+
+
+
+
+<blockquote class="quote">
+
+
+<p>Package initialization—variable initialization and the invocation of <code>init</code> functions—happens in a single goroutine, sequentially, one package at a time. An <code>init</code> function may launch other goroutines, which can run concurrently with the initialization code. However, initialization always sequences the <code>init</code> functions: it will not invoke the next one until the previous one has returned.</p>
+
+</blockquote>
+
+
+<p>goroutine은 머나 먼 미래에 등장하겠지만 여기서는 thread 정도로 생각하면 되겠다.</p>
+
+<p>이제 숙제를 해보자.</p>
+
+
+
+
+
+<blockquote class="note">
+
+
+<p>패키지의 이름을 정할 때는 blank identifier를 사용할 수 없지만, 외부 패키지를 임포트할 때 PackageName 자리에는 blank identifier를 사용할 수 있다. 이 경우에는 해당 패키지의 기능을 호출하지 않겠다는 의미이다.</p>
+
+</blockquote>
+
+
+<p>blank identifier로 별칭을 달아 패키지의 기능을 호출하지 않더라도 해당 패키지를 임포트함으로써 <code>init()</code> 함수를 호출할 수 있고, <code>init()</code> 함수를 어떻게 구현하느냐에 따라 해당 패키지는 외부에서의 별도 호출이 없더라도 알아서 작동하도록 할 수 있는 것이다.</p>
+
+
+  
+
+<div class="see-also">
+  <i class="fas fa-archive fa-fw"></i>
+  <strong>See Also</strong>
+  <ul>
+	
+	<li><a href="https://tramamte.github.io/2018/07/03/deep-inside-constants/">정수형 상수의 내부 처리</a></li>
+	
+	<li><a href="https://tramamte.github.io/2018/06/20/fun-switch/">봉인해제 switch</a></li>
+	
+	<li><a href="https://tramamte.github.io/2018/06/14/fun-packages-and-import/">패키지, 임포트에 대한 심화 학습</a></li>
+	
+	<li><a href="https://tramamte.github.io/2018/06/07/fun-constants/">별 것 없을 것 같은 상수의 별 것</a></li>
+	
+	<li><a href="https://tramamte.github.io/2018/06/05/fun-variables-and-types/">명시적이지 않은 듯 명시적인 Go</a></li>
+	
+  </ul>
+</div>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24">
+    
+    <a href="https://tramamte.github.io/2018/07/09/function/"><i class="fas fa-angle-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://tramamte.github.io/2018/07/09/function/">함수</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">&nbsp;</div>
+  <div class="pure-u-10-24" style="text-align: right;">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script>
+	
+
+	
+
+
+	(function() { 
+		var d = document, s = d.createElement('script');
+		s.src = 'https://' + 'awesome-patrick' + '.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+	})();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+<div class="footer">
+  <div class="small-print">
+  <small>&copy2018 Patrick Yu. All rights reserved.</small>
+</div>
+<div class="small-print">
+  <small>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with modified <a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a> theme.</small>
+</div>
+
+</div>
+
+</div>
+</div>
+<script src="https://tramamte.github.io/js/ui.js"></script>
+
+
+
+
+
+
+</body>
+</html>
+

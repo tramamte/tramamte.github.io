@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://tramamte.github.io/2018/07/10/init-and-main/</loc>
+    <lastmod>2018-07-10T19:40:25+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tramamte.github.io/2018/07/09/function/</loc>
     <lastmod>2018-07-09T12:50:21+09:00</lastmod>
   </url>
@@ -169,7 +174,7 @@
   
   <url>
     <loc>https://tramamte.github.io/</loc>
-    <lastmod>2018-07-09T12:50:21+09:00</lastmod>
+    <lastmod>2018-07-10T19:40:25+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -235,7 +240,7 @@
   
   <url>
     <loc>https://tramamte.github.io/tags/fun-go/</loc>
-    <lastmod>2018-07-03T22:35:19+09:00</lastmod>
+    <lastmod>2018-07-10T19:40:25+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -253,7 +258,7 @@
   
   <url>
     <loc>https://tramamte.github.io/topics/go/</loc>
-    <lastmod>2018-07-09T12:50:21+09:00</lastmod>
+    <lastmod>2018-07-10T19:40:25+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -313,7 +318,7 @@
   
   <url>
     <loc>https://tramamte.github.io/posts/</loc>
-    <lastmod>2018-07-09T12:50:21+09:00</lastmod>
+    <lastmod>2018-07-10T19:40:25+09:00</lastmod>
     <priority>0</priority>
   </url>
   
