@@ -297,7 +297,7 @@
 
   
 
-<p>함수를 타입으로 사용하는 등 여러가지 용법이 있지만 기본적인 함수의 선언(declaration)과 정의(definition)에 대해서만 우선 다루도록 하겠다.</p>
+<p>함수를 타입으로 사용하는 등 여러가지 복잡한 용법이 있지만 이 글에서는 기본적인 함수의 선언(declaration)과 정의(definition)에 대해서만 우선 다루도록 하겠다.</p>
 
 <p>함수 작성 규칙은 다음과 같다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">FunctionDecl   = &#34;func&#34; FunctionName Signature [ FunctionBody ] .
@@ -308,7 +308,7 @@ Result         = Parameters | Type .
 Parameters     = &#34;(&#34; [ ParameterList [ &#34;,&#34; ] ] &#34;)&#34; .
 ParameterList  = ParameterDecl { &#34;,&#34; ParameterDecl } .
 ParameterDecl  = [ IdentifierList ] [ &#34;...&#34; ] Type .</pre></div>
-<p>매우 복잡해 보이는데 하나하나 예제를 통해 알아보자.</p>
+<p>하나하나 예제를 통해 알아보자.</p>
 
 <h1 id="함수의-기본형">함수의 기본형</h1>
 
@@ -322,9 +322,9 @@ ParameterDecl  = [ IdentifierList ] [ &#34;...&#34; ] Type .</pre></div>
 
 <p>FunctionDecl을 보면 Signature 뒤에 FunctionBody는 생략할 수 있는데, 다음과 같은 형태가 된다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">func</span> <span style="color:#75af00">testFunction</span><span style="color:#111">()</span></code></pre></div>
-<p>마치 C의 함수 프로토타입과 비슷해 보이는데, 비슷하면서도 다른 기능을 한다.</p>
+<p>마치 C의 함수 프로토타입과 유사해 보이는데, 비슷하면서도 다른 기능을 한다.</p>
 
-<p>C의 함수는 미리 선언이 돼 있어야 호출이 가능하다. gcc에서는 일단 컴파일, 링크가 되기는 하지만 C99 표준에서는 어쨌든 함수를 선언 전 호출하는 implicit declaration이 원칙적으로 오류이다. 하지만 Go에서는 이런 제한은 없다. 따라서 함수 선언 전 호출하는 것은 아무런 문제가 없으며, 심지어 패키지 이름이 같다면 호출되는 함수가 다른 파일에 정의돼 있어도 문제없이 작동한다. 따라서 이 용도는 아니다.</p>
+<p>C는 미리 선언된 함수만 호출이 가능하다. gcc에서는 일단 컴파일, 링크가 되기는 하지만 C99 표준에서는 어쨌든 함수를 선언 전 호출하는 implicit declaration이 원칙적으로 불가하다. 하지만 Go는 이런 제한은 없다. 따라서 함수 선언 전 호출하는 것은 아무런 문제가 없으며, 심지어 패키지 이름이 같다면 호출되는 함수가 다른 파일에 정의돼 있어도 문제없이 작동한다. 따라서 이 용도는 아니다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
 
 <span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
@@ -350,7 +350,7 @@ ParameterDecl  = [ IdentifierList ] [ &#34;...&#34; ] Type .</pre></div>
 <span style="color:#00a8c8">func</span> <span style="color:#75af00">testFunc</span><span style="color:#111">()</span> <span style="color:#111">{</span>
 	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is testFunc.&#34;</span><span style="color:#111">)</span>
 <span style="color:#111">}</span></code></pre></div>
-<p>C에서 함수 프로토타입은 함수를 정의한 파일을 분리하기 위해서도 사용한다. 내부적인 의미야 위 호출되는 함수를 나중에 정의하는 경우와 같은데, 컴파일러에게 해당 함수가 어딘가에 정의돼 있으니 우선 프로토타입을 참고해 컴파일하고 넘어가라고 알려주는 것이다.</p>
+<p>C에서 함수 프로토타입은 함수를 정의한 소스 파일을 분리하기 위해서도 사용한다. 내부적인 의미야 위 호출되는 함수를 나중에 정의하는 경우와 같은데, 컴파일러에게 해당 함수가 어딘가에 정의돼 있으니 프로토타입을 참고해 컴파일하고 넘어가라고 알려주는 것이다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// file1.c
 </span><span style="color:#75715e"></span><span style="color:#00a8c8">void</span> <span style="color:#75af00">testFunc</span><span style="color:#111">();</span>
 
@@ -367,9 +367,9 @@ ParameterDecl  = [ IdentifierList ] [ &#34;...&#34; ] Type .</pre></div>
 <span style="color:#111">{</span>
 	<span style="color:#111">printf</span><span style="color:#111">(</span><span style="color:#d88200">&#34;This is testFunc.</span><span style="color:#8045ff">\n</span><span style="color:#d88200">&#34;</span><span style="color:#111">);</span>
 <span style="color:#111">}</span></code></pre></div>
-<p>Go에서는 파일을 분리해 함수를 정의하는 것도 제한이 없다고 했으니 이 용도와도 정확히 일치하지는 않지만, &lsquo;함수가 어딘가에 정의돼 있다&rsquo;는 정보를 알려준다는 점은 유사하다.</p>
+<p>Go에서는 파일을 분리해 함수를 정의하는 것도 제한이 없다고 했으니 이 용도와도 정확히 일치하지는 않지만, 함수가 어딘가에 정의돼 있다는 정보를 알려준다는 점은 유사하다.</p>
 
-<p>FunctionBody를 생략하고 함수를 선언하는 경우는 어셈블리와 같이 Go가 아닌 언어로 정의한 함수를 호출하기 위해 함수의 형태(signature)를 알려주는 용도이다.</p>
+<p>결론적으로 FunctionBody를 생략하고 함수를 선언하는 경우는 어셈블리와 같이 Go가 아닌 언어로 정의한 함수를 호출하기 위해 함수의 형태(signature)를 알려주는 용도이다.</p>
 
 <h1 id="전달-인수-parameter-가-있는-함수">전달 인수(Parameter)가 있는 함수</h1>
 
@@ -377,7 +377,7 @@ ParameterDecl  = [ IdentifierList ] [ &#34;...&#34; ] Type .</pre></div>
 
 <h2 id="인수-전달-기본형">인수 전달 기본형</h2>
 
-<p>인수는 변수를 선언할 때처럼 변수명 뒤에 타입을 적는다.</p>
+<p>인수는 변수를 선언할 때처럼 인수명 뒤에 타입을 적는다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">func</span> <span style="color:#75af00">paramFunc</span><span style="color:#111">(</span><span style="color:#75af00">param1</span> <span style="color:#00a8c8">int</span><span style="color:#111">,</span> <span style="color:#75af00">param2</span> <span style="color:#00a8c8">string</span><span style="color:#111">)</span> <span style="color:#111">{</span>
 	<span style="color:#f92672">...</span>
 <span style="color:#111">}</span></code></pre></div>
@@ -401,7 +401,7 @@ ParameterDecl  = [ IdentifierList ] [ &#34;...&#34; ] Type .</pre></div>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">can only use ... with final parameter in list</pre></div>
 <h1 id="반환값-return-value-이-있는-함수">반환값(Return value)이 있는 함수</h1>
 
-<p>함수는 처리 결과를 반환할 수 있다. Go의 함수가 C/C++이나 Java의 함수와 가장 크게 구분되는 점이 바로 이 반환값에 대한 처리 방식일 것이다.</p>
+<p>함수는 처리 결과를 반환할 수 있다. Go의 함수가 C/C++이나 Java의 함수와 가장 크게 구분되는 점도 바로 여기에 있다.</p>
 
 <h2 id="반환값-기본형">반환값 기본형</h2>
 
@@ -412,29 +412,29 @@ ParameterDecl  = [ IdentifierList ] [ &#34;...&#34; ] Type .</pre></div>
 <span style="color:#111">}</span></code></pre></div>
 <h2 id="복수개의-반환값">복수개의 반환값</h2>
 
-<p>어마어마하지 않은가? Go는 무려 복수개의 값을 반환할 수 있다. 반환값 목록을 괄호(())로 묶어 반환값 타입들을 열거하면 된다.</p>
+<p>어마어마하지 않은가? Go의 함수는 무려 복수개의 값을 반환할 수 있다. 반환값 목록을 괄호(())로 묶어 반환값 타입들을 열거하면 된다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">func</span> <span style="color:#75af00">returnFunc</span><span style="color:#111">()</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span><span style="color:#111">,</span> <span style="color:#00a8c8">string</span><span style="color:#111">)</span> <span style="color:#111">{</span>
 	<span style="color:#f92672">...</span>
 	<span style="color:#00a8c8">return</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;hello&#34;</span>
 <span style="color:#111">}</span></code></pre></div>
-<p>Go를 사용하는한 아래와 같은 코드와는 영영 결별할 수 있다.</p>
+<p>Go를 사용하는한, 혼란을 피하기 위해 처절히 노력했던 아래와 같은 코드와는 영영 결별할 수 있다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">/* c code */</span>
-
 <span style="color:#75715e">#define OUT
-</span><span style="color:#75715e"></span>
-<span style="color:#00a8c8">int</span> <span style="color:#75af00">twoReturnFunc</span><span style="color:#111">(</span><span style="color:#111">OUT</span> <span style="color:#00a8c8">int</span> <span style="color:#f92672">*</span><span style="color:#111">secondOut</span><span style="color:#111">);</span></code></pre></div>
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">int</span> <span style="color:#75af00">twoReturnFunc</span><span style="color:#111">(</span><span style="color:#111">OUT</span> <span style="color:#00a8c8">int</span> <span style="color:#f92672">*</span><span style="color:#111">secondOut</span><span style="color:#111">);</span></code></pre></div>
 <h2 id="이름을-갖는-반환값">이름을 갖는 반환값</h2>
 
 <p>이런 코드를 자주 작성하는가?</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#00a8c8">int</span> <span style="color:#75af00">intReturnFunc</span><span style="color:#111">()</span>
 <span style="color:#111">{</span>
 	<span style="color:#00a8c8">int</span> <span style="color:#111">ret</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
-	<span style="color:#111">...</span>
-	<span style="color:#111">ret</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
-	<span style="color:#111">...</span>
+	<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">true</span><span style="color:#111">)</span>
+		<span style="color:#111">ret</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+	<span style="color:#00a8c8">else</span>
+		<span style="color:#111">ret</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+
 	<span style="color:#00a8c8">return</span> <span style="color:#111">ret</span><span style="color:#111">;</span>
 <span style="color:#111">}</span></code></pre></div>
-<p>Go는 반환을 위해 별도 변수를 선언할 필요없이 함수 선언 시 반환값에 이름을 지정할 수도 있다.</p>
+<p>Go는 반환을 위한 별도 변수를 선언할 필요없이 함수 선언 시 반환값에 이름을 지정할 수도 있다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">func</span> <span style="color:#75af00">intReturnFunc</span><span style="color:#111">()</span> <span style="color:#111">(</span><span style="color:#75af00">ret</span> <span style="color:#00a8c8">int</span><span style="color:#111">)</span> <span style="color:#111">{</span>
 	<span style="color:#f92672">...</span>
 	<span style="color:#75af00">ret</span> <span style="color:#111">=</span> <span style="color:#ae81ff">1</span>
@@ -453,7 +453,7 @@ ParameterDecl  = [ IdentifierList ] [ &#34;...&#34; ] Type .</pre></div>
 </blockquote>
 
 
-<p>위 예는 이미 반환값이 <code>ret</code>라는 것을 함수도 알고 있기 때문에 <code>return</code> 키워드 뒤에 <code>ret</code>를 붙이지 않고도 쓸 수 있다.</p>
+<p>이렇게 반환값이 이름을 지정하면 이미 반환값이 <code>ret</code>라는 것을 함수도 알고 있기 때문에 <code>return</code> 키워드 뒤에 반환값 변수인 <code>ret</code>를 붙이지 않고도 쓸 수 있다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">func</span> <span style="color:#75af00">intReturnFunc</span><span style="color:#111">()</span> <span style="color:#111">(</span><span style="color:#75af00">ret</span> <span style="color:#00a8c8">int</span><span style="color:#111">)</span> <span style="color:#111">{</span>
 	<span style="color:#f92672">...</span>
 	<span style="color:#75af00">ret</span> <span style="color:#111">=</span> <span style="color:#ae81ff">1</span>
