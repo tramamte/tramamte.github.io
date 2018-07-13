@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="스마트한 CSS 개발 도구">
+  <meta name="generator" content="Hugo 0.42.2" />
+
+  <title>CSS 개발 도구, Sass &amp; SCSS 소개 &middot; Awesome Patrick</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://tramamte.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://tramamte.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://tramamte.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700|Nanum+Gothic+Coding:400,700|Raleway:400,700|Roboto+Mono" rel="stylesheet">
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="apple-touch-icon" sizes="57x57" href="https://tramamte.github.io/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://tramamte.github.io/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://tramamte.github.io/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://tramamte.github.io/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://tramamte.github.io/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://tramamte.github.io/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://tramamte.github.io/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://tramamte.github.io/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://tramamte.github.io/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://tramamte.github.io/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tramamte.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://tramamte.github.io/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://tramamte.github.io/favicon-16x16.png">
+<link rel="manifest" href="https://tramamte.github.io/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="https://tramamte.github.io/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  <i class="far fa-arrow-alt-circle-right fa-2x fa-fw" style="margin: 0; padding: 0;"></i>
+</a>
+
+<div id="menu">
+  
+  <a class="pure-menu-heading brand" href="https://tramamte.github.io/">Awesome<br>Patrick</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/"><i class='fas fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/topics/"><i class='fas fa-folder fa-fw'></i>Topics</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/tags/"><i class='fas fa-tag fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/posts/"><i class='fas fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/about/"><i class='fas fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://tramamte.github.io/index.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+    </li>
+    
+
+  </ul>
+</div>
+
+</div>
+<div id="menuBackground"></div>
+  
+  <div id="mask"></div>
+  <div id="main">
+
+
+<div class="header">
+  <h1>CSS 개발 도구, Sass &amp; SCSS 소개</h1>
+  <h2>스마트한 CSS 개발 도구</h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fas fa-calendar-alt fa-fw"></i>
+    <time>Jul 12, 2018 22:56</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fas fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/web">web</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fas fa-tag fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/sass">sass</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/scss">scss</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/css">css</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  
+
+
+  <blockquote>
+<p>CSS를 개발해? CSS가 개발까지 필요한거였어?</p>
+</blockquote>
+
+<p>웹 기술을 이용한 프론트엔드 개발에 익숙하지 않은 개발자라면 유사한 의문을 품을 수 있을께다. 지금 이 글을 쓰고 있는 본인도 웹 개발에는 문외한이고, Awesome Patrick을 개설하면서 겨우 최근의 웹 기술을 조금 맛 본 실정이다.</p>
+
+<p>JavaScript 등을 이용해 네이티브앱에 버금가면서도 개발 속도도 빠르고 멀티 플랫폼 지원도 쉽게 할 수 있는 여러 도구들이 등장했지만,</p>
+
+<blockquote>
+<p>이름은 들어봤어. 네이티브 코딩으로 다 할 줄 알고 더 복잡한 고급 기능들도 쓸 수 있는데, 엑스칼리버 두고 뭐하러 커터칼을 써?</p>
+</blockquote>
+
+<p>라며 공부를 게을리 했던 것이 사실이다.</p>
+
+<p>그런데, 모든 앱을 개발하는데 엑스칼리버가 필요한 것은 아니며, 커터칼처럼 보였던 것이 실은 <a href="https://ko.wikipedia.org/wiki/%EB%A7%A5%EA%B0%80%EC%9D%B4%EB%B2%84">맥 형님</a>이 들고 다니던 <a href="https://namu.wiki/w/%EC%8A%A4%EC%9C%84%EC%8A%A4%20%EC%95%84%EB%AF%B8%20%EB%82%98%EC%9D%B4%ED%94%84">스위스 아미 나이프</a>였더라. 늦었다 실망 말고 공부하자.</p>
+
+<hr />
+
+
+
+
+<div class="box" style="background:#ccffcc;">
+
+<ul>
+<li>Sass (Syntactically Awesome StyleSheets)</li>
+<li>SCSS (Sassy CSS)</li>
+<li>CSS (Cascading Style Sheets)</li>
+</ul>
+
+</div>
+
+
+<p>CSS라는 용어는 굳이 웹 개발자가 아니더라도 들어는 봤을 것이다. 간단히 얘기하면 <strong>대상 문서의 서식을 정의한 문서</strong> 정도 되겠다. 워드프로세서를 이용해 글을 쓸 때, 전체 문서의 글꼴은 맑은고딕, 본문의 글자 크기는 10포인트, 제목의 글자 크기는 12포인트에 굵게, 단락의 첫 글자는 한 칸 띄고 시작&hellip; 등을 정의하는 것처럼 CSS도 대상 문서&mdash;주로 HTML 문서&mdash;의 서식만을 따로 정의한 것이다.</p>
+
+<p>그런데 이런 서식을 개발한다? 워드프로세서의 예로 돌아가 보자.</p>
+
+<ul>
+<li>본문은 10포인트 검은색 글자</li>
+<li>표의 캡션은 9포인트 회색 글자</li>
+<li>표의 내용은 10포인트 회색 글자</li>
+</ul>
+
+<p>문서의 서식이 위와 같다면, &ldquo;검은색&rdquo;, &ldquo;회색&rdquo;, &ldquo;10포인트&rdquo;, &ldquo;9포인트&rdquo;를 각각 변수에 담고 싶지 않은가? &lsquo;표&rsquo;라는 주제 아래에 &lsquo;캡션&rsquo;과 &lsquo;내용&rsquo;을 묶고 싶지 않은가? Sass를 사용하면 바로 이런 것이 가능하다. 정리하면,</p>
+
+
+
+
+
+<blockquote class="note">
+
+
+<p>결과로 CSS 파일을 얻을 수 있는, CSS에는 없는 편리한 기능들이 추가된 언어</p>
+
+</blockquote>
+
+
+<p>이 바로 Sass이다. 공식 명칭이 첫 글자만 대문자인 <strong>Sass</strong>이다. <em>왜 나머지는 소문자로 쓰는거지?</em></p>
+
+<p><a href="http://www.sass-lang.com/">공식 사이트</a>에서는 다음과 같이 설명하고 있다.</p>
+
+
+
+
+
+<blockquote class="quote">
+
+
+<p>Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
+
+</blockquote>
+
+
+<p>예상했겠지만 Sass 언어으로 작성한 원본 문서를 CSS로 변환해 주는 도구가 필요하다.</p>
+
+<p>이 과정이 마치 C 컴파일러가 소스 파일을 목적 파일로 컴파일하는 과정과 비슷해, compile이라 하는 사람도 있고&mdash;공식 사이트에서도 compile이라 표현하고 있다&mdash;, 좀 더 파고들어 원본과 결과가 모두 사람이 읽을 수 있는 형태이니 pre-processing이라 하는 사람도 있는 것 같다. 용어야 뭐가 중요한가.</p>
+
+<p>공식 사이트에는 세 가지 변환 도구가 있는데, 각각 Dart로 구현된 Dart Sass, C/C++로 구현된 LibSass, Ruby로 구현된 Ruby Sass이다. 최초 구현은 Ruby Sass였는데, 현재는 Dart Sass가 primary 구현이 되며 Ruby Sass는 deprecate  단계에 있다. LibSass는 Sass를 여기저기서 다 사용할 수 있도록 Ruby Sass를 포팅한 것이었는데, 목적 그대로 wrapper를 통해 다양한 언어에서 사용되고 있고, 심지어 Ruby wrapper도 있다.</p>
+
+<hr />
+
+<p>그럼 SCSS는 뭐냐?</p>
+
+<p>결론부터 얘기하면 SCSS는 Sass의 또 다른 문법이다. 모든 언어에는 고유의 문법이 있듯이 Sass도 문법이 있는데, 협의에서 그 문법이 다시 Sass와 SCSS로 나뉜다. Sass 문법은 구형, SCSS 문법은 신형이라 생각하면 편하다.</p>
+
+<p>우선 CSS가 생긴 것을 보면,</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/* css */</span>
+<span style="color:#111">.</span><span style="color:#75af00">my-class</span> <span style="color:#111">{</span>
+    <span style="color:#00a8c8">color</span><span style="color:#111">:</span> <span style="color:#00a8c8">black</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">border-color</span><span style="color:#111">:</span> <span style="color:#00a8c8">gray</span><span style="color:#111">;</span>
+<span style="color:#111">}</span></code></pre></div>
+<p>이렇게 중괄호({})와 세미콜론(;)을 사용한다. 그런데 Sass의 최초 문법은 indentation과 줄넘김을 사용했다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#75715e">/* sass */</span>
+<span style="color:#75af00">.my-class</span>
+	<span style="color:#f92672">color</span><span style="color:#75af00">:</span> <span style="color:#f92672">black</span>
+	<span style="color:#f92672">border-color</span><span style="color:#75af00">:</span> <span style="color:#f92672">gray</span></code></pre></div>
+<p>이걸 CSS와 비슷하게 중괄호와 세미콜론을 사용하도록 다시 만든 것이 바로 SCSS이다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#75715e">/* scss */</span>
+<span style="color:#75af00">.my-class</span> <span style="color:#111">{</span>
+	<span style="color:#f92672">color</span><span style="color:#75af00">:</span> <span style="color:#f92672">black</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">border-color</span><span style="color:#75af00">:</span> <span style="color:#f92672">gray</span><span style="color:#f92672">;</span>
+<span style="color:#111">}</span></code></pre></div>
+<p>위 예에서 보는 것처럼 Sass, SCSS에서만 제공하는 기능을 사용하지 않았을 경우 SCSS는 CSS와 100% 동일한 형태가 되지만, Sass와 CSS는 서로 다른 모양이다. 그래서 CSS는 그 자체로 완벽한 SCSS 원본 파일이 된다.</p>
+
+
+  
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24">
+    
+    <a href="https://tramamte.github.io/2018/07/10/init-and-main/"><i class="fas fa-angle-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://tramamte.github.io/2018/07/10/init-and-main/">특수 함수들</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">&nbsp;</div>
+  <div class="pure-u-10-24" style="text-align: right;">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script>
+	
+
+	
+
+
+	(function() { 
+		var d = document, s = d.createElement('script');
+		s.src = 'https://' + 'awesome-patrick' + '.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+	})();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+<div class="footer">
+  <div class="small-print">
+  <small>&copy2018 Patrick Yu. All rights reserved.</small>
+</div>
+<div class="small-print">
+  <small>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with modified <a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a> theme.</small>
+</div>
+
+</div>
+
+</div>
+</div>
+<script src="https://tramamte.github.io/js/ui.js"></script>
+
+
+
+
+
+
+</body>
+</html>
+

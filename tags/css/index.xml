@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Css on Awesome Patrick</title>
+    <link>https://tramamte.github.io/tags/css/</link>
+    <description>Recent content in Css on Awesome Patrick</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy2018 Patrick Yu. All rights reserved.</copyright>
+    <lastBuildDate>Thu, 12 Jul 2018 22:56:38 +0900</lastBuildDate>
+    
+	<atom:link href="https://tramamte.github.io/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CSS 개발 도구, Sass &amp; SCSS 소개</title>
+      <link>https://tramamte.github.io/2018/07/12/sass-and-scss/</link>
+      <pubDate>Thu, 12 Jul 2018 22:56:38 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2018/07/12/sass-and-scss/</guid>
+      <description>CSS를 개발해? CSS가 개발까지 필요한거였어? 웹 기술을 이용한 프론트엔드 개발에 익숙하지 않은 개발자라면 유사한 의문을 품을 수 있을께다. 지금 이 글을 쓰고</description>
+    </item>
+    
+  </channel>
+</rss>

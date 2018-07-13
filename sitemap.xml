@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://tramamte.github.io/2018/07/12/sass-and-scss/</loc>
+    <lastmod>2018-07-12T22:56:38+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tramamte.github.io/2018/07/10/init-and-main/</loc>
     <lastmod>2018-07-10T19:40:25+09:00</lastmod>
   </url>
@@ -174,7 +179,7 @@
   
   <url>
     <loc>https://tramamte.github.io/</loc>
-    <lastmod>2018-07-10T19:40:25+09:00</lastmod>
+    <lastmod>2018-07-12T22:56:38+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -205,6 +210,12 @@
   <url>
     <loc>https://tramamte.github.io/tags/copy/</loc>
     <lastmod>2018-06-20T23:15:37+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tramamte.github.io/tags/css/</loc>
+    <lastmod>2018-07-12T22:56:38+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -318,7 +329,7 @@
   
   <url>
     <loc>https://tramamte.github.io/posts/</loc>
-    <lastmod>2018-07-10T19:40:25+09:00</lastmod>
+    <lastmod>2018-07-12T22:56:38+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -331,6 +342,18 @@
   <url>
     <loc>https://tramamte.github.io/tags/root-directory/</loc>
     <lastmod>2018-05-31T12:49:28+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tramamte.github.io/tags/sass/</loc>
+    <lastmod>2018-07-12T22:56:38+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tramamte.github.io/tags/scss/</loc>
+    <lastmod>2018-07-12T22:56:38+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -373,6 +396,12 @@
   <url>
     <loc>https://tramamte.github.io/topics/</loc>
     <lastmod>2018-06-07T23:11:28+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tramamte.github.io/topics/web/</loc>
+    <lastmod>2018-07-12T22:56:38+09:00</lastmod>
     <priority>0</priority>
   </url>
   
