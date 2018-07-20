@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Key on Awesome Patrick</title>
+    <link>https://tramamte.github.io/tags/key/</link>
+    <description>Recent content in Key on Awesome Patrick</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy2018 Patrick Yu. All rights reserved.</copyright>
+    <lastBuildDate>Thu, 19 Jul 2018 23:15:37 +0900</lastBuildDate>
+    
+	<atom:link href="https://tramamte.github.io/tags/key/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>중학교 수학으로 이해하는 디피-헬만 키 교환 (Diffie-Hellman Key Exchange)</title>
+      <link>https://tramamte.github.io/2018/07/19/diffie-hellman/</link>
+      <pubDate>Thu, 19 Jul 2018 23:15:37 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2018/07/19/diffie-hellman/</guid>
+      <description>디피-헬만 키 교환은 말 그대로 키를 교환하는 방식을 정의한 것이다. 키는 안전한 통신을 위해 암호화를 적용할 때 필요한데, 디피-헬만 키 교환 방식에 의해 통신 당사자</description>
+    </item>
+    
+  </channel>
+</rss>
