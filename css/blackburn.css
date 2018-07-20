@@ -63,8 +63,7 @@ i {
   left: 0;
   z-index: 98; /* so the menu or its navicon stays above all content */
   background: #001520;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
   display: block;
   -webkit-transition: all 0.1s ease-out;
   -moz-transition: all 0.1s ease-out;
@@ -354,6 +353,15 @@ li > code {
   border-radius: 0.2rem;
   padding: 0 .3em;
   margin: 0;
+}
+
+/* diagram and equation*/
+.flowchart,
+.sequence,
+.mermaid,
+span.MJXc-display {
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 /* footnote */
