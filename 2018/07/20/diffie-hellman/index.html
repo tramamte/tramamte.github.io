@@ -346,12 +346,12 @@
 
 
 
-<div class="sequence" id="sequence1532085131894196389"
+<div class="sequence" id="sequence1532087179688021950"
   align="left"></div>
 <script>
   var seq = Diagram.parse("\n\nparticipant Alice as A\n\nparticipant Bob as B\n\nA-\x3eB: Let\x27s use Algorithm #1\n\nB-\x3eA: OK\n\nNote over A,B: Start encryption\n\nA-\x3eB: ihj4ertlv89hjipaf...\n\n");
   
-  seq.drawSVG('sequence1532085131894196389', {theme: 'simple'});
+  seq.drawSVG('sequence1532087179688021950', {theme: 'simple'});
   
 </script>
 
@@ -378,12 +378,12 @@
 
 
 
-<div class="sequence" id="sequence1532085131894298857"
+<div class="sequence" id="sequence1532087179688329102"
   align="left"></div>
 <script>
   var seq = Diagram.parse("\n\nparticipant Alice as A\n\nparticipant Bob as B\n\nnote over A: a\n\nA-\x3eB: p, g, A\n\nnote over B: b\n\nB-\x3eA: B\n\n");
   
-  seq.drawSVG('sequence1532085131894298857', {theme: 'simple'});
+  seq.drawSVG('sequence1532087179688329102', {theme: 'simple'});
   
 </script>
 
@@ -507,17 +507,17 @@
 
 
 
-<div class="sequence" id="sequence1532085131894344749"
+<div class="sequence" id="sequence1532087179688369313"
   align="left"></div>
 <script>
   var seq = Diagram.parse("\n\nparticipant Alice as A\n\nparticipant Middle as M\n\nparticipant Bob as B\n\nnote over A: a\n\nA-\x3eM: p, g, A\n\nnote over M: m\n\nM-\x3eB: p, g, M\n\nnote over B: b\n\nB-\x3eM: B\n\nM-\x3eA: M\n\n");
   
-  seq.drawSVG('sequence1532085131894344749', {theme: 'simple'});
+  seq.drawSVG('sequence1532087179688369313', {theme: 'simple'});
   
 </script>
 
 
-<p>이렇게 되면 Alice와 Middle 사이에는 \(a\)와 \(m\)을 이용해 계산한 키 \(k _ {AM}\)가 공유되고, Bob과 Middle 사이에는 \(b\)와 \(m\)을 이용해 계산한 키 \(k _ {BM}\)이 공유된다.</p>
+<p>이렇게 되면 Alice와 Middle 사이에는 \(a\)와 \(m\)을 이용해 계산한 키 \(k _ {AM}\)이 공유되고, Bob과 Middle 사이에는 \(b\)와 \(m\)을 이용해 계산한 키 \(k _ {BM}\)이 공유된다.</p>
 
 <p>Alice는 Middle에게&mdash;Middle이 Bob이라 생각하며&mdash; \(k _ {AM}\)을 이용해 암호화한 정보를 보내고, Middle은 이 정보를 모두 해독해 볼 수 있게 된다. 이후 해독한 원문을 다시 \(k _ {BM}\)을 이용해 암호화한 후 Bob에게 보내주기만 하면 감쪽같이 Alice와 Bob을 속일 수 있다.</p>
 
