@@ -339,16 +339,16 @@
 
 <p>Alice와 Bob이 안전한 통신을 하기 위해서는 이 두 가지 정보를 모두 제3자로부터 숨기는 것이 좋다. 하지만 나머지 하나의 정보를 모르면 한 가지 정보만으로는 암호화된 정보를 해독할 수 없기 때문에 둘 중 하나의 정보만 숨겨도 된다.</p>
 
-<p>이제 하나만 숨기고 나머지 하나를 공개한다면 어떤 것을 숨기는 것이 더 좋을까? 이는 둘 중 어떤 것이 더 경우의 수가 많은지를 생각하면 답이 자명하다. 경우의 수가 많아야 제3자가 암호를 해독하기 더 어려워지기 때문이다. 암호화 알고리즘 보다는 암호화 키의 경우의 수가 훨씬 다양하므로 대부분의 암호화 통신은 다음과 유사한 절차로 진행된다.</p>
+<p>하나만 숨기고 나머지 하나를 공개한다면 어떤 것을 숨기는 것이 더 좋을까? 이는 둘 중 어떤 것이 더 경우의 수가 많은지를 생각하면 답이 자명하다. 경우의 수가 많아야 제3자가 암호를 해독하기 더 어려워지기 때문이다. 암호화 알고리즘 보다는 암호화 키의 경우의 수가 훨씬 다양하므로 대부분의 암호화 통신은 다음과 유사한 절차로 진행된다.</p>
 
 
 
-<div class="sequence" id="sequence1532067976374716200"
+<div class="sequence" id="sequence1532068186313178900"
   align="left"></div>
 <script>
   var seq = Diagram.parse("\n\nparticipant Alice as A\n\nparticipant Bob as B\n\nA-\x3eB: Let\x27s encrypt data using Algorithm #1\n\nB-\x3eA: OK\n\nNote over A,B: Start secure communication\n\nA-\x3eB: bsahjuaoihj4ertlv89hjipaf...\n\n");
   
-  seq.drawSVG('sequence1532067976374716200', {theme: 'simple'});
+  seq.drawSVG('sequence1532068186313178900', {theme: 'simple'});
   
 </script>
 
@@ -375,12 +375,12 @@
 
 
 
-<div class="sequence" id="sequence1532067976374837800"
+<div class="sequence" id="sequence1532068186313241500"
   align="left"></div>
 <script>
   var seq = Diagram.parse("\n\nparticipant Alice as A\n\nparticipant Bob as B\n\nnote over A: a\n\nA-\x3eB: p, g, A\n\nnote over B: b\n\nB-\x3eA: B\n\n");
   
-  seq.drawSVG('sequence1532067976374837800', {theme: 'simple'});
+  seq.drawSVG('sequence1532068186313241500', {theme: 'simple'});
   
 </script>
 
@@ -504,12 +504,12 @@
 
 
 
-<div class="sequence" id="sequence1532067976374885000"
+<div class="sequence" id="sequence1532068186313297800"
   align="left"></div>
 <script>
   var seq = Diagram.parse("\n\nparticipant Alice as A\n\nparticipant Middle as M\n\nparticipant Bob as B\n\nnote over A: a\n\nA-\x3eM: p, g, A\n\nnote over M: m\n\nM-\x3eB: p, g, M\n\nnote over B: b\n\nB-\x3eM: B\n\nM-\x3eA: M\n\n");
   
-  seq.drawSVG('sequence1532067976374885000', {theme: 'simple'});
+  seq.drawSVG('sequence1532068186313297800', {theme: 'simple'});
   
 </script>
 
