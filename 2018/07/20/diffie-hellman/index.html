@@ -346,12 +346,12 @@
 
 
 
-<div class="sequence" id="sequence1532179578097974870"
+<div class="sequence" id="sequence1532179697983955150"
   align="left"></div>
 <script>
   var seq = Diagram.parse("\n\nparticipant Alice as A\n\nparticipant Bob as B\n\nA-\x3eB: Let\x27s use Algorithm #1\n\nB-\x3eA: OK\n\nNote over A,B: Start encryption\n\nA-\x3eB: ihj4ertlv89hjipaf...\n\n");
   
-  seq.drawSVG('sequence1532179578097974870', {theme: 'simple'});
+  seq.drawSVG('sequence1532179697983955150', {theme: 'simple'});
   
 </script>
 
@@ -362,7 +362,7 @@
 
 <p>PSK 사용은 키 교환 절차가 번거롭고, 별도의 수단이 안전하다는 보장이 없다는 문제점을 가지고 있다. 디피-헬만 키 교환은 별도의 수단을 이용하지 않고도 간단하고, 안전한 키 교환을 가능하게 한다.</p>
 
-<p>아래에 등장하는 연산기호 중 \(\bmod\)는, 교과 과정에는 등장하지 않지만 개발자들에게는 매우 친숙한, 나머지를 구하는 기호이다. 즉, \(a \bmod b\)는 \(a\)를 \(b\)로 나눈 나머지를 의미한다.</p>
+<p>아래에 등장하는 기호 중 \(\bmod\)는, 교과 과정에는 등장하지 않지만 개발자들에게는 매우 친숙한, 나머지를 구하는 연산을 나타낸다. 즉, \(a \bmod b\)는 \(a\)를 \(b\)로 나눈 나머지를 의미한다.</p>
 
 <h2 id="교환-절차">교환 절차</h2>
 
@@ -380,12 +380,12 @@
 
 
 
-<div class="sequence" id="sequence1532179578098319840"
+<div class="sequence" id="sequence1532179697984335067"
   align="left"></div>
 <script>
   var seq = Diagram.parse("\n\nparticipant Alice as A\n\nparticipant Bob as B\n\nnote over A: a\n\nA-\x3eB: p, g, A\n\nnote over B: b\n\nB-\x3eA: B\n\n");
   
-  seq.drawSVG('sequence1532179578098319840', {theme: 'simple'});
+  seq.drawSVG('sequence1532179697984335067', {theme: 'simple'});
   
 </script>
 
@@ -509,12 +509,12 @@
 
 
 
-<div class="sequence" id="sequence1532179578099218251"
+<div class="sequence" id="sequence1532179697984521941"
   align="left"></div>
 <script>
   var seq = Diagram.parse("\n\nparticipant Alice as A\n\nparticipant Middle as M\n\nparticipant Bob as B\n\nnote over A: a\n\nA-\x3eM: p, g, A\n\nnote over M: m\n\nM-\x3eB: p, g, M\n\nnote over B: b\n\nB-\x3eM: B\n\nM-\x3eA: M\n\n");
   
-  seq.drawSVG('sequence1532179578099218251', {theme: 'simple'});
+  seq.drawSVG('sequence1532179697984521941', {theme: 'simple'});
   
 </script>
 
