@@ -346,12 +346,12 @@
 
 
 
-<div class="sequence" id="sequence1532087577786149598"
+<div class="sequence" id="sequence1532179578097974870"
   align="left"></div>
 <script>
   var seq = Diagram.parse("\n\nparticipant Alice as A\n\nparticipant Bob as B\n\nA-\x3eB: Let\x27s use Algorithm #1\n\nB-\x3eA: OK\n\nNote over A,B: Start encryption\n\nA-\x3eB: ihj4ertlv89hjipaf...\n\n");
   
-  seq.drawSVG('sequence1532087577786149598', {theme: 'simple'});
+  seq.drawSVG('sequence1532179578097974870', {theme: 'simple'});
   
 </script>
 
@@ -361,6 +361,8 @@
 <p>이제 Alice와 Bob이 안전하게 키만 교환할 수 있으면 Alice, Bob 간 암호화 통신이 가능하다. 가장 쉽게 생각할 수 있는 방법은 별도의 수단을 이용해 Alice와 Bob이 키를 사전에 공유하는 것이다. 문자메시지를 암호화하고 싶다면, 문자메시지와 다른 수단인 이메일이나 쪽지에 키를 적어 전해주는 것이다. 이렇게 공유한 키를 사전 공유키(PSK, Pre-Shared Key)라 한다.</p>
 
 <p>PSK 사용은 키 교환 절차가 번거롭고, 별도의 수단이 안전하다는 보장이 없다는 문제점을 가지고 있다. 디피-헬만 키 교환은 별도의 수단을 이용하지 않고도 간단하고, 안전한 키 교환을 가능하게 한다.</p>
+
+<p>아래에 등장하는 연산기호 중 \(\bmod\)는, 교과 과정에는 등장하지 않지만 개발자들에게는 매우 친숙한, 나머지를 구하는 기호이다. 즉, \(a \bmod b\)는 \(a\)를 \(b\)로 나눈 나머지를 의미한다.</p>
 
 <h2 id="교환-절차">교환 절차</h2>
 
@@ -378,12 +380,12 @@
 
 
 
-<div class="sequence" id="sequence1532087577786503244"
+<div class="sequence" id="sequence1532179578098319840"
   align="left"></div>
 <script>
   var seq = Diagram.parse("\n\nparticipant Alice as A\n\nparticipant Bob as B\n\nnote over A: a\n\nA-\x3eB: p, g, A\n\nnote over B: b\n\nB-\x3eA: B\n\n");
   
-  seq.drawSVG('sequence1532087577786503244', {theme: 'simple'});
+  seq.drawSVG('sequence1532179578098319840', {theme: 'simple'});
   
 </script>
 
@@ -507,12 +509,12 @@
 
 
 
-<div class="sequence" id="sequence1532087577786676972"
+<div class="sequence" id="sequence1532179578099218251"
   align="left"></div>
 <script>
   var seq = Diagram.parse("\n\nparticipant Alice as A\n\nparticipant Middle as M\n\nparticipant Bob as B\n\nnote over A: a\n\nA-\x3eM: p, g, A\n\nnote over M: m\n\nM-\x3eB: p, g, M\n\nnote over B: b\n\nB-\x3eM: B\n\nM-\x3eA: M\n\n");
   
-  seq.drawSVG('sequence1532087577786676972', {theme: 'simple'});
+  seq.drawSVG('sequence1532179578099218251', {theme: 'simple'});
   
 </script>
 
