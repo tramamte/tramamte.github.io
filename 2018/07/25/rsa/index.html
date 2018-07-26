@@ -62,6 +62,7 @@
   <script src="https://tramamte.github.io/js/snap.svg-min.js"></script>
   <script src="https://tramamte.github.io/js/underscore-min.js"></script>
   <script src="https://tramamte.github.io/js/sequence-diagram-min.js"></script>
+  <script>var sequenceGlobalId = 0;</script>
       
     
   
@@ -635,13 +636,12 @@ $$ a \equiv b \pmod{n} $$</li>
 <p>RSA를 사용하는 일반적인 절차를 도식화하면 다음과 같다. Alice가 정보를 보내는 사람, Bob이 정보를 받는 사람이다.</p>
 
 
-
-<div class="sequence" id="sequence1532571984460730400"
-  align="left"></div>
 <script>
+  var sequenceId = 'sequence' + sequenceGlobalId++;
+  document.write('<div class="sequence" id="' + sequenceId + '" align="left"></div>');
   var seq = Diagram.parse("\n\nparticipant Alice as A\n\nparticipant Bob as B\n\nA-\x3eB: Give me your pub. key\n\nB-\x3eA: Here you are (pub. key)\n\nNote over A: Calculate c\n\nA-\x3eB: ihj4ertlv89hjipaf...\n\nNote over B: Calculate o\x27\n\n");
   
-  seq.drawSVG('sequence1532571984460730400', {theme: 'simple'});
+  seq.drawSVG(sequenceId, {theme: 'simple'});
   
 </script>
 

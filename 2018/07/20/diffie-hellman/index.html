@@ -62,6 +62,7 @@
   <script src="https://tramamte.github.io/js/snap.svg-min.js"></script>
   <script src="https://tramamte.github.io/js/underscore-min.js"></script>
   <script src="https://tramamte.github.io/js/sequence-diagram-min.js"></script>
+  <script>var sequenceGlobalId = 0;</script>
       
     
   
@@ -355,13 +356,12 @@
 <p>하나만 숨기고 나머지 하나를 공개한다면 어떤 것을 숨기는 것이 더 좋을까? 이는 둘 중 어떤 것이 더 경우의 수가 많은지를 생각하면 답이 자명하다. 경우의 수가 많아야 제3자가 암호를 해독하기 더 어려워지기 때문이다. 암호화 알고리즘 보다는 암호화 키의 경우의 수가 훨씬 다양하므로 대부분의 암호화 통신은 다음과 유사한 절차로 진행된다.</p>
 
 
-
-<div class="sequence" id="sequence1532571984465707000"
-  align="left"></div>
 <script>
+  var sequenceId = 'sequence' + sequenceGlobalId++;
+  document.write('<div class="sequence" id="' + sequenceId + '" align="left"></div>');
   var seq = Diagram.parse("\n\nparticipant Alice as A\n\nparticipant Bob as B\n\nA-\x3eB: Let\x27s use Algorithm #1\n\nB-\x3eA: OK\n\nNote over A,B: Start encryption\n\nA-\x3eB: ihj4ertlv89hjipaf...\n\n");
   
-  seq.drawSVG('sequence1532571984465707000', {theme: 'simple'});
+  seq.drawSVG(sequenceId, {theme: 'simple'});
   
 </script>
 
@@ -389,13 +389,12 @@
 <p>이상을 도식화하면 아래와 같고, 화살표 위에 표시된 정보들은 Alice, Bob 외에 제3자도 볼 수 있다. 즉, Alice만 알고 있는 \(a\), Bob만 알고 있는 \(b\)가 이 과정에서 숨겨져 있는 정보의 전부이다.</p>
 
 
-
-<div class="sequence" id="sequence1532571984465775700"
-  align="left"></div>
 <script>
+  var sequenceId = 'sequence' + sequenceGlobalId++;
+  document.write('<div class="sequence" id="' + sequenceId + '" align="left"></div>');
   var seq = Diagram.parse("\n\nparticipant Alice as A\n\nparticipant Bob as B\n\nnote over A: a\n\nA-\x3eB: p, g, A\n\nnote over B: b\n\nB-\x3eA: B\n\n");
   
-  seq.drawSVG('sequence1532571984465775700', {theme: 'simple'});
+  seq.drawSVG(sequenceId, {theme: 'simple'});
   
 </script>
 
@@ -518,13 +517,12 @@
 <p>디피-헬만 키 교환은 중간자(MITM, Man-In-The-Middle) 공격에 취약하다. 공격자가 Alice와 Bob 사이에서, Alice에게는 Bob인 척, Bob에게는 Alice인 척 하는 공격이다.</p>
 
 
-
-<div class="sequence" id="sequence1532571984465819000"
-  align="left"></div>
 <script>
+  var sequenceId = 'sequence' + sequenceGlobalId++;
+  document.write('<div class="sequence" id="' + sequenceId + '" align="left"></div>');
   var seq = Diagram.parse("\n\nparticipant Alice as A\n\nparticipant Middle as M\n\nparticipant Bob as B\n\nnote over A: a\n\nA-\x3eM: p, g, A\n\nnote over M: m\n\nM-\x3eB: p, g, M\n\nnote over B: b\n\nB-\x3eM: B\n\nM-\x3eA: M\n\n");
   
-  seq.drawSVG('sequence1532571984465819000', {theme: 'simple'});
+  seq.drawSVG(sequenceId, {theme: 'simple'});
   
 </script>
 
