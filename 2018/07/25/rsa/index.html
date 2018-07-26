@@ -310,7 +310,7 @@
 <li><a href="#오일러-파이-함수-euler-s-phi-function">오일러 파이 함수 (Euler&rsquo;s phi function)</a></li>
 <li><a href="#페르마-소정리-fermat-s-littel-theorem">페르마 소정리 (Fermat&rsquo;s littel theorem)</a></li>
 <li><a href="#오일러-정리-euler-s-theorem">오일러 정리 (Euler&rsquo;s theorem)</a></li>
-<li><a href="#중국인의-나머지-정리-chinese-remainder-theorem">중국인의 나머지 정리 (Chinese Remainder Theorem)</a></li>
+<li><a href="#중국인의-나머지-정리-chinese-remainder-theorem">중국인의 나머지 정리 (Chinese remainder theorem)</a></li>
 </ul></li>
 <li><a href="#키-생성-절차">키 생성 절차</a></li>
 <li><a href="#암호화-및-복호화">암호화 및 복호화</a>
@@ -344,7 +344,7 @@
 
 <h1 id="기반-지식">기반 지식</h1>
 
-<p>나머지 연산의 성질 몇 가지와 오일러 파이<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup> 함수 (Euler&rsquo;s phi function 또는 Euler&rsquo;s totient function), 페르마 소정리 (Fermat&rsquo;s little theorem)와 이의 일반화 형태인 오일러 정리 (Euler&rsquo;s theorem), 중국인의 나머지 정리 (CRT, Chinese Remainder Theorem)에 대해 딱 RSA를 이해하는데 필요한 정도만 우선 확인하고 넘어가자.</p>
+<p>나머지 연산의 성질 몇 가지와 오일러 파이<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup> 함수 (Euler&rsquo;s phi function 또는 Euler&rsquo;s totient function), 페르마 소정리 (Fermat&rsquo;s little theorem)와 이의 일반화 형태인 오일러 정리 (Euler&rsquo;s theorem), 중국인의 나머지 정리 (Chinese remainder theorem, CRT)에 대해 딱 RSA를 이해하는데 필요한 정도만 우선 확인하고 넘어가자.</p>
 
 <h2 id="나머지-연산의-성질">나머지 연산의 성질</h2>
 
@@ -570,7 +570,7 @@ $$ a \equiv b \pmod{n} $$</li>
 
 <p>$$ \therefore a ^ {\varphi(n)}\,\bmod\,n = 1 $$</p>
 
-<h2 id="중국인의-나머지-정리-chinese-remainder-theorem">중국인의 나머지 정리 (Chinese Remainder Theorem)</h2>
+<h2 id="중국인의-나머지-정리-chinese-remainder-theorem">중국인의 나머지 정리 (Chinese remainder theorem)</h2>
 
 <p>중국인의 나머지 정리는 연립 합동 산술의 해의 존재성과 유일성을 증명하는 정리인데, RSA 절차를 증명하는데 필요한 부분만 발췌해 간단히 기술하면 다음과 같다.</p>
 
@@ -636,12 +636,12 @@ $$ a \equiv b \pmod{n} $$</li>
 
 
 
-<div class="sequence" id="sequence1532571654052482500"
+<div class="sequence" id="sequence1532571789956313800"
   align="left"></div>
 <script>
   var seq = Diagram.parse("\n\nparticipant Alice as A\n\nparticipant Bob as B\n\nA-\x3eB: Give me your pub. key\n\nB-\x3eA: Here you are (pub. key)\n\nNote over A: Calculate c\n\nA-\x3eB: ihj4ertlv89hjipaf...\n\nNote over B: Calculate o\x27\n\n");
   
-  seq.drawSVG('sequence1532571654052482500', {theme: 'simple'});
+  seq.drawSVG('sequence1532571789956313800', {theme: 'simple'});
   
 </script>
 
