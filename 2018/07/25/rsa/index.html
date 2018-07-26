@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RSA 암호화의 수학적 이해">
+  <meta name="generator" content="Hugo 0.45" />
+
+  <title>중학교 수학으로 이해하는 RSA &middot; Awesome Patrick</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://tramamte.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://tramamte.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://tramamte.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700|Nanum+Gothic+Coding:400,700|Raleway:400,700|Roboto+Mono" rel="stylesheet">
+  
+
+  
+
+  
+    
+      
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      CommonHTML: {
+        scale: 100
+      },
+      jax: ["input/TeX","output/HTML-CSS"],
+      displayAlign: "left",
+      displayIndent: "1em",
+    });
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+      
+    
+      
+  
+  <link rel="stylesheet" href="https://tramamte.github.io/css/sequence-diagram-min.css">
+  <script src="https://tramamte.github.io/js/webfont.js"></script>
+  <script src="https://tramamte.github.io/js/snap.svg-min.js"></script>
+  <script src="https://tramamte.github.io/js/underscore-min.js"></script>
+  <script src="https://tramamte.github.io/js/sequence-diagram-min.js"></script>
+      
+    
+  
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="apple-touch-icon" sizes="57x57" href="https://tramamte.github.io/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://tramamte.github.io/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://tramamte.github.io/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://tramamte.github.io/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://tramamte.github.io/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://tramamte.github.io/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://tramamte.github.io/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://tramamte.github.io/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://tramamte.github.io/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://tramamte.github.io/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tramamte.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://tramamte.github.io/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://tramamte.github.io/favicon-16x16.png">
+<link rel="manifest" href="https://tramamte.github.io/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="https://tramamte.github.io/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  <i class="far fa-arrow-alt-circle-right fa-2x fa-fw" style="margin: 0; padding: 0;"></i>
+</a>
+
+<div id="menu">
+  
+  <a class="pure-menu-heading brand" href="https://tramamte.github.io/">Awesome<br>Patrick</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/"><i class='fas fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/topics/"><i class='fas fa-folder fa-fw'></i>Topics</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/tags/"><i class='fas fa-tag fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/posts/"><i class='fas fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/about/"><i class='fas fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://tramamte.github.io/index.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+    </li>
+    
+
+  </ul>
+</div>
+
+</div>
+<div id="menuBackground"></div>
+  
+  <div id="mask"></div>
+  <div id="main">
+
+
+<div class="header">
+  <h1>중학교 수학으로 이해하는 RSA</h1>
+  <h2>RSA 암호화의 수학적 이해</h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fas fa-calendar-alt fa-fw"></i>
+    <time>Jul 25, 2018 23:18</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fas fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/security">security</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fas fa-tag fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/pki">pki</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/rsa">rsa</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  
+<script>
+  function toggleToc() {
+    var x = document.getElementById("toc");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+  }
+</script>
+
+<div class="post-meta">
+<div>
+  <i class="fas fa-file-alt fa-fw"></i>
+  <a href="javascript:toggleToc();">Table of Contents</a>
+</div>
+<div id="toc" style="display: none;"><nav id="TableOfContents">
+<ul>
+<li><a href="#기반-지식">기반 지식</a>
+<ul>
+<li><a href="#나머지-연산의-성질">나머지 연산의 성질</a>
+<ul>
+<li><a href="#두-수의-나머지가-같은-경우">두 수의 나머지가 같은 경우</a></li>
+<li><a href="#나머지-연산의-곱셈">나머지 연산의 곱셈</a></li>
+<li><a href="#나머지-연산의-지수승">나머지 연산의 지수승</a></li>
+</ul></li>
+<li><a href="#오일러-파이-함수-euler-s-phi-function">오일러 파이 함수 (Euler&rsquo;s phi function)</a></li>
+<li><a href="#페르마-소정리-fermat-s-littel-theorem">페르마 소정리 (Fermat&rsquo;s littel theorem)</a></li>
+<li><a href="#오일러-정리-euler-s-theorem">오일러 정리 (Euler&rsquo;s theorem)</a></li>
+<li><a href="#중국인의-나머지-정리-chinese-remainder-theorem">중국인의 나머지 정리 (Chinese Remainder Theorem)</a></li>
+</ul></li>
+<li><a href="#키-생성-절차">키 생성 절차</a></li>
+<li><a href="#암호화-및-복호화">암호화 및 복호화</a>
+<ul>
+<li><a href="#암호화-절차">암호화 절차</a></li>
+<li><a href="#복호화-절차">복호화 절차</a></li>
+<li><a href="#암호화-및-복호화-검증">암호화 및 복호화 검증</a></li>
+</ul></li>
+<li><a href="#전자-서명">전자  서명</a></li>
+</ul>
+</nav></div>
+</div>
+
+
+
+  
+
+
+
+
+<div class="box">
+
+<p>한 화면에 모두 표시되지 않는 그림이나 수식은 좌우 스크롤이 가능합니다.</p>
+
+</div>
+
+
+<p>중학교 수학으로 이해하는 시리즈 2탄은 PKI(Public Key Infrastructure)의 근간이 되는 RSA&mdash;Ron Rivest, Adi Shamir, Leonard Adleman 세 사람 이름의 두문자를 따 명명&mdash; 암호화이다.</p>
+
+<p>RSA 암호화는 암호화/복호화에 서로 다른 키를 사용하는 대표적인 비대칭 키 암호화 알고리즘(asymmetric key cryptography algorithm)이다. 앞서 <a href="https://tramamte.github.io/2018/07/20/diffie-hellman/">디피-헬만 키 교환</a>에서 알아본 대칭 키 암호화 알고리즘은 키와 알고리즘이 서로 독립적인데 반해 비대칭 키 암호화 알고리즘은 키를 생성하는 과정과 암호화/복호화 과정이 밀접하게 연관돼 있다.</p>
+
+<h1 id="기반-지식">기반 지식</h1>
+
+<p>나머지 연산의 성질 몇 가지와 오일러 파이<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup> 함수 (Euler&rsquo;s phi function 또는 Euler&rsquo;s totient function), 페르마 소정리 (Fermat&rsquo;s little theorem)와 이의 일반화 형태인 오일러 정리 (Euler&rsquo;s theorem), 중국인의 나머지 정리 (CRT, Chinese Remainder Theorem)에 대해 딱 RSA를 이해하는데 필요한 정도만 우선 확인하고 넘어가자.</p>
+
+<h2 id="나머지-연산의-성질">나머지 연산의 성질</h2>
+
+<p>교과 과정에서는 별도의 연산으로 다루지 않지만 이미 나눗셈을 배우면서 공부했고, 개발자에게도 친숙한 나머지 연산의 몇 가지 성질에 대해 살펴보자. 연산자는 \(\bmod\)로 표기한다. 즉, \(a \bmod b\)는 \(a\)를\(b\)로 나눈 나머지를 의미한다.</p>
+
+<h3 id="두-수의-나머지가-같은-경우">두 수의 나머지가 같은 경우</h3>
+
+<p>\(a\)를 \(c\)로 나눈 나머지와 \(b\)를 \(c\)로 나눈 나머지가 같은 경우, 즉 \(a \bmod c = b \bmod c\)인 경우 다음을 만족한다.</p>
+
+<p>$$ (b - a) \bmod c = 0 $$</p>
+
+<p>간단한 숫자 몇 가지를 대입해 풀어보면 간단히 알 수 있지만 일반화한 증명은 다음과 같다.</p>
+
+<p>나머지를 \(r\)이라고 하면 \(a\)와 \(b\)는 각각 다음과 같이 쓸 수 있다.</p>
+
+<p>$$ a = cm +r $$</p>
+
+<p>$$ b = cn +r $$</p>
+
+<p>\(b\)에서 \(a\)를 빼면,</p>
+
+<p>$$ \begin{matrix} b - a &amp;=&amp; (cn + r) - (cm + r) \\ &amp;=&amp; c(n - m) \end{matrix} $$</p>
+
+<p>이 되기 때문에 \(c\)로 나누어 떨어진다.</p>
+
+<h3 id="나머지-연산의-곱셈">나머지 연산의 곱셈</h3>
+
+<p>두 수 \(a\), \(b\)의 \(c\)에 대한 나머지가 각각 다음과 같으면,</p>
+
+<p>$$ a \bmod c = i $$</p>
+
+<p>$$ b \bmod c = j $$</p>
+
+<p>\(a\)와 \(b\)의 곱에 대해서는 다음식을 만족한다.</p>
+
+<p>$$ ab \bmod c \ = ij \bmod c $$</p>
+
+<p>위에서처럼 \(a\), \(b\) 각각을 다음과 같이 쓸 수 있다.</p>
+
+<p>$$ a = cm + i $$</p>
+
+<p>$$ b = cn + j $$</p>
+
+<p>\(a\)와 \(b\)의 곱은 다음과 같다.</p>
+
+<p>$$\begin{matrix} ab &amp;=&amp; (cm + i)(cn + j) \\ &amp;=&amp; c ^ 2mn + cmj + cni + ij \end{matrix} $$</p>
+
+<p>\(ab\)를 \(c\)로 나누면 나머지 항은 모두 나누어 떨어지고 \(ij\)를 \(c\)로 나눈 나머지만 남는다.</p>
+
+<h3 id="나머지-연산의-지수승">나머지 연산의 지수승</h3>
+
+<p>\(a \bmod c = i\)일 때, 나머지 연산의 지수승에 대해서는 위 곱셈 성질에 따라 다음을 만족한다.</p>
+
+<p>$$ a ^ n \bmod c = i ^ n \bmod c $$</p>
+
+<h2 id="오일러-파이-함수-euler-s-phi-function">오일러 파이 함수 (Euler&rsquo;s phi function)</h2>
+
+<p>오일러 파이 함수는 1부터 \(n\)까지의 양의 정수 중 \(n\)과 서로소인 것의 개수를 나타내는 함수이다. \(\varphi(n)\)이나 \(\phi(n)\)으로 표기한다.</p>
+
+<p>예를 들면,</p>
+
+<ul>
+<li>3을 기준으로 1부터 3까지의 양의 정수 1, 2, 3 중 3과 서로소인 수는 1, 2이므로 \(\varphi(3) = 2\)</li>
+<li>4를 기준으로 1부터 4까지의 양의 정수 1, 2, 3, 4 중 4와 서로소인 수는 1, 3이므로 \(\varphi(4) = 2\)</li>
+<li>5를 기준으로 1부터 5까지의 양의 정수 1, 2, 3, 4, 5 중 5와 서로소인 수는 1, 2, 3, 4이므로 \(\varphi(5) = 4\)</li>
+<li>6을 기준으로 1부터 6까지의 양의 정수 1, 2, 3, 4, 5, 6 중 6과 서로소인 수는 1, 5이므로 \(\varphi(6) = 2\)</li>
+<li>7을 기준으로 1부터 7까지의 양의 정수 1, 2, 3, 4, 5, 6, 7 중 7과 서로소인 수는 1, 2, 3, 4, 5, 6이므로 \(\varphi(7) = 6\)</li>
+<li>8을 기준으로 1부터 8까지의 양의 정수 1, 2, 3, 4, 5, 6, 7, 8 중 8과 서로소인 수는 1, 3, 5, 7이므로 \(\varphi(8) = 4\)</li>
+</ul>
+
+<p>이 된다.</p>
+
+<p>특징이 보이는가? 보이지 않는다면 소수의 정의를 다시 한 번 생각해 보자. 소수는 1과 자기 자신 외에는 나누어 떨어지지 않는 수이다. 그런데 파이 함수는 1은 포함한다. 따라서 여기서 파이 함수의 첫 번째 특징을 알 수 있다.</p>
+
+
+
+
+<div class="box" style="background:#ffeeff;">
+
+<p>\(n\)이 소수인 경우,</p>
+
+<p>$$\varphi(n) = n - 1$$</p>
+
+</div>
+
+
+<p>6의 경우를 다시 보자. 6은 1, 6 외에도 2, 3의 약수&mdash;또는 인수&mdash;를 갖는다. 따라서 \(\varphi(6)\)은 1부터 6까지 전체 6개의 숫자 중 자기 자신(6) 한 개, 2의 배수(2, 4) 두 개, 3의 배수(3) 한 개를 뺀 \(6 - (1 + 2 + 1) = 2\)가 된다.</p>
+
+<p>이를 기반으로 사고를 확장해 보면, \(m\)과 \(n\)이 서로 다른 소수인 경우 \(m\)과 \(n\)을 곱한 수 \(mn\)의 파이 함수 값 \(\varphi(mn)\)은 전체 \(mn\)개의 숫자 중 \(1m\), \(2m\), &hellip;, \(nm\) 등 \(m\)의 배수 \(n\)개를 제외하고, \(1n\), \(2n\), &hellip;, \(mn\) 등 \(n\)의 배수 \(m\)개를 제외한 뒤 자기 자신(\(mn\))은 두 번 제외됐으므로 한 번 더해주는 방식으로 구할 수 있다. 여기서 두 번째 특징이 나온다.</p>
+
+
+
+
+<div class="box" style="background:#ffeeff;">
+
+<p>\(m\), \(n\)이 서로 다른 소수인 경우 두 수의 곱에 대한 파이 함수 값 \(\varphi(mn)\)은 다음과 같이 구할 수 있다.</p>
+
+<p>$$ \begin{matrix} \varphi(mn) &amp;=&amp; mn - n - m + 1\\ &amp;=&amp; (m - 1)(n - 1) \end{matrix} $$</p>
+
+<p>따라서 아래 등식이 성립한다.</p>
+
+<p>$$ \varphi(mn) = \varphi(m)\varphi(n) $$</p>
+
+</div>
+
+
+<h2 id="페르마-소정리-fermat-s-littel-theorem">페르마 소정리 (Fermat&rsquo;s littel theorem)</h2>
+
+<p>페르마 소정리는 어떤 수가 소수일 필요조건에 대한 정리이다. 따라서 모든 소수는 정리를 만족하지만, 정리를 만족해도 소수가 아닐 수 있다.</p>
+
+<p>페르마 소정리는 보통 <a href="https://ko.wikipedia.org/wiki/%ED%95%A9%EB%8F%99_%EC%82%B0%EC%88%A0">합동 산술 (modular arithmetic)</a>에서 정의한 기호로 표기하는데 이는 중학교 범위를 벗어나니 최대한 쉬운 용어로 바꿔 알아보자.</p>
+
+
+
+
+<div class="box" style="background:#ffeeff;">
+
+<p>\(p\)가 소수이고 \(a\)가 \(p\)로 나누어 떨어지지 않는 경우,</p>
+
+<p>$$ a^p\,\bmod\,p = a\,\bmod\,p $$</p>
+
+<p>\(a\)가 0인 경우는 당연히 성립하며, \(a \neq 0\)인 경우 다음 식도 성립한다.</p>
+
+<p>$$ a^{(p-1)}\,\bmod\,p = 1 $$</p>
+
+</div>
+
+
+<p>우선 첫 번째 공식이 성립한다는 가정하에 두 번째 공식이 성립함은 아래와 같이 확인할 수 있다.</p>
+
+<p>나머지 연산의 성질에 따라 다음을 만족한다.</p>
+
+<p>$$ \left( a^p - a \right)\,\bmod\,p = 0 $$</p>
+
+<p>즉, \(a^p - a\)를 \(p\)로 나누면 임의의 정수 \(l\)이 된다.</p>
+
+<p>$$ {{a^p - a} \over p} = {{ a \left( a^{p-1} - 1 \right) } \over p} = l $$</p>
+
+<p>그런데 조건에서 \(a\)는 \(p\)로 나누어 떨어지지 않고 \(p\)는 소수이므로, 위 식을 만족하려면 \( a^{p-1} - 1 \)이 \(p\)로 나누어 떨어져야 한다. 즉, \( a^{p-1} \)을 \(p\)로 나누면 나머지 1이 남는다.</p>
+
+<p>위에서 언급한 것처럼 합동 산술은 중학교 수준을 벗어나지만, 대부분의 관련 자료에서 합동 산술 표기법을 사용하니 관련된 두 가지 표기법만 짚고 넘어가자.</p>
+
+<ul>
+<li>\(b\)가 \(a\)로 나누어 떨어진다. 또는, \(b\)가 \(a\)로 나누어 떨어지지 않는다.
+$$ a \mid b\ ,\  a \nmid b $$</li>
+<li>\(a\)를 \(n\)으로 나눈 나머지와 \(b\)를 \(n\)으로 나눈 나머지가 같다.
+$$ a \equiv b \pmod{n} $$</li>
+</ul>
+
+<p>특히 두 번째 항목을 <em>\(a\)와 \(b\)는 법 \(n\)에 대해 합동이다. (\(a\) is congruent to \(b\) modulo \(m\))</em> 라고 표현한다.</p>
+
+<p>페르마 소정리는 아래 오일러 정리의 특수한 경우에 해당하니 증명은 오일러 정리의 증명으로 대신하자.</p>
+
+<h2 id="오일러-정리-euler-s-theorem">오일러 정리 (Euler&rsquo;s theorem)</h2>
+
+<p>오일러 정리는 페르마 소정리에 대한 일반 형태로 페르마 소정리에서의 소수 \(p\)를 일반 정수 \(n\)으로 확장한 형태이다. 합동 산술 표기법으로 표현하면 \(n\)에 대한 조건이 완화되지만 RSA를 이해하는데는 문제가 없기 때문에 제한적 상황만 고려하자.</p>
+
+
+
+
+<div class="box" style="background:#ffeeff;">
+
+<p>임의의 0보다 큰 정수 \(a\)와 1보다 큰 정수 \(n\)이 서로소일 때,</p>
+
+<p>$$ a^{\varphi(n)}\,\bmod\,n = 1 $$</p>
+
+</div>
+
+
+<p>\(n\)이 소수인 경우 오일러 파이 함수의 첫 번째 특징에 의해  페르마 소정리의 두 번째 식과 같아진다.</p>
+
+<p>오일러 정리에 대한 증명은 다음과 같다.</p>
+
+<p>1부터 \(n\)까지의 정수 중 \(n\)과 서로소인 \(\varphi(n)\)개의 수들을 \( r _ 1, \cdots, r _ {\varphi(n)} \)라고 하면, 각각에 \( a \)를 곱한 \( ar _ 1, \cdots, ar _ {\varphi(n)} \) 역시 \( n \)과 서로소인 수들의 곱이므로 \(n \)과 서로소이다. 또, 이 수들을 \( n \)으로 나눈 나머지들을 모두 서로 다르다.</p>
+
+<p>왜냐하면,</p>
+
+<p>만약 나머지가 같은 \( ar _ i,\ ar _ j\ (0 &lt; r _ i &lt; r _ j &lt; n) \)가 있다면, \( ar _ j - ar _ i = a( r _ j - r _ i)\)는 \(n\)으로 나누어 떨어진다. 그런데 \(a\)는 \(n\)과 서로소이므로 \(r _ j - r _ i \)가 \(n\)으로 나누어 떨어져야 한다. 하지만 \( n &gt; r _ j &gt; r _ i \)이므로 \( r _ j - r _ i \)가 \(n\)으로 나누어 떨어질 수 없다. 따라서 가정이 거짓이고, 이에 따라 나머지는 모두 다르다.</p>
+
+<p>각 \(r _ i\ (1 \le i \le \varphi(n))\)에 \(a\)를 곱한 수를 살펴보자. 이 수는 다음과 같이 쓸 수 있다.</p>
+
+<p>$$ ar _ i = nq _ i + m _ i\ (1 \le i \le \varphi(n)) $$</p>
+
+<p>\(n\)으로 나눴을 때 몫이 \(q_i\), 나머지가 \(m_i\)라는 뜻이다. 위에서 이미 나머지들은 모두 서로 다르다는 것을 밝혔으니 나머지의 경우의 수 역시 \(\varphi(n)\)가지이다. 그리고 \(m _ i\)들은 모두 \(n\)과 서로소이다.</p>
+
+<p>왜냐하면,</p>
+
+<p>만약 \(m_i\)와 \(n\)이 서로소가 아니고 1이 아닌 공약수 \(d\)를 갖는다면, \(m_i = dl_i\), \(n = dk\)라 할 수 있고, \(ar_i\)는 다음과 같이 쓸 수 있다.</p>
+
+<p>$$ \begin{matrix} ar_i &amp;=&amp; nq_i + m_i \\ &amp;=&amp; dkq_i + dl_i \\ &amp;=&amp; d(kq_i + l_i) \end{matrix} $$</p>
+
+<p>이 경우 \(ar_i\)와 \(n\)은 1이 아닌 공약수 \(d\)를 갖게 되기 때문에 서로소가 아니게 된다. 따라서 \(m_i\)와 \(n\)은 서로소이다.</p>
+
+<p>정리하면, \(m_i\)는 \(n\)으로 나눈 나머지이므로 \(n\)보다는 작고, \(n\)과 서로소인 \(\varphi(n)\)개의 수이다. 즉, \(r_i\)와 순서만 다른 같은 수들의 집합이다.</p>
+
+<p>이제 \(ar_i\)들을 모두 곱하면,</p>
+
+<p>$$ ar _ 1 \times \cdots \times ar _ {\varphi(n)} $$</p>
+
+<p>$$ = (nq _ 1 + m _ 1) \times \cdots \times (nq _ {\varphi(n)} + m _ {\varphi(n)}) $$</p>
+
+<p>이 되는데, 이 식을 전개하면 모든 항에 \(n\)이 한 개 이상 포함되고, 마지막 항 \(m _ 1 \times \cdots \times m _ {\varphi(n)}\)만 \(n\)을 포함하지 않는다. 위에서 \(m_i\)는 순서만 바뀐 \(r_i\)와 같은 수들의 집합이라는 것을 밝혔으니 \(n\)이 포함되지 않은 마지막 항은 \(r _ 1 \times \cdots \times r _ {\varphi(n)}\)과 같다. 따라서 \(ar_i\)들을 모두 곱한 수를 \(n\)으로 나눈 나머지는 \(r_i\)들을 모두 곱한 수를 \(n\)으로 나눈 나머지와 같다.</p>
+
+<p>$$ ar _ 1 \times \cdots \times ar _ {\varphi(n)} $$</p>
+
+<p>$$ = b _ 1 n ^ {\varphi(n)} + b _ 2 n ^ {\varphi(n) - 1} + \cdots + (m _ 1 \times \cdots \times m _ {\varphi(n)}) $$</p>
+
+<p>$$ = b _ 1 n ^ {\varphi(n)} + b _ 2 n ^ {\varphi(n) - 1} + \cdots + (r _ 1 \times \cdots \times r _ {\varphi(n)}) $$</p>
+
+<p>$$ \therefore (ar _ 1 \times \cdots \times ar _ {\varphi(n)})\,\bmod\,n $$</p>
+
+<p>$$ \quad = (r _ 1 \times \cdots \times r _ {\varphi(n)})\,\bmod\,n $$</p>
+
+<p>두 곱한 수를 \(n\)으로 나눴을 때 나머지가 같으므로 \(ar_i\)들의 곱에서 \(r_i\)들의 곱을 뺀 수는 \(n\)으로 나누어 떨어진다. 즉,</p>
+
+<p>$$ (ar _ 1 \times \cdots \times ar _ {\varphi(n)} - r _ 1 \times \cdots \times r _ {\varphi(n)}) \,\bmod\,n = 0 $$</p>
+
+<p>$$ (a ^ {\varphi(n)} - 1)(r _ 1 \times \cdots \times r _ {\varphi(n)})\,\bmod\,n = 0 $$</p>
+
+<p>이 중 \(r _ 1 \times \cdots \times r _ {\varphi(n)}\)는 \(n\)과 서로소인 수들의 곱이므로 역시 \(n\)과 서로소이다. 따라서 위 식을 만족하려면 \(a ^ {\varphi(n)} - 1\)이 \(n\)으로 나누어 떨어져야 한다. 즉,</p>
+
+<p>$$ (a ^ {\varphi(n)} - 1)\,\bmod\,n = 0 $$</p>
+
+<p>$$ \therefore a ^ {\varphi(n)}\,\bmod\,n = 1 $$</p>
+
+<h2 id="중국인의-나머지-정리-chinese-remainder-theorem">중국인의 나머지 정리 (Chinese Remainder Theorem)</h2>
+
+<p>중국인의 나머지 정리는 연립 합동 산술의 해의 존재성과 유일성을 증명하는 정리인데, RSA 절차를 증명하는데 필요한 부분만 발췌해 간단히 기술하면 다음과 같다.</p>
+
+
+
+
+<div class="box" style="background:#ffeeff;">
+
+<p>서로소인 \(p\), \(q\)에 대해 \( a \bmod p = b \bmod p \)이고 \( a \bmod q = b \bmod q \)이면,</p>
+
+<p>$$ a \bmod pq = b \bmod pq$$</p>
+
+<p>의 관계를 만족한다.</p>
+
+</div>
+
+
+<p>\(a \bmod p = b\)이므로 나머지 연산의 <a href="#두-수의-나머지가-같은-경우">첫 번째 성질 - 두 수의 나머지가 같은 경우</a>에 의해 \(a - b\)는 \(p\)로 나누어 떨어진다. 그리고 같은 이유로 \(a - b\)는 \(q\)로도 나누어 떨어진다.</p>
+
+<p>\(p\)와 \(q\)는 서로소이므로 \(a-b\)가 \(p\), \(q\)로 모두 나누어 떨어지려면 다음 관계를 만족해야 한다.</p>
+
+<p>$$ a - b = kpq $$</p>
+
+<p>따라서 \(a\)를 \(pq\)로 나눈 나머지는 \(b\)를 \(pq\)로 나눈 나머지와 같다.</p>
+
+<h1 id="키-생성-절차">키 생성 절차</h1>
+
+<p>RSA 키 생성 절차는 다음과 같다.</p>
+
+<ol>
+<li>서로 다른 소수 \(p\), \(q\)를 고른다.</li>
+<li>\((p-1), (q-1)\)과 각각 서로소인 \(e\)를 고른다.</li>
+<li>\(ed\)를 \((p-1)(q-1)\)로 나눴을 때 나머지가 1이 되는 \(d\)를 찾는다.</li>
+<li>\(N = pq\)를 구한다.</li>
+<li>\((N, e)\)가 공개키, \((N, d)\)가 개인키가 된다.</li>
+<li>공개키는 원문을 암호화할 때 사용하고 개인키는 암호문을 복호화할 때 사용하므로, 이름 그대로 공개키는 모두에게 공개하고, 개인키는 별도로 안전하게 보관한다.</li>
+</ol>
+
+<p>RSA의 핵심은 \(N\)만 가지고는 \(p, q\)를 찾기 어렵고&mdash;소인수분해가 어렵고&mdash;, \(p, q\)를 모르는 상태에서는 \(e\)를 알아도 \(d\)를 특정할 수 없다는데 있다.</p>
+
+<h1 id="암호화-및-복호화">암호화 및 복호화</h1>
+
+<p>키의 길이, 원문을 작은 단위로 나누는 방법 등에 따라 차이가 있기는 하지만 RSA의 기본적인 암호화/복호화 방법은 정해진 하나의 규칙을 따른다. 원문이 \(N\)보다 작다는 가정하에 간단한 절차를 알아보자.</p>
+
+<h2 id="암호화-절차">암호화 절차</h2>
+
+<ul>
+<li>정보 수신자의 공개키를 확보한다.</li>
+<li>원문을 \(o\)라 하면, \(c=o ^ e \bmod N\)을 계산한다.</li>
+<li>계산된 \(c\)&mdash;암호문&mdash;를 수신자에게 전송한다.</li>
+</ul>
+
+<h2 id="복호화-절차">복호화 절차</h2>
+
+<ul>
+<li>수신한 \(c\)를 이용해, \(o ^ \prime = c ^ d \bmod N\)을 계산한다.</li>
+<li>계산한 \(o ^ \prime\)이 원문 \(o\)이다.</li>
+</ul>
+
+<hr />
+
+<p>RSA를 사용하는 일반적인 절차를 도식화하면 다음과 같다. Alice가 정보를 보내는 사람, Bob이 정보를 받는 사람이다.</p>
+
+
+
+<div class="sequence" id="sequence1532571654052482500"
+  align="left"></div>
+<script>
+  var seq = Diagram.parse("\n\nparticipant Alice as A\n\nparticipant Bob as B\n\nA-\x3eB: Give me your pub. key\n\nB-\x3eA: Here you are (pub. key)\n\nNote over A: Calculate c\n\nA-\x3eB: ihj4ertlv89hjipaf...\n\nNote over B: Calculate o\x27\n\n");
+  
+  seq.drawSVG('sequence1532571654052482500', {theme: 'simple'});
+  
+</script>
+
+
+<h2 id="암호화-및-복호화-검증">암호화 및 복호화 검증</h2>
+
+<p>\(o\)와 \(o ^ \prime\)이 왜 같아지는지 알아보자.</p>
+
+<p>나머지 연산의 지수승 성질에 따라 \(o ^ \prime\)의 계산식은 다음과 같은 관계를 갖는다.</p>
+
+<p>$$ c ^ d \bmod N = (o ^ e) ^ d \bmod N $$</p>
+
+<p>\(ed\)는 \((p-1)(q-1)\)로 나눴을 때 나머지가 1이 되는 수이므로 다음과 같이 쓸 수 있다.</p>
+
+<p>$$ (o ^ e) ^ d = o ^ {ed} = o ^ {k(p-1)(q-1) + 1} $$</p>
+
+<p>결국 위 식은 다음 관계를 만족한다.</p>
+
+<p>$$ \begin{matrix} c ^ d \bmod N &amp;=&amp; o ^ {ed} \bmod N \\ &amp;=&amp; o ^ {k(p-1)(q-1) + 1} \bmod N \\ &amp;=&amp; ((o ^ k) ^ {(p-1)(q-1)} \times o) \bmod N \end{matrix} $$</p>
+
+<p>마지막 식은 나머지 연산의 곱셈 성질에 따라 나누어 쓸 수 있다.</p>
+
+<p>$$ ((o ^ k) ^ {(p-1)(q-1)} \times o) \bmod N $$</p>
+
+<p>$$ = ((o ^ k) ^ {(p-1)(q-1)} \bmod N)(o \bmod N)\bmod N$$</p>
+
+<p>만약 \(o\)와 \(N\)이 서로소라면 \(o ^ k\)와 \(N\)도 서로소가 된다. 따라서 이 경우에는 오일러 정리에 따라,</p>
+
+<p>$$ ((o ^ k) ^ {(p-1)(q-1)} \bmod N)(o \bmod N)\bmod N$$</p>
+
+<p>$$ = (1 \times (o \bmod N)) \bmod N = o $$</p>
+
+<p>의 관계를 만족한다.</p>
+
+<p>\(o\)와 \(N\)이 서로소가 아닌 경우는 \(o\)가 \(p\)나 \(q\) 중 하나를 인수로 갖는 경우이다. \(o\)는 \(N\)보다 작게  나눈 단위이기 때문에 \(p\)와 \(q\)를 동시에 인수로 가질 수는 없다. \(q\)가 \(o\)의 인수라 가정하고 \(N\) 대신 \(p\), \(q\)로 각각 나눈 경우를 생각해 보자.</p>
+
+<p>$$ ((o ^ k) ^ {(p-1)(q-1)} \times o) \bmod p $$</p>
+
+<p>$$ = ((o ^ {k(q-1)}) ^ {(p-1)} \bmod p)(o \bmod p) \bmod p$$</p>
+
+<p>\(o\)는 \(q\)의 배수이고, \(p\)를 인수로 포함하지 않기 때문에 \(o ^ {k(q-1)}\)은 \(p\)로 나누어 떨어지지 않는다. 페르자 소정리를 적용해 정리하면 다음과 같다.</p>
+
+<p>$$ ((o ^ {k(q-1)}) ^ {(p-1)} \bmod p)(o \bmod p) \bmod p$$</p>
+
+<p>$$ = 1 \times (o \bmod p) \bmod p = o \bmod p$$</p>
+
+<p>이 풀이는 나누는 수를 \(q\)로 변경해도 그대로 성립한다. \(o\)가 \(q\)의 배수이기 때문에 \(q\)로 나누면 양변이 모두 0이 되기 때문이다. 즉, 다음 관계를 만족한다.</p>
+
+<p>$$ ((o ^ k) ^ {(p-1)(q-1)} \times o) \bmod p = o \bmod p $$</p>
+
+<p>$$ ((o ^ k) ^ {(p-1)(q-1)} \times o) \bmod q = o \bmod q $$</p>
+
+<p>중국인의 나머지 정리를 이용해 최종적으로 다음과 같이 정리할 수 있다.</p>
+
+<p>$$\begin{matrix} ((o ^ k) ^ {(p-1)(q-1)} \times o) \bmod N &amp;=&amp; o \bmod N \\ &amp;=&amp; o \end{matrix}$$</p>
+
+<h1 id="전자-서명">전자  서명</h1>
+
+<p>위 절차에 대한 검증을 자세히 이해하면 사실 공개키, 개인키의 구분이 무의미하다는 사실을 알 수 있다. 암호화하는 방법, 복호화하는 방법이 정해져 있고, 키가 두 개 있는데, 둘 중 어느 하나를 이용해 암호화하면 다른 하나를 이용해 복호화할 수 있는 것이다. 이는 RSA뿐만 아니라 비대칭 키 암호화 알고리즘과 그 키들이 공통적으로 가지고 있는 특징이기도 하다.</p>
+
+<p>이런 특징으로 인해 내 개인키로 정보를 암호화하면 내 공개키로 복호화하는 것이 가능하다.</p>
+
+<blockquote>
+<p>아무나 풀 수 있는 암호가 무슨 의미가 있지?</p>
+</blockquote>
+
+<p>계약서나 서류 등에 서명하는 경우를 생각해 보자.</p>
+
+<ol>
+<li>계약서나 서류를 모두 읽고 이해한다.</li>
+<li>계약서나 서류에 서명한다.</li>
+</ol>
+
+<p>2 단계를 지나면 서류에 서명한 당사자는 해당 서류의 내용을 모두 이해했고, 동의했다는 의미가 된다. 서명의 대상은 서명할 당시의 내용이다. 즉, 서명 후 내용을 수정하면 서명의 효력을 잃어야 마땅하고 이를 위배하면&mdash;서명 후 내용을 변경하고도, 서명이 변경된 내용에 대한 것처럼 속이면&mdash; 중대한 위법이 된다.</p>
+
+<p>개인키를 이용한 암호화는 바로 이 용도로 사용할 수 있다.</p>
+
+<p>원문을 가진 Alice는 원문과 함께 원문을 자신의 개인키로 암호화한 암호문<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>을 Bob에게 전달하고, Bob은 Alice의 공개키로 암호문을 복호화해 해당 내용이 원문과 같은지 비교해 볼 수 있다. 원문과 복호화한 정보가 같다면 이 내용은 Alice가 최종적으로 확인한 내용과 같은 것이다. 즉, Alice가 원문과 함께 전달한 암호문이 바로 Alice의 서명이 되는 것이다.</p>
+
+<p>이 과정에는 숨겨진 정보가 하나 더 필요하다.</p>
+
+<p><strong>복호화에 사용한 공개키 = Alice의 것</strong></p>
+
+<p>서류에 하는 자필 서명도 단순히 낙서처럼 끄적여 둔 일종의 표식이 한 특정인의 것이라는 보장이 있어야 의미가 있듯, 전자 서명도 복호화에 사용한 공개키가 Alice의 것임을 특정할 수 있어야 의미를 가질 수 있다.</p>
+
+<p>하지만 암호화 알고리즘들은 키 소유자를 특정하는 기능까지는 제공하지 않는다.</p>
+
+<ul>
+<li>공개키A로 암호화한 내용은 개인키A를 가지고 있어야 복호화할 수 있다.</li>
+<li>공개키A로 복호화할 수 있는 암호문은 개인키A로만 만들 수 있다.</li>
+</ul>
+
+<p>위 두 가지가 비대칭 키 암호화 알고리즘들의 두 가지 중요한 성질이다.</p>
+
+<p>우리가 사용하는 공인인증서는 이러한 비대칭 키 암호화 알고리즘의 성질에 정부 또는 은행, 증권사 등이 공개키의 보유자를 특정할 수 있도록 보증하는 기능을 더한 것이다. 따라서 서명 용도로 사용이 가능하다.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">원주율을 표시할 때 사용하는 \(\pi\)와의 구분을 위해 ’피’라 읽기도 하는데 여기서는 ’파이’로 표기한다.
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2">보통은 암호문의 크기를 줄이기 위해 hash 후 암호화한다.
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+
+  
+
+<div class="see-also">
+  <i class="fas fa-archive fa-fw"></i>
+  <strong>See Also</strong>
+  <ul>
+	
+	<li><a href="https://tramamte.github.io/2018/07/20/diffie-hellman/">중학교 수학으로 이해하는 디피-헬만 키 교환 (Diffie-Hellman Key Exchange)</a></li>
+	
+  </ul>
+</div>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24">
+    
+    <a href="https://tramamte.github.io/2018/07/24/constant-misunderstanding/"><i class="fas fa-angle-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://tramamte.github.io/2018/07/24/constant-misunderstanding/">상수에 대한 오해</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">&nbsp;</div>
+  <div class="pure-u-10-24" style="text-align: right;">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script>
+	
+
+	
+
+
+	(function() { 
+		var d = document, s = d.createElement('script');
+		s.src = 'https://' + 'awesome-patrick' + '.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+	})();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+<div class="footer">
+  <div class="small-print">
+  <small>&copy2018 Patrick Yu. All rights reserved.</small>
+</div>
+<div class="small-print">
+  <small>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with modified <a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a> theme.</small>
+</div>
+
+</div>
+
+</div>
+</div>
+<script src="https://tramamte.github.io/js/ui.js"></script>
+
+
+
+
+
+
+</body>
+</html>
+

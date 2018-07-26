@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 24 Jul 2018 22:47:49 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 25 Jul 2018 23:18:32 +0900</lastBuildDate>
     
 	<atom:link href="https://tramamte.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>중학교 수학으로 이해하는 RSA</title>
+      <link>https://tramamte.github.io/2018/07/25/rsa/</link>
+      <pubDate>Wed, 25 Jul 2018 23:18:32 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2018/07/25/rsa/</guid>
+      <description>한 화면에 모두 표시되지 않는 그림이나 수식은 좌우 스크롤이 가능합니다. 중학교 수학으로 이해하는 시리즈 2탄은 PKI(Public Key Infrastructure)의 근간이 되</description>
+    </item>
     
     <item>
       <title>상수에 대한 오해</title>
