@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Struct basic">
-  <meta name="generator" content="Hugo 0.45" />
+  <meta name="generator" content="Hugo 0.46" />
 
   <title>구조체 기초 &middot; Awesome Patrick</title>
 
@@ -279,6 +279,7 @@
 <li><a href="#타입-선언">타입 선언</a>
 <ul>
 <li><a href="#타입-선언-방법">타입 선언 방법</a></li>
+<li><a href="#aliasdecl과-typedef의-차이">AliasDecl과 TypeDef의 차이</a></li>
 <li><a href="#타입-선언을-이용한-구조체-변수-선언과-초기값-할당">타입 선언을 이용한 구조체 변수 선언과 초기값 할당</a></li>
 </ul></li>
 </ul>
@@ -392,8 +393,63 @@ Key           = FieldName | Expression | LiteralValue .</pre></div>
 TypeSpec  = AliasDecl | TypeDef .
 AliasDecl = identifier &#34;=&#34; Type .
 TypeDef   = identifier Type .</pre></div>
-<p>AliasDecl과 Typedef는 중간에 <code>=</code>가 있으냐 없느냐의 차이만 있다. AliasDecl은 주로 이미 이름이 있는 타입에 별칭을 추가할 때, TypeDef는 구조체 타입과 같이 아직 이름이 없는 타입에 이름을 붙일 때 사용하지만 AliasDecl 방식을 이용해 구조체 타입에 이름을 붙일 수도 있고, TypeDef 방식을 이용해 기본 타입에 별칭을 추가할 수도 있다. C 개발자라면 AliasDecl보다는 TypeDef 방식이 더 익숙할텐데&mdash;규칙 이름도 TypeDef&mdash;, 그렇다고 해도 C의 <code>typedef</code>와는 쓰는 순서가 반대이다.</p>
+<p>AliasDecl과 Typedef는 중간에 <code>=</code>가 있으냐 없느냐의 차이만 있다. AliasDecl은 주로 이미 이름이 있는 타입에 별칭을 추가할 때, TypeDef는 구조체 타입과 같이 아직 이름이 없는 타입에 이름을 붙일 때 사용하지만 AliasDecl 방식을 이용해 구조체 타입에 이름을 붙일 수도 있고, TypeDef 방식을 이용해 기본 타입에 별칭을 추가할 수도 있다.</p>
 
+<h2 id="aliasdecl과-typedef의-차이">AliasDecl과 TypeDef의 차이</h2>
+
+<p>위에서는 두 방식에 <code>=</code> 외 별 차이가 없다고 했지만, 사실 두 방식에는 큰 차이가 있다.</p>
+
+<p>우선 <a href="https://golang.org/ref/spec#Type_declarations">Go spec.</a>에서 두 방식에 대해 설명하고 있는 문구를 보자.</p>
+
+
+
+
+
+<blockquote class="quote">
+
+
+<dl>
+<dt><strong>Alias declarations</strong></dt>
+<dd><p>An alias declaration binds an identifier to the given type.</p></dd>
+<dt><strong>Type definitions</strong></dt>
+<dd><p>A type definition creates a new, distinct type with the same underlying type and operations as the given type, and binds an identifier to it.</p></dd>
+</dl>
+
+</blockquote>
+
+
+<p>AliasDecl은 이름 그대로 주어진 타입에 대한 <strong>별칭</strong>을 만드는 것이고, TypeDef는 <strong>새로운 타입</strong>을 만드는 것이다. 이 둘의 차이는 다음 예를 보면 쉽게 구분할 수 있다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
+
+<span style="color:#00a8c8">type</span> <span style="color:#75af00">myint</span> <span style="color:#00a8c8">int</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">test</span><span style="color:#111">(</span><span style="color:#75af00">a</span> <span style="color:#00a8c8">int</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">a</span><span style="color:#111">)</span>
+<span style="color:#111">}</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#00a8c8">var</span> <span style="color:#75af00">m</span> <span style="color:#75af00">myint</span> <span style="color:#111">=</span> <span style="color:#ae81ff">1</span>
+	<span style="color:#75af00">test</span><span style="color:#111">(</span><span style="color:#75af00">m</span><span style="color:#111">)</span>
+<span style="color:#111">}</span></code></pre></div>
+<p>이 코드는 다음과 같은 오류가 발생한다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">./main.go:13:6: cannot use m (type myint) as type int in argument to test</pre></div>
+<p><code>myint</code>는 <code>int</code>가 아닌 새로운 타입이기 때문에 <code>test()</code> 함수에 그대로 인수로 전달할 수 없다. 하지만 <code>myint</code>를 다음과 같이 AliasDecl로 변경하면 이 코드는 문제없이 정상 동작한다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
+
+<span style="color:#00a8c8">type</span> <span style="color:#75af00">myint</span> <span style="color:#111">=</span> <span style="color:#00a8c8">int</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">test</span><span style="color:#111">(</span><span style="color:#75af00">a</span> <span style="color:#00a8c8">int</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">a</span><span style="color:#111">)</span>
+<span style="color:#111">}</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#00a8c8">var</span> <span style="color:#75af00">m</span> <span style="color:#75af00">myint</span> <span style="color:#111">=</span> <span style="color:#ae81ff">1</span>
+	<span style="color:#75af00">test</span><span style="color:#111">(</span><span style="color:#75af00">m</span><span style="color:#111">)</span>
+<span style="color:#111">}</span></code></pre></div>
 <h2 id="타입-선언을-이용한-구조체-변수-선언과-초기값-할당">타입 선언을 이용한 구조체 변수 선언과 초기값 할당</h2>
 
 <p>이제 타입 선언법을 알았으니 위에서 살펴본 <code>myStruct</code> 변수의 구조체에 적용해 보자.</p>
