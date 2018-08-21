@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://tramamte.github.io/2018/08/20/hanks-oven-06/</loc>
+    <lastmod>2018-08-20T23:15:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tramamte.github.io/2018/08/06/array/</loc>
     <lastmod>2018-08-06T23:07:12+09:00</lastmod>
   </url>
@@ -219,7 +224,7 @@
   
   <url>
     <loc>https://tramamte.github.io/</loc>
-    <lastmod>2018-08-06T23:07:12+09:00</lastmod>
+    <lastmod>2018-08-20T23:15:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -381,7 +386,7 @@
   
   <url>
     <loc>https://tramamte.github.io/tags/oven/</loc>
-    <lastmod>2018-08-06T21:15:00+09:00</lastmod>
+    <lastmod>2018-08-20T23:15:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -393,7 +398,7 @@
   
   <url>
     <loc>https://tramamte.github.io/posts/</loc>
-    <lastmod>2018-08-06T23:07:12+09:00</lastmod>
+    <lastmod>2018-08-20T23:15:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -459,7 +464,7 @@
   
   <url>
     <loc>https://tramamte.github.io/topics/taean/</loc>
-    <lastmod>2018-08-06T21:15:00+09:00</lastmod>
+    <lastmod>2018-08-20T23:15:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
