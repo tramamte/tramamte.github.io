@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://tramamte.github.io/2018/08/29/docker-pull/</loc>
+    <lastmod>2018-08-29T20:46:30+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tramamte.github.io/2018/08/28/map/</loc>
     <lastmod>2018-08-28T23:43:27+09:00</lastmod>
   </url>
@@ -234,7 +239,7 @@
   
   <url>
     <loc>https://tramamte.github.io/</loc>
-    <lastmod>2018-08-28T23:43:27+09:00</lastmod>
+    <lastmod>2018-08-29T20:46:30+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -245,7 +250,7 @@
   </url>
   
   <url>
-    <loc>https://tramamte.github.io/topics/bpm/brm/</loc>
+    <loc>https://tramamte.github.io/topics/bpm-brm/</loc>
     <lastmod>2018-06-07T23:11:28+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -282,7 +287,7 @@
   
   <url>
     <loc>https://tramamte.github.io/topics/docker/</loc>
-    <lastmod>2018-06-26T12:49:25+09:00</lastmod>
+    <lastmod>2018-08-29T20:46:30+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -354,7 +359,7 @@
   
   <url>
     <loc>https://tramamte.github.io/tags/image/</loc>
-    <lastmod>2018-05-31T12:55:14+09:00</lastmod>
+    <lastmod>2018-08-29T20:46:30+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -408,7 +413,13 @@
   
   <url>
     <loc>https://tramamte.github.io/posts/</loc>
-    <lastmod>2018-08-28T23:43:27+09:00</lastmod>
+    <lastmod>2018-08-29T20:46:30+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tramamte.github.io/tags/pull/</loc>
+    <lastmod>2018-08-29T20:46:30+09:00</lastmod>
     <priority>0</priority>
   </url>
   

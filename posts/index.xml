@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 28 Aug 2018 23:43:27 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 29 Aug 2018 20:46:30 +0900</lastBuildDate>
     
 	<atom:link href="https://tramamte.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker 동시 다운로드 개수 조절</title>
+      <link>https://tramamte.github.io/2018/08/29/docker-pull/</link>
+      <pubDate>Wed, 29 Aug 2018 20:46:30 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2018/08/29/docker-pull/</guid>
+      <description>docker pull 명령으로 이미지를 다운로드하면 기본적으로 동시에 3개의 파일을 동시에 내려받는다. 그런데 네트워크 환경이 좋지 않거나 대역폭이 제한돼 있으면 종종 타임아웃</description>
+    </item>
     
     <item>
       <title>맵</title>
