@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 28 Aug 2018 23:43:27 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 05 Sep 2018 23:57:07 +0900</lastBuildDate>
     
 	<atom:link href="https://tramamte.github.io/topics/go/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>배열, 슬라이스 그리고 맵</title>
+      <link>https://tramamte.github.io/2018/09/05/array-slice-and-map/</link>
+      <pubDate>Wed, 05 Sep 2018 23:57:07 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2018/09/05/array-slice-and-map/</guid>
+      <description>Go의 built-in 자료구조인 배열, 슬라이스, 맵에 대해 좀 더 자세히 살펴보자. 크기 배열, 슬라이스, 맵은 모두 복수의 요소를 저장할 수 있다. 따라서 몇 개의 요소를 가지고</description>
+    </item>
     
     <item>
       <title>맵</title>

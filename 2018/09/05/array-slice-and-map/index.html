@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Array, slice and map">
+  <meta name="generator" content="Hugo 0.48" />
+
+  <title>배열, 슬라이스 그리고 맵 &middot; Awesome Patrick</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://tramamte.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://tramamte.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://tramamte.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700|Nanum+Gothic+Coding:400,700|Raleway:400,700|Roboto+Mono" rel="stylesheet">
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="apple-touch-icon" sizes="57x57" href="https://tramamte.github.io/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://tramamte.github.io/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://tramamte.github.io/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://tramamte.github.io/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://tramamte.github.io/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://tramamte.github.io/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://tramamte.github.io/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://tramamte.github.io/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://tramamte.github.io/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://tramamte.github.io/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tramamte.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://tramamte.github.io/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://tramamte.github.io/favicon-16x16.png">
+<link rel="manifest" href="https://tramamte.github.io/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="https://tramamte.github.io/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  <i class="far fa-arrow-alt-circle-right fa-2x fa-fw" style="margin: 0; padding: 0;"></i>
+</a>
+
+<div id="menu">
+  
+  <a class="pure-menu-heading brand" href="https://tramamte.github.io/">Awesome<br>Patrick</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/"><i class='fas fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/topics/"><i class='fas fa-folder fa-fw'></i>Topics</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/tags/"><i class='fas fa-tag fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/posts/"><i class='fas fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/about/"><i class='fas fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://tramamte.github.io/index.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+    </li>
+    
+
+  </ul>
+</div>
+
+</div>
+<div id="menuBackground"></div>
+  
+  <div id="mask"></div>
+  <div id="main">
+
+
+<div class="header">
+  <h1>배열, 슬라이스 그리고 맵</h1>
+  <h2>Array, slice and map</h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fas fa-calendar-alt fa-fw"></i>
+    <time>Sep 05, 2018 23:57</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fas fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/go">go</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fas fa-tag fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/fun-go">fun-go</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  
+<script>
+  function toggleToc() {
+    var x = document.getElementById("toc");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+  }
+</script>
+
+<div class="post-meta">
+<div>
+  <i class="fas fa-file-alt fa-fw"></i>
+  <a href="javascript:toggleToc();">Table of Contents</a>
+</div>
+<div id="toc" style="display: none;"><nav id="TableOfContents">
+<ul>
+<li><a href="#크기">크기</a></li>
+<li><a href="#복사-또는-참조">복사 또는 참조</a></li>
+<li><a href="#반복">반복</a>
+<ul>
+<li><a href="#맵에서-키-추출">맵에서 키 추출</a></li>
+<li><a href="#range">range</a></li>
+</ul></li>
+</ul>
+</nav></div>
+</div>
+
+
+
+  
+
+<p>Go의 built-in 자료구조인 <a href="https://tramamte.github.io/2018/08/06/array/">배열</a>, <a href="https://tramamte.github.io/2018/08/21/slice/">슬라이스</a>, <a href="https://tramamte.github.io/2018/08/28/map/">맵</a>에 대해 좀 더 자세히 살펴보자.</p>
+
+<h1 id="크기">크기</h1>
+
+<p>배열, 슬라이스, 맵은 모두 복수의 요소를 저장할 수 있다. 따라서 몇 개의 요소를 가지고 있는지가 중요하다. 세 타입은 모두 <code>len()</code> 함수를 이용해 포함하고 있는 요소의 개수를 확인할 수 있다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">a</span> <span style="color:#f92672">:=</span> <span style="color:#111">[</span><span style="color:#ae81ff">3</span><span style="color:#111">]</span><span style="color:#00a8c8">int</span> <span style="color:#111">{</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#111">}</span>
+	<span style="color:#75af00">s</span> <span style="color:#f92672">:=</span> <span style="color:#111">[]</span><span style="color:#00a8c8">int</span> <span style="color:#111">{</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#111">}</span>
+	<span style="color:#75af00">m</span> <span style="color:#f92672">:=</span> <span style="color:#00a8c8">map</span><span style="color:#111">[</span><span style="color:#00a8c8">string</span><span style="color:#111">]</span><span style="color:#00a8c8">int</span> <span style="color:#111">{</span><span style="color:#d88200">&#34;A&#34;</span><span style="color:#111">:</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;B&#34;</span><span style="color:#111">:</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;C&#34;</span><span style="color:#111">:</span><span style="color:#ae81ff">2</span><span style="color:#111">}</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#111">len</span><span style="color:#111">(</span><span style="color:#75af00">a</span><span style="color:#111">))</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#111">len</span><span style="color:#111">(</span><span style="color:#75af00">s</span><span style="color:#111">))</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#111">len</span><span style="color:#111">(</span><span style="color:#75af00">m</span><span style="color:#111">))</span>	
+<span style="color:#111">}</span></code></pre></div>
+<p>위 예는 다음을 출력한다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">3
+3
+3</pre></div>
+<p>슬라이스나 맵에 비해 배열은 이미 크기를 지정하고 있다는 점에 주목할 필요가 있다. 즉, 배열 타입의 변수는 값을 넣지 않아도 이미 생성 시점에 크기가 정해져 있다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#00a8c8">var</span> <span style="color:#75af00">a</span> <span style="color:#111">[</span><span style="color:#ae81ff">3</span><span style="color:#111">]</span><span style="color:#00a8c8">int</span>
+	<span style="color:#00a8c8">var</span> <span style="color:#75af00">s</span> <span style="color:#111">[]</span><span style="color:#00a8c8">int</span>
+	<span style="color:#00a8c8">var</span> <span style="color:#75af00">m</span> <span style="color:#00a8c8">map</span><span style="color:#111">[</span><span style="color:#00a8c8">string</span><span style="color:#111">]</span><span style="color:#00a8c8">int</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#111">len</span><span style="color:#111">(</span><span style="color:#75af00">a</span><span style="color:#111">))</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#111">len</span><span style="color:#111">(</span><span style="color:#75af00">s</span><span style="color:#111">))</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#111">len</span><span style="color:#111">(</span><span style="color:#75af00">m</span><span style="color:#111">))</span>
+<span style="color:#111">}</span></code></pre></div>
+<p>위 예는 다음을 출력한다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">3
+0
+0</pre></div>
+<p>슬라이스와 맵은 동적으로 조절이 가능한 반면 배열은 정적 타입이다. 따라서 슬라이스와 맵은 크기만으로 몇 개의 요소가 저장돼 있는지 알 수 있지만 배열은 불가능하다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#00a8c8">var</span> <span style="color:#75af00">s</span> <span style="color:#111">=</span> <span style="color:#111">make</span><span style="color:#111">([]</span><span style="color:#00a8c8">int</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">)</span>
+	<span style="color:#00a8c8">var</span> <span style="color:#75af00">m</span> <span style="color:#111">=</span> <span style="color:#111">make</span><span style="color:#111">(</span><span style="color:#00a8c8">map</span><span style="color:#111">[</span><span style="color:#00a8c8">string</span><span style="color:#111">]</span><span style="color:#00a8c8">int</span><span style="color:#111">)</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#111">len</span><span style="color:#111">(</span><span style="color:#75af00">s</span><span style="color:#111">))</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#111">len</span><span style="color:#111">(</span><span style="color:#75af00">m</span><span style="color:#111">))</span>
+	<span style="color:#75af00">s</span> <span style="color:#111">=</span> <span style="color:#111">append</span><span style="color:#111">(</span><span style="color:#75af00">s</span><span style="color:#111">,</span> <span style="color:#ae81ff">1</span><span style="color:#111">)</span>
+	<span style="color:#75af00">m</span><span style="color:#111">[</span><span style="color:#d88200">&#34;A&#34;</span><span style="color:#111">]</span> <span style="color:#111">=</span> <span style="color:#ae81ff">1</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#111">len</span><span style="color:#111">(</span><span style="color:#75af00">s</span><span style="color:#111">))</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#111">len</span><span style="color:#111">(</span><span style="color:#75af00">m</span><span style="color:#111">))</span>
+<span style="color:#111">}</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">0
+0
+1
+1</pre></div>
+<h1 id="복사-또는-참조">복사 또는 참조</h1>
+
+<p>배열을 다른 배열 변수에 대입하면 요소값이 복사된다.</p>
+
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">a1</span> <span style="color:#f92672">:=</span> <span style="color:#111">[</span><span style="color:#ae81ff">3</span><span style="color:#111">]</span><span style="color:#00a8c8">int</span> <span style="color:#111">{</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#ae81ff">3</span><span style="color:#111">}</span>
+	<span style="color:#75af00">a2</span> <span style="color:#f92672">:=</span> <span style="color:#75af00">a1</span>
+	<span style="color:#75af00">a2</span><span style="color:#111">[</span><span style="color:#ae81ff">2</span><span style="color:#111">]</span> <span style="color:#111">=</span> <span style="color:#ae81ff">4</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">a1</span><span style="color:#111">[</span><span style="color:#ae81ff">2</span><span style="color:#111">],</span> <span style="color:#75af00">a2</span><span style="color:#111">[</span><span style="color:#ae81ff">2</span><span style="color:#111">])</span>
+<span style="color:#111">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">3 4</pre></div>
+<p>위 예는 7라인에서 <code>a2</code> 변수에 <code>a1</code>을 대입하면서 각 요소들이 모두 복사되기 때문에 <code>a2</code>의 세 번째 요소값을 4로 변경하더라도&mdash;8라인&mdash; <code>a1</code>에 영향을 주지 않는다.</p>
+
+<p>반면 슬라이스나 맵은 참조형이다.</p>
+
+<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">s1</span> <span style="color:#f92672">:=</span> <span style="color:#111">[]</span><span style="color:#00a8c8">int</span> <span style="color:#111">{</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#ae81ff">3</span><span style="color:#111">}</span>
+	<span style="color:#75af00">s2</span> <span style="color:#f92672">:=</span> <span style="color:#75af00">s1</span>
+	<span style="color:#75af00">s2</span><span style="color:#111">[</span><span style="color:#ae81ff">2</span><span style="color:#111">]</span> <span style="color:#111">=</span> <span style="color:#ae81ff">4</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">s1</span><span style="color:#111">[</span><span style="color:#ae81ff">2</span><span style="color:#111">],</span> <span style="color:#75af00">s2</span><span style="color:#111">[</span><span style="color:#ae81ff">2</span><span style="color:#111">])</span>
+	
+
+	<span style="color:#75af00">m1</span> <span style="color:#f92672">:=</span> <span style="color:#00a8c8">map</span><span style="color:#111">[</span><span style="color:#00a8c8">string</span><span style="color:#111">]</span><span style="color:#00a8c8">int</span> <span style="color:#111">{</span><span style="color:#d88200">&#34;A&#34;</span><span style="color:#111">:</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;B&#34;</span><span style="color:#111">:</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;C&#34;</span><span style="color:#111">:</span><span style="color:#ae81ff">3</span><span style="color:#111">}</span>
+	<span style="color:#75af00">m2</span> <span style="color:#f92672">:=</span> <span style="color:#75af00">m1</span>
+	<span style="color:#75af00">m2</span><span style="color:#111">[</span><span style="color:#d88200">&#34;C&#34;</span><span style="color:#111">]</span> <span style="color:#111">=</span> <span style="color:#ae81ff">4</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">m1</span><span style="color:#111">[</span><span style="color:#d88200">&#34;C&#34;</span><span style="color:#111">],</span> <span style="color:#75af00">m2</span><span style="color:#111">[</span><span style="color:#d88200">&#34;C&#34;</span><span style="color:#111">])</span>
+<span style="color:#111">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">4 4
+4 4</pre></div>
+<p>슬라이스는 슬라이싱을 이용해 일부 요소만을 참조할 수도 있는데 이 경우 주의할 점이 있다. 다음 예를 보자.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">s1</span> <span style="color:#f92672">:=</span> <span style="color:#111">[]</span><span style="color:#00a8c8">int</span> <span style="color:#111">{</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#ae81ff">3</span><span style="color:#111">}</span>
+	<span style="color:#75af00">s2</span> <span style="color:#f92672">:=</span> <span style="color:#75af00">s1</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">:</span><span style="color:#ae81ff">1</span><span style="color:#111">]</span>
+<span style="color:#111">}</span></code></pre></div>
+<p><code>s2</code>는 슬라이싱을 이용해 <code>s1</code>의 첫번째 요소만을 참조하고 있다. 따라서 이 경우 <code>s2[0]</code>의 값을 변경하면 <code>s1[0]</code>의 값 역시 변경된다. 또, <code>s2</code>의 두 번째 요소&mdash;<code>s2[1]</code>&mdash;에 접근하면 runtime error가 발생한다. 그런데 <code>append()</code>를 이용해 <code>s2</code>에 두 번째 요소값을 추가하면 어떻게 될까?</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">s1</span> <span style="color:#f92672">:=</span> <span style="color:#111">[]</span><span style="color:#00a8c8">int</span> <span style="color:#111">{</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#ae81ff">3</span><span style="color:#111">}</span>
+	<span style="color:#75af00">s2</span> <span style="color:#f92672">:=</span> <span style="color:#75af00">s1</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">:</span><span style="color:#ae81ff">1</span><span style="color:#111">]</span>
+	<span style="color:#75af00">s2</span> <span style="color:#111">=</span> <span style="color:#111">append</span><span style="color:#111">(</span><span style="color:#75af00">s2</span><span style="color:#111">,</span> <span style="color:#ae81ff">4</span><span style="color:#111">)</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">s1</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">],</span> <span style="color:#75af00">s1</span><span style="color:#111">[</span><span style="color:#ae81ff">1</span><span style="color:#111">],</span> <span style="color:#75af00">s1</span><span style="color:#111">[</span><span style="color:#ae81ff">2</span><span style="color:#111">])</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">s2</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">],</span> <span style="color:#75af00">s2</span><span style="color:#111">[</span><span style="color:#ae81ff">1</span><span style="color:#111">])</span>
+<span style="color:#111">}</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">1 4 3
+1 4</pre></div>
+<p>위와 같이 슬라이싱으로 일부 요소값만 참조했더라도 <code>append()</code>를 이용해 값을 추가하면 동시에 변경되는 것을 확인할 수 있다. 어떻게 쓰더라도 슬라이스는 참조형이다.</p>
+
+<h1 id="반복">반복</h1>
+
+<p>여러 개의 요소를 저장했으니 하나씩 반복해 저장된 값을 확인할 방법이 필요하다.</p>
+
+<p>배열과 슬라이스는 다음과 같이 값을 확인할 수 있다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+	<span style="color:#75af00">a</span> <span style="color:#f92672">:=</span> <span style="color:#111">[</span><span style="color:#ae81ff">3</span><span style="color:#111">]</span><span style="color:#00a8c8">int</span> <span style="color:#111">{</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#111">}</span>
+	<span style="color:#75af00">s</span> <span style="color:#f92672">:=</span> <span style="color:#111">[]</span><span style="color:#00a8c8">int</span> <span style="color:#111">{</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#111">}</span>
+	<span style="color:#00a8c8">for</span> <span style="color:#75af00">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#75af00">i</span> <span style="color:#111">&lt;</span> <span style="color:#111">len</span><span style="color:#111">(</span><span style="color:#75af00">a</span><span style="color:#111">);</span> <span style="color:#75af00">i</span><span style="color:#f92672">++</span> <span style="color:#111">{</span>
+		<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">a</span><span style="color:#111">[</span><span style="color:#75af00">i</span><span style="color:#111">])</span>
+	<span style="color:#111">}</span>
+	<span style="color:#00a8c8">for</span> <span style="color:#75af00">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#75af00">j</span> <span style="color:#111">&lt;</span> <span style="color:#111">len</span><span style="color:#111">(</span><span style="color:#75af00">s</span><span style="color:#111">);</span> <span style="color:#75af00">j</span><span style="color:#f92672">++</span> <span style="color:#111">{</span>
+		<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">s</span><span style="color:#111">[</span><span style="color:#75af00">j</span><span style="color:#111">])</span>
+	<span style="color:#111">}</span>
+<span style="color:#111">}</span></code></pre></div>
+<p>이 방식은 요소를 저장하기 위한 키&mdash;0부터 (길이 - 1)까지&mdash;를 알기 때문에 가능하다. 그런데 키를 모르는 맵의 경우에는 어떻게 구현할 수 있을까?</p>
+
+<h2 id="맵에서-키-추출">맵에서 키 추출</h2>
+
+<p>키를 모르는 것이 문제라면 어떻게든 알아내면 된다. reflect 패키지를 사용하면 맵에서 키를 추출할 수 있다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#111">(</span>
+    <span style="color:#d88200">&#34;fmt&#34;</span>
+    <span style="color:#d88200">&#34;reflect&#34;</span>
+<span style="color:#111">)</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">m</span> <span style="color:#f92672">:=</span> <span style="color:#00a8c8">map</span><span style="color:#111">[</span><span style="color:#00a8c8">string</span><span style="color:#111">]</span><span style="color:#00a8c8">int</span> <span style="color:#111">{</span><span style="color:#d88200">&#34;a&#34;</span><span style="color:#111">:</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;b&#34;</span><span style="color:#111">:</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;c&#34;</span><span style="color:#111">:</span><span style="color:#ae81ff">2</span><span style="color:#111">}</span>
+    <span style="color:#75af00">keys</span> <span style="color:#f92672">:=</span> <span style="color:#75af00">reflect</span><span style="color:#111">.</span><span style="color:#75af00">ValueOf</span><span style="color:#111">(</span><span style="color:#75af00">m</span><span style="color:#111">).</span><span style="color:#75af00">MapKeys</span><span style="color:#111">()</span>
+	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">keys</span><span style="color:#111">)</span>
+<span style="color:#111">}</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">[a b c]</pre></div>
+<p>하지만 이는 <em>미련한</em> 방법으로 꼭 키만 별도로 추출할 필요가 있는 경우가 아니라면 사용하지 않는다.</p>
+
+<h2 id="range">range</h2>
+
+<p><a href="https://tramamte.github.io/2018/06/29/for-statement/">for 반복문</a>을 다시 보자. 한 가지 확인하지 않은 용법이 있다. 바로 RangeClause 용법이다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">RangeClause = [ ExpressionList &#34;=&#34; | IdentifierList &#34;:=&#34; ] &#34;range&#34; Expression .</pre></div>
+<p>배열, 슬라이스, 맵에 대해 <code>range</code> 명령은 두 가지 값을 반환하는데 첫 번째가 키, 두 번째가 값이다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// array
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">a</span> <span style="color:#f92672">:=</span> <span style="color:#111">[</span><span style="color:#ae81ff">3</span><span style="color:#111">]</span><span style="color:#00a8c8">int</span> <span style="color:#111">{</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#ae81ff">3</span><span style="color:#111">}</span>
+	<span style="color:#00a8c8">for</span> <span style="color:#75af00">i</span><span style="color:#111">,</span> <span style="color:#75af00">v</span> <span style="color:#f92672">:=</span> <span style="color:#00a8c8">range</span> <span style="color:#75af00">a</span> <span style="color:#111">{</span>
+		<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">i</span><span style="color:#111">,</span> <span style="color:#75af00">v</span><span style="color:#111">)</span>
+	<span style="color:#111">}</span>
+<span style="color:#111">}</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">0 1
+1 2
+2 3</pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// slice
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">s</span> <span style="color:#f92672">:=</span> <span style="color:#111">[]</span><span style="color:#00a8c8">int</span> <span style="color:#111">{</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#ae81ff">3</span><span style="color:#111">}</span>
+	<span style="color:#00a8c8">for</span> <span style="color:#75af00">i</span><span style="color:#111">,</span> <span style="color:#75af00">v</span> <span style="color:#f92672">:=</span> <span style="color:#00a8c8">range</span> <span style="color:#75af00">s</span> <span style="color:#111">{</span>
+		<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">i</span><span style="color:#111">,</span> <span style="color:#75af00">v</span><span style="color:#111">)</span>
+	<span style="color:#111">}</span>
+<span style="color:#111">}</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">0 1
+1 2
+2 3</pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// map
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">m</span> <span style="color:#f92672">:=</span> <span style="color:#00a8c8">map</span><span style="color:#111">[</span><span style="color:#00a8c8">string</span><span style="color:#111">]</span><span style="color:#00a8c8">int</span> <span style="color:#111">{</span><span style="color:#d88200">&#34;a&#34;</span><span style="color:#111">:</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;b&#34;</span><span style="color:#111">:</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;c&#34;</span><span style="color:#111">:</span><span style="color:#ae81ff">3</span><span style="color:#111">}</span>
+	<span style="color:#00a8c8">for</span> <span style="color:#75af00">i</span><span style="color:#111">,</span> <span style="color:#75af00">v</span> <span style="color:#f92672">:=</span> <span style="color:#00a8c8">range</span> <span style="color:#75af00">m</span> <span style="color:#111">{</span>
+		<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">i</span><span style="color:#111">,</span> <span style="color:#75af00">v</span><span style="color:#111">)</span>
+	<span style="color:#111">}</span>
+<span style="color:#111">}</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">b 2
+c 3
+a 1</pre></div>
+<p>맵은 순서가 보장되지 않는다는 점도 확인할 수 있다.</p>
+
+<p>항상 키와 값 모두가 필요한 것은 아니다. 둘 중 하나가 필요없는 경우에는 blank identifier를 대신 사용할 수 있다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">m</span> <span style="color:#f92672">:=</span> <span style="color:#00a8c8">map</span><span style="color:#111">[</span><span style="color:#00a8c8">string</span><span style="color:#111">]</span><span style="color:#00a8c8">int</span> <span style="color:#111">{</span><span style="color:#d88200">&#34;a&#34;</span><span style="color:#111">:</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;b&#34;</span><span style="color:#111">:</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;c&#34;</span><span style="color:#111">:</span><span style="color:#ae81ff">3</span><span style="color:#111">}</span>
+	<span style="color:#00a8c8">for</span> <span style="color:#75af00">_</span><span style="color:#111">,</span> <span style="color:#75af00">v</span> <span style="color:#f92672">:=</span> <span style="color:#00a8c8">range</span> <span style="color:#75af00">m</span> <span style="color:#111">{</span>
+		<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">v</span><span style="color:#111">)</span>
+	<span style="color:#111">}</span>
+<span style="color:#111">}</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">2
+3
+1</pre></div>
+<p>값이 불필요한 경우에는 blank identifer를 사용하지 않고 그냥 생략해도 된다. 즉, 복수의 반환값이 있는 경우에는 앞에서부터 차례로 값을 넣고, 남은 것들은 무시된다.</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
+
+<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#75af00">m</span> <span style="color:#f92672">:=</span> <span style="color:#00a8c8">map</span><span style="color:#111">[</span><span style="color:#00a8c8">string</span><span style="color:#111">]</span><span style="color:#00a8c8">int</span> <span style="color:#111">{</span><span style="color:#d88200">&#34;a&#34;</span><span style="color:#111">:</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;b&#34;</span><span style="color:#111">:</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;c&#34;</span><span style="color:#111">:</span><span style="color:#ae81ff">3</span><span style="color:#111">}</span>
+	<span style="color:#00a8c8">for</span> <span style="color:#75af00">i</span> <span style="color:#f92672">:=</span> <span style="color:#00a8c8">range</span> <span style="color:#75af00">m</span> <span style="color:#111">{</span>
+		<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">i</span><span style="color:#111">)</span>
+	<span style="color:#111">}</span>
+<span style="color:#111">}</span></code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">a
+b
+c</pre></div>
+
+  
+
+<div class="see-also">
+  <i class="fas fa-archive fa-fw"></i>
+  <strong>See Also</strong>
+  <ul>
+	
+	<li><a href="https://tramamte.github.io/2018/07/24/constant-misunderstanding/">상수에 대한 오해</a></li>
+	
+	<li><a href="https://tramamte.github.io/2018/07/10/init-and-main/">특수 함수들</a></li>
+	
+	<li><a href="https://tramamte.github.io/2018/07/03/deep-inside-constants/">정수형 상수의 내부 처리</a></li>
+	
+	<li><a href="https://tramamte.github.io/2018/06/20/fun-switch/">봉인해제 switch</a></li>
+	
+	<li><a href="https://tramamte.github.io/2018/06/14/fun-packages-and-import/">패키지, 임포트에 대한 심화 학습</a></li>
+	
+  </ul>
+</div>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24">
+    
+    <a href="https://tramamte.github.io/2018/08/29/docker-pull/"><i class="fas fa-angle-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://tramamte.github.io/2018/08/29/docker-pull/">Docker 동시 다운로드 개수 조절</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">&nbsp;</div>
+  <div class="pure-u-10-24" style="text-align: right;">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script>
+	
+
+	
+
+
+	(function() { 
+		var d = document, s = d.createElement('script');
+		s.src = 'https://' + 'awesome-patrick' + '.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+	})();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+<div class="footer">
+  <div class="small-print">
+  <small>&copy2018 Patrick Yu. All rights reserved.</small>
+</div>
+<div class="small-print">
+  <small>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with modified <a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a> theme.</small>
+</div>
+
+</div>
+
+</div>
+</div>
+<script src="https://tramamte.github.io/js/ui.js"></script>
+
+
+
+
+
+
+</body>
+</html>
+
