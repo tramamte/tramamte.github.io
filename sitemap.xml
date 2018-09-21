@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://tramamte.github.io/2018/09/20/defer/</loc>
+    <lastmod>2018-09-20T22:12:52+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tramamte.github.io/2018/09/05/array-slice-and-map/</loc>
     <lastmod>2018-09-05T23:57:07+09:00</lastmod>
   </url>
@@ -244,7 +249,7 @@
   
   <url>
     <loc>https://tramamte.github.io/</loc>
-    <lastmod>2018-09-05T23:57:07+09:00</lastmod>
+    <lastmod>2018-09-20T22:12:52+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -346,7 +351,7 @@
   
   <url>
     <loc>https://tramamte.github.io/topics/go/</loc>
-    <lastmod>2018-09-05T23:57:07+09:00</lastmod>
+    <lastmod>2018-09-20T22:12:52+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -418,7 +423,7 @@
   
   <url>
     <loc>https://tramamte.github.io/posts/</loc>
-    <lastmod>2018-09-05T23:57:07+09:00</lastmod>
+    <lastmod>2018-09-20T22:12:52+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -478,7 +483,7 @@
   
   <url>
     <loc>https://tramamte.github.io/tags/syntax-go/</loc>
-    <lastmod>2018-08-28T23:43:27+09:00</lastmod>
+    <lastmod>2018-09-20T22:12:52+09:00</lastmod>
     <priority>0</priority>
   </url>
   

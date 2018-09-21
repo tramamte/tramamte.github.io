@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 05 Sep 2018 23:57:07 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 20 Sep 2018 22:12:52 +0900</lastBuildDate>
     
 	<atom:link href="https://tramamte.github.io/topics/go/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>호출 연기</title>
+      <link>https://tramamte.github.io/2018/09/20/defer/</link>
+      <pubDate>Thu, 20 Sep 2018 22:12:52 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2018/09/20/defer/</guid>
+      <description>Defer는 호출을 연기하는 Go의 독특한 구문 중 하나이다. 호출을 연기한다는 것이 무슨 의미인지는 다음 C 코드를 예로 알아보자. #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt; #define BUF_SIZE 512 int main(int argc, char *argv[]) { FILE*</description>
+    </item>
     
     <item>
       <title>배열, 슬라이스 그리고 맵</title>
