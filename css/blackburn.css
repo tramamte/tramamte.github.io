@@ -322,6 +322,10 @@ figcaption > p {
 }
 
 /* code block */
+.highlight {
+  word-wrap: normal;
+}
+
 code,
 .highlight > pre {
   font-family: 'Roboto Mono', 'Nanum Gothic Coding', monospace;

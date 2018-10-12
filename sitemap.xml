@@ -254,6 +254,22 @@
   </url>
   
   <url>
+    <loc>https://tramamte.github.io/posts/</loc>
+    <lastmod>2018-09-20T22:12:52+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tramamte.github.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tramamte.github.io/topics/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://tramamte.github.io/tags/bpm/</loc>
     <lastmod>2018-06-04T13:56:33+09:00</lastmod>
     <priority>0</priority>
@@ -422,12 +438,6 @@
   </url>
   
   <url>
-    <loc>https://tramamte.github.io/posts/</loc>
-    <lastmod>2018-09-20T22:12:52+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://tramamte.github.io/tags/pull/</loc>
     <lastmod>2018-08-29T20:46:30+09:00</lastmod>
     <priority>0</priority>
@@ -496,18 +506,6 @@
   <url>
     <loc>https://tramamte.github.io/topics/taean/</loc>
     <lastmod>2018-08-20T23:15:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tramamte.github.io/tags/</loc>
-    <lastmod>2018-06-04T13:56:33+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tramamte.github.io/topics/</loc>
-    <lastmod>2018-06-07T23:11:28+09:00</lastmod>
     <priority>0</priority>
   </url>
   
