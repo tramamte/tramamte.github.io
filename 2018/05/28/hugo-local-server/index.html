@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="임시버전을 다른 장치에서 확인하기">
-  <meta name="generator" content="Hugo 0.49" />
+  <meta name="generator" content="Hugo 0.51" />
 
   <title>Hugo Local Server 접속 방법 &middot; Awesome Patrick</title>
 
@@ -269,11 +269,11 @@
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">-b, --baseURL string  hostname <span style="color:#f92672">(</span>and path<span style="color:#f92672">)</span> to the root
     --bind string     interface to which the server will bind</code></pre></div>
 <p>실행 전 장치의 IP 주소를 확인하고,</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Windows
-</span><span style="color:#75715e"></span>&gt; ipconfig
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Windows</span>
+&gt; ipconfig
 
-<span style="color:#75715e"># macOS or Linux
-</span><span style="color:#75715e"></span>$ ifconfig</code></pre></div>
+<span style="color:#75715e"># macOS or Linux</span>
+$ ifconfig</code></pre></div>
 <p>확인한 IP 주소를 이용해 hugo server를 다음과 같이 실행한다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo server --baseURL <span style="color:#d88200">&#34;http://{ip addr}:1313&#34;</span> --bind <span style="color:#d88200">&#34;0.0.0.0.&#34;</span></code></pre></div>
 <p>이제 같은 공유기에 접속해 있는 다른 장치들에서도 임시버전을 확인할 수 있다.</p>

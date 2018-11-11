@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Ubuntu에서 Docker Root Directory 변경하기">
-  <meta name="generator" content="Hugo 0.49" />
+  <meta name="generator" content="Hugo 0.51" />
 
   <title>Docker Root Directory 변경 &middot; Awesome Patrick</title>
 
@@ -297,8 +297,8 @@
 /etc/default/docker</code></pre></div>
 <p>설정파일이 있다! 열어보면,</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">...
-<span style="color:#75715e"># THIS FILE DOES NOT APPLY TO SYSTEMD
-</span><span style="color:#75715e"></span>...</code></pre></div>
+<span style="color:#75715e"># THIS FILE DOES NOT APPLY TO SYSTEMD</span>
+...</code></pre></div>
 <p>Ubuntu가 15.10 버전부터 systemd를 기본으로 채택했으니 지금 사용하는 버전인 16.04에서는 안 될 것 같지만&hellip;</p>
 
 <p><strong>역시 안 된다.</strong></p>
@@ -329,10 +329,10 @@ docker.service - Docker Application Container Engine
 Loaded: loaded <span style="color:#f92672">(</span>/lib/systemd/system/docker.service<span style="color:#111">;</span> enabled<span style="color:#111">;</span> vendor preset: enabled<span style="color:#f92672">)</span>
 ...</code></pre></div>
 <p>docker.service 파일은 /lib/systemd/system/docker.service에 있다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 아래 부분을 찾아
-</span><span style="color:#75715e"></span><span style="color:#111">ExecStart</span><span style="color:#f92672">=</span>/usr/bin/dockerd -H fd://
-<span style="color:#75715e"># 이렇게 고친다.
-</span><span style="color:#75715e"></span><span style="color:#111">ExecStart</span><span style="color:#f92672">=</span>/usr/bin/dockerd -H fd:// -g <span style="color:#f92672">{</span>root directory<span style="color:#f92672">}</span></code></pre></div>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 아래 부분을 찾아</span>
+<span style="color:#111">ExecStart</span><span style="color:#f92672">=</span>/usr/bin/dockerd -H fd://
+<span style="color:#75715e"># 이렇게 고친다.</span>
+<span style="color:#111">ExecStart</span><span style="color:#f92672">=</span>/usr/bin/dockerd -H fd:// -g <span style="color:#f92672">{</span>root directory<span style="color:#f92672">}</span></code></pre></div>
 <p>그런데 dockerd의 option을 보면 -g flag가 없다.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dockerd -g --help
 WARN<span style="color:#f92672">[</span><span style="color:#ae81ff">0000</span><span style="color:#f92672">]</span> the <span style="color:#d88200">&#34;-g / --graph&#34;</span> flag is deprecated. Please use <span style="color:#d88200">&#34;--data-root&#34;</span> instead</code></pre></div>

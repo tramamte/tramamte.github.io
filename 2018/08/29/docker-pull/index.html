@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="이미지 동시 다운로드 개수 조절하기">
-  <meta name="generator" content="Hugo 0.49" />
+  <meta name="generator" content="Hugo 0.51" />
 
   <title>Docker 동시 다운로드 개수 조절 &middot; Awesome Patrick</title>
 
@@ -272,8 +272,8 @@
 <p>기본값이 3으로 지정된 <code>--max-concurrent-downloads</code>를 원하는 값으로 변경하면 된다.</p>
 
 <p>systemd를 사용하는 Ubuntu의 경우에는  /lib/systemd/system/docker.service 파일의 ExecStart에 다음과 같이 값을 추가하면 된다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ExecStart=/usr/bin/dockerd -H fd://
-</span><span style="color:#75715e"></span><span style="color:#111">ExecStart</span><span style="color:#f92672">=</span>/usr/bin/dockerd -H fd:// --max-concurrent-downloads <span style="color:#ae81ff">1</span></code></pre></div>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ExecStart=/usr/bin/dockerd -H fd://</span>
+<span style="color:#111">ExecStart</span><span style="color:#f92672">=</span>/usr/bin/dockerd -H fd:// --max-concurrent-downloads <span style="color:#ae81ff">1</span></code></pre></div>
 
   
 
