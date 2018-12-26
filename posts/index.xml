@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 20 Dec 2018 23:22:43 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 25 Dec 2018 22:16:20 +0900</lastBuildDate>
     
 	<atom:link href="https://tramamte.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>독서실</title>
+      <link>https://tramamte.github.io/2018/12/25/now-studying/</link>
+      <pubDate>Tue, 25 Dec 2018 22:16:20 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2018/12/25/now-studying/</guid>
+      <description>Developement Go jBPM &amp;amp; Drools Data Science &amp;amp; Statistics Introduction to Data Science Essential Math for Data Analysis using Excel Online Probability - The Science of Uncertainty and Data Data Science: Probability</description>
+    </item>
     
     <item>
       <title>메서드</title>
@@ -19,15 +28,6 @@
       
       <guid>https://tramamte.github.io/2018/12/20/method/</guid>
       <description>Go는 클래스가 없다. What? Go는 객체지향언어가 아니란 말인가? 미리 놀랄 필요는 없다. Go는 클래스가 없는 대신 보다 유연한 방식을 제공한다. 먼저 객체의 멤버 함</description>
-    </item>
-    
-    <item>
-      <title>독서실</title>
-      <link>https://tramamte.github.io/2018/11/11/now-studying/</link>
-      <pubDate>Sun, 11 Nov 2018 22:16:20 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/2018/11/11/now-studying/</guid>
-      <description>Developement Go jBPM &amp;amp; Drools Data Science &amp;amp; Statistics edX Introduction to Data Science Essential Math for Data Analysis using Excel Online</description>
     </item>
     
     <item>
