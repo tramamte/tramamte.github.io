@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Ubuntu에서 Docker Root Directory 변경하기">
-  <meta name="generator" content="Hugo 0.51" />
+  <meta name="generator" content="Hugo 0.52" />
 
   <title>Docker Root Directory 변경 &middot; Awesome Patrick</title>
 
@@ -293,11 +293,11 @@
 <h1 id="1단계-검색">1단계 검색</h1>
 
 <p>가장 많이 나오는 내용은 Docker 기본 설정파일  /etc/default/docker에 graph option을 추가해 경로를 변경하라는 것이다. 거의가 3~4년 전 글들이라 찜찜하긴 하지만 일단 따라가 본다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ls /etc/default/docker
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ls /etc/default/docker
 /etc/default/docker</code></pre></div>
 <p>설정파일이 있다! 열어보면,</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">...
-<span style="color:#75715e"># THIS FILE DOES NOT APPLY TO SYSTEMD</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">...
+<span style="color:#8f5902;font-style:italic"># THIS FILE DOES NOT APPLY TO SYSTEMD</span>
 ...</code></pre></div>
 <p>Ubuntu가 15.10 버전부터 systemd를 기본으로 채택했으니 지금 사용하는 버전인 16.04에서는 안 될 것 같지만&hellip;</p>
 
@@ -306,7 +306,7 @@
 <h1 id="2단계-또-검색">2단계 또 검색</h1>
 
 <p><a href="https://success.docker.com/article/how-do-i-set-the-docker-daemon-options">Docker Success Center</a>에 글이 있다. systemd service 파일을 수정하는 방식이다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ systemctl edit docker.service</code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ systemctl edit docker.service</code></pre></div>
 <p>아무 내용이 없다. 원본이 어떻게 생긴지 알아야 수정을 해도 할 것 아닌가.</p>
 
 
@@ -324,18 +324,18 @@
 <h1 id="3단계-service-파일-수정-성공">3단계 Service 파일 수정 (성공!)</h1>
 
 <p>결국 docker.service 파일을 찾아 직접 수정해서 성공했다.<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup></p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ systemctl status docker
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ systemctl status docker
 docker.service - Docker Application Container Engine
-Loaded: loaded <span style="color:#f92672">(</span>/lib/systemd/system/docker.service<span style="color:#111">;</span> enabled<span style="color:#111">;</span> vendor preset: enabled<span style="color:#f92672">)</span>
+Loaded: loaded <span style="color:#ce5c00;font-weight:bold">(</span>/lib/systemd/system/docker.service<span style="color:#000;font-weight:bold">;</span> enabled<span style="color:#000;font-weight:bold">;</span> vendor preset: enabled<span style="color:#ce5c00;font-weight:bold">)</span>
 ...</code></pre></div>
 <p>docker.service 파일은 /lib/systemd/system/docker.service에 있다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 아래 부분을 찾아</span>
-<span style="color:#111">ExecStart</span><span style="color:#f92672">=</span>/usr/bin/dockerd -H fd://
-<span style="color:#75715e"># 이렇게 고친다.</span>
-<span style="color:#111">ExecStart</span><span style="color:#f92672">=</span>/usr/bin/dockerd -H fd:// -g <span style="color:#f92672">{</span>root directory<span style="color:#f92672">}</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># 아래 부분을 찾아</span>
+<span style="color:#000">ExecStart</span><span style="color:#ce5c00;font-weight:bold">=</span>/usr/bin/dockerd -H fd://
+<span style="color:#8f5902;font-style:italic"># 이렇게 고친다.</span>
+<span style="color:#000">ExecStart</span><span style="color:#ce5c00;font-weight:bold">=</span>/usr/bin/dockerd -H fd:// -g <span style="color:#ce5c00;font-weight:bold">{</span>root directory<span style="color:#ce5c00;font-weight:bold">}</span></code></pre></div>
 <p>그런데 dockerd의 option을 보면 -g flag가 없다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dockerd -g --help
-WARN<span style="color:#f92672">[</span><span style="color:#ae81ff">0000</span><span style="color:#f92672">]</span> the <span style="color:#d88200">&#34;-g / --graph&#34;</span> flag is deprecated. Please use <span style="color:#d88200">&#34;--data-root&#34;</span> instead</code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dockerd -g --help
+WARN<span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">0000</span><span style="color:#ce5c00;font-weight:bold">]</span> the <span style="color:#4e9a06">&#34;-g / --graph&#34;</span> flag is deprecated. Please use <span style="color:#4e9a06">&#34;--data-root&#34;</span> instead</code></pre></div>
 <p>-g / --graph flag는 deprecate 됐으니 --data-root를 사용하란다.</p>
 
 <p><a href="https://docs.docker.com/release-notes/docker-ce/#17050-ce-2017-05-04">Docker release note</a>를 보면 17.05.0-ce 버전에 해당 flag가 deprecate 되었다.</p>

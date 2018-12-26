@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Pointer">
-  <meta name="generator" content="Hugo 0.51" />
+  <meta name="generator" content="Hugo 0.52" />
 
   <title>포인터 &middot; Awesome Patrick</title>
 
@@ -262,19 +262,19 @@
   <p>Go의 포인터는 생김과 사용법이 C의 그것과 매우 유사하다.</p>
 
 <p>먼저  포인터에 대한 규정을 살펴보면 다음과 같다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">PointerType = &#34;*&#34; BaseType .
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">PointerType = &#34;*&#34; BaseType .
 BaseType    = Type .</pre></div>
 <p>C에서와 같이 타입 앞에 asterisk(*)를 붙이면 포인터 타입이 된다.</p>
 
 <p><strong>포인터 = 주소</strong> 이므로 포인터 변수에 값을 할당할 때는 기본 타입 앞에 ampersand(&amp;)를 붙인다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">var</span> <span style="color:#75af00">i</span> <span style="color:#00a8c8">int</span>
-<span style="color:#00a8c8">var</span> <span style="color:#75af00">hello</span> <span style="color:#00a8c8">string</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">i</span> <span style="color:#204a87;font-weight:bold">int</span>
+<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">hello</span> <span style="color:#204a87;font-weight:bold">string</span>
 
-<span style="color:#00a8c8">var</span> <span style="color:#75af00">p</span> <span style="color:#f92672">*</span><span style="color:#00a8c8">int</span> <span style="color:#111">=</span> <span style="color:#f92672">&amp;</span><span style="color:#75af00">i</span>
-<span style="color:#75af00">hello_p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#75af00">hello</span></code></pre></div>
+<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">p</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">i</span>
+<span style="color:#000">hello_p</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">hello</span></code></pre></div>
 <p>C/C++에서와 같이 기본 타입을 선언하지 않은 상태에서 포인터에 주소를 할당할 수 있으며&mdash;동적 할당; dynamic allocation&mdash; 이를 위해 기본 제공(built-in) 함수인 <code>new</code> 를 사용한다. 이상하겠지만 Go의 <code>new</code> 는 연산자(operator)가 아닌 함수(function)이다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">var</span> <span style="color:#75af00">p</span> <span style="color:#f92672">*</span><span style="color:#00a8c8">int</span>
-<span style="color:#75af00">p</span> <span style="color:#111">=</span> <span style="color:#111">new</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span><span style="color:#111">)</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">p</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#204a87;font-weight:bold">int</span>
+<span style="color:#000">p</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#204a87">new</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span><span style="color:#000;font-weight:bold">)</span></code></pre></div>
 
   
 

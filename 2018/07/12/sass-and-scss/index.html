@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="스마트한 CSS 개발">
-  <meta name="generator" content="Hugo 0.51" />
+  <meta name="generator" content="Hugo 0.52" />
 
   <title>CSS 개발, Sass &amp; SCSS 소개 &middot; Awesome Patrick</title>
 
@@ -348,22 +348,22 @@
 <p>결론부터 얘기하면 SCSS는 Sass의 또 다른 문법이다. 모든 언어에는 고유의 문법이 있듯이 Sass도 문법이 있는데, 협의에서 그 문법이 다시 Sass와 SCSS로 나뉜다. Sass 문법은 구형, SCSS 문법은 신형이라 생각하면 편하다.</p>
 
 <p>우선 CSS가 생긴 것을 보면,</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/* css */</span>
-<span style="color:#111">.</span><span style="color:#75af00">my-class</span> <span style="color:#111">{</span>
-    <span style="color:#00a8c8">color</span><span style="color:#111">:</span> <span style="color:#00a8c8">black</span><span style="color:#111">;</span>
-    <span style="color:#00a8c8">border-color</span><span style="color:#111">:</span> <span style="color:#00a8c8">gray</span><span style="color:#111">;</span>
-<span style="color:#111">}</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#8f5902;font-style:italic">/* css */</span>
+<span style="color:#000;font-weight:bold">.</span><span style="color:#000">my-class</span> <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#204a87;font-weight:bold">color</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">black</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#204a87;font-weight:bold">border-color</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">gray</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">}</span></code></pre></div>
 <p>이렇게 중괄호({})와 세미콜론(;)을 사용한다. 그런데 Sass의 최초 문법은 indentation과 줄넘김을 사용했다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#75715e">/* sass */</span>
-<span style="color:#75af00">.my-class</span>
-	<span style="color:#f92672">color</span><span style="color:#75af00">:</span> <span style="color:#f92672">black</span>
-	<span style="color:#f92672">border-color</span><span style="color:#75af00">:</span> <span style="color:#f92672">gray</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#8f5902;font-style:italic">/* sass */</span>
+<span style="color:#000">.my-class</span>
+	<span style="color:#204a87;font-weight:bold">color</span><span style="color:#5c35cc;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">black</span>
+	<span style="color:#204a87;font-weight:bold">border-color</span><span style="color:#5c35cc;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">gray</span></code></pre></div>
 <p>이걸 CSS와 비슷하게 중괄호와 세미콜론을 사용하도록 다시 만든 것이 바로 SCSS이다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#75715e">/* scss */</span>
-<span style="color:#75af00">.my-class</span> <span style="color:#111">{</span>
-	<span style="color:#f92672">color</span><span style="color:#75af00">:</span> <span style="color:#f92672">black</span><span style="color:#f92672">;</span>
-    <span style="color:#f92672">border-color</span><span style="color:#75af00">:</span> <span style="color:#f92672">gray</span><span style="color:#f92672">;</span>
-<span style="color:#111">}</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#8f5902;font-style:italic">/* scss */</span>
+<span style="color:#000">.my-class</span> <span style="color:#000;font-weight:bold">{</span>
+	<span style="color:#204a87;font-weight:bold">color</span><span style="color:#5c35cc;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">black</span><span style="color:#ce5c00;font-weight:bold">;</span>
+    <span style="color:#204a87;font-weight:bold">border-color</span><span style="color:#5c35cc;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">gray</span><span style="color:#ce5c00;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">}</span></code></pre></div>
 <p>위 예에서 보는 것처럼 Sass, SCSS에서만 제공하는 기능을 사용하지 않았을 경우 SCSS는 CSS와 100% 동일한 형태가 되지만, Sass와 CSS는 서로 다른 모양이다. 그래서 CSS는 그 자체로 완벽한 SCSS 원본 파일이 된다.</p>
 
 <hr />

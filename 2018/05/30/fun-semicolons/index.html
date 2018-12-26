@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="예상보다 복잡한 세미콜론의 세계">
-  <meta name="generator" content="Hugo 0.51" />
+  <meta name="generator" content="Hugo 0.52" />
 
   <title>간단하거나, 복잡하거나. 세미콜론 &middot; Awesome Patrick</title>
 
@@ -303,7 +303,7 @@
 
 <li><p>다음 중 하나인 경우</p></li>
 </ul>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">break</span> <span style="color:#00a8c8">continue</span> <span style="color:#00a8c8">fallthrough</span> <span style="color:#00a8c8">return</span> <span style="color:#f92672">++</span> <span style="color:#f92672">--</span> <span style="color:#111">)</span> <span style="color:#111">}</span> <span style="color:#111">]</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">break</span> <span style="color:#204a87;font-weight:bold">continue</span> <span style="color:#204a87;font-weight:bold">fallthrough</span> <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#ce5c00;font-weight:bold">++</span> <span style="color:#ce5c00;font-weight:bold">--</span> <span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">}</span> <span style="color:#000;font-weight:bold">]</span></code></pre></div>
 <ul>
 <li>상황에 따라 닫는 괄호())나 닫는 중괄호(}) 직전</li>
 </ul>
@@ -315,20 +315,20 @@
 <p>Go 언어에는 4 종류의 토큰이 있다: identifiers, keywords, operators and punctuation, literal. 자세한 사항은 <a href="https://golang.org/ref/spec">The Go Programming Language Specification</a>을 참고한다.</p>
 
 <p>다른 것들은 C/C++, Java와 유사한데, <code>int</code>, <code>float</code> 같은 흔히 얘기하는 기본 타입들이 Go의 경우에는 keyword가 아닌 identifier에 포함된다. Go의 <strong>Predeclared identifier</strong>는 다음과 같다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Types:
-</span><span style="color:#75715e"></span>	<span style="color:#00a8c8">bool</span> <span style="color:#00a8c8">byte</span> <span style="color:#00a8c8">complex64</span> <span style="color:#00a8c8">complex128</span> <span style="color:#00a8c8">error</span> <span style="color:#00a8c8">float32</span> <span style="color:#00a8c8">float64</span>
-	<span style="color:#00a8c8">int</span> <span style="color:#00a8c8">int8</span> <span style="color:#00a8c8">int16</span> <span style="color:#00a8c8">int32</span> <span style="color:#00a8c8">int64</span> <span style="color:#00a8c8">rune</span> <span style="color:#00a8c8">string</span>
-	<span style="color:#00a8c8">uint</span> <span style="color:#00a8c8">uint8</span> <span style="color:#00a8c8">uint16</span> <span style="color:#00a8c8">uint32</span> <span style="color:#00a8c8">uint64</span> <span style="color:#00a8c8">uintptr</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8f5902;font-style:italic">// Types:
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#204a87;font-weight:bold">bool</span> <span style="color:#204a87;font-weight:bold">byte</span> <span style="color:#204a87;font-weight:bold">complex64</span> <span style="color:#204a87;font-weight:bold">complex128</span> <span style="color:#204a87;font-weight:bold">error</span> <span style="color:#204a87;font-weight:bold">float32</span> <span style="color:#204a87;font-weight:bold">float64</span>
+	<span style="color:#204a87;font-weight:bold">int</span> <span style="color:#204a87;font-weight:bold">int8</span> <span style="color:#204a87;font-weight:bold">int16</span> <span style="color:#204a87;font-weight:bold">int32</span> <span style="color:#204a87;font-weight:bold">int64</span> <span style="color:#204a87;font-weight:bold">rune</span> <span style="color:#204a87;font-weight:bold">string</span>
+	<span style="color:#204a87;font-weight:bold">uint</span> <span style="color:#204a87;font-weight:bold">uint8</span> <span style="color:#204a87;font-weight:bold">uint16</span> <span style="color:#204a87;font-weight:bold">uint32</span> <span style="color:#204a87;font-weight:bold">uint64</span> <span style="color:#204a87;font-weight:bold">uintptr</span>
 
-<span style="color:#75715e">// Constants:
-</span><span style="color:#75715e"></span>	<span style="color:#00a8c8">true</span> <span style="color:#00a8c8">false</span> <span style="color:#00a8c8">iota</span>
+<span style="color:#8f5902;font-style:italic">// Constants:
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#204a87;font-weight:bold">true</span> <span style="color:#204a87;font-weight:bold">false</span> <span style="color:#204a87;font-weight:bold">iota</span>
 
-<span style="color:#75715e">// Zero value:
-</span><span style="color:#75715e"></span>	<span style="color:#00a8c8">nil</span>
+<span style="color:#8f5902;font-style:italic">// Zero value:
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#204a87;font-weight:bold">nil</span>
 
-<span style="color:#75715e">// Functions:
-</span><span style="color:#75715e"></span>	<span style="color:#75af00">append</span> <span style="color:#75af00">cap</span> <span style="color:#75af00">close</span> <span style="color:#75af00">complex</span> <span style="color:#75af00">copy</span> <span style="color:#75af00">delete</span> <span style="color:#75af00">imag</span> <span style="color:#75af00">len</span>
-	<span style="color:#75af00">make</span> <span style="color:#75af00">new</span> <span style="color:#75af00">panic</span> <span style="color:#75af00">print</span> <span style="color:#75af00">println</span> <span style="color:#75af00">real</span> <span style="color:#75af00">recover</span></code></pre></div>
+<span style="color:#8f5902;font-style:italic">// Functions:
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">append</span> <span style="color:#000">cap</span> <span style="color:#000">close</span> <span style="color:#000">complex</span> <span style="color:#000">copy</span> <span style="color:#000">delete</span> <span style="color:#000">imag</span> <span style="color:#000">len</span>
+	<span style="color:#000">make</span> <span style="color:#000">new</span> <span style="color:#000">panic</span> <span style="color:#000">print</span> <span style="color:#000">println</span> <span style="color:#000">real</span> <span style="color:#000">recover</span></code></pre></div>
 <p>Go가 자연스럽다(idiomatic) 주장하는 타입이 뒤에 오는 비상식적 선언법과 초기화 문법 등을 모두 포함해 단 하나의 문장,</p>
 
 
@@ -349,58 +349,58 @@
 
 <p>위에서 언급한 것처럼 명시적으로 세미콜론을 써주면 Go lexer는 자동으로 세미콜론을 추가하는 기능을 수행하지 않으며, 거꾸로 소스코드 상에서 세미콜론이 쓰이는 자리에 위 규칙을 적용하면 이상야릇한 코드도 가능하다.</p>
 
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">24
+<pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span><span style="color:#111">;</span>
+<pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">package</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">;</span>
 
-<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span><span style="color:#111">;</span>
+<span style="color:#204a87;font-weight:bold">import</span> <span style="color:#4e9a06">&#34;fmt&#34;</span><span style="color:#000;font-weight:bold">;</span>
 
-<span style="color:#00a8c8">type</span> <span style="color:#75715e">// type은 개행해도 ;가 추가되지 않는다.
-</span><span style="color:#75715e"></span><span style="color:#75af00">Ints</span> <span style="color:#00a8c8">struct</span> <span style="color:#75715e">// struct도 개행할 수 있다.
-</span><span style="color:#75715e"></span><span style="color:#111">{</span> <span style="color:#75af00">a</span> <span style="color:#00a8c8">int</span><span style="color:#111">;</span> <span style="color:#75af00">b</span> <span style="color:#00a8c8">int</span><span style="color:#111">;</span>
-  <span style="color:#75af00">c</span> <span style="color:#00a8c8">int</span><span style="color:#111">;</span> <span style="color:#111">};</span>
+<span style="color:#204a87;font-weight:bold">type</span> <span style="color:#8f5902;font-style:italic">// type은 개행해도 ;가 추가되지 않는다.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">Ints</span> <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#8f5902;font-style:italic">// struct도 개행할 수 있다.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">{</span> <span style="color:#000">a</span> <span style="color:#204a87;font-weight:bold">int</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">b</span> <span style="color:#204a87;font-weight:bold">int</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000">c</span> <span style="color:#204a87;font-weight:bold">int</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000;font-weight:bold">};</span>
 
 
-<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span> <span style="color:#75715e">// main() 뒤 개행하면 ;가 추가된다.
-</span><span style="color:#75715e"></span>	<span style="color:#00a8c8">var</span> <span style="color:#75af00">s</span> <span style="color:#111">=</span> <span style="color:#d88200">&#34;Hello, Go&#34;</span><span style="color:#111">;</span> <span style="color:#75715e">// auto s = &#34;Hello, C++&#34;
-</span><span style="color:#75715e"></span>	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">s</span><span style="color:#111">);</span>
+<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span> <span style="color:#8f5902;font-style:italic">// main() 뒤 개행하면 ;가 추가된다.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">s</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;Hello, Go&#34;</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#8f5902;font-style:italic">// auto s = &#34;Hello, C++&#34;
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">s</span><span style="color:#000;font-weight:bold">);</span>
 	
-	<span style="color:#75af00">i</span> <span style="color:#f92672">:=</span> <span style="color:#75af00">Ints</span><span style="color:#111">{</span> <span style="color:#ae81ff">10</span><span style="color:#111">,</span> <span style="color:#ae81ff">20</span><span style="color:#111">,</span> <span style="color:#ae81ff">30</span> <span style="color:#111">};</span> <span style="color:#75715e">//i := Ints 뒤 개행하면 ;가 추가된다.
-</span><span style="color:#75715e"></span>	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">i</span><span style="color:#111">.</span><span style="color:#75af00">a</span><span style="color:#111">);</span>
+	<span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">Ints</span><span style="color:#000;font-weight:bold">{</span> <span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">20</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">30</span> <span style="color:#000;font-weight:bold">};</span> <span style="color:#8f5902;font-style:italic">//i := Ints 뒤 개행하면 ;가 추가된다.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">a</span><span style="color:#000;font-weight:bold">);</span>
 	
-	<span style="color:#00a8c8">for</span>
-	<span style="color:#75af00">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#75af00">j</span> <span style="color:#111">&lt;</span> <span style="color:#ae81ff">10</span>
-	<span style="color:#75af00">j</span><span style="color:#f92672">++</span> <span style="color:#111">{</span> <span style="color:#75715e">// 개행하면 ;가 추가된다.
-</span><span style="color:#75715e"></span>		<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#75af00">j</span><span style="color:#111">);</span>
-	<span style="color:#111">}</span>
-<span style="color:#111">}</span></code></pre></td></tr></table>
+	<span style="color:#204a87;font-weight:bold">for</span>
+	<span style="color:#000">j</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#0000cf;font-weight:bold">0</span>
+	<span style="color:#000">j</span> <span style="color:#000;font-weight:bold">&lt;</span> <span style="color:#0000cf;font-weight:bold">10</span>
+	<span style="color:#000">j</span><span style="color:#ce5c00;font-weight:bold">++</span> <span style="color:#000;font-weight:bold">{</span> <span style="color:#8f5902;font-style:italic">// 개행하면 ;가 추가된다.
+</span><span style="color:#8f5902;font-style:italic"></span>		<span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">j</span><span style="color:#000;font-weight:bold">);</span>
+	<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span></code></pre></td></tr></table>
 </div>
 </div>
 
@@ -417,28 +417,28 @@
 <hr />
 
 <p><strong>Python의 철학</strong></p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#f92672">import</span> <span style="color:#111">this</span>
-<span style="color:#111">The</span> <span style="color:#111">Zen</span> <span style="color:#111">of</span> <span style="color:#111">Python</span><span style="color:#111">,</span> <span style="color:#111">by</span> <span style="color:#111">Tim</span> <span style="color:#111">Peters</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ce5c00;font-weight:bold">&gt;&gt;&gt;</span> <span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">this</span>
+<span style="color:#000">The</span> <span style="color:#000">Zen</span> <span style="color:#000">of</span> <span style="color:#000">Python</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">by</span> <span style="color:#000">Tim</span> <span style="color:#000">Peters</span>
 
-<span style="color:#111">Beautiful</span> <span style="color:#f92672">is</span> <span style="color:#111">better</span> <span style="color:#111">than</span> <span style="color:#111">ugly</span><span style="color:#f92672">.</span>
-<span style="color:#111">Explicit</span> <span style="color:#f92672">is</span> <span style="color:#111">better</span> <span style="color:#111">than</span> <span style="color:#111">implicit</span><span style="color:#f92672">.</span>
-<span style="color:#111">Simple</span> <span style="color:#f92672">is</span> <span style="color:#111">better</span> <span style="color:#111">than</span> <span style="color:#111">complex</span><span style="color:#f92672">.</span>
-<span style="color:#111">Complex</span> <span style="color:#f92672">is</span> <span style="color:#111">better</span> <span style="color:#111">than</span> <span style="color:#111">complicated</span><span style="color:#f92672">.</span>
-<span style="color:#111">Flat</span> <span style="color:#f92672">is</span> <span style="color:#111">better</span> <span style="color:#111">than</span> <span style="color:#111">nested</span><span style="color:#f92672">.</span>
-<span style="color:#111">Sparse</span> <span style="color:#f92672">is</span> <span style="color:#111">better</span> <span style="color:#111">than</span> <span style="color:#111">dense</span><span style="color:#f92672">.</span>
-<span style="color:#111">Readability</span> <span style="color:#111">counts</span><span style="color:#f92672">.</span>
-<span style="color:#111">Special</span> <span style="color:#111">cases</span> <span style="color:#111">aren</span><span style="color:#d88200">&#39;t special enough to break the rules.</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#d88200">Although practicality beats purity.</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#d88200">Errors should never pass silently.</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#d88200">Unless explicitly silenced.</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#d88200">In the face of ambiguity, refuse the temptation to guess.</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#d88200">There should be one-- and preferably only one --obvious way to do it.</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#d88200">Although that way may not be obvious at first unless you&#39;</span><span style="color:#111">re</span> <span style="color:#111">Dutch</span><span style="color:#f92672">.</span>
-<span style="color:#111">Now</span> <span style="color:#f92672">is</span> <span style="color:#111">better</span> <span style="color:#111">than</span> <span style="color:#111">never</span><span style="color:#f92672">.</span>
-<span style="color:#111">Although</span> <span style="color:#111">never</span> <span style="color:#f92672">is</span> <span style="color:#111">often</span> <span style="color:#111">better</span> <span style="color:#111">than</span> <span style="color:#f92672">*</span><span style="color:#111">right</span><span style="color:#f92672">*</span> <span style="color:#111">now</span><span style="color:#f92672">.</span>
-<span style="color:#111">If</span> <span style="color:#111">the</span> <span style="color:#111">implementation</span> <span style="color:#f92672">is</span> <span style="color:#111">hard</span> <span style="color:#111">to</span> <span style="color:#111">explain</span><span style="color:#111">,</span> <span style="color:#111">it</span><span style="color:#d88200">&#39;s a bad idea.</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#d88200">If the implementation is easy to explain, it may be a good idea.</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#d88200">Namespaces are one honking great idea -- let&#39;</span><span style="color:#111">s</span> <span style="color:#111">do</span> <span style="color:#111">more</span> <span style="color:#111">of</span> <span style="color:#111">those</span><span style="color:#960050;background-color:#1e0010">!</span></code></pre></div>
+<span style="color:#000">Beautiful</span> <span style="color:#204a87;font-weight:bold">is</span> <span style="color:#000">better</span> <span style="color:#000">than</span> <span style="color:#000">ugly</span><span style="color:#ce5c00;font-weight:bold">.</span>
+<span style="color:#000">Explicit</span> <span style="color:#204a87;font-weight:bold">is</span> <span style="color:#000">better</span> <span style="color:#000">than</span> <span style="color:#000">implicit</span><span style="color:#ce5c00;font-weight:bold">.</span>
+<span style="color:#000">Simple</span> <span style="color:#204a87;font-weight:bold">is</span> <span style="color:#000">better</span> <span style="color:#000">than</span> <span style="color:#204a87">complex</span><span style="color:#ce5c00;font-weight:bold">.</span>
+<span style="color:#000">Complex</span> <span style="color:#204a87;font-weight:bold">is</span> <span style="color:#000">better</span> <span style="color:#000">than</span> <span style="color:#000">complicated</span><span style="color:#ce5c00;font-weight:bold">.</span>
+<span style="color:#000">Flat</span> <span style="color:#204a87;font-weight:bold">is</span> <span style="color:#000">better</span> <span style="color:#000">than</span> <span style="color:#000">nested</span><span style="color:#ce5c00;font-weight:bold">.</span>
+<span style="color:#000">Sparse</span> <span style="color:#204a87;font-weight:bold">is</span> <span style="color:#000">better</span> <span style="color:#000">than</span> <span style="color:#000">dense</span><span style="color:#ce5c00;font-weight:bold">.</span>
+<span style="color:#000">Readability</span> <span style="color:#000">counts</span><span style="color:#ce5c00;font-weight:bold">.</span>
+<span style="color:#000">Special</span> <span style="color:#000">cases</span> <span style="color:#000">aren</span><span style="color:#4e9a06">&#39;t special enough to break the rules.</span><span style="color:#a40000">
+</span><span style="color:#a40000"></span><span style="color:#4e9a06">Although practicality beats purity.</span><span style="color:#a40000">
+</span><span style="color:#a40000"></span><span style="color:#4e9a06">Errors should never pass silently.</span><span style="color:#a40000">
+</span><span style="color:#a40000"></span><span style="color:#4e9a06">Unless explicitly silenced.</span><span style="color:#a40000">
+</span><span style="color:#a40000"></span><span style="color:#4e9a06">In the face of ambiguity, refuse the temptation to guess.</span><span style="color:#a40000">
+</span><span style="color:#a40000"></span><span style="color:#4e9a06">There should be one-- and preferably only one --obvious way to do it.</span><span style="color:#a40000">
+</span><span style="color:#a40000"></span><span style="color:#4e9a06">Although that way may not be obvious at first unless you&#39;</span><span style="color:#000">re</span> <span style="color:#000">Dutch</span><span style="color:#ce5c00;font-weight:bold">.</span>
+<span style="color:#000">Now</span> <span style="color:#204a87;font-weight:bold">is</span> <span style="color:#000">better</span> <span style="color:#000">than</span> <span style="color:#000">never</span><span style="color:#ce5c00;font-weight:bold">.</span>
+<span style="color:#000">Although</span> <span style="color:#000">never</span> <span style="color:#204a87;font-weight:bold">is</span> <span style="color:#000">often</span> <span style="color:#000">better</span> <span style="color:#000">than</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">right</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">now</span><span style="color:#ce5c00;font-weight:bold">.</span>
+<span style="color:#000">If</span> <span style="color:#000">the</span> <span style="color:#000">implementation</span> <span style="color:#204a87;font-weight:bold">is</span> <span style="color:#000">hard</span> <span style="color:#000">to</span> <span style="color:#000">explain</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">it</span><span style="color:#4e9a06">&#39;s a bad idea.</span><span style="color:#a40000">
+</span><span style="color:#a40000"></span><span style="color:#4e9a06">If the implementation is easy to explain, it may be a good idea.</span><span style="color:#a40000">
+</span><span style="color:#a40000"></span><span style="color:#4e9a06">Namespaces are one honking great idea -- let&#39;</span><span style="color:#000">s</span> <span style="color:#000">do</span> <span style="color:#000">more</span> <span style="color:#000">of</span> <span style="color:#000">those</span><span style="color:#a40000">!</span></code></pre></div>
 <hr />
 
 <p>Go는 디렉토리 구조 등 어떤 면에서는 개발자의 자유도를 구속하는 측면이 있다. 하지만 또 다른 면에서는 &lsquo;그건 구속하면서 이건 왜 이렇게 헐렁해?&rsquo; 라는 의문을 갖게 하기도 한다.</p>

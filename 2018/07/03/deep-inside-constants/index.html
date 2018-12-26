@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="정수형 상수를 Go 언어 내부에서 처리하는 방법">
-  <meta name="generator" content="Hugo 0.51" />
+  <meta name="generator" content="Hugo 0.52" />
 
   <title>정수형 상수의 내부 처리 &middot; Awesome Patrick</title>
 
@@ -317,29 +317,29 @@
 
 <p>확인을 위해 작성한 코드는 아래와 같다.</p>
 
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">7
+<pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75af00">pacakge</span> <span style="color:#75af00">main</span>
+<pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#000">pacakge</span> <span style="color:#000">main</span>
 
-<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-	<span style="color:#00a8c8">const</span> <span style="color:#75af00">i1</span> <span style="color:#111">=</span> <span style="color:#ae81ff">14345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</span>
-	<span style="color:#00a8c8">const</span> <span style="color:#75af00">i2</span> <span style="color:#111">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">512</span>
-	<span style="color:#00a8c8">const</span> <span style="color:#75af00">i3</span> <span style="color:#111">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">511</span>
-<span style="color:#111">}</span></code></pre></td></tr></table>
+<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+	<span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">i1</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">14345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</span>
+	<span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">i2</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">2</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#0000cf;font-weight:bold">512</span>
+	<span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">i3</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">2</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#0000cf;font-weight:bold">511</span>
+<span style="color:#000;font-weight:bold">}</span></code></pre></td></tr></table>
 </div>
 </div>
 
 <p>이 코드를 빌드하면 다음과 같은 오류가 발생한다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">./main.go:4:14: constant too large: 14345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">./main.go:4:14: constant too large: 14345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345
 ./main.go:5:16: shift count too large: 512
 ./main.go:6:16: constant shift overflow</pre></div>
 <p>\(2^{512} \simeq 1.34 \times 10^{154} \)이다. 즉, 13 뒤에 0이 153개 붙는 수이다. 이를 기준으로,</p>
@@ -371,94 +371,94 @@
 <h1 id="순수-literal-상수의-한계-처리">순수 literal 상수의 한계 처리</h1>
 
 <p>이제 Go 컴파일러의 소스 코드로 들어가 보자. 앞에서의 복잡한 처리는 무시하고,  noder.go 부터 보면 될 것 같다. 이 파일에는 <code>expr()</code>이라는 함수가 있는데, <code>i1</code>을 처리하는 부분의 코드는 다음과 같다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// noder.go
-</span><span style="color:#75715e"></span>
-<span style="color:#00a8c8">func</span> <span style="color:#111">(</span><span style="color:#75af00">p</span> <span style="color:#f92672">*</span><span style="color:#75af00">noder</span><span style="color:#111">)</span> <span style="color:#75af00">expr</span><span style="color:#111">(</span><span style="color:#75af00">expr</span> <span style="color:#75af00">syntax</span><span style="color:#111">.</span><span style="color:#75af00">Expr</span><span style="color:#111">)</span> <span style="color:#f92672">*</span><span style="color:#75af00">Node</span> <span style="color:#111">{</span>
-	<span style="color:#f92672">...</span>
-	<span style="color:#00a8c8">case</span> <span style="color:#f92672">*</span><span style="color:#75af00">syntax</span><span style="color:#111">.</span><span style="color:#75af00">BasicLit</span><span style="color:#111">:</span>
-		<span style="color:#00a8c8">return</span> <span style="color:#75af00">p</span><span style="color:#111">.</span><span style="color:#75af00">setlineno</span><span style="color:#111">(</span><span style="color:#75af00">expr</span><span style="color:#111">,</span> <span style="color:#75af00">nodlit</span><span style="color:#111">(</span><span style="color:#75af00">p</span><span style="color:#111">.</span><span style="color:#75af00">basicLit</span><span style="color:#111">(</span><span style="color:#75af00">expr</span><span style="color:#111">)))</span>
-	<span style="color:#f92672">...</span>
-<span style="color:#111">}</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8f5902;font-style:italic">// noder.go
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">p</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">noder</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">expr</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">expr</span> <span style="color:#000">syntax</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Expr</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">Node</span> <span style="color:#000;font-weight:bold">{</span>
+	<span style="color:#ce5c00;font-weight:bold">...</span>
+	<span style="color:#204a87;font-weight:bold">case</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">syntax</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">BasicLit</span><span style="color:#000;font-weight:bold">:</span>
+		<span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">p</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setlineno</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">expr</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">nodlit</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">p</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">basicLit</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">expr</span><span style="color:#000;font-weight:bold">)))</span>
+	<span style="color:#ce5c00;font-weight:bold">...</span>
+<span style="color:#000;font-weight:bold">}</span></code></pre></div>
 <p>여기서 호출하고 있는 <code>basicLit()</code>은 다음과 같다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// noder.go
-</span><span style="color:#75715e"></span>
-<span style="color:#00a8c8">func</span> <span style="color:#111">(</span><span style="color:#75af00">p</span> <span style="color:#f92672">*</span><span style="color:#75af00">noder</span><span style="color:#111">)</span> <span style="color:#75af00">basicLit</span><span style="color:#111">(</span><span style="color:#75af00">lit</span> <span style="color:#f92672">*</span><span style="color:#75af00">syntax</span><span style="color:#111">.</span><span style="color:#75af00">BasicLit</span><span style="color:#111">)</span> <span style="color:#75af00">Val</span> <span style="color:#111">{</span>
-	<span style="color:#f92672">...</span>
-	<span style="color:#00a8c8">case</span> <span style="color:#75af00">syntax</span><span style="color:#111">.</span><span style="color:#75af00">IntLit</span><span style="color:#111">:</span>
-		<span style="color:#75af00">x</span> <span style="color:#f92672">:=</span> <span style="color:#111">new</span><span style="color:#111">(</span><span style="color:#75af00">Mpint</span><span style="color:#111">)</span>
-		<span style="color:#75af00">x</span><span style="color:#111">.</span><span style="color:#75af00">SetString</span><span style="color:#111">(</span><span style="color:#75af00">s</span><span style="color:#111">)</span>
-		<span style="color:#00a8c8">return</span> <span style="color:#75af00">Val</span><span style="color:#111">{</span><span style="color:#75af00">U</span><span style="color:#111">:</span> <span style="color:#75af00">x</span><span style="color:#111">}</span>
-	<span style="color:#f92672">...</span>
-<span style="color:#111">}</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8f5902;font-style:italic">// noder.go
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">p</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">noder</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">basicLit</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">lit</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">syntax</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">BasicLit</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">Val</span> <span style="color:#000;font-weight:bold">{</span>
+	<span style="color:#ce5c00;font-weight:bold">...</span>
+	<span style="color:#204a87;font-weight:bold">case</span> <span style="color:#000">syntax</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">IntLit</span><span style="color:#000;font-weight:bold">:</span>
+		<span style="color:#000">x</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#204a87">new</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">Mpint</span><span style="color:#000;font-weight:bold">)</span>
+		<span style="color:#000">x</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">SetString</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">s</span><span style="color:#000;font-weight:bold">)</span>
+		<span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">Val</span><span style="color:#000;font-weight:bold">{</span><span style="color:#000">U</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">x</span><span style="color:#000;font-weight:bold">}</span>
+	<span style="color:#ce5c00;font-weight:bold">...</span>
+<span style="color:#000;font-weight:bold">}</span></code></pre></div>
 <p><code>Mpint</code>는 mpint.go에 다음과 같이 정의돼 있다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// mpint.go
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// Mpint represents an integer constant.
-</span><span style="color:#75715e"></span><span style="color:#00a8c8">type</span> <span style="color:#75af00">Mpint</span> <span style="color:#00a8c8">struct</span> <span style="color:#111">{</span>
-	<span style="color:#75af00">Val</span>  <span style="color:#75af00">big</span><span style="color:#111">.</span><span style="color:#75af00">Int</span>
-	<span style="color:#75af00">Ovf</span>  <span style="color:#00a8c8">bool</span> <span style="color:#75715e">// set if Val overflowed compiler limit (sticky)
-</span><span style="color:#75715e"></span>	<span style="color:#75af00">Rune</span> <span style="color:#00a8c8">bool</span> <span style="color:#75715e">// set if syntax indicates default type rune
-</span><span style="color:#75715e"></span><span style="color:#111">}</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8f5902;font-style:italic">// mpint.go
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">// Mpint represents an integer constant.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">type</span> <span style="color:#000">Mpint</span> <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000;font-weight:bold">{</span>
+	<span style="color:#000">Val</span>  <span style="color:#000">big</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Int</span>
+	<span style="color:#000">Ovf</span>  <span style="color:#204a87;font-weight:bold">bool</span> <span style="color:#8f5902;font-style:italic">// set if Val overflowed compiler limit (sticky)
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">Rune</span> <span style="color:#204a87;font-weight:bold">bool</span> <span style="color:#8f5902;font-style:italic">// set if syntax indicates default type rune
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span></code></pre></div>
 <p>다른 언어에서도 주로 사용하는 용어인 BigInt나 MPInt(Multi Precision Integer)는 주로 암호화나 인증 등 처리를 위해 기본 타입보다 큰 수가 필요할 때 사용할 수 있도록 구현한 것인데, Go에서는 math/big 경로에 big이라는 패키지를 제공하고 있고, Mpint는 big.Int를 포함하는 Go 언어 내부 구조체이다.</p>
 
 <p>다시 <code>basicLit()</code> 함수를 보면, 우선 Mpint를 만든 뒤에 <code>SetString()</code> 함수를 이용해 값을 할당하고 있다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// mpint.go
-</span><span style="color:#75715e"></span>
-<span style="color:#00a8c8">func</span> <span style="color:#111">(</span><span style="color:#75af00">a</span> <span style="color:#f92672">*</span><span style="color:#75af00">Mpint</span><span style="color:#111">)</span> <span style="color:#75af00">SetString</span><span style="color:#111">(</span><span style="color:#75af00">as</span> <span style="color:#00a8c8">string</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-	<span style="color:#75af00">_</span><span style="color:#111">,</span> <span style="color:#75af00">ok</span> <span style="color:#f92672">:=</span> <span style="color:#75af00">a</span><span style="color:#111">.</span><span style="color:#75af00">Val</span><span style="color:#111">.</span><span style="color:#75af00">SetString</span><span style="color:#111">(</span><span style="color:#75af00">as</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">)</span>
-	<span style="color:#00a8c8">if</span> <span style="color:#111">!</span><span style="color:#75af00">ok</span> <span style="color:#111">{</span>
-		<span style="color:#75715e">// required syntax is [+-][0[x]]d*
-</span><span style="color:#75715e"></span>		<span style="color:#75715e">// At the moment we lose precise error cause;
-</span><span style="color:#75715e"></span>		<span style="color:#75715e">// the old code distinguished between:
-</span><span style="color:#75715e"></span>		<span style="color:#75715e">// - malformed hex constant
-</span><span style="color:#75715e"></span>		<span style="color:#75715e">// - malformed octal constant
-</span><span style="color:#75715e"></span>		<span style="color:#75715e">// - malformed decimal constant
-</span><span style="color:#75715e"></span>		<span style="color:#75715e">// TODO(gri) use different conversion function
-</span><span style="color:#75715e"></span>		<span style="color:#75af00">yyerror</span><span style="color:#111">(</span><span style="color:#d88200">&#34;malformed integer constant: %s&#34;</span><span style="color:#111">,</span> <span style="color:#75af00">as</span><span style="color:#111">)</span>
-		<span style="color:#75af00">a</span><span style="color:#111">.</span><span style="color:#75af00">Val</span><span style="color:#111">.</span><span style="color:#75af00">SetUint64</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">)</span>
-		<span style="color:#00a8c8">return</span>
-	<span style="color:#111">}</span>
-	<span style="color:#00a8c8">if</span> <span style="color:#75af00">a</span><span style="color:#111">.</span><span style="color:#75af00">checkOverflow</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-		<span style="color:#75af00">yyerror</span><span style="color:#111">(</span><span style="color:#d88200">&#34;constant too large: %s&#34;</span><span style="color:#111">,</span> <span style="color:#75af00">as</span><span style="color:#111">)</span>
-	<span style="color:#111">}</span>
-<span style="color:#111">}</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8f5902;font-style:italic">// mpint.go
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">a</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">Mpint</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">SetString</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">as</span> <span style="color:#204a87;font-weight:bold">string</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+	<span style="color:#000">_</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">ok</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">a</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Val</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">SetString</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">as</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">)</span>
+	<span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">!</span><span style="color:#000">ok</span> <span style="color:#000;font-weight:bold">{</span>
+		<span style="color:#8f5902;font-style:italic">// required syntax is [+-][0[x]]d*
+</span><span style="color:#8f5902;font-style:italic"></span>		<span style="color:#8f5902;font-style:italic">// At the moment we lose precise error cause;
+</span><span style="color:#8f5902;font-style:italic"></span>		<span style="color:#8f5902;font-style:italic">// the old code distinguished between:
+</span><span style="color:#8f5902;font-style:italic"></span>		<span style="color:#8f5902;font-style:italic">// - malformed hex constant
+</span><span style="color:#8f5902;font-style:italic"></span>		<span style="color:#8f5902;font-style:italic">// - malformed octal constant
+</span><span style="color:#8f5902;font-style:italic"></span>		<span style="color:#8f5902;font-style:italic">// - malformed decimal constant
+</span><span style="color:#8f5902;font-style:italic"></span>		<span style="color:#8f5902;font-style:italic">// TODO(gri) use different conversion function
+</span><span style="color:#8f5902;font-style:italic"></span>		<span style="color:#000">yyerror</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;malformed integer constant: %s&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">as</span><span style="color:#000;font-weight:bold">)</span>
+		<span style="color:#000">a</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Val</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">SetUint64</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">)</span>
+		<span style="color:#204a87;font-weight:bold">return</span>
+	<span style="color:#000;font-weight:bold">}</span>
+	<span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000">a</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">checkOverflow</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+		<span style="color:#000">yyerror</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;constant too large: %s&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">as</span><span style="color:#000;font-weight:bold">)</span>
+	<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span></code></pre></div>
 <p>드디어 빌드 시 발생한 오류에서 보였던 문구 &ldquo;constant too large&rdquo;가 나왔다. <code>SetString()</code> 함수에서는 일단 big.Int에 문자열&mdash;소스 코드는 이 단계에서는 다 문자열로 처리된다.&mdash;을 이용해 값을 할당하고, <code>checkOverflow()</code> 함수를 호출해 값이 한계를 넘었는지 검사한다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// mpint.go
-</span><span style="color:#75715e"></span>
-<span style="color:#00a8c8">func</span> <span style="color:#111">(</span><span style="color:#75af00">a</span> <span style="color:#f92672">*</span><span style="color:#75af00">Mpint</span><span style="color:#111">)</span> <span style="color:#75af00">checkOverflow</span><span style="color:#111">(</span><span style="color:#75af00">extra</span> <span style="color:#00a8c8">int</span><span style="color:#111">)</span> <span style="color:#00a8c8">bool</span> <span style="color:#111">{</span>
-	<span style="color:#75715e">// We don&#39;t need to be precise here, any reasonable upper limit would do.
-</span><span style="color:#75715e"></span>	<span style="color:#75715e">// For now, use existing limit so we pass all the tests unchanged.
-</span><span style="color:#75715e"></span>	<span style="color:#00a8c8">if</span> <span style="color:#75af00">a</span><span style="color:#111">.</span><span style="color:#75af00">Val</span><span style="color:#111">.</span><span style="color:#75af00">BitLen</span><span style="color:#111">()</span><span style="color:#f92672">+</span><span style="color:#75af00">extra</span> <span style="color:#111">&gt;</span> <span style="color:#75af00">Mpprec</span> <span style="color:#111">{</span>
-		<span style="color:#75af00">a</span><span style="color:#111">.</span><span style="color:#75af00">SetOverflow</span><span style="color:#111">()</span>
-	<span style="color:#111">}</span>
-	<span style="color:#00a8c8">return</span> <span style="color:#75af00">a</span><span style="color:#111">.</span><span style="color:#75af00">Ovf</span>
-<span style="color:#111">}</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8f5902;font-style:italic">// mpint.go
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">a</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">Mpint</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">checkOverflow</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">extra</span> <span style="color:#204a87;font-weight:bold">int</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">bool</span> <span style="color:#000;font-weight:bold">{</span>
+	<span style="color:#8f5902;font-style:italic">// We don&#39;t need to be precise here, any reasonable upper limit would do.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#8f5902;font-style:italic">// For now, use existing limit so we pass all the tests unchanged.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000">a</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Val</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">BitLen</span><span style="color:#000;font-weight:bold">()</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#000">extra</span> <span style="color:#000;font-weight:bold">&gt;</span> <span style="color:#000">Mpprec</span> <span style="color:#000;font-weight:bold">{</span>
+		<span style="color:#000">a</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">SetOverflow</span><span style="color:#000;font-weight:bold">()</span>
+	<span style="color:#000;font-weight:bold">}</span>
+	<span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">a</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Ovf</span>
+<span style="color:#000;font-weight:bold">}</span></code></pre></div>
 <p><code>checkOverflow()</code> 함수에서는 big.Int의 값이 사용하는 비트수 <code>BitLen()</code>과 함수의 인자로 전달된 <code>extra</code>의 합계가 <code>Mpprec</code> 보다 크면 한계를 벗어난 것으로 처리한다. 그리고 한계를 벗어난 경우는 위 <code>SetString()</code> 함수에서 &ldquo;constant too large: 1434~&ldquo;를 출력한다. <code>extra</code>는 0으로 넘어왔으니 이제 <code>Mpprec</code>만 남았다. 끝이 보인다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// mpfloat.go
-</span><span style="color:#75715e"></span>
-<span style="color:#00a8c8">const</span> <span style="color:#111">(</span>
-	<span style="color:#75715e">// Maximum size in bits for Mpints before signalling
-</span><span style="color:#75715e"></span>	<span style="color:#75715e">// overflow and also mantissa precision for Mpflts.
-</span><span style="color:#75715e"></span>	<span style="color:#75af00">Mpprec</span> <span style="color:#111">=</span> <span style="color:#ae81ff">512</span>
-	<span style="color:#75715e">// Turn on for constant arithmetic debugging output.
-</span><span style="color:#75715e"></span>	<span style="color:#75af00">Mpdebug</span> <span style="color:#111">=</span> <span style="color:#00a8c8">false</span>
-<span style="color:#111">)</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8f5902;font-style:italic">// mpfloat.go
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000;font-weight:bold">(</span>
+	<span style="color:#8f5902;font-style:italic">// Maximum size in bits for Mpints before signalling
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#8f5902;font-style:italic">// overflow and also mantissa precision for Mpflts.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">Mpprec</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">512</span>
+	<span style="color:#8f5902;font-style:italic">// Turn on for constant arithmetic debugging output.
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">Mpdebug</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">false</span>
+<span style="color:#000;font-weight:bold">)</span></code></pre></div>
 <p><code>Mpprec</code>의 값은 512이다. 즉, <strong>512개의 비트로 표시할 수 있는 수의 최대값이 타입을 지정하지 않은 정수형 상수의 한계</strong>이다.</p>
 
 <h1 id="비트-시프트-연산을-이용한-상수의-한계-처리">비트 시프트 연산을 이용한 상수의 한계 처리</h1>
 
 <p>이제 <code>i2</code>와 <code>i3</code>에 대해 알아보자. 다시 noder.go의 <code>expr()</code> 함수로 돌아가 <code>i2</code>, <code>i3</code>에 대해 처리하는 부분의 코드를 보면 다음과 같다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// noder.go
-</span><span style="color:#75715e"></span>
-<span style="color:#00a8c8">func</span> <span style="color:#111">(</span><span style="color:#75af00">p</span> <span style="color:#f92672">*</span><span style="color:#75af00">noder</span><span style="color:#111">)</span> <span style="color:#75af00">expr</span><span style="color:#111">(</span><span style="color:#75af00">expr</span> <span style="color:#75af00">syntax</span><span style="color:#111">.</span><span style="color:#75af00">Expr</span><span style="color:#111">)</span> <span style="color:#f92672">*</span><span style="color:#75af00">Node</span> <span style="color:#111">{</span>
-	<span style="color:#f92672">...</span>
-	<span style="color:#00a8c8">case</span> <span style="color:#f92672">*</span><span style="color:#75af00">syntax</span><span style="color:#111">.</span><span style="color:#75af00">Operation</span><span style="color:#111">:</span>
-		<span style="color:#f92672">...</span>
-		<span style="color:#75af00">x</span> <span style="color:#f92672">:=</span> <span style="color:#75af00">p</span><span style="color:#111">.</span><span style="color:#75af00">expr</span><span style="color:#111">(</span><span style="color:#75af00">expr</span><span style="color:#111">.</span><span style="color:#75af00">X</span><span style="color:#111">)</span>
-		<span style="color:#f92672">...</span>
-		<span style="color:#00a8c8">return</span> <span style="color:#75af00">p</span><span style="color:#111">.</span><span style="color:#75af00">nod</span><span style="color:#111">(</span><span style="color:#75af00">expr</span><span style="color:#111">,</span> <span style="color:#75af00">p</span><span style="color:#111">.</span><span style="color:#75af00">binOp</span><span style="color:#111">(</span><span style="color:#75af00">expr</span><span style="color:#111">.</span><span style="color:#75af00">Op</span><span style="color:#111">),</span> <span style="color:#75af00">x</span><span style="color:#111">,</span> <span style="color:#75af00">p</span><span style="color:#111">.</span><span style="color:#75af00">expr</span><span style="color:#111">(</span><span style="color:#75af00">expr</span><span style="color:#111">.</span><span style="color:#75af00">Y</span><span style="color:#111">))</span>
-	<span style="color:#f92672">...</span>
-<span style="color:#111">}</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8f5902;font-style:italic">// noder.go
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">p</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">noder</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">expr</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">expr</span> <span style="color:#000">syntax</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Expr</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">Node</span> <span style="color:#000;font-weight:bold">{</span>
+	<span style="color:#ce5c00;font-weight:bold">...</span>
+	<span style="color:#204a87;font-weight:bold">case</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">syntax</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Operation</span><span style="color:#000;font-weight:bold">:</span>
+		<span style="color:#ce5c00;font-weight:bold">...</span>
+		<span style="color:#000">x</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">p</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">expr</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">expr</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">X</span><span style="color:#000;font-weight:bold">)</span>
+		<span style="color:#ce5c00;font-weight:bold">...</span>
+		<span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">p</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">nod</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">expr</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">p</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">binOp</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">expr</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Op</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#000">x</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">p</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">expr</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">expr</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Y</span><span style="color:#000;font-weight:bold">))</span>
+	<span style="color:#ce5c00;font-weight:bold">...</span>
+<span style="color:#000;font-weight:bold">}</span></code></pre></div>
 <p>대강의 동작은 다음과 같다.</p>
 
 <ol>
@@ -468,52 +468,52 @@
 
 <p>호출하는 부분은 건너뛰고, 연산자와 두 개의 <code>Mpint</code> 형태의 피연산자가 준비됐으니 계산하는 코드를 살펴보자.</p>
 
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 5
-</span><span style="display:block;width:100%;background-color:#e1e1e1"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 6
-</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">15
-</span><span style="display:block;width:100%;background-color:#e1e1e1"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">16
-</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">21
+<pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="display:block;width:100%;background-color:#dfdfdf"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="display:block;width:100%;background-color:#dfdfdf"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// mpint.go
-</span><span style="color:#75715e"></span>
-<span style="color:#00a8c8">func</span> <span style="color:#111">(</span><span style="color:#75af00">a</span> <span style="color:#f92672">*</span><span style="color:#75af00">Mpint</span><span style="color:#111">)</span> <span style="color:#75af00">Lsh</span><span style="color:#111">(</span><span style="color:#75af00">b</span> <span style="color:#f92672">*</span><span style="color:#75af00">Mpint</span><span style="color:#111">)</span> <span style="color:#111">{</span>
-	<span style="color:#f92672">...</span>
-	<span style="color:#75af00">s</span> <span style="color:#f92672">:=</span> <span style="color:#75af00">b</span><span style="color:#111">.</span><span style="color:#75af00">Int64</span><span style="color:#111">()</span>
-<span style="display:block;width:100%;background-color:#e1e1e1">	<span style="color:#00a8c8">if</span> <span style="color:#75af00">s</span> <span style="color:#111">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#75af00">s</span> <span style="color:#f92672">&gt;=</span> <span style="color:#75af00">Mpprec</span> <span style="color:#111">{</span>
-</span>		<span style="color:#75af00">msg</span> <span style="color:#f92672">:=</span> <span style="color:#d88200">&#34;shift count too large&#34;</span>
-		<span style="color:#00a8c8">if</span> <span style="color:#75af00">s</span> <span style="color:#111">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#111">{</span>
-			<span style="color:#75af00">msg</span> <span style="color:#111">=</span> <span style="color:#d88200">&#34;invalid negative shift count&#34;</span>
-		<span style="color:#111">}</span>
-		<span style="color:#75af00">yyerror</span><span style="color:#111">(</span><span style="color:#d88200">&#34;%s: %d&#34;</span><span style="color:#111">,</span> <span style="color:#75af00">msg</span><span style="color:#111">,</span> <span style="color:#75af00">s</span><span style="color:#111">)</span>
-		<span style="color:#75af00">a</span><span style="color:#111">.</span><span style="color:#75af00">SetInt64</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">)</span>
-		<span style="color:#00a8c8">return</span>
-	<span style="color:#111">}</span>
+<pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8f5902;font-style:italic">// mpint.go
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">a</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">Mpint</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">Lsh</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">b</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">Mpint</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+	<span style="color:#ce5c00;font-weight:bold">...</span>
+	<span style="color:#000">s</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">b</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Int64</span><span style="color:#000;font-weight:bold">()</span>
+<span style="display:block;width:100%;background-color:#dfdfdf">	<span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000">s</span> <span style="color:#000;font-weight:bold">&lt;</span> <span style="color:#0000cf;font-weight:bold">0</span> <span style="color:#ce5c00;font-weight:bold">||</span> <span style="color:#000">s</span> <span style="color:#ce5c00;font-weight:bold">&gt;=</span> <span style="color:#000">Mpprec</span> <span style="color:#000;font-weight:bold">{</span>
+</span>		<span style="color:#000">msg</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#4e9a06">&#34;shift count too large&#34;</span>
+		<span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000">s</span> <span style="color:#000;font-weight:bold">&lt;</span> <span style="color:#0000cf;font-weight:bold">0</span> <span style="color:#000;font-weight:bold">{</span>
+			<span style="color:#000">msg</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;invalid negative shift count&#34;</span>
+		<span style="color:#000;font-weight:bold">}</span>
+		<span style="color:#000">yyerror</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;%s: %d&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">msg</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">s</span><span style="color:#000;font-weight:bold">)</span>
+		<span style="color:#000">a</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">SetInt64</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">)</span>
+		<span style="color:#204a87;font-weight:bold">return</span>
+	<span style="color:#000;font-weight:bold">}</span>
 
-<span style="display:block;width:100%;background-color:#e1e1e1">	<span style="color:#00a8c8">if</span> <span style="color:#75af00">a</span><span style="color:#111">.</span><span style="color:#75af00">checkOverflow</span><span style="color:#111">(</span><span style="color:#111">int</span><span style="color:#111">(</span><span style="color:#75af00">s</span><span style="color:#111">))</span> <span style="color:#111">{</span>
-</span>		<span style="color:#75af00">yyerror</span><span style="color:#111">(</span><span style="color:#d88200">&#34;constant shift overflow&#34;</span><span style="color:#111">)</span>
-		<span style="color:#00a8c8">return</span>
-	<span style="color:#111">}</span>
-	<span style="color:#75af00">a</span><span style="color:#111">.</span><span style="color:#75af00">Val</span><span style="color:#111">.</span><span style="color:#75af00">Lsh</span><span style="color:#111">(</span><span style="color:#f92672">&amp;</span><span style="color:#75af00">a</span><span style="color:#111">.</span><span style="color:#75af00">Val</span><span style="color:#111">,</span> <span style="color:#111">uint</span><span style="color:#111">(</span><span style="color:#75af00">s</span><span style="color:#111">))</span>
-<span style="color:#111">}</span></code></pre></td></tr></table>
+<span style="display:block;width:100%;background-color:#dfdfdf">	<span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000">a</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">checkOverflow</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87">int</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">s</span><span style="color:#000;font-weight:bold">))</span> <span style="color:#000;font-weight:bold">{</span>
+</span>		<span style="color:#000">yyerror</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;constant shift overflow&#34;</span><span style="color:#000;font-weight:bold">)</span>
+		<span style="color:#204a87;font-weight:bold">return</span>
+	<span style="color:#000;font-weight:bold">}</span>
+	<span style="color:#000">a</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Val</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Lsh</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">a</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Val</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87">uint</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">s</span><span style="color:#000;font-weight:bold">))</span>
+<span style="color:#000;font-weight:bold">}</span></code></pre></td></tr></table>
 </div>
 </div>
 

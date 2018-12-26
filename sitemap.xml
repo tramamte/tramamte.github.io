@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://tramamte.github.io/2018/12/20/method/</loc>
+    <lastmod>2018-12-20T23:22:43+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tramamte.github.io/2018/11/11/now-studying/</loc>
     <lastmod>2018-11-11T22:16:20+09:00</lastmod>
   </url>
@@ -254,13 +259,13 @@
   
   <url>
     <loc>https://tramamte.github.io/</loc>
-    <lastmod>2018-11-11T22:16:20+09:00</lastmod>
+    <lastmod>2018-12-20T23:22:43+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://tramamte.github.io/posts/</loc>
-    <lastmod>2018-11-11T22:16:20+09:00</lastmod>
+    <lastmod>2018-12-20T23:22:43+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -372,7 +377,7 @@
   
   <url>
     <loc>https://tramamte.github.io/topics/go/</loc>
-    <lastmod>2018-09-20T22:12:52+09:00</lastmod>
+    <lastmod>2018-12-20T23:22:43+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -504,7 +509,7 @@
   
   <url>
     <loc>https://tramamte.github.io/tags/syntax-go/</loc>
-    <lastmod>2018-09-20T22:12:52+09:00</lastmod>
+    <lastmod>2018-12-20T23:22:43+09:00</lastmod>
     <priority>0</priority>
   </url>
   

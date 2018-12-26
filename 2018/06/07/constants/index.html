@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Constant">
-  <meta name="generator" content="Hugo 0.51" />
+  <meta name="generator" content="Hugo 0.52" />
 
   <title>상수 &middot; Awesome Patrick</title>
 
@@ -285,30 +285,30 @@
   
 
 <p>상수를 선언하는 방법은 <code>var</code> 대신 <code>const</code>를 사용한다는 점을 제외하면 <a href="https://tramamte.github.io/2018/06/01/variables/">변수</a>를 선언하는 방법과 유사하다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">ConstDecl  = &#34;const&#34; ( ConstSpec | &#34;(&#34; { ConstSpec &#34;;&#34; } &#34;)&#34; ) .
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">ConstDecl  = &#34;const&#34; ( ConstSpec | &#34;(&#34; { ConstSpec &#34;;&#34; } &#34;)&#34; ) .
 ConstSpec  = IdentifierList [ [ Type ] &#34;=&#34; ExpressionList ] .</pre></div>
 <p>단, 여느 다른 언어에서와 마찬가지로 선언 후 나중에 값을 할당하는 것은 불가능하다. 즉, 선언과 함께 값을 할당해야 한다. 또, 상수라는 것을 명확히 해야하기 때문에 <code>:=</code>를 사용하는 것도 당연히 불가능하다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">const</span> <span style="color:#75af00">Pi32</span> <span style="color:#00a8c8">float32</span> <span style="color:#111">=</span> <span style="color:#ae81ff">3.14</span>
-<span style="color:#00a8c8">const</span> <span style="color:#75af00">Pi</span> <span style="color:#111">=</span> <span style="color:#ae81ff">3.14</span>
-<span style="color:#00a8c8">const</span> <span style="color:#111">(</span>
-	<span style="color:#75af00">Zero</span> <span style="color:#111">=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#75af00">One</span> <span style="color:#111">=</span> <span style="color:#ae81ff">1</span>
-	<span style="color:#75af00">Two</span> <span style="color:#111">=</span> <span style="color:#ae81ff">2</span>
-<span style="color:#111">)</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">Pi32</span> <span style="color:#204a87;font-weight:bold">float32</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">3.14</span>
+<span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">Pi</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">3.14</span>
+<span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000;font-weight:bold">(</span>
+	<span style="color:#000">Zero</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span>
+	<span style="color:#000">One</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span>
+	<span style="color:#000">Two</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">2</span>
+<span style="color:#000;font-weight:bold">)</span></code></pre></div>
 <h1 id="iota">iota</h1>
 
 <p>위의 마지막 예는 <code>enum</code>과 유사해 보인다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#00a8c8">enum</span> <span style="color:#111">{</span>
-	<span style="color:#111">Zero</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span>
-	<span style="color:#111">One</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span>
-	<span style="color:#111">Two</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
-<span style="color:#111">};</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#204a87;font-weight:bold">enum</span> <span style="color:#000;font-weight:bold">{</span>
+	<span style="color:#000">Zero</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">One</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">Two</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">2</span>
+<span style="color:#000;font-weight:bold">};</span></code></pre></div>
 <p>그런데 C의 <code>enum</code>은 초기값만 정해주면 알아서 증가한다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#00a8c8">enum</span> <span style="color:#111">{</span>
-	<span style="color:#111">Zero</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span>
-	<span style="color:#111">One</span><span style="color:#111">,</span>	<span style="color:#75715e">/* One == 1 */</span>
-	<span style="color:#111">Two</span>		<span style="color:#75715e">/* Two == 2 */</span>
-<span style="color:#111">};</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#204a87;font-weight:bold">enum</span> <span style="color:#000;font-weight:bold">{</span>
+	<span style="color:#000">Zero</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span>
+	<span style="color:#000">One</span><span style="color:#000;font-weight:bold">,</span>	<span style="color:#8f5902;font-style:italic">/* One == 1 */</span>
+	<span style="color:#000">Two</span>		<span style="color:#8f5902;font-style:italic">/* Two == 2 */</span>
+<span style="color:#000;font-weight:bold">};</span></code></pre></div>
 <p>Go에서 이 역할을 하는 키워드&mdash;사실 키워드가 아니라 predefined identifier의 일종; <a href="https://tramamte.github.io/2018/05/30/fun-semicolons/">참고</a>&mdash;가 바로 <code>iota</code>이다.</p>
 
 <blockquote>
@@ -320,17 +320,17 @@ ConstSpec  = IdentifierList [ [ Type ] &#34;=&#34; ExpressionList ] .</pre></div
 </blockquote>
 
 <p><code>iota</code>를 사용해 위 마지막 예는 다음과 같이 쓸 수 있다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">const</span> <span style="color:#111">(</span>
-	<span style="color:#75af00">Zero</span> <span style="color:#111">=</span> <span style="color:#00a8c8">iota</span>
-	<span style="color:#75af00">One</span> <span style="color:#111">=</span> <span style="color:#00a8c8">iota</span>
-	<span style="color:#75af00">Two</span> <span style="color:#111">=</span> <span style="color:#00a8c8">iota</span>
-<span style="color:#111">)</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000;font-weight:bold">(</span>
+	<span style="color:#000">Zero</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">iota</span>
+	<span style="color:#000">One</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">iota</span>
+	<span style="color:#000">Two</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">iota</span>
+<span style="color:#000;font-weight:bold">)</span></code></pre></div>
 <p><code>iota</code>는 0부터 시작해 호출할 때마다 1씩 증가한다. 이것도 귀찮으면,</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">const</span> <span style="color:#111">(</span>
-	<span style="color:#75af00">Zero</span> <span style="color:#111">=</span> <span style="color:#00a8c8">iota</span>
-	<span style="color:#75af00">One</span>
-	<span style="color:#75af00">Two</span>
-<span style="color:#111">)</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000;font-weight:bold">(</span>
+	<span style="color:#000">Zero</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">iota</span>
+	<span style="color:#000">One</span>
+	<span style="color:#000">Two</span>
+<span style="color:#000;font-weight:bold">)</span></code></pre></div>
 <p>이렇게 쓸 수도 있다.  <code>One</code>, <code>Two</code>에 대해서는 Go가 알아서 <code>iota</code>를 이용해 값을 할당한 것으로 처리한다.</p>
 
 

@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Defer statement">
-  <meta name="generator" content="Hugo 0.51" />
+  <meta name="generator" content="Hugo 0.52" />
 
   <title>호출 연기 &middot; Awesome Patrick</title>
 
@@ -286,125 +286,125 @@
   
 
 <p>Defer는 호출을 연기하는 Go의 독특한 구문 중 하나이다. 호출을 연기한다는 것이 무슨 의미인지는 다음 C 코드를 예로 알아보자.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">#define BUF_SIZE 512
-</span><span style="color:#75715e"></span>
-<span style="color:#00a8c8">int</span> <span style="color:#75af00">main</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">argc</span><span style="color:#111">,</span> <span style="color:#00a8c8">char</span> <span style="color:#f92672">*</span><span style="color:#111">argv</span><span style="color:#111">[])</span>
-<span style="color:#111">{</span>
-	<span style="color:#111">FILE</span><span style="color:#f92672">*</span> <span style="color:#111">fp</span> <span style="color:#f92672">=</span> <span style="color:#111">NULL</span><span style="color:#111">;</span>
-	<span style="color:#00a8c8">char</span><span style="color:#f92672">*</span> <span style="color:#111">buf</span> <span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#00a8c8">char</span><span style="color:#f92672">*</span><span style="color:#111">)</span><span style="color:#111">malloc</span><span style="color:#111">(</span><span style="color:#111">BUF_SIZE</span><span style="color:#111">);</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;stdio.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;stdlib.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">#define BUF_SIZE 512
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">argc</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">argv</span><span style="color:#000;font-weight:bold">[])</span>
+<span style="color:#000;font-weight:bold">{</span>
+	<span style="color:#000">FILE</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">fp</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">NULL</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">buf</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">malloc</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">BUF_SIZE</span><span style="color:#000;font-weight:bold">);</span>
 
-	<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">argc</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">2</span><span style="color:#111">)</span>
-	<span style="color:#111">{</span>
-		<span style="color:#111">printf</span><span style="color:#111">(</span><span style="color:#d88200">&#34;empty filename</span><span style="color:#8045ff">\n</span><span style="color:#d88200">&#34;</span><span style="color:#111">);</span>
-		<span style="color:#111">free</span><span style="color:#111">(</span><span style="color:#111">buf</span><span style="color:#111">);</span>
-		<span style="color:#00a8c8">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">;</span>
-	<span style="color:#111">}</span>
+	<span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">argc</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">)</span>
+	<span style="color:#000;font-weight:bold">{</span>
+		<span style="color:#000">printf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;empty filename</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">);</span>
+		<span style="color:#000">free</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buf</span><span style="color:#000;font-weight:bold">);</span>
+		<span style="color:#204a87;font-weight:bold">return</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000;font-weight:bold">}</span>
 
-	<span style="color:#111">fp</span> <span style="color:#f92672">=</span> <span style="color:#111">fopen</span><span style="color:#111">(</span><span style="color:#111">argv</span><span style="color:#111">[</span><span style="color:#ae81ff">1</span><span style="color:#111">],</span> <span style="color:#d88200">&#34;r&#34;</span><span style="color:#111">);</span>
-	<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#f92672">!</span><span style="color:#111">fp</span><span style="color:#111">)</span>
-	<span style="color:#111">{</span>
-		<span style="color:#111">printf</span><span style="color:#111">(</span><span style="color:#d88200">&#34;fopen fail</span><span style="color:#8045ff">\n</span><span style="color:#d88200">&#34;</span><span style="color:#111">);</span>
-		<span style="color:#111">free</span><span style="color:#111">(</span><span style="color:#111">buf</span><span style="color:#111">);</span>
-		<span style="color:#00a8c8">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">;</span>
-	<span style="color:#111">}</span>
+	<span style="color:#000">fp</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">fopen</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">argv</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#4e9a06">&#34;r&#34;</span><span style="color:#000;font-weight:bold">);</span>
+	<span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">!</span><span style="color:#000">fp</span><span style="color:#000;font-weight:bold">)</span>
+	<span style="color:#000;font-weight:bold">{</span>
+		<span style="color:#000">printf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;fopen fail</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">);</span>
+		<span style="color:#000">free</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buf</span><span style="color:#000;font-weight:bold">);</span>
+		<span style="color:#204a87;font-weight:bold">return</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000;font-weight:bold">}</span>
 
-	<span style="color:#00a8c8">while</span><span style="color:#111">(</span><span style="color:#111">fgets</span><span style="color:#111">(</span><span style="color:#111">buf</span><span style="color:#111">,</span> <span style="color:#111">BUF_SIZE</span><span style="color:#111">,</span> <span style="color:#111">fp</span><span style="color:#111">))</span>
-	<span style="color:#111">{</span>
-		<span style="color:#111">printf</span><span style="color:#111">(</span><span style="color:#d88200">&#34;%s&#34;</span><span style="color:#111">,</span> <span style="color:#111">buf</span><span style="color:#111">);</span>
-	<span style="color:#111">}</span>
+	<span style="color:#204a87;font-weight:bold">while</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">fgets</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buf</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">BUF_SIZE</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">fp</span><span style="color:#000;font-weight:bold">))</span>
+	<span style="color:#000;font-weight:bold">{</span>
+		<span style="color:#000">printf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;%s&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">buf</span><span style="color:#000;font-weight:bold">);</span>
+	<span style="color:#000;font-weight:bold">}</span>
 
-	<span style="color:#111">free</span><span style="color:#111">(</span><span style="color:#111">buf</span><span style="color:#111">);</span>
-	<span style="color:#111">fclose</span><span style="color:#111">(</span><span style="color:#111">fp</span><span style="color:#111">);</span>
-	<span style="color:#00a8c8">return</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
-<span style="color:#111">}</span></code></pre></div>
+	<span style="color:#000">free</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buf</span><span style="color:#000;font-weight:bold">);</span>
+	<span style="color:#000">fclose</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">fp</span><span style="color:#000;font-weight:bold">);</span>
+	<span style="color:#204a87;font-weight:bold">return</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">}</span></code></pre></div>
 <p>Defer를 알아보기 위해 조금 미련하게 작성하기는 했지만 큰 틀에서 위와 같이 리소스를 열고 닫는 코드는 C/C++, Java 등 언어를 막론하고 많이 접하게 된다. 위 예에서는 메모리를 할당/해제하거나, 파일을 열고 닫는 코드가 이에 해당한다.</p>
 
 <p>메모리 해제에 대한 부담이 없는 언어의 경우라도 열었던 파일을 닫아주는 수고는 필요하다.</p>
 
 <p>소멸자의 호출 시점을 특정할 수 있는 C++이라면 다음과 유사한 코드를 통해 그마나 <code>return</code> 전 여기 저기서 <code>fclose()</code>를 호출해야 하는 부담을 줄일 수는 있다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#00a8c8">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#75af00">FileCloser</span>
-<span style="color:#111">{</span>
-<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
-	<span style="color:#111">FileCloser</span><span style="color:#111">(</span><span style="color:#111">FILE</span><span style="color:#f92672">*</span> <span style="color:#111">fp</span><span style="color:#111">)</span>
-	<span style="color:#111">{</span>
-		<span style="color:#00a8c8">this</span><span style="color:#111">.</span><span style="color:#111">fp</span> <span style="color:#f92672">=</span> <span style="color:#111">fp</span><span style="color:#111">;</span>
-	<span style="color:#111">}</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">class</span><span style="color:#a40000"> </span><span style="color:#000">FileCloser</span>
+<span style="color:#000;font-weight:bold">{</span>
+<span style="color:#204a87;font-weight:bold">public</span><span style="color:#ce5c00;font-weight:bold">:</span>
+	<span style="color:#000">FileCloser</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">FILE</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">fp</span><span style="color:#000;font-weight:bold">)</span>
+	<span style="color:#000;font-weight:bold">{</span>
+		<span style="color:#204a87;font-weight:bold">this</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">fp</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">fp</span><span style="color:#000;font-weight:bold">;</span>
+	<span style="color:#000;font-weight:bold">}</span>
     
-	<span style="color:#f92672">~</span><span style="color:#111">FileCloser</span><span style="color:#111">()</span>
-	<span style="color:#111">{</span>
-		<span style="color:#111">fclose</span><span style="color:#111">(</span><span style="color:#111">fp</span><span style="color:#111">);</span>
-	<span style="color:#111">}</span>
+	<span style="color:#ce5c00;font-weight:bold">~</span><span style="color:#000">FileCloser</span><span style="color:#000;font-weight:bold">()</span>
+	<span style="color:#000;font-weight:bold">{</span>
+		<span style="color:#000">fclose</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">fp</span><span style="color:#000;font-weight:bold">);</span>
+	<span style="color:#000;font-weight:bold">}</span>
     
-<span style="color:#00a8c8">private</span><span style="color:#f92672">:</span>
-	<span style="color:#111">FILE</span><span style="color:#f92672">*</span> <span style="color:#111">fp</span><span style="color:#111">;</span>
-<span style="color:#111">};</span>
+<span style="color:#204a87;font-weight:bold">private</span><span style="color:#ce5c00;font-weight:bold">:</span>
+	<span style="color:#000">FILE</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">fp</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">};</span>
 
-<span style="color:#00a8c8">int</span> <span style="color:#75af00">main</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">argc</span><span style="color:#111">,</span> <span style="color:#00a8c8">char</span> <span style="color:#f92672">*</span><span style="color:#111">argv</span><span style="color:#111">[])</span>
-<span style="color:#111">{</span>
-	<span style="color:#111">FILE</span><span style="color:#f92672">*</span> <span style="color:#111">fp</span> <span style="color:#f92672">=</span> <span style="color:#111">fopen</span><span style="color:#111">(</span><span style="color:#d88200">&#34;test.file&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;r&#34;</span><span style="color:#111">);</span>
-	<span style="color:#111">FileCloser</span> <span style="color:#111">fc</span><span style="color:#111">(</span><span style="color:#111">fp</span><span style="color:#111">);</span>
-	<span style="color:#75715e">//...
-</span><span style="color:#75715e"></span><span style="color:#111">}</span>
+<span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">argc</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">argv</span><span style="color:#000;font-weight:bold">[])</span>
+<span style="color:#000;font-weight:bold">{</span>
+	<span style="color:#000">FILE</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">fp</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">fopen</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;test.file&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;r&#34;</span><span style="color:#000;font-weight:bold">);</span>
+	<span style="color:#000">FileCloser</span> <span style="color:#000">fc</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">fp</span><span style="color:#000;font-weight:bold">);</span>
+	<span style="color:#8f5902;font-style:italic">//...
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
 </code></pre></div>
 <p>위 예에서 만든 FileClose 클래스는 template을 이용해 좀 더 일반화할 수 있지만 리소스를 해제하는 방식이 다른 경우라면&mdash;<code>fclose()</code> 함수로 닫는 리소스가 아니라면&mdash; 개별 작성을 피할 수 없다.</p>
 
 <p>Python은 이를 좀 더 일반화해 with 구문을 제공한다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a8c8">with</span> <span style="color:#111">open</span><span style="color:#111">(</span><span style="color:#d88200">&#34;test.file&#34;</span><span style="color:#111">)</span> <span style="color:#00a8c8">as</span> <span style="color:#111">f</span><span style="color:#111">:</span>
-	<span style="color:#75715e"># do somthing</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#204a87;font-weight:bold">with</span> <span style="color:#204a87">open</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;test.file&#34;</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">as</span> <span style="color:#000">f</span><span style="color:#000;font-weight:bold">:</span>
+	<span style="color:#8f5902;font-style:italic"># do somthing</span></code></pre></div>
 <p>이 코드는 <code>with</code> 블록을 벗어날 때 자동으로 <code>f</code>를 닫아주는데, 이를 위해서는 <code>open()</code>으로 연 클래스가 <code>__enter__()</code>와 <code>__exit()__</code> 함수를 정의하고 있어야 한다.</p>
 
 <p>다른 방법으로 exception을 지원하는 언어 중에서는 finally 블록에 리소스를 닫는 코드를 작성하는 경우도 있다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00a8c8">try</span> <span style="color:#f92672">{</span>
-	<span style="color:#75715e">// open
-</span><span style="color:#75715e"></span>	<span style="color:#75715e">// do something
-</span><span style="color:#75715e"></span><span style="color:#f92672">}</span> <span style="color:#00a8c8">finally</span> <span style="color:#f92672">{</span>
-	<span style="color:#75715e">// close
-</span><span style="color:#75715e"></span><span style="color:#f92672">}</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#204a87;font-weight:bold">try</span> <span style="color:#ce5c00;font-weight:bold">{</span>
+	<span style="color:#8f5902;font-style:italic">// open
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#8f5902;font-style:italic">// do something
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#ce5c00;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">finally</span> <span style="color:#ce5c00;font-weight:bold">{</span>
+	<span style="color:#8f5902;font-style:italic">// close
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#ce5c00;font-weight:bold">}</span></code></pre></div>
 <p>Go는 defer 구문을 이용해 이상의 기능을 굉장히 단순하게, 별도의 추가 요구사항 없이도 구현할 수 있다. 절차를 간략히 살펴보면 다음과 같다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">func</span> <span style="color:#75af00">myFunction</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-	<span style="color:#75af00">r</span> <span style="color:#f92672">:=</span> <span style="color:#75af00">openResource</span><span style="color:#111">()</span>
-	<span style="color:#00a8c8">defer</span> <span style="color:#75af00">closeResource</span><span style="color:#111">(</span><span style="color:#75af00">r</span><span style="color:#111">)</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">myFunction</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+	<span style="color:#000">r</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">openResource</span><span style="color:#000;font-weight:bold">()</span>
+	<span style="color:#204a87;font-weight:bold">defer</span> <span style="color:#000">closeResource</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">r</span><span style="color:#000;font-weight:bold">)</span>
 
-	<span style="color:#75715e">// do something with r
-</span><span style="color:#75715e"></span><span style="color:#111">}</span></code></pre></div>
+	<span style="color:#8f5902;font-style:italic">// do something with r
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span></code></pre></div>
 <p><code>openResource()</code> 함수를 통해 획득한 리소스는 바로 <code>closeResource()</code> 함수 앞에 <code>defer</code> 키워드를 붙여 호출함으로써 닫힘을 예약할 수 있다. 이렇게 예약해 둔 호출은 함수가 종료될 때 자동으로 수행된다. 따라서 함수 중간 중간에 <code>return</code> 구문이 있더라도 따로 리소스를 닫기 위해 신경 쓸 필요가 없어진다.</p>
 
 <h1 id="defer-구문의-호출-순서">defer 구문의 호출 순서</h1>
 
 <p>간단한 예를 통해 defer 구문의 호출 순서를 확인해 보자.</p>
 
-<div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 6
-</span><span style="display:block;width:100%;background-color:#e1e1e1"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 7
-</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 8
-</span><span style="display:block;width:100%;background-color:#e1e1e1"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390"> 9
-</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#939390">11
+<pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="display:block;width:100%;background-color:#dfdfdf"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="display:block;width:100%;background-color:#dfdfdf"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+<pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">package</span> <span style="color:#000">main</span>
 
-<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
+<span style="color:#204a87;font-weight:bold">import</span> <span style="color:#4e9a06">&#34;fmt&#34;</span>
 
-<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-<span style="color:#960050;background-color:#1e0010">​</span>    <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;1st log&#34;</span><span style="color:#111">)</span>
-<span style="display:block;width:100%;background-color:#e1e1e1"><span style="color:#960050;background-color:#1e0010">​</span>    <span style="color:#00a8c8">defer</span> <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;2nd log&#34;</span><span style="color:#111">)</span>
-</span><span style="color:#960050;background-color:#1e0010">​</span>    <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;3rd log&#34;</span><span style="color:#111">)</span>
-<span style="display:block;width:100%;background-color:#e1e1e1"><span style="color:#960050;background-color:#1e0010">​</span>    <span style="color:#00a8c8">defer</span> <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;4th log&#34;</span><span style="color:#111">)</span>
-</span><span style="color:#960050;background-color:#1e0010">​</span>    <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;5th log&#34;</span><span style="color:#111">)</span>
-<span style="color:#111">}</span></code></pre></td></tr></table>
+<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+<span style="color:#a40000">​</span>    <span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;1st log&#34;</span><span style="color:#000;font-weight:bold">)</span>
+<span style="display:block;width:100%;background-color:#dfdfdf"><span style="color:#a40000">​</span>    <span style="color:#204a87;font-weight:bold">defer</span> <span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;2nd log&#34;</span><span style="color:#000;font-weight:bold">)</span>
+</span><span style="color:#a40000">​</span>    <span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;3rd log&#34;</span><span style="color:#000;font-weight:bold">)</span>
+<span style="display:block;width:100%;background-color:#dfdfdf"><span style="color:#a40000">​</span>    <span style="color:#204a87;font-weight:bold">defer</span> <span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;4th log&#34;</span><span style="color:#000;font-weight:bold">)</span>
+</span><span style="color:#a40000">​</span>    <span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;5th log&#34;</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000;font-weight:bold">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">1st log
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">1st log
 3rd log
 5th log
 4th log
@@ -414,60 +414,60 @@
 <h1 id="defer-구문의-생명-주기">defer 구문의 생명 주기</h1>
 
 <p>위 C++의 FileCloser 클래스를 다시 보자. 이 클래스는 지역 변수&mdash;<code>fc</code>&mdash;를 만들어 소멸자에서 <code>fclose()</code>를 호출하도록 구현한 것이기 때문에 지역 변수의 생명 주기를 갖는다. 즉, 위 예에서와 같이 작성한 경우라면 <code>main()</code> 함수가 종료될 때 호출될 것이다. 하지만 다음과 같은 많은 경우에는 이상 동작을 하게 된다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#00a8c8">int</span> <span style="color:#75af00">main</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">argc</span><span style="color:#111">,</span> <span style="color:#00a8c8">char</span> <span style="color:#f92672">*</span><span style="color:#111">argv</span><span style="color:#111">[])</span>
-<span style="color:#111">{</span>
-	<span style="color:#75715e">// case 1
-</span><span style="color:#75715e"></span>	<span style="color:#111">FILE</span><span style="color:#f92672">*</span> <span style="color:#111">fp</span> <span style="color:#f92672">=</span> <span style="color:#111">fopen</span><span style="color:#111">(</span><span style="color:#d88200">&#34;test.file&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;r&#34;</span><span style="color:#111">);</span>
-	<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">true</span><span style="color:#111">)</span>
-	<span style="color:#111">{</span>
-		<span style="color:#111">FileCloser</span> <span style="color:#111">fc</span><span style="color:#111">(</span><span style="color:#111">fp</span><span style="color:#111">);</span>
-	<span style="color:#111">}</span>
-	<span style="color:#75715e">// do something with fp
-</span><span style="color:#75715e"></span>
-	<span style="color:#75715e">// case 2
-</span><span style="color:#75715e"></span>	<span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">true</span><span style="color:#111">)</span>
-	<span style="color:#111">{</span>
-		<span style="color:#111">FILE</span><span style="color:#f92672">*</span> <span style="color:#111">fp</span> <span style="color:#f92672">=</span> <span style="color:#111">fopen</span><span style="color:#111">(</span><span style="color:#d88200">&#34;test.file&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;r&#34;</span><span style="color:#111">);</span>
-		<span style="color:#111">FileCloser</span> <span style="color:#111">fc</span><span style="color:#111">(</span><span style="color:#111">fp</span><span style="color:#111">);</span>
-	<span style="color:#111">}</span>
-	<span style="color:#75715e">// do something with fp
-</span><span style="color:#75715e"></span>
-	<span style="color:#75715e">// case 3
-</span><span style="color:#75715e"></span>	<span style="color:#111">FILE</span><span style="color:#f92672">*</span> <span style="color:#111">fp</span> <span style="color:#f92672">=</span> <span style="color:#111">fopen</span><span style="color:#111">(</span><span style="color:#d88200">&#34;test.file&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;r&#34;</span><span style="color:#111">);</span>
-	<span style="color:#111">{</span> <span style="color:#111">FileCloser</span> <span style="color:#111">fc</span><span style="color:#111">(</span><span style="color:#111">fp</span><span style="color:#111">);</span> <span style="color:#111">}</span>
-	<span style="color:#75715e">// do something with fp
-</span><span style="color:#75715e"></span><span style="color:#111">}</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">argc</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">argv</span><span style="color:#000;font-weight:bold">[])</span>
+<span style="color:#000;font-weight:bold">{</span>
+	<span style="color:#8f5902;font-style:italic">// case 1
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">FILE</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">fp</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">fopen</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;test.file&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;r&#34;</span><span style="color:#000;font-weight:bold">);</span>
+	<span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87">true</span><span style="color:#000;font-weight:bold">)</span>
+	<span style="color:#000;font-weight:bold">{</span>
+		<span style="color:#000">FileCloser</span> <span style="color:#000">fc</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">fp</span><span style="color:#000;font-weight:bold">);</span>
+	<span style="color:#000;font-weight:bold">}</span>
+	<span style="color:#8f5902;font-style:italic">// do something with fp
+</span><span style="color:#8f5902;font-style:italic"></span>
+	<span style="color:#8f5902;font-style:italic">// case 2
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87">true</span><span style="color:#000;font-weight:bold">)</span>
+	<span style="color:#000;font-weight:bold">{</span>
+		<span style="color:#000">FILE</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">fp</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">fopen</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;test.file&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;r&#34;</span><span style="color:#000;font-weight:bold">);</span>
+		<span style="color:#000">FileCloser</span> <span style="color:#000">fc</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">fp</span><span style="color:#000;font-weight:bold">);</span>
+	<span style="color:#000;font-weight:bold">}</span>
+	<span style="color:#8f5902;font-style:italic">// do something with fp
+</span><span style="color:#8f5902;font-style:italic"></span>
+	<span style="color:#8f5902;font-style:italic">// case 3
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">FILE</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">fp</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">fopen</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;test.file&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;r&#34;</span><span style="color:#000;font-weight:bold">);</span>
+	<span style="color:#000;font-weight:bold">{</span> <span style="color:#000">FileCloser</span> <span style="color:#000">fc</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">fp</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#000;font-weight:bold">}</span>
+	<span style="color:#8f5902;font-style:italic">// do something with fp
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
 </code></pre></div>
 <p>지역 변수의 생명 주기는 닫는 중괄호(})를 만나면 끝나기 때문에  <code>fc</code>가 언제 소멸되는지 주의할 필요가 있다.</p>
 
 <p>반면 defer 구문의 생명 주기는 함수와 함께 한다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">package</span> <span style="color:#000">main</span>
 
-<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
+<span style="color:#204a87;font-weight:bold">import</span> <span style="color:#4e9a06">&#34;fmt&#34;</span>
 
-<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;1st log&#34;</span><span style="color:#111">)</span>
-	<span style="color:#00a8c8">if</span> <span style="color:#00a8c8">true</span> <span style="color:#111">{</span>
-		<span style="color:#00a8c8">defer</span> <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;2nd log&#34;</span><span style="color:#111">)</span>
-	<span style="color:#111">}</span>
-	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;3rd log&#34;</span><span style="color:#111">)</span>
-<span style="color:#111">}</span></code></pre></div>
+<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+	<span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;1st log&#34;</span><span style="color:#000;font-weight:bold">)</span>
+	<span style="color:#204a87;font-weight:bold">if</span> <span style="color:#204a87;font-weight:bold">true</span> <span style="color:#000;font-weight:bold">{</span>
+		<span style="color:#204a87;font-weight:bold">defer</span> <span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;2nd log&#34;</span><span style="color:#000;font-weight:bold">)</span>
+	<span style="color:#000;font-weight:bold">}</span>
+	<span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;3rd log&#34;</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000;font-weight:bold">}</span></code></pre></div>
 <p>즉, 위와 같이 지역 변수의 생명 주기를 if 블록 내부로 제한하더라도 실행 결과는 다음과 같이 defer 구문이 <code>main()</code> 함수가 종료될 때 호출된다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">1st log
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">1st log
 3rd log
 2nd log</pre></div>
 <p>그렇다면 defer 구문이 <code>main()</code> 함수 종료 이전에 수행되도록 강제하려면 어떻게 해야 할까? Go가 익명 함수를 지원함을 상기하자.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#75af00">main</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">package</span> <span style="color:#000">main</span>
 
-<span style="color:#f92672">import</span> <span style="color:#d88200">&#34;fmt&#34;</span>
+<span style="color:#204a87;font-weight:bold">import</span> <span style="color:#4e9a06">&#34;fmt&#34;</span>
 
-<span style="color:#00a8c8">func</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;1st log&#34;</span><span style="color:#111">)</span>
-	<span style="color:#00a8c8">func</span><span style="color:#111">()</span> <span style="color:#111">{</span>
-		<span style="color:#00a8c8">defer</span> <span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;2nd log&#34;</span><span style="color:#111">)</span>
-	<span style="color:#111">}()</span>
-	<span style="color:#75af00">fmt</span><span style="color:#111">.</span><span style="color:#75af00">Println</span><span style="color:#111">(</span><span style="color:#d88200">&#34;3rd log&#34;</span><span style="color:#111">)</span>
-<span style="color:#111">}</span></code></pre></div>
+<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+	<span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;1st log&#34;</span><span style="color:#000;font-weight:bold">)</span>
+	<span style="color:#204a87;font-weight:bold">func</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+		<span style="color:#204a87;font-weight:bold">defer</span> <span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;2nd log&#34;</span><span style="color:#000;font-weight:bold">)</span>
+	<span style="color:#000;font-weight:bold">}()</span>
+	<span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;3rd log&#34;</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000;font-weight:bold">}</span></code></pre></div>
 
   
 

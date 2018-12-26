@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Type">
-  <meta name="generator" content="Hugo 0.51" />
+  <meta name="generator" content="Hugo 0.52" />
 
   <title>타입 &middot; Awesome Patrick</title>
 
@@ -288,7 +288,7 @@
   
 
 <p>Go의 타입 작성법은 다음과 같다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Type     = TypeName | TypeLit | &#34;(&#34; Type &#34;)&#34; .
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Type     = TypeName | TypeLit | &#34;(&#34; Type &#34;)&#34; .
 TypeName = identifier | QualifiedIdent .
 TypeLit  = ArrayType | StructType | PointerType | FunctionType |
            InterfaceType | SliceType | MapType | ChannelType .</pre></div>
@@ -297,11 +297,11 @@ TypeLit  = ArrayType | StructType | PointerType | FunctionType |
 <h1 id="boolean">Boolean</h1>
 
 <p>참 또는 거짓을 나타내는 타입이다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">bool		true 또는 false</pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">bool		true 또는 false</pre></div>
 <h1 id="numeric">Numeric</h1>
 
 <p>숫자형들은 주로 <strong>형식 + 크기(비트 수)</strong>의 형태로 구성되며, 몇 가지 별칭이 예외로 추가된다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">uint8		부호 없는 8비트 정수 (0 ~ 255)
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">uint8		부호 없는 8비트 정수 (0 ~ 255)
 uint16		부호 없는 16비트 정수 (0 ~ 65535)
 uint32		부호 없는 32비트 정수 (0 ~ 4294967295)
 uint64		부호 없는 64비트 정수 (0 ~ 18446744073709551615)
@@ -320,19 +320,19 @@ complex128	실수부, 허수부가 각각 64비트 floating point인 복소수
 byte		uin8의 별칭
 rune		int32의 별칭</pre></div>
 <p>위 타입들은 모두 실행 환경에 관계없이 동일한 크기를 갖고, 아래 세 가지는 크기가 변경된다. C의 <code>long</code> 타입과 유사하다고 볼 수 있다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">uint		32비트 또는 64비트
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">uint		32비트 또는 64비트
 int			32비트 또는 64비트
 uintptr		포인터를 저장하기에 적당한 크기</pre></div>
 <h1 id="string">String</h1>
 
 <p>문자열을 저장하기 위한 타입으로 변경 불가능(immutable)하기 때문에 메모리 관리 측면에서 주의가 필요하다.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">string		&#34;문자열&#34;</pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">string		&#34;문자열&#34;</pre></div>
 <p>Java에서 문자열을 합치기 위해 +를 남발했다가 고생한 기억이 있다면 <a href="https://stackoverflow.com/questions/1760757/how-to-efficiently-concatenate-strings-in-go">이 글</a>을 유심히 보기 바란다.</p>
 
 <hr />
 
 <p><a href="https://tramamte.github.io/2018/06/01/variables/">변수</a>에서 확인한 것처럼 Go의 변수는 일반적으로 <code>var i int</code> 형태로 선언한다. 타입 작성법의 Type에 대한 마지막 표현 <code>Type = &quot;(&quot; Type &quot;)&quot;</code>이 좀 특이한데, 결론적으로 Type을 1개 이상의 괄호로 묶어도 괜찮다는 의미이다. 즉,</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#00a8c8">var</span> <span style="color:#75af00">i</span> <span style="color:#111">(((</span><span style="color:#00a8c8">int</span><span style="color:#111">)))</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">i</span> <span style="color:#000;font-weight:bold">(((</span><span style="color:#204a87;font-weight:bold">int</span><span style="color:#000;font-weight:bold">)))</span></code></pre></div>
 <p>이런 형태도 가능하다.</p>
 
 <h1 id="zero-value">Zero value</h1>
