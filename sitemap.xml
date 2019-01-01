@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://tramamte.github.io/2019/01/01/now-reading/</loc>
+    <lastmod>2019-01-01T10:16:20+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tramamte.github.io/2018/12/25/now-studying/</loc>
     <lastmod>2018-12-25T22:16:20+09:00</lastmod>
   </url>
@@ -259,13 +264,13 @@
   
   <url>
     <loc>https://tramamte.github.io/</loc>
-    <lastmod>2018-12-25T22:16:20+09:00</lastmod>
+    <lastmod>2019-01-01T10:16:20+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://tramamte.github.io/posts/</loc>
-    <lastmod>2018-12-25T22:16:20+09:00</lastmod>
+    <lastmod>2019-01-01T10:16:20+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -276,6 +281,12 @@
   
   <url>
     <loc>https://tramamte.github.io/topics/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tramamte.github.io/tags/book/</loc>
+    <lastmod>2019-01-01T10:16:20+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -455,7 +466,13 @@
   
   <url>
     <loc>https://tramamte.github.io/topics/rambling/</loc>
-    <lastmod>2018-12-25T22:16:20+09:00</lastmod>
+    <lastmod>2019-01-01T10:16:20+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tramamte.github.io/tags/read/</loc>
+    <lastmod>2019-01-01T10:16:20+09:00</lastmod>
     <priority>0</priority>
   </url>
   

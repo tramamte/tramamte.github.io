@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>book on Awesome Patrick</title>
+    <link>https://tramamte.github.io/tags/book/</link>
+    <description>Recent content in book on Awesome Patrick</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy2018 Patrick Yu. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 01 Jan 2019 10:16:20 +0900</lastBuildDate>
+    
+	<atom:link href="https://tramamte.github.io/tags/book/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>독서실</title>
+      <link>https://tramamte.github.io/2019/01/01/now-reading/</link>
+      <pubDate>Tue, 01 Jan 2019 10:16:20 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2019/01/01/now-reading/</guid>
+      <description>아주 짧은 세계사 제프리 블레이니 지음, 박중서 옮김 | Humainst</description>
+    </item>
+    
+  </channel>
+</rss>
