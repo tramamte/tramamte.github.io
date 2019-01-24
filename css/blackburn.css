@@ -390,7 +390,9 @@ span.MJXc-display {
   padding-top: 2rem;
   padding-bottom: 2rem;
   border-top: 1px solid #eee;
+  /* un-comment when there are contents
   border-bottom: 1px solid #eee;
+  */
 }
 
 .prev-next-post .prev,
