@@ -298,32 +298,32 @@
 <h1 id="메서드-리시버-method-receiver-이해">메서드 리시버 (Method Receiver) 이해</h1>
 
 <p>생소한 이름이니 익숙한 곳에서 굳이 비슷한 역할을 찾아보자.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">class</span><span style="color:#a40000"> </span><span style="color:#000">MyClass</span>
-<span style="color:#000;font-weight:bold">{</span>
-<span style="color:#204a87;font-weight:bold">public</span><span style="color:#ce5c00;font-weight:bold">:</span>
-	<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">MyFunction</span><span style="color:#000;font-weight:bold">()</span>
-	<span style="color:#000;font-weight:bold">{</span>
-		<span style="color:#8f5902;font-style:italic">// This is MyFunction.
-</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000;font-weight:bold">}</span>
-<span style="color:#000;font-weight:bold">};</span>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#007020;font-weight:bold">class</span><span style=""> </span><span style="color:#0e84b5;font-weight:bold">MyClass</span>
+{
+<span style="color:#007020;font-weight:bold">public</span><span style="color:#666">:</span>
+	<span style="color:#902000">void</span> MyFunction()
+	{
+		<span style="color:#60a0b0;font-style:italic">// This is MyFunction.
+</span><span style="color:#60a0b0;font-style:italic"></span>	}
+};
 </code></pre></div>
 <p>C++ 클래스의 멤버 함수는 이렇게 선언과 정의를 동시에 하기도 하지만 나눌 수도 있다.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">// my_class.h
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">class</span><span style="color:#a40000"> </span><span style="color:#000">MyClass</span>
-<span style="color:#000;font-weight:bold">{</span>
-<span style="color:#204a87;font-weight:bold">public</span><span style="color:#ce5c00;font-weight:bold">:</span>
-	<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">MyFunction</span><span style="color:#000;font-weight:bold">();</span>
-<span style="color:#000;font-weight:bold">};</span>
-</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">// my_class.cpp
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">MyClass</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">MyFunction</span><span style="color:#000;font-weight:bold">()</span>
-<span style="color:#000;font-weight:bold">{</span>
-	<span style="color:#8f5902;font-style:italic">// This is MyFunction
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#60a0b0;font-style:italic">// my_class.h
+</span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">class</span><span style=""> </span><span style="color:#0e84b5;font-weight:bold">MyClass</span>
+{
+<span style="color:#007020;font-weight:bold">public</span><span style="color:#666">:</span>
+	<span style="color:#902000">void</span> MyFunction();
+};
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#60a0b0;font-style:italic">// my_class.cpp
+</span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#902000">void</span> MyClass<span style="color:#666">::</span>MyFunction()
+{
+	<span style="color:#60a0b0;font-style:italic">// This is MyFunction
+</span><span style="color:#60a0b0;font-style:italic"></span>}
 </code></pre></div>
 <p><code>MyClass</code>의 멤버임을 알려주기 위해 <code>MyFunction()</code> 앞에  <code>MyClass::</code>를 붙였다. 바로 이 부분을 C++의 메서드 리시버라 생각하면 이해가 빠를 것이다.</p>
 
 <p>Go에서 메서드를 만드는 방식은 다음과 같다.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">MethodDecl     = &#34;func&#34; Receiver MethodName Signature [ FunctionBody ] .
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">MethodDecl     = &#34;func&#34; Receiver MethodName Signature [ FunctionBody ] .
 Receiver       = Parameters .
 Parameters     = &#34;(&#34; [ ParameterList [ &#34;,&#34; ] ] &#34;)&#34; .
 ParameterList  = ParameterDecl { &#34;,&#34; ParameterDecl } .
@@ -341,47 +341,47 @@ ParameterDecl  = [ IdentifierList ] [ &#34;...&#34; ] Type .</pre></div>
 <h1 id="구조체-메서드">구조체 메서드</h1>
 
 <p>C로 작성한 코드를 생각해보자. C는 클래스가 없다보니 OOP를 흉내내기 위해 여러 상태값을 구조체로 묶어 함수 호출 시 이 구조체를 인수로 함께 전달하도록 구성하는 경우가 많다.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#204a87;font-weight:bold">typedef</span> <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000">_MyStruct</span>
-<span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">state</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#000;font-weight:bold">}</span> <span style="color:#000">MyStruct</span><span style="color:#000;font-weight:bold">;</span>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#007020;font-weight:bold">typedef</span> <span style="color:#007020;font-weight:bold">struct</span> _MyStruct
+{
+    <span style="color:#902000">int</span> state;
+} MyStruct;
 
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">LikeMethod</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">MyStruct</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">memberHolder</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">modifiedState</span><span style="color:#000;font-weight:bold">)</span>
-<span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#000">memberHolder</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">state</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">modifiedState</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#000;font-weight:bold">}</span></code></pre></div>
+<span style="color:#902000">void</span> <span style="color:#06287e">LikeMethod</span>(MyStruct <span style="color:#666">*</span>memberHolder, <span style="color:#902000">int</span> modifiedState)
+{
+    memberHolder<span style="color:#666">-&gt;</span>state <span style="color:#666">=</span> modifiedState;
+}</code></pre></div>
 <p>Go도 이런 방식이 불가능한 것은 아니다.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">type</span> <span style="color:#000">MyStruct</span> <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#000">state</span> <span style="color:#204a87;font-weight:bold">int</span>
-<span style="color:#000;font-weight:bold">}</span>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">type</span> MyStruct <span style="color:#007020;font-weight:bold">struct</span> {
+    state <span style="color:#902000">int</span>
+}
 
-<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">LikeMethod</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">memberHolder</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">MyStruct</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">modifiedState</span> <span style="color:#204a87;font-weight:bold">int</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#000">memberHolder</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">state</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#000">modifiedState</span>
-<span style="color:#000;font-weight:bold">}</span></code></pre></div>
+<span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">LikeMethod</span>(memberHolder <span style="color:#666">*</span>MyStruct, modifiedState <span style="color:#902000">int</span>) {
+    memberHolder.state = modifiedState
+}</code></pre></div>
 <p>Python에서 <code>self</code>를 강제해 메서드를 만드는 방식과 유사해 보인다.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#204a87;font-weight:bold">class</span> <span style="color:#000">MyClass</span><span style="color:#000;font-weight:bold">:</span>
-	<span style="color:#204a87;font-weight:bold">def</span> <span style="color:#000">myMethod</span><span style="color:#000;font-weight:bold">(</span><span style="color:#3465a4">self</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">modifiedState</span><span style="color:#000;font-weight:bold">):</span>
-        <span style="color:#3465a4">self</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#000">state</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">modifiedState</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">MyClass</span>:
+	<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">myMethod</span>(self, modifiedState):
+        self<span style="color:#666">.</span>state <span style="color:#666">=</span> modifiedState</code></pre></div>
 <p>뒷맛이 개운치 않으니 이제 Go의 방식을 알아보자. 위 MethodDecl에서 확인한 것처럼 인수를 분리해 함수명 앞에 메서드 리시버를 지정하면 된다.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">type</span> <span style="color:#000">MyStruct</span> <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#000">state</span> <span style="color:#204a87;font-weight:bold">int</span>
-<span style="color:#000;font-weight:bold">}</span>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">type</span> MyStruct <span style="color:#007020;font-weight:bold">struct</span> {
+    state <span style="color:#902000">int</span>
+}
 
-<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">memberHolder</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">MyStruct</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">MyMethod</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">modifiedState</span> <span style="color:#204a87;font-weight:bold">int</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#000">memberHolder</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">state</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#000">modifiedState</span>
-<span style="color:#000;font-weight:bold">}</span></code></pre></div>
+<span style="color:#007020;font-weight:bold">func</span> (memberHolder <span style="color:#666">*</span>MyStruct) <span style="color:#06287e">MyMethod</span>(modifiedState <span style="color:#902000">int</span>) {
+    memberHolder.state = modifiedState
+}</code></pre></div>
 <p>호출 방법은 이미 예상한 바로 <strong>그것</strong>이다.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">m</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">MyStruct</span><span style="color:#000;font-weight:bold">{</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">}</span>
-<span style="color:#000">m</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">MyMethod</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">20</span><span style="color:#000;font-weight:bold">)</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">var</span> m = <span style="color:#666">&amp;</span>MyStruct{<span style="color:#40a070">10</span>}
+m.<span style="color:#06287e">MyMethod</span>(<span style="color:#40a070">20</span>)</code></pre></div>
 <p>메서드 리시버가 포인터를 받으니 구현이 틀렸다는 생각이 들었다면 일단 반은 박수.</p>
 
 <h1 id="메서드-리시버-타입">메서드 리시버 타입</h1>
 
 <p>메서드 리시버의 특징으로 <code>T</code>, <code>*T</code> 타입을 모두 사용할 수 있다고 했다. 다음 예제를 보자.</p>
 
-<div class="highlight"><div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -394,7 +394,7 @@ ParameterDecl  = [ IdentifierList ] [ &#34;...&#34; ] Type .</pre></div>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="display:block;width:100%;background-color:#dfdfdf"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="display:block;width:100%;background-color:#d8d8d8"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
@@ -404,43 +404,43 @@ ParameterDecl  = [ IdentifierList ] [ &#34;...&#34; ] Type .</pre></div>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="display:block;width:100%;background-color:#dfdfdf"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span></span><span style="display:block;width:100%;background-color:#dfdfdf"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="display:block;width:100%;background-color:#d8d8d8"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span></span><span style="display:block;width:100%;background-color:#d8d8d8"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
 </span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="display:block;width:100%;background-color:#dfdfdf"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="display:block;width:100%;background-color:#d8d8d8"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
 </span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">package</span> <span style="color:#000">main</span>
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
 
-<span style="color:#204a87;font-weight:bold">import</span> <span style="color:#4e9a06">&#34;fmt&#34;</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#34;fmt&#34;</span>
 
-<span style="color:#204a87;font-weight:bold">type</span> <span style="color:#000">MyStruct</span> <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000;font-weight:bold">{</span>
-<span style="color:#a40000">​</span>	<span style="color:#000">value</span> <span style="color:#204a87;font-weight:bold">int</span>
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#007020;font-weight:bold">type</span> MyStruct <span style="color:#007020;font-weight:bold">struct</span> {
+<span style="">​</span>	value <span style="color:#902000">int</span>
+}
 
-<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">s</span> <span style="color:#000">MyStruct</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">MyMethod1</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-<span style="color:#a40000">​</span>	<span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">s</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">value</span><span style="color:#000;font-weight:bold">)</span>
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#007020;font-weight:bold">func</span> (s MyStruct) <span style="color:#06287e">MyMethod1</span>() {
+<span style="">​</span>	fmt.<span style="color:#06287e">Println</span>(s.value)
+}
 
-<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">s</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">MyStruct</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">MyMethod2</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-<span style="display:block;width:100%;background-color:#dfdfdf"><span style="color:#a40000">​</span>	<span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">s</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">value</span><span style="color:#000;font-weight:bold">)</span>
-</span><span style="color:#000;font-weight:bold">}</span>
+<span style="color:#007020;font-weight:bold">func</span> (s <span style="color:#666">*</span>MyStruct) <span style="color:#06287e">MyMethod2</span>() {
+<span style="display:block;width:100%;background-color:#d8d8d8"><span style="">​</span>	fmt.<span style="color:#06287e">Println</span>(s.value)
+</span>}
 
-<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">s</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">MyStruct</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">MyMethod3</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-<span style="color:#a40000">​</span>	<span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">((</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">s</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">value</span><span style="color:#000;font-weight:bold">)</span>
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#007020;font-weight:bold">func</span> (s <span style="color:#666">*</span>MyStruct) <span style="color:#06287e">MyMethod3</span>() {
+<span style="">​</span>	fmt.<span style="color:#06287e">Println</span>((<span style="color:#666">*</span>s).value)
+}
 
-<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-<span style="color:#a40000">​</span>	<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">m</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#000">MyStruct</span><span style="color:#000;font-weight:bold">{</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">}</span>
-<span style="color:#a40000">​</span>	<span style="color:#000">m</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">MyMethod1</span><span style="color:#000;font-weight:bold">()</span>
-<span style="display:block;width:100%;background-color:#dfdfdf"><span style="color:#a40000">​</span>	<span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">m</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">MyMethod1</span><span style="color:#000;font-weight:bold">()</span>
-</span><span style="display:block;width:100%;background-color:#dfdfdf"><span style="color:#a40000">​</span>	<span style="color:#000">m</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">MyMethod2</span><span style="color:#000;font-weight:bold">()</span>
-</span><span style="color:#a40000">​</span>	<span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">m</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">MyMethod2</span><span style="color:#000;font-weight:bold">()</span>
-<span style="display:block;width:100%;background-color:#dfdfdf"><span style="color:#a40000">​</span>	<span style="color:#000">m</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">MyMethod3</span><span style="color:#000;font-weight:bold">()</span>
-</span><span style="color:#a40000">​</span>	<span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">m</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">MyMethod3</span><span style="color:#000;font-weight:bold">()</span>
-<span style="color:#000;font-weight:bold">}</span></code></pre></td></tr></table>
+<span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">main</span>() {
+<span style="">​</span>	<span style="color:#007020;font-weight:bold">var</span> m = MyStruct{<span style="color:#40a070">10</span>}
+<span style="">​</span>	m.<span style="color:#06287e">MyMethod1</span>()
+<span style="display:block;width:100%;background-color:#d8d8d8"><span style="">​</span>	(<span style="color:#666">&amp;</span>m).<span style="color:#06287e">MyMethod1</span>()
+</span><span style="display:block;width:100%;background-color:#d8d8d8"><span style="">​</span>	m.<span style="color:#06287e">MyMethod2</span>()
+</span><span style="">​</span>	(<span style="color:#666">&amp;</span>m).<span style="color:#06287e">MyMethod2</span>()
+<span style="display:block;width:100%;background-color:#d8d8d8"><span style="">​</span>	m.<span style="color:#06287e">MyMethod3</span>()
+</span><span style="">​</span>	(<span style="color:#666">&amp;</span>m).<span style="color:#06287e">MyMethod3</span>()
+}</code></pre></td></tr></table>
 </div>
 </div>
 
@@ -449,56 +449,56 @@ ParameterDecl  = [ IdentifierList ] [ &#34;...&#34; ] Type .</pre></div>
 <p>다음 예들의 실행 결과를 확인해 보면 차이를 알 수 있을 것이다.</p>
 
 <p><strong>ex. 1</strong></p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">type</span> <span style="color:#000">MyStruct</span> <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#000">value</span> <span style="color:#204a87;font-weight:bold">int</span>
-<span style="color:#000;font-weight:bold">}</span>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">type</span> MyStruct <span style="color:#007020;font-weight:bold">struct</span> {
+    value <span style="color:#902000">int</span>
+}
 
-<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">s</span> <span style="color:#000">MyStruct</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">MyMethod</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">s</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">value</span><span style="color:#000;font-weight:bold">)</span>
-    <span style="color:#000">s</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">value</span><span style="color:#ce5c00;font-weight:bold">++</span>
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#007020;font-weight:bold">func</span> (s MyStruct) <span style="color:#06287e">MyMethod</span>() {
+    fmt.<span style="color:#06287e">Println</span>(s.value)
+    s.value<span style="color:#666">++</span>
+}
 
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">m1</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#000">MyStruct</span><span style="color:#000;font-weight:bold">{</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">}</span>
-<span style="color:#000">m1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">MyMethod</span><span style="color:#000;font-weight:bold">()</span>
-<span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">m1</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">MyMethod</span><span style="color:#000;font-weight:bold">()</span>
-<span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">m1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">value</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#007020;font-weight:bold">var</span> m1 = MyStruct{<span style="color:#40a070">10</span>}
+m1.<span style="color:#06287e">MyMethod</span>()
+(<span style="color:#666">&amp;</span>m1).<span style="color:#06287e">MyMethod</span>()
+fmt.<span style="color:#06287e">Println</span>(m1.value)
 
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">m2</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">MyStruct</span><span style="color:#000;font-weight:bold">{</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">}</span>
-<span style="color:#000">m2</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">MyMethod</span><span style="color:#000;font-weight:bold">()</span>
-<span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">m2</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">MyMethod</span><span style="color:#000;font-weight:bold">()</span>
-<span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">m2</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">value</span><span style="color:#000;font-weight:bold">)</span></code></pre></div>
+<span style="color:#007020;font-weight:bold">var</span> m2 = <span style="color:#666">&amp;</span>MyStruct{<span style="color:#40a070">10</span>}
+m2.<span style="color:#06287e">MyMethod</span>()
+(<span style="color:#666">*</span>m2).<span style="color:#06287e">MyMethod</span>()
+fmt.<span style="color:#06287e">Println</span>(m2.value)</code></pre></div>
 <p><strong>ex. 2</strong></p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">type</span> <span style="color:#000">MyStruct</span> <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#000">value</span> <span style="color:#204a87;font-weight:bold">int</span>
-<span style="color:#000;font-weight:bold">}</span>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">type</span> MyStruct <span style="color:#007020;font-weight:bold">struct</span> {
+    value <span style="color:#902000">int</span>
+}
 
-<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">s</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">MyStruct</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">MyMethod</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">s</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">value</span><span style="color:#000;font-weight:bold">)</span>
-    <span style="color:#000">s</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">value</span><span style="color:#ce5c00;font-weight:bold">++</span>
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#007020;font-weight:bold">func</span> (s <span style="color:#666">*</span>MyStruct) <span style="color:#06287e">MyMethod</span>() {
+    fmt.<span style="color:#06287e">Println</span>(s.value)
+    s.value<span style="color:#666">++</span>
+}
 
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">m1</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#000">MyStruct</span><span style="color:#000;font-weight:bold">{</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">}</span>
-<span style="color:#000">m1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">MyMethod</span><span style="color:#000;font-weight:bold">()</span>
-<span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">m1</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">MyMethod</span><span style="color:#000;font-weight:bold">()</span>
-<span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">m1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">value</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#007020;font-weight:bold">var</span> m1 = MyStruct{<span style="color:#40a070">10</span>}
+m1.<span style="color:#06287e">MyMethod</span>()
+(<span style="color:#666">&amp;</span>m1).<span style="color:#06287e">MyMethod</span>()
+fmt.<span style="color:#06287e">Println</span>(m1.value)
 
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">m2</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">MyStruct</span><span style="color:#000;font-weight:bold">{</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">}</span>
-<span style="color:#000">m2</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">MyMethod</span><span style="color:#000;font-weight:bold">()</span>
-<span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">m2</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">MyMethod</span><span style="color:#000;font-weight:bold">()</span>
-<span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">m2</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">value</span><span style="color:#000;font-weight:bold">)</span></code></pre></div>
+<span style="color:#007020;font-weight:bold">var</span> m2 = <span style="color:#666">&amp;</span>MyStruct{<span style="color:#40a070">10</span>}
+m2.<span style="color:#06287e">MyMethod</span>()
+(<span style="color:#666">*</span>m2).<span style="color:#06287e">MyMethod</span>()
+fmt.<span style="color:#06287e">Println</span>(m2.value)</code></pre></div>
 <h1 id="기본-타입-메서드">기본 타입 메서드</h1>
 
 <p>기본 타입에는 메서드를 정의할 수 없다고 했지만 사실 완전히 불가능한 것은 아니다. <a href="https://tramamte.github.io/2018/07/15/struct-basic/#타입-선언">타입 선언</a>을 이용해 기본 타입을 새로운 타입으로 만들면 된다. 주의할 것은 AliasDecl 방식은 별칭만 생긴다는 점.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">type</span> <span style="color:#000">MyInt</span> <span style="color:#204a87;font-weight:bold">int</span>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">type</span> MyInt <span style="color:#902000">int</span>
 
-<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span> <span style="color:#000">MyInt</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">PrintMyInt</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">)</span>
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#007020;font-weight:bold">func</span> (i MyInt) <span style="color:#06287e">PrintMyInt</span>() {
+    fmt.<span style="color:#06287e">Println</span>(i)
+}
 
-<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">i</span> <span style="color:#000">MyInt</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">10</span>
-    <span style="color:#000">i</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">PrintMyInt</span><span style="color:#000;font-weight:bold">()</span>
-<span style="color:#000;font-weight:bold">}</span></code></pre></div>
+<span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">main</span>() {
+    <span style="color:#007020;font-weight:bold">var</span> i MyInt = <span style="color:#40a070">10</span>
+    i.<span style="color:#06287e">PrintMyInt</span>()
+}</code></pre></div>
 
   
 

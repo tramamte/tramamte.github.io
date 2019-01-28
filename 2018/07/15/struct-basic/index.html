@@ -297,34 +297,34 @@
 <p>보통 Go 언어 학습서의 구조체 사용법은 이 순서가 아니지만, 위에서 구조체도 타입이라는 점을 강조했으니 순서를 좀 바꿔보자.</p>
 
 <p><a href="https://tramamte.github.io/2018/06/01/variables/">변수</a>로 돌아가서 기본 타입 변수를 선언하는 방법을 보자.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">i</span> <span style="color:#204a87;font-weight:bold">int</span>
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">f</span> <span style="color:#204a87;font-weight:bold">float32</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">var</span> i <span style="color:#902000">int</span>
+<span style="color:#007020;font-weight:bold">var</span> f <span style="color:#902000">float32</span></code></pre></div>
 <p><code>int</code>, <code>float32</code> 등 타입은 선언할 변수명 뒤에 썼다. 구조체도 타입이므로 이 자리에 사용할 수 있다. 구조체를 작성하는 방법은 다음과 같다.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">StructType    = &#34;struct&#34; &#34;{&#34; { FieldDecl &#34;;&#34; } &#34;}&#34; .
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">StructType    = &#34;struct&#34; &#34;{&#34; { FieldDecl &#34;;&#34; } &#34;}&#34; .
 FieldDecl     = (IdentifierList Type | EmbeddedField) [ Tag ] .</pre></div>
 <p>FieldDecl 중 아직 다루지 않을 EmbeddedField, Tag에 대해서는 일단 잊자. 타입 자리에 쓴다는 사실과 위 작성 규칙에 따라 구조체는 다음과 같이 사용할 수 있다.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">myStruct</span> <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000;font-weight:bold">{</span>
-	<span style="color:#000">i</span> <span style="color:#204a87;font-weight:bold">int</span>
-	<span style="color:#000">f</span> <span style="color:#204a87;font-weight:bold">float32</span>
-	<span style="color:#000">s</span> <span style="color:#204a87;font-weight:bold">string</span>
-<span style="color:#000;font-weight:bold">}</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">var</span> myStruct <span style="color:#007020;font-weight:bold">struct</span> {
+	i <span style="color:#902000">int</span>
+	f <span style="color:#902000">float32</span>
+	s <span style="color:#902000">string</span>
+}</code></pre></div>
 <p>구조체 내 각 필드에 값을 쓰거나 읽을 때는 <code>.</code>을 사용한다.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#000">myStruct</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">i</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">10</span>
-<span style="color:#000">myStruct</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">f</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">3.14</span>
-<span style="color:#000">myStruct</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">s</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;Hello&#34;</span>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">myStruct.i = <span style="color:#40a070">10</span>
+myStruct.f = <span style="color:#40a070">3.14</span>
+myStruct.s = <span style="color:#4070a0">&#34;Hello&#34;</span>
 
-<span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">myStruct</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">)</span>
-<span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">myStruct</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">f</span><span style="color:#000;font-weight:bold">)</span>
-<span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">myStruct</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">s</span><span style="color:#000;font-weight:bold">)</span></code></pre></div>
+fmt.<span style="color:#06287e">Println</span>(myStruct.i)
+fmt.<span style="color:#06287e">Println</span>(myStruct.f)
+fmt.<span style="color:#06287e">Println</span>(myStruct.s)</code></pre></div>
 <p>기본 타입은 변수 선언과 동시에 값을 할당할 수도 있었다.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">i</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">10</span>
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">j</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">20</span>
-<span style="color:#000">k</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#0000cf;font-weight:bold">30</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">var</span> i <span style="color:#902000">int</span> = <span style="color:#40a070">10</span>
+<span style="color:#007020;font-weight:bold">var</span> j = <span style="color:#40a070">20</span>
+k <span style="color:#666">:=</span> <span style="color:#40a070">30</span></code></pre></div>
 <p>구조체 역시 가능한데 조금 복잡하다.  우선 기본 타입에 대해 좀 더 구체적으로 살펴보면,</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">VarDecl        = &#34;var&#34; ( VarSpec | &#34;(&#34; { VarSpec &#34;;&#34; } &#34;)&#34; ) .
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">VarDecl        = &#34;var&#34; ( VarSpec | &#34;(&#34; { VarSpec &#34;;&#34; } &#34;)&#34; ) .
 VarSpec        = IdentifierList ( Type [ &#34;=&#34; ExpressionList ] | &#34;=&#34; ExpressionList ) .</pre></div>
 <p>값을 할당하기 위해서는 <code>=</code> 뒤에 Expression이 온다.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Expression = UnaryExpr | Expression binary_op Expression .
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Expression = UnaryExpr | Expression binary_op Expression .
 UnaryExpr  = PrimaryExpr | unary_op UnaryExpr .
 PrimaryExpr =
 	Operand |
@@ -339,7 +339,7 @@ Operand     = Literal | OperandName | &#34;(&#34; Expression &#34;)&#34; .
 Literal     = BasicLit | CompositeLit | FunctionLit .
 BasicLit    = int_lit | float_lit | imaginary_lit | rune_lit | string_lit .</pre></div>
 <p>기본 타입은 위와 같은 규정에 따라 최종적으로 int_lit, float_lit 등으로 값을 할당한다. 구조체의 경우 Literal 중 CompositeLit에 해당하는 방식으로 선언과 함께 값을 할당하는데 다음과 같다.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">CompositeLit  = LiteralType LiteralValue .
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">CompositeLit  = LiteralType LiteralValue .
 LiteralType   = StructType | ArrayType | &#34;[&#34; &#34;...&#34; &#34;]&#34; ElementType |
                 SliceType | MapType | TypeName .
 LiteralValue  = &#34;{&#34; [ ElementList [ &#34;,&#34; ] ] &#34;}&#34; .
@@ -347,27 +347,27 @@ ElementList   = KeyedElement { &#34;,&#34; KeyedElement } .
 KeyedElement  = [ Key &#34;:&#34; ] Element .
 Key           = FieldName | Expression | LiteralValue .</pre></div>
 <p>타입 뒤에 중괄호({})로 묶어 값을 입력하는데 각 필드는 comma(,)로 구분하며, 필드의 이름을 Key로 사용할 수도 있고 생략할 수도 있다. 즉, 위 <code>myStruct</code> 변수를 선언과 동시에 값을 할당하기 위해서는 다음과 같이 쓸 수 있다.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">myStruct</span> <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000;font-weight:bold">{</span>
-	<span style="color:#000">i</span> <span style="color:#204a87;font-weight:bold">int</span>
-	<span style="color:#000">f</span> <span style="color:#204a87;font-weight:bold">float32</span>
-	<span style="color:#000">s</span> <span style="color:#204a87;font-weight:bold">string</span>
-<span style="color:#000;font-weight:bold">}</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000;font-weight:bold">{</span>
-	<span style="color:#000">i</span> <span style="color:#204a87;font-weight:bold">int</span>
-	<span style="color:#000">f</span> <span style="color:#204a87;font-weight:bold">float32</span>
-	<span style="color:#000">s</span> <span style="color:#204a87;font-weight:bold">string</span>
-<span style="color:#000;font-weight:bold">}</span> <span style="color:#000;font-weight:bold">{</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">3.14</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Hello&#34;</span><span style="color:#000;font-weight:bold">}</span>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">var</span> myStruct <span style="color:#007020;font-weight:bold">struct</span> {
+	i <span style="color:#902000">int</span>
+	f <span style="color:#902000">float32</span>
+	s <span style="color:#902000">string</span>
+} = <span style="color:#007020;font-weight:bold">struct</span> {
+	i <span style="color:#902000">int</span>
+	f <span style="color:#902000">float32</span>
+	s <span style="color:#902000">string</span>
+} {<span style="color:#40a070">10</span>, <span style="color:#40a070">3.14</span>, <span style="color:#4070a0">&#34;Hello&#34;</span>}
 
-<span style="color:#8f5902;font-style:italic">// or
-</span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">myStruct</span> <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000;font-weight:bold">{</span>
-	<span style="color:#000">i</span> <span style="color:#204a87;font-weight:bold">int</span>
-	<span style="color:#000">f</span> <span style="color:#204a87;font-weight:bold">float32</span>
-	<span style="color:#000">s</span> <span style="color:#204a87;font-weight:bold">string</span>
-<span style="color:#000;font-weight:bold">}</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000;font-weight:bold">{</span>
-	<span style="color:#000">i</span> <span style="color:#204a87;font-weight:bold">int</span>
-	<span style="color:#000">f</span> <span style="color:#204a87;font-weight:bold">float32</span>
-	<span style="color:#000">s</span> <span style="color:#204a87;font-weight:bold">string</span>
-<span style="color:#000;font-weight:bold">}</span> <span style="color:#000;font-weight:bold">{</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">f</span><span style="color:#000;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">3.14</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">s</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;Hello&#34;</span><span style="color:#000;font-weight:bold">}</span></code></pre></div>
+<span style="color:#60a0b0;font-style:italic">// or
+</span><span style="color:#60a0b0;font-style:italic"></span>
+<span style="color:#007020;font-weight:bold">var</span> myStruct <span style="color:#007020;font-weight:bold">struct</span> {
+	i <span style="color:#902000">int</span>
+	f <span style="color:#902000">float32</span>
+	s <span style="color:#902000">string</span>
+} = <span style="color:#007020;font-weight:bold">struct</span> {
+	i <span style="color:#902000">int</span>
+	f <span style="color:#902000">float32</span>
+	s <span style="color:#902000">string</span>
+} {i:<span style="color:#40a070">10</span>, f:<span style="color:#40a070">3.14</span>, s:<span style="color:#4070a0">&#34;Hello&#34;</span>}</code></pre></div>
 <h1 id="타입-선언">타입 선언</h1>
 
 <p>위 방식은 대강 봐도 굉장히 복잡할뿐 아니라 재사용성 측면에서도 활용도가 0에 가깝다. 구조체는 새로운 타입을 만들기 위해 사용하는데, 새로운 타입을 만들었으면 당연히 재사용할 수 있어야 할 것 아닌가.</p>
@@ -375,21 +375,21 @@ Key           = FieldName | Expression | LiteralValue .</pre></div>
 <h2 id="타입-선언-방법">타입 선언 방법</h2>
 
 <p>Go는 기존 타입에 새로운 이름을 붙이는 방법을 제공한다. C의 <code>typedef</code>를 생각하면 된다. C에서 <code>typedef</code>를 사용해 같은 <code>int</code> 이면서도 용도에 따라 이름을 달리 하거나, 구조체에 별칭을 붙이는 것처럼 Go도 유사한 방식을 사용할 수 있다.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#204a87;font-weight:bold">typedef</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">network_error</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#204a87;font-weight:bold">typedef</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">protocol_error</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#204a87;font-weight:bold">typedef</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">internal_error</span><span style="color:#000;font-weight:bold">;</span>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#007020;font-weight:bold">typedef</span> <span style="color:#902000">int</span> network_error;
+<span style="color:#007020;font-weight:bold">typedef</span> <span style="color:#902000">int</span> protocol_error;
+<span style="color:#007020;font-weight:bold">typedef</span> <span style="color:#902000">int</span> internal_error;
 
-<span style="color:#000">network_error</span> <span style="color:#000">doNetwork</span><span style="color:#000;font-weight:bold">();</span>
-<span style="color:#000">protocol_error</span> <span style="color:#000">doProtocol</span><span style="color:#000;font-weight:bold">();</span>
-<span style="color:#000">internal_error</span> <span style="color:#000">doInternal</span><span style="color:#000;font-weight:bold">();</span>
+network_error <span style="color:#06287e">doNetwork</span>();
+protocol_error <span style="color:#06287e">doProtocol</span>();
+internal_error <span style="color:#06287e">doInternal</span>();
 
-<span style="color:#204a87;font-weight:bold">typedef</span> <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000">_MyStruct</span>
-<span style="color:#000;font-weight:bold">{</span>
-	<span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">a</span><span style="color:#000;font-weight:bold">;</span>
-	<span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">b</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#000;font-weight:bold">}</span> <span style="color:#000">MyStruct</span><span style="color:#000;font-weight:bold">;</span></code></pre></div>
+<span style="color:#007020;font-weight:bold">typedef</span> <span style="color:#007020;font-weight:bold">struct</span> _MyStruct
+{
+	<span style="color:#902000">int</span> a;
+	<span style="color:#902000">char</span> b;
+} MyStruct;</code></pre></div>
 <p>Go의 타입 선언 규칙은 다음과 같다.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">TypeDecl  = &#34;type&#34; ( TypeSpec | &#34;(&#34; { TypeSpec &#34;;&#34; } &#34;)&#34; ) .
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">TypeDecl  = &#34;type&#34; ( TypeSpec | &#34;(&#34; { TypeSpec &#34;;&#34; } &#34;)&#34; ) .
 TypeSpec  = AliasDecl | TypeDef .
 AliasDecl = identifier &#34;=&#34; Type .
 TypeDef   = identifier Type .</pre></div>
@@ -419,51 +419,51 @@ TypeDef   = identifier Type .</pre></div>
 
 
 <p>AliasDecl은 이름 그대로 주어진 타입에 대한 <strong>별칭</strong>을 만드는 것이고, TypeDef는 <strong>새로운 타입</strong>을 만드는 것이다. 이 둘의 차이는 다음 예를 보면 쉽게 구분할 수 있다.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">package</span> <span style="color:#000">main</span>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
 
-<span style="color:#204a87;font-weight:bold">import</span> <span style="color:#4e9a06">&#34;fmt&#34;</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#34;fmt&#34;</span>
 
-<span style="color:#204a87;font-weight:bold">type</span> <span style="color:#000">myint</span> <span style="color:#204a87;font-weight:bold">int</span>
+<span style="color:#007020;font-weight:bold">type</span> myint <span style="color:#902000">int</span>
 
-<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">test</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">a</span> <span style="color:#204a87;font-weight:bold">int</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-	<span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">a</span><span style="color:#000;font-weight:bold">)</span>
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">test</span>(a <span style="color:#902000">int</span>) {
+	fmt.<span style="color:#06287e">Println</span>(a)
+}
 
-<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-	<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">m</span> <span style="color:#000">myint</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span>
-	<span style="color:#000">test</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">m</span><span style="color:#000;font-weight:bold">)</span>
-<span style="color:#000;font-weight:bold">}</span></code></pre></div>
+<span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">main</span>() {
+	<span style="color:#007020;font-weight:bold">var</span> m myint = <span style="color:#40a070">1</span>
+	<span style="color:#06287e">test</span>(m)
+}</code></pre></div>
 <p>이 코드는 다음과 같은 오류가 발생한다.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">./main.go:13:6: cannot use m (type myint) as type int in argument to test</pre></div>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">./main.go:13:6: cannot use m (type myint) as type int in argument to test</pre></div>
 <p><code>myint</code>는 <code>int</code>가 아닌 새로운 타입이기 때문에 <code>test()</code> 함수에 그대로 인수로 전달할 수 없다. 하지만 <code>myint</code>를 다음과 같이 AliasDecl로 변경하면 이 코드는 문제없이 정상 동작한다.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">package</span> <span style="color:#000">main</span>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
 
-<span style="color:#204a87;font-weight:bold">import</span> <span style="color:#4e9a06">&#34;fmt&#34;</span>
+<span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#34;fmt&#34;</span>
 
-<span style="color:#204a87;font-weight:bold">type</span> <span style="color:#000">myint</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">int</span>
+<span style="color:#007020;font-weight:bold">type</span> myint = <span style="color:#902000">int</span>
 
-<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">test</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">a</span> <span style="color:#204a87;font-weight:bold">int</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-	<span style="color:#000">fmt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">a</span><span style="color:#000;font-weight:bold">)</span>
-<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">test</span>(a <span style="color:#902000">int</span>) {
+	fmt.<span style="color:#06287e">Println</span>(a)
+}
 
-<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-	<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">m</span> <span style="color:#000">myint</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span>
-	<span style="color:#000">test</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">m</span><span style="color:#000;font-weight:bold">)</span>
-<span style="color:#000;font-weight:bold">}</span></code></pre></div>
+<span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">main</span>() {
+	<span style="color:#007020;font-weight:bold">var</span> m myint = <span style="color:#40a070">1</span>
+	<span style="color:#06287e">test</span>(m)
+}</code></pre></div>
 <h2 id="타입-선언을-이용한-구조체-변수-선언과-초기값-할당">타입 선언을 이용한 구조체 변수 선언과 초기값 할당</h2>
 
 <p>이제 타입 선언법을 알았으니 위에서 살펴본 <code>myStruct</code> 변수의 구조체에 적용해 보자.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">type</span> <span style="color:#000">MyStruct</span> <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000;font-weight:bold">{</span>
-	<span style="color:#000">i</span> <span style="color:#204a87;font-weight:bold">int</span>
-	<span style="color:#000">f</span> <span style="color:#204a87;font-weight:bold">float32</span>
-	<span style="color:#000">s</span> <span style="color:#204a87;font-weight:bold">string</span>
-<span style="color:#000;font-weight:bold">}</span>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">type</span> MyStruct <span style="color:#007020;font-weight:bold">struct</span> {
+	i <span style="color:#902000">int</span>
+	f <span style="color:#902000">float32</span>
+	s <span style="color:#902000">string</span>
+}
 
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">myStruct</span> <span style="color:#000">MyStruct</span></code></pre></div>
+<span style="color:#007020;font-weight:bold">var</span> myStruct MyStruct</code></pre></div>
 <p>동시에 값을 할당할 때는 다음과 같은 방식들을 사용할 수 있다.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">myStruct</span> <span style="color:#000">MyStruct</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#000">MyStruct</span><span style="color:#000;font-weight:bold">{</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">3.14</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Hello&#34;</span><span style="color:#000;font-weight:bold">}</span>
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">myStruct</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#000">MyStruct</span><span style="color:#000;font-weight:bold">{</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">3.14</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Hello&#34;</span><span style="color:#000;font-weight:bold">}</span>
-<span style="color:#000">myStruct</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">MyStruct</span><span style="color:#000;font-weight:bold">{</span><span style="color:#000">s</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">&#34;Hello&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">i</span><span style="color:#000;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">f</span><span style="color:#000;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">3.14</span><span style="color:#000;font-weight:bold">}</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">var</span> myStruct MyStruct = MyStruct{<span style="color:#40a070">10</span>, <span style="color:#40a070">3.14</span>, <span style="color:#4070a0">&#34;Hello&#34;</span>}
+<span style="color:#007020;font-weight:bold">var</span> myStruct = MyStruct{<span style="color:#40a070">10</span>, <span style="color:#40a070">3.14</span>, <span style="color:#4070a0">&#34;Hello&#34;</span>}
+myStruct <span style="color:#666">:=</span> MyStruct{s:<span style="color:#4070a0">&#34;Hello&#34;</span>, i:<span style="color:#40a070">10</span>, f:<span style="color:#40a070">3.14</span>}</code></pre></div>
 
   
 

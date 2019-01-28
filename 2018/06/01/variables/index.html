@@ -285,7 +285,7 @@
   
 
 <p>Go에서 변수 선언 규칙은 다음과 같다.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">VarDecl        = &#34;var&#34; ( VarSpec | &#34;(&#34; { VarSpec &#34;;&#34; } &#34;)&#34; ) .
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">VarDecl        = &#34;var&#34; ( VarSpec | &#34;(&#34; { VarSpec &#34;;&#34; } &#34;)&#34; ) .
 VarSpec        = IdentifierList ( Type [ &#34;=&#34; ExpressionList ] | &#34;=&#34; ExpressionList ) .
 IdentifierList = identifier { &#34;,&#34; identifier } .
 ExpressionList = Expression { &#34;,&#34; Expression } .</pre></div>
@@ -301,24 +301,24 @@ ExpressionList = Expression { &#34;,&#34; Expression } .</pre></div>
 
 <p>말로 풀어 쓰니 더 복잡해 보인다. 아래와 같은 방식들이 가능하다.</p>
 
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">name</span> <span style="color:#204a87;font-weight:bold">int</span>
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">name</span> <span style="color:#204a87;font-weight:bold">int</span>  <span style="color:#000;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span>
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">name</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span>
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">name1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">name2</span> <span style="color:#204a87;font-weight:bold">int</span>
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">name1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">name2</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1</span>
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000;font-weight:bold">(</span> <span style="color:#000">name1</span> <span style="color:#204a87;font-weight:bold">int</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">name2</span> <span style="color:#204a87;font-weight:bold">string</span> <span style="color:#000;font-weight:bold">)</span>
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000;font-weight:bold">(</span> <span style="color:#000">name1</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">name2</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;hello&#34;</span> <span style="color:#000;font-weight:bold">)</span>
-<span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000;font-weight:bold">(</span>
-	<span style="color:#000">name1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">name2</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1</span>
-	<span style="color:#000">name3</span> <span style="color:#204a87;font-weight:bold">string</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;hello&#34;</span>
-<span style="color:#000;font-weight:bold">)</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">var</span> name <span style="color:#902000">int</span>
+<span style="color:#007020;font-weight:bold">var</span> name <span style="color:#902000">int</span>  = <span style="color:#40a070">0</span>
+<span style="color:#007020;font-weight:bold">var</span> name = <span style="color:#40a070">0</span>
+<span style="color:#007020;font-weight:bold">var</span> name1, name2 <span style="color:#902000">int</span>
+<span style="color:#007020;font-weight:bold">var</span> name1, name2 = <span style="color:#40a070">0</span>, <span style="color:#40a070">1</span>
+<span style="color:#007020;font-weight:bold">var</span> ( name1 <span style="color:#902000">int</span>; name2 <span style="color:#902000">string</span> )
+<span style="color:#007020;font-weight:bold">var</span> ( name1 = <span style="color:#40a070">0</span>; name2 = <span style="color:#4070a0">&#34;hello&#34;</span> )
+<span style="color:#007020;font-weight:bold">var</span> (
+	name1, name2 = <span style="color:#40a070">0</span>, <span style="color:#40a070">1</span>
+	name3 <span style="color:#902000">string</span> = <span style="color:#4070a0">&#34;hello&#34;</span>
+)</code></pre></div>
 
 <p>마지막 예는 세미콜론이 없어 언뜻 불가능해 보이나 <a href="https://tramamte.github.io/2018/05/29/semicolons/#세미콜론 자동 삽입 규칙">세미콜론 자동 삽입 규칙</a>에 의해 Go lexer가 세미콜론을 삽입하므로 가능하다.</p>
 
 <h1 id="short-variable-declarations">Short variable declarations</h1>
 
 <p>변수 선언 뒤 바로 초기값을 입력하는 경우에는 귀찮은 <code>var</code>도 삭제할 수 있다. 이 방식을 <strong>short variable declaration</strong> 이라 하고 다음과 같이 쓴다.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">ShortVarDecl = IdentifierList &#34;:=&#34; ExpressionList .</pre></div>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">ShortVarDecl = IdentifierList &#34;:=&#34; ExpressionList .</pre></div>
 <p>이름 넣고,  equal mark(=) 앞에 colon(:)을 붙인 <code>:=</code>을 입력한 후, 값을 넣으면 된다.</p>
 
 <p>IndentifierList, ExpressionList이기 때문에 당연히 comma(,)로 구분해 복수개를 쓸 수 있다.</p>
