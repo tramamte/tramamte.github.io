@@ -300,22 +300,22 @@
   
 
 <h1 id="prune">Prune</h1>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker image prune
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker image prune
 $ docker container prune
 $ docker volume prune
 $ docker network prune</code></pre></div>
 <h1 id="workaround">Workaround</h1>
 
 <h2 id="image">Image</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker rmi <span style="color:#204a87;font-weight:bold">$(</span>docker images --filter <span style="color:#4e9a06">&#34;dangling=true&#34;</span> -q --no-trunc<span style="color:#204a87;font-weight:bold">)</span>
-$ docker rmi <span style="color:#204a87;font-weight:bold">$(</span>docker images <span style="color:#000;font-weight:bold">|</span> grep <span style="color:#4e9a06">&#34;none&#34;</span> <span style="color:#000;font-weight:bold">|</span> awk <span style="color:#4e9a06">&#39;/ / { print $3 }&#39;</span><span style="color:#204a87;font-weight:bold">)</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker rmi <span style="color:#007020;font-weight:bold">$(</span>docker images --filter <span style="color:#4070a0">&#34;dangling=true&#34;</span> -q --no-trunc<span style="color:#007020;font-weight:bold">)</span>
+$ docker rmi <span style="color:#007020;font-weight:bold">$(</span>docker images | grep <span style="color:#4070a0">&#34;none&#34;</span> | awk <span style="color:#4070a0">&#39;/ / { print $3 }&#39;</span><span style="color:#007020;font-weight:bold">)</span></code></pre></div>
 <h2 id="container">Container</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker rm <span style="color:#204a87;font-weight:bold">$(</span>docker ps -qa --no-trunc --filter <span style="color:#4e9a06">&#34;status=exited&#34;</span><span style="color:#204a87;font-weight:bold">)</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker rm <span style="color:#007020;font-weight:bold">$(</span>docker ps -qa --no-trunc --filter <span style="color:#4070a0">&#34;status=exited&#34;</span><span style="color:#007020;font-weight:bold">)</span></code></pre></div>
 <h2 id="volume">Volume</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker volume rm <span style="color:#204a87;font-weight:bold">$(</span>docker volume ls -qf <span style="color:#000">dangling</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87">true</span><span style="color:#204a87;font-weight:bold">)</span>
-$ docker volume ls -qf <span style="color:#000">dangling</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87">true</span> <span style="color:#000;font-weight:bold">|</span> xargs -r docker volume rm</code></pre></div>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker volume rm <span style="color:#007020;font-weight:bold">$(</span>docker volume ls -qf <span style="color:#bb60d5">dangling</span><span style="color:#666">=</span><span style="color:#007020">true</span><span style="color:#007020;font-weight:bold">)</span>
+$ docker volume ls -qf <span style="color:#bb60d5">dangling</span><span style="color:#666">=</span><span style="color:#007020">true</span> | xargs -r docker volume rm</code></pre></div>
 <h2 id="network">Network</h2>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker network rm <span style="color:#204a87;font-weight:bold">$(</span>docker network ls <span style="color:#000;font-weight:bold">|</span> grep <span style="color:#4e9a06">&#34;bridge&#34;</span> <span style="color:#000;font-weight:bold">|</span> awk <span style="color:#4e9a06">&#39;/ / { print $1 }&#39;</span><span style="color:#204a87;font-weight:bold">)</span></code></pre></div>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker network rm <span style="color:#007020;font-weight:bold">$(</span>docker network ls | grep <span style="color:#4070a0">&#34;bridge&#34;</span> | awk <span style="color:#4070a0">&#39;/ / { print $1 }&#39;</span><span style="color:#007020;font-weight:bold">)</span></code></pre></div>
 
   
 
