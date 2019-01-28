@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 16 Jan 2019 20:29:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 25 Jan 2019 12:50:00 +0900</lastBuildDate>
     
 	<atom:link href="https://tramamte.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker 다이어트</title>
+      <link>https://tramamte.github.io/2019/01/25/diet/</link>
+      <pubDate>Fri, 25 Jan 2019 12:50:00 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2019/01/25/diet/</guid>
+      <description>Prune $ docker image prune $ docker container prune $ docker volume prune $ docker network prune Workaround Image $ docker rmi $(docker images --filter &amp;#34;dangling=true&amp;#34; -q --no-trunc) $ docker rmi $(docker images | grep &amp;#34;none&amp;#34; | awk &amp;#39;/ / { print $3 }&amp;#39;) Container $ docker rm $(docker ps -qa --no-trunc --filter &amp;#34;status=exited&amp;#34;) Volume $ docker volume rm $(docker volume ls -qf dangling=true) $ docker volume ls -qf dangling=true</description>
+    </item>
     
     <item>
       <title>독서실</title>
