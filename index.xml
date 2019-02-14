@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2018 Patrick Yu. All rights reserved.</copyright>
-    <lastBuildDate>Sun, 10 Feb 2019 23:45:20 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 14 Feb 2019 12:45:00 +0900</lastBuildDate>
     
 	<atom:link href="https://tramamte.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>독서실</title>
+      <link>https://tramamte.github.io/2019/02/14/now-reading/</link>
+      <pubDate>Thu, 14 Feb 2019 12:45:00 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2019/02/14/now-reading/</guid>
+      <description>아주 짧은 세계사 제프리 블레이니 (박중서) | Humainst 청춘의 독서 유시민 | 웅진 지식하우스 철학, 삶을 만나다 강신주 | 이학사 이유가 있어요 요시타케 신스케 (김정화)</description>
+    </item>
     
     <item>
       <title>계속하는 것</title>
@@ -19,15 +28,6 @@
       
       <guid>https://tramamte.github.io/2019/02/10/wheel/</guid>
       <description>강한 인내심으로 거리를 쌓아가고 있는 시기인 까닭에, 지금 당장은 시간은 그다지 문제가 되지 않는다. 그저 묵묵히 시간을 들여 거리를 뛰어간다. 빨리 달리고 싶다고 느</description>
-    </item>
-    
-    <item>
-      <title>독서실</title>
-      <link>https://tramamte.github.io/2019/02/08/now-reading/</link>
-      <pubDate>Fri, 08 Feb 2019 21:30:00 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/2019/02/08/now-reading/</guid>
-      <description>아주 짧은 세계사 제프리 블레이니 (박중서) | Humainst 청춘의 독서 유시민 | 웅진 지식하우스 철학, 삶을 만나다 강신주 | 이학사 이유가 있어요 요시타케 신스케 (김정화)</description>
     </item>
     
     <item>
