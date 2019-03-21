@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2019 Patrick Yu. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 05 Sep 2018 23:57:07 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 20 Mar 2019 22:29:30 +0900</lastBuildDate>
     
 	<atom:link href="https://tramamte.github.io/tags/fun-go/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>구조체 초기화 방법</title>
+      <link>https://tramamte.github.io/2019/03/20/struct-initialize/</link>
+      <pubDate>Wed, 20 Mar 2019 22:29:30 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2019/03/20/struct-initialize/</guid>
+      <description>C 구조체 초기화 다음 C 구조체 초기화 방법 중 문법에 위배되는 것은? (단, C99 기준) struct MyStruct { int a; int b; }; // method 1 struct MyStruct m1 = {0, 1}; // method 2 struct MyStruct m2; m2 = (struct MyStruct){0, 1}; // method 3 struct { int</description>
+    </item>
     
     <item>
       <title>배열, 슬라이스 그리고 맵</title>
