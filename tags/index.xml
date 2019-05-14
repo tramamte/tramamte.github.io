@@ -7,10 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2019 Patrick Yu. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 14 May 2019 11:04:03 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 14 May 2019 12:15:24 +0900</lastBuildDate>
     
 	<atom:link href="https://tramamte.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>container</title>
+      <link>https://tramamte.github.io/tags/container/</link>
+      <pubDate>Tue, 14 May 2019 12:15:24 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/tags/container/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://tramamte.github.io/tags/docker/</link>
+      <pubDate>Tue, 14 May 2019 12:15:24 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dump</title>
+      <link>https://tramamte.github.io/tags/dump/</link>
+      <pubDate>Tue, 14 May 2019 12:15:24 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/tags/dump/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>image</title>
+      <link>https://tramamte.github.io/tags/image/</link>
+      <pubDate>Tue, 14 May 2019 12:15:24 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/tags/image/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>config</title>
@@ -18,15 +54,6 @@
       <pubDate>Tue, 14 May 2019 11:04:03 +0900</pubDate>
       
       <guid>https://tramamte.github.io/tags/config/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://tramamte.github.io/tags/docker/</link>
-      <pubDate>Tue, 14 May 2019 11:04:03 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/tags/docker/</guid>
       <description></description>
     </item>
     
@@ -121,15 +148,6 @@
     </item>
     
     <item>
-      <title>image</title>
-      <link>https://tramamte.github.io/tags/image/</link>
-      <pubDate>Wed, 29 Aug 2018 20:46:30 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/tags/image/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>pull</title>
       <link>https://tramamte.github.io/tags/pull/</link>
       <pubDate>Wed, 29 Aug 2018 20:46:30 +0900</pubDate>
@@ -216,15 +234,6 @@
       <pubDate>Thu, 12 Jul 2018 22:56:38 +0900</pubDate>
       
       <guid>https://tramamte.github.io/tags/scss/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>container</title>
-      <link>https://tramamte.github.io/tags/container/</link>
-      <pubDate>Tue, 26 Jun 2018 12:49:25 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/tags/container/</guid>
       <description></description>
     </item>
     

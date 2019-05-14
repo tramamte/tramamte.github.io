@@ -4,7 +4,60 @@
   
   <url>
     <loc>https://tramamte.github.io/</loc>
-    <lastmod>2019-05-14T11:04:03+09:00</lastmod>
+    <lastmod>2019-05-14T12:15:24+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tramamte.github.io/2019/05/14/dump/</loc>
+    <lastmod>2019-05-14T12:15:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tramamte.github.io/posts/</loc>
+    <lastmod>2019-05-14T12:15:24+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tramamte.github.io/tags/</loc>
+    <lastmod>2019-05-14T12:15:24+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tramamte.github.io/topics/</loc>
+    <lastmod>2019-05-14T12:15:24+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tramamte.github.io/tags/container/</loc>
+    <lastmod>2019-05-14T12:15:24+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tramamte.github.io/tags/docker/</loc>
+    <lastmod>2019-05-14T12:15:24+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tramamte.github.io/topics/docker/</loc>
+    <lastmod>2019-05-14T12:15:24+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tramamte.github.io/tags/dump/</loc>
+    <lastmod>2019-05-14T12:15:24+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tramamte.github.io/tags/image/</loc>
+    <lastmod>2019-05-14T12:15:24+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -14,37 +67,7 @@
   </url>
   
   <url>
-    <loc>https://tramamte.github.io/posts/</loc>
-    <lastmod>2019-05-14T11:04:03+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tramamte.github.io/tags/</loc>
-    <lastmod>2019-05-14T11:04:03+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tramamte.github.io/topics/</loc>
-    <lastmod>2019-05-14T11:04:03+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://tramamte.github.io/tags/config/</loc>
-    <lastmod>2019-05-14T11:04:03+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tramamte.github.io/tags/docker/</loc>
-    <lastmod>2019-05-14T11:04:03+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tramamte.github.io/topics/docker/</loc>
     <lastmod>2019-05-14T11:04:03+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -164,12 +187,6 @@
   <url>
     <loc>https://tramamte.github.io/2018/08/29/docker-pull/</loc>
     <lastmod>2018-08-29T20:46:30+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tramamte.github.io/tags/image/</loc>
-    <lastmod>2018-08-29T20:46:30+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -343,12 +360,6 @@
   <url>
     <loc>https://tramamte.github.io/2018/06/26/docker-log/</loc>
     <lastmod>2018-06-26T12:49:25+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tramamte.github.io/tags/container/</loc>
-    <lastmod>2018-06-26T12:49:25+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
