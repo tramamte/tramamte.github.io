@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="switch의 변신은 무죄">
-  <meta name="generator" content="Hugo 0.54.0" />
+  <meta name="generator" content="Hugo 0.55.5" />
 
   <title>봉인해제 switch &middot; Awesome Patrick</title>
 
@@ -296,20 +296,14 @@
 	<span style="color:#007020;font-weight:bold">default</span><span style="color:#666">:</span>
 		<span style="color:#60a0b0;font-style:italic">//statement
 </span><span style="color:#60a0b0;font-style:italic"></span>}</code></pre></div>
-
-
-
-
 <blockquote class="quote">
 
 
-<ul>
-<li>The <strong>expression</strong> used in a switch statement must have an integral or enumerated type, or be of a class type in which the class has a single conversion function to an integral or enumerated type.</li>
-<li>The <strong>constant-expression</strong> for a case must be the same data type as the variable in the switch, and it must be a constant or a literal.</li>
-</ul>
+
+- The **expression** used in a switch statement must have an integral or enumerated type, or be of a class type in which the class has a single conversion function to an integral or enumerated type.
+- The **constant-expression** for a case must be the same data type as the variable in the switch, and it must be a constant or a literal.
 
 </blockquote>
-
 
 <p>Java는 다음과 같다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#007020;font-weight:bold">switch</span> <span style="color:#666">(</span>expression<span style="color:#666">)</span> <span style="color:#666">{</span>
@@ -319,20 +313,14 @@
 </span><span style="color:#002070;font-weight:bold">	default:</span>
 		<span style="color:#60a0b0;font-style:italic">//statement
 </span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#666">}</span></code></pre></div>
-
-
-
-
 <blockquote class="quote">
 
 
-<ul>
-<li>The <strong>expression</strong> used in a switch statement can only be integers, convertable integers (byte, short, char), strings and enums.</li>
-<li>The <strong>value</strong> for a case must be the same data type as the variable in the switch and it must be a constant or a literal.</li>
-</ul>
+
+- The **expression** used in a switch statement can only be integers, convertable integers (byte, short, char), strings and enums.
+- The **value** for a case must be the same data type as the variable in the switch and it must be a constant or a literal.
 
 </blockquote>
-
 
 <p>JDK7 이전의 옛날 얘기는 하지 말고, Java는 문자열도 <code>switch</code>에 쓸 수 있다는 점을 제외하면 그놈이 그놈이다. C가 버전 1.0이라면 Java는 버전 1.1 정도라고나 할까.</p>
 

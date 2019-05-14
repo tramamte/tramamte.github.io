@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Struct basic">
-  <meta name="generator" content="Hugo 0.54.0" />
+  <meta name="generator" content="Hugo 0.55.5" />
 
   <title>구조체 기초 &middot; Awesome Patrick</title>
 
@@ -401,22 +401,21 @@ TypeDef   = identifier Type .</pre></div>
 
 <p>우선 <a href="https://golang.org/ref/spec#Type_declarations">Go spec.</a>에서 두 방식에 대해 설명하고 있는 문구를 보자.</p>
 
-
-
-
-
 <blockquote class="quote">
 
 
-<dl>
-<dt><strong>Alias declarations</strong></dt>
-<dd><p>An alias declaration binds an identifier to the given type.</p></dd>
-<dt><strong>Type definitions</strong></dt>
-<dd><p>A type definition creates a new, distinct type with the same underlying type and operations as the given type, and binds an identifier to it.</p></dd>
-</dl>
+
+
+**Alias declarations**
+
+: An alias declaration binds an identifier to the given type. 
+
+**Type definitions** 
+
+: A type definition creates a new, distinct type with the same underlying type and operations as the given type, and binds an identifier to it. 
+
 
 </blockquote>
-
 
 <p>AliasDecl은 이름 그대로 주어진 타입에 대한 <strong>별칭</strong>을 만드는 것이고, TypeDef는 <strong>새로운 타입</strong>을 만드는 것이다. 이 둘의 차이는 다음 예를 보면 쉽게 구분할 수 있다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main

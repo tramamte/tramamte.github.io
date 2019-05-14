@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="description" content="데몬 설정 파일">
   <meta name="generator" content="Hugo 0.55.5" />
 
-  <title>brm &middot; Awesome Patrick</title>
+  <title>Docker 설정 파일 &middot; Awesome Patrick</title>
 
   
   
@@ -44,8 +44,6 @@
 
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="Awesome Patrick" href="https://tramamte.github.io/tags/brm/index.xml" />
   
 
   
@@ -199,7 +197,7 @@
 
     
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://tramamte.github.io/tags/brm/index.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      <a class="pure-menu-link" href="https://tramamte.github.io/index.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
     </li>
     
 
@@ -214,21 +212,16 @@
 
 
 <div class="header">
-  <h1>brm</h1>
-  <h2>Tag: brm</h2>
+  <h1>Docker 설정 파일</h1>
+  <h2>데몬 설정 파일</h2>
 </div>
-
 <div class="content">
-  
-    <article>
-  <header>
-    <h2><a href="https://tramamte.github.io/2018/06/04/eclipse-install/">jBPM / Drools 개발환경 구성</a></h2>
 
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fas fa-calendar-alt fa-fw"></i>
-    <time>Jun 04, 2018 13:56</time>
+    <time>May 14, 2019 11:04</time>
   </div>
 
   
@@ -239,7 +232,7 @@
   <div>
     <i class="fas fa-folder fa-fw"></i>
     
-      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/bpm-brm">bpm-brm</a>
+      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/docker">docker</a>
     
   </div>
   
@@ -251,13 +244,9 @@
   <div>
     <i class="fas fa-tag fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/drools">drools</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/docker">docker</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/jbpm">jbpm</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/bpm">bpm</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/brm">brm</a>
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/config">config</a>
     
   </div>
   
@@ -265,20 +254,66 @@
 
 </div>
 
-  </header>
+  
 
-  <p>
-  1. Oracle JDK 설치 Java SE 8 버전 추천 2. Eclipse 설치 Eclipse IDE for Java EE Developers 받아서 압축 해제 3. Runtime 설치 Drools에서 Final 버전 내려받아 적당한 위치에 압축 해제 jBPM에서 *.Final-bin.zip 형태의 final binary ...    
-  </p>
+
+  <p>Docker 데몬의 설정을 변경하기 위해 systemd service 파일을 <a href="https://tramamte.github.io/2018/05/31/docker-change-root/">직접 수정하는 방법</a>은 해당 데몬을 업데이트할 경우 모두 초기화되기 때문에 불편함이 있다.</p>
+
+<p><strong>위치</strong></p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">/etc/docker/daemon.json</code></pre></div>
+<p><strong>내용</strong></p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#062873;font-weight:bold">&#34;data-root&#34;</span>: <span style="color:#4070a0">&#34;/where/you/want&#34;</span>
+}</code></pre></div>
 
   
-  <footer>
-    <a href="https://tramamte.github.io/2018/06/04/eclipse-install/">Read more <i class="fas fa-expand fa-fw"></i></a>
-  </footer>
-  
-</article>
+
+<div class="see-also">
+  <i class="fas fa-archive fa-fw"></i>
+  <strong>See Also</strong>
+  <ul>
+	
+	<li><a href="https://tramamte.github.io/2019/01/25/diet/">Docker 다이어트</a></li>
+	
+	<li><a href="https://tramamte.github.io/2018/08/29/docker-pull/">Docker 동시 다운로드 개수 조절</a></li>
+	
+	<li><a href="https://tramamte.github.io/2018/06/26/docker-log/">Docker container 로그 보기</a></li>
+	
+	<li><a href="https://tramamte.github.io/2018/06/20/docker-copy/">Docker host - container 간 복사</a></li>
+	
+	<li><a href="https://tramamte.github.io/2018/05/31/make-image-from-container/">Docker container에서 image 생성</a></li>
+	
+  </ul>
+</div>
+
 
   
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24">
+    
+    <a href="https://tramamte.github.io/2019/03/20/struct-initialize/"><i class="fas fa-angle-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://tramamte.github.io/2019/03/20/struct-initialize/">구조체 초기화 방법</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">&nbsp;</div>
+  <div class="pure-u-10-24" style="text-align: right;">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+
 </div>
 
 <div class="footer">
@@ -302,3 +337,4 @@
 
 </body>
 </html>
+

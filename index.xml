@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2019 Patrick Yu. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 20 Mar 2019 22:29:30 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 14 May 2019 11:04:03 +0900</lastBuildDate>
     
 	<atom:link href="https://tramamte.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker 설정 파일</title>
+      <link>https://tramamte.github.io/2019/05/14/config/</link>
+      <pubDate>Tue, 14 May 2019 11:04:03 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2019/05/14/config/</guid>
+      <description>Docker 데몬의 설정을 변경하기 위해 systemd service 파일을 직접 수정하는 방법은 해당 데몬을 업데이트할 경우 모두 초기화되기 때문에 불편함이 있다. 위치 /etc/docker/daemon.json 내용 { &amp;#34;data-root&amp;#34;: &amp;#34;/where/you/want&amp;#34; }</description>
+    </item>
     
     <item>
       <title>구조체 초기화 방법</title>
@@ -234,7 +243,7 @@
       <pubDate>Tue, 03 Jul 2018 22:35:19 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/07/03/deep-inside-constants/</guid>
-      <description>이 글은 마지막 commit id가 4ba5527&amp;hellip;인 Go 소스 코드를 기준으로 합니다. 함수명, 변수/상수명, 변수/상수값 등은 버전에 따라 다를 수 있습니</description>
+      <description>이 글은 마지막 commit id가 4ba5527...인 Go 소스 코드를 기준으로 합니다. 함수명, 변수/상수명, 변수/상수값 등은 버전에 따라 다를 수 있습니다. 최신 Go</description>
     </item>
     
     <item>
@@ -243,7 +252,7 @@
       <pubDate>Fri, 29 Jun 2018 22:55:08 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/06/29/for-statement/</guid>
-      <description>시작하기에 앞서 한 가지 중요한 사실을 미리 밝히고 넘어가자. Go에는 while이 없다! 반복문은 for 하나로 모두 작성한다. for 반복문의 작성 규칙은 아래와 같다.</description>
+      <description>시작하기에 앞서 한 가지 중요한 사실을 미리 밝히고 넘어가자. Go에는 `while`이 없다! 반복문은 `for` 하나로 모두 작성한다. for 반복문의 작성 규칙은 아래와 같</description>
     </item>
     
     <item>
@@ -423,7 +432,7 @@
       <pubDate>Thu, 31 May 2018 22:20:26 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/05/31/hugo-shortcode/</guid>
-      <description>Awesome Patrick 글 작성을 위해 개인적으로 참고할 내용을 정리한 글입니다. Markdown 사용법 1. Task list - [ ] action one- [x] action two action one action two 2. Fraction 5/12 5&amp;frasl;12 3. Latex dash Hyphen: tie-in, toll-free, two-thirdEn Dash: May--September, page 147--149Em Dash: Additional thought---as I&amp;#39;ve done here. Hyphen: tie-in, toll-free,</description>
+      <description>Awesome Patrick 글 작성을 위해 개인적으로 참고할 내용을 정리한 글입니다. Markdown 사용법 1. Task list - [ ] action one - [x] action two action one action two 2. Fraction 5/12 5&amp;frasl;12 3. Latex dash Hyphen: tie-in, toll-free, two-third En Dash: May--September, page 147--149 Em Dash: Additional thought---as I&amp;#39;ve done here.</description>
     </item>
     
     <item>

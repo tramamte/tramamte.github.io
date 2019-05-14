@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Hugo 기본 및 추가 shortcode 사용법">
-  <meta name="generator" content="Hugo 0.54.0" />
+  <meta name="generator" content="Hugo 0.55.5" />
 
   <title>Blog 작성 참고자료 &middot; Awesome Patrick</title>
 
@@ -340,21 +340,20 @@
 
   
 
-
-
-
 <div class="box">
 
-<p>Awesome Patrick 글 작성을 위해 개인적으로 참고할 내용을 정리한 글입니다.</p>
+
+
+Awesome Patrick 글 작성을 위해 개인적으로 참고할 내용을 정리한 글입니다.
+
 
 </div>
-
 
 <h1 id="markdown-사용법">Markdown 사용법</h1>
 
 <h2 id="1-task-list">1. Task list</h2>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#007020;font-weight:bold">- [ ]</span> action one<span style="">
-</span><span style=""></span>- [x] action two</code></pre></div>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#007020;font-weight:bold">- [ ]</span> action one
+- [x] action two</code></pre></div>
 <ul class="task-list">
 <li><label><input type="checkbox" disabled class="task-list-item"> action one</label></li>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> action two</label></li>
@@ -365,9 +364,9 @@
 <p><sup>5</sup>&frasl;<sub>12</sub></p>
 
 <h2 id="3-latex-dash">3. Latex dash</h2>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">Hyphen: tie-in, toll-free, two-third<span style="">
-</span><span style=""></span>En Dash: May--September, page 147--149<span style="">
-</span><span style=""></span>Em Dash: Additional thought---as I&#39;ve done here.</code></pre></div>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">Hyphen: tie-in, toll-free, two-third
+En Dash: May--September, page 147--149
+Em Dash: Additional thought---as I&#39;ve done here.</code></pre></div>
 <p>Hyphen: tie-in, toll-free, two-third</p>
 
 <p>En Dash: May&ndash;September, page 147&ndash;149</p>
@@ -379,13 +378,13 @@
 <p><del>strike through</del></p>
 
 <h2 id="5-footnote">5. Footnote</h2>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">This is a footnote.[^1]<span style="">
-</span><span style=""></span>[^1]: the footnote text.</code></pre></div>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">This is a footnote.[^1]
+[^1]: the footnote text.</code></pre></div>
 <p>This is a footnote.<sup class="footnote-ref" id="fnref:http-url-com"><a href="#fn:http-url-com">1</a></sup></p>
 
 <h2 id="6-definition">6. Definition</h2>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">Boy<span style="">
-</span><span style=""></span>: A boy is a child who will grow up to be a man.</code></pre></div>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">Boy
+: A boy is a child who will grow up to be a man.</code></pre></div>
 <dl>
 <dt>Boy</dt>
 <dd>A boy is a child who will grow up to be a man.</dd>
@@ -395,35 +394,33 @@
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">I : heart : you.</code></pre></div>
 <p>I ❤️ you.</p>
 
-
-
-
-
 <blockquote class="note">
 
 
-<p>colon 앞뒤 빈 칸 없이 입력</p>
+
+
+colon 앞뒤 빈 칸 없이 입력
+
 
 </blockquote>
 
-
 <h2 id="8-equation">8. Equation</h2>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">\\( a = b \\)#inline equation<span style="">
-</span><span style=""></span>$$ a = b $$ <span style="color:#d55537;font-weight:bold">#standalone</span> equation</code></pre></div>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">\\( a = b \\)#inline equation
+$$ a = b $$ <span style="color:#d55537;font-weight:bold">#standalone</span> equation</code></pre></div>
 <p>\( a = b \) #inline equation</p>
 
 <p>$$ a = b $$ #standalone equation</p>
 
 <h2 id="9-super-and-subscription">9. Super- and subscription</h2>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">a&lt;sup&gt;x&lt;/sup&gt;<span style="">
-</span><span style=""></span>a&lt;sub&gt;x&lt;/sub&gt;</code></pre></div>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">a&lt;sup&gt;x&lt;/sup&gt;
+a&lt;sub&gt;x&lt;/sub&gt;</code></pre></div>
 <p>a<sup>x</sup></p>
 
 <p>a<sub>x</sub></p>
 
 <h2 id="10-reference-link">10. Reference link</h2>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">This is reference [link][1]<span style="">
-</span><span style=""></span>[1]: http://url.com &#34;option text&#34;</code></pre></div>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">This is reference [link][1]
+[1]: http://url.com &#34;option text&#34;</code></pre></div>
 <p>This is reference <a href="http://url.com" title="option text">link</a></p>
 
 <h1 id="shortcode-사용법">Shortcode 사용법</h1>
@@ -461,8 +458,8 @@
 <ul>
 <li>linenos: table or inline</li>
 <li>linenostart: default 1</li>
-<li>hl_lines: highlight lines (ex: 3-8 10-20)</li>
-</ul>
+
+<li><p>hl_lines: highlight lines (ex: 3-8 10-20)</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; highlight <span style="color:#007020;font-weight:bold">go</span> <span style="color:#4070a0">&#34;linenos=table, linenostart=10, hl_lines=3 6&#34;</span> &gt;}}
 <span style="color:#007020;font-weight:bold">package</span> main
 
@@ -471,7 +468,9 @@
 <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">main</span>() {
 	fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;Hello, Go&#34;</span>)
 }
-{ {&lt; <span style="color:#666">/</span>highlight &gt;}}</pre></div>
+{ {&lt; <span style="color:#666">/</span>highlight &gt;}}</pre></div></li>
+</ul>
+
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
@@ -527,9 +526,10 @@ or
 <p>기본 사용법은 figure와 동일하나 link, target은 지원하지 않고, mouse-title parameter 추가</p>
 
 <ul>
-<li>mouse-title: 이미지 위에 마우스를 올렸을 때 나타나는 문구 (default: click to zoom)</li>
+<li><p>mouse-title: 이미지 위에 마우스를 올렸을 때 나타나는 문구 (default: click to zoom)</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; zimg src=&#34;/posts/hugo/sky.jpg&#34; width=&#34;300&#34; caption=&#34;캡션: 원본의 해상도는 1880x1253입니다.&#34; title=&#34;제목: 하늘&#34; mouse-title=&#34;ZOOM&#34; &gt;}}</pre></div></li>
 </ul>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {&lt; zimg src=&#34;/posts/hugo/sky.jpg&#34; width=&#34;300&#34; caption=&#34;캡션: 원본의 해상도는 1880x1253입니다.&#34; title=&#34;제목: 하늘&#34; mouse-title=&#34;ZOOM&#34; &gt;}}</pre></div>
+
 
 <figure>
 	<div style="position: relative;">
@@ -572,11 +572,12 @@ or
 <h2 id="2-box-글상자">2. box: 글상자</h2>
 
 <ul>
-<li>글상자의 배경 색상</li>
-</ul>
+<li><p>글상자의 배경 색상</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {% box [&#34;background-color&#34;] %}}
 blah blah
-{ {% /box %}}</pre></div>
+{ {% /box %}}</pre></div></li>
+</ul>
+
 <h2 id="3-pure-table-테이블-삽입">3. pure_table: 테이블 삽입</h2>
 
 <p>markdown table은 다른 &lt;table&gt; tag와의 충돌 문제로 외곽선이 없음</p>
@@ -703,11 +704,13 @@ Andrew-&gt;&gt;China: I am good thanks!
 <li>warn: 주황</li>
 <li>note: 녹색</li>
 <li>quote: 하늘</li>
-<li>defalut: 회색</li>
-</ul>
+
+<li><p>defalut: 회색</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">{ {% quote [warn | note | quote] %}}
 blah blah
-{ {% /quote %}}</pre></div><div class="footnotes">
+{ {% /quote %}}</pre></div></li>
+</ul>
+<div class="footnotes">
 
 <hr />
 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>config on Awesome Patrick</title>
+    <link>https://tramamte.github.io/tags/config/</link>
+    <description>Recent content in config on Awesome Patrick</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy2019 Patrick Yu. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 14 May 2019 11:04:03 +0900</lastBuildDate>
+    
+	<atom:link href="https://tramamte.github.io/tags/config/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker 설정 파일</title>
+      <link>https://tramamte.github.io/2019/05/14/config/</link>
+      <pubDate>Tue, 14 May 2019 11:04:03 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2019/05/14/config/</guid>
+      <description>Docker 데몬의 설정을 변경하기 위해 systemd service 파일을 직접 수정하는 방법은 해당 데몬을 업데이트할 경우 모두 초기화되기 때문에 불편함이 있다. 위치 /etc/docker/daemon.json 내용 { &amp;#34;data-root&amp;#34;: &amp;#34;/where/you/want&amp;#34; }</description>
+    </item>
+    
+  </channel>
+</rss>
