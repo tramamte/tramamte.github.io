@@ -441,15 +441,19 @@ viod <span style="color:#06287e">testFunc</span>()
 	<span style="color:#666">...</span>
 	<span style="color:#007020;font-weight:bold">return</span> ret
 }</code></pre></div>
+
+
+
+
+
+
 <blockquote class="warn">
 
 
-
-
-반환값에 이름을 지정하기 위해서는 반환값이 하나인 경우에도 반드시 괄호(())로 묶어야 한다. 함수 작성 규칙을 다시 보면 Result는 Parameters이거나 Type이 와야 하는데, 반환값에 이름을 붙이는 용법은 Parameters를 쓴 경우에 해당한다.
-
+<p>반환값에 이름을 지정하기 위해서는 반환값이 하나인 경우에도 반드시 괄호(())로 묶어야 한다. 함수 작성 규칙을 다시 보면 Result는 Parameters이거나 Type이 와야 하는데, 반환값에 이름을 붙이는 용법은 Parameters를 쓴 경우에 해당한다.</p>
 
 </blockquote>
+
 
 <p>이렇게 반환값이 이름을 지정하면 이미 반환값이 <code>ret</code>라는 것을 함수도 알고 있기 때문에 <code>return</code> 키워드 뒤에 반환값 변수인 <code>ret</code>를 붙이지 않고도 쓸 수 있다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">intReturnFunc</span>() (ret <span style="color:#902000">int</span>) {

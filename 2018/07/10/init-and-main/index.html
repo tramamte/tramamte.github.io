@@ -309,14 +309,17 @@
 
   
 
+
+
+
+
+
 <div class="box">
 
-
-
-본문 중 심볼(symbol)에 대한 내용은 편의상 리눅스 환경에서 빌드한 바이너리를 readelf 명령으로 확인한 결과입니다. 
-
+<p>본문 중 심볼(symbol)에 대한 내용은 편의상 리눅스 환경에서 빌드한 바이너리를 readelf 명령으로 확인한 결과입니다.</p>
 
 </div>
+
 
 <p>C/C++, Java에서 가장 특이한 함수는 누가 뭐래도 프로세스의 시작점(entry point)이 되는 <code>main()</code> 함수일 것이다. 이 함수는 프로세스 시작 시점에 자동으로 호출되며, 소스 코드 내에서 별도로 호출하지 않는다. Go 역시 <code>main()</code> 함수가 시작점이다. 그런데 왜 글 제목이 <strong>함수들</strong>인가? 확인해 보자.</p>
 
@@ -465,19 +468,23 @@ This is main()</pre></div>
 
 <p>이쯤에서 <a href="https://golang.org/ref/spec#Package_initialization">Go spec.</a>의 관련 내용을 확인해 보자.</p>
 
+
+
+
+
+
+
 <blockquote class="quote">
 
 
+<p>A package with no imports is initialized by assigning initial values to all its package-level variables followed by calling all <code>init</code> functions in the order they appear in the source, possibly in multiple files, as presented to the compiler.</p>
 
+<p>&hellip;</p>
 
-A package with no imports is initialized by assigning initial values to all its package-level variables followed by calling all `init` functions in the order they appear in the source, possibly in multiple files, as presented to the compiler.
-
-...
-
-To ensure reproducible initialization behavior, build systems are encouraged to present multiple files belonging to the same package in lexical file name order to a compiler. 
-
+<p>To ensure reproducible initialization behavior, build systems are encouraged to present multiple files belonging to the same package in lexical file name order to a compiler.</p>
 
 </blockquote>
+
 
 <p>요약하자면, <code>init()</code> 함수는 한 소스 파일 안에서는 정의한 순서대로, 여러 파일에 나뉘어 있는 경우에는 파일명 정렬 순서대로 호출된다.</p>
 
@@ -627,29 +634,37 @@ This is packb.TestFunc()</pre></div>
 
 <p><a href="https://golang.org/ref/spec#Package_initialization">Go spec.</a>에는 <code>init()</code> 함수에 대해 다음과 같은 설명이 있다.</p>
 
+
+
+
+
+
+
 <blockquote class="quote">
 
 
-
-
-Package initialization—variable initialization and the invocation of `init` functions—happens in a single goroutine, sequentially, one package at a time. An `init` function may launch other goroutines, which can run concurrently with the initialization code. However, initialization always sequences the `init` functions: it will not invoke the next one until the previous one has returned. 
-
+<p>Package initialization—variable initialization and the invocation of <code>init</code> functions—happens in a single goroutine, sequentially, one package at a time. An <code>init</code> function may launch other goroutines, which can run concurrently with the initialization code. However, initialization always sequences the <code>init</code> functions: it will not invoke the next one until the previous one has returned.</p>
 
 </blockquote>
+
 
 <p>goroutine은 머나 먼 미래에 등장하겠지만 여기서는 thread 정도로 생각하면 되겠다.</p>
 
 <p>이제 숙제를 해보자.</p>
 
+
+
+
+
+
+
 <blockquote class="note">
 
 
-
-
-패키지의 이름을 정할 때는 blank identifier를 사용할 수 없지만, 외부 패키지를 임포트할 때 PackageName 자리에는 blank identifier를 사용할 수 있다. 이 경우에는 해당 패키지의 기능을 호출하지 않겠다는 의미이다. 
-
+<p>패키지의 이름을 정할 때는 blank identifier를 사용할 수 없지만, 외부 패키지를 임포트할 때 PackageName 자리에는 blank identifier를 사용할 수 있다. 이 경우에는 해당 패키지의 기능을 호출하지 않겠다는 의미이다.</p>
 
 </blockquote>
+
 
 <p>blank identifier로 별칭을 달아 패키지의 기능을 호출하지 않더라도 해당 패키지를 임포트함으로써 <code>init()</code> 함수를 호출할 수 있고, <code>init()</code> 함수를 어떻게 구현하느냐에 따라 해당 패키지는 외부에서의 별도 호출이 없더라도 알아서 작동하도록 할 수 있는 것이다.</p>
 
