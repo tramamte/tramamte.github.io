@@ -55,13 +55,13 @@
   </url>
   
   <url>
-    <loc>https://tramamte.github.io/tags/docker/</loc>
+    <loc>https://tramamte.github.io/topics/docker/</loc>
     <lastmod>2019-05-14T12:15:24+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://tramamte.github.io/topics/docker/</loc>
+    <loc>https://tramamte.github.io/tags/docker/</loc>
     <lastmod>2019-05-14T12:15:24+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -107,23 +107,6 @@
   </url>
   
   <url>
-    <loc>https://tramamte.github.io/tags/book/</loc>
-    <lastmod>2019-02-17T22:45:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tramamte.github.io/tags/read/</loc>
-    <lastmod>2019-02-17T22:45:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tramamte.github.io/2019/02/17/now-reading/</loc>
-    <lastmod>2019-02-17T22:45:00+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://tramamte.github.io/tags/reading/</loc>
     <lastmod>2019-02-10T23:45:20+09:00</lastmod>
     <priority>0</priority>
@@ -161,17 +144,6 @@
     <loc>https://tramamte.github.io/tags/volume/</loc>
     <lastmod>2019-01-25T12:50:00+09:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tramamte.github.io/tags/study/</loc>
-    <lastmod>2018-12-25T22:16:20+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tramamte.github.io/2018/12/25/now-studying/</loc>
-    <lastmod>2018-12-25T22:16:20+09:00</lastmod>
   </url>
   
   <url>
