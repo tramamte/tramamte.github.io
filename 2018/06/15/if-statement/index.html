@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="if statement">
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.57.2" />
 
   <title>if 조건문 &middot; Awesome Patrick</title>
 
@@ -338,10 +338,10 @@
 	printf(<span style="color:#4070a0">&#34;Zero</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);
 
 <span style="color:#007020;font-weight:bold">if</span> (j <span style="color:#666">==</span> <span style="color:#40a070">0</span>) printf(<span style="color:#4070a0">&#34;Zero, too</span><span style="color:#4070a0;font-weight:bold">\n</span><span style="color:#4070a0">&#34;</span>);</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#60a0b0;font-style:italic">// Java
-</span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span>i <span style="color:#666">==</span> 0<span style="color:#666">)</span>
-	System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;Zero&#34;</span><span style="color:#666">);</span>
+</span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">if</span> (i <span style="color:#666">==</span> 0)
+	System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;Zero&#34;</span>);
 
-<span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span>j <span style="color:#666">==</span> 0<span style="color:#666">)</span> System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;Zero, too&#34;</span><span style="color:#666">);</span></code></pre></div>
+<span style="color:#007020;font-weight:bold">if</span> (j <span style="color:#666">==</span> 0) System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;Zero, too&#34;</span>);</code></pre></div>
 <p>하지만 Go의 <code>if</code> 조건문 작성 규칙은 다음과 같다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">IfStmt = &#34;if&#34; [ SimpleStmt &#34;;&#34; ] Expression Block [ &#34;else&#34; ( IfStmt | Block ) ] .</pre></div>
 <p>중요한 것은 Block인데,</p>

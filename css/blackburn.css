@@ -172,6 +172,11 @@ i {
   font-size: 0.9rem;
 }
 
+/* list title */
+.content > article:not(:first-child) {
+  margin-top: 3rem;
+}
+
 /* read more */
 article > footer {
   text-align: right;

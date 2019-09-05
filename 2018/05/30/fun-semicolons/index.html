@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="예상보다 복잡한 세미콜론의 세계">
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.57.2" />
 
   <title>간단하거나, 복잡하거나. 세미콜론 &middot; Awesome Patrick</title>
 
@@ -301,11 +301,10 @@
 <ul>
 <li><p>개행 전 마지막 토큰이 identifier, literal이거나,</p></li>
 
-<li><p>다음 중 하나인 경우</p></li>
-</ul>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">break</span> <span style="color:#007020;font-weight:bold">continue</span> <span style="color:#007020;font-weight:bold">fallthrough</span> <span style="color:#007020;font-weight:bold">return</span> <span style="color:#666">++</span> <span style="color:#666">--</span> ) } ]</code></pre></div>
-<ul>
-<li>상황에 따라 닫는 괄호())나 닫는 중괄호(}) 직전</li>
+<li><p>다음 중 하나인 경우</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">break</span> <span style="color:#007020;font-weight:bold">continue</span> <span style="color:#007020;font-weight:bold">fallthrough</span> <span style="color:#007020;font-weight:bold">return</span> <span style="color:#666">++</span> <span style="color:#666">--</span> ) } ]</code></pre></div></li>
+
+<li><p>상황에 따라 닫는 괄호())나 닫는 중괄호(}) 직전</p></li>
 </ul>
 
 <p>Go의 <strong>identifier</strong>에 대해서는 좀 더 자세히 짚고 넘어갈 필요가 있다.</p>
@@ -429,18 +428,18 @@ Complex <span style="color:#007020;font-weight:bold">is</span> better than compl
 Flat <span style="color:#007020;font-weight:bold">is</span> better than nested<span style="color:#666">.</span>
 Sparse <span style="color:#007020;font-weight:bold">is</span> better than dense<span style="color:#666">.</span>
 Readability counts<span style="color:#666">.</span>
-Special cases aren<span style="color:#4070a0">&#39;t special enough to break the rules.</span><span style="">
-</span><span style=""></span><span style="color:#4070a0">Although practicality beats purity.</span><span style="">
-</span><span style=""></span><span style="color:#4070a0">Errors should never pass silently.</span><span style="">
-</span><span style=""></span><span style="color:#4070a0">Unless explicitly silenced.</span><span style="">
-</span><span style=""></span><span style="color:#4070a0">In the face of ambiguity, refuse the temptation to guess.</span><span style="">
-</span><span style=""></span><span style="color:#4070a0">There should be one-- and preferably only one --obvious way to do it.</span><span style="">
-</span><span style=""></span><span style="color:#4070a0">Although that way may not be obvious at first unless you&#39;</span>re Dutch<span style="color:#666">.</span>
+Special cases aren<span style="color:#4070a0">&#39;t special enough to break the rules.</span>
+Although practicality beats purity<span style="color:#666">.</span>
+Errors should never <span style="color:#007020;font-weight:bold">pass</span> silently<span style="color:#666">.</span>
+Unless explicitly silenced<span style="color:#666">.</span>
+In the face of ambiguity, refuse the temptation to guess<span style="color:#666">.</span>
+There should be one<span style="color:#666">--</span> <span style="color:#007020;font-weight:bold">and</span> preferably only one <span style="color:#666">--</span>obvious way to do it<span style="color:#666">.</span>
+Although that way may <span style="color:#007020;font-weight:bold">not</span> be obvious at first unless you<span style="color:#4070a0">&#39;re Dutch.</span>
 Now <span style="color:#007020;font-weight:bold">is</span> better than never<span style="color:#666">.</span>
 Although never <span style="color:#007020;font-weight:bold">is</span> often better than <span style="color:#666">*</span>right<span style="color:#666">*</span> now<span style="color:#666">.</span>
-If the implementation <span style="color:#007020;font-weight:bold">is</span> hard to explain, it<span style="color:#4070a0">&#39;s a bad idea.</span><span style="">
-</span><span style=""></span><span style="color:#4070a0">If the implementation is easy to explain, it may be a good idea.</span><span style="">
-</span><span style=""></span><span style="color:#4070a0">Namespaces are one honking great idea -- let&#39;</span>s do more of those<span style="">!</span></code></pre></div>
+If the implementation <span style="color:#007020;font-weight:bold">is</span> hard to explain, it<span style="color:#4070a0">&#39;s a bad idea.</span>
+If the implementation <span style="color:#007020;font-weight:bold">is</span> easy to explain, it may be a good idea<span style="color:#666">.</span>
+Namespaces are one honking great idea <span style="color:#666">--</span> let<span style="color:#4070a0">&#39;s do more of those!</span></code></pre></div>
 <hr />
 
 <p>Go는 디렉토리 구조 등 어떤 면에서는 개발자의 자유도를 구속하는 측면이 있다. 하지만 또 다른 면에서는 &lsquo;그건 구속하면서 이건 왜 이렇게 헐렁해?&rsquo; 라는 의문을 갖게 하기도 한다.</p>

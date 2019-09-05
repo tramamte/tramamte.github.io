@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jupyter on Awesome Patrick</title>
+    <link>https://tramamte.github.io/tags/jupyter/</link>
+    <description>Recent content in jupyter on Awesome Patrick</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy2019 Patrick Yu. All rights reserved.</copyright>
+    <lastBuildDate>Thu, 05 Sep 2019 22:05:33 +0900</lastBuildDate>
+    
+	<atom:link href="https://tramamte.github.io/tags/jupyter/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Miniconda를 활용한 초경량 Python3, R Jupiter Notebook 구성</title>
+      <link>https://tramamte.github.io/2019/09/05/minimal-jupyter/</link>
+      <pubDate>Thu, 05 Sep 2019 22:05:33 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2019/09/05/minimal-jupyter/</guid>
+      <description>Miniconda 설치 pass Jupyter notebook 용 환경 생성 $ conda create -n notebook python=3 $ conda activate notebook $ pip install --upgrade pip Jupyter notebook 설치 $ pip install jupyter IRkernel 설치 $ conda install r-irkernel 실행 $ jupyter notebook 최소 용량으로 설치는 되나 필요한 패키지 몇 가지 추가하면</description>
+    </item>
+    
+  </channel>
+</rss>
