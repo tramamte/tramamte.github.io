@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2019 Patrick Yu. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 05 Sep 2019 22:05:33 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 05 Sep 2019 23:05:59 +0900</lastBuildDate>
     
 	<atom:link href="https://tramamte.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>파이썬 스타일 가이드</title>
+      <link>https://tramamte.github.io/2019/09/05/pep8/</link>
+      <pubDate>Thu, 05 Sep 2019 23:05:59 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2019/09/05/pep8/</guid>
+      <description>전체 내용은 여기 참고 Whitespace 탭이 아닌 스페이스 사용 4 스페이스로 들여쓰기 한 줄의 길이는 79자 이하 표현식을 여러 줄에 나눠 쓸 경우 일반적인 들여쓰기에서 한 수준 추가 함</description>
+    </item>
     
     <item>
       <title>Miniconda를 활용한 초경량 Python3, R Jupiter Notebook 구성</title>

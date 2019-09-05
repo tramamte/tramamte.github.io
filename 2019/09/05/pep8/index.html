@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="description" content="Python Enhancement Proposal #8">
   <meta name="generator" content="Hugo 0.57.2" />
 
-  <title>Topics &middot; Awesome Patrick</title>
+  <title>파이썬 스타일 가이드 &middot; Awesome Patrick</title>
 
   
   
@@ -39,13 +39,15 @@
   
 
   
+    
+      
+    
+  
 
   
 
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="Awesome Patrick" href="https://tramamte.github.io/topics/index.xml" />
   
 
   
@@ -199,7 +201,7 @@
 
     
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://tramamte.github.io/topics/index.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      <a class="pure-menu-link" href="https://tramamte.github.io/index.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
     </li>
     
 
@@ -214,64 +216,160 @@
 
 
 <div class="header">
-  <h1>Topics</h1>
-  <h2>All topics on Awesome Patrick</h2>
+  <h1>파이썬 스타일 가이드</h1>
+  <h2>Python Enhancement Proposal #8</h2>
 </div>
 <div class="content">
-  <ul>
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fas fa-calendar-alt fa-fw"></i>
+    <time>Sep 05, 2019 23:05</time>
+  </div>
+
+  
+
   
   
-    <li>
-      <a href="go">go</a>
-      <span>&#40;30&#41;</span>
-    </li>
   
-    <li>
-      <a href="docker">docker</a>
-      <span>&#40;8&#41;</span>
-    </li>
+  <div>
+    <i class="fas fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/python">python</a>
+    
+  </div>
   
-    <li>
-      <a href="taean">taean</a>
-      <span>&#40;6&#41;</span>
-    </li>
   
-    <li>
-      <a href="hugo">hugo</a>
-      <span>&#40;3&#41;</span>
-    </li>
+
   
-    <li>
-      <a href="rambling">rambling</a>
-      <span>&#40;3&#41;</span>
-    </li>
   
-    <li>
-      <a href="bpm-brm">bpm-brm</a>
-      <span>&#40;2&#41;</span>
-    </li>
   
-    <li>
-      <a href="security">security</a>
-      <span>&#40;2&#41;</span>
-    </li>
+  <div>
+    <i class="fas fa-tag fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/python">python</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/pep">pep</a>
+    
+  </div>
   
-    <li>
-      <a href="ml">ml</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-    <li>
-      <a href="python">python</a>
-      <span>&#40;1&#41;</span>
-    </li>
+
+</div>
+
   
-    <li>
-      <a href="web">web</a>
-      <span>&#40;1&#41;</span>
-    </li>
+<script>
+  function toggleToc() {
+    var x = document.getElementById("toc");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+  }
+</script>
+
+<div class="post-meta">
+<div>
+  <i class="fas fa-file-alt fa-fw"></i>
+  <a href="javascript:toggleToc();">Table of Contents</a>
+</div>
+<div id="toc" style="display: none;"><nav id="TableOfContents">
+<ul>
+<li><a href="#whitespace">Whitespace</a></li>
+<li><a href="#naming">Naming</a></li>
+<li><a href="#expression-statement">Expression &amp; Statement</a></li>
+</ul>
+</nav></div>
+</div>
+
+
+
   
-  </ul>
+
+
+
+
+
+
+
+<blockquote class="quote">
+
+
+<p>전체 내용은 <a href="https://www.python.org/dev/peps/pep-0008/">여기</a> 참고</p>
+
+</blockquote>
+
+
+<h1 id="whitespace">Whitespace</h1>
+
+<ul>
+<li>탭이 아닌 스페이스 사용</li>
+<li>4 스페이스로 들여쓰기</li>
+<li>한 줄의 길이는 79자 이하</li>
+<li>표현식을 여러 줄에 나눠 쓸 경우 일반적인 들여쓰기에서 한 수준 추가</li>
+<li>함수와 클래스는 빈 줄 두 개로 구분</li>
+<li>메서드는 빈 줄 하나로 구분</li>
+<li>리스트 인덱스, 함수 호출, 키워드 인수 할당에는 스페이스 미사용</li>
+<li>변수 할당 앞뒤에 스페이스 하나만 사용</li>
+</ul>
+
+<h1 id="naming">Naming</h1>
+
+<ul>
+<li>함수, 변수, 속성은 <code>lowercase_underscore</code></li>
+<li>Protected 속성은 <code>_leading_underscore</code></li>
+<li>Private 속성은 <code>__double_leading_underscore</code></li>
+<li>클래스와 예외는 <code>CaptalizedWord</code></li>
+<li>모듈 수준 상수는 <code>ALL_CAPS</code></li>
+<li>클래스 인스턴스 메서드의 첫 번째 파라미터 이름은 <code>self</code></li>
+<li>클래스 메서드의 첫 번째 파라미터 이름은 <code>cls</code></li>
+</ul>
+
+<h1 id="expression-statement">Expression &amp; Statement</h1>
+
+<ul>
+<li>긍정 표현식의 부정형(<code>if not a is b</code>) 보다는 인라인 부정(<code>if a is not b</code>) 형태 사용</li>
+<li>길이를 확인해 빈 값을 확인(<code>if len(a_list) == 0</code>)하지 말고, 암시적 <code>False</code>를 확인(<code>if not a_list</code>)</li>
+<li>한 줄로 된 <code>if</code>, <code>for</code>, <code>while</code>, <code>except</code> 문 등을 사용하지 말고 여러 줄로 나눠서 명료하게 작성</li>
+<li>항상 파일의 가장 위에 <code>import</code></li>
+<li>현재 모듈의 경로를 기준으로 상대 경로로 된 이름을 사용하지 말고 절대 이름을 사용해 모듈 임포트 &mdash; 예를 들어 <code>bar</code> 패키지의 <code>foo</code> 모듈을 임포트하려면 그냥 <code>import foo</code>가 아닌 <code>from bar import foo</code></li>
+<li>상대적인 임포트를 해야 할 경우 명시적인 구문을 써서 <code>from . import foo</code></li>
+<li>임포트 순서는 표준 라이브러리 모듈 - 서드파티 모듈 - 작성 모듈 순으로 하고, 알파벳 순으로 정렬</li>
+</ul>
+
+
+  
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24">
+    
+    <a href="https://tramamte.github.io/2019/09/05/minimal-jupyter/"><i class="fas fa-angle-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://tramamte.github.io/2019/09/05/minimal-jupyter/">Miniconda를 활용한 초경량 Python3, R Jupiter Notebook 구성</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">&nbsp;</div>
+  <div class="pure-u-10-24" style="text-align: right;">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+
 </div>
 
 <div class="footer">
@@ -295,3 +393,4 @@
 
 </body>
 </html>
+
