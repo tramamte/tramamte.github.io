@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Awesome Patrick</title>
@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2019 Patrick Yu. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 19 Sep 2019 10:59:15 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 11 Nov 2019 20:19:59 +0900</lastBuildDate>
     
 	<atom:link href="https://tramamte.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>NumPy 팬시 인덱싱 값 할당 시 중복 인덱스 처리</title>
+      <link>https://tramamte.github.io/2019/11/11/numpy-dup-index/</link>
+      <pubDate>Mon, 11 Nov 2019 20:19:59 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2019/11/11/numpy-dup-index/</guid>
+      <description>이 글은 Jupyter Notebook에서 작성했습니다. NumPy 팬시 인덱싱 (fancy indexing)은 배열 요소에 접근하기 위한 인덱스로 단일 스칼라 대신 배열을 전달하는 기능이</description>
+    </item>
     
     <item>
       <title>뭘 해야 할지 모를 때</title>

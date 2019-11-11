@@ -1,15 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>https://tramamte.github.io/</loc>
-    <lastmod>2019-09-19T10:59:15+09:00</lastmod>
+    <lastmod>2019-11-11T20:19:59+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tramamte.github.io/topics/data-science/</loc>
+    <lastmod>2019-11-11T20:19:59+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tramamte.github.io/tags/numpy/</loc>
+    <lastmod>2019-11-11T20:19:59+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tramamte.github.io/2019/11/11/numpy-dup-index/</loc>
+    <lastmod>2019-11-11T20:19:59+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://tramamte.github.io/posts/</loc>
-    <lastmod>2019-09-19T10:59:15+09:00</lastmod>
+    <lastmod>2019-11-11T20:19:59+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tramamte.github.io/tags/</loc>
+    <lastmod>2019-11-11T20:19:59+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tramamte.github.io/topics/</loc>
+    <lastmod>2019-11-11T20:19:59+09:00</lastmod>
   </url>
   
   <url>
@@ -19,16 +44,6 @@
   
   <url>
     <loc>https://tramamte.github.io/tags/study/</loc>
-    <lastmod>2019-09-19T10:59:15+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tramamte.github.io/tags/</loc>
-    <lastmod>2019-09-19T10:59:15+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tramamte.github.io/topics/</loc>
     <lastmod>2019-09-19T10:59:15+09:00</lastmod>
   </url>
   
@@ -74,11 +89,6 @@
   
   <url>
     <loc>https://tramamte.github.io/2019/09/05/minimal-jupyter/</loc>
-    <lastmod>2019-09-05T22:05:33+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tramamte.github.io/topics/ml/</loc>
     <lastmod>2019-09-05T22:05:33+09:00</lastmod>
   </url>
   
@@ -433,7 +443,7 @@
   </url>
   
   <url>
-    <loc>https://tramamte.github.io/topics/bpm-brm/</loc>
+    <loc>https://tramamte.github.io/topics/bpm/</loc>
     <lastmod>2018-06-07T23:11:28+09:00</lastmod>
   </url>
   

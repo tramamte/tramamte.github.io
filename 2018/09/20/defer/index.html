@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Defer statement">
-  <meta name="generator" content="Hugo 0.58.2" />
+  <meta name="generator" content="Hugo 0.59.1" />
 
   <title>호출 연기 &middot; Awesome Patrick</title>
 
@@ -325,7 +325,7 @@
 <p>메모리 해제에 대한 부담이 없는 언어의 경우라도 열었던 파일을 닫아주는 수고는 필요하다.</p>
 
 <p>소멸자의 호출 시점을 특정할 수 있는 C++이라면 다음과 유사한 코드를 통해 그마나 <code>return</code> 전 여기 저기서 <code>fclose()</code>를 호출해야 하는 부담을 줄일 수는 있다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#007020;font-weight:bold">class</span><span style=""> </span><span style="color:#0e84b5;font-weight:bold">FileCloser</span>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">FileCloser</span>
 {
 <span style="color:#007020;font-weight:bold">public</span><span style="color:#666">:</span>
 	FileCloser(FILE<span style="color:#666">*</span> fp)
@@ -390,7 +390,7 @@
 </span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
 
 <span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#34;fmt&#34;</span>

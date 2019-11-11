@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="인덱스 배열에 중복값이 포함된 경우 NumPy에서 처리하는 방법">
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  <title>NumPy 팬시 인덱싱 값 할당 시 중복 인덱스 처리 &middot; Awesome Patrick</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://tramamte.github.io/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://tramamte.github.io/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://tramamte.github.io/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700|Nanum+Gothic+Coding:400,700|Raleway:400,700|Roboto+Mono" rel="stylesheet">
+  
+
+  
+
+  
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="apple-touch-icon" sizes="57x57" href="https://tramamte.github.io/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://tramamte.github.io/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://tramamte.github.io/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://tramamte.github.io/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://tramamte.github.io/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://tramamte.github.io/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://tramamte.github.io/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://tramamte.github.io/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://tramamte.github.io/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://tramamte.github.io/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tramamte.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://tramamte.github.io/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://tramamte.github.io/favicon-16x16.png">
+<link rel="manifest" href="https://tramamte.github.io/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="https://tramamte.github.io/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  <i class="far fa-arrow-alt-circle-right fa-2x fa-fw" style="margin: 0; padding: 0;"></i>
+</a>
+
+<div id="menu">
+  
+  <a class="pure-menu-heading brand" href="https://tramamte.github.io/">Awesome<br>Patrick</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/"><i class='fas fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/topics/"><i class='fas fa-folder fa-fw'></i>Topics</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/tags/"><i class='fas fa-tag fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/posts/"><i class='fas fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://tramamte.github.io/about/"><i class='fas fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://tramamte.github.io/index.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+    </li>
+    
+
+  </ul>
+</div>
+
+</div>
+<div id="menuBackground"></div>
+  
+  <div id="mask"></div>
+  <div id="main">
+
+
+<div class="header">
+  <h1>NumPy 팬시 인덱싱 값 할당 시 중복 인덱스 처리</h1>
+  <h2>인덱스 배열에 중복값이 포함된 경우 NumPy에서 처리하는 방법</h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fas fa-calendar-alt fa-fw"></i>
+    <time>Nov 11, 2019 20:19</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fas fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/data-science">data-science</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fas fa-tag fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/numpy">numpy</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  
+<script>
+  function toggleToc() {
+    var x = document.getElementById("toc");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+  }
+</script>
+
+<div class="post-meta">
+<div>
+  <i class="fas fa-file-alt fa-fw"></i>
+  <a href="javascript:toggleToc();">Table of Contents</a>
+</div>
+<div id="toc" style="display: none;"><nav id="TableOfContents">
+<ul>
+<li><a href="#팬시-인덱싱으로-배열-생성하기">팬시 인덱싱으로 배열 생성하기</a></li>
+<li><a href="#팬시-인덱싱으로-요소값-할당하기">팬시 인덱싱으로 요소값 할당하기</a></li>
+<li><a href="#멀리-돌아서-결론은">멀리 돌아서 결론은&hellip;</a></li>
+</ul>
+</nav></div>
+</div>
+
+
+
+  
+
+
+
+
+
+
+<div class="box" style="background:#FFFFFF;">
+
+<p>이 글은 Jupyter Notebook에서 작성했습니다.</p>
+
+</div>
+
+
+<p>NumPy 팬시 인덱싱 (fancy indexing)은 배열 요소에 접근하기 위한 인덱스로 단일 스칼라 대신 배열을 전달하는 기능이다. 이를 통해 배열의 하위 집합에 빠르게 접근할 수 있다.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">numpy</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">np</span>
+x <span style="color:#666">=</span> np<span style="color:#666">.</span>arange(<span style="color:#40a070">10</span>, <span style="color:#40a070">20</span>)
+x</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">array([10, 11, 12, 13, 14, 15, 16, 17, 18, 19])</pre></div>
+<p>위와 같은 배열이 있을 때 다음 코드로 1, 3, 5번째 요소에 접근할 수 있다.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sub_x <span style="color:#666">=</span> x[[<span style="color:#40a070">0</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">4</span>]]
+sub_x</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">array([10, 12, 14])</pre></div>
+<h1 id="팬시-인덱싱으로-배열-생성하기">팬시 인덱싱으로 배열 생성하기</h1>
+
+<p>위에서 본 것처럼 팬시 인덱싱을 활용하면 쉽게 원하는 요소들만 모아 다른 배열을 생성할 수 있다. 인덱스에 사용할 배열은 다차원일 수 있으며, 이 경우 생성된 배열은 인덱스 배열의 형상을 따른다.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">idx <span style="color:#666">=</span> np<span style="color:#666">.</span>array([[<span style="color:#40a070">1</span>, <span style="color:#40a070">3</span>], [<span style="color:#40a070">6</span>, <span style="color:#40a070">8</span>]])
+idx<span style="color:#666">.</span>shape</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">(2, 2)</pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sub_x_md <span style="color:#666">=</span> x[idx]
+sub_x_md</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">array([[11, 13],
+       [16, 18]])</pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sub_x_md<span style="color:#666">.</span>shape</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">(2, 2)</pre></div>
+<h1 id="팬시-인덱싱으로-요소값-할당하기">팬시 인덱싱으로 요소값 할당하기</h1>
+
+<p>인덱스 배열에 같은 값이 중복해 포함돼 있어도 하위 배열을 생성하고 이해하는데 전혀 문제가 발생하지 않는다.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x[[<span style="color:#40a070">1</span>, <span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">2</span>]]</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">array([11, 11, 12, 12, 12])</pre></div>
+<p>하지만 값을 할당하는 기능으로 넘어가면 약간의 혼돈이 생긴다.</p>
+
+<p>우선, 인덱스 배열에 중복이 없는 경우를 몇 가지 살펴보자.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">idx <span style="color:#666">=</span> np<span style="color:#666">.</span>array([<span style="color:#40a070">1</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">5</span>])
+x[idx] <span style="color:#666">=</span> <span style="color:#40a070">50</span>
+x</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">array([10, 50, 12, 50, 14, 50, 16, 17, 18, 19])</pre></div>
+<p>할당할 값도 배열로 지정할 수 있다.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x[idx] <span style="color:#666">=</span> [<span style="color:#40a070">60</span>, <span style="color:#40a070">70</span>, <span style="color:#40a070">80</span>]
+x</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">array([10, 60, 12, 70, 14, 80, 16, 17, 18, 19])</pre></div>
+<p>연산도 가능하다.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x[idx] <span style="color:#666">+=</span> <span style="color:#40a070">5</span>
+x</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">array([10, 65, 12, 75, 14, 85, 16, 17, 18, 19])</pre></div>
+<p>이제 예고한 상황을 살펴보자.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">idx <span style="color:#666">=</span> np<span style="color:#666">.</span>array([<span style="color:#40a070">1</span>, <span style="color:#40a070">1</span>])
+x[idx] <span style="color:#666">=</span> [<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>]
+x</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">array([10,  2, 12, 75, 14, 85, 16, 17, 18, 19])</pre></div>
+<p>할당한 값 중 <code>1</code>은 없어지고 <code>2</code>만 남았다. 결과를 보면 다음과 같은 절차로 값 할당이 처리된 것으로 생각할 수 있다.</p>
+
+<ol>
+<li><code>x[idx[0]] = 1</code> 수행</li>
+<li><code>x[idx[1]] = 2</code> 수행</li>
+<li><code>idx[0]</code>과 <code>idx[1]</code>의 값이 <code>1</code>로 같으므로 결론적으로는 <code>x[1]</code>의 값이 <code>2</code>가 된다.</li>
+</ol>
+
+<p>합리적 접근이지만 이 절차로는 다음 경우에 문제가 생긴다.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">idx <span style="color:#666">=</span> [<span style="color:#40a070">0</span>, <span style="color:#40a070">0</span>, <span style="color:#40a070">1</span>, <span style="color:#40a070">1</span>, <span style="color:#40a070">1</span>]
+x[idx] <span style="color:#666">+=</span> <span style="color:#40a070">1</span></code></pre></div>
+<p>실행 결과를 보기 전 위에서 가정한 절차로 예상해 보자.</p>
+
+<ol>
+<li><code>x[0]</code>은 <code>10</code>이니 첫 번째, 두 번째 인덱스에 대한 결과로 <code>+= 1</code>이 두 번 호출 돼 <code>12</code>가 된다.</li>
+<li><code>x[1]</code>은 <code>2</code>이니 셋, 넷, 다섯 번째 인덱스에 대한 결과로 <code>+= 1</code>이 세 번 호출 돼 <code>5</code>가 된다.</li>
+</ol>
+
+<p>하지만 결과는&hellip;</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">array([11,  3, 12, 75, 14, 85, 16, 17, 18, 19])</pre></div>
+<p><code>x[0]</code>과 <code>x[1]</code> 요소에 대해 각각 <code>+= 1</code> 연산이 한 번씩만 적용된 것을 볼 수 있다.</p>
+
+<p>이와 관련해 <em><strong>파이썬 데이터 사이언스 핸드북 | 위키북스</strong></em> 에는 다음과 같이 설명돼 있다.</p>
+
+
+
+
+
+
+
+<blockquote class="quote">
+
+
+<p>개념적으로 이것은 <code>x[i] += 1</code>이 <code>x[i] = x[i] + 1</code>의 축약형을 의미하기 때문이다. <code>x[i] + 1</code>이 평가되고 나면 결과가 <code>x</code>의 인덱스에 할당된다. 이 점을 생각하면 그것은 여러 차례 일어나는 증가가 아니라 할당이므로 보기와는 다른 결과를 가져온다.</p>
+
+</blockquote>
+
+
+<p>당연히 <code>x[i] += 1</code>은 <code>x[i] = x[i] + 1</code>이고 그래서 예상한 결과가 나와야 하는 것 아닌가?</p>
+
+<p>답답한 마음에 우리말이 어려운 것은 아닌지 원서 (Python Data Science Handbook | O&rsquo;REILLY (Jake VanderPlas))를 봐도 별반 내용이 다르지 않다.</p>
+
+
+
+
+
+
+
+<blockquote class="quote">
+
+
+<p>Conceptually, this is because <code>x[i] += 1</code> is meant as a shorthand of <code>x[i] = x[i] + 1</code>. <code>x[1] + 1</code> is evaluated, and then the result is assigned to the indices in <code>x</code>. With this in mind, it is not the augmentation that happens multiple times, but the assignment, which leads to the rather nonintuitive results.</p>
+
+</blockquote>
+
+
+<h1 id="멀리-돌아서-결론은">멀리 돌아서 결론은&hellip;</h1>
+
+<p>가정을 해 보자. 위 두 경우를 모두 설명할 수 있도록.</p>
+
+<ol>
+<li>인덱스 배열의 인덱스를 키(key), 할당값을 값(value)으로 갖는 사전을 만든다.</li>
+<li>중복키에 대해서는 자연히 마지막 값으로 갱신된다.</li>
+<li>이 사전을 배열에 적용하면 중복 인덱스에 대해 마지막 한 번만 적용된다.</li>
+</ol>
+
+<p>많이 어설프지만 두 경우 모두 설명이 가능해 보인다. 이제 남은 방법은 NumPy 소스 파기.</p>
+
+<p>&hellip;<br />
+&hellip;<br />
+&hellip;</p>
+
+<p><code>x[i] += 1</code>은 <code>x[i] = x[i] + 1</code>을 축약한 것이다.</p>
+
+<p>이 문장은 <code>x[0] += 1</code>과 <code>x[0] = x[0] + 1</code>이 같다는 것이 아니라, <code>x[[0, 0, 1, 1, 1]] += 1</code>이 <code>x[[0, 0, 1, 1, 1]] = x[[0, 0, 1, 1, 1]] + 1</code>과 같다는 의미였다.</p>
+
+<p><code>x[[0, 0, 1, 1, 1]]</code>은 <code>[10, 10, 2, 2, 2]</code>이고 각각에 <code>1</code>을 더했으니 <code>[11, 11, 3, 3, 3]</code>이 된다. 이 배열을 다시 <code>x[[0, 0, 1, 1, 1]]</code>에 할당한 것이다.</p>
+
+
+  
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24">
+    
+    <a href="https://tramamte.github.io/2019/09/19/study/"><i class="fas fa-angle-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://tramamte.github.io/2019/09/19/study/">뭘 해야 할지 모를 때</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">&nbsp;</div>
+  <div class="pure-u-10-24" style="text-align: right;">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script>
+	
+
+	
+
+
+	(function() { 
+		var d = document, s = d.createElement('script');
+		s.src = 'https://' + 'awesome-patrick' + '.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+	})();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+<div class="footer">
+  <div class="small-print">
+  <small>&copy2019 Patrick Yu. All rights reserved.</small>
+</div>
+<div class="small-print">
+  <small>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with modified <a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a> theme.</small>
+</div>
+
+</div>
+
+</div>
+</div>
+<script src="https://tramamte.github.io/js/ui.js"></script>
+
+
+
+
+
+
+</body>
+</html>
+
