@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bigdata on Awesome Patrick</title>
+    <link>https://tramamte.github.io/tags/bigdata/</link>
+    <description>Recent content in bigdata on Awesome Patrick</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy2019 Patrick Yu. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 26 Nov 2019 12:36:17 +0900</lastBuildDate>
+    
+	<atom:link href="https://tramamte.github.io/tags/bigdata/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>빅데이터는 거품이다</title>
+      <link>https://tramamte.github.io/2019/11/26/bd-is-bubble/</link>
+      <pubDate>Tue, 26 Nov 2019 12:36:17 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2019/11/26/bd-is-bubble/</guid>
+      <description>빅데이터는 거품이다 (김동환 | 페이퍼로드) 中 빅데이터는 방대한 데이터에 대한 통계적 분석을 수행하여 상관관계(correlation)를 찾는다. 이에 반</description>
+    </item>
+    
+  </channel>
+</rss>

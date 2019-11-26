@@ -222,6 +222,67 @@
   
     <article>
   <header>
+    <h2><a href="https://tramamte.github.io/2019/01/25/diet/">Docker 다이어트</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fas fa-calendar-alt fa-fw"></i>
+    <time>Jan 25, 2019 12:50</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fas fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/docker">docker</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fas fa-tag fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/docker">docker</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/images">images</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/volume">volume</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/network">network</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/cleanup">cleanup</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  Prune $ docker image prune $ docker container prune $ docker volume prune $ docker network prune Workaround Image $ docker rmi $(docker images --filter &#34;dangling=true&#34; -q --no-trunc) $ docker rmi $(docker images | grep &#34;none&#34; | awk &#39;/ / { print $3 }&#39;) Container $ docker rm $(docker ps -qa --no-trunc --filter &#34;status=exited&#34;) Volume $ docker volume rm $(docker volume ls -qf dangling=true) $ docker volume ls -qf dangling=true ...    
+  </p>
+
+  
+  <footer>
+    <a href="https://tramamte.github.io/2019/01/25/diet/">Read more <i class="fas fa-expand fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
     <h2><a href="https://tramamte.github.io/2018/12/20/method/">메서드</a></h2>
 
     <div class="post-meta">
@@ -429,59 +490,6 @@
   
   <footer>
     <a href="https://tramamte.github.io/2018/08/29/docker-pull/">Read more <i class="fas fa-expand fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://tramamte.github.io/2018/08/28/map/">맵</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fas fa-calendar-alt fa-fw"></i>
-    <time>Aug 28, 2018 23:43</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fas fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/go">go</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fas fa-tag fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/syntax-go">syntax-go</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  배열이나 슬라이스는 저장된 각 요소에 접근하기 위한 키로 숫자를 사용하는 자료구조이다. 반면 맵은 키로 숫자가 아닌 다양한 타입을 사용할 수 있다. Python의 dict ...    
-  </p>
-
-  
-  <footer>
-    <a href="https://tramamte.github.io/2018/08/28/map/">Read more <i class="fas fa-expand fa-fw"></i></a>
   </footer>
   
 </article>
