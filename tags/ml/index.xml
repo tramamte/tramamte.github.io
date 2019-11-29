@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ml on Awesome Patrick</title>
+    <link>https://tramamte.github.io/tags/ml/</link>
+    <description>Recent content in ml on Awesome Patrick</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy2019 Patrick Yu. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 27 Nov 2019 22:32:04 +0900</lastBuildDate>
+    
+	<atom:link href="https://tramamte.github.io/tags/ml/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ML? Keep in MInd!</title>
+      <link>https://tramamte.github.io/2019/11/27/keep-in-mind/</link>
+      <pubDate>Wed, 27 Nov 2019 22:32:04 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/2019/11/27/keep-in-mind/</guid>
+      <description>While you are building a machine learning solution, you should answer, or at least keep in mind, the following questions: What question(s) am I trying to answer? Do I think the data collected can answer that question? What is the best way to phrase my question(s) as a machine learning problem? Have I collected enough data to represent the problem I want to solve? What features of the data did</description>
+    </item>
+    
+  </channel>
+</rss>

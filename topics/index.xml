@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2019 Patrick Yu. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 26 Nov 2019 12:36:17 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 27 Nov 2019 22:32:04 +0900</lastBuildDate>
     
 	<atom:link href="https://tramamte.github.io/topics/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>data-science</title>
+      <link>https://tramamte.github.io/topics/data-science/</link>
+      <pubDate>Wed, 27 Nov 2019 22:32:04 +0900</pubDate>
+      
+      <guid>https://tramamte.github.io/topics/data-science/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>rambling</title>
@@ -18,15 +27,6 @@
       <pubDate>Tue, 26 Nov 2019 12:36:17 +0900</pubDate>
       
       <guid>https://tramamte.github.io/topics/rambling/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>data science</title>
-      <link>https://tramamte.github.io/topics/data-science/</link>
-      <pubDate>Mon, 11 Nov 2019 20:19:59 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/topics/data-science/</guid>
       <description></description>
     </item>
     
