@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.65.3" />
 
   <title>Awesome Patrick</title>
 
@@ -222,13 +222,13 @@
   
     <article>
   <header>
-    <h2><a href="https://tramamte.github.io/2018/07/20/diffie-hellman/">중학교 수학으로 이해하는 디피-헬만 키 교환 (Diffie-Hellman Key Exchange)</a></h2>
+    <h2><a href="https://tramamte.github.io/2018/06/26/docker-log/">Docker container 로그 보기</a></h2>
 
     <div class="post-meta">
 
   <div>
     <i class="fas fa-calendar-alt fa-fw"></i>
-    <time>Jul 20, 2018 20:05</time>
+    <time>Jun 26, 2018 12:49</time>
   </div>
 
   
@@ -239,7 +239,7 @@
   <div>
     <i class="fas fa-folder fa-fw"></i>
     
-      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/security">security</a>
+      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/docker">docker</a>
     
   </div>
   
@@ -251,11 +251,9 @@
   <div>
     <i class="fas fa-tag fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/diffie-hellman">diffie-hellman</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/container">container</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/key">key</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/exchange">exchange</a>
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/log">log</a>
     
   </div>
   
@@ -266,12 +264,12 @@
   </header>
 
   <p>
-  한 화면에 모두 표시되지 않는 그림이나 수식은 좌우 스크롤이 가능합니다. 디피-헬만 키 교환은 말 그대로 키를 교환하는 방식을 정의한 것이다. 키는 안전한 통신을 위해 ...    
+  컨테이너 내 프로세스가 STDOUT, STDERR로 출력하는 로그 확인 $ docker logs --help Usage: docker logs [OPTIONS] CONTAINER Fetch the logs of a container Options: --details Show extra details provided to logs -f, --follow Follow log output --help Print usage --since string Show logs since timestamp (e.g. 2013-01-02T13:23:37) or relative (e.g. 42m for ...    
   </p>
 
   
   <footer>
-    <a href="https://tramamte.github.io/2018/07/20/diffie-hellman/">Read more <i class="fas fa-expand fa-fw"></i></a>
+    <a href="https://tramamte.github.io/2018/06/26/docker-log/">Read more <i class="fas fa-expand fa-fw"></i></a>
   </footer>
   
 </article>
@@ -279,13 +277,13 @@
   
     <article>
   <header>
-    <h2><a href="https://tramamte.github.io/2018/07/15/struct-basic/">구조체 기초</a></h2>
+    <h2><a href="https://tramamte.github.io/2018/06/20/docker-copy/">Docker host - container 간 복사</a></h2>
 
     <div class="post-meta">
 
   <div>
     <i class="fas fa-calendar-alt fa-fw"></i>
-    <time>Jul 15, 2018 20:10</time>
+    <time>Jun 20, 2018 23:15</time>
   </div>
 
   
@@ -296,7 +294,7 @@
   <div>
     <i class="fas fa-folder fa-fw"></i>
     
-      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/go">go</a>
+      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/docker">docker</a>
     
   </div>
   
@@ -308,7 +306,11 @@
   <div>
     <i class="fas fa-tag fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/syntax-go">syntax-go</a>
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/host">host</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/container">container</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/copy">copy</a>
     
   </div>
   
@@ -319,12 +321,12 @@
   </header>
 
   <p>
-  구조체는 이름을 갖는 엘리먼트들을 묶어 놓은 타입이다. 당연한 얘기를 뭐 대단한 듯 하나 싶겠지만 앞서 다뤘던 기본 타입, 포인터, 함수, 아직 다루지 않은 배열, 슬라 ...    
+  $ docker cp --help Usage: docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|- docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH Copy files/folders between a container and the local filesystem Options: -L, --follow-link Always follow symbol link in SRC_PATH --help Print usage 현재 사용하고 있는 docker 버전은 17.05.0-ce인데 18.03 버전 기준의 docker doc ...    
   </p>
 
   
   <footer>
-    <a href="https://tramamte.github.io/2018/07/15/struct-basic/">Read more <i class="fas fa-expand fa-fw"></i></a>
+    <a href="https://tramamte.github.io/2018/06/20/docker-copy/">Read more <i class="fas fa-expand fa-fw"></i></a>
   </footer>
   
 </article>
@@ -332,70 +334,13 @@
   
     <article>
   <header>
-    <h2><a href="https://tramamte.github.io/2018/07/12/sass-and-scss/">CSS 개발, Sass &amp; SCSS 소개</a></h2>
+    <h2><a href="https://tramamte.github.io/2018/06/20/fun-switch/">봉인해제 switch</a></h2>
 
     <div class="post-meta">
 
   <div>
     <i class="fas fa-calendar-alt fa-fw"></i>
-    <time>Jul 12, 2018 22:56</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fas fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/web">web</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fas fa-tag fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/sass">sass</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/scss">scss</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/css">css</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  CSS를 개발해? CSS가 개발까지 필요한거였어? 웹 기술을 이용한 프론트엔드 개발에 익숙하지 않은 개발자라면 유사한 의문을 품을 수 있을께다. 지금 이 글을 쓰고 ...    
-  </p>
-
-  
-  <footer>
-    <a href="https://tramamte.github.io/2018/07/12/sass-and-scss/">Read more <i class="fas fa-expand fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://tramamte.github.io/2018/07/10/init-and-main/">특수 함수들</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fas fa-calendar-alt fa-fw"></i>
-    <time>Jul 10, 2018 19:40</time>
+    <time>Jun 20, 2018 22:40</time>
   </div>
 
   
@@ -429,12 +374,12 @@
   </header>
 
   <p>
-  본문 중 심볼(symbol)에 대한 내용은 편의상 리눅스 환경에서 빌드한 바이너리를 readelf 명령으로 확인한 결과입니다. C/C++, Java에서 가장 특이한 함수는 누가 뭐래 ...    
+  Go의 switch 작성 규칙은 다음과 같다. SwitchStmt = ExprSwitchStmt | TypeSwitchStmt . 이 중 ExprSwitchStmt 규칙은 다음과 같다. ExprSwitchStmt = &#34;switch&#34; [ SimpleStmt &#34;;&#34; ] [ Expression ] &#34;{&#34; { ExprCaseClause } &#34;}&#34; . ExprCaseClause = ExprSwitchCase &#34;:&#34; StatementList . ExprSwitchCase = &#34;case&#34; ExpressionList | &#34;default&#34; . 자세히 보면 switch 뒤에 ...    
   </p>
 
   
   <footer>
-    <a href="https://tramamte.github.io/2018/07/10/init-and-main/">Read more <i class="fas fa-expand fa-fw"></i></a>
+    <a href="https://tramamte.github.io/2018/06/20/fun-switch/">Read more <i class="fas fa-expand fa-fw"></i></a>
   </footer>
   
 </article>
@@ -442,13 +387,13 @@
   
     <article>
   <header>
-    <h2><a href="https://tramamte.github.io/2018/07/09/function/">함수</a></h2>
+    <h2><a href="https://tramamte.github.io/2018/06/14/fun-packages-and-import/">패키지, 임포트에 대한 심화 학습</a></h2>
 
     <div class="post-meta">
 
   <div>
     <i class="fas fa-calendar-alt fa-fw"></i>
-    <time>Jul 09, 2018 12:50</time>
+    <time>Jun 14, 2018 18:24</time>
   </div>
 
   
@@ -471,7 +416,7 @@
   <div>
     <i class="fas fa-tag fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/syntax-go">syntax-go</a>
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/fun-go">fun-go</a>
     
   </div>
   
@@ -482,12 +427,65 @@
   </header>
 
   <p>
-  함수를 타입으로 사용하는 등 여러가지 복잡한 용법이 있지만 이 글에서는 기본적인 함수의 선언(declaration)과 정의(definition)에 대해 ...    
+  Go도 당연히 다른 언어처럼 작성한 코드의 재사용이 가능하다. 쉬이 예상 가능하듯, 패키지를 만들고 이를 임포트해 재사용할 수 있다. 그런데 Go는 C++이나 Ja ...    
   </p>
 
   
   <footer>
-    <a href="https://tramamte.github.io/2018/07/09/function/">Read more <i class="fas fa-expand fa-fw"></i></a>
+    <a href="https://tramamte.github.io/2018/06/14/fun-packages-and-import/">Read more <i class="fas fa-expand fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="https://tramamte.github.io/2018/06/12/hanks-oven-01/">피자 화덕 만들기 1</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fas fa-calendar-alt fa-fw"></i>
+    <time>Jun 12, 2018 12:15</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fas fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://tramamte.github.io/topics/taean">taean</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fas fa-tag fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://tramamte.github.io/tags/oven">oven</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  기술이 없으니 몸으로 부딪히는 피자 화덕 제작기 바닥에 자갈을 깔아둔지라 우선 자갈을 모두 걷어내고 기초 공사 준비 땅을 파고 나무판으로 막아 거푸집 완성. 안에는 땅 파 ...    
+  </p>
+
+  
+  <footer>
+    <a href="https://tramamte.github.io/2018/06/12/hanks-oven-01/">Read more <i class="fas fa-expand fa-fw"></i></a>
   </footer>
   
 </article>
@@ -511,14 +509,14 @@
   <a href="https://tramamte.github.io/page/5/"><i class="fas fa-angle-left fa-fw"></i></a>
   
 
-  <span>&nbsp;6 / 13&nbsp;</span>
+  <span>&nbsp;6 / 9&nbsp;</span>
 
   
   <a href="https://tramamte.github.io/page/7/"><i class="fas fa-angle-right fa-fw"></i></a>
   
 
   
-  <a href="https://tramamte.github.io/page/13/"><i class="fas fa-angle-double-right fa-fw"></i></a>
+  <a href="https://tramamte.github.io/page/9/"><i class="fas fa-angle-double-right fa-fw"></i></a>
   
 
 </nav>

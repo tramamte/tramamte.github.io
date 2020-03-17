@@ -22,66 +22,12 @@
     </item>
     
     <item>
-      <title>메서드</title>
-      <link>https://tramamte.github.io/2018/12/20/method/</link>
-      <pubDate>Thu, 20 Dec 2018 23:22:43 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/2018/12/20/method/</guid>
-      <description>Go는 클래스가 없다. What? Go는 객체지향언어가 아니란 말인가? 미리 놀랄 필요는 없다. Go는 클래스가 없는 대신 보다 유연한 방식을 제공한다. 먼저 객체의 멤버 함</description>
-    </item>
-    
-    <item>
-      <title>호출 연기</title>
-      <link>https://tramamte.github.io/2018/09/20/defer/</link>
-      <pubDate>Thu, 20 Sep 2018 22:12:52 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/2018/09/20/defer/</guid>
-      <description>Defer는 호출을 연기하는 Go의 독특한 구문 중 하나이다. 호출을 연기한다는 것이 무슨 의미인지는 다음 C 코드를 예로 알아보자. #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt; #define BUF_SIZE 512 int main(int argc, char *argv[]) { FILE*</description>
-    </item>
-    
-    <item>
       <title>배열, 슬라이스 그리고 맵</title>
       <link>https://tramamte.github.io/2018/09/05/array-slice-and-map/</link>
       <pubDate>Wed, 05 Sep 2018 23:57:07 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/09/05/array-slice-and-map/</guid>
-      <description>Go의 built-in 자료구조인 배열, 슬라이스, 맵에 대해 좀 더 자세히 살펴보자. 크기 배열, 슬라이스, 맵은 모두 복수의 요소를 저장할 수 있다. 따라서 몇 개의 요소를 가지고</description>
-    </item>
-    
-    <item>
-      <title>맵</title>
-      <link>https://tramamte.github.io/2018/08/28/map/</link>
-      <pubDate>Tue, 28 Aug 2018 23:43:27 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/2018/08/28/map/</guid>
-      <description>배열이나 슬라이스는 저장된 각 요소에 접근하기 위한 키로 숫자를 사용하는 자료구조이다. 반면 맵은 키로 숫자가 아닌 다양한 타입을 사용할 수 있다. Python의 dict</description>
-    </item>
-    
-    <item>
-      <title>슬라이스</title>
-      <link>https://tramamte.github.io/2018/08/21/slice/</link>
-      <pubDate>Tue, 21 Aug 2018 23:31:31 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/2018/08/21/slice/</guid>
-      <description>슬라이스는 앞서 살펴본 배열과 연관성이 높은 또 하나의 타입이다. 슬라이스의 특징을 간략히 요약하면 다음과 같다. 기반이 되는 배열, 문자열 또는 다른 슬라이스의 요</description>
-    </item>
-    
-    <item>
-      <title>배열</title>
-      <link>https://tramamte.github.io/2018/08/06/array/</link>
-      <pubDate>Mon, 06 Aug 2018 23:07:12 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/2018/08/06/array/</guid>
-      <description>배열 역시 타입의 일종이다. 배열 작성 규칙은 다음과 같다. ArrayType = &amp;#34;[&amp;#34; ArrayLength &amp;#34;]&amp;#34; ElementType . ArrayLength = Expression . ElementType = Type . ArrayLength에 대해서는 두 가지 단서가 붙는데, 음수일 수</description>
-    </item>
-    
-    <item>
-      <title>함수 타입과 익명 함수</title>
-      <link>https://tramamte.github.io/2018/07/26/function-type-and-anonymous-function/</link>
-      <pubDate>Thu, 26 Jul 2018 23:11:00 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/2018/07/26/function-type-and-anonymous-function/</guid>
-      <description>함수에서는 기본적인 함수 선언 및 호출 방법에 대해서 다뤘다. 해당 글을 시작할 때 함수를 타입으로 사용할 수도 있다고 언급했는데, 이 내용은 구조체 기초에서도 나온다</description>
+      <description>Go의 built-in 자료구조인 배열, 슬라이스, 맵에 대해 자세히 살펴보자. 크기 배열, 슬라이스, 맵은 모두 복수의 요소를 저장할 수 있다. 따라서 몇 개의 요소를 가지고 있는</description>
     </item>
     
     <item>
@@ -90,16 +36,7 @@
       <pubDate>Tue, 24 Jul 2018 22:47:49 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/07/24/constant-misunderstanding/</guid>
-      <description>상수에 대해서만 벌써 네 번째 글이다. 상수 별 것 없을 것 같은 상수의 별 것 정수형 상수의 내부 처리 그만큼 Go의 상수는 C/C++이나 Java를 사용했던 개발자가 오</description>
-    </item>
-    
-    <item>
-      <title>구조체 기초</title>
-      <link>https://tramamte.github.io/2018/07/15/struct-basic/</link>
-      <pubDate>Sun, 15 Jul 2018 20:10:28 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/2018/07/15/struct-basic/</guid>
-      <description>구조체는 이름을 갖는 엘리먼트들을 묶어 놓은 타입이다. 당연한 얘기를 뭐 대단한 듯 하나 싶겠지만 앞서 다뤘던 기본 타입, 포인터, 함수, 아직 다루지 않은 배열, 슬라</description>
+      <description>우선 C/C++에서 상수를 만드는 키워드인 const와 final에 대해 간략히 정리해보자. C/C++ const의 역할 변수의 읽기전용 설정 = 상수화 (C++) 멤버 함수의</description>
     </item>
     
     <item>
@@ -112,15 +49,6 @@
     </item>
     
     <item>
-      <title>함수</title>
-      <link>https://tramamte.github.io/2018/07/09/function/</link>
-      <pubDate>Mon, 09 Jul 2018 12:50:21 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/2018/07/09/function/</guid>
-      <description>함수를 타입으로 사용하는 등 여러가지 복잡한 용법이 있지만 이 글에서는 기본적인 함수의 선언(declaration)과 정의(definition)에 대해</description>
-    </item>
-    
-    <item>
       <title>정수형 상수의 내부 처리</title>
       <link>https://tramamte.github.io/2018/07/03/deep-inside-constants/</link>
       <pubDate>Tue, 03 Jul 2018 22:35:19 +0900</pubDate>
@@ -130,39 +58,12 @@
     </item>
     
     <item>
-      <title>for 반복문</title>
-      <link>https://tramamte.github.io/2018/06/29/for-statement/</link>
-      <pubDate>Fri, 29 Jun 2018 22:55:08 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/2018/06/29/for-statement/</guid>
-      <description>시작하기에 앞서 한 가지 중요한 사실을 미리 밝히고 넘어가자. Go에는 while이 없다! 반복문은 for 하나로 모두 작성한다. for 반복문의 작성 규칙은 아래와 같다.</description>
-    </item>
-    
-    <item>
       <title>봉인해제 switch</title>
       <link>https://tramamte.github.io/2018/06/20/fun-switch/</link>
       <pubDate>Wed, 20 Jun 2018 22:40:39 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/06/20/fun-switch/</guid>
-      <description>다시 switch 작성 규칙을 자세히 보면 switch 뒤에도, case 뒤에도 단순히 Expression이 올 수 있다. C/C++, Java에 익숙한 개발자라면 단서를 기대할 것이다. C의 swi</description>
-    </item>
-    
-    <item>
-      <title>switch 조건문</title>
-      <link>https://tramamte.github.io/2018/06/18/switch-statement/</link>
-      <pubDate>Mon, 18 Jun 2018 12:40:39 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/2018/06/18/switch-statement/</guid>
-      <description>Go의 switch 조건문은 C/C++이나 Java에 비해 사용법이 굉장히 다양하다. 여기서는 기본 사용법에 대해서만 우선 알아보자. Go의 switch 작성 규칙은 다음과 같다.</description>
-    </item>
-    
-    <item>
-      <title>if 조건문</title>
-      <link>https://tramamte.github.io/2018/06/15/if-statement/</link>
-      <pubDate>Fri, 15 Jun 2018 12:18:07 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/2018/06/15/if-statement/</guid>
-      <description>Go의 if 조건문은 조건에 괄호(())를 쓰지 않아도 된다는 점을 제외하면 C/C++, Java 등 언어의 그것과 유사하다. 물론 조건에 괄호를 쓰는 것도 가능하며, 복잡한 조건인 경</description>
+      <description>Go의 switch 작성 규칙은 다음과 같다. SwitchStmt = ExprSwitchStmt | TypeSwitchStmt . 이 중 ExprSwitchStmt 규칙은 다음과 같다. ExprSwitchStmt = &amp;#34;switch&amp;#34; [ SimpleStmt &amp;#34;;&amp;#34; ] [ Expression ] &amp;#34;{&amp;#34; { ExprCaseClause } &amp;#34;}&amp;#34; . ExprCaseClause = ExprSwitchCase &amp;#34;:&amp;#34; StatementList . ExprSwitchCase = &amp;#34;case&amp;#34; ExpressionList | &amp;#34;default&amp;#34; . 자세히 보면 switch 뒤에</description>
     </item>
     
     <item>
@@ -171,25 +72,7 @@
       <pubDate>Thu, 14 Jun 2018 18:24:57 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/06/14/fun-packages-and-import/</guid>
-      <description>이제 겨우 타입 정도를 다룬 마당에 굉장히 이른 감은 있지만, 패키지와 임포트가 나왔으니 짚고 넘어가자. Go도 당연히 다른 언어처럼 작성한 코드의 재사용이 가능하다</description>
-    </item>
-    
-    <item>
-      <title>포인터</title>
-      <link>https://tramamte.github.io/2018/06/12/pointers/</link>
-      <pubDate>Tue, 12 Jun 2018 12:05:37 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/2018/06/12/pointers/</guid>
-      <description>Go의 포인터는 생김과 사용법이 C의 그것과 매우 유사하다. 먼저 포인터에 대한 규정을 살펴보면 다음과 같다. PointerType = &amp;#34;*&amp;#34; BaseType . BaseType = Type . C에서와 같이 타입 앞에 aste</description>
-    </item>
-    
-    <item>
-      <title>임포트</title>
-      <link>https://tramamte.github.io/2018/06/08/import/</link>
-      <pubDate>Fri, 08 Jun 2018 18:58:47 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/2018/06/08/import/</guid>
-      <description>외부 패키지에서 제공하는 기능을 사용하기 위해 Go에서는 import 명령을 사용한다. 작성 규칙은 다음과 같다. ImportDecl = &amp;#34;import&amp;#34; ( ImportSpec | &amp;#34;(&amp;#34; { ImportSpec &amp;#34;;&amp;#34; } &amp;#34;)&amp;#34; ) . ImportSpec = [ &amp;#34;.&amp;#34; | PackageName ] ImportPath . ImportPath =</description>
+      <description>Go도 당연히 다른 언어처럼 작성한 코드의 재사용이 가능하다. 쉬이 예상 가능하듯, 패키지를 만들고 이를 임포트해 재사용할 수 있다. 그런데 Go는 C++이나 Ja</description>
     </item>
     
     <item>
@@ -202,48 +85,12 @@
     </item>
     
     <item>
-      <title>상수</title>
-      <link>https://tramamte.github.io/2018/06/07/constants/</link>
-      <pubDate>Thu, 07 Jun 2018 18:20:18 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/2018/06/07/constants/</guid>
-      <description>상수를 선언하는 방법은 var 대신 const를 사용한다는 점을 제외하면 변수를 선언하는 방법과 유사하다. ConstDecl = &amp;#34;const&amp;#34; ( ConstSpec | &amp;#34;(&amp;#34; { ConstSpec &amp;#34;;&amp;#34; } &amp;#34;)&amp;#34; ) . ConstSpec = IdentifierList [ [ Type ] &amp;#34;=&amp;#34; ExpressionList ] .</description>
-    </item>
-    
-    <item>
       <title>명시적이지 않은 듯 명시적인 Go</title>
       <link>https://tramamte.github.io/2018/06/05/fun-variables-and-types/</link>
       <pubDate>Tue, 05 Jun 2018 12:55:40 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/06/05/fun-variables-and-types/</guid>
-      <description>변수에서 살펴 본 것처럼 Go는 변수를 선언할 때 초기값을 같이 입력하면 굳이 타입을 명시하지 않아도 된다. var i = 1 f := 3.14 c := 1.0 + 1.0i 그렇다면 이 경우 i, f, c의 타입</description>
-    </item>
-    
-    <item>
-      <title>타입</title>
-      <link>https://tramamte.github.io/2018/06/05/types/</link>
-      <pubDate>Tue, 05 Jun 2018 12:14:49 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/2018/06/05/types/</guid>
-      <description>Go의 타입 작성법은 다음과 같다. Type = TypeName | TypeLit | &amp;#34;(&amp;#34; Type &amp;#34;)&amp;#34; . TypeName = identifier | QualifiedIdent . TypeLit = ArrayType | StructType | PointerType | FunctionType | InterfaceType | SliceType | MapType | ChannelType . 나머지는 차차 보도록 하고, 여기서는 predefined identifier 중 ty</description>
-    </item>
-    
-    <item>
-      <title>변수</title>
-      <link>https://tramamte.github.io/2018/06/01/variables/</link>
-      <pubDate>Fri, 01 Jun 2018 12:35:10 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/2018/06/01/variables/</guid>
-      <description>Go에서 변수 선언 규칙은 다음과 같다. VarDecl = &amp;#34;var&amp;#34; ( VarSpec | &amp;#34;(&amp;#34; { VarSpec &amp;#34;;&amp;#34; } &amp;#34;)&amp;#34; ) . VarSpec = IdentifierList ( Type [ &amp;#34;=&amp;#34; ExpressionList ] | &amp;#34;=&amp;#34; ExpressionList ) . IdentifierList = identifier { &amp;#34;,&amp;#34; identifier } . ExpressionList = Expression { &amp;#34;,&amp;#34; Expression } . 복잡해 보이지만 하나</description>
-    </item>
-    
-    <item>
-      <title>패키지</title>
-      <link>https://tramamte.github.io/2018/05/31/packages/</link>
-      <pubDate>Thu, 31 May 2018 13:05:57 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/2018/05/31/packages/</guid>
-      <description>모든 Go 프로그램은 패키지들로 구성된다. 프로그램은 main 패키지에서 시작한다. 관례상 패키지 이름은 임포트 경로의 마지막 엘리먼트로 한다. 패키지 작성 규정(cl</description>
+      <description>Go는 변수를 선언할 때 초기값을 같이 입력하면 굳이 타입을 명시하지 않아도 된다. var i = 1 f := 3.14 c := 1.0 + 1.0i 그렇다면 이 경우 i, f, c의 타입은 각각 어떻게 될까? G</description>
     </item>
     
     <item>
@@ -252,34 +99,7 @@
       <pubDate>Wed, 30 May 2018 23:08:20 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2018/05/30/fun-semicolons/</guid>
-      <description>세미콜론에서 다룬 것처럼 Go는 lexer가 세미콜론을 자동으로 삽입하기 때문에 소스코드에 쓸 일이 거의 없다. Go 언어의 장점 중 하나로 얘기되지만, Go를 처음</description>
-    </item>
-    
-    <item>
-      <title>세미콜론</title>
-      <link>https://tramamte.github.io/2018/05/29/semicolons/</link>
-      <pubDate>Tue, 29 May 2018 12:08:20 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/2018/05/29/semicolons/</guid>
-      <description>Go는 C/C++이나 Java처럼 세미콜론(;)을 사용하는 언어이다. 하지만 소스코드에서 세미콜론을 볼 일은 거의 없다. Go lexer가 몇 가지 간단한 규칙</description>
-    </item>
-    
-    <item>
-      <title>주석</title>
-      <link>https://tramamte.github.io/2018/05/28/comments/</link>
-      <pubDate>Mon, 28 May 2018 23:09:58 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/2018/05/28/comments/</guid>
-      <description>// single line comment /* multi line comment */</description>
-    </item>
-    
-    <item>
-      <title>시작 Go</title>
-      <link>https://tramamte.github.io/2018/05/28/start-go/</link>
-      <pubDate>Mon, 28 May 2018 23:00:10 +0900</pubDate>
-      
-      <guid>https://tramamte.github.io/2018/05/28/start-go/</guid>
-      <description>Go 토픽은 제가 Go 언어를 공부하면서 정리한 내용들입니다. 그간 주로 C/C++을 사용해 왔던지라 &amp;lsquo;그에 비해 Go는 이렇더라&amp;rsquo;라는 내</description>
+      <description>Go는 lexer가 세미콜론을 자동으로 삽입하기 때문에 직접 소스코드에 입력할 경우가 거의 없다. Go 언어의 장점 중 하나로 얘기되지만, Go를 처음 접하는, 세미</description>
     </item>
     
   </channel>

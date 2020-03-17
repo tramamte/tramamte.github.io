@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="임시버전을 다른 장치에서 확인하기">
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.65.3" />
 
   <title>Hugo Local Server 접속 방법 &middot; Awesome Patrick</title>
 
@@ -259,24 +259,42 @@
 </div>
 
   
+<script>
+  function toggleToc() {
+    var x = document.getElementById("toc");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+  }
+</script>
+
+<div class="post-meta">
+<div>
+  <i class="fas fa-file-alt fa-fw"></i>
+  <a href="javascript:toggleToc();">Table of Contents</a>
+</div>
+<div id="toc" style="display: none;"><nav id="TableOfContents"></nav></div>
+</div>
+
 
 
   <p>테마를 수정하거나 컨텐츠 작성 중 변경 사항을 확인하기 위해서 hugo server를 실행하면 배포하지 않고도 임시버전을 local에서 확인 가능하다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo server</code></pre></div>
-<p>그런데 기본 접속 주소가 IP가 127.0.0.1인 localhost이기 때문에 말 그대로 local에서만 확인 가능하고 서버를 실행한 장치가 아니면 접속이 불가능하다. PC, 모바일 단말 등 다양한 장치에서 확인하기 위해서는 옵션을 추가해야 한다.</p>
-
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo server
+</code></pre></div><p>그런데 기본 접속 주소가 IP가 127.0.0.1인 localhost이기 때문에 말 그대로 local에서만 확인 가능하고 서버를 실행한 장치가 아니면 접속이 불가능하다. PC, 모바일 단말 등 다양한 장치에서 확인하기 위해서는 옵션을 추가해야 한다.</p>
 <p><a href="https://gohugo.io/commands/hugo_server/">hugo server</a>에 다양한 사용법이 있는데 다음 두 가지가 중요.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">-b, --baseURL string  hostname <span style="color:#666">(</span>and path<span style="color:#666">)</span> to the root
-    --bind string     interface to which the server will bind</code></pre></div>
-<p>실행 전 장치의 IP 주소를 확인하고,</p>
+    --bind string     interface to which the server will <span style="color:#007020">bind</span>
+</code></pre></div><p>실행 전 장치의 IP 주소를 확인하고,</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#60a0b0;font-style:italic"># Windows</span>
 &gt; ipconfig
 
 <span style="color:#60a0b0;font-style:italic"># macOS or Linux</span>
-$ ifconfig</code></pre></div>
-<p>확인한 IP 주소를 이용해 hugo server를 다음과 같이 실행한다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo server --baseURL <span style="color:#4070a0">&#34;http://{ip addr}:1313&#34;</span> --bind <span style="color:#4070a0">&#34;0.0.0.0.&#34;</span></code></pre></div>
-<p>이제 같은 공유기에 접속해 있는 다른 장치들에서도 임시버전을 확인할 수 있다.</p>
+$ ifconfig
+</code></pre></div><p>확인한 IP 주소를 이용해 hugo server를 다음과 같이 실행한다.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo server --baseURL <span style="color:#4070a0">&#34;http://{ip addr}:1313&#34;</span> --bind <span style="color:#4070a0">&#34;0.0.0.0.&#34;</span>
+</code></pre></div><p>이제 같은 공유기에 접속해 있는 다른 장치들에서도 임시버전을 확인할 수 있다.</p>
 
 
   
@@ -294,13 +312,13 @@ $ ifconfig</code></pre></div>
   <div class="pure-u-10-24" style="text-align: right;">
     
     <nav class="next">
-      <a href="https://tramamte.github.io/2018/05/28/start-go/">시작 Go</a>
+      <a href="https://tramamte.github.io/2018/05/30/fun-semicolons/">간단하거나, 복잡하거나. 세미콜론</a>
     </nav>
     
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
     
-    <a href="https://tramamte.github.io/2018/05/28/start-go/"><i class="fas fa-angle-right"></i></a>
+    <a href="https://tramamte.github.io/2018/05/30/fun-semicolons/"><i class="fas fa-angle-right"></i></a>
     
   </div>
 </div>

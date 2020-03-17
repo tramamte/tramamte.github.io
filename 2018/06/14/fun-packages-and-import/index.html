@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="규칙을 따르지 않으면 손발이 고생한다.">
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.65.3" />
 
   <title>패키지, 임포트에 대한 심화 학습 &middot; Awesome Patrick</title>
 
@@ -274,28 +274,19 @@
   <a href="javascript:toggleToc();">Table of Contents</a>
 </div>
 <div id="toc" style="display: none;"><nav id="TableOfContents">
-<ul>
-<li><a href="#패키지-만들기">패키지 만들기</a>
-<ul>
-<li><a href="#패키지-경로와-이름">패키지 경로와 이름</a></li>
-<li><a href="#한-경로에-두-가지-이상의-패키지를-두면">한 경로에 두 가지 이상의 패키지를 두면&hellip;</a></li>
-<li><a href="#한-패키지를-둘-이상의-경로에-두면">한 패키지를 둘 이상의 경로에 두면&hellip;</a></li>
-<li><a href="#결론">결론</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#패키지-경로와-이름">패키지 경로와 이름</a></li>
+    <li><a href="#한-경로에-두-가지-이상의-패키지를-두면">한 경로에 두 가지 이상의 패키지를 두면&hellip;</a></li>
+    <li><a href="#한-패키지를-둘-이상의-경로에-두면">한 패키지를 둘 이상의 경로에 두면&hellip;</a></li>
+    <li><a href="#결론">결론</a></li>
+  </ul>
 </nav></div>
 </div>
 
 
 
-  
-
-<p>이제 겨우 타입 정도를 다룬 마당에 굉장히 이른 감은 있지만, <a href="https://tramamte.github.io/2018/05/31/packages/">패키지</a>와 <a href="https://tramamte.github.io/2018/06/08/import/">임포트</a>가 나왔으니 짚고 넘어가자.</p>
-
-<p>Go도 당연히 다른 언어처럼 작성한 코드의 재사용이 가능하다. 쉬이 예상 가능하듯, 패키지를 만들고 이를 임포트해 재사용할 수 있다.</p>
-
+  <p>Go도 당연히 다른 언어처럼 작성한 코드의 재사용이 가능하다. 쉬이 예상 가능하듯, 패키지를 만들고 이를 임포트해 재사용할 수 있다.</p>
 <p>그런데 Go는 C++이나 Java와는 달리 접근제한자(access modifier)가 없다. 접근제한자 대신 매우 단순한 한 가지 규칙에 따라 외부 접근 가능 여부를 판단한다.</p>
-
 
 
 
@@ -309,29 +300,20 @@
 
 </blockquote>
 
-
 <p>이 규칙은 함수나 변수, 상수뿐만 아니라 구조체와 관련된 필드, 메서드 등에도 그대로 적용된다.</p>
-
 <p><strong>대문자</strong>에 대해서 좀 더 자세히 언급하면, <a href="https://www.fileformat.info/info/unicode/category/Lu/list.htm">Unicode &ldquo;Lu&rdquo; class</a>에 포함되는 문자를 의미한다. 즉, <code>𝓐bc</code> 이런 이름도 외부에서 접근할 수 있지만, 안타깝게도 한글은  포함되지 않는다.</p>
-
 <p>Python도 접근제한자 없이 underscore(_)나 double underscore(__) 등을 사용해 접근 범위를 지정하지만 <em>&lsquo;우린 모두 19금을 볼 수 있지만 굳이 볼 필요가 없는 것은 안 볼 수도 있는 성숙한 어른이잖아요&rsquo;</em> 라며 접근 시도를 자율에 맡기는 반면, Go는 아직 충분히 크지 않은 경우&mdash;대문자가 아닌 경우&mdash; 에는 접근을 강제로 불허한다.</p>
-
 <h1 id="패키지-만들기">패키지 만들기</h1>
-
-<p>서두에 언급한 것처럼 패키지를 만든다는 것이 아직 많이 이른 감은 있지만 <a href="https://tramamte.github.io/2018/05/31/packages/">패키지</a>, <a href="https://tramamte.github.io/2018/06/08/import/">임포트</a>에서 다룬 내용을 확실히 한다는 차원에서 간단히 알아보자.</p>
-
 <p>디렉토리 구조는 다음과 같다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">$GOPATH -+- myapp  --- main.go
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$GOPATH -+- myapp  --- main.go
          |
          +- mypack -+- packa1 -+- packa1.go
                     |          |
                     |          +- packb.go
                     |
-                    +- packa2 --- packa2.go</pre></div>
-<h2 id="패키지-경로와-이름">패키지 경로와 이름</h2>
-
-<p><a href="https://tramamte.github.io/2018/06/08/import/">임포트</a> 에서 강조한 것처럼 <strong>관례상(by convention)</strong> 패키지의 경로와 이름을 같게 할 뿐, 둘은 엄연히 다르다.</p>
-
+                    +- packa2 --- packa2.go
+</code></pre></div><h2 id="패키지-경로와-이름">패키지 경로와 이름</h2>
+<p><strong>관례상(by convention)</strong> 패키지의 경로와 이름을 같게 할 뿐 둘은 엄연히 다르다.</p>
 <p>위 디렉토리 구조에서 packa2, packa2.go, packb.go는 없고, packa1.go를 다음과 같이 작성한 상황을 가정해 보자.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#60a0b0;font-style:italic">// packa1.go
 </span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">package</span> packa
@@ -340,8 +322,8 @@
 
 <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">PackA1</span>() {
 	fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;This is PackA1()&#34;</span>)
-}</code></pre></div>
-<p>이 패키지를 사용하기 위한 main.go는 다음과 같다.</p>
+}
+</code></pre></div><p>이 패키지를 사용하기 위한 main.go는 다음과 같다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#60a0b0;font-style:italic">// main.go
 </span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">package</span> main
 
@@ -349,11 +331,9 @@
 </span><span style="color:#60a0b0;font-style:italic"></span>
 <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">main</span>() {
 	packa.<span style="color:#06287e">PackA1</span>()		<span style="color:#60a0b0;font-style:italic">// NAME
-</span><span style="color:#60a0b0;font-style:italic"></span>}</code></pre></div>
-<h2 id="한-경로에-두-가지-이상의-패키지를-두면">한 경로에 두 가지 이상의 패키지를 두면&hellip;</h2>
-
+</span><span style="color:#60a0b0;font-style:italic"></span>}
+</code></pre></div><h2 id="한-경로에-두-가지-이상의-패키지를-두면">한 경로에 두 가지 이상의 패키지를 두면&hellip;</h2>
 <p>그럼 한 디렉토리에 있는 소스 파일들이 서로 다른 패키지 이름을 갖는다면 어떻게 될까?</p>
-
 <p>위 예에서 packb.go 파일을 만들고 다음과 같이 작성한 것을 가정한 것이다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#60a0b0;font-style:italic">// packb.go
 </span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">package</span> packb
@@ -362,15 +342,12 @@
 
 <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">PackB</span>() {
 	fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;This is PackB()&#34;</span>)
-}</code></pre></div>
-<p>이 경우 빌드 시 다음과 같은 오류가 발생한다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">found packages packa (packa1.go) and packb (packb.go) in ~~~/mypack/packa1</pre></div>
-<p>한 디렉토리에 다른 이름을 갖는 패키지들이 있다고 Go가 싫어한다.</p>
-
+}
+</code></pre></div><p>이 경우 빌드 시 다음과 같은 오류가 발생한다.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">found packages packa (packa1.go) and packb (packb.go) in ~~~/mypack/packa1
+</code></pre></div><p>한 디렉토리에 다른 이름을 갖는 패키지들이 있다고 Go가 싫어한다.</p>
 <h2 id="한-패키지를-둘-이상의-경로에-두면">한 패키지를 둘 이상의 경로에 두면&hellip;</h2>
-
 <p>반대로 같은 패키지 이름을 갖는 소스 파일들을 여러 경로에 분산해 두면 어떻게 될까?</p>
-
 <p>packb.go는 삭제하고, packa2 디렉토리를 만들어 그 아래에 packa2.go를 다음과 같이 작성한 것을 가정한 것이다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#60a0b0;font-style:italic">// packa2.go
 </span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">package</span> packa
@@ -379,8 +356,8 @@
 
 <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">PackA2</span>() {
 	fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;This is PackA2()&#34;</span>)
-}</code></pre></div>
-<p><code>PackA2()</code> 를 호출하기 위해 main.go도 다음과 같이 수정한다.</p>
+}
+</code></pre></div><p><code>PackA2()</code> 를 호출하기 위해 main.go도 다음과 같이 수정한다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#60a0b0;font-style:italic">// main.go
 </span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">package</span> main
 
@@ -390,13 +367,12 @@
 <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">main</span>() {
 	packa.<span style="color:#06287e">PackA1</span>()
 	packa.<span style="color:#06287e">PackA2</span>()
-}</code></pre></div>
-<p>이 경우에는 빌드 시 다음과 같은 오류가 발생한다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">.<span style="color:#666">/</span>main.<span style="color:#007020;font-weight:bold">go</span>:<span style="color:#40a070">5</span>:<span style="color:#40a070">8</span>: packa redeclared as imported <span style="color:#007020;font-weight:bold">package</span> name
+}
+</code></pre></div><p>이 경우에는 빌드 시 다음과 같은 오류가 발생한다.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">.<span style="color:#666">/</span>main.<span style="color:#007020;font-weight:bold">go</span>:<span style="color:#40a070">5</span>:<span style="color:#40a070">8</span>: packa redeclared as imported <span style="color:#007020;font-weight:bold">package</span> name
 	previous declaration at .<span style="color:#666">/</span>main.<span style="color:#007020;font-weight:bold">go</span>:<span style="color:#40a070">4</span>:<span style="color:#40a070">8</span>
-.<span style="color:#666">/</span>main.<span style="color:#007020;font-weight:bold">go</span>:<span style="color:#40a070">8</span>:<span style="color:#40a070">2</span>: undefined: <span style="color:#4070a0">&#34;mypack/packa2&#34;</span>.PackA1</pre></div>
-<p>mypack/packa2 경로에 있는 패키지를 임포트하면서 mypack/packa1에서 이미 임포트한 packa가 재정의 되었다는 오류와 이로 인해&mdash;mypack/packa2에서 임포트한 패키지가 mypack/packa1에서 임포트한 패키지를 덮어 씀으로 인해&mdash; 패키지 packa에서는 <code>PackA1</code> 함수를 찾을 수 없다는 오류이다.</p>
-
+.<span style="color:#666">/</span>main.<span style="color:#007020;font-weight:bold">go</span>:<span style="color:#40a070">8</span>:<span style="color:#40a070">2</span>: undefined: <span style="color:#4070a0">&#34;mypack/packa2&#34;</span>.PackA1
+</code></pre></div><p>mypack/packa2 경로에 있는 패키지를 임포트하면서 mypack/packa1에서 이미 임포트한 packa가 재정의 되었다는 오류와 이로 인해&mdash;mypack/packa2에서 임포트한 패키지가 mypack/packa1에서 임포트한 패키지를 덮어 씀으로 인해&mdash; 패키지 packa에서는 <code>PackA1</code> 함수를 찾을 수 없다는 오류이다.</p>
 <p>이 문제는 임포트하는 패키지에 별칭(alias)을 달아 해결 가능하다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#60a0b0;font-style:italic">// main.go
 </span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">package</span> main
@@ -407,9 +383,8 @@
 <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">main</span>() {
 	a1.<span style="color:#06287e">PackA1</span>()
 	a2.<span style="color:#06287e">PackA2</span>()
-}</code></pre></div>
-<h2 id="결론">결론</h2>
-
+}
+</code></pre></div><h2 id="결론">결론</h2>
 <p><strong>관례</strong>라는 용어가 특수활동비 문제로 인해 <strong>답습</strong>과 비슷한 뜻으로 이해되기는 하지만 최소환 Go의 패키지 경로와 이름에 관련해서는 다 이유가 있어 생긴 것이다. 어떻게 되는지 봤으니 괜히 이상한 시도 하지 말자. 복잡해진다.</p>
 
 
@@ -425,10 +400,6 @@
 	<li><a href="https://tramamte.github.io/2018/06/05/fun-variables-and-types/">명시적이지 않은 듯 명시적인 Go</a></li>
 	
 	<li><a href="https://tramamte.github.io/2018/05/30/fun-semicolons/">간단하거나, 복잡하거나. 세미콜론</a></li>
-	
-	<li><a href="https://tramamte.github.io/2018/05/28/start-go/">시작 Go</a></li>
-	
-	<li><a href="https://tramamte.github.io/2018/06/12/pointers/">포인터</a></li>
 	
   </ul>
 </div>
@@ -452,13 +423,13 @@
   <div class="pure-u-10-24" style="text-align: right;">
     
     <nav class="next">
-      <a href="https://tramamte.github.io/2018/06/15/if-statement/">if 조건문</a>
+      <a href="https://tramamte.github.io/2018/06/20/fun-switch/">봉인해제 switch</a>
     </nav>
     
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
     
-    <a href="https://tramamte.github.io/2018/06/15/if-statement/"><i class="fas fa-angle-right"></i></a>
+    <a href="https://tramamte.github.io/2018/06/20/fun-switch/"><i class="fas fa-angle-right"></i></a>
     
   </div>
 </div>

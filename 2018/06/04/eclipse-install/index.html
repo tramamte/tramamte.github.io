@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="JBoss jBPM and Drools Eclipse 개발환경 구성하기">
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.65.3" />
 
   <title>jBPM / Drools 개발환경 구성 &middot; Awesome Patrick</title>
 
@@ -279,44 +279,25 @@
   <i class="fas fa-file-alt fa-fw"></i>
   <a href="javascript:toggleToc();">Table of Contents</a>
 </div>
-<div id="toc" style="display: none;"><nav id="TableOfContents">
-<ul>
-<li><a href="#1-oracle-jdk-설치">1. Oracle JDK 설치</a></li>
-<li><a href="#2-eclipse-설치">2. Eclipse 설치</a></li>
-<li><a href="#3-runtime-설치">3. Runtime 설치</a></li>
-<li><a href="#4-jboss-tools-설치">4. JBoss Tools 설치</a></li>
-<li><a href="#5-plugin-설치">5. Plugin 설치</a></li>
-<li><a href="#6-runtime-설정">6.Runtime 설정</a></li>
-<li><a href="#추가-bpmn2-modeler-설치">(추가) BPMN2 Modeler 설치</a></li>
-</ul>
-</nav></div>
+<div id="toc" style="display: none;"><nav id="TableOfContents"></nav></div>
 </div>
 
 
 
-  
-
-<h1 id="1-oracle-jdk-설치">1. Oracle JDK 설치</h1>
-
+  <h1 id="1-oracle-jdk-설치">1. Oracle JDK 설치</h1>
 <p>Java SE 8 버전 추천</p>
-
 <h1 id="2-eclipse-설치">2. Eclipse 설치</h1>
-
 <p>Eclipse IDE for Java EE Developers 받아서 압축 해제</p>
-
 <h1 id="3-runtime-설치">3. Runtime 설치</h1>
-
 <ul>
 <li><a href="https://www.drools.org">Drools</a>에서 Final 버전 내려받아 적당한 위치에 압축 해제</li>
 <li><a href="https://www.jbpm.org/download/download.html">jBPM</a>에서 *.Final-bin.zip 형태의 final binary 버전을 내려받아 적당한 위치에 압축 해제
-
 <ul>
 <li>필요한 경우 *.Final-examples.zip 형태의 예제 파일도 내려받아 적당한 위치에 압축 해제</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h1 id="4-jboss-tools-설치">4. JBoss Tools 설치</h1>
-
 
 
 
@@ -330,16 +311,13 @@
 
 </blockquote>
 
-
 <ol>
 <li>Eclipse 실행</li>
 <li>Help - Eclipse Marketplace&hellip; 실행</li>
 <li>&lsquo;jboss&rsquo; 검색</li>
 <li>JBoss Tools x.x.x.Final 설치</li>
 </ol>
-
 <h1 id="5-plugin-설치">5. Plugin 설치</h1>
-
 <ol>
 <li><a href="http://download.jboss.org/drools/release/">여기</a>에서 버전을 선택하거나 latestFinal 선택해 org.drools.updatesite 주소복사</li>
 <li>Eclipse 실행</li>
@@ -348,32 +326,27 @@
 <li>Name은 &lsquo;Drools &amp; jBPM Plugin&rsquo; 등 적당한 값으로 넣고, Location에 복사한 주소 입력</li>
 <li>전체 선택해 설치</li>
 </ol>
-
-<h1 id="6-runtime-설정">6.Runtime 설정</h1>
-
+<h1 id="6runtime-설정">6.Runtime 설정</h1>
 <ol>
 <li>Eclipse 실행</li>
 <li>Preferences 실행
-
 <ul>
 <li>Windows/Linux: Windows - Preferences</li>
 <li>macOS: Eclipse - Preferences</li>
-</ul></li>
+</ul>
+</li>
 <li>좌측 메뉴에서 jBPM &gt; Installed jBPM Runtime 선택</li>
 <li>Add&hellip; 버튼 클릭</li>
 <li>Browse&hellip; 버튼 클릭 후 3단계에서 압축 풀어 둔 jBPM의 bin 디렉토리 선택</li>
 <li>Name, Version 등 자동 입력된 것 확인 후 OK</li>
 <li>좌측 메뉴 Drools &gt; Installed Drools Runtime도 동일한 방식으로 설정
-
 <ul>
 <li>Drools는 압축 풀어 둔 디렉토리에서 binaries 선택</li>
-</ul></li>
+</ul>
+</li>
 </ol>
-
-<hr />
-
+<hr>
 <h1 id="추가-bpmn2-modeler-설치">(추가) BPMN2 Modeler 설치</h1>
-
 
 
 
@@ -386,7 +359,6 @@
 <p>기본 modeler는 .bpmn2 file open 시 exception 발생</p>
 
 </blockquote>
-
 
 <ol>
 <li>Eclipse 실행</li>
@@ -404,13 +376,13 @@
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24">
     
-    <a href="https://tramamte.github.io/2018/06/01/variables/"><i class="fas fa-angle-left"></i></a>
+    <a href="https://tramamte.github.io/2018/05/31/hugo-shortcode/"><i class="fas fa-angle-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://tramamte.github.io/2018/06/01/variables/">변수</a>
+      <a href="https://tramamte.github.io/2018/05/31/hugo-shortcode/">Blog 작성 참고자료</a>
     </nav>
     
   </div>
@@ -418,13 +390,13 @@
   <div class="pure-u-10-24" style="text-align: right;">
     
     <nav class="next">
-      <a href="https://tramamte.github.io/2018/06/05/types/">타입</a>
+      <a href="https://tramamte.github.io/2018/06/05/fun-variables-and-types/">명시적이지 않은 듯 명시적인 Go</a>
     </nav>
     
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
     
-    <a href="https://tramamte.github.io/2018/06/05/types/"><i class="fas fa-angle-right"></i></a>
+    <a href="https://tramamte.github.io/2018/06/05/fun-variables-and-types/"><i class="fas fa-angle-right"></i></a>
     
   </div>
 </div>

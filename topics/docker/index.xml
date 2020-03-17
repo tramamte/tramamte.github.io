@@ -18,7 +18,7 @@
       <pubDate>Tue, 14 May 2019 12:15:24 +0900</pubDate>
       
       <guid>https://tramamte.github.io/2019/05/14/dump/</guid>
-      <description>Image dump $ docker save -o dump_file_name.tar IMAGE $ docker save IMAGE | gzip &amp;gt; dump_file_name.tgz$ docker load -i dump_file_name.tar $ gunzip -c dump_file_name.tgz | docker load Container dump $ docker export CONTAINER_NAME|CONTAINER_ID &amp;gt; dump_file_name.tar$ docker import dump_file_name.tar</description>
+      <description>Image dump $ docker save -o dump_file_name.tar IMAGE $ docker save IMAGE | gzip &amp;gt; dump_file_name.tgz $ docker load -i dump_file_name.tar $ gunzip -c dump_file_name.tgz | docker load Container dump $ docker export CONTAINER_NAME|CONTAINER_ID &amp;gt; dump_file_name.tar $ docker import dump_file_name.tar</description>
     </item>
     
     <item>

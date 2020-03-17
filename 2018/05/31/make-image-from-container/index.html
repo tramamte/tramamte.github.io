@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="잘 설정해 둔 container 우려먹기">
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.65.3" />
 
   <title>Docker container에서 image 생성 &middot; Awesome Patrick</title>
 
@@ -259,27 +259,40 @@
 </div>
 
   
+<script>
+  function toggleToc() {
+    var x = document.getElementById("toc");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+  }
+</script>
+
+<div class="post-meta">
+<div>
+  <i class="fas fa-file-alt fa-fw"></i>
+  <a href="javascript:toggleToc();">Table of Contents</a>
+</div>
+<div id="toc" style="display: none;"><nav id="TableOfContents"></nav></div>
+</div>
+
 
 
   <p>개인적으로 Docker는 이것 저것 다양한 언어나 도구들을 시험하는 용도로도 많이 사용한다.</p>
-
 <p>새로운 것을 보면 한 번 설치해 사용해 본 후 삭제하는 경우도 많은데, 흔적을 남기는 것을 극단적으로 싫어하는 성격 때문에 Docker를 애용한다. <code>docker rm</code> 한 방으로 깔끔해지니 얼마나 편한가.</p>
-
 <p>하지만 새로운 container를 매번 <a href="https://hub.docker.com">Docker Hub</a>나 <a href="https://store.docker.com/">Docker Store</a>에 있는 공식 image에서 만들면 기본적으로 설치하고 설정하는 작업을 반복해야 하기 때문에 여간 귀찮은 일이 아니다.</p>
-
 <p>Dockerfile을 이용해 새로운 image를 만들 수 있지만 이 방식은 container를 생성한 후 하는 작업들을 하나하나 script 형식으로 입력하는 것이라 이 역시 귀찮다.</p>
-
 <p>이 때 사용하는 방법이 바로 <code>docker commit</code>을 이용해 container를 바로 image로 만드는 것이다.</p>
-
 <ol>
 <li>일단 container 하나를 잘 설정한다.</li>
 <li><code>docker commit</code>을 이용해 1의 container를 image로 만든다.</li>
 <li>두고 두고 우려먹는다.</li>
 </ol>
-
 <p><code>docker commit</code> 명령의 사용법은 다음과 같다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker commit <span style="color:#666">[</span>OPTIONS<span style="color:#666">]</span> CONTAINER <span style="color:#666">[</span>REPOSITORY<span style="color:#666">[</span>:TAG<span style="color:#666">]]</span></code></pre></div>
-<ul>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker commit <span style="color:#666">[</span>OPTIONS<span style="color:#666">]</span> CONTAINER <span style="color:#666">[</span>REPOSITORY<span style="color:#666">[</span>:TAG<span style="color:#666">]]</span>
+</code></pre></div><ul>
 <li>개인적으로 사용하려면 OPTIONS는 굳이 설정할 필요가 없다.</li>
 <li>CONTAINER는 이름이나 ID로 설정할 수 있다.</li>
 <li>REPOSITORY를 지정하지 않으면 &lt;none&gt; image가 되니 적당한 이름을 넣도록 한다.</li>
@@ -318,13 +331,13 @@
   <div class="pure-u-10-24" style="text-align: right;">
     
     <nav class="next">
-      <a href="https://tramamte.github.io/2018/05/31/packages/">패키지</a>
+      <a href="https://tramamte.github.io/2018/05/31/hugo-shortcode/">Blog 작성 참고자료</a>
     </nav>
     
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
     
-    <a href="https://tramamte.github.io/2018/05/31/packages/"><i class="fas fa-angle-right"></i></a>
+    <a href="https://tramamte.github.io/2018/05/31/hugo-shortcode/"><i class="fas fa-angle-right"></i></a>
     
   </div>
 </div>

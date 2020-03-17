@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="사용하지 않는 이미지, 컨테이너, 볼륨, 네트워크 등 정리">
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.65.3" />
 
   <title>Docker 다이어트 &middot; Awesome Patrick</title>
 
@@ -282,40 +282,34 @@
   <a href="javascript:toggleToc();">Table of Contents</a>
 </div>
 <div id="toc" style="display: none;"><nav id="TableOfContents">
-<ul>
-<li><a href="#prune">Prune</a></li>
-<li><a href="#workaround">Workaround</a>
-<ul>
-<li><a href="#image">Image</a></li>
-<li><a href="#container">Container</a></li>
-<li><a href="#volume">Volume</a></li>
-<li><a href="#network">Network</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#image">Image</a></li>
+    <li><a href="#container">Container</a></li>
+    <li><a href="#volume">Volume</a></li>
+    <li><a href="#network">Network</a></li>
+  </ul>
 </nav></div>
 </div>
 
 
 
-  
-
-<h1 id="prune">Prune</h1>
+  <h1 id="prune">Prune</h1>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker image prune
 $ docker container prune
 $ docker volume prune
-$ docker network prune</code></pre></div>
-<h1 id="workaround">Workaround</h1>
-
+$ docker network prune
+</code></pre></div><h1 id="workaround">Workaround</h1>
 <h2 id="image">Image</h2>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker rmi <span style="color:#007020;font-weight:bold">$(</span>docker images --filter <span style="color:#4070a0">&#34;dangling=true&#34;</span> -q --no-trunc<span style="color:#007020;font-weight:bold">)</span>
-$ docker rmi <span style="color:#007020;font-weight:bold">$(</span>docker images | grep <span style="color:#4070a0">&#34;none&#34;</span> | awk <span style="color:#4070a0">&#39;/ / { print $3 }&#39;</span><span style="color:#007020;font-weight:bold">)</span></code></pre></div>
-<h2 id="container">Container</h2>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker rm <span style="color:#007020;font-weight:bold">$(</span>docker ps -qa --no-trunc --filter <span style="color:#4070a0">&#34;status=exited&#34;</span><span style="color:#007020;font-weight:bold">)</span></code></pre></div>
-<h2 id="volume">Volume</h2>
+$ docker rmi <span style="color:#007020;font-weight:bold">$(</span>docker images | grep <span style="color:#4070a0">&#34;none&#34;</span> | awk <span style="color:#4070a0">&#39;/ / { print $3 }&#39;</span><span style="color:#007020;font-weight:bold">)</span>
+</code></pre></div><h2 id="container">Container</h2>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker rm <span style="color:#007020;font-weight:bold">$(</span>docker ps -qa --no-trunc --filter <span style="color:#4070a0">&#34;status=exited&#34;</span><span style="color:#007020;font-weight:bold">)</span>
+</code></pre></div><h2 id="volume">Volume</h2>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker volume rm <span style="color:#007020;font-weight:bold">$(</span>docker volume ls -qf <span style="color:#bb60d5">dangling</span><span style="color:#666">=</span><span style="color:#007020">true</span><span style="color:#007020;font-weight:bold">)</span>
-$ docker volume ls -qf <span style="color:#bb60d5">dangling</span><span style="color:#666">=</span><span style="color:#007020">true</span> | xargs -r docker volume rm</code></pre></div>
-<h2 id="network">Network</h2>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker network rm <span style="color:#007020;font-weight:bold">$(</span>docker network ls | grep <span style="color:#4070a0">&#34;bridge&#34;</span> | awk <span style="color:#4070a0">&#39;/ / { print $1 }&#39;</span><span style="color:#007020;font-weight:bold">)</span></code></pre></div>
+$ docker volume ls -qf <span style="color:#bb60d5">dangling</span><span style="color:#666">=</span><span style="color:#007020">true</span> | xargs -r docker volume rm
+</code></pre></div><h2 id="network">Network</h2>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker network rm <span style="color:#007020;font-weight:bold">$(</span>docker network ls | grep <span style="color:#4070a0">&#34;bridge&#34;</span> | awk <span style="color:#4070a0">&#39;/ / { print $1 }&#39;</span><span style="color:#007020;font-weight:bold">)</span>
+</code></pre></div>
 
   
 
@@ -342,13 +336,13 @@ $ docker volume ls -qf <span style="color:#bb60d5">dangling</span><span style="c
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24">
     
-    <a href="https://tramamte.github.io/2018/12/20/method/"><i class="fas fa-angle-left"></i></a>
+    <a href="https://tramamte.github.io/2018/09/05/array-slice-and-map/"><i class="fas fa-angle-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://tramamte.github.io/2018/12/20/method/">메서드</a>
+      <a href="https://tramamte.github.io/2018/09/05/array-slice-and-map/">배열, 슬라이스 그리고 맵</a>
     </nav>
     
   </div>

@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="변수보다 복잡한 Go의 상수">
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.65.3" />
 
   <title>별 것 없을 것 같은 상수의 별 것 &middot; Awesome Patrick</title>
 
@@ -287,26 +287,19 @@
   <a href="javascript:toggleToc();">Table of Contents</a>
 </div>
 <div id="toc" style="display: none;"><nav id="TableOfContents">
-<ul>
-<li><a href="#상수의-타입과-한계">상수의 타입과 한계</a></li>
-<li><a href="#iota에-대해-좀-더-자세히">iota에 대해 좀 더 자세히</a>
-<ul>
-<li><a href="#iota-초기값">iota 초기값</a></li>
-<li><a href="#한-줄에-두-번-쓴-iota">한 줄에 두 번 쓴 iota</a></li>
-<li><a href="#중간값-지정">중간값 지정</a></li>
-<li><a href="#iota-유지-범위">iota 유지 범위</a></li>
-<li><a href="#복잡한-상수-그룹">복잡한 상수 그룹</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#iota-초기값">iota 초기값</a></li>
+    <li><a href="#한-줄에-두-번-쓴-iota">한 줄에 두 번 쓴 iota</a></li>
+    <li><a href="#중간값-지정">중간값 지정</a></li>
+    <li><a href="#iota-유지-범위">iota 유지 범위</a></li>
+    <li><a href="#복잡한-상수-그룹">복잡한 상수 그룹</a></li>
+  </ul>
 </nav></div>
 </div>
 
 
 
-  
-
-<h1 id="상수의-타입과-한계">상수의 타입과 한계</h1>
-
+  <h1 id="상수의-타입과-한계">상수의 타입과 한계</h1>
 <p><a href="https://tramamte.github.io/2018/06/05/fun-variables-and-types/">명시적이지 않은 듯 명시적인 Go</a>에서 한 것처럼 <code>reflect</code> 패키지를 이용해 타입을 명시하지 않은 상수의 타입에 대해 알아보자.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
 
@@ -327,22 +320,19 @@
 	fmt.<span style="color:#06287e">Println</span>(reflect.<span style="color:#06287e">TypeOf</span>(C))
 	fmt.<span style="color:#06287e">Println</span>(reflect.<span style="color:#06287e">TypeOf</span>(D))
 	fmt.<span style="color:#06287e">Println</span>(reflect.<span style="color:#06287e">TypeOf</span>(E))
-}</code></pre></div>
-<p>위 코드의 실행 결과는 다음과 같다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">int
+}
+</code></pre></div><p>위 코드의 실행 결과는 다음과 같다.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">int
 float64
 complex128
 int
-int</pre></div>
-<p>변수의 경우와 같은 규칙이 적용된다.</p>
-
-<hr />
-
+int
+</code></pre></div><p>변수의 경우와 같은 규칙이 적용된다.</p>
+<hr>
 <p>그런데 정말 상수가 그 타입인 것일까, 상수를 읽을 때 그 타입이 되는 것일까? 무슨 소린고 하니,</p>
-
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -362,15 +352,12 @@ int</pre></div>
 }</code></pre></td></tr></table>
 </div>
 </div>
-
 <p>이 코드는 다음과 같은 오류가 발생한다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">./main.go:6:13: constant 324518553658426726783156020576256 overflows int</pre></div>
-<p><code>int</code>에 담을 수 있는 한계를 벗어났다는 것이다. 100비트나 왼쪽으로 옮겼으니&mdash;\( 256 \times 2^{100} \)&mdash; 당연한 결과다.</p>
-
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">./main.go:6:13: constant 324518553658426726783156020576256 overflows int
+</code></pre></div><p><code>int</code>에 담을 수 있는 한계를 벗어났다는 것이다. 100비트나 왼쪽으로 옮겼으니&mdash;\( 256 \times 2^{100} \)&mdash; 당연한 결과다.</p>
 <p><strong>그런데 <code>var</code>를 <code>const</code>로 바꾸면 다음과 같은 오류가 발생한다.</strong></p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">./main.go:7:16: constant 324518553658426726783156020576256 overflows int</pre></div>
-<p>오류 발생 시점이 달라졌다. 7라인, <code>Println()</code>을 호출할 때 오류가 발생한다.</p>
-
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">./main.go:7:16: constant 324518553658426726783156020576256 overflows int
+</code></pre></div><p>오류 발생 시점이 달라졌다. 7라인, <code>Println()</code>을 호출할 때 오류가 발생한다.</p>
 <p>그렇다면 <code>const i = 256 &lt;&lt; 100</code> 코드로 값을 할당할 때는 오류가 발생하지 않는다는 의미일까?</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
 
@@ -380,11 +367,10 @@ int</pre></div>
 	<span style="color:#007020;font-weight:bold">const</span> i = <span style="color:#40a070">256</span> <span style="color:#666">&lt;&lt;</span> <span style="color:#40a070">100</span>
 	<span style="color:#007020;font-weight:bold">const</span> j = <span style="color:#40a070">2</span> <span style="color:#666">&lt;&lt;</span> <span style="color:#40a070">100</span>
 	fmt.<span style="color:#06287e">Println</span>(i <span style="color:#666">/</span> j)
-}</code></pre></div>
-<p>위 코드는 다음과 같이 정상적인 결과가 나온다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">128</pre></div>
-<p><code>i</code>, <code>j</code> 각각에는 정상적으로 의도한 값이 할당돼 있는 것처럼 보인다.</p>
-
+}
+</code></pre></div><p>위 코드는 다음과 같이 정상적인 결과가 나온다.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">128
+</code></pre></div><p><code>i</code>, <code>j</code> 각각에는 정상적으로 의도한 값이 할당돼 있는 것처럼 보인다.</p>
 <p>이 결과는 <code>int</code>보다 큰 값을 표시할 수 있는 <code>float</code>을 이용해 <code>i</code>를 출력해 보면 좀 더 명확해 진다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
 
@@ -393,15 +379,11 @@ int</pre></div>
 <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">main</span>() {
 	<span style="color:#007020;font-weight:bold">const</span> i = <span style="color:#40a070">256</span> <span style="color:#666">&lt;&lt;</span> <span style="color:#40a070">100</span>
 	fmt.<span style="color:#06287e">Println</span>(<span style="color:#007020">float64</span>(i))
-}</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">3.2451855365842673e+32</pre></div>
-<p>위 결과에서처럼 <code>i</code>에는 의도한 \(256 \times 2^{100}\) 값이 정확히 담겨있다. 내부적으로 <code>const</code> 처리를 어떻게 하는지에 대해서는 숙제로 남겨두고, 결과만 봤을 때는 <code>const</code>를 읽을 때 타입이 결정되는 것 같다.</p>
-
+}
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">3.2451855365842673e+32
+</code></pre></div><p>위 결과에서처럼 <code>i</code>에는 의도한 \(256 \times 2^{100}\) 값이 정확히 담겨있다. 내부적으로 <code>const</code> 처리를 어떻게 하는지에 대해서는 숙제로 남겨두고, 결과만 봤을 때는 <code>const</code>를 읽을 때 타입이 결정되는 것 같다.</p>
 <h1 id="iota에-대해-좀-더-자세히">iota에 대해 좀 더 자세히</h1>
-
 <h2 id="iota-초기값">iota 초기값</h2>
-
-<p><a href="https://tramamte.github.io/2018/06/07/constants/">상수</a>에서 <code>iota</code>에 대해 다음과 같이 적었다.</p>
-
 
 
 
@@ -414,7 +396,6 @@ int</pre></div>
 <p><code>iota</code>는 0부터 시작해 호출할 때마다 1씩 증가한다.</p>
 
 </blockquote>
-
 
 <p>아래 코드의 결과를 보면 이 문구는 명확해 보인다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
@@ -431,16 +412,17 @@ int</pre></div>
 	fmt.<span style="color:#06287e">Println</span>(Zero)
 	fmt.<span style="color:#06287e">Println</span>(One)
 	fmt.<span style="color:#06287e">Println</span>(Two)
-}</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">0
+}
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">0
 1
-2</pre></div>
-<p>그런데 C에서 <code>enum</code>은 초기값을 달리해 다음과 같이 쓸 수 있다.</p>
+2
+</code></pre></div><p>그런데 C에서 <code>enum</code>은 초기값을 달리해 다음과 같이 쓸 수 있다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#007020;font-weight:bold">enum</span> {
 	minus_one <span style="color:#666">=</span> <span style="color:#666">-</span><span style="color:#40a070">1</span>,	<span style="color:#60a0b0;font-style:italic">/* = -1 */</span>
 	zero,			<span style="color:#60a0b0;font-style:italic">/* = 0 */</span>
 	one				<span style="color:#60a0b0;font-style:italic">/* = 1 */</span>
-};</code></pre></div>
-<p>Go의 <code>iota</code>는 어떨까?</p>
+};
+</code></pre></div><p>Go의 <code>iota</code>는 어떨까?</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
 
 <span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#34;fmt&#34;</span>
@@ -454,28 +436,29 @@ int</pre></div>
 	
 	fmt.<span style="color:#06287e">Println</span>(zero)
 	fmt.<span style="color:#06287e">Println</span>(one)
-}</code></pre></div>
-<p><code>iota</code>를 <code>zero</code>에서 처음 호출했으니 <code>zero</code>가 0이 되면 좋을텐데 위 코드의 결과는 다음과 같다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">1
-2</pre></div>
-<p><code>zero</code>의 값이 0이 아닌 1이다. 좀 더 명확히 하기 위해 <code>minusTwo = -2</code>를 맨 앞에 추가하면 결과는 다음과 같다.</p>
+}
+</code></pre></div><p><code>iota</code>를 <code>zero</code>에서 처음 호출했으니 <code>zero</code>가 0이 되면 좋을텐데 위 코드의 결과는 다음과 같다.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">1
+2
+</code></pre></div><p><code>zero</code>의 값이 0이 아닌 1이다. 좀 더 명확히 하기 위해 <code>minusTwo = -2</code>를 맨 앞에 추가하면 결과는 다음과 같다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">const</span> (
 	minusTwo = <span style="color:#666">-</span><span style="color:#40a070">2</span>
 	minusOne = <span style="color:#666">-</span><span style="color:#40a070">1</span>
 	zero = <span style="color:#007020;font-weight:bold">iota</span>
 	one
-)</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">2
-3</pre></div>
-<p>즉, <code>iota</code>는 상수 그룹 안에서 어딘가에 쓰이면, 그 앞뒤로는 모두 암시적으로(implicitly) 모두 <code>iota</code>가 쓰인 것으로 본다. 따라서 위 예에서는 <code>zero</code>에 <code>iota</code>가 세 번째 쓰인 것으로 처리돼 2의 값을 갖게 된다. 이 규칙은 타입이 달라도 유효하다.</p>
+)
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">2
+3
+</code></pre></div><p>즉, <code>iota</code>는 상수 그룹 안에서 어딘가에 쓰이면, 그 앞뒤로는 모두 암시적으로(implicitly) 모두 <code>iota</code>가 쓰인 것으로 본다. 따라서 위 예에서는 <code>zero</code>에 <code>iota</code>가 세 번째 쓰인 것으로 처리돼 2의 값을 갖게 된다. 이 규칙은 타입이 달라도 유효하다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">const</span> (
 	minusTwo = <span style="color:#4070a0">&#34;-2&#34;</span>
 	minusOne = <span style="color:#4070a0">&#34;-1&#34;</span>
 	zero = <span style="color:#007020;font-weight:bold">iota</span>
 	one
-)</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">2
-3</pre></div>
-<h2 id="한-줄에-두-번-쓴-iota">한 줄에 두 번 쓴 iota</h2>
-
+)
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">2
+3
+</code></pre></div><h2 id="한-줄에-두-번-쓴-iota">한 줄에 두 번 쓴 iota</h2>
 <p>상수도 변수처럼 comma(,)를 이용해 한 줄에 복수개를 선언할 수 있다. 이 경우 <code>iota</code>의 값은 어떻게 될까?</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
 
@@ -491,14 +474,13 @@ int</pre></div>
 	fmt.<span style="color:#06287e">Println</span>(one)
 	fmt.<span style="color:#06287e">Println</span>(two)
 	fmt.<span style="color:#06287e">Println</span>(three)
-}</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">0
+}
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">0
 0
 1
-1</pre></div>
-<p><code>iota</code>는 호출할 때마다 값이 증가한다고 했는데 예상과 결과가 다르지 않은가.</p>
-
+1
+</code></pre></div><p><code>iota</code>는 호출할 때마다 값이 증가한다고 했는데 예상과 결과가 다르지 않은가.</p>
 <p>이에 대해 <a href="https://golang.org/ref/spec#ConstSpec">Go spec.</a>에는 다음과 같이 기술돼 있다.</p>
-
 
 
 
@@ -512,16 +494,15 @@ int</pre></div>
 
 </blockquote>
 
-
 <p>comma(,)로 구분해 붙여 쓴 복수개의 상수는 모두 하나의 <code>ConstSpec</code>에 속하기 때문에 같은 <code>iota</code>값을 갖게 된다. 단, 똑같이 한 줄에 썼더라도 세미콜론을 이용해 <code>ConstSpec</code>을 나눈 경우에는 <code>iota</code>값이 증가한다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">const</span> (
 	zero, one = <span style="color:#007020;font-weight:bold">iota</span>, <span style="color:#007020;font-weight:bold">iota</span>; two, three
-)</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">0
+)
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">0
 0
 1
-1</pre></div>
-<h2 id="중간값-지정">중간값 지정</h2>
-
+1
+</code></pre></div><h2 id="중간값-지정">중간값 지정</h2>
 <p>C에서 <code>enum</code>을 쓸 때는 중간값을 지정하는 것도 가능하다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#007020;font-weight:bold">enum</span> {
 	zero <span style="color:#666">=</span> <span style="color:#40a070">0</span>,
@@ -530,8 +511,8 @@ int</pre></div>
 	five <span style="color:#666">=</span> <span style="color:#40a070">5</span>,
 	six,      <span style="color:#60a0b0;font-style:italic">/* = 6 */</span>
 	seven     <span style="color:#60a0b0;font-style:italic">/* = 7 */</span>
-};</code></pre></div>
-<p>Go에서 <code>iota</code>를 쓸 때는 이 부분에서 주의해야 한다.</p>
+};
+</code></pre></div><p>Go에서 <code>iota</code>를 쓸 때는 이 부분에서 주의해야 한다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
 
 <span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#34;fmt&#34;</span>
@@ -548,18 +529,16 @@ int</pre></div>
 	
 	fmt.<span style="color:#06287e">Println</span>(six)
 	fmt.<span style="color:#06287e">Println</span>(seven)
-}</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">5
-5</pre></div>
-<p>상수 그룹에서 literal로 값을 지정하고 이후 상수들에는 값을 지정하지 않을 경우 이전 상수의 값을 그대로 따른다. 따라서 <code>six</code>와 <code>seven</code>은 모두 5가 된다. 그렇다고 <code>six</code>에 <code>iota</code>로 값을 지정해 주면&hellip; 4가 된다. 이러한 경우에는 상수 그룹을 나누는 것이 현명하다.</p>
-
+}
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">5
+5
+</code></pre></div><p>상수 그룹에서 literal로 값을 지정하고 이후 상수들에는 값을 지정하지 않을 경우 이전 상수의 값을 그대로 따른다. 따라서 <code>six</code>와 <code>seven</code>은 모두 5가 된다. 그렇다고 <code>six</code>에 <code>iota</code>로 값을 지정해 주면&hellip; 4가 된다. 이러한 경우에는 상수 그룹을 나누는 것이 현명하다.</p>
 <h2 id="iota-유지-범위">iota 유지 범위</h2>
-
 <p>위에서 <strong>상수 그룹</strong>이라는 용어를 사용했는데, <code>const</code> 뒤 괄호로 묶여 있는 단위를 의미한다. <code>iota</code>의 값은 이 단위 안에서만 유지된다. 따라서 아래 상수들의 값은 모두 0이다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">const</span> zero = <span style="color:#007020;font-weight:bold">iota</span>
 <span style="color:#007020;font-weight:bold">const</span> one = <span style="color:#007020;font-weight:bold">iota</span>
-<span style="color:#007020;font-weight:bold">const</span> two = <span style="color:#007020;font-weight:bold">iota</span></code></pre></div>
-<h2 id="복잡한-상수-그룹">복잡한 상수 그룹</h2>
-
+<span style="color:#007020;font-weight:bold">const</span> two = <span style="color:#007020;font-weight:bold">iota</span>
+</code></pre></div><h2 id="복잡한-상수-그룹">복잡한 상수 그룹</h2>
 <p>지금까지 확인한 Go의 상수 그룹과 <code>iota</code>는 <code>enum</code>에 비해 뭔가 불편해 보인다. 하지만 실망하지 마시라. 이런 것도 가능하다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
 
@@ -577,10 +556,12 @@ int</pre></div>
 	fmt.<span style="color:#06287e">Println</span>(kilobytes)
 	fmt.<span style="color:#06287e">Println</span>(megabytes)
 	fmt.<span style="color:#06287e">Println</span>(gigabytes)
-}</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">1
+}
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">1
 1024
 1048576
-1073741824</pre></div>
+1073741824
+</code></pre></div>
 
   
 
@@ -593,12 +574,6 @@ int</pre></div>
 	
 	<li><a href="https://tramamte.github.io/2018/05/30/fun-semicolons/">간단하거나, 복잡하거나. 세미콜론</a></li>
 	
-	<li><a href="https://tramamte.github.io/2018/05/28/start-go/">시작 Go</a></li>
-	
-	<li><a href="https://tramamte.github.io/2018/06/07/constants/">상수</a></li>
-	
-	<li><a href="https://tramamte.github.io/2018/06/05/types/">타입</a></li>
-	
   </ul>
 </div>
 
@@ -607,13 +582,13 @@ int</pre></div>
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24">
     
-    <a href="https://tramamte.github.io/2018/06/07/constants/"><i class="fas fa-angle-left"></i></a>
+    <a href="https://tramamte.github.io/2018/06/07/draft-future/"><i class="fas fa-angle-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://tramamte.github.io/2018/06/07/constants/">상수</a>
+      <a href="https://tramamte.github.io/2018/06/07/draft-future/">Draft, Future 포스트 확인 방법</a>
     </nav>
     
   </div>

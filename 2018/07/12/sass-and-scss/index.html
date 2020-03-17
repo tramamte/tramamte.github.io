@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="스마트한 CSS 개발">
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.65.3" />
 
   <title>CSS 개발, Sass &amp; SCSS 소개 &middot; Awesome Patrick</title>
 
@@ -261,26 +261,38 @@
 </div>
 
   
+<script>
+  function toggleToc() {
+    var x = document.getElementById("toc");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+  }
+</script>
+
+<div class="post-meta">
+<div>
+  <i class="fas fa-file-alt fa-fw"></i>
+  <a href="javascript:toggleToc();">Table of Contents</a>
+</div>
+<div id="toc" style="display: none;"><nav id="TableOfContents"></nav></div>
+</div>
+
 
 
   <blockquote>
 <p>CSS를 개발해? CSS가 개발까지 필요한거였어?</p>
 </blockquote>
-
 <p>웹 기술을 이용한 프론트엔드 개발에 익숙하지 않은 개발자라면 유사한 의문을 품을 수 있을께다. 지금 이 글을 쓰고 있는 본인도 웹 개발에는 문외한이고, Awesome Patrick을 개설하면서 겨우 최근의 웹 기술을 조금 맛 본 실정이다.</p>
-
 <p>JavaScript 등을 이용해 네이티브앱에 버금가면서도 개발 속도도 빠르고 멀티 플랫폼 지원도 쉽게 할 수 있는 여러 도구들이 등장했지만,</p>
-
 <blockquote>
 <p>이름은 들어봤어. 네이티브 코딩으로 다 할 줄 알고 더 복잡한 고급 기능들도 쓸 수 있는데, 엑스칼리버 두고 뭐하러 커터칼을 써?</p>
 </blockquote>
-
 <p>라며 공부를 게을리 했던 것이 사실이다.</p>
-
 <p>그런데, 모든 앱을 개발하는데 엑스칼리버가 필요한 것은 아니며, 커터칼처럼 보였던 것이 실은 <a href="https://ko.wikipedia.org/wiki/%EB%A7%A5%EA%B0%80%EC%9D%B4%EB%B2%84">맥 형님</a>이 들고 다니던 <a href="https://ko.wikipedia.org/wiki/%EC%8A%A4%EC%9C%84%EC%8A%A4_%EA%B5%B0%EC%9A%A9_%EC%B9%BC">스위스 아미 나이프</a>였더라. 늦었다 실망 말고 공부하자.</p>
-
-<hr />
-
+<hr>
 
 
 
@@ -296,19 +308,14 @@
 
 </div>
 
-
 <p>CSS라는 용어는 굳이 웹 개발자가 아니더라도 들어는 봤을 것이다. 간단히 얘기하면 <strong>대상 문서의 서식을 정의한 문서</strong> 정도 되겠다. 워드프로세서를 이용해 글을 쓸 때, 전체 문서의 글꼴은 맑은고딕, 본문의 글자 크기는 10포인트, 제목의 글자 크기는 12포인트에 굵게, 단락의 첫 글자는 한 칸 띄고 시작&hellip; 등을 정의하는 것처럼 CSS도 대상 문서&mdash;주로 HTML 문서&mdash;의 서식만을 따로 정의한 것이다.</p>
-
 <p>그런데 이런 서식을 개발한다? 워드프로세서의 예로 돌아가 보자.</p>
-
 <ul>
 <li>본문은 10포인트 검은색 글자</li>
 <li>표의 캡션은 9포인트 회색 글자</li>
 <li>표의 내용은 10포인트 회색 글자</li>
 </ul>
-
-<p>문서의 서식이 위와 같다면, &ldquo;검은색&rdquo;, &ldquo;회색&rdquo;, &ldquo;10포인트&rdquo;, &ldquo;9포인트&rdquo;를 각각 변수에 담고 싶지 않은가? &lsquo;표&rsquo;라는 주제 아래에 &lsquo;캡션&rsquo;과 &lsquo;내용&rsquo;을 묶고 싶지 않은가? Sass를 사용하면 바로 이런 것이 가능하다. 정리하면,</p>
-
+<p>문서의 서식이 위와 같다면, &ldquo;검은색&rdquo;, &ldquo;회색&rdquo;, &ldquo;10포인트&rdquo;, &ldquo;9포인트&quot;를 각각 변수에 담고 싶지 않은가? &lsquo;표'라는 주제 아래에 &lsquo;캡션'과 &lsquo;내용'을 묶고 싶지 않은가? Sass를 사용하면 바로 이런 것이 가능하다. 정리하면,</p>
 
 
 
@@ -322,11 +329,8 @@
 
 </blockquote>
 
-
 <p>이 바로 Sass이다. 공식 명칭이 첫 글자만 대문자인 <strong>Sass</strong>이다. <em>왜 나머지는 소문자로 쓰는거지?</em></p>
-
 <p><a href="http://www.sass-lang.com/">공식 사이트</a>에서는 다음과 같이 설명하고 있다.</p>
-
 
 
 
@@ -340,40 +344,31 @@
 
 </blockquote>
 
-
 <p>예상했겠지만 Sass 언어로 작성한 원본 문서를 CSS로 변환해 주는 도구가 필요하다.</p>
-
 <p>이 과정이 마치 C 컴파일러가 소스 파일을 목적 파일로 컴파일하는 과정과 비슷해, compile이라 하는 사람도 있고&mdash;공식 사이트에서도 compile이라 표현하고 있다&mdash;, 좀 더 파고들어 원본과 결과가 모두 사람이 읽을 수 있는 형태이니 pre-processing이라 하는 사람도 있는 것 같다. 용어야 뭐가 중요한가.</p>
-
 <p>공식 사이트에는 세 가지 변환 도구가 있는데, 각각 Dart로 구현된 Dart Sass, C/C++로 구현된 LibSass, Ruby로 구현된 Ruby Sass이다. 최초 구현은 Ruby Sass였는데, 현재는 Dart Sass가 primary 구현이 되며 Ruby Sass는 deprecate  단계에 있다. LibSass는 Sass를 여기저기서 다 사용할 수 있도록 Ruby Sass를 포팅한 것인데, 목적 그대로 wrapper를 통해 다양한 언어에서 사용되고 있고, 심지어 Ruby wrapper도 있다.</p>
-
-<hr />
-
+<hr>
 <p>그럼 SCSS는 뭐냐?</p>
-
 <p>결론부터 얘기하면 SCSS는 Sass의 또 다른 문법이다. 모든 언어에는 고유의 문법이 있듯이 Sass도 문법이 있는데, 협의에서 그 문법이 다시 Sass와 SCSS로 나뉜다. Sass 문법은 구형, SCSS 문법은 신형이라 생각하면 편하다.</p>
-
 <p>우선 CSS가 생긴 것을 보면,</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#60a0b0;font-style:italic">/* css */</span>
 .<span style="color:#0e84b5;font-weight:bold">my-class</span> {
     <span style="color:#007020;font-weight:bold">color</span>: <span style="color:#007020;font-weight:bold">black</span>;
     <span style="color:#007020;font-weight:bold">border-color</span>: <span style="color:#007020;font-weight:bold">gray</span>;
-}</code></pre></div>
-<p>이렇게 중괄호({})와 세미콜론(;)을 사용한다. 그런데 Sass의 최초 문법은 indentation과 줄넘김을 사용했다.</p>
+}
+</code></pre></div><p>이렇게 중괄호({})와 세미콜론(;)을 사용한다. 그런데 Sass의 최초 문법은 indentation과 줄넘김을 사용했다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#60a0b0;font-style:italic">/* sass */</span>
 <span style="color:#0e84b5;font-weight:bold">.my-class</span>
 	<span style="color:#062873;font-weight:bold">color</span><span style="color:#555;font-weight:bold">:</span> <span style="color:#062873;font-weight:bold">black</span>
-	<span style="color:#062873;font-weight:bold">border-color</span><span style="color:#555;font-weight:bold">:</span> <span style="color:#062873;font-weight:bold">gray</span></code></pre></div>
-<p>이걸 CSS와 비슷하게 중괄호와 세미콜론을 사용하도록 다시 만든 것이 바로 SCSS이다.</p>
+	<span style="color:#062873;font-weight:bold">border-color</span><span style="color:#555;font-weight:bold">:</span> <span style="color:#062873;font-weight:bold">gray</span>
+</code></pre></div><p>이걸 CSS와 비슷하게 중괄호와 세미콜론을 사용하도록 다시 만든 것이 바로 SCSS이다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scss" data-lang="scss"><span style="color:#60a0b0;font-style:italic">/* scss */</span>
 <span style="color:#0e84b5;font-weight:bold">.my-class</span> {
 	<span style="color:#062873;font-weight:bold">color</span><span style="color:#555;font-weight:bold">:</span> <span style="color:#062873;font-weight:bold">black</span>;
     <span style="color:#062873;font-weight:bold">border-color</span><span style="color:#555;font-weight:bold">:</span> <span style="color:#062873;font-weight:bold">gray</span>;
-}</code></pre></div>
-<p>위 예에서 보는 것처럼 Sass, SCSS에서만 제공하는 기능을 사용하지 않았을 경우 SCSS는 CSS와 100% 동일한 형태가 되지만, Sass와 CSS는 서로 다른 모양이다. 그래서 CSS는 그 자체로 완벽한 SCSS 원본 파일이 된다.</p>
-
-<hr />
-
+}
+</code></pre></div><p>위 예에서 보는 것처럼 Sass, SCSS에서만 제공하는 기능을 사용하지 않았을 경우 SCSS는 CSS와 100% 동일한 형태가 되지만, Sass와 CSS는 서로 다른 모양이다. 그래서 CSS는 그 자체로 완벽한 SCSS 원본 파일이 된다.</p>
+<hr>
 <p>문법을 학습하려면 <a href="http://www.sass-lang.com/documentation/file.SASS_REFERENCE.html">여기</a>로&hellip;</p>
 
 
@@ -398,13 +393,13 @@
   <div class="pure-u-10-24" style="text-align: right;">
     
     <nav class="next">
-      <a href="https://tramamte.github.io/2018/07/15/struct-basic/">구조체 기초</a>
+      <a href="https://tramamte.github.io/2018/07/20/diffie-hellman/">중학교 수학으로 이해하는 디피-헬만 키 교환 (Diffie-Hellman Key Exchange)</a>
     </nav>
     
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
     
-    <a href="https://tramamte.github.io/2018/07/15/struct-basic/"><i class="fas fa-angle-right"></i></a>
+    <a href="https://tramamte.github.io/2018/07/20/diffie-hellman/"><i class="fas fa-angle-right"></i></a>
     
   </div>
 </div>

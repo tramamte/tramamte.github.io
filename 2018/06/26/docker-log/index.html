@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="컨테이너 프로세스가 출력하는 로그 보기">
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.65.3" />
 
   <title>Docker container 로그 보기 &middot; Awesome Patrick</title>
 
@@ -259,6 +259,25 @@
 </div>
 
   
+<script>
+  function toggleToc() {
+    var x = document.getElementById("toc");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+  }
+</script>
+
+<div class="post-meta">
+<div>
+  <i class="fas fa-file-alt fa-fw"></i>
+  <a href="javascript:toggleToc();">Table of Contents</a>
+</div>
+<div id="toc" style="display: none;"><nav id="TableOfContents"></nav></div>
+</div>
+
 
 
   <p>컨테이너 내 프로세스가 STDOUT, STDERR로 출력하는 로그 확인</p>
@@ -272,9 +291,10 @@ Options:
       --details        Show extra details provided to logs
   -f, --follow         Follow log output
       --help           Print usage
-      --since string   Show logs since timestamp <span style="color:#666">(</span>e.g. <span style="color:#40a070">2013</span>-01-02T13:23:37<span style="color:#666">)</span> or relative <span style="color:#666">(</span>e.g. 42m <span style="color:#007020;font-weight:bold">for</span> <span style="color:#40a070">42</span> minutes<span style="color:#666">)</span>
+      --since string   Show logs since timestamp <span style="color:#666">(</span>e.g. 2013-01-02T13:23:37<span style="color:#666">)</span> or relative <span style="color:#666">(</span>e.g. 42m <span style="color:#007020;font-weight:bold">for</span> <span style="color:#40a070">42</span> minutes<span style="color:#666">)</span>
       --tail string    Number of lines to show from the end of the logs <span style="color:#666">(</span>default <span style="color:#4070a0">&#34;all&#34;</span><span style="color:#666">)</span>
-  -t, --timestamps     Show timestamps</code></pre></div>
+  -t, --timestamps     Show timestamps
+</code></pre></div>
 
   
 

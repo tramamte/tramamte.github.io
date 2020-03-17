@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="이미지 동시 다운로드 개수 조절하기">
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.65.3" />
 
   <title>Docker 동시 다운로드 개수 조절 &middot; Awesome Patrick</title>
 
@@ -259,21 +259,39 @@
 </div>
 
   
+<script>
+  function toggleToc() {
+    var x = document.getElementById("toc");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+  }
+</script>
+
+<div class="post-meta">
+<div>
+  <i class="fas fa-file-alt fa-fw"></i>
+  <a href="javascript:toggleToc();">Table of Contents</a>
+</div>
+<div id="toc" style="display: none;"><nav id="TableOfContents"></nav></div>
+</div>
+
 
 
   <p><code>docker pull</code> 명령으로 이미지를 다운로드하면 기본적으로 동시에 3개의 파일을 동시에 내려받는다. 그런데 네트워크 환경이 좋지 않거나 대역폭이 제한돼 있으면 종종 타임아웃이 발생해 더 이상 내려받지 않고 정지해 있는 상황이 발생하다. 이런 경우에는 동시 다운로드 개수를 낮추면 문제를 해결할 수 있다.</p>
-
 <p>동시 다운로드 개수는 <a href="https://tramamte.github.io/2018/05/31/docker-change-root/">루트 디렉토리를 변경</a>하는 것처럼 docker 데몬의 시작 옵션을 변경해 조절할 수 있다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dockerd --help
 ...
 --max-concurrent-downloads int    Set the max concurrent downloads <span style="color:#007020;font-weight:bold">for</span>
-                                  each pull <span style="color:#666">(</span>default <span style="color:#40a070">3</span><span style="color:#666">)</span>
-...</code></pre></div>
-<p>기본값이 3으로 지정된 <code>--max-concurrent-downloads</code>를 원하는 값으로 변경하면 된다.</p>
-
+                                  each pull <span style="color:#666">(</span>default 3<span style="color:#666">)</span>
+...
+</code></pre></div><p>기본값이 3으로 지정된 <code>--max-concurrent-downloads</code>를 원하는 값으로 변경하면 된다.</p>
 <p>systemd를 사용하는 Ubuntu의 경우에는  /lib/systemd/system/docker.service 파일의 ExecStart에 다음과 같이 값을 추가하면 된다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#60a0b0;font-style:italic"># ExecStart=/usr/bin/dockerd -H fd://</span>
-<span style="color:#bb60d5">ExecStart</span><span style="color:#666">=</span>/usr/bin/dockerd -H fd:// --max-concurrent-downloads <span style="color:#40a070">1</span></code></pre></div>
+<span style="color:#bb60d5">ExecStart</span><span style="color:#666">=</span>/usr/bin/dockerd -H fd:// --max-concurrent-downloads <span style="color:#40a070">1</span>
+</code></pre></div>
 
   
 
@@ -298,13 +316,13 @@
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24">
     
-    <a href="https://tramamte.github.io/2018/08/28/map/"><i class="fas fa-angle-left"></i></a>
+    <a href="https://tramamte.github.io/2018/08/20/hanks-oven-06/"><i class="fas fa-angle-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://tramamte.github.io/2018/08/28/map/">맵</a>
+      <a href="https://tramamte.github.io/2018/08/20/hanks-oven-06/">피자 화덕 만들기 6</a>
     </nav>
     
   </div>

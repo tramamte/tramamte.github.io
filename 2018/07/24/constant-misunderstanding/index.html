@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="C/C&#43;&#43;, Java 개발자들의 상수에 대한 오해 풀기">
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.65.3" />
 
   <title>상수에 대한 오해 &middot; Awesome Patrick</title>
 
@@ -273,68 +273,42 @@
   <i class="fas fa-file-alt fa-fw"></i>
   <a href="javascript:toggleToc();">Table of Contents</a>
 </div>
-<div id="toc" style="display: none;"><nav id="TableOfContents">
-<ul>
-<li><a href="#변수는-변수-상수는-상수">변수는 변수, 상수는 상수</a></li>
-</ul>
-</nav></div>
+<div id="toc" style="display: none;"><nav id="TableOfContents"></nav></div>
 </div>
 
 
 
-  
-
-<p>상수에 대해서만 벌써 네 번째 글이다.</p>
-
-<ul>
-<li><a href="https://tramamte.github.io/2018/06/07/constants/">상수</a></li>
-<li><a href="https://tramamte.github.io/2018/06/07/fun-constants/">별 것 없을 것 같은 상수의 별 것</a></li>
-<li><a href="https://tramamte.github.io/2018/07/03/deep-inside-constants/">정수형 상수의 내부 처리</a></li>
-</ul>
-
-<p>그만큼 Go의 상수는 C/C++이나 Java를 사용했던 개발자가 오해할만한 요소를 많이 포함하고 있다.</p>
-
-<p>우선 C/C++에서 상수를 만드는 키워드인 <code>const</code>와 <code>final</code>에 대해 간략히 정리해보자.</p>
-
-<hr />
-
+  <p>우선 C/C++에서 상수를 만드는 키워드인 <code>const</code>와 <code>final</code>에 대해 간략히 정리해보자.</p>
+<hr>
 <p>C/C++ <code>const</code>의 역할</p>
-
 <ul>
 <li>변수의 읽기전용 설정 = 상수화</li>
 <li>(C++) 멤버 함수의 멤버 변수 변경 금지</li>
 </ul>
-
 <p>Java <code>final</code>의 역할</p>
-
 <ul>
 <li>변수의 읽기전용 설정 = 상수화</li>
 <li>메서드의 오버라이딩 금지</li>
 <li>클래스의 상속 금지</li>
 </ul>
-
-<hr />
-
+<hr>
 <p>다른 것들은 같은 키워드를 사용할 뿐 <strong>상수</strong>라 부르지 않고, 사실 Go에는 없는 기능들이니 첫 번째 역할에 대해서만 살펴보자.</p>
-
 <p>Go와의 확실한 구분을 위해 일부러 <strong>변수의 읽기전용화</strong>라 표현했다. C/C++, Java에서 상수는 변수를 만드는 것과 동일하게 이름과 타입을 정한 후 최초 한 번 값을 설정하면 읽기전용이 돼 변경이 불가능하다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">int</span> i <span style="color:#666">=</span> <span style="color:#40a070">10</span>;</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="">final int </span>i <span style="color:#666">=</span> 10;</code></pre></div>
-<p>변수를 읽기전용화한 것이기 때문에 다음과 같은 문법은 당연하며 자연스럽다.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#007020;font-weight:bold">const</span> <span style="color:#902000">int</span> i <span style="color:#666">=</span> <span style="color:#40a070">10</span>;
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#007020;font-weight:bold">final</span> <span style="color:#902000">int</span> i <span style="color:#666">=</span> 10<span style="color:#666">;</span>
+</code></pre></div><p>변수를 읽기전용화한 것이기 때문에 다음과 같은 문법은 당연하며 자연스럽다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#60a0b0;font-style:italic">// c
 </span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">struct</span> MyStruct
 {
 	<span style="color:#902000">int</span> i;
 };
 
-<span style="color:#007020;font-weight:bold">const</span> <span style="color:#007020;font-weight:bold">struct</span> MyStruct my <span style="color:#666">=</span> {<span style="color:#40a070">0</span>};</code></pre></div>
-<blockquote>
+<span style="color:#007020;font-weight:bold">const</span> <span style="color:#007020;font-weight:bold">struct</span> MyStruct my <span style="color:#666">=</span> {<span style="color:#40a070">0</span>};
+</code></pre></div><blockquote>
 <p>변수를 만들 수 있으면 상수도 만들 수 있다.</p>
 </blockquote>
-
 <p>이 당연했던 사실이 Go에서는 오해의 요인이 된다.</p>
-
 <h1 id="변수는-변수-상수는-상수">변수는 변수, 상수는 상수</h1>
-
 <p>위의 C 예처럼 Go에서 구조체를 상수로 만들어 보자.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
 
@@ -347,11 +321,10 @@
 <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">main</span>() {
 	<span style="color:#007020;font-weight:bold">const</span> my MyStruct = MyStruct{<span style="color:#40a070">10</span>}
 	fmt.<span style="color:#06287e">Println</span>(my.i)
-}</code></pre></div>
-<p>이 코드는 다음과 같은 오류가 발생한다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">./main.go:10:8: const initializer MyStruct literal is not a constant</pre></div>
-<p>이와 같이 Go에서는 타입이라고 해서, 즉 변수를 만들 수 있다고 해서, 상수를 만들 수 있는 것은 아니다. Go가 지원하는 상수의 종류는 boolean, rune, integer, floating-point, complex, string 등 6가지 밖에 없다. <a href="https://golang.org/ref/spec#Constants">Go spec.</a>의 관련 내용은 다음과 같다.</p>
-
+}
+</code></pre></div><p>이 코드는 다음과 같은 오류가 발생한다.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">./main.go:10:8: const initializer MyStruct literal is not a constant
+</code></pre></div><p>이와 같이 Go에서는 타입이라고 해서, 즉 변수를 만들 수 있다고 해서, 상수를 만들 수 있는 것은 아니다. Go가 지원하는 상수의 종류는 boolean, rune, integer, floating-point, complex, string 등 6가지 밖에 없다. <a href="https://golang.org/ref/spec#Constants">Go spec.</a>의 관련 내용은 다음과 같다.</p>
 
 
 
@@ -365,11 +338,8 @@
 
 </blockquote>
 
-
 <p><a href="https://tramamte.github.io/2018/07/03/deep-inside-constants/">정수형 상수의 내부 처리</a>에서 확인한 것처럼 정수형 상수라고 해서 그 타입도 <code>int</code>가 되는 것은 아니다. 즉, Go에서 상수는 <strong>읽기전용 변수가 아니라</strong> 그냥 <strong>상수</strong>인 것이다.</p>
-
 <p>Go spec.에 상수에 대한 구현 요구사항이 있으니 마지막으로 확인하고 마무리하자.</p>
-
 
 
 
@@ -380,7 +350,6 @@
 
 
 <p>Implementation restriction: Although numeric constants have arbitrary precision in the language, a compiler may implement them using an internal representation with limited precision. That said, every implementation must:</p>
-
 <ul>
 <li>Represent integer constants with at least 256 bits.</li>
 <li>Represent floating-point constants, including the parts of a complex constant, with a mantissa of at least 256 bits and a signed binary exponent of at least 16 bits.</li>
@@ -388,7 +357,6 @@
 <li>Give an error if unable to represent a floating-point or complex constant due to overflow.</li>
 <li>Round to the nearest representable constant if unable to represent a floating-point or complex constant due to limits on precision.</li>
 </ul>
-
 <p>These requirements apply both to literal constants and to the result of evaluating constant expressions.</p>
 
 </blockquote>

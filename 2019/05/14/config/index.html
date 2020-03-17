@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="데몬 설정 파일">
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.65.3" />
 
   <title>Docker 설정 파일 &middot; Awesome Patrick</title>
 
@@ -255,16 +255,35 @@
 </div>
 
   
+<script>
+  function toggleToc() {
+    var x = document.getElementById("toc");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+  }
+</script>
+
+<div class="post-meta">
+<div>
+  <i class="fas fa-file-alt fa-fw"></i>
+  <a href="javascript:toggleToc();">Table of Contents</a>
+</div>
+<div id="toc" style="display: none;"><nav id="TableOfContents"></nav></div>
+</div>
+
 
 
   <p>Docker 데몬의 설정을 변경하기 위해 systemd service 파일을 <a href="https://tramamte.github.io/2018/05/31/docker-change-root/">직접 수정하는 방법</a>은 해당 데몬을 업데이트할 경우 모두 초기화되기 때문에 불편함이 있다.</p>
-
 <p><strong>위치</strong></p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">/etc/docker/daemon.json</code></pre></div>
-<p><strong>내용</strong></p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">/etc/docker/daemon.json
+</code></pre></div><p><strong>내용</strong></p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#062873;font-weight:bold">&#34;data-root&#34;</span>: <span style="color:#4070a0">&#34;/where/you/want&#34;</span>
-}</code></pre></div>
+}
+</code></pre></div>
 
   
 

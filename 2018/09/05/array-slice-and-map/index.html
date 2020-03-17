@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Array, slice and map">
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.65.3" />
 
   <title>배열, 슬라이스 그리고 맵 &middot; Awesome Patrick</title>
 
@@ -274,26 +274,17 @@
   <a href="javascript:toggleToc();">Table of Contents</a>
 </div>
 <div id="toc" style="display: none;"><nav id="TableOfContents">
-<ul>
-<li><a href="#크기">크기</a></li>
-<li><a href="#복사-또는-참조">복사 또는 참조</a></li>
-<li><a href="#반복">반복</a>
-<ul>
-<li><a href="#맵에서-키-추출">맵에서 키 추출</a></li>
-<li><a href="#range">range</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#맵에서-키-추출">맵에서 키 추출</a></li>
+    <li><a href="#range">range</a></li>
+  </ul>
 </nav></div>
 </div>
 
 
 
-  
-
-<p>Go의 built-in 자료구조인 <a href="https://tramamte.github.io/2018/08/06/array/">배열</a>, <a href="https://tramamte.github.io/2018/08/21/slice/">슬라이스</a>, <a href="https://tramamte.github.io/2018/08/28/map/">맵</a>에 대해 좀 더 자세히 살펴보자.</p>
-
+  <p>Go의 built-in 자료구조인 배열, 슬라이스, 맵에 대해 자세히 살펴보자.</p>
 <h1 id="크기">크기</h1>
-
 <p>배열, 슬라이스, 맵은 모두 복수의 요소를 저장할 수 있다. 따라서 몇 개의 요소를 가지고 있는지가 중요하다. 세 타입은 모두 <code>len()</code> 함수를 이용해 포함하고 있는 요소의 개수를 확인할 수 있다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
 
@@ -306,12 +297,12 @@
 	fmt.<span style="color:#06287e">Println</span>(<span style="color:#007020">len</span>(a))
 	fmt.<span style="color:#06287e">Println</span>(<span style="color:#007020">len</span>(s))
 	fmt.<span style="color:#06287e">Println</span>(<span style="color:#007020">len</span>(m))	
-}</code></pre></div>
-<p>위 예는 다음을 출력한다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">3
+}
+</code></pre></div><p>위 예는 다음을 출력한다.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">3
 3
-3</pre></div>
-<p>슬라이스나 맵에 비해 배열은 이미 크기를 지정하고 있다는 점에 주목할 필요가 있다. 즉, 배열 타입의 변수는 값을 넣지 않아도 이미 생성 시점에 크기가 정해져 있다.</p>
+3
+</code></pre></div><p>슬라이스나 맵에 비해 배열은 이미 크기를 지정하고 있다는 점에 주목할 필요가 있다. 즉, 배열 타입의 변수는 값을 넣지 않아도 이미 생성 시점에 크기가 정해져 있다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
 
 <span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#34;fmt&#34;</span>
@@ -323,12 +314,12 @@
 	fmt.<span style="color:#06287e">Println</span>(<span style="color:#007020">len</span>(a))
 	fmt.<span style="color:#06287e">Println</span>(<span style="color:#007020">len</span>(s))
 	fmt.<span style="color:#06287e">Println</span>(<span style="color:#007020">len</span>(m))
-}</code></pre></div>
-<p>위 예는 다음을 출력한다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">3
+}
+</code></pre></div><p>위 예는 다음을 출력한다.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">3
 0
-0</pre></div>
-<p>슬라이스와 맵은 동적으로 조절이 가능한 반면 배열은 정적 타입이다. 따라서 슬라이스와 맵은 크기만으로 몇 개의 요소가 저장돼 있는지 알 수 있지만 배열은 불가능하다.</p>
+0
+</code></pre></div><p>슬라이스와 맵은 동적으로 조절이 가능한 반면 배열은 정적 타입이다. 따라서 슬라이스와 맵은 크기만으로 몇 개의 요소가 저장돼 있는지 알 수 있지만 배열은 불가능하다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
 
 <span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#34;fmt&#34;</span>
@@ -342,17 +333,16 @@
 	m[<span style="color:#4070a0">&#34;A&#34;</span>] = <span style="color:#40a070">1</span>
 	fmt.<span style="color:#06287e">Println</span>(<span style="color:#007020">len</span>(s))
 	fmt.<span style="color:#06287e">Println</span>(<span style="color:#007020">len</span>(m))
-}</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">0
+}
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">0
 0
 1
-1</pre></div>
-<h1 id="복사-또는-참조">복사 또는 참조</h1>
-
+1
+</code></pre></div><h1 id="복사-또는-참조">복사 또는 참조</h1>
 <p>배열을 다른 배열 변수에 대입하면 요소값이 복사된다.</p>
-
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -376,14 +366,12 @@
 }</code></pre></td></tr></table>
 </div>
 </div>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">3 4</pre></div>
-<p>위 예는 7라인에서 <code>a2</code> 변수에 <code>a1</code>을 대입하면서 각 요소들이 모두 복사되기 때문에 <code>a2</code>의 세 번째 요소값을 4로 변경하더라도&mdash;8라인&mdash; <code>a1</code>에 영향을 주지 않는다.</p>
-
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">3 4
+</code></pre></div><p>위 예는 7라인에서 <code>a2</code> 변수에 <code>a1</code>을 대입하면서 각 요소들이 모두 복사되기 때문에 <code>a2</code>의 세 번째 요소값을 4로 변경하더라도&mdash;8라인&mdash; <code>a1</code>에 영향을 주지 않는다.</p>
 <p>반면 슬라이스나 맵은 참조형이다.</p>
-
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
@@ -419,9 +407,9 @@
 }</code></pre></td></tr></table>
 </div>
 </div>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">4 4
-4 4</pre></div>
-<p>슬라이스는 슬라이싱을 이용해 일부 요소만을 참조할 수도 있는데 이 경우 주의할 점이 있다. 다음 예를 보자.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">4 4
+4 4
+</code></pre></div><p>슬라이스는 슬라이싱을 이용해 일부 요소만을 참조할 수도 있는데 이 경우 주의할 점이 있다. 다음 예를 보자.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
 
 <span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#34;fmt&#34;</span>
@@ -429,8 +417,8 @@
 <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">main</span>() {
 	s1 <span style="color:#666">:=</span> []<span style="color:#902000">int</span> {<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">3</span>}
 	s2 <span style="color:#666">:=</span> s1[<span style="color:#40a070">0</span>:<span style="color:#40a070">1</span>]
-}</code></pre></div>
-<p><code>s2</code>는 슬라이싱을 이용해 <code>s1</code>의 첫번째 요소만을 참조하고 있다. 따라서 이 경우 <code>s2[0]</code>의 값을 변경하면 <code>s1[0]</code>의 값 역시 변경된다. 또, <code>s2</code>의 두 번째 요소&mdash;<code>s2[1]</code>&mdash;에 접근하면 runtime error가 발생한다. 그런데 <code>append()</code>를 이용해 <code>s2</code>에 두 번째 요소값을 추가하면 어떻게 될까?</p>
+}
+</code></pre></div><p><code>s2</code>는 슬라이싱을 이용해 <code>s1</code>의 첫번째 요소만을 참조하고 있다. 따라서 이 경우 <code>s2[0]</code>의 값을 변경하면 <code>s1[0]</code>의 값 역시 변경된다. 또, <code>s2</code>의 두 번째 요소&mdash;<code>s2[1]</code>&mdash;에 접근하면 runtime error가 발생한다. 그런데 <code>append()</code>를 이용해 <code>s2</code>에 두 번째 요소값을 추가하면 어떻게 될까?</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
 
 <span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#34;fmt&#34;</span>
@@ -441,14 +429,12 @@
 	s2 = <span style="color:#007020">append</span>(s2, <span style="color:#40a070">4</span>)
 	fmt.<span style="color:#06287e">Println</span>(s1[<span style="color:#40a070">0</span>], s1[<span style="color:#40a070">1</span>], s1[<span style="color:#40a070">2</span>])
 	fmt.<span style="color:#06287e">Println</span>(s2[<span style="color:#40a070">0</span>], s2[<span style="color:#40a070">1</span>])
-}</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">1 4 3
-1 4</pre></div>
-<p>위와 같이 슬라이싱으로 일부 요소값만 참조했더라도 <code>append()</code>를 이용해 값을 추가하면 동시에 변경되는 것을 확인할 수 있다. 어떻게 쓰더라도 슬라이스는 참조형이다.</p>
-
+}
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">1 4 3
+1 4
+</code></pre></div><p>위와 같이 슬라이싱으로 일부 요소값만 참조했더라도 <code>append()</code>를 이용해 값을 추가하면 동시에 변경되는 것을 확인할 수 있다.</p>
 <h1 id="반복">반복</h1>
-
 <p>여러 개의 요소를 저장했으니 하나씩 반복해 저장된 값을 확인할 방법이 필요하다.</p>
-
 <p>배열과 슬라이스는 다음과 같이 값을 확인할 수 있다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
 
@@ -463,11 +449,9 @@
 	<span style="color:#007020;font-weight:bold">for</span> j <span style="color:#666">:=</span> <span style="color:#40a070">0</span>; j &lt; <span style="color:#007020">len</span>(s); j<span style="color:#666">++</span> {
 		fmt.<span style="color:#06287e">Println</span>(s[j])
 	}
-}</code></pre></div>
-<p>이 방식은 요소를 저장하기 위한 키&mdash;0부터 (길이 - 1)까지&mdash;를 알기 때문에 가능하다. 그런데 키를 모르는 맵의 경우에는 어떻게 구현할 수 있을까?</p>
-
+}
+</code></pre></div><p>이 방식은 요소를 저장하기 위한 키&mdash;0부터 (길이 - 1)까지&mdash;를 알기 때문에 가능하다. 그런데 키를 모르는 맵의 경우에는 어떻게 구현할 수 있을까?</p>
 <h2 id="맵에서-키-추출">맵에서 키 추출</h2>
-
 <p>키를 모르는 것이 문제라면 어떻게든 알아내면 된다. reflect 패키지를 사용하면 맵에서 키를 추출할 수 있다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
 
@@ -480,14 +464,12 @@
     m <span style="color:#666">:=</span> <span style="color:#007020;font-weight:bold">map</span>[<span style="color:#902000">string</span>]<span style="color:#902000">int</span> {<span style="color:#4070a0">&#34;a&#34;</span>:<span style="color:#40a070">0</span>, <span style="color:#4070a0">&#34;b&#34;</span>:<span style="color:#40a070">1</span>, <span style="color:#4070a0">&#34;c&#34;</span>:<span style="color:#40a070">2</span>}
     keys <span style="color:#666">:=</span> reflect.<span style="color:#06287e">ValueOf</span>(m).<span style="color:#06287e">MapKeys</span>()
 	fmt.<span style="color:#06287e">Println</span>(keys)
-}</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">[a b c]</pre></div>
-<p>하지만 이는 <em>미련한</em> 방법으로 꼭 키만 별도로 추출할 필요가 있는 경우가 아니라면 사용하지 않는다.</p>
-
+}
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[a b c]
+</code></pre></div><p>하지만 이는 <em>미련한</em> 방법으로 꼭 키만 별도로 추출할 필요가 있는 경우가 아니라면 사용하지 않는다.</p>
 <h2 id="range">range</h2>
-
-<p><a href="https://tramamte.github.io/2018/06/29/for-statement/">for 반복문</a>을 다시 보자. 한 가지 확인하지 않은 용법이 있다. 바로 RangeClause 용법이다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">RangeClause = [ ExpressionList &#34;=&#34; | IdentifierList &#34;:=&#34; ] &#34;range&#34; Expression .</pre></div>
-<p>배열, 슬라이스, 맵에 대해 <code>range</code> 명령은 두 가지 값을 반환하는데 첫 번째가 키, 두 번째가 값이다.</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">RangeClause = [ ExpressionList &#34;=&#34; | IdentifierList &#34;:=&#34; ] &#34;range&#34; Expression .
+</code></pre></div><p>배열, 슬라이스, 맵에 대해 <code>range</code> 명령은 두 가지 값을 반환하는데 첫 번째가 키, 두 번째가 값이다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#60a0b0;font-style:italic">// array
 </span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">package</span> main
 
@@ -498,9 +480,11 @@
 	<span style="color:#007020;font-weight:bold">for</span> i, v <span style="color:#666">:=</span> <span style="color:#007020;font-weight:bold">range</span> a {
 		fmt.<span style="color:#06287e">Println</span>(i, v)
 	}
-}</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">0 1
+}
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">0 1
 1 2
-2 3</pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#60a0b0;font-style:italic">// slice
+2 3
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#60a0b0;font-style:italic">// slice
 </span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">package</span> main
 
 <span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#34;fmt&#34;</span>
@@ -510,9 +494,11 @@
 	<span style="color:#007020;font-weight:bold">for</span> i, v <span style="color:#666">:=</span> <span style="color:#007020;font-weight:bold">range</span> s {
 		fmt.<span style="color:#06287e">Println</span>(i, v)
 	}
-}</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">0 1
+}
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">0 1
 1 2
-2 3</pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#60a0b0;font-style:italic">// map
+2 3
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#60a0b0;font-style:italic">// map
 </span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">package</span> main
 
 <span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#34;fmt&#34;</span>
@@ -522,11 +508,11 @@
 	<span style="color:#007020;font-weight:bold">for</span> i, v <span style="color:#666">:=</span> <span style="color:#007020;font-weight:bold">range</span> m {
 		fmt.<span style="color:#06287e">Println</span>(i, v)
 	}
-}</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">b 2
+}
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">b 2
 c 3
-a 1</pre></div>
-<p>맵은 순서가 보장되지 않는다는 점도 확인할 수 있다.</p>
-
+a 1
+</code></pre></div><p>맵은 순서가 보장되지 않는다는 점도 확인할 수 있다.</p>
 <p>항상 키와 값 모두가 필요한 것은 아니다. 둘 중 하나가 필요없는 경우에는 blank identifier를 대신 사용할 수 있다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
 
@@ -537,10 +523,11 @@ a 1</pre></div>
 	<span style="color:#007020;font-weight:bold">for</span> _, v <span style="color:#666">:=</span> <span style="color:#007020;font-weight:bold">range</span> m {
 		fmt.<span style="color:#06287e">Println</span>(v)
 	}
-}</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">2
+}
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">2
 3
-1</pre></div>
-<p>값이 불필요한 경우에는 blank identifer를 사용하지 않고 그냥 생략해도 된다. 즉, 복수의 반환값이 있는 경우에는 앞에서부터 차례로 값을 넣고, 남은 것들은 무시된다.</p>
+1
+</code></pre></div><p>값이 불필요한 경우에는 blank identifer를 사용하지 않고 그냥 생략해도 된다. 즉, 복수의 반환값이 있는 경우에는 앞에서부터 차례로 값을 넣고, 남은 것들은 무시된다.</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
 
 <span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#34;fmt&#34;</span>
@@ -550,9 +537,11 @@ a 1</pre></div>
 	<span style="color:#007020;font-weight:bold">for</span> i <span style="color:#666">:=</span> <span style="color:#007020;font-weight:bold">range</span> m {
 		fmt.<span style="color:#06287e">Println</span>(i)
 	}
-}</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">a
+}
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">a
 b
-c</pre></div>
+c
+</code></pre></div>
 
   
 
@@ -593,13 +582,13 @@ c</pre></div>
   <div class="pure-u-10-24" style="text-align: right;">
     
     <nav class="next">
-      <a href="https://tramamte.github.io/2018/09/20/defer/">호출 연기</a>
+      <a href="https://tramamte.github.io/2019/01/25/diet/">Docker 다이어트</a>
     </nav>
     
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
     
-    <a href="https://tramamte.github.io/2018/09/20/defer/"><i class="fas fa-angle-right"></i></a>
+    <a href="https://tramamte.github.io/2019/01/25/diet/"><i class="fas fa-angle-right"></i></a>
     
   </div>
 </div>
