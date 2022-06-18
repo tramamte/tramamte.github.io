@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2019 Patrick Yu. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 26 Nov 2019 12:36:17 +0900</lastBuildDate>
-    
-	<atom:link href="https://tramamte.github.io/topics/rambling/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 26 Nov 2019 12:36:17 +0900</lastBuildDate><atom:link href="https://tramamte.github.io/topics/rambling/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>빅데이터는 거품이다</title>
       <link>https://tramamte.github.io/2019/11/26/bd-is-bubble/</link>

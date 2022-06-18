@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2019 Patrick Yu. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 28 May 2018 19:06:37 +0900</lastBuildDate>
-    
-	<atom:link href="https://tramamte.github.io/tags/local/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 28 May 2018 19:06:37 +0900</lastBuildDate><atom:link href="https://tramamte.github.io/tags/local/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo Local Server 접속 방법</title>
       <link>https://tramamte.github.io/2018/05/28/hugo-local-server/</link>

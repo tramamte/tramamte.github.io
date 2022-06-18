@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="그것의 타입을 Go는 알고 있다.">
-  <meta name="generator" content="Hugo 0.65.3" />
+  <meta name="generator" content="Hugo 0.101.0" />
 
   <title>명시적이지 않은 듯 명시적인 Go &middot; Awesome Patrick</title>
 
@@ -279,82 +279,82 @@
 
 
   <p>Go는 변수를 선언할 때 초기값을 같이 입력하면 굳이 타입을 명시하지 않아도 된다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">var</span> i = <span style="color:#40a070">1</span>
-f <span style="color:#666">:=</span> <span style="color:#40a070">3.14</span>
-c <span style="color:#666">:=</span> <span style="color:#40a070">1.0</span> <span style="color:#666">+</span> <span style="color:#40a070">1.0i</span>
-</code></pre></div><p>그렇다면 이 경우 <code>i</code>, <code>f</code>, <code>c</code>의 타입은 각각 어떻게 될까?</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">var</span> i = <span style="color:#40a070">1</span>
+</span></span><span style="display:flex;"><span>f <span style="color:#666">:=</span> <span style="color:#40a070">3.14</span>
+</span></span><span style="display:flex;"><span>c <span style="color:#666">:=</span> <span style="color:#40a070">1.0</span> <span style="color:#666">+</span> <span style="color:#40a070">1.0i</span>
+</span></span></code></pre></div><p>그렇다면 이 경우 <code>i</code>, <code>f</code>, <code>c</code>의 타입은 각각 어떻게 될까?</p>
 <p>Go에서 변수의 타입을 확인하기 위해서는 <code>reflect</code> 패키지를 활용할 수 있다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
-
-<span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#34;fmt&#34;</span>
-<span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#34;reflect&#34;</span>
-
-<span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">main</span>() {
-	<span style="color:#007020;font-weight:bold">var</span> i = <span style="color:#40a070">1</span>
-	f <span style="color:#666">:=</span> <span style="color:#40a070">3.14</span>
-	c <span style="color:#666">:=</span> <span style="color:#40a070">1.0</span> <span style="color:#666">+</span> <span style="color:#40a070">1.0i</span>
-	
-	fmt.<span style="color:#06287e">Println</span>(i, reflect.<span style="color:#06287e">TypeOf</span>(i))
-	fmt.<span style="color:#06287e">Println</span>(f, reflect.<span style="color:#06287e">TypeOf</span>(f))
-	fmt.<span style="color:#06287e">Println</span>(c, reflect.<span style="color:#06287e">TypeOf</span>(c))
-}
-</code></pre></div><p>위 코드의 실행 결과는 다음과 같다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">1 int
-3.14 float64
-(1+1i) complex128
-</code></pre></div><p>결과에서 확인할 수 있는 것처럼 Go는 타입을 명시하지 않을 경우 실수에 대해서는 <code>float64</code>를, 복소수에 대해서는 <code>complex128</code>을 기본 타입으로 한다. 즉, 해당 값을 표시할 수 있는 가장 큰&mdash;가장 공간이 넓은&mdash; 타입을 선택하는데 정수에 대해서만은 <code>int64</code>가 아닌 <code>int</code>를 기본 타입으로 한다.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#34;reflect&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#007020;font-weight:bold">var</span> i = <span style="color:#40a070">1</span>
+</span></span><span style="display:flex;"><span>	f <span style="color:#666">:=</span> <span style="color:#40a070">3.14</span>
+</span></span><span style="display:flex;"><span>	c <span style="color:#666">:=</span> <span style="color:#40a070">1.0</span> <span style="color:#666">+</span> <span style="color:#40a070">1.0i</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#06287e">Println</span>(i, reflect.<span style="color:#06287e">TypeOf</span>(i))
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#06287e">Println</span>(f, reflect.<span style="color:#06287e">TypeOf</span>(f))
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#06287e">Println</span>(c, reflect.<span style="color:#06287e">TypeOf</span>(c))
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>위 코드의 실행 결과는 다음과 같다.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>1 int
+</span></span><span style="display:flex;"><span>3.14 float64
+</span></span><span style="display:flex;"><span>(1+1i) complex128
+</span></span></code></pre></div><p>결과에서 확인할 수 있는 것처럼 Go는 타입을 명시하지 않을 경우 실수에 대해서는 <code>float64</code>를, 복소수에 대해서는 <code>complex128</code>을 기본 타입으로 한다. 즉, 해당 값을 표시할 수 있는 가장 큰&mdash;가장 공간이 넓은&mdash; 타입을 선택하는데 정수에 대해서만은 <code>int64</code>가 아닌 <code>int</code>를 기본 타입으로 한다.</p>
 <p>그럼 타입을 명시하지 않고 선언한 변수에 다른 타입을 재할당하면 어떻게 될까?</p>
-<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="display:block;width:100%;background-color:#d8d8d8"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="background-color:#d8d8d8"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
-
-<span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#34;fmt&#34;</span>
-<span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#34;reflect&#34;</span>
-
-<span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">main</span>() {
-	<span style="color:#007020;font-weight:bold">var</span> i = <span style="color:#40a070">1</span>
-	f <span style="color:#666">:=</span> <span style="color:#40a070">3.14</span>
-	c <span style="color:#666">:=</span> <span style="color:#40a070">1.0</span> <span style="color:#666">+</span> <span style="color:#40a070">1.0i</span>
-	
-	fmt.<span style="color:#06287e">Println</span>(i, reflect.<span style="color:#06287e">TypeOf</span>(i))
-	fmt.<span style="color:#06287e">Println</span>(f, reflect.<span style="color:#06287e">TypeOf</span>(f))
-	fmt.<span style="color:#06287e">Println</span>(c, reflect.<span style="color:#06287e">TypeOf</span>(c))
-	
-	<span style="color:#007020;font-weight:bold">var</span> f1 <span style="color:#902000">float32</span> = <span style="color:#40a070">3.14</span>
-<span style="display:block;width:100%;background-color:#d8d8d8">	f = f1
-</span>}</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#4070a0">&#34;reflect&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#007020;font-weight:bold">var</span> i = <span style="color:#40a070">1</span>
+</span></span><span style="display:flex;"><span>	f <span style="color:#666">:=</span> <span style="color:#40a070">3.14</span>
+</span></span><span style="display:flex;"><span>	c <span style="color:#666">:=</span> <span style="color:#40a070">1.0</span> <span style="color:#666">+</span> <span style="color:#40a070">1.0i</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#06287e">Println</span>(i, reflect.<span style="color:#06287e">TypeOf</span>(i))
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#06287e">Println</span>(f, reflect.<span style="color:#06287e">TypeOf</span>(f))
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#06287e">Println</span>(c, reflect.<span style="color:#06287e">TypeOf</span>(c))
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#007020;font-weight:bold">var</span> f1 <span style="color:#902000">float32</span> = <span style="color:#40a070">3.14</span>
+</span></span><span style="display:flex; background-color:#d8d8d8"><span>	f = f1
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
 </div>
 </div>
 <p>위 코드는 다음과 같은 오류가 발생한다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">./main.go:16:5: cannot use f1 (type float32) as type float64 in assignment
-</code></pre></div><p>코드 상으로는 타입을 명시하지 않았지만 초기값을 넣으면서 이미 해당 변수는 <code>float64</code>라는 하나의 타입으로 고정된 것이다.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>./main.go:16:5: cannot use f1 (type float32) as type float64 in assignment
+</span></span></code></pre></div><p>코드 상으로는 타입을 명시하지 않았지만 초기값을 넣으면서 이미 해당 변수는 <code>float64</code>라는 하나의 타입으로 고정된 것이다.</p>
 <p>암시적 변환(implicit conversion)을 지원하는 다른 언어 개발자들의 불만이 들린다.</p>
 <blockquote>
 <p><code>float32</code>를 <code>float64</code>에 넣겠다는데, 이정도는 자동으로 해줘야 하는거 아니야?</p>
 </blockquote>
 <p>하지만 Go는 모든 형변환(type conversion)에 대해 명시적인 명령을 강제한다.</p>
 <p>Go의 형변환 방법은 다음과 같다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#06287e">T</span>(v)
-</code></pre></div><p>눈 크게 뜨고 보시라. 괄호가 저기가 아니고 여기다. 함수처럼 사용한다.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#06287e">T</span>(v)
+</span></span></code></pre></div><p>눈 크게 뜨고 보시라. 괄호가 저기가 아니고 여기다. 함수처럼 사용한다.</p>
 
 
   

@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy2019 Patrick Yu. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 05 Sep 2019 22:05:33 +0900</lastBuildDate>
-    
-	<atom:link href="https://tramamte.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 05 Sep 2019 22:05:33 +0900</lastBuildDate><atom:link href="https://tramamte.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Miniconda를 활용한 초경량 Python3, R Jupiter Notebook 구성</title>
       <link>https://tramamte.github.io/2019/09/05/minimal-jupyter/</link>

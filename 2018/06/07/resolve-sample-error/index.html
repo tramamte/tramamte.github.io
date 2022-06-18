@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content=" jBPM maven sample project 오류 해결 방법">
-  <meta name="generator" content="Hugo 0.65.3" />
+  <meta name="generator" content="Hugo 0.101.0" />
 
   <title>jBPM Maven Sample 오류 해결 &middot; Awesome Patrick</title>
 
@@ -307,15 +307,14 @@
 </ol>
 <h1 id="오류">오류</h1>
 <p>위와 같이 생성한 프로젝트를 실행하면 다음과 같은 오류가 발생한다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Exception in thread &#34;main&#34; java.lang.NoSuchMethodError: org.jbpm.test.JBPMHelper.setupDataSource()Lbitronix/tm/resource/jdbc/PoolingDataSource;
-	at com.sample.ProcessMain.createRuntimeManager(ProcessMain.java:34)
-	at com.sample.ProcessMain.main(ProcessMain.java:23)
-</code></pre></div><h1 id="원인">원인</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>Exception in thread &#34;main&#34; java.lang.NoSuchMethodError: org.jbpm.test.JBPMHelper.setupDataSource()Lbitronix/tm/resource/jdbc/PoolingDataSource;
+</span></span><span style="display:flex;"><span>	at com.sample.ProcessMain.createRuntimeManager(ProcessMain.java:34)
+</span></span><span style="display:flex;"><span>	at com.sample.ProcessMain.main(ProcessMain.java:23)
+</span></span></code></pre></div><h1 id="원인">원인</h1>
 <p>오류 내용으로는 짐작하기 어렵게도, 원인은 버전이 다른 라이브러리들이 포함돼 있는 것이다.</p>
 <p>개발 환경을 구성할 때 jBPM 런타임도 설치/설정했기 때문에 새로운 jBPM 프로젝트를 만들면 Eclipse는 자동으로 jBPM Library를 포함시킨다. 그런데 샘플 프로젝트의 pom.xml에도 버전이 낮은 같은 라이브러리들이 포함돼 있다.</p>
-<figure>
-    <img src="https://tramamte.github.io/posts/bprm/jbpm_error_03.png"
-         alt="Maven Dependencies와 jBPM Library에는 버전이 다른 라이브러리들이 포함돼 있다."/> <figcaption>
+<figure><img src="https://tramamte.github.io/posts/bprm/jbpm_error_03.png"
+         alt="Maven Dependencies와 jBPM Library에는 버전이 다른 라이브러리들이 포함돼 있다."/><figcaption>
             <h4>Project Explorer</h4><p>Maven Dependencies와 jBPM Library에는 버전이 다른 라이브러리들이 포함돼 있다.</p>
         </figcaption>
 </figure>

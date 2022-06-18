@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="인덱스 배열에 중복값이 포함된 경우 NumPy에서 처리하는 방법">
-  <meta name="generator" content="Hugo 0.65.3" />
+  <meta name="generator" content="Hugo 0.101.0" />
 
   <title>NumPy 팬시 인덱싱 값 할당 시 중복 인덱스 처리 &middot; Awesome Patrick</title>
 
@@ -286,57 +286,57 @@
 </div>
 
 <p>NumPy 팬시 인덱싱 (fancy indexing)은 배열 요소에 접근하기 위한 인덱스로 단일 스칼라 대신 배열을 전달하는 기능이다. 이를 통해 배열의 하위 집합에 빠르게 접근할 수 있다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">numpy</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">np</span>
-x <span style="color:#666">=</span> np<span style="color:#666">.</span>arange(<span style="color:#40a070">10</span>, <span style="color:#40a070">20</span>)
-x
-</code></pre></div><pre><code>array([10, 11, 12, 13, 14, 15, 16, 17, 18, 19])
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> <span style="color:#0e84b5;font-weight:bold">numpy</span> <span style="color:#007020;font-weight:bold">as</span> <span style="color:#0e84b5;font-weight:bold">np</span>
+</span></span><span style="display:flex;"><span>x <span style="color:#666">=</span> np<span style="color:#666">.</span>arange(<span style="color:#40a070">10</span>, <span style="color:#40a070">20</span>)
+</span></span><span style="display:flex;"><span>x
+</span></span></code></pre></div><pre><code>array([10, 11, 12, 13, 14, 15, 16, 17, 18, 19])
 </code></pre>
 <p>위와 같은 배열이 있을 때 다음 코드로 1, 3, 5번째 요소에 접근할 수 있다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sub_x <span style="color:#666">=</span> x[[<span style="color:#40a070">0</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">4</span>]]
-sub_x
-</code></pre></div><pre><code>array([10, 12, 14])
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sub_x <span style="color:#666">=</span> x[[<span style="color:#40a070">0</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">4</span>]]
+</span></span><span style="display:flex;"><span>sub_x
+</span></span></code></pre></div><pre><code>array([10, 12, 14])
 </code></pre>
 <h1 id="팬시-인덱싱으로-배열-생성하기">팬시 인덱싱으로 배열 생성하기</h1>
 <p>위에서 본 것처럼 팬시 인덱싱을 활용하면 쉽게 원하는 요소들만 모아 다른 배열을 생성할 수 있다. 인덱스에 사용할 배열은 다차원일 수 있으며, 이 경우 생성된 배열은 인덱스 배열의 형상을 따른다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">idx <span style="color:#666">=</span> np<span style="color:#666">.</span>array([[<span style="color:#40a070">1</span>, <span style="color:#40a070">3</span>], [<span style="color:#40a070">6</span>, <span style="color:#40a070">8</span>]])
-idx<span style="color:#666">.</span>shape
-</code></pre></div><pre><code>(2, 2)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>idx <span style="color:#666">=</span> np<span style="color:#666">.</span>array([[<span style="color:#40a070">1</span>, <span style="color:#40a070">3</span>], [<span style="color:#40a070">6</span>, <span style="color:#40a070">8</span>]])
+</span></span><span style="display:flex;"><span>idx<span style="color:#666">.</span>shape
+</span></span></code></pre></div><pre><code>(2, 2)
 </code></pre>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sub_x_md <span style="color:#666">=</span> x[idx]
-sub_x_md
-</code></pre></div><pre><code>array([[11, 13],
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sub_x_md <span style="color:#666">=</span> x[idx]
+</span></span><span style="display:flex;"><span>sub_x_md
+</span></span></code></pre></div><pre><code>array([[11, 13],
        [16, 18]])
 </code></pre>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sub_x_md<span style="color:#666">.</span>shape
-</code></pre></div><pre><code>(2, 2)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sub_x_md<span style="color:#666">.</span>shape
+</span></span></code></pre></div><pre><code>(2, 2)
 </code></pre>
 <h1 id="팬시-인덱싱으로-요소값-할당하기">팬시 인덱싱으로 요소값 할당하기</h1>
 <p>인덱스 배열에 같은 값이 중복해 포함돼 있어도 하위 배열을 생성하고 이해하는데 전혀 문제가 발생하지 않는다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x[[<span style="color:#40a070">1</span>, <span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">2</span>]]
-</code></pre></div><pre><code>array([11, 11, 12, 12, 12])
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>x[[<span style="color:#40a070">1</span>, <span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">2</span>, <span style="color:#40a070">2</span>]]
+</span></span></code></pre></div><pre><code>array([11, 11, 12, 12, 12])
 </code></pre>
 <p>하지만 값을 할당하는 기능으로 넘어가면 약간의 혼돈이 생긴다.</p>
 <p>우선, 인덱스 배열에 중복이 없는 경우를 몇 가지 살펴보자.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">idx <span style="color:#666">=</span> np<span style="color:#666">.</span>array([<span style="color:#40a070">1</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">5</span>])
-x[idx] <span style="color:#666">=</span> <span style="color:#40a070">50</span>
-x
-</code></pre></div><pre><code>array([10, 50, 12, 50, 14, 50, 16, 17, 18, 19])
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>idx <span style="color:#666">=</span> np<span style="color:#666">.</span>array([<span style="color:#40a070">1</span>, <span style="color:#40a070">3</span>, <span style="color:#40a070">5</span>])
+</span></span><span style="display:flex;"><span>x[idx] <span style="color:#666">=</span> <span style="color:#40a070">50</span>
+</span></span><span style="display:flex;"><span>x
+</span></span></code></pre></div><pre><code>array([10, 50, 12, 50, 14, 50, 16, 17, 18, 19])
 </code></pre>
 <p>할당할 값도 배열로 지정할 수 있다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x[idx] <span style="color:#666">=</span> [<span style="color:#40a070">60</span>, <span style="color:#40a070">70</span>, <span style="color:#40a070">80</span>]
-x
-</code></pre></div><pre><code>array([10, 60, 12, 70, 14, 80, 16, 17, 18, 19])
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>x[idx] <span style="color:#666">=</span> [<span style="color:#40a070">60</span>, <span style="color:#40a070">70</span>, <span style="color:#40a070">80</span>]
+</span></span><span style="display:flex;"><span>x
+</span></span></code></pre></div><pre><code>array([10, 60, 12, 70, 14, 80, 16, 17, 18, 19])
 </code></pre>
 <p>연산도 가능하다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x[idx] <span style="color:#666">+=</span> <span style="color:#40a070">5</span>
-x
-</code></pre></div><pre><code>array([10, 65, 12, 75, 14, 85, 16, 17, 18, 19])
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>x[idx] <span style="color:#666">+=</span> <span style="color:#40a070">5</span>
+</span></span><span style="display:flex;"><span>x
+</span></span></code></pre></div><pre><code>array([10, 65, 12, 75, 14, 85, 16, 17, 18, 19])
 </code></pre>
 <p>이제 예고한 상황을 살펴보자.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">idx <span style="color:#666">=</span> np<span style="color:#666">.</span>array([<span style="color:#40a070">1</span>, <span style="color:#40a070">1</span>])
-x[idx] <span style="color:#666">=</span> [<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>]
-x
-</code></pre></div><pre><code>array([10,  2, 12, 75, 14, 85, 16, 17, 18, 19])
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>idx <span style="color:#666">=</span> np<span style="color:#666">.</span>array([<span style="color:#40a070">1</span>, <span style="color:#40a070">1</span>])
+</span></span><span style="display:flex;"><span>x[idx] <span style="color:#666">=</span> [<span style="color:#40a070">1</span>, <span style="color:#40a070">2</span>]
+</span></span><span style="display:flex;"><span>x
+</span></span></code></pre></div><pre><code>array([10,  2, 12, 75, 14, 85, 16, 17, 18, 19])
 </code></pre>
 <p>할당한 값 중 <code>1</code>은 없어지고 <code>2</code>만 남았다. 결과를 보면 다음과 같은 절차로 값 할당이 처리된 것으로 생각할 수 있다.</p>
 <ol>
@@ -345,16 +345,16 @@ x
 <li><code>idx[0]</code>과 <code>idx[1]</code>의 값이 <code>1</code>로 같으므로 결론적으로는 <code>x[1]</code>의 값이 <code>2</code>가 된다.</li>
 </ol>
 <p>합리적 접근이지만 이 절차로는 다음 경우에 문제가 생긴다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">idx <span style="color:#666">=</span> [<span style="color:#40a070">0</span>, <span style="color:#40a070">0</span>, <span style="color:#40a070">1</span>, <span style="color:#40a070">1</span>, <span style="color:#40a070">1</span>]
-x[idx] <span style="color:#666">+=</span> <span style="color:#40a070">1</span>
-</code></pre></div><p>실행 결과를 보기 전 위에서 가정한 절차로 예상해 보자.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>idx <span style="color:#666">=</span> [<span style="color:#40a070">0</span>, <span style="color:#40a070">0</span>, <span style="color:#40a070">1</span>, <span style="color:#40a070">1</span>, <span style="color:#40a070">1</span>]
+</span></span><span style="display:flex;"><span>x[idx] <span style="color:#666">+=</span> <span style="color:#40a070">1</span>
+</span></span></code></pre></div><p>실행 결과를 보기 전 위에서 가정한 절차로 예상해 보자.</p>
 <ol>
 <li><code>x[0]</code>은 <code>10</code>이니 첫 번째, 두 번째 인덱스에 대한 결과로 <code>+= 1</code>이 두 번 호출 돼 <code>12</code>가 된다.</li>
 <li><code>x[1]</code>은 <code>2</code>이니 셋, 넷, 다섯 번째 인덱스에 대한 결과로 <code>+= 1</code>이 세 번 호출 돼 <code>5</code>가 된다.</li>
 </ol>
 <p>하지만 결과는&hellip;</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x
-</code></pre></div><pre><code>array([11,  3, 12, 75, 14, 85, 16, 17, 18, 19])
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>x
+</span></span></code></pre></div><pre><code>array([11,  3, 12, 75, 14, 85, 16, 17, 18, 19])
 </code></pre>
 <p><code>x[0]</code>과 <code>x[1]</code> 요소에 대해 각각 <code>+= 1</code> 연산이 한 번씩만 적용된 것을 볼 수 있다.</p>
 <p>이와 관련해 <em><strong>파이썬 데이터 사이언스 핸드북 | 위키북스</strong></em> 에는 다음과 같이 설명돼 있다.</p>

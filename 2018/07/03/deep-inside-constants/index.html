@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="정수형 상수를 Go 언어 내부에서 처리하는 방법">
-  <meta name="generator" content="Hugo 0.65.3" />
+  <meta name="generator" content="Hugo 0.101.0" />
 
   <title>정수형 상수의 내부 처리 &middot; Awesome Patrick</title>
 
@@ -305,31 +305,31 @@
 
 <p>정수형 상수를 Go 내부에서 처리하는 방법을 구체적으로 확인해 보자. 이것저것 다 귀찮다면 <a href="#%EA%B2%B0%EB%A1%A0">결론</a>이라도 꼭 보길 바란다.</p>
 <p>확인을 위해 작성한 코드는 아래와 같다.</p>
-<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">pacakge main
-
-<span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">main</span>() {
-	<span style="color:#007020;font-weight:bold">const</span> i1 = <span style="color:#40a070">14345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</span>
-	<span style="color:#007020;font-weight:bold">const</span> i2 = <span style="color:#40a070">2</span> <span style="color:#666">&lt;&lt;</span> <span style="color:#40a070">512</span>
-	<span style="color:#007020;font-weight:bold">const</span> i3 = <span style="color:#40a070">2</span> <span style="color:#666">&lt;&lt;</span> <span style="color:#40a070">511</span>
-}</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>pacakge main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#007020;font-weight:bold">const</span> i1 = <span style="color:#40a070">14345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#007020;font-weight:bold">const</span> i2 = <span style="color:#40a070">2</span> <span style="color:#666">&lt;&lt;</span> <span style="color:#40a070">512</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#007020;font-weight:bold">const</span> i3 = <span style="color:#40a070">2</span> <span style="color:#666">&lt;&lt;</span> <span style="color:#40a070">511</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
 </div>
 </div>
 <p>이 코드를 빌드하면 다음과 같은 오류가 발생한다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">./main.go:4:14: constant too large: 14345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345
-./main.go:5:16: shift count too large: 512
-./main.go:6:16: constant shift overflow
-</code></pre></div><p>\(2^{512} \simeq 1.34 \times 10^{154} \)이다. 즉, 13 뒤에 0이 153개 붙는 수이다. 이를 기준으로,</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>./main.go:4:14: constant too large: 14345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345
+</span></span><span style="display:flex;"><span>./main.go:5:16: shift count too large: 512
+</span></span><span style="display:flex;"><span>./main.go:6:16: constant shift overflow
+</span></span></code></pre></div><p>\(2^{512} \simeq 1.34 \times 10^{154} \)이다. 즉, 13 뒤에 0이 153개 붙는 수이다. 이를 기준으로,</p>
 <ul>
 <li><code>i1</code>은 14 뒤에 0이 153개 붙은 수</li>
 <li><code>i2</code>는 \(2^{513}\)</li>
@@ -353,143 +353,143 @@
 
 <h1 id="순수-literal-상수의-한계-처리">순수 literal 상수의 한계 처리</h1>
 <p>이제 Go 컴파일러의 소스 코드로 들어가 보자. 앞에서의 복잡한 처리는 무시하고,  noder.go 부터 보면 될 것 같다. 이 파일에는 <code>expr()</code>이라는 함수가 있는데, <code>i1</code>을 처리하는 부분의 코드는 다음과 같다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#60a0b0;font-style:italic">// noder.go
-</span><span style="color:#60a0b0;font-style:italic"></span>
-<span style="color:#007020;font-weight:bold">func</span> (p <span style="color:#666">*</span>noder) <span style="color:#06287e">expr</span>(expr syntax.Expr) <span style="color:#666">*</span>Node {
-	<span style="color:#666">...</span>
-	<span style="color:#007020;font-weight:bold">case</span> <span style="color:#666">*</span>syntax.BasicLit:
-		<span style="color:#007020;font-weight:bold">return</span> p.<span style="color:#06287e">setlineno</span>(expr, <span style="color:#06287e">nodlit</span>(p.<span style="color:#06287e">basicLit</span>(expr)))
-	<span style="color:#666">...</span>
-}
-</code></pre></div><p>여기서 호출하고 있는 <code>basicLit()</code>은 다음과 같다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#60a0b0;font-style:italic">// noder.go
-</span><span style="color:#60a0b0;font-style:italic"></span>
-<span style="color:#007020;font-weight:bold">func</span> (p <span style="color:#666">*</span>noder) <span style="color:#06287e">basicLit</span>(lit <span style="color:#666">*</span>syntax.BasicLit) Val {
-	<span style="color:#666">...</span>
-	<span style="color:#007020;font-weight:bold">case</span> syntax.IntLit:
-		x <span style="color:#666">:=</span> <span style="color:#007020">new</span>(Mpint)
-		x.<span style="color:#06287e">SetString</span>(s)
-		<span style="color:#007020;font-weight:bold">return</span> Val{U: x}
-	<span style="color:#666">...</span>
-}
-</code></pre></div><p><code>Mpint</code>는 mpint.go에 다음과 같이 정의돼 있다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#60a0b0;font-style:italic">// mpint.go
-</span><span style="color:#60a0b0;font-style:italic"></span>
-<span style="color:#60a0b0;font-style:italic">// Mpint represents an integer constant.
-</span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">type</span> Mpint <span style="color:#007020;font-weight:bold">struct</span> {
-	Val  big.Int
-	Ovf  <span style="color:#902000">bool</span> <span style="color:#60a0b0;font-style:italic">// set if Val overflowed compiler limit (sticky)
-</span><span style="color:#60a0b0;font-style:italic"></span>	Rune <span style="color:#902000">bool</span> <span style="color:#60a0b0;font-style:italic">// set if syntax indicates default type rune
-</span><span style="color:#60a0b0;font-style:italic"></span>}
-</code></pre></div><p>다른 언어에서도 주로 사용하는 용어인 BigInt나 MPInt(Multi Precision Integer)는 주로 암호화나 인증 등 처리를 위해 기본 타입보다 큰 수가 필요할 때 사용할 수 있도록 구현한 것인데, Go에서는 math/big 경로에 big이라는 패키지를 제공하고 있고, Mpint는 big.Int를 포함하는 Go 언어 내부 구조체이다.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// noder.go
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> (p <span style="color:#666">*</span>noder) <span style="color:#06287e">expr</span>(expr syntax.Expr) <span style="color:#666">*</span>Node {
+</span></span><span style="display:flex;"><span>	<span style="color:#666">...</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#007020;font-weight:bold">case</span> <span style="color:#666">*</span>syntax.BasicLit:
+</span></span><span style="display:flex;"><span>		<span style="color:#007020;font-weight:bold">return</span> p.<span style="color:#06287e">setlineno</span>(expr, <span style="color:#06287e">nodlit</span>(p.<span style="color:#06287e">basicLit</span>(expr)))
+</span></span><span style="display:flex;"><span>	<span style="color:#666">...</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>여기서 호출하고 있는 <code>basicLit()</code>은 다음과 같다.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// noder.go
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> (p <span style="color:#666">*</span>noder) <span style="color:#06287e">basicLit</span>(lit <span style="color:#666">*</span>syntax.BasicLit) Val {
+</span></span><span style="display:flex;"><span>	<span style="color:#666">...</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#007020;font-weight:bold">case</span> syntax.IntLit:
+</span></span><span style="display:flex;"><span>		x <span style="color:#666">:=</span> <span style="color:#007020">new</span>(Mpint)
+</span></span><span style="display:flex;"><span>		x.<span style="color:#06287e">SetString</span>(s)
+</span></span><span style="display:flex;"><span>		<span style="color:#007020;font-weight:bold">return</span> Val{U: x}
+</span></span><span style="display:flex;"><span>	<span style="color:#666">...</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><code>Mpint</code>는 mpint.go에 다음과 같이 정의돼 있다.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// mpint.go
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Mpint represents an integer constant.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">type</span> Mpint <span style="color:#007020;font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>	Val  big.Int
+</span></span><span style="display:flex;"><span>	Ovf  <span style="color:#902000">bool</span> <span style="color:#60a0b0;font-style:italic">// set if Val overflowed compiler limit (sticky)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>	Rune <span style="color:#902000">bool</span> <span style="color:#60a0b0;font-style:italic">// set if syntax indicates default type rune
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></code></pre></div><p>다른 언어에서도 주로 사용하는 용어인 BigInt나 MPInt(Multi Precision Integer)는 주로 암호화나 인증 등 처리를 위해 기본 타입보다 큰 수가 필요할 때 사용할 수 있도록 구현한 것인데, Go에서는 math/big 경로에 big이라는 패키지를 제공하고 있고, Mpint는 big.Int를 포함하는 Go 언어 내부 구조체이다.</p>
 <p>다시 <code>basicLit()</code> 함수를 보면, 우선 Mpint를 만든 뒤에 <code>SetString()</code> 함수를 이용해 값을 할당하고 있다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#60a0b0;font-style:italic">// mpint.go
-</span><span style="color:#60a0b0;font-style:italic"></span>
-<span style="color:#007020;font-weight:bold">func</span> (a <span style="color:#666">*</span>Mpint) <span style="color:#06287e">SetString</span>(as <span style="color:#902000">string</span>) {
-	_, ok <span style="color:#666">:=</span> a.Val.<span style="color:#06287e">SetString</span>(as, <span style="color:#40a070">0</span>)
-	<span style="color:#007020;font-weight:bold">if</span> !ok {
-		<span style="color:#60a0b0;font-style:italic">// required syntax is [+-][0[x]]d*
-</span><span style="color:#60a0b0;font-style:italic"></span>		<span style="color:#60a0b0;font-style:italic">// At the moment we lose precise error cause;
-</span><span style="color:#60a0b0;font-style:italic"></span>		<span style="color:#60a0b0;font-style:italic">// the old code distinguished between:
-</span><span style="color:#60a0b0;font-style:italic"></span>		<span style="color:#60a0b0;font-style:italic">// - malformed hex constant
-</span><span style="color:#60a0b0;font-style:italic"></span>		<span style="color:#60a0b0;font-style:italic">// - malformed octal constant
-</span><span style="color:#60a0b0;font-style:italic"></span>		<span style="color:#60a0b0;font-style:italic">// - malformed decimal constant
-</span><span style="color:#60a0b0;font-style:italic"></span>		<span style="color:#60a0b0;font-style:italic">// TODO(gri) use different conversion function
-</span><span style="color:#60a0b0;font-style:italic"></span>		<span style="color:#06287e">yyerror</span>(<span style="color:#4070a0">&#34;malformed integer constant: %s&#34;</span>, as)
-		a.Val.<span style="color:#06287e">SetUint64</span>(<span style="color:#40a070">0</span>)
-		<span style="color:#007020;font-weight:bold">return</span>
-	}
-	<span style="color:#007020;font-weight:bold">if</span> a.<span style="color:#06287e">checkOverflow</span>(<span style="color:#40a070">0</span>) {
-		<span style="color:#06287e">yyerror</span>(<span style="color:#4070a0">&#34;constant too large: %s&#34;</span>, as)
-	}
-}
-</code></pre></div><p>드디어 빌드 시 발생한 오류에서 보였던 문구 &ldquo;constant too large&quot;가 나왔다. <code>SetString()</code> 함수에서는 일단 big.Int에 문자열&mdash;소스 코드는 이 단계에서는 다 문자열로 처리된다.&mdash;을 이용해 값을 할당하고, <code>checkOverflow()</code> 함수를 호출해 값이 한계를 넘었는지 검사한다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#60a0b0;font-style:italic">// mpint.go
-</span><span style="color:#60a0b0;font-style:italic"></span>
-<span style="color:#007020;font-weight:bold">func</span> (a <span style="color:#666">*</span>Mpint) <span style="color:#06287e">checkOverflow</span>(extra <span style="color:#902000">int</span>) <span style="color:#902000">bool</span> {
-	<span style="color:#60a0b0;font-style:italic">// We don&#39;t need to be precise here, any reasonable upper limit would do.
-</span><span style="color:#60a0b0;font-style:italic"></span>	<span style="color:#60a0b0;font-style:italic">// For now, use existing limit so we pass all the tests unchanged.
-</span><span style="color:#60a0b0;font-style:italic"></span>	<span style="color:#007020;font-weight:bold">if</span> a.Val.<span style="color:#06287e">BitLen</span>()<span style="color:#666">+</span>extra &gt; Mpprec {
-		a.<span style="color:#06287e">SetOverflow</span>()
-	}
-	<span style="color:#007020;font-weight:bold">return</span> a.Ovf
-}
-</code></pre></div><p><code>checkOverflow()</code> 함수에서는 big.Int의 값이 사용하는 비트수 <code>BitLen()</code>과 함수의 인자로 전달된 <code>extra</code>의 합계가 <code>Mpprec</code> 보다 크면 한계를 벗어난 것으로 처리한다. 그리고 한계를 벗어난 경우는 위 <code>SetString()</code> 함수에서 &ldquo;constant too large: 1434~&quot;를 출력한다. <code>extra</code>는 0으로 넘어왔으니 이제 <code>Mpprec</code>만 남았다. 끝이 보인다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#60a0b0;font-style:italic">// mpfloat.go
-</span><span style="color:#60a0b0;font-style:italic"></span>
-<span style="color:#007020;font-weight:bold">const</span> (
-	<span style="color:#60a0b0;font-style:italic">// Maximum size in bits for Mpints before signalling
-</span><span style="color:#60a0b0;font-style:italic"></span>	<span style="color:#60a0b0;font-style:italic">// overflow and also mantissa precision for Mpflts.
-</span><span style="color:#60a0b0;font-style:italic"></span>	Mpprec = <span style="color:#40a070">512</span>
-	<span style="color:#60a0b0;font-style:italic">// Turn on for constant arithmetic debugging output.
-</span><span style="color:#60a0b0;font-style:italic"></span>	Mpdebug = <span style="color:#007020;font-weight:bold">false</span>
-)
-</code></pre></div><p><code>Mpprec</code>의 값은 512이다. 즉, <strong>512개의 비트로 표시할 수 있는 수의 최대값이 타입을 지정하지 않은 정수형 상수의 한계</strong>이다.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// mpint.go
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> (a <span style="color:#666">*</span>Mpint) <span style="color:#06287e">SetString</span>(as <span style="color:#902000">string</span>) {
+</span></span><span style="display:flex;"><span>	_, ok <span style="color:#666">:=</span> a.Val.<span style="color:#06287e">SetString</span>(as, <span style="color:#40a070">0</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#007020;font-weight:bold">if</span> !ok {
+</span></span><span style="display:flex;"><span>		<span style="color:#60a0b0;font-style:italic">// required syntax is [+-][0[x]]d*
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>		<span style="color:#60a0b0;font-style:italic">// At the moment we lose precise error cause;
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>		<span style="color:#60a0b0;font-style:italic">// the old code distinguished between:
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>		<span style="color:#60a0b0;font-style:italic">// - malformed hex constant
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>		<span style="color:#60a0b0;font-style:italic">// - malformed octal constant
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>		<span style="color:#60a0b0;font-style:italic">// - malformed decimal constant
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>		<span style="color:#60a0b0;font-style:italic">// TODO(gri) use different conversion function
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>		<span style="color:#06287e">yyerror</span>(<span style="color:#4070a0">&#34;malformed integer constant: %s&#34;</span>, as)
+</span></span><span style="display:flex;"><span>		a.Val.<span style="color:#06287e">SetUint64</span>(<span style="color:#40a070">0</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#007020;font-weight:bold">return</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#007020;font-weight:bold">if</span> a.<span style="color:#06287e">checkOverflow</span>(<span style="color:#40a070">0</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#06287e">yyerror</span>(<span style="color:#4070a0">&#34;constant too large: %s&#34;</span>, as)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>드디어 빌드 시 발생한 오류에서 보였던 문구 &ldquo;constant too large&quot;가 나왔다. <code>SetString()</code> 함수에서는 일단 big.Int에 문자열&mdash;소스 코드는 이 단계에서는 다 문자열로 처리된다.&mdash;을 이용해 값을 할당하고, <code>checkOverflow()</code> 함수를 호출해 값이 한계를 넘었는지 검사한다.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// mpint.go
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> (a <span style="color:#666">*</span>Mpint) <span style="color:#06287e">checkOverflow</span>(extra <span style="color:#902000">int</span>) <span style="color:#902000">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#60a0b0;font-style:italic">// We don&#39;t need to be precise here, any reasonable upper limit would do.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>	<span style="color:#60a0b0;font-style:italic">// For now, use existing limit so we pass all the tests unchanged.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>	<span style="color:#007020;font-weight:bold">if</span> a.Val.<span style="color:#06287e">BitLen</span>()<span style="color:#666">+</span>extra &gt; Mpprec {
+</span></span><span style="display:flex;"><span>		a.<span style="color:#06287e">SetOverflow</span>()
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#007020;font-weight:bold">return</span> a.Ovf
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><code>checkOverflow()</code> 함수에서는 big.Int의 값이 사용하는 비트수 <code>BitLen()</code>과 함수의 인자로 전달된 <code>extra</code>의 합계가 <code>Mpprec</code> 보다 크면 한계를 벗어난 것으로 처리한다. 그리고 한계를 벗어난 경우는 위 <code>SetString()</code> 함수에서 &ldquo;constant too large: 1434~&ldquo;를 출력한다. <code>extra</code>는 0으로 넘어왔으니 이제 <code>Mpprec</code>만 남았다. 끝이 보인다.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// mpfloat.go
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">const</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#60a0b0;font-style:italic">// Maximum size in bits for Mpints before signalling
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>	<span style="color:#60a0b0;font-style:italic">// overflow and also mantissa precision for Mpflts.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>	Mpprec = <span style="color:#40a070">512</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#60a0b0;font-style:italic">// Turn on for constant arithmetic debugging output.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>	Mpdebug = <span style="color:#007020;font-weight:bold">false</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p><code>Mpprec</code>의 값은 512이다. 즉, <strong>512개의 비트로 표시할 수 있는 수의 최대값이 타입을 지정하지 않은 정수형 상수의 한계</strong>이다.</p>
 <h1 id="비트-시프트-연산을-이용한-상수의-한계-처리">비트 시프트 연산을 이용한 상수의 한계 처리</h1>
 <p>이제 <code>i2</code>와 <code>i3</code>에 대해 알아보자. 다시 noder.go의 <code>expr()</code> 함수로 돌아가 <code>i2</code>, <code>i3</code>에 대해 처리하는 부분의 코드를 보면 다음과 같다.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#60a0b0;font-style:italic">// noder.go
-</span><span style="color:#60a0b0;font-style:italic"></span>
-<span style="color:#007020;font-weight:bold">func</span> (p <span style="color:#666">*</span>noder) <span style="color:#06287e">expr</span>(expr syntax.Expr) <span style="color:#666">*</span>Node {
-	<span style="color:#666">...</span>
-	<span style="color:#007020;font-weight:bold">case</span> <span style="color:#666">*</span>syntax.Operation:
-		<span style="color:#666">...</span>
-		x <span style="color:#666">:=</span> p.<span style="color:#06287e">expr</span>(expr.X)
-		<span style="color:#666">...</span>
-		<span style="color:#007020;font-weight:bold">return</span> p.<span style="color:#06287e">nod</span>(expr, p.<span style="color:#06287e">binOp</span>(expr.Op), x, p.<span style="color:#06287e">expr</span>(expr.Y))
-	<span style="color:#666">...</span>
-}
-</code></pre></div><p>대강의 동작은 다음과 같다.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// noder.go
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> (p <span style="color:#666">*</span>noder) <span style="color:#06287e">expr</span>(expr syntax.Expr) <span style="color:#666">*</span>Node {
+</span></span><span style="display:flex;"><span>	<span style="color:#666">...</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#007020;font-weight:bold">case</span> <span style="color:#666">*</span>syntax.Operation:
+</span></span><span style="display:flex;"><span>		<span style="color:#666">...</span>
+</span></span><span style="display:flex;"><span>		x <span style="color:#666">:=</span> p.<span style="color:#06287e">expr</span>(expr.X)
+</span></span><span style="display:flex;"><span>		<span style="color:#666">...</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#007020;font-weight:bold">return</span> p.<span style="color:#06287e">nod</span>(expr, p.<span style="color:#06287e">binOp</span>(expr.Op), x, p.<span style="color:#06287e">expr</span>(expr.Y))
+</span></span><span style="display:flex;"><span>	<span style="color:#666">...</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>대강의 동작은 다음과 같다.</p>
 <ol>
 <li><code>expr.X</code>에는 &ldquo;2&rdquo;, <code>expr.Y</code>에는 &ldquo;511&rdquo; 또는 &ldquo;512&quot;가 저장돼 있다.</li>
 <li><code>expr()</code> 함수 재귀호출을 통해 <code>expr.X</code>, <code>expr.Y</code>를 처리하는데 모두 <a href="#%EC%88%9C%EC%88%98-literal-%EC%83%81%EC%88%98%EC%9D%98-%ED%95%9C%EA%B3%84-%EC%B2%98%EB%A6%AC">순수 literal 상수의 한계 처리</a>에서와 동일한 절차를 거쳐 <code>Mpint</code>로 변환된다. 즉, 2, 511, 512 모두 크기와 관계없이 <code>Mpint</code>가 된다.</li>
 </ol>
 <p>호출하는 부분은 건너뛰고, 연산자와 두 개의 <code>Mpint</code> 형태의 피연산자가 준비됐으니 계산하는 코드를 살펴보자.</p>
-<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="display:block;width:100%;background-color:#d8d8d8"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="display:block;width:100%;background-color:#d8d8d8"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="background-color:#d8d8d8"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="background-color:#d8d8d8"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#60a0b0;font-style:italic">// mpint.go
-</span><span style="color:#60a0b0;font-style:italic"></span>
-<span style="color:#007020;font-weight:bold">func</span> (a <span style="color:#666">*</span>Mpint) <span style="color:#06287e">Lsh</span>(b <span style="color:#666">*</span>Mpint) {
-	<span style="color:#666">...</span>
-	s <span style="color:#666">:=</span> b.<span style="color:#06287e">Int64</span>()
-<span style="display:block;width:100%;background-color:#d8d8d8">	<span style="color:#007020;font-weight:bold">if</span> s &lt; <span style="color:#40a070">0</span> <span style="color:#666">||</span> s <span style="color:#666">&gt;=</span> Mpprec {
-</span>		msg <span style="color:#666">:=</span> <span style="color:#4070a0">&#34;shift count too large&#34;</span>
-		<span style="color:#007020;font-weight:bold">if</span> s &lt; <span style="color:#40a070">0</span> {
-			msg = <span style="color:#4070a0">&#34;invalid negative shift count&#34;</span>
-		}
-		<span style="color:#06287e">yyerror</span>(<span style="color:#4070a0">&#34;%s: %d&#34;</span>, msg, s)
-		a.<span style="color:#06287e">SetInt64</span>(<span style="color:#40a070">0</span>)
-		<span style="color:#007020;font-weight:bold">return</span>
-	}
-
-<span style="display:block;width:100%;background-color:#d8d8d8">	<span style="color:#007020;font-weight:bold">if</span> a.<span style="color:#06287e">checkOverflow</span>(<span style="color:#007020">int</span>(s)) {
-</span>		<span style="color:#06287e">yyerror</span>(<span style="color:#4070a0">&#34;constant shift overflow&#34;</span>)
-		<span style="color:#007020;font-weight:bold">return</span>
-	}
-	a.Val.<span style="color:#06287e">Lsh</span>(<span style="color:#666">&amp;</span>a.Val, <span style="color:#007020">uint</span>(s))
-}</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// mpint.go
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> (a <span style="color:#666">*</span>Mpint) <span style="color:#06287e">Lsh</span>(b <span style="color:#666">*</span>Mpint) {
+</span></span><span style="display:flex;"><span>	<span style="color:#666">...</span>
+</span></span><span style="display:flex;"><span>	s <span style="color:#666">:=</span> b.<span style="color:#06287e">Int64</span>()
+</span></span><span style="display:flex; background-color:#d8d8d8"><span>	<span style="color:#007020;font-weight:bold">if</span> s &lt; <span style="color:#40a070">0</span> <span style="color:#666">||</span> s <span style="color:#666">&gt;=</span> Mpprec {
+</span></span><span style="display:flex;"><span>		msg <span style="color:#666">:=</span> <span style="color:#4070a0">&#34;shift count too large&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#007020;font-weight:bold">if</span> s &lt; <span style="color:#40a070">0</span> {
+</span></span><span style="display:flex;"><span>			msg = <span style="color:#4070a0">&#34;invalid negative shift count&#34;</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#06287e">yyerror</span>(<span style="color:#4070a0">&#34;%s: %d&#34;</span>, msg, s)
+</span></span><span style="display:flex;"><span>		a.<span style="color:#06287e">SetInt64</span>(<span style="color:#40a070">0</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#007020;font-weight:bold">return</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex; background-color:#d8d8d8"><span>	<span style="color:#007020;font-weight:bold">if</span> a.<span style="color:#06287e">checkOverflow</span>(<span style="color:#007020">int</span>(s)) {
+</span></span><span style="display:flex;"><span>		<span style="color:#06287e">yyerror</span>(<span style="color:#4070a0">&#34;constant shift overflow&#34;</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#007020;font-weight:bold">return</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	a.Val.<span style="color:#06287e">Lsh</span>(<span style="color:#666">&amp;</span>a.Val, <span style="color:#007020">uint</span>(s))
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
 </div>
 </div>
 <p><code>i2</code>를 보자. <code>a</code>는 2, <code>b</code>는 512이다. 5라인에서 <code>s</code>에 512를 넣고 6라인의 조건에 의해 &ldquo;shift count too large&quot;가 출력된다.</p>

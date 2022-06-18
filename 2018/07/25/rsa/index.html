@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="RSA 암호화의 수학적 이해">
-  <meta name="generator" content="Hugo 0.65.3" />
+  <meta name="generator" content="Hugo 0.101.0" />
 
   <title>중학교 수학으로 이해하는 RSA &middot; Awesome Patrick</title>
 
@@ -529,7 +529,7 @@ $$ a \equiv b \pmod{n} $$</li>
 <script>
   var sequenceId = 'sequence' + sequenceGlobalId++;
   document.write('<div class="sequence" id="' + sequenceId + '" align="left"></div>');
-  var seq = Diagram.parse("\n\nparticipant Alice as A\n\nparticipant Bob as B\n\nA-\x3eB: Give me your pub. key\n\nB-\x3eA: Here\x27s my pub. key\n\nNote over A: Calculate c\n\nA-\x3eB: ihj4ertlv89hjipaf...\n\nNote over B: Calculate o\x27\n\n");
+  var seq = Diagram.parse("\n\nparticipant Alice as A\n\nparticipant Bob as B\n\nA-\u003eB: Give me your pub. key\n\nB-\u003eA: Here\u0027s my pub. key\n\nNote over A: Calculate c\n\nA-\u003eB: ihj4ertlv89hjipaf...\n\nNote over B: Calculate o\u0027\n\n");
   
   seq.drawSVG(sequenceId, {theme: 'simple'});
   
@@ -585,17 +585,17 @@ $$ a \equiv b \pmod{n} $$</li>
 </ul>
 <p>위 두 가지가 RSA의 두 가지 중요한 성질이다.</p>
 <p>우리가 사용하는 공인인증서는 이러한 성질에 정부 또는 은행, 증권사 등이 공개키의 보유자를 특정할 수 있도록 보증하는 기능을 더한 것이다. 따라서 서명 용도로 사용이 가능하다.</p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
-<p>원주율을 표시할 때 사용하는 \(\pi\)와의 구분을 위해 ’피’라 읽기도 하는데 여기서는 ’파이’로 표기한다. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:1">
+<p>원주율을 표시할 때 사용하는 \(\pi\)와의 구분을 위해 ’피’라 읽기도 하는데 여기서는 ’파이’로 표기한다.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
-<p>보통은 암호문의 크기를 줄이기 위해 hash 후 암호화한다. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:2">
+<p>보통은 암호문의 크기를 줄이기 위해 hash 후 암호화한다.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
 
   

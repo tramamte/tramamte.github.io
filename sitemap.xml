@@ -1,540 +1,326 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
+    <loc>https://tramamte.github.io/</loc>
+    <lastmod>2019-11-27T22:32:04+09:00</lastmod>
+  </url><url>
     <loc>https://tramamte.github.io/topics/data-science/</loc>
     <lastmod>2019-11-27T22:32:04+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/ml/</loc>
     <lastmod>2019-11-27T22:32:04+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2019/11/27/keep-in-mind/</loc>
     <lastmod>2019-11-27T22:32:04+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/posts/</loc>
     <lastmod>2019-11-27T22:32:04+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/</loc>
     <lastmod>2019-11-27T22:32:04+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/topics/</loc>
     <lastmod>2019-11-27T22:32:04+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/bigdata/</loc>
     <lastmod>2019-11-26T12:36:17+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/topics/rambling/</loc>
     <lastmod>2019-11-26T12:36:17+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2019/11/26/bd-is-bubble/</loc>
     <lastmod>2019-11-26T12:36:17+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/numpy/</loc>
     <lastmod>2019-11-11T20:19:59+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2019/11/11/numpy-dup-index/</loc>
     <lastmod>2019-11-11T20:19:59+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/study/</loc>
     <lastmod>2019-09-19T10:59:15+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2019/09/19/study/</loc>
     <lastmod>2019-09-19T10:59:15+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/pep/</loc>
     <lastmod>2019-09-05T23:05:59+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/topics/python/</loc>
     <lastmod>2019-09-05T23:05:59+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/python/</loc>
     <lastmod>2019-09-05T23:05:59+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2019/09/05/pep8/</loc>
     <lastmod>2019-09-05T23:05:59+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/conda/</loc>
     <lastmod>2019-09-05T22:05:33+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/jupyter/</loc>
     <lastmod>2019-09-05T22:05:33+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/miniconda/</loc>
     <lastmod>2019-09-05T22:05:33+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2019/09/05/minimal-jupyter/</loc>
     <lastmod>2019-09-05T22:05:33+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/notebook/</loc>
     <lastmod>2019-09-05T22:05:33+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/r/</loc>
     <lastmod>2019-09-05T22:05:33+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tramamte.github.io/2019/05/20/outstanding/</loc>
-    <lastmod>2019-05-20T11:38:49+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/outstanding/</loc>
     <lastmod>2019-05-20T11:38:49+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://tramamte.github.io/2019/05/20/outstanding/</loc>
+    <lastmod>2019-05-20T11:38:49+09:00</lastmod>
+  </url><url>
     <loc>https://tramamte.github.io/tags/container/</loc>
     <lastmod>2019-05-14T12:15:24+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/topics/docker/</loc>
     <lastmod>2019-05-14T12:15:24+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/docker/</loc>
     <lastmod>2019-05-14T12:15:24+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2019/05/14/dump/</loc>
     <lastmod>2019-05-14T12:15:24+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/dump/</loc>
     <lastmod>2019-05-14T12:15:24+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/image/</loc>
     <lastmod>2019-05-14T12:15:24+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/config/</loc>
     <lastmod>2019-05-14T11:04:03+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2019/05/14/config/</loc>
     <lastmod>2019-05-14T11:04:03+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/fun-go/</loc>
     <lastmod>2019-03-20T22:29:30+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/topics/go/</loc>
     <lastmod>2019-03-20T22:29:30+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2019/03/20/struct-initialize/</loc>
     <lastmod>2019-03-20T22:29:30+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/reading/</loc>
     <lastmod>2019-02-10T23:45:20+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2019/02/10/wheel/</loc>
     <lastmod>2019-02-10T23:45:20+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/cleanup/</loc>
     <lastmod>2019-01-25T12:50:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2019/01/25/diet/</loc>
     <lastmod>2019-01-25T12:50:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/images/</loc>
     <lastmod>2019-01-25T12:50:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/network/</loc>
     <lastmod>2019-01-25T12:50:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/volume/</loc>
     <lastmod>2019-01-25T12:50:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/09/05/array-slice-and-map/</loc>
     <lastmod>2018-09-05T23:57:07+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/08/29/docker-pull/</loc>
     <lastmod>2018-08-29T20:46:30+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/pull/</loc>
     <lastmod>2018-08-29T20:46:30+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/oven/</loc>
     <lastmod>2018-08-20T23:15:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/topics/taean/</loc>
     <lastmod>2018-08-20T23:15:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/08/20/hanks-oven-06/</loc>
     <lastmod>2018-08-20T23:15:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/08/06/hanks-oven-05/</loc>
     <lastmod>2018-08-06T21:15:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/07/31/hanks-oven-04/</loc>
     <lastmod>2018-07-31T22:08:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/pki/</loc>
     <lastmod>2018-07-25T23:18:32+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/rsa/</loc>
     <lastmod>2018-07-25T23:18:32+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/topics/security/</loc>
     <lastmod>2018-07-25T23:18:32+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/07/25/rsa/</loc>
     <lastmod>2018-07-25T23:18:32+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/07/24/constant-misunderstanding/</loc>
     <lastmod>2018-07-24T22:47:49+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/diffie-hellman/</loc>
     <lastmod>2018-07-20T20:05:37+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/exchange/</loc>
     <lastmod>2018-07-20T20:05:37+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/key/</loc>
     <lastmod>2018-07-20T20:05:37+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/07/20/diffie-hellman/</loc>
     <lastmod>2018-07-20T20:05:37+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/css/</loc>
     <lastmod>2018-07-12T22:56:38+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/07/12/sass-and-scss/</loc>
     <lastmod>2018-07-12T22:56:38+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/sass/</loc>
     <lastmod>2018-07-12T22:56:38+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/scss/</loc>
     <lastmod>2018-07-12T22:56:38+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/topics/web/</loc>
     <lastmod>2018-07-12T22:56:38+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/07/10/init-and-main/</loc>
     <lastmod>2018-07-10T19:40:25+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/07/08/hanks-oven-03/</loc>
     <lastmod>2018-07-08T23:15:00+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/07/03/deep-inside-constants/</loc>
     <lastmod>2018-07-03T22:35:19+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/06/26/hanks-oven-02/</loc>
     <lastmod>2018-06-26T19:15:17+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/06/26/docker-log/</loc>
     <lastmod>2018-06-26T12:49:25+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/log/</loc>
     <lastmod>2018-06-26T12:49:25+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/copy/</loc>
     <lastmod>2018-06-20T23:15:37+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/06/20/docker-copy/</loc>
     <lastmod>2018-06-20T23:15:37+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/host/</loc>
     <lastmod>2018-06-20T23:15:37+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/06/20/fun-switch/</loc>
     <lastmod>2018-06-20T22:40:39+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/06/14/fun-packages-and-import/</loc>
     <lastmod>2018-06-14T18:24:57+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/06/12/hanks-oven-01/</loc>
     <lastmod>2018-06-12T12:15:17+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/topics/bpm/</loc>
     <lastmod>2018-06-07T23:11:28+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/eclipse/</loc>
     <lastmod>2018-06-07T23:11:28+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/jbpm/</loc>
     <lastmod>2018-06-07T23:11:28+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/06/07/resolve-sample-error/</loc>
     <lastmod>2018-06-07T23:11:28+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/maven/</loc>
     <lastmod>2018-06-07T23:11:28+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/06/07/fun-constants/</loc>
     <lastmod>2018-06-07T18:32:17+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/draft/</loc>
     <lastmod>2018-06-07T12:21:15+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/06/07/draft-future/</loc>
     <lastmod>2018-06-07T12:21:15+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/future/</loc>
     <lastmod>2018-06-07T12:21:15+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/topics/hugo/</loc>
     <lastmod>2018-06-07T12:21:15+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/github/</loc>
     <lastmod>2018-06-05T18:05:19+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/ms/</loc>
     <lastmod>2018-06-05T18:05:19+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/06/05/ms-eats-github/</loc>
     <lastmod>2018-06-05T18:05:19+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/06/05/fun-variables-and-types/</loc>
     <lastmod>2018-06-05T12:55:40+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/bpm/</loc>
     <lastmod>2018-06-04T13:56:33+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/brm/</loc>
     <lastmod>2018-06-04T13:56:33+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/drools/</loc>
     <lastmod>2018-06-04T13:56:33+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/06/04/eclipse-install/</loc>
     <lastmod>2018-06-04T13:56:33+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/05/31/hugo-shortcode/</loc>
     <lastmod>2018-05-31T22:20:26+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/shortcode/</loc>
     <lastmod>2018-05-31T22:20:26+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/05/31/make-image-from-container/</loc>
     <lastmod>2018-05-31T12:55:14+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/05/31/docker-change-root/</loc>
     <lastmod>2018-05-31T12:49:28+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/root-directory/</loc>
     <lastmod>2018-05-31T12:49:28+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/systemd/</loc>
     <lastmod>2018-05-31T12:49:28+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/05/30/fun-semicolons/</loc>
     <lastmod>2018-05-30T23:08:20+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/2018/05/28/hugo-local-server/</loc>
     <lastmod>2018-05-28T19:06:37+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/local/</loc>
     <lastmod>2018-05-28T19:06:37+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/tags/server/</loc>
     <lastmod>2018-05-28T19:06:37+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://tramamte.github.io/about/</loc>
     <lastmod>2018-05-26T14:24:11+09:00</lastmod>
   </url>
-  
-  <url>
-    <loc>https://tramamte.github.io/</loc>
-    <lastmod>2018-05-26T14:24:11+09:00</lastmod>
-  </url>
-  
 </urlset>

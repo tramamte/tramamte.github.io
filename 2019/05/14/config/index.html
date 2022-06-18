@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="데몬 설정 파일">
-  <meta name="generator" content="Hugo 0.65.3" />
+  <meta name="generator" content="Hugo 0.101.0" />
 
   <title>Docker 설정 파일 &middot; Awesome Patrick</title>
 
@@ -278,12 +278,12 @@
 
   <p>Docker 데몬의 설정을 변경하기 위해 systemd service 파일을 <a href="https://tramamte.github.io/2018/05/31/docker-change-root/">직접 수정하는 방법</a>은 해당 데몬을 업데이트할 경우 모두 초기화되기 때문에 불편함이 있다.</p>
 <p><strong>위치</strong></p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">/etc/docker/daemon.json
-</code></pre></div><p><strong>내용</strong></p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#062873;font-weight:bold">&#34;data-root&#34;</span>: <span style="color:#4070a0">&#34;/where/you/want&#34;</span>
-}
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>/etc/docker/daemon.json
+</span></span></code></pre></div><p><strong>내용</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#062873;font-weight:bold">&#34;data-root&#34;</span>: <span style="color:#4070a0">&#34;/where/you/want&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
 
   
 
